@@ -10,6 +10,7 @@ module.exports = {
       sans: ['Open Sans', 'Segoe UI', 'Tahoma', 'sans-serif'],
     },
     screens: {
+      mobile: '320px',
       tablet: '640px',
       laptop: '1024px',
       desktop: '1280px',
