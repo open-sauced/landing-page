@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import Logo from '../public/logo.svg'
 import Button from './Button'
+import DropdownMenu from './DropdownMenu'
 
 const Navigation = () => {
   return (
@@ -10,28 +11,8 @@ const Navigation = () => {
         <Image src={Logo} layout="responsive" alt="" />
       </div>
 
-      <div className="flex text-sm items-center">
-        <nav>
-          <ul className="flex gap-[46px]">
-            <li>
-              <ExternalLink href="#" label="Docs" />
-            </li>
-            <li>
-              <ExternalLink href="#" label="Blog" />
-            </li>
-            <li>
-              <ExternalLink
-                href="https://github.com/open-sauced"
-                label="GitHub"
-              />
-            </li>
-          </ul>
-        </nav>
-
-        <div className="pl-[100px]">
-          <Button>Login</Button>
-        </div>
-      </div>
+      <DesktopNavigation />
+      <MobileNavigation />
     </header>
   )
 }
@@ -53,5 +34,52 @@ const ExternalLink = ({ href, label }: ExternalLinkProps) => {
     >
       {label}
     </a>
+  )
+}
+
+const NavigationItems = [
+  {
+    label: 'Docs',
+    href: '#',
+  },
+  {
+    label: 'Blog',
+    href: '#',
+  },
+  {
+    label: 'GitHub',
+    href: 'https://github.com/open-sauced',
+  },
+]
+
+const DesktopNavigation = () => {
+  return (
+    <div className="text-sm items-center hidden tablet:flex">
+      <nav>
+        <ul className="flex gap-[46px]">
+          {NavigationItems.map((link) => (
+            <li key={link.label}>
+              <ExternalLink href={link.href} label={link.label} />
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <div className="pl-[100px]">
+        <Button>Login</Button>
+      </div>
+    </div>
+  )
+}
+
+const MobileNavigation = () => {
+  return (
+    <DropdownMenu
+      className="block tablet:hidden"
+      menuItems={NavigationItems.map((navItem) => ({
+        label: navItem.label,
+        href: navItem.href,
+      }))}
+    />
   )
 }

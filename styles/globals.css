@@ -16,6 +16,10 @@ body {
   overflow-x: clip;
 }
 
+body > div {
+  overflow-x: clip;
+}
+
 a {
   color: inherit;
   text-decoration: none;

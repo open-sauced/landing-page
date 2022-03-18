@@ -5,9 +5,9 @@ import heroImage from '../public/hero.png'
 
 const Hero = () => {
   return (
-    <main className="pt-[186px] grid grid-cols-[1.5fr_1fr] gap-[120px]">
-      <div className="flex flex-col text-gray400 gap-[40px] items-start">
-        <h2 className="font-bold text-[48px] leading-[1.2]">
+    <main className="pt-[88px] tablet:pt-[186px] tablet:grid grid-cols-[1.5fr_1fr] gap-[80px]">
+      <div className="flex flex-col text-gray400 gap-[32px] tablet:gap-[40px] items-start">
+        <h2 className="font-bold text-[36px] tablet:text-[48px] leading-[1.2]">
           The path to your next open source contribution.
         </h2>
         <p className="text-[12px] leading-loose">
@@ -32,8 +32,8 @@ const Hero = () => {
           Start now
         </Button>
       </div>
-      <div className="relative">
-        <div className="top-[-120px] h-[800px] aspect-square absolute">
+      <div className="relative hidden tablet:block">
+        <div className="top-[-80px] h-[400px] tablet:top-[-120px] tablet:h-[800px] aspect-square absolute">
           <Image layout="responsive" alt="" src={heroImage} />
         </div>
       </div>
