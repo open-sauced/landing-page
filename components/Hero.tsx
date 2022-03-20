@@ -5,7 +5,7 @@ import heroImage from '../public/hero.png'
 
 const Hero = () => {
   return (
-    <main className="pt-[88px] tablet:pt-[186px] tablet:grid grid-cols-[1.5fr_1fr] gap-[40px] laptop:gap-[80px]">
+    <main className="pt-[88px] tablet:pt-[186px] tablet:grid grid-cols-[1.5fr_1fr] gap-[20px] laptop:gap-[0px]">
       <div className="flex flex-col text-gray400 gap-[32px] tablet:gap-[40px] items-start">
         <h2 className="font-bold text-[36px] laptop:text-[48px] leading-[1.2]">
           The path to your next open source contribution.
