@@ -40,15 +40,15 @@ const ExternalLink = ({ href, label }: ExternalLinkProps) => {
 const NavigationItems = [
   {
     label: 'Docs',
-    href: '#',
+    href: 'https://docs.opensauced.pizza/',
   },
   {
     label: 'Blog',
-    href: '#',
+    href: 'https://dev.to/opensauced',
   },
   {
     label: 'GitHub',
-    href: 'https://github.com/open-sauced',
+    href: 'https://github.com/open-sauced/open-sauced',
   },
 ]
 
