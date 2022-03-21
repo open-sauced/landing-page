@@ -4,6 +4,8 @@ import BackgroundDrip from '../components/BackgroundDrip'
 import Hero from '../components/Hero'
 import Logos from '../components/Logos'
 import Navigation from '../components/Header'
+import { getHomePageData } from '../lib/sanity'
+import { SanityAbout, SanityNavigation, SanityUser } from '../types/schema'
 
 const TITLE = 'OpenSauced'
 const DESCRIPTION = 'The path to your next open source contribution.'
@@ -11,7 +13,15 @@ const URL = 'https://opensauced.pizza'
 // Some crawlers don't support relative paths for the image, make sure to use the full URL.
 const IMAGE = `${URL}/social-image.png}`
 
-const Home: NextPage = () => {
+interface HomePageProps {
+  data: {
+    homePageData: {
+      about: SanityAbout
+    }
+  }
+}
+
+const Home: NextPage<HomePageProps> = ({ data: { homePageData } }) => {
   return (
     <div className="max-w-4xl mx-auto px-8">
       <Head>
@@ -36,13 +46,32 @@ const Home: NextPage = () => {
       </Head>
 
       <BackgroundDrip>
-        <Navigation />
-        <Hero />
+        <Navigation
+          navigationItems={
+            homePageData.about.navigationURLs as unknown as SanityNavigation[]
+          }
+        />
+        <Hero sanityData={homePageData.about} />
       </BackgroundDrip>
 
-      <Logos />
+      <Logos
+        users={(homePageData.about.users as unknown as SanityUser[]) || []}
+      />
     </div>
   )
 }
 
 export default Home
+
+export async function getStaticProps() {
+  const homePageData = await getHomePageData()
+
+  const data = { homePageData }
+
+  return {
+    props: {
+      data,
+    },
+    revalidate: 1,
+  }
+}

@@ -3,16 +3,21 @@ import Image from 'next/image'
 import Logo from '../public/logo.svg'
 import Button from './Button'
 import DropdownMenu from './DropdownMenu'
+import { SanityNavigation } from '../types/schema'
 
-const Navigation = () => {
+interface NavigationProps {
+  navigationItems: SanityNavigation[]
+}
+
+const Navigation = ({ navigationItems }: NavigationProps) => {
   return (
     <header className="flex justify-between pt-[20px] items-center">
       <div className="h-[26px] w-[150px]">
         <Image src={Logo} layout="responsive" alt="" />
       </div>
 
-      <DesktopNavigation />
-      <MobileNavigation />
+      <DesktopNavigation navigationItems={navigationItems} />
+      <MobileNavigation navigationItems={navigationItems} />
     </header>
   )
 }
@@ -37,29 +42,17 @@ const ExternalLink = ({ href, label }: ExternalLinkProps) => {
   )
 }
 
-const NavigationItems = [
-  {
-    label: 'Docs',
-    href: 'https://docs.opensauced.pizza/',
-  },
-  {
-    label: 'Blog',
-    href: 'https://dev.to/opensauced',
-  },
-  {
-    label: 'GitHub',
-    href: 'https://github.com/open-sauced/open-sauced',
-  },
-]
-
-const DesktopNavigation = () => {
+const DesktopNavigation = ({ navigationItems }: NavigationProps) => {
   return (
     <div className="text-sm items-center hidden tablet:flex">
       <nav>
         <ul className="flex gap-[46px]">
-          {NavigationItems.map((link) => (
+          {navigationItems.map((link) => (
             <li key={link.label}>
-              <ExternalLink href={link.href} label={link.label} />
+              <ExternalLink
+                href={link.url as string}
+                label={link.label as string}
+              />
             </li>
           ))}
         </ul>
@@ -72,13 +65,13 @@ const DesktopNavigation = () => {
   )
 }
 
-const MobileNavigation = () => {
+const MobileNavigation = ({ navigationItems }: NavigationProps) => {
   return (
     <DropdownMenu
       className="block tablet:hidden"
-      menuItems={NavigationItems.map((navItem) => ({
-        label: navItem.label,
-        href: navItem.href,
+      menuItems={navigationItems.map((navItem) => ({
+        label: navItem.label as string,
+        href: navItem.url as string,
       }))}
     />
   )
