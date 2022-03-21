@@ -35,7 +35,10 @@ const Home: NextPage<HomePageProps> = ({ data: { homePageData, seoData } }) => {
         <meta property="og:url" content={seoData.url} />
         <meta property="og:title" content={seoData.title} />
         <meta property="og:description" content={seoData.description} />
-        <meta property="og:image" content={seoData.description} />
+        <meta
+          property="og:image"
+          content={seoData.image as unknown as string}
+        />
 
         {/* <!-- Twitter --> */}
         <meta property="twitter:card" content="summary_large_image" />
