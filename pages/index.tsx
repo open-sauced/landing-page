@@ -23,7 +23,7 @@ interface HomePageProps {
 
 const Home: NextPage<HomePageProps> = ({ data: { homePageData } }) => {
   return (
-    <div className="max-w-4xl mx-auto px-8">
+    <div className="max-w-6xl mx-auto px-8">
       <Head>
         <title>OpenSauced</title>
         <meta name="title" content={TITLE}></meta>
