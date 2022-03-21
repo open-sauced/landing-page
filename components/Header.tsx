@@ -73,6 +73,7 @@ const MobileNavigation = ({ navigationItems }: NavigationProps) => {
         label: navItem.label as string,
         href: navItem.url as string,
       }))}
+      label="Navigation"
     />
   )
 }
