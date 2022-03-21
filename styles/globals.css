@@ -13,11 +13,11 @@ html {
 }
 
 body {
-  overflow-x: clip;
+  overflow-x: hidden;
 }
 
 body > div {
-  overflow-x: clip;
+  overflow-x: hidden;
 }
 
 a {
