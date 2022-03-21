@@ -7,7 +7,7 @@ interface LogosProps {
 
 const Logos = ({ users }: LogosProps) => {
   return (
-    <section className="grid grid-cols-2 sm:grid-cols-3 tablet:grid-cols-4 gap-x-8 tablet:gap-x-28 gap-y-14 tablet:gap-y-11 pb-32 items-center justify-items-center grid-rows-[38px]">
+    <section className="grid grid-cols-2 sm:grid-cols-3 tablet:grid-cols-4 gap-x-8 tablet:gap-x-28 gap-y-16 tablet:gap-y-11 pb-32 items-center justify-items-center grid-rows-[38px] auto-rows-[38px]">
       {users.map((user) => (
         <a
           key={user._id}
