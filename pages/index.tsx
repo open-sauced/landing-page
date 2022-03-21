@@ -12,12 +12,6 @@ import {
   SanityUser,
 } from '../types/schema'
 
-const TITLE = 'OpenSauced'
-const DESCRIPTION = 'The path to your next open source contribution.'
-const URL = 'https://opensauced.pizza'
-// Some crawlers don't support relative paths for the image, make sure to use the full URL.
-const IMAGE = `${URL}/social-image.png}`
-
 interface HomePageProps {
   data: {
     homePageData: {
