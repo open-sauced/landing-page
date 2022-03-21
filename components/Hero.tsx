@@ -41,7 +41,7 @@ const Hero = ({ sanityData }: HeroProps) => {
           {/*  eslint-disable-next-line @next/next/no-img-element */}
           <img
             alt=""
-            src={sanityData.previewImage as unknown as string}
+            src={`${sanityData.previewImage as unknown as string}?auto=format`}
             loading="eager"
           />
         </div>

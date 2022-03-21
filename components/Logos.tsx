@@ -19,7 +19,7 @@ const Logos = ({ users }: LogosProps) => {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             className="w-full"
-            src={user.logo as unknown as string}
+            src={`${user.logo as unknown as string}?auto=format&h=64`}
             alt={user.name}
             loading="lazy"
           />
