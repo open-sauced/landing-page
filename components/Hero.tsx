@@ -13,7 +13,9 @@ const Hero = ({ sanityData }: HeroProps) => {
         <h2 className="font-bold text-[36px] laptop:text-[48px] leading-[1.2]">
           {sanityData.title}
         </h2>
-        <p className="text-[12px] leading-loose">{sanityData.subtitle}</p>
+        <p className="text-[14px] leading-loose font-secondary">
+          {sanityData.subtitle}
+        </p>
 
         <Button
           asLink
