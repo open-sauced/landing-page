@@ -1,5 +1,5 @@
 import sanityClient from '@sanity/client'
-import { SanityAbout } from '../types/schema'
+import { SanityAbout, SanitySeo } from '../types/schema'
 
 const client = sanityClient({
   projectId: 'r7m53vrk',
@@ -34,4 +34,17 @@ export const getHomePageData: () => Promise<{
   return {
     about: aboutData,
   }
+}
+
+export const getSEOData: () => Promise<SanitySeo> = async () => {
+  const seoData = await client.fetch(
+    `
+    *[_id == "fab1dc19-7089-4b59-ac49-3481046078fc"][0] {
+	...,
+	"image": image.asset->url
+      }
+    `
+  )
+
+  return seoData
 }

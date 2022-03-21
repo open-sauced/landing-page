@@ -157,4 +157,46 @@ export interface SanityNavigation extends SanityDocument {
   url?: string
 }
 
-export type Documents = SanityAbout | SanityUser | SanityNavigation
+/**
+ * SEO
+ *
+ *
+ */
+export interface SanitySeo extends SanityDocument {
+  _type: 'seo'
+
+  /**
+   * Title — `string`
+   *
+   *
+   */
+  title?: string
+
+  /**
+   * Description — `string`
+   *
+   *
+   */
+  description?: string
+
+  /**
+   * URL — `url`
+   *
+   *
+   */
+  url?: string
+
+  /**
+   * Image — `image`
+   *
+   *
+   */
+  image?: {
+    _type: 'image'
+    asset: SanityReference<SanityImageAsset>
+    crop?: SanityImageCrop
+    hotspot?: SanityImageHotspot
+  }
+}
+
+export type Documents = SanityAbout | SanityUser | SanityNavigation | SanitySeo
