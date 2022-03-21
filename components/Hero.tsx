@@ -39,7 +39,11 @@ const Hero = ({ sanityData }: HeroProps) => {
       <div className="relative hidden tablet:block">
         <div className="top-[-80px] h-[400px] tablet:top-[-120px] tablet:h-[800px] aspect-square absolute pointer-events-none">
           {/*  eslint-disable-next-line @next/next/no-img-element */}
-          <img alt="" src={sanityData.previewImage as unknown as string} />
+          <img
+            alt=""
+            src={sanityData.previewImage as unknown as string}
+            loading="eager"
+          />
         </div>
       </div>
     </main>

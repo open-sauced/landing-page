@@ -21,6 +21,7 @@ const Logos = ({ users }: LogosProps) => {
             className="w-full"
             src={user.logo as unknown as string}
             alt={user.name}
+            loading="lazy"
           />
         </a>
       ))}
