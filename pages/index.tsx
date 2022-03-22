@@ -25,7 +25,7 @@ const Home: NextPage<HomePageProps> = ({ data: { homePageData, seoData } }) => {
   return (
     <div className="max-w-6xl mx-auto px-8">
       <Head>
-        <title>OpenSauced</title>
+        <title>Open Sauced</title>
         <meta name="title" content={seoData.title}></meta>
         <meta name="description" content={seoData.description} />
         <link rel="icon" href="/favicon.svg" />
