@@ -1,4 +1,4 @@
-# OpenSauced Landing Page
+# Open Sauced Landing Page
 
 ## Prerequisites
 
