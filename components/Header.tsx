@@ -59,7 +59,9 @@ const DesktopNavigation = ({ navigationItems }: NavigationProps) => {
       </nav>
 
       <div className="pl-[100px]">
-        <Button>Login</Button>
+        <a href="https://app.opensauced.pizza/">
+          <Button>Login</Button>
+        </a>
       </div>
     </div>
   )
