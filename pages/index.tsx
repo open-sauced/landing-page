@@ -63,6 +63,9 @@ const Home: NextPage<HomePageProps> = ({ data: { homePageData, seoData } }) => {
       <Logos
         users={(homePageData.about.users as unknown as SanityUser[]) || []}
       />
+      <div>
+        <h1>Test boy!</h1>
+      </div>
     </div>
   )
 }
