@@ -19,6 +19,8 @@ module.exports = {
       colors: {
         gray100: '#f6f5f0',
         gray400: '#333333',
+        bgGray: '#F9F9F9',
+        bgWhite: '#FCFCFC'
       },
       fontFamily: {
         primary: "'Open Sans', 'Segoe UI', Tahoma, sans-serif",
