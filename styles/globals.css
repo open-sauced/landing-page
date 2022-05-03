@@ -9,7 +9,7 @@ body {
 }
 
 html {
-  @apply bg-gray100;
+  @apply bg-white;
 }
 
 body {

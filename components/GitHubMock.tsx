@@ -1,18 +1,23 @@
-import React from 'react'
+import Image from 'next/image'
+import React, { FC } from 'react'
+import gitHubMock from '../public/temp/GitHubMock.svg'
 
 interface Props {
 
 }
 
-function GitHubMock({}: Props) {
+const GitHubMock: FC = ({}: Props) => {
   return (
-    <div className= ' bg-bgGray absolute  left-0 right-0 shadow-inner'>
-      <section className=' max-w-6xl mx-auto px-8 py-24 text-gray400   ' >
+    <div className= ' bg-bgGray shadow-inner'>
+      <section className=' max-w-6xl mx-auto px-8 tablet:px-40 py-24  text-gray400   ' >
           <div className=' flex flex-col items-center ' >
             <h1 className=' font-bold text-[36px] '>We do more than</h1>  
-            <img className='w-full py-12 ' src="/temp/GitHubMock.svg" alt="githubMock" />
+            <div className='py-12 '>
+              <Image className='my-12'  src={gitHubMock}  />
+            </div>
             <div className='bg-gray400 w-[248px] h-[1px] mb-12' ></div>
-            <p className=' text-[18px] '  >Ate nonfina tinarte in terorbit. In tena, nos, sedit aucepor bisulibus cae clari, urnis.
+            <p className=' text-[18px] '  >
+              Ate nonfina tinarte in terorbit. In tena, nos, sedit aucepor bisulibus cae clari, urnis.
               Etis cati, culicae nihiculocae fac vid ca notelina co tracibu licaucis omnius, que con probus, venatus cla ressum maximur hin sedo, orio, dii sed ato te cienici pero, ubis condacchus practan trestra cidees seripio.
             </p>
           </div>

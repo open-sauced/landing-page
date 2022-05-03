@@ -20,7 +20,10 @@ module.exports = {
         gray100: '#f6f5f0',
         gray400: '#333333',
         bgGray: '#F9F9F9',
-        bgWhite: '#FCFCFC'
+        bgWhite: '#FCFCFC',
+        lightBlue: '#308CE0',
+        darkBlue: '#3452BC',
+        
       },
       fontFamily: {
         primary: "'Open Sans', 'Segoe UI', Tahoma, sans-serif",

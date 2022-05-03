@@ -12,6 +12,7 @@ import {
   SanityUser,
 } from '../types/schema'
 import GitHubMock from '../components/GitHubMock'
+import Calender from '../components/Calender'
 
 interface HomePageProps {
   data: {
@@ -24,7 +25,7 @@ interface HomePageProps {
 
 const Home: NextPage<HomePageProps> = ({ data: { homePageData, seoData } }) => {
   return (
-    <div className="max-w-6xl mx-auto px-8">
+    <>
       <Head>
         <title>Open Sauced</title>
         <meta name="title" content={seoData.title}></meta>
@@ -51,21 +52,24 @@ const Home: NextPage<HomePageProps> = ({ data: { homePageData, seoData } }) => {
           content={seoData.image as unknown as string}
         ></meta>
       </Head>
-
-      <BackgroundDrip>
-        <Navigation
-          navigationItems={
-            homePageData.about.navigationURLs as unknown as SanityNavigation[]
-          }
+      <div className="max-w-6xl mx-auto px-8 ">
+        <BackgroundDrip>
+          <Navigation
+            navigationItems={
+              homePageData.about.navigationURLs as unknown as SanityNavigation[]
+            }
+          />
+          <Hero sanityData={homePageData.about} />
+        </BackgroundDrip>
+        <Logos
+          users={(homePageData.about.users as unknown as SanityUser[]) || []}
         />
-        <Hero sanityData={homePageData.about} />
-      </BackgroundDrip>
-
-      <Logos
-        users={(homePageData.about.users as unknown as SanityUser[]) || []}
-      />
-      <GitHubMock/>
-    </div>
+      </div>
+      <GitHubMock />
+      <div className=' max-w-6xl mx-auto px-8 ' >
+        <Calender />
+      </div>
+    </>
   )
 }
 
