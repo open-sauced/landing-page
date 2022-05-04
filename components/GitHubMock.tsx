@@ -11,7 +11,7 @@ const GitHubMock: FC<GitHubMockProps> = ({}) => {
     <div className= ' bg-bgGray shadow-inner'>
       <section className=' max-w-6xl mx-auto px-8 tablet:px-40 py-24  text-gray400   ' >
           <div className=' flex flex-col items-center ' >
-            <h1 className=' font-bold text-[36px] '>We do more than</h1>  
+            <h1 className=' font-bold text-[36px] '>We do <span className='text-blueAccent'> more </span> than</h1>  
             <div className='py-12 '>
               <Image className='my-12'  src={gitHubMock}  />
             </div>

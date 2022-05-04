@@ -18,11 +18,14 @@ module.exports = {
     extend: {
       colors: {
         gray100: '#f6f5f0',
+        gray200: '#E5E5E5',
         gray400: '#333333',
         bgGray: '#F9F9F9',
         bgWhite: '#FCFCFC',
+        blueAccent: '#2379EC',
         lightBlue: '#308CE0',
         darkBlue: '#3452BC',
+        twitterBlue: '#0EA0DA',
         
       },
       fontFamily: {
