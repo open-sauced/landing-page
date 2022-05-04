@@ -2,11 +2,11 @@ import Image from 'next/image'
 import React, { FC } from 'react'
 import gitHubMock from '../public/temp/GitHubMock.svg'
 
-interface Props {
+interface GitHubMockProps {
 
 }
 
-const GitHubMock: FC = ({}: Props) => {
+const GitHubMock: FC<GitHubMockProps> = ({}) => {
   return (
     <div className= ' bg-bgGray shadow-inner'>
       <section className=' max-w-6xl mx-auto px-8 tablet:px-40 py-24  text-gray400   ' >

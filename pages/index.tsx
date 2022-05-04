@@ -13,6 +13,8 @@ import {
 } from '../types/schema'
 import GitHubMock from '../components/GitHubMock'
 import Calender from '../components/Calender'
+import Features from '../components/Features'
+import GradientBackground from '../components/GradientBackground'
 
 interface HomePageProps {
   data: {
@@ -68,6 +70,10 @@ const Home: NextPage<HomePageProps> = ({ data: { homePageData, seoData } }) => {
       <GitHubMock />
       <div className=' max-w-6xl mx-auto px-8 ' >
         <Calender />
+        <GradientBackground>
+          <Features />
+
+        </GradientBackground>
       </div>
     </>
   )
