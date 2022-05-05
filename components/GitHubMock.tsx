@@ -1,10 +1,9 @@
 import Image from 'next/image'
 import React, { FC } from 'react'
-import gitHubMock from '../public/temp/GitHubMock.svg'
-import { SanityGitHubMock } from '../types/schema'
+import { SanityGithubMock } from '../types/schema'
 
 interface GitHubMockProps {
-  githubMockData: SanityGitHubMock
+  githubMockData: SanityGithubMock
 }
 
 const GitHubMock: FC<GitHubMockProps> = ( { githubMockData: {title, subtitle, mockimage}}) => {

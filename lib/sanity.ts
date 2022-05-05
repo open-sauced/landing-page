@@ -1,5 +1,5 @@
 import sanityClient from '@sanity/client'
-import { SanityAbout, SanitySeo } from '../types/schema'
+import { SanityAbout, SanityCalender, SanityGithubMock, SanitySeo } from '../types/schema'
 
 const client = sanityClient({
   projectId: 'r7m53vrk',
@@ -31,12 +31,21 @@ about: SanityAbout
     `
   )
 
-  const githubMockData = await client.fetch(`*[_type == 'githubMock'][0]`);
-  console.log(githubMockData)
+  const githubMockData: SanityGithubMock = await client.fetch(`*[_type == 'githubMock'][0]{
+    ...,
+    "mockimage": mockimage.asset->url
+  }`);
+
+  const getCalenderData: SanityCalender = await client.fetch(`*[_type == 'calender'][0]{
+    ...,
+    "calenderImage": calenderImage.asset->url
+  }`);
+
 
   return {
     about: aboutData,
-    githubMock: githubMockData
+    githubMock: githubMockData,
+    calender: getCalenderData
   }
 }
 

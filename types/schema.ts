@@ -234,9 +234,45 @@ export interface SanityGithubMock extends SanityDocument {
   }
 }
 
+/**
+ * Calender
+ *
+ *
+ */
+export interface SanityCalender extends SanityDocument {
+  _type: 'calender'
+
+  /**
+   * Title — `string`
+   *
+   *
+   */
+  title?: string
+
+  /**
+   * Subtitle — `string`
+   *
+   *
+   */
+  subtitle?: string
+
+  /**
+   * Mock Image — `image`
+   *
+   *
+   */
+  calenderImage?: {
+    _type: 'image'
+    asset: SanityReference<SanityImageAsset>
+    crop?: SanityImageCrop
+    hotspot?: SanityImageHotspot
+  }
+}
+
 export type Documents =
   | SanityAbout
   | SanityUser
   | SanityNavigation
   | SanitySeo
   | SanityGithubMock
+  | SanityCalender

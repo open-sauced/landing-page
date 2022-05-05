@@ -7,6 +7,8 @@ import Navigation from '../components/Header'
 import { getHomePageData, getSEOData } from '../lib/sanity'
 import {
   SanityAbout,
+  SanityCalender,
+  SanityGithubMock,
   SanityNavigation,
   SanitySeo,
   SanityUser,
@@ -21,7 +23,8 @@ interface HomePageProps {
   data: {
     homePageData: {
       about: SanityAbout,
-      githubMock: any
+      githubMock: SanityGithubMock,
+      calender: SanityCalender,
     }
     seoData: SanitySeo,
 
@@ -29,7 +32,7 @@ interface HomePageProps {
   }
 }
 
-const Home: NextPage<HomePageProps> = ({ data: { homePageData, seoData } }) => {
+const Home: NextPage<HomePageProps> = ({ data: { homePageData, seoData, } }) => {
   return (
     <>
       <Head>
@@ -71,9 +74,9 @@ const Home: NextPage<HomePageProps> = ({ data: { homePageData, seoData } }) => {
           users={(homePageData.about.users as unknown as SanityUser[]) || []}
         />
       </div>
-      <GitHubMock  githubMockData={homePageData.githubMock} />
+      <GitHubMock  githubMockData={homePageData.githubMock as unknown as SanityGithubMock} />
       <div className=' max-w-6xl mx-auto px-8 ' >
-        <Calender />
+        <Calender calender={homePageData.calender} />
 
         <GradientBackground>
           <Features />
