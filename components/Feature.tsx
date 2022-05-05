@@ -15,7 +15,7 @@ interface Props{
 
 const Feature:FC<Props> = ({featureItem: {title, subtitle, image, link}, index}) => {
   return (
-    <div className=' px-20 ' >
+    <div className=' px-2 tablet:px-20 ' >
       <div className=' h-[1px]  bg-white ' ></div>
       <div className={` flex flex-col px-8 gap-20 py-24 items-center ${index % 2 == 1 ? 'tablet:flex-row-reverse' : 'tablet:flex-row'  } `} >
         <div className=' flex-[1] '>
