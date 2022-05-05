@@ -38,7 +38,7 @@ const Features: FC<Props> = ({}) => {
     <div>
         {
           featuresArray.map((feature, i) => (
-            <Feature featureItem={feature} index={i} />
+            <Feature key={feature.title} featureItem={feature} index={i} />
           ))
         }
         

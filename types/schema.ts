@@ -199,4 +199,44 @@ export interface SanitySeo extends SanityDocument {
   }
 }
 
-export type Documents = SanityAbout | SanityUser | SanityNavigation | SanitySeo
+/**
+ * GitHub Mock
+ *
+ *
+ */
+export interface SanityGithubMock extends SanityDocument {
+  _type: 'githubMock'
+
+  /**
+   * Title — `string`
+   *
+   *
+   */
+  title?: string
+
+  /**
+   * Subtitle — `string`
+   *
+   *
+   */
+  subtitle?: string
+
+  /**
+   * Mock Image — `image`
+   *
+   *
+   */
+  mockimage?: {
+    _type: 'image'
+    asset: SanityReference<SanityImageAsset>
+    crop?: SanityImageCrop
+    hotspot?: SanityImageHotspot
+  }
+}
+
+export type Documents =
+  | SanityAbout
+  | SanityUser
+  | SanityNavigation
+  | SanitySeo
+  | SanityGithubMock

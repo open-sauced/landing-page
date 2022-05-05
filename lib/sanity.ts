@@ -12,7 +12,7 @@ const client = sanityClient({
 })
 
 export const getHomePageData: () => Promise<{
-  about: SanityAbout
+about: SanityAbout
 }> = async () => {
   const aboutData = await client.fetch(
     `
@@ -31,8 +31,12 @@ export const getHomePageData: () => Promise<{
     `
   )
 
+  const githubMockData = await client.fetch(`*[_type == 'githubMock'][0]`);
+  console.log(githubMockData)
+
   return {
     about: aboutData,
+    githubMock: githubMockData
   }
 }
 
