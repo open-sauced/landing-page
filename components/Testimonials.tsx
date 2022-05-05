@@ -19,25 +19,25 @@ const testimonial = [
         photo: '/temp/user1.png'
     },
     {
-        username: 'brian',
+        username: 'rolef',
         date: 'Feb 12',
         comment: `Cilignam accuptatur @OpenSauced core quistia ad moluptat.`,
         photo: '/temp/user1.png'
     },
     {
-        username: 'brian',
+        username: 'david',
         date: 'Feb 12',
         comment: `Cilignam accuptatur @OpenSauced core quistia ad moluptat.`,
         photo: '/temp/user1.png'
     },
     {
-        username: 'brian',
+        username: 'roreffs',
         date: 'Feb 12',
         comment: `Cilignam accuptatur @OpenSauced core quistia ad moluptat.`,
         photo: '/temp/user1.png'
     },
     {
-        username: 'brian',
+        username: 'benawad',
         date: 'Feb 12',
         comment: `Cilignam accuptatur @OpenSauced core quistia ad moluptat.`,
         photo: '/temp/user1.png'
@@ -52,7 +52,7 @@ const Testimonials: FC<TestimonialsProps> = ({}) => {
         <div className=' grid mobile:grid-cols-1 tablet:grid-cols-3 gap-[10px] py-20 '>
             {
                 testimonial.map( testimonial => (
-                    <Testimonial testimonial={testimonial} />
+                    <Testimonial key={testimonial.username} testimonial={testimonial} />
                 ))
             }
         </div>

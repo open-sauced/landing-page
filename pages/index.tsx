@@ -20,9 +20,12 @@ import Testimonials from '../components/Testimonials'
 interface HomePageProps {
   data: {
     homePageData: {
-      about: SanityAbout
+      about: SanityAbout,
+      githubMock: any
     }
-    seoData: SanitySeo
+    seoData: SanitySeo,
+
+
   }
 }
 
@@ -68,7 +71,7 @@ const Home: NextPage<HomePageProps> = ({ data: { homePageData, seoData } }) => {
           users={(homePageData.about.users as unknown as SanityUser[]) || []}
         />
       </div>
-      <GitHubMock />
+      <GitHubMock  githubMockData={homePageData.githubMock} />
       <div className=' max-w-6xl mx-auto px-8 ' >
         <Calender />
 
