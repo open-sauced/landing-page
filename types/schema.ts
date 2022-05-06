@@ -276,6 +276,62 @@ export interface SanityCalender extends SanityDocument {
   }
 }
 
+/**
+ * Feature
+ *
+ *
+ */
+export interface SanityFeature extends SanityDocument {
+  _type: 'feature'
+
+  /**
+   * Title — `string`
+   *
+   *
+   */
+  title?: string
+
+  /**
+   * Subtitle — `string`
+   *
+   *
+   */
+  subtitle?: string
+
+  /**
+   * Slug — `slug`
+   *
+   *
+   */
+  slug?: { _type: 'slug'; current: string }
+
+  /**
+   * Preview Image — `image`
+   *
+   *
+   */
+  previewImage?: {
+    _type: 'image'
+    asset: SanityReference<SanityImageAsset>
+    crop?: SanityImageCrop
+    hotspot?: SanityImageHotspot
+  }
+
+  /**
+   * Preview Video — `file`
+   *
+   *
+   */
+  previewVideo?: { _type: 'file'; asset: SanityReference<any> }
+
+  /**
+   * Description — `string`
+   *
+   *
+   */
+  description?: string
+}
+
 export type Documents =
   | SanityAbout
   | SanityUser
@@ -283,3 +339,4 @@ export type Documents =
   | SanitySeo
   | SanityGithubMock
   | SanityCalender
+  | SanityFeature

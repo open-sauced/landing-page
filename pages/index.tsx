@@ -8,6 +8,7 @@ import { getHomePageData, getSEOData } from '../lib/sanity'
 import {
   SanityAbout,
   SanityCalender,
+  SanityFeature,
   SanityGithubMock,
   SanityNavigation,
   SanitySeo,
@@ -25,6 +26,7 @@ interface HomePageProps {
       about: SanityAbout,
       githubMock: SanityGithubMock,
       calender: SanityCalender,
+      feature: SanityFeature
     }
     seoData: SanitySeo,
 
@@ -79,7 +81,7 @@ const Home: NextPage<HomePageProps> = ({ data: { homePageData, seoData, } }) => 
         <Calender calender={homePageData.calender} />
 
         <GradientBackground>
-          <Features />
+          <Features features={homePageData.feature as unknown as SanityFeature[] || [] } />
         </GradientBackground>
 
         <Testimonials/>
