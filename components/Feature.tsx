@@ -28,9 +28,9 @@ const Feature:FC<Props> = ({featureItem: {title, subtitle, image, link}, index})
             {subtitle}
           </p>
           
-          <a className='font-bold text-[18px]'>
+          <div className='font-bold text-[18px]'>
             <Link href={link}>Learn more &gt; </Link>
-          </a>
+          </div>
         </div>
       </div>
     </div>

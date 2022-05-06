@@ -257,7 +257,7 @@ export interface SanityCalender extends SanityDocument {
   subtitle?: string
 
   /**
-   * Mock Image — `image`
+   * Calender Image — `image`
    *
    *
    */

@@ -11,17 +11,14 @@ const GitHubMock: FC<GitHubMockProps> = ( { githubMockData: {title, subtitle, mo
     <div className= ' bg-bgGray shadow-inner '>
       <section className=' max-w-6xl mx-auto px-8 tablet:px-40 py-24  text-gray400   ' >
           <div className=' flex flex-col items-center ' >
-            {/* <h1 className=' font-bold text-[36px] '>We do <span className='text-blueAccent'> more </span> than</h1> */}
             <h1 className=' font-bold text-[36px] '>{title}</h1>
             
-
             <div className='py-12 '>
               <img
               alt=""
               src={`${mockimage as unknown as string}?auto=format`}
               loading="eager"
               />
-               {/* <Image layout='fill' src={`${mockimage as unknown as string}?auto=format`}  />  */}
             </div>
 
             <div className='bg-gray400 w-[248px] h-[1px] mb-12' ></div>
