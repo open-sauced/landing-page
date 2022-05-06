@@ -18,10 +18,10 @@ const Calender: FC<CalenderProps> = ({calender: {title, subtitle, calenderImage}
       </div>
       <div className=' bg-gradient-to-r relative  from-lightBlue to-darkBlue px-8 tablet:px-28 py-[50px] tablet:pb-[350px] '>
             <div className=' absolute top-0 scale-[1.16]  left-0  ' >
-                <Image   src={drip_calendar} alt="" />
+                <Image   src={drip_calendar} loading="eager" alt="" />
             </div> 
 
-          <img className='mx-auto relative ' src={calenderImage as unknown as string} alt="GitHub calender" />
+          <img className='mx-auto relative ' src={calenderImage as unknown as string}  alt="GitHub calender" />
       </div>
     </section>  
   )
