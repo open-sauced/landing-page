@@ -23,6 +23,7 @@ about: SanityAbout
 	"previewImage": previewImage.asset->url,
 	subtitle,
 	title,
+  projectsUrl,
 	users[]->{
 	  ...,
 	  "logo": logo.asset->url

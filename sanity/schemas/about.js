@@ -45,6 +45,12 @@ export default {
       required: true,
     },
     {
+      title: 'Projects URL',
+      name: 'projectsUrl',
+      type: 'url',
+      required: true,
+    },
+    {
       title: 'Users',
       name: 'users',
       type: 'array',

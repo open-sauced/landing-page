@@ -17,24 +17,29 @@ const Hero = ({ sanityData }: HeroProps) => {
           {sanityData.subtitle}
         </p>
 
-        <Button
-          asLink
-          href={sanityData.CTAButtonURL}
-          type="primary"
-          endIcon={
-            <svg width="0.6rem" height="0.6rem" fill="none" viewBox="8 8 8 8">
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1.5"
-                d="M10.75 8.75L14.25 12L10.75 15.25"
-              ></path>
-            </svg>
-          }
-        >
-          {sanityData.CTAButtonLabel}
-        </Button>
+        <div className=' flex gap-4 items-center'>
+          <Button
+            asLink
+            href={sanityData.CTAButtonURL}
+            type="primary"
+            endIcon={
+              <svg width="0.6rem" height="0.6rem" fill="none" viewBox="8 8 8 8">
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.5"
+                  d="M10.75 8.75L14.25 12L10.75 15.25"
+                ></path>
+              </svg>
+            }
+          >
+            {sanityData.CTAButtonLabel}
+          </Button>
+
+          <a className='font-bold text-[12px]' href={sanityData.projectsUrl}>Explore Projects</a>
+        </div>
+        
       </div>
       <div className="relative hidden tablet:block">
         <div className="top-[-80px] h-[400px] tablet:top-[-120px] tablet:h-[800px] aspect-square absolute pointer-events-none">
