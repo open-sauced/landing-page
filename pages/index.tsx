@@ -75,7 +75,7 @@ const Home: NextPage<HomePageProps> = ({ data: { homePageData, seoData, } }) => 
         />
       </div>
       <GitHubMock  githubMockData={homePageData.githubMock as unknown as SanityGithubMock} />
-      <div className=' max-w-6xl mx-auto px-8 ' >
+      <div className=' max-w-6xl mx-auto px-3 tablet:px-8 ' >
         <Calender calender={homePageData.calender} />
 
         <GradientBackground>
