@@ -24,8 +24,8 @@ const Feature:FC<Props> = ({feature: {title, subtitle, previewImage, slug }, ind
             {subtitle}
           </p>
           
-          <div className='font-bold text-[18px]'>
-            <Link href={"/"+slug?.current as unknown as string}>Learn more &gt; </Link>
+          <div className='font-bold text-[18px] self-center '>
+            <Link href={"/feature/"+slug?.current as unknown as string}>Learn more &gt; </Link>
           </div>
         </div>
       </div>

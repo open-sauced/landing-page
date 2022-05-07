@@ -12,7 +12,11 @@ const client = sanityClient({
 })
 
 export const getHomePageData: () => Promise<{
-about: SanityAbout
+about: SanityAbout,
+githubMock: SanityGithubMock,
+calender: SanityCalender,
+feature: SanityFeature[]
+
 }> = async () => {
   const aboutData = await client.fetch(
     `
@@ -42,7 +46,7 @@ about: SanityAbout
     "calenderImage": calenderImage.asset->url
   }`);
 
-  const getFeatureData: SanityFeature = await client.fetch(`*[_type == 'feature'] | order(_createdAt asc) {
+  const getFeatureData: SanityFeature[] = await client.fetch(`*[_type == 'feature'] | order(_createdAt asc) {
     ...,
     "previewImage": previewImage.asset->url,
     "previewVideo": previewVideo.asset->url
@@ -69,3 +73,14 @@ export const getSEOData: () => Promise<SanitySeo> = async () => {
 
   return seoData
 }
+
+export const getFeaturePageDataBySlug: ( slug: string  ) => Promise<SanityFeature> = async ( slug: string  ) => {
+  const getFeatureData: SanityFeature = await client.fetch(`*[_type == 'feature' && slug.current == '${slug}'][0] {
+    ...,
+    "previewImage": previewImage.asset->url,
+    "previewVideo": previewVideo.asset->url
+  }`);
+
+  return getFeatureData;
+
+} 
