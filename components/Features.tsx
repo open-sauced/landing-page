@@ -12,7 +12,7 @@ const Features: FC<Props> = ({features}) => {
     <div>
         {
           features.map((feature, i) => (
-            <Feature key={feature.title} feature={feature as SanityFeature} index={i} />
+            <Feature key={feature.slug?.current} feature={feature as SanityFeature} index={i} />
           ))
         }
         
