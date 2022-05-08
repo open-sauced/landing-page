@@ -43,14 +43,18 @@ const index:FC<FeaturePageProps> = ({data: {seoData, featurePageData}}) => {
       </Head>
 
       <div className=' max-w-6xl px-[10px] mx-auto bg-white ' >
-        <div className='rounded-full border-[4px] shadow-md max-w-[550px]   mx-auto my-[50px] border-gray50 flex flex-wrap justify-center items-center gap-[6px] py-[10px] px-[5px] text-gray50 '>
-          <Image width={58} height={58} src={featurePageData.previewImage as unknown as string} />
+        <div className=' flex justify-center '>
+          <div className='mx-auto inline '>
+            <div className='rounded-full border-[4px] shadow-md   mx-auto my-[50px] border-gray50 flex flex-wrap justify-center items-center gap-[6px] py-[10px] px-[20px] text-gray50 '>
+              <Image width={58} height={58} src={featurePageData.previewImage as unknown as string} />
 
-          <h1 className='font-bold text-[28px] ' >{featurePageData.title}</h1>
+              <h1 className='font-bold text-[28px] ' >{featurePageData.title}</h1>
+            </div>
+          </div>
         </div>
 
         <div className=' max-w-[912px] mx-auto border-white border-[8px] shadow-2xl '>
-          <video controls autoPlay src={featurePageData.previewVideo as unknown as string}></video>
+          <video className='w-full'  controls autoPlay src={featurePageData.previewVideo as unknown as string}></video>
         </div>
 
         <div className='max-w-[200px] bg-gray150 h-[2px] mx-auto my-[50px] '></div>
