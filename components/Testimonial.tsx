@@ -12,7 +12,7 @@ const Testimonial:FC<TestimonialProps> = ({ testimonial: { twitterUsername, user
     <div className=' border-[2px] border-gray200 rounded-xl p-[15px] ' >
         <div className=' flex items-center gap-2 '>
             <div className=' shadow-md overflow-hidden rounded-full w-[36px] h-[36px]'>
-                <Image className=' rounded-full flex-[1] shadow-md  ' src={userImage as unknown as string} width={36} height={36} />
+                <Image className=' rounded-full flex-[1] shadow-md  ' alt={twitterUsername+ "'s photo"} src={userImage as unknown as string} width={36} height={36} />
             </div>
             <h6 className='text-gray400 text-[14px] flex-[3]' ><span className='font-bold text-twitterBlue '>{twitterUsername}</span> <span/>@{twitterUsername}. {date} </h6>
         </div>
