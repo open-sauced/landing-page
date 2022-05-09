@@ -1,50 +1,12 @@
 import React, { FC } from 'react'
+import { SanityTestimonial } from '../types/schema'
 import Testimonial from './Testimonial'
 
 interface TestimonialsProps{
-    
+    testimonial: SanityTestimonial[]
 }
 
-const testimonial = [
-    {
-        username: 'shamimbinnur',
-        date: 'Feb 12',
-        comment: `Cilignam accuptatur @OpenSauced core quistia ad moluptat.`,
-        photo: '/temp/user1.png'
-    },
-    {
-        username: 'brian',
-        date: 'Feb 12',
-        comment: `Cilignam accuptatur @OpenSauced core quistia ad moluptat.`,
-        photo: '/temp/user1.png'
-    },
-    {
-        username: 'rolef',
-        date: 'Feb 12',
-        comment: `Cilignam accuptatur @OpenSauced core quistia ad moluptat.`,
-        photo: '/temp/user1.png'
-    },
-    {
-        username: 'david',
-        date: 'Feb 12',
-        comment: `Cilignam accuptatur @OpenSauced core quistia ad moluptat.`,
-        photo: '/temp/user1.png'
-    },
-    {
-        username: 'roreffs',
-        date: 'Feb 12',
-        comment: `Cilignam accuptatur @OpenSauced core quistia ad moluptat.`,
-        photo: '/temp/user1.png'
-    },
-    {
-        username: 'benawad',
-        date: 'Feb 12',
-        comment: `Cilignam accuptatur @OpenSauced core quistia ad moluptat.`,
-        photo: '/temp/user1.png'
-    },
-]
-
-const Testimonials: FC<TestimonialsProps> = ({}) => {
+const Testimonials: FC<TestimonialsProps> = ({testimonial}) => {
   return (
     <div className=' py-28 '>
         <h1 className=' font-bold text-[38px] text-center text-gray400 '>Itam harum a <span className='text-blueAccent'>Testimonials.</span></h1>
@@ -52,7 +14,7 @@ const Testimonials: FC<TestimonialsProps> = ({}) => {
         <div className=' grid mobile:grid-cols-1 tablet:grid-cols-3 gap-[10px] py-20 '>
             {
                 testimonial.map( testimonial => (
-                    <Testimonial key={testimonial.username} testimonial={testimonial} />
+                    <Testimonial key={testimonial.twitterUsername} testimonial={testimonial as unknown as SanityTestimonial} />
                 ))
             }
         </div>

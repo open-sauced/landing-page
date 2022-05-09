@@ -332,6 +332,48 @@ export interface SanityFeature extends SanityDocument {
   description?: string
 }
 
+/**
+ * Testimonial
+ *
+ *
+ */
+export interface SanityTestimonial extends SanityDocument {
+  _type: 'testimonial'
+
+  /**
+   * Twitter username — `string`
+   *
+   *
+   */
+  twitterUsername?: string
+
+  /**
+   * User Image — `image`
+   *
+   *
+   */
+  userImage?: {
+    _type: 'image'
+    asset: SanityReference<SanityImageAsset>
+    crop?: SanityImageCrop
+    hotspot?: SanityImageHotspot
+  }
+
+  /**
+   * date — `date`
+   *
+   *
+   */
+  date?: string
+
+  /**
+   * Testimonial — `string`
+   *
+   *
+   */
+  testimonial?: string
+}
+
 export type Documents =
   | SanityAbout
   | SanityUser
@@ -340,3 +382,4 @@ export type Documents =
   | SanityGithubMock
   | SanityCalender
   | SanityFeature
+  | SanityTestimonial

@@ -12,6 +12,7 @@ import {
   SanityGithubMock,
   SanityNavigation,
   SanitySeo,
+  SanityTestimonial,
   SanityUser,
 } from '../types/schema'
 import GitHubMock from '../components/GitHubMock'
@@ -26,7 +27,8 @@ interface HomePageProps {
       about: SanityAbout,
       githubMock: SanityGithubMock,
       calender: SanityCalender,
-      feature: SanityFeature
+      feature: SanityFeature,
+      testimonial: SanityTestimonial,
     }
     seoData: SanitySeo,
 
@@ -84,7 +86,7 @@ const Home: NextPage<HomePageProps> = ({ data: { homePageData, seoData, } }) => 
           <Features features={homePageData.feature as unknown as SanityFeature[] || [] } />
         </GradientBackground>
 
-        <Testimonials/>
+        <Testimonials testimonial={homePageData.testimonial as unknown as SanityTestimonial[] || []} />
       </div>
     </>
   )

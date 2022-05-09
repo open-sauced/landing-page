@@ -60,7 +60,6 @@ const index:FC<FeaturePageProps> = ({data: {seoData, featurePageData}}) => {
         <div className='max-w-[200px] bg-gray150 h-[2px] mx-auto my-[50px] '></div>
 
         <p className='text-[16px] text-gray150 mx-auto text-center max-w-[900px] '>{featurePageData.description}</p>
-
       </div>
 
     </>

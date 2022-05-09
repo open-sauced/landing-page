@@ -1,5 +1,5 @@
 import sanityClient from '@sanity/client'
-import { SanityAbout, SanityCalender, SanityFeature, SanityGithubMock, SanitySeo } from '../types/schema'
+import { SanityAbout, SanityCalender, SanityFeature, SanityGithubMock, SanitySeo, SanityTestimonial } from '../types/schema'
 
 const client = sanityClient({
   projectId: 'r7m53vrk',
@@ -15,7 +15,8 @@ export const getHomePageData: () => Promise<{
 about: SanityAbout,
 githubMock: SanityGithubMock,
 calender: SanityCalender,
-feature: SanityFeature[]
+feature: SanityFeature[],
+testimonial: SanityTestimonial[]
 
 }> = async () => {
   const aboutData = await client.fetch(
@@ -52,12 +53,18 @@ feature: SanityFeature[]
     "previewVideo": previewVideo.asset->url
   }`);
 
+  const getTestimonialData: SanityTestimonial[] = await client.fetch(`*[_type == 'testimonial'] | order(_createdAt asc) {
+    ...,
+    "userImage": userImage.asset->url,
+  }`);
+
 
   return {
     about: aboutData,
     githubMock: githubMockData,
     calender: getCalenderData,
-    feature: getFeatureData
+    feature: getFeatureData,
+    testimonial: getTestimonialData,
   }
 }
 
