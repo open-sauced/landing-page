@@ -28,7 +28,8 @@ testimonial: SanityTestimonial[]
 	"previewImage": previewImage.asset->url,
 	subtitle,
 	title,
-  projectsUrl,
+  projectsButtonLabel,
+  projectsButtonUrl,
 	users[]->{
 	  ...,
 	  "logo": logo.asset->url

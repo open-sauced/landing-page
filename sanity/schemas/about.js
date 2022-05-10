@@ -45,8 +45,14 @@ export default {
       required: true,
     },
     {
-      title: 'Projects URL',
-      name: 'projectsUrl',
+      title: 'Projects Button Label',
+      name: 'projectsButtonLabel',
+      type: 'string',
+      required: true,
+    },
+    {
+      title: 'Projects Button URL',
+      name: 'projectsButtonUrl',
       type: 'url',
       required: true,
     },
