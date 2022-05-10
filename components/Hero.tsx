@@ -39,7 +39,7 @@ const Hero = ({ sanityData }: HeroProps) => {
           <Button
             asLink
             href={sanityData.projectsButtonUrl}
-            type="default"
+            type="secondary"
             endIcon={
               <svg width="0.6rem" height="0.6rem" fill="none" viewBox="8 8 8 8">
                 <path
