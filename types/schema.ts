@@ -92,11 +92,18 @@ export interface SanityAbout extends SanityDocument {
   CTAButtonURL?: string
 
   /**
-   * Projects URL — `url`
+   * Projects Button Label — `string`
    *
    *
    */
-  projectsUrl?: string
+  projectsButtonLabel?: string
+
+  /**
+   * Projects Button URL — `url`
+   *
+   *
+   */
+  projectsButtonUrl?: string
 
   /**
    * Users — `array`

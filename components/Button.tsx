@@ -15,11 +15,11 @@ const Button: React.FC<Props> = ({
   href,
 }) => {
   let styles =
-    'text-white font-bold bg-gray100 rounded-lg py-3 px-6 bg-opacity-40 uppercase text-[11px] leading-none flex items-center gap-2'
+    'font-bold bg-white rounded-lg py-3 px-6 bg-opacity-40 text-[11px] leading-none flex items-center gap-2'
 
   switch (type) {
     case 'primary':
-      styles = `${styles} bg-gray400 bg-opacity-100 normal-case text-[12px]`
+      styles = `${styles} text-white bg-gray400 bg-opacity-100 normal-case text-[12px]`
       break
     default:
     case 'default':

@@ -36,8 +36,26 @@ const Hero = ({ sanityData }: HeroProps) => {
           >
             {sanityData.CTAButtonLabel}
           </Button>
-
-          <a className='font-bold text-[12px]' href={sanityData.projectsUrl}>Explore Projects</a>
+          <Button
+            asLink
+            href={sanityData.projectsButtonUrl}
+            type="default"
+            endIcon={
+              <svg width="0.6rem" height="0.6rem" fill="none" viewBox="8 8 8 8">
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.5"
+                  d="M10.75 8.75L14.25 12L10.75 15.25"
+                ></path>
+              </svg>
+            }
+          >
+            {sanityData.projectsButtonLabel}
+            
+          </Button>
+          
         </div>
         
       </div>
