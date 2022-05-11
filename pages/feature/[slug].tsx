@@ -2,16 +2,20 @@ import Head from 'next/head'
 import Image from 'next/image'
 import React, { FC } from 'react'
 import { getFeaturePageDataBySlug, getHomePageData, getSEOData } from '../../lib/sanity'
-import { SanityFeature, SanitySeo } from '../../types/schema'
+import { SanityAbout, SanityFeature, SanitySeo } from '../../types/schema'
+import Button from '../../components/Button'
 
  interface FeaturePageProps{
    data: {
-     seoData: SanitySeo
+    homePageData: {
+      about: SanityAbout,
+    }
+     seoData: SanitySeo,
      featurePageData: SanityFeature
    }
  }
 
-const index:FC<FeaturePageProps> = ({data: {seoData, featurePageData}}) => {
+const index:FC<FeaturePageProps> = ({data: {seoData, featurePageData, homePageData}}) => {
   
   return (
     <>
@@ -42,27 +46,55 @@ const index:FC<FeaturePageProps> = ({data: {seoData, featurePageData}}) => {
         ></meta>
       </Head>
 
-      <div className=' max-w-6xl px-[10px] mx-auto bg-white ' >
-        <div className=' flex justify-center '>
-          <div className='mx-auto inline '>
-            <div className='rounded-full border-[4px] shadow-md   mx-auto my-[50px] border-gray50 flex flex-wrap justify-center items-center gap-[6px] py-[10px] px-[20px] text-gray50 '>
-              <Image width={58} height={58} src={featurePageData.previewImage as unknown as string} />
+      <div className=' mt-[10px] ml-[30px] font-bold text-[35px] text-gray150  hover:text-gray-900 '>
+        <a href="/">{'<'}</a>
+      </div>
 
-              <h1 className='font-bold text-[28px] ' >{featurePageData.title}</h1>
+      <div className="max-w-6xl mx-auto px-8 ">
+        <div className='flex justify-center mt-[20px] tablet:mt-[60px] mb-[60px]  '>
+          <div className='rounded-full inline-block mx-auto shadow-md text-white bg-gradient-to-r  from-darkOrange to-lightOrange '>
+
+            <div className=' flex justify-center gap-4 px-[30px] py-[12px] '>
+                <Image className='inline' width={58} height={58} src={featurePageData.previewImage as unknown as string} />
+
+                <h1 className=' inline font-bold text-[28px] ' >{featurePageData.title}</h1>
+
             </div>
           </div>
         </div>
-
-        <div className=' max-w-[912px] mx-auto border-white border-[8px] shadow-2xl '>
+  
+        <div className=' max-w-[912px] mx-auto border-gray150 border-[8px] shadow-2xl '>
           <video className='w-full'  controls autoPlay src={featurePageData.previewVideo as unknown as string}></video>
         </div>
 
-        <div className='max-w-[200px] bg-gray150 h-[2px] mx-auto my-[50px] '></div>
+        <div className='max-w-[200px] bg-gray120 h-[2px] mx-auto my-[50px] '></div>
 
         <p className='text-[16px] text-gray150 mx-auto text-center max-w-[900px] '>{featurePageData.description}</p>
-      </div>
+        
+        <div className=' flex justify-center mt-[20px] mb-[10px]'>
+          <Button
+              asLink
+              href={homePageData.about.CTAButtonURL as unknown as string}
+              type="secondary"
+              endIcon={
+                <svg width="0.6rem" height="0.6rem" fill="none" viewBox="8 8 8 8">
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="1.5"
+                    d="M10.75 8.75L14.25 12L10.75 15.25"
+                  ></path>
+                </svg>
+              }
+            >
+              {homePageData.about.CTAButtonLabel}
+              
+            </Button>
+        </div>
 
-    </>
+      </div>
+  </>
   )
 }
 
@@ -86,12 +118,13 @@ export async function getStaticPaths() {
   
   export async function getStaticProps(context: any) {
     const slug = context.params.slug;
-    const [seoData, featurePageData] = await Promise.all([
+    const [homePageData, seoData, featurePageData] = await Promise.all([
+      getHomePageData(),
       getSEOData(),
-      getFeaturePageDataBySlug(slug)
+      getFeaturePageDataBySlug(slug),
     ])
   
-    const data = { featurePageData, seoData }
+    const data = {homePageData, featurePageData, seoData }
   
     return {
       props: {

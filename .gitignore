@@ -21,7 +21,7 @@ node_modules
 *.pem
 
 # sanity
-/sanity/dist
+/sanity/dist/
 
 # debug
 npm-debug.log*
