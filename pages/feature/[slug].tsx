@@ -4,6 +4,7 @@ import React, { FC } from 'react'
 import { getFeaturePageDataBySlug, getHomePageData, getSEOData } from '../../lib/sanity'
 import { SanityAbout, SanityFeature, SanitySeo } from '../../types/schema'
 import Button from '../../components/Button'
+import Link from 'next/link'
 
  interface FeaturePageProps{
    data: {
@@ -47,7 +48,7 @@ const index:FC<FeaturePageProps> = ({data: {seoData, featurePageData, homePageDa
       </Head>
 
       <div className=' mt-[10px] ml-[30px] font-bold text-[35px] text-gray150  hover:text-gray-900 '>
-        <a href="/">{'<'}</a>
+        <Link href={'/'} >{'<'}</Link>
       </div>
 
       <div className="max-w-6xl mx-auto px-8 ">
