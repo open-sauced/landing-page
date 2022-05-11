@@ -19,6 +19,7 @@ module.exports = {
       colors: {
         gray50: '#C8C8C8',
         gray100: '#f6f5f0',
+        gray120: '#C5C5C5',
         gray150: '#8C8C8C',
         gray200: '#E5E5E5',
         gray400: '#333333',
@@ -28,6 +29,8 @@ module.exports = {
         lightBlue: '#308CE0',
         darkBlue: '#3452BC',
         twitterBlue: '#0EA0DA',
+        lightOrange: '#F18A21',
+        darkOrange: '#ED5332',
         
       },
       fontFamily: {
