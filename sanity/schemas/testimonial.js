@@ -10,6 +10,12 @@ export default {
         name: 'twitterUsername',
       },
       {
+        type: 'string',
+        required: true,
+        title: 'Twitter Name',
+        name: 'twitterName',
+      },
+      {
         type: 'image',
         required: true,
         title: 'User Image',
@@ -26,6 +32,12 @@ export default {
         required: true,
         title: 'Testimonial',
         name: 'testimonial',
+      },
+      {
+        type: 'url',
+        required: true,
+        title: 'Tweet Link',
+        name: 'tweetLink',
       }
     ],
   }

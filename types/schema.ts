@@ -355,6 +355,13 @@ export interface SanityTestimonial extends SanityDocument {
   twitterUsername?: string
 
   /**
+   * Twitter Name — `string`
+   *
+   *
+   */
+  twitterName?: string
+
+  /**
    * User Image — `image`
    *
    *
@@ -379,6 +386,13 @@ export interface SanityTestimonial extends SanityDocument {
    *
    */
   testimonial?: string
+
+  /**
+   * Tweet Link — `url`
+   *
+   *
+   */
+  tweetLink?: string
 }
 
 export type Documents =
