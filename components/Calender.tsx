@@ -16,7 +16,7 @@ const Calender: FC<CalenderProps> = ({calender: {title, subtitle, calenderImage}
 
           <p className=' text-[18px] mt-[50px] mb-[20px] '> {subtitle} </p>
       </div>
-      <div className=' bg-gradient-to-r relative  from-lightBlue to-darkBlue px-8 tablet:px-28 py-[50px] tablet:pb-[350px] '>
+      <div className=' bg-gradient-to-r relative  from-darkOrange to-lightOrange px-8 tablet:px-28 py-[50px] tablet:pb-[350px] '>
             <div className=' absolute top-0 scale-[1.16]  left-0  ' >
                 <Image   src={drip_calendar} loading="eager" alt="" />
             </div> 

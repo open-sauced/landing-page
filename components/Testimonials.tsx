@@ -9,7 +9,7 @@ interface TestimonialsProps{
 const Testimonials: FC<TestimonialsProps> = ({testimonial}) => {
   return (
     <div className=' py-28 '>
-        <h1 className=' font-bold text-[38px] text-center text-gray400 '>The value of <span className='text-blueAccent'>open source.</span></h1>
+        <h1 className=' font-bold text-[38px] text-center text-gray400 '>The value of <span className='text-lightOrange'>open source.</span></h1>
 
         <div className=' grid mobile:grid-cols-1 tablet:grid-cols-3 gap-[10px] py-20 '>
             {
