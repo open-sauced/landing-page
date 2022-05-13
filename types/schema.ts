@@ -395,6 +395,41 @@ export interface SanityTestimonial extends SanityDocument {
   tweetLink?: string
 }
 
+/**
+ * Footer
+ *
+ *
+ */
+export interface SanityFooter extends SanityDocument {
+  _type: 'footer'
+
+  /**
+   * Label — `string`
+   *
+   *
+   */
+  label?: string
+
+  /**
+   * Url — `url`
+   *
+   *
+   */
+  url?: string
+
+  /**
+   * Icon — `image`
+   *
+   *
+   */
+  icon?: {
+    _type: 'image'
+    asset: SanityReference<SanityImageAsset>
+    crop?: SanityImageCrop
+    hotspot?: SanityImageHotspot
+  }
+}
+
 export type Documents =
   | SanityAbout
   | SanityUser
@@ -404,3 +439,4 @@ export type Documents =
   | SanityCalender
   | SanityFeature
   | SanityTestimonial
+  | SanityFooter

@@ -9,6 +9,7 @@ import {
   SanityAbout,
   SanityCalender,
   SanityFeature,
+  SanityFooter,
   SanityGithubMock,
   SanityNavigation,
   SanitySeo,
@@ -30,6 +31,7 @@ interface HomePageProps {
       calender: SanityCalender,
       feature: SanityFeature,
       testimonial: SanityTestimonial,
+      footer: SanityFooter,
     }
     seoData: SanitySeo,
 
@@ -89,7 +91,7 @@ const Home: NextPage<HomePageProps> = ({ data: { homePageData, seoData, } }) => 
 
         <Testimonials testimonial={homePageData.testimonial as unknown as SanityTestimonial[] || []} />
 
-        <Footer/>
+        <Footer footer={homePageData.footer as unknown as SanityFooter[] || []} />
       </div>
     </>
   )

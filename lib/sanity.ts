@@ -1,5 +1,5 @@
 import sanityClient from '@sanity/client'
-import { SanityAbout, SanityCalender, SanityFeature, SanityGithubMock, SanitySeo, SanityTestimonial } from '../types/schema'
+import { SanityAbout, SanityCalender, SanityFeature, SanityGithubMock, SanitySeo, SanityTestimonial, SanityFooter } from '../types/schema'
 
 const client = sanityClient({
   projectId: 'r7m53vrk',
@@ -16,7 +16,8 @@ about: SanityAbout,
 githubMock: SanityGithubMock,
 calender: SanityCalender,
 feature: SanityFeature[],
-testimonial: SanityTestimonial[]
+testimonial: SanityTestimonial[],
+footer: SanityFooter[]
 
 }> = async () => {
   const aboutData = await client.fetch(
@@ -59,6 +60,14 @@ testimonial: SanityTestimonial[]
     "userImage": userImage.asset->url,
   }`);
 
+  const getFooterData: SanityFooter[] = await client.fetch(`*[_type == 'footer'] | order(_createdAt asc) {
+    ...,
+    "icon": icon.asset->url,
+  }`);
+  
+
+
+
 
   return {
     about: aboutData,
@@ -66,6 +75,8 @@ testimonial: SanityTestimonial[]
     calender: getCalenderData,
     feature: getFeatureData,
     testimonial: getTestimonialData,
+    footer: getFooterData
+
   }
 }
 
