@@ -20,6 +20,7 @@ import Calender from '../components/Calender'
 import Features from '../components/Features'
 import GradientBackground from '../components/GradientBackground'
 import Testimonials from '../components/Testimonials'
+import Footer from '../components/Footer'
 
 interface HomePageProps {
   data: {
@@ -87,6 +88,8 @@ const Home: NextPage<HomePageProps> = ({ data: { homePageData, seoData, } }) => 
         </GradientBackground>
 
         <Testimonials testimonial={homePageData.testimonial as unknown as SanityTestimonial[] || []} />
+
+        <Footer/>
       </div>
     </>
   )
