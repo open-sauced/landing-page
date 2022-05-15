@@ -13,7 +13,7 @@ interface NavigationProps {
 const Navigation = ({ navigationItems }: NavigationProps) => {
   return (
     <header className="flex justify-between pt-[20px] items-center">
-      <div className="h-[26px] w-[150px]">
+      <div className="h-[26px] w-[150px] cursor-pointer">
         <Link href="/">
           <Image src={Logo} layout="responsive" alt="" />
         </Link>
