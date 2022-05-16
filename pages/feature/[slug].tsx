@@ -6,6 +6,7 @@ import { SanityAbout, SanityFeature, SanityNavigation, SanitySeo } from '../../t
 import Link from 'next/link'
 import Navigation from '../../components/Header'
 import BackgroundDrip from '../../components/BackgroundDrip'
+import ReactPlayer from 'react-player'
 
 
  interface FeaturePageProps{
@@ -56,8 +57,8 @@ const index:FC<FeaturePageProps> = ({data: {seoData, featurePageData, homePageDa
           <Navigation navigationItems={homePageData.about.navigationURLs as unknown as SanityNavigation[] || [] } />
 
           <div className=' max-w-[912px] min-h-screen mx-auto '>
-            <div className='max-w-[912px] mt-[100px] mb-[50px] mx-auto border-white border-[8px] shadow-2xl '>
-              <video className='w-full'  controls autoPlay src={featurePageData.previewVideo as unknown as string}></video>
+            <div className='mt-[100px] mb-[50px] mx-auto border-white border-[8px] shadow-2xl '>
+              <ReactPlayer width={"100%"} controls className='w-full h-auto ' url={featurePageData.previewVideoUrl as unknown as string} />
             </div>
 
             <div className='flex gap-2' >
