@@ -2,19 +2,23 @@ import Head from 'next/head'
 import Image from 'next/image'
 import React, { FC } from 'react'
 import { getFeaturePageDataBySlug, getHomePageData, getSEOData } from '../../lib/sanity'
-import { SanityAbout, SanityFeature, SanityNavigation, SanitySeo } from '../../types/schema'
+import { SanityAbout, SanityFeature, SanityFooter, SanityNavigation, SanitySeo } from '../../types/schema'
 import Link from 'next/link'
 import Navigation from '../../components/Header'
 import BackgroundDrip from '../../components/BackgroundDrip'
+import ReactPlayer from 'react-player'
+import Footer from '../../components/Footer'
 
 
  interface FeaturePageProps{
    data: {
     homePageData: {
       about: SanityAbout,
+      footer: SanityFooter,
     }
      seoData: SanitySeo,
-     featurePageData: SanityFeature
+     featurePageData: SanityFeature,
+     
    }
  }
 
@@ -55,9 +59,9 @@ const index:FC<FeaturePageProps> = ({data: {seoData, featurePageData, homePageDa
         <BackgroundDrip>
           <Navigation navigationItems={homePageData.about.navigationURLs as unknown as SanityNavigation[] || [] } />
 
-          <div className=' max-w-[912px] min-h-screen mx-auto '>
-            <div className='max-w-[912px] mt-[100px] mb-[50px] mx-auto border-white border-[8px] shadow-2xl '>
-              <video className='w-full'  controls autoPlay src={featurePageData.previewVideo as unknown as string}></video>
+          <div className=' max-w-[912px]  mx-auto '>
+            <div className='mt-[100px] mb-[50px] mx-auto border-white border-[8px] shadow-2xl '>
+              <ReactPlayer width={"100%"} controls className='w-full h-auto ' url={featurePageData.previewVideoUrl as unknown as string} />
             </div>
 
             <div className='flex gap-2' >
@@ -68,13 +72,19 @@ const index:FC<FeaturePageProps> = ({data: {seoData, featurePageData, homePageDa
               <h1 className='text-gray300 text-[18px] font-bold' >{featurePageData.title}</h1>
             </div>
 
-            <p className='text-[16px] font-semibold py-[10px] text-gray150 mx-auto'>{featurePageData.description}</p>
+            <div className=' my-[5px] py-[10px] pr-[10px] bg-white bg-opacity-[80%] rounded-r-md '>
+              <p className='text-[16px] font-semibold text-gray150 mx-auto'>{featurePageData.description}</p>
+            </div>
 
             <Link href={homePageData.about.CTAButtonURL as unknown as string} >
               <a className='font-bold text-[14px] text-gray300'>{homePageData.about.CTAButtonLabel+' >'}</a>
             </Link>
           </div>
         </BackgroundDrip>
+
+        <footer className='mt-[100px]' >
+          <Footer footer={homePageData.footer as unknown as SanityFooter[] || []} />
+        </footer>
 
       </div>
   </>
