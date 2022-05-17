@@ -36,10 +36,10 @@ export default {
         name: 'previewImage',
       },
       {
-        type: 'file',
+        type: 'url',
         required: true,
-        title: 'Preview Video',
-        name: 'previewVideo',
+        title: 'Preview Video Url',
+        name: 'previewVideoUrl',
       },
       {
         type: 'string',

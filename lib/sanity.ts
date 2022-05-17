@@ -97,7 +97,6 @@ export const getFeaturePageDataBySlug: ( slug: string  ) => Promise<SanityFeatur
   const getFeatureData: SanityFeature = await client.fetch(`*[_type == 'feature' && slug.current == '${slug}'][0] {
     ...,
     "previewImage": previewImage.asset->url,
-    "previewVideo": previewVideo.asset->url
   }`);
 
   return getFeatureData;
