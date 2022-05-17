@@ -2,20 +2,23 @@ import Head from 'next/head'
 import Image from 'next/image'
 import React, { FC } from 'react'
 import { getFeaturePageDataBySlug, getHomePageData, getSEOData } from '../../lib/sanity'
-import { SanityAbout, SanityFeature, SanityNavigation, SanitySeo } from '../../types/schema'
+import { SanityAbout, SanityFeature, SanityFooter, SanityNavigation, SanitySeo } from '../../types/schema'
 import Link from 'next/link'
 import Navigation from '../../components/Header'
 import BackgroundDrip from '../../components/BackgroundDrip'
 import ReactPlayer from 'react-player'
+import Footer from '../../components/Footer'
 
 
  interface FeaturePageProps{
    data: {
     homePageData: {
       about: SanityAbout,
+      footer: SanityFooter,
     }
      seoData: SanitySeo,
-     featurePageData: SanityFeature
+     featurePageData: SanityFeature,
+     
    }
  }
 
@@ -56,7 +59,7 @@ const index:FC<FeaturePageProps> = ({data: {seoData, featurePageData, homePageDa
         <BackgroundDrip>
           <Navigation navigationItems={homePageData.about.navigationURLs as unknown as SanityNavigation[] || [] } />
 
-          <div className=' max-w-[912px] min-h-screen mx-auto '>
+          <div className=' max-w-[912px]  mx-auto '>
             <div className='mt-[100px] mb-[50px] mx-auto border-white border-[8px] shadow-2xl '>
               <ReactPlayer width={"100%"} controls className='w-full h-auto ' url={featurePageData.previewVideoUrl as unknown as string} />
             </div>
@@ -78,6 +81,10 @@ const index:FC<FeaturePageProps> = ({data: {seoData, featurePageData, homePageDa
             </Link>
           </div>
         </BackgroundDrip>
+
+        <footer className='mt-[100px]' >
+          <Footer footer={homePageData.footer as unknown as SanityFooter[] || []} />
+        </footer>
 
       </div>
   </>
