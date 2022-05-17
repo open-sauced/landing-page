@@ -69,7 +69,9 @@ const index:FC<FeaturePageProps> = ({data: {seoData, featurePageData, homePageDa
               <h1 className='text-gray300 text-[18px] font-bold' >{featurePageData.title}</h1>
             </div>
 
-            <p className='text-[16px] font-semibold py-[10px] text-gray150 mx-auto'>{featurePageData.description}</p>
+            <div className=' my-[5px] py-[10px] pr-[10px] bg-white bg-opacity-[80%] rounded-r-md '>
+              <p className='text-[16px] font-semibold text-gray150 mx-auto'>{featurePageData.description}</p>
+            </div>
 
             <Link href={homePageData.about.CTAButtonURL as unknown as string} >
               <a className='font-bold text-[14px] text-gray300'>{homePageData.about.CTAButtonLabel+' >'}</a>
