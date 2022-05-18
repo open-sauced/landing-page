@@ -325,11 +325,11 @@ export interface SanityFeature extends SanityDocument {
   }
 
   /**
-   * Preview Video — `file`
+   * Preview Video Url — `url`
    *
    *
    */
-  previewVideo?: { _type: 'file'; asset: SanityReference<any> }
+  previewVideoUrl?: string
 
   /**
    * Description — `string`
