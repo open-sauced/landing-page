@@ -9,16 +9,14 @@ import BackgroundDrip from '../../components/BackgroundDrip'
 import ReactPlayer from 'react-player'
 import Footer from '../../components/Footer'
 
-
  interface FeaturePageProps{
    data: {
     homePageData: {
       about: SanityAbout,
       footer: SanityFooter,
     }
-     seoData: SanitySeo,
-     featurePageData: SanityFeature,
-     
+    seoData: SanitySeo,
+    featurePageData: SanityFeature,
    }
  }
 
@@ -85,7 +83,6 @@ const index:FC<FeaturePageProps> = ({data: {seoData, featurePageData, homePageDa
         <footer className='mt-[100px]' >
           <Footer footer={homePageData.footer as unknown as SanityFooter[] || []} />
         </footer>
-
       </div>
   </>
   )
