@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import Image from 'next/image'
 import Logo from '../public/logo.svg'
 import Button from './Button'
@@ -12,8 +13,10 @@ interface NavigationProps {
 const Navigation = ({ navigationItems }: NavigationProps) => {
   return (
     <header className="flex justify-between pt-[20px] items-center">
-      <div className="h-[26px] w-[150px]">
-        <Image src={Logo} layout="responsive" alt="" />
+      <div className="h-[26px] w-[150px] cursor-pointer">
+        <Link href="/">
+          <Image src={Logo} layout="responsive" alt="" />
+        </Link>
       </div>
 
       <DesktopNavigation navigationItems={navigationItems} />
