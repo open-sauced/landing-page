@@ -83,10 +83,6 @@ const index:FC<FeaturePageProps> = ({data: {seoData, featurePageData, homePageDa
         <footer className='mt-[100px]' >
           <Footer footer={homePageData.footer as unknown as SanityFooter[] || []} />
         </footer>
-<<<<<<< HEAD
-
-=======
->>>>>>> main
       </div>
   </>
   )
