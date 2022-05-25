@@ -15,7 +15,9 @@ const Navigation = ({ navigationItems }: NavigationProps) => {
     <header className="flex justify-between pt-[20px] items-center">
       <div className="h-[26px] w-[150px] cursor-pointer">
         <Link href="/">
-          <Image src={Logo} layout="responsive" alt="" />
+          <a>
+            <Image src={Logo} layout="responsive" alt="" />
+          </a>
         </Link>
       </div>
 
