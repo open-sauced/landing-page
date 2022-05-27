@@ -20,12 +20,12 @@ const Feature:FC<Props> = ({feature: {title, subtitle, previewImage, slug }, ind
           <div className=' text-white flex-[2] '>
             <div className='flex items-center gap-4 '>
               <img className='w-auto h-[50px] tablet:hidden ' src={previewImage as unknown as string}/>
-              <h1 className=' font-bold text-[30px] tablet:text-[36px]'>{title}</h1>
+              <h1 className=' font-bold text-[38px] leading-[42px] tracking-[-3%] tablet:text-[36px]'>{title}</h1>
             </div>
-            <p className=' text-[16px] tablet:text-[18px] py-[45px] '>
+            <p className=' text-[18px] leading-[26px] tracking-[-2%] tablet:text-[18px] py-[45px] '>
               {subtitle}
             </p>
-            <div className='font-bold text-[16px] tablet:text-[18px] self-center '>
+            <div className='font-bold text-[16px] tracking-[-4%] tablet:text-[18px] self-center '>
               <Link href={"/feature/"+slug?.current as unknown as string}>Learn more &gt; </Link>
             </div>
           </div>

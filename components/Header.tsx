@@ -16,7 +16,7 @@ const Navigation = ({ navigationItems }: NavigationProps) => {
       <div className="h-[26px] w-[150px] cursor-pointer">
         <Link href="/">
           <a>
-            <Image src={Logo} layout="responsive" alt="" />
+            <Image src={Logo} layout="responsive" alt="" /> 
           </a>
         </Link>
       </div>
@@ -40,7 +40,7 @@ const ExternalLink = ({ href, label }: ExternalLinkProps) => {
       href={href}
       target="_blank"
       rel="noreferrer"
-      className="font-bold text-white"
+      className="font-semibold text-white"
     >
       {label}
     </a>
@@ -49,7 +49,7 @@ const ExternalLink = ({ href, label }: ExternalLinkProps) => {
 
 const DesktopNavigation = ({ navigationItems }: NavigationProps) => {
   return (
-    <div className="text-sm items-center hidden tablet:flex">
+    <div className="text-[14px] tracking-[-3%] items-center hidden tablet:flex">
       <nav>
         <ul className="flex gap-[46px]">
           {navigationItems.map((link) => (
@@ -63,7 +63,7 @@ const DesktopNavigation = ({ navigationItems }: NavigationProps) => {
         </ul>
       </nav>
 
-      <div className="pl-[100px]">
+      <div className="pl-[100px] ">
         <a href="https://app.opensauced.pizza/">
           <Button>Login</Button>
         </a>

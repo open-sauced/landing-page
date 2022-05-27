@@ -12,9 +12,9 @@ const Calender: FC<CalenderProps> = ({calender: {title, subtitle, calenderImage}
   return (
     <section className=' mx-auto ' >
       <div className=' z-10 relative pt-[100px] max-w-6xl px-8 tablet:px-40  text-center mx-auto text-gray400 ' >
-          <h1 className=' text-[38px] font-bold ' >{title}</h1>
+          <h1 className=' text-[38px] leading-[42px] tracking-[-3%] font-bold ' >{title}</h1>
 
-          <p className=' text-[18px] mt-[50px] mb-[20px] '> {subtitle} </p>
+          <p className=' text-[18px] leading-[26px] tracking-[-2%] mt-[50px] mb-[20px] '> {subtitle} </p>
       </div>
       <div className=' bg-gradient-to-r relative  from-darkOrange to-lightOrange px-8 tablet:px-28 py-[50px] tablet:pb-[350px] '>
             <div className=' absolute top-0 scale-[1.16]  left-0  ' >

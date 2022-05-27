@@ -15,7 +15,7 @@ const Button: React.FC<Props> = ({
   href,
 }) => {
   let styles =
-    'text-white font-bold bg-white rounded-lg py-3 px-6 bg-opacity-40 uppercase text-[11px] leading-none flex items-center gap-2'
+    'text-white font-bold bg-white rounded-lg py-3 px-6 bg-opacity-40 uppercase text-[12px] tracking-[-4%] leading-none flex items-center gap-2'
 
   switch (type) {
     case 'primary':

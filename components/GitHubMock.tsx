@@ -23,7 +23,7 @@ const GitHubMock: FC<GitHubMockProps> = ( { githubMockData: {title, subtitle, mo
 
             <div className='bg-gray400 w-[248px] h-[1px] mb-12' ></div>
 
-            <p className=' text-[18px] '  > {subtitle} </p>
+            <p className=' text-[18px] leading-[26px] tracking-[-2%] text-center '  > {subtitle} </p>
             
           </div>
           
