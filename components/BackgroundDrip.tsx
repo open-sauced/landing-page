@@ -1,6 +1,5 @@
 import React from 'react'
 import Image from 'next/image'
-import dripGraphic from '../public/background-drip-mirrored.svg'
 import dripGraphic2 from '../public/background-drip-mirrored2.svg'
 
 const BackgroundDrip: React.FC = ({ children }) => {

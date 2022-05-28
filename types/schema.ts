@@ -246,6 +246,13 @@ export interface SanityGithubMock extends SanityDocument {
     crop?: SanityImageCrop
     hotspot?: SanityImageHotspot
   }
+
+  /**
+   * Title (Rich Text) — `array`
+   *
+   *
+   */
+  titleRich?: Array<SanityKeyed<SanityBlock>>
 }
 
 /**
@@ -281,6 +288,13 @@ export interface SanityCalender extends SanityDocument {
     crop?: SanityImageCrop
     hotspot?: SanityImageHotspot
   }
+
+  /**
+   * Title (Rich Text) — `array`
+   *
+   *
+   */
+  titleRich?: Array<SanityKeyed<SanityBlock>>
 }
 
 /**

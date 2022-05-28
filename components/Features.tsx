@@ -1,13 +1,14 @@
 import React, { FC } from 'react'
 import { SanityFeature } from '../types/schema'
 import Feature from './Feature'
-
+import {PortableText} from '@portabletext/react'
 interface Props{
   features: SanityFeature[]
 }
 
 const Features: FC<Props> = ({features}) => {
 
+  
   return (
     <div>
         {

@@ -23,6 +23,12 @@ export default {
         title: 'Calender Image',
         name: 'calenderImage',
       },
+      {
+        title: 'Title (Rich Text)', 
+        name: 'titleRich',
+        type: 'array', 
+        of: [{type: 'block'}]
+      }
     ],
   }
   

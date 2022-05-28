@@ -10,10 +10,10 @@ const Hero = ({ sanityData }: HeroProps) => {
   return (
     <main className="pt-[88px] tablet:pt-[186px] tablet:grid grid-cols-[1.5fr_1fr] gap-[20px] laptop:gap-[0px]">
       <div className="flex flex-col text-gray400 gap-[32px] tablet:gap-[40px] items-start">
-        <h2 className="font-bold text-[36px] laptop:text-[48px] leading-[1.2]">
+        <h1 className="font-bold text-[46px] tracking-[-5%] laptop:text-[48px] leading-[54px]">
           {sanityData.title}
-        </h2>
-        <p className="text-[14px] leading-loose font-secondary">
+        </h1>
+        <p className="text-[16px] tracking-[-2%] leading-[26px] font-secondary">
           {sanityData.subtitle}
         </p>
 
