@@ -23,6 +23,12 @@ export default {
         title: 'Mock Image',
         name: 'mockimage',
       },
+      {
+        title: 'Title (Rich Text)', 
+        name: 'titleRich',
+        type: 'array', 
+        of: [{type: 'block'}]
+      }
     ],
   }
   

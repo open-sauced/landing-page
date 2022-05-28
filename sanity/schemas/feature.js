@@ -47,7 +47,6 @@ export default {
         title: 'Description',
         name: 'description',
       },
-
     ],
   }
   

@@ -28,3 +28,10 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.boldToGrad > p > strong {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-lightOrange to-darkOrange 
+}
+
+
+
