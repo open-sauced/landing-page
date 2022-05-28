@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import React, { FC } from 'react'
 import drip_calendar from '../public/dripGraphic_calendar_vector.svg'
-import drip_calendar2 from '../public/boom.svg'
 import { SanityCalender } from '../types/schema'
 import {PortableText} from '@portabletext/react'
 

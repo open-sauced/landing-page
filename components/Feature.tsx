@@ -16,6 +16,7 @@ const Feature:FC<Props> = ({feature: {title, subtitle, previewImage, slug }, ind
         <div className={` flex px-8 gap-20 py-24 items-center  ${index % 2 == 1 ? 'tablet:flex-row-reverse' : 'tablet:flex-row'  } `} >
           <div className=' hidden tablet:block flex-[1] '>
             <img src={previewImage as unknown as string}/>
+            <img className='mt-[15px]'  src="/shadow.svg" alt="" />
           </div>
           <div className=' text-white flex-[2] '>
             <div className='flex items-center gap-4 '>
