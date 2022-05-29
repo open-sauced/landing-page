@@ -22,6 +22,7 @@ const Feature:FC<Props> = ({feature: {title, subtitle, previewImage, slug }, ind
           <div className=' text-white flex-[2] '>
             <div className='flex items-center gap-4 '>
               <img className='w-auto h-[50px] tablet:hidden ' src={previewImage as unknown as string}/>
+
               <h1 className=' font-bold text-[28px] leading-[30px] tablet:leading-[42px] tracking-[-3%] tablet:text-[36px]'>{title}</h1>
             </div>
 
