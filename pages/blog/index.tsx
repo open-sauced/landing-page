@@ -83,15 +83,15 @@ const index: NextPage<BlogPageProps> = ({ data: {seoData, homePageData} }) => {
           <FaPizzaSlice size={25} className="text-gray-800"/>
           <h6 className='font-semibold text-[25px] text-gray-800  '>Saucy blog</h6>
         </div>
-        <div className="flex gap-x-4">
+        <div className="flex flex-col tablet:flex-row gap-x-4 gap-y-10">
           {
           posts.map( post => (
-            <div key={post} className="w-[440px]">
+            <div key={post} className="flex-1">
               <div className="rounded-[15px] bg-gray-100 w-full h-[215px]">
               {/* Cover */}
               </div>
               <div className='mt-[20px]'>
-                <div className='flex gap-[8px] items-center mt-[50px] mb-[15px]'>
+                <div className='flex gap-[8px] items-center mt-[20px] tablet:mt-[50px] mb-[15px]'>
                   <RiHashtag size={18}/>
                   {
                     topics.map( ({topic, id}) => (
@@ -106,19 +106,19 @@ const index: NextPage<BlogPageProps> = ({ data: {seoData, homePageData} }) => {
 
                 <h6 className='font-bold text-[17px] text-gray-700'>Lorem ipsum dolor sit amet consectetur iciendis, omniaudantium quas!</h6>
                 
-                <div className='flex items-center gap-x-4 mt-[5px]'>
-                  <div className='flex items-center gap-x-[5px] mt-[5px] mb-[15px]'>
+                <div className='flex items-center gap-x-4 mt-[5px] mb-[15px]'>
+                  <div className='flex items-center gap-x-[5px]'>
                     <BiTime size={18} className="text-gray-600"/>
                     <p className='text-gray-600 font-semibold text-[14px] '>2 mins read</p>
                   </div>
 
-                  <div className='flex items-center gap-x-[5px] mt-[5px] mb-[15px]'>
+                  <div className='flex items-center gap-x-[5px]'>
                     <BiUserCircle size={18} className="text-gray-600"/>
                     <p className='text-gray-600 font-semibold text-[14px]'>David</p>
                   </div>
                 </div>
                 
-                <p className='text-[18px] text-gray-700 mt-[30px]'>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde
+                <p className='text-[18px] text-gray-700 mt-[10px] tablet:mt-[30px]'>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde
                 </p>
               </div>
             </div>
