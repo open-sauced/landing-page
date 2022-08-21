@@ -13,6 +13,7 @@ import calender from './calender'
 import feature from './feature'
 import testimonial from './testimonial'
 import footer from './footer'
+import saucyBlog from './saucyBlog'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -20,5 +21,5 @@ export default createSchema({
   name: 'default',
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
-  types: schemaTypes.concat([about, user, navigation, seo, githubMock, calender, feature, testimonial, footer]),
+  types: schemaTypes.concat([about, user, navigation, seo, githubMock, calender, feature, testimonial, footer, saucyBlog]),
 })

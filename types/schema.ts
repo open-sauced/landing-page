@@ -444,6 +444,90 @@ export interface SanityFooter extends SanityDocument {
   }
 }
 
+/**
+ * Saucy Blog
+ *
+ *
+ */
+export interface SanitySaucyBlog extends SanityDocument {
+  _type: 'saucyBlog'
+
+  /**
+   * Is it native blog? — `boolean`
+   *
+   *
+   */
+  isNative?: boolean
+
+  /**
+   * Title — `string`
+   *
+   *
+   */
+  title?: string
+
+  /**
+   * Summary — `string`
+   *
+   *
+   */
+  summary?: string
+
+  /**
+   * Author — `string`
+   *
+   *
+   */
+  author?: string
+
+  /**
+   * Read Time — `number`
+   *
+   *
+   */
+  readTime?: number
+
+  /**
+   * Topic — `array`
+   *
+   *
+   */
+  topics?: Array<SanityKeyed<string>>
+
+  /**
+   * Slug — `slug`
+   *
+   *
+   */
+  slug?: { _type: 'slug'; current: string }
+
+  /**
+   * Cover Image — `image`
+   *
+   *
+   */
+  coverImage?: {
+    _type: 'image'
+    asset: SanityReference<SanityImageAsset>
+    crop?: SanityImageCrop
+    hotspot?: SanityImageHotspot
+  }
+
+  /**
+   * Blog Url — `url`
+   *
+   *
+   */
+  blogUrl?: string
+
+  /**
+   * Blog Content — `array`
+   *
+   *
+   */
+  blogContent?: Array<SanityKeyed<SanityBlock>>
+}
+
 export type Documents =
   | SanityAbout
   | SanityUser
@@ -454,3 +538,4 @@ export type Documents =
   | SanityFeature
   | SanityTestimonial
   | SanityFooter
+  | SanitySaucyBlog
