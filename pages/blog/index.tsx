@@ -95,7 +95,7 @@ const index: NextPage<BlogPageProps> = ({ data: {seoData, homePageData, saucyBlo
             <div key={_id} className="flex-1">
               <Link passHref href={getBlogLink(isNative, slug?.current, blogUrl )}>
                 <div className="rounded-[15px] w-full h-auto overflow-hidden cursor-pointer">
-                  <Image objectFit='cover' alt={title} width={1100} height={900} layout='responsive' src={coverImage}/>
+                  <Image objectFit='cover' alt={title} width={1100} height={900} layout='responsive' src={coverImage as unknown as string}/>
                 </div>
               </Link>
 
