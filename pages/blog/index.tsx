@@ -137,9 +137,9 @@ const index: NextPage<BlogPageProps> = ({ data: {seoData, homePageData} }) => {
             
             {
               posts.map( post => (
-                <div key={post} className='flex gap-x-[20px]'>
-                  <div className=' flex-1'>
-                    <div className="rounded-[15px] bg-gray-100 w-[450px] h-[240px]">
+                <div key={post} className='flex flex-col tablet:flex-row gap-x-[20px]'>
+                  <div className='flex-1'>
+                    <div className="rounded-[15px] bg-gray-100 min-h-[245px]">
                     {/* Cover */}
                     </div>
                     <div>
@@ -147,7 +147,7 @@ const index: NextPage<BlogPageProps> = ({ data: {seoData, homePageData} }) => {
                     </div>
                   </div>
 
-                  <div>
+                  <div className='flex-1 mt-[15px] tablet:mt-0'>
                     <h1 className='font-bold text-[20px] text-gray-700'>Lorem ipsum dolor sit amet consectetur iciendis, omniaudantium quas!</h1>
 
                     <div className='flex gap-[8px] items-center mt-[10px] mb-[20px]'>
