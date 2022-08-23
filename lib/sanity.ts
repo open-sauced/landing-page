@@ -114,12 +114,12 @@ export const getSaucyBlogs: () => Promise<SanitySaucyBlog> = async () => {
   return saucyBlog;
 }
 
-export const getBlogs: () => Promise<SanityBlog> = async () => {
+export const getBlogs: (limit: number) => Promise<SanityBlog> = async (limit: number=2) => {
   const saucyBlog: SanityBlog = await client.fetch(
     `*[_type == 'blog'] {
       ...,
       "coverImage": coverImage.asset->url,
-    }`);
+    }[0..${limit-1}]`);
 
   return saucyBlog;
 }

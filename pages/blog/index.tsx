@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import type { NextPage } from 'next'
 import { getBlogs, getHomePageData, getSaucyBlogs, getSEOData } from '../../lib/sanity'
 import Head from 'next/head'
@@ -21,16 +21,40 @@ interface BlogPageProps {
     }
     seoData: SanitySeo,
     saucyBlogs: SanitySaucyBlog[],
-    blogs: SanityBlog[],
   }
 }
 
-const index: NextPage<BlogPageProps> = ({ data: {seoData, homePageData, saucyBlogs, blogs} }) => {
+const Index: NextPage<BlogPageProps> = ({ data: {seoData, homePageData, saucyBlogs} }) => {
+  const [blogs, setBlogs] = useState<SanityBlog[] | []>([])
+  const [blogLimit, setBlogLimit] = useState(3);
+  const [loadingBlog, setLoadingBlog] = useState(false);
 
   const getBlogLink = (isNative: boolean = false, slug: string="", blogUrl: string=""): string => {
     const link = isNative ? `/blog/${slug}` : blogUrl
     return link;
   };
+  
+  useEffect(() => {
+    const fetchBlog = async() => {
+      try {
+        // const blogs = await getBlogs(blogLimit);
+        // setBlogs(blogs as unknown as SanityBlog[]);
+        setLoadingBlog(true);
+        await getBlogs(blogLimit).
+        then((blogs) =>
+          setBlogs(blogs as unknown as SanityBlog[]))
+          setLoadingBlog(false)
+      } catch (error) {
+        
+      }
+    } 
+    fetchBlog();
+  }, [blogLimit])
+  
+  const handleLoadMore = () => {
+    setBlogLimit(blogLimit+1)
+  }
+
 
   return (
     <>
@@ -134,6 +158,7 @@ const index: NextPage<BlogPageProps> = ({ data: {seoData, homePageData, saucyBlo
           </div>
           <div className="flex flex-col gap-y-6">
             {
+              blogs &&
               blogs.map( ({ _id, title, summary, author, readTime, topics, blogUrl, isNative, slug, coverImage }) => (
                 <div key={_id}>
                   <div className="flex flex-col tablet:flex-row gap-x-[20px]">
@@ -154,7 +179,7 @@ const index: NextPage<BlogPageProps> = ({ data: {seoData, homePageData, saucyBlo
                       <div className="flex gap-[8px] items-center mt-[10px] mb-[20px]">
                         <RiHashtag size={18}/>
                           {
-                            topics?.map( (topic, index) => (
+                            topics?.map( (topic: string, index: number) => (
                               <div key={topic+index+1} className="flex items-center gap-[5px] min-h-[6px]">
                                 <div className="w-[6px] h-[6px] bg-orange-600 rounded-full"></div>
 
@@ -191,11 +216,11 @@ const index: NextPage<BlogPageProps> = ({ data: {seoData, homePageData, saucyBlo
           </div>
         </div>
         <div className="flex justify-center my-[30px]">
-          <div className="flex gap-x-3 justify-center items-center h-[40px] w-[150px] cursor-pointer rounded-[20px] shadow-orange-600 shadow">
+          <div onClick={handleLoadMore} className="flex gap-x-3 justify-center items-center h-[40px] w-[150px] cursor-pointer rounded-[20px] shadow-orange-600 shadow">
             <div className="w-[20px] h-[20px] rounded-full">
               <Image alt='vector art' src={ellipseOrange}/>
             </div>
-            <p className="text-[15px] font-semibold text-gray-600">Load more</p>
+            <p className="text-[15px] font-semibold text-gray-600">{loadingBlog ? "Loading .." : "Load more"}</p>
           </div>
         </div>
       </div>
@@ -203,17 +228,16 @@ const index: NextPage<BlogPageProps> = ({ data: {seoData, homePageData, saucyBlo
   )
 }
 
-export default index
+export default Index
 
 export async function getStaticProps() {
-  const [seoData, homePageData, saucyBlogs, blogs] = await Promise.all([
+  const [seoData, homePageData, saucyBlogs] = await Promise.all([
     getSEOData(),
     getHomePageData(),
     getSaucyBlogs(),
-    getBlogs(),
   ])
 
-  const data = {seoData, homePageData, saucyBlogs, blogs}
+  const data = {seoData, homePageData, saucyBlogs}
 
   return {
     props: {
