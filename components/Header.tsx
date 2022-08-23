@@ -8,9 +8,10 @@ import { SanityNavigation } from '../types/schema'
 
 interface NavigationProps {
   navigationItems: SanityNavigation[]
+  variant?: string,
 }
 
-const Navigation = ({ navigationItems }: NavigationProps) => {
+const Navigation = ({ navigationItems, variant="white" }: NavigationProps) => {
   return (
     <header className="flex justify-between pt-[20px] items-center">
       <div className="h-[26px] w-[150px] cursor-pointer">
@@ -21,7 +22,7 @@ const Navigation = ({ navigationItems }: NavigationProps) => {
         </Link>
       </div>
 
-      <DesktopNavigation navigationItems={navigationItems} />
+      <DesktopNavigation variant={variant} navigationItems={navigationItems} />
       <MobileNavigation navigationItems={navigationItems} />
     </header>
   )
@@ -32,22 +33,24 @@ export default Navigation
 interface ExternalLinkProps {
   href: string
   label: string
+  variant?: string
 }
 
-const ExternalLink = ({ href, label }: ExternalLinkProps) => {
+const ExternalLink = ({ href, label, variant }: ExternalLinkProps) => {
+  const colorVariant = variant == 'grey' ? 'text-gray-700' : 'text-white'
   return (
     <a
       href={href}
       target="_blank"
       rel="noreferrer"
-      className="font-semibold text-white"
+      className={"font-semibold "+colorVariant}
     >
       {label}
     </a>
   )
 }
 
-const DesktopNavigation = ({ navigationItems }: NavigationProps) => {
+const DesktopNavigation = ({ navigationItems, variant="white" }: NavigationProps) => {
   return (
     <div className="text-[14px] tracking-[-3%] items-center hidden tablet:flex">
       <nav>
@@ -55,6 +58,7 @@ const DesktopNavigation = ({ navigationItems }: NavigationProps) => {
           {navigationItems.map((link) => (
             <li key={link.label}>
               <ExternalLink
+                variant={variant}
                 href={link.url as string}
                 label={link.label as string}
               />

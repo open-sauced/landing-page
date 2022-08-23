@@ -64,6 +64,7 @@ const index: NextPage<BlogPageProps> = ({ data: {seoData, homePageData, saucyBlo
         <BlogBackgroundDrip>
 
         <Navigation
+          variant='grey'
           navigationItems={
             homePageData.about.navigationURLs as unknown as SanityNavigation[]
           }
