@@ -114,12 +114,31 @@ export const getSaucyBlogs: () => Promise<SanitySaucyBlog> = async () => {
   return saucyBlog;
 }
 
-export const getBlogs: (limit: number) => Promise<SanityBlog> = async (limit: number=2) => {
-  const saucyBlog: SanityBlog = await client.fetch(
+export const getBlogs: (limit: number) => Promise<SanityBlog[]> = async (limit: number=2) => {
+  const saucyBlog: SanityBlog[] = await client.fetch(
     `*[_type == 'blog'] {
       ...,
       "coverImage": coverImage.asset->url,
     }[0..${limit-1}]`);
 
   return saucyBlog;
+}
+
+export const getAllBlogs: () => Promise<SanityBlog[]> = async () => {
+  const allBlogs: SanityBlog[] = await client.fetch(
+    `*[_type == 'blog'] {
+      ...,
+      "coverImage": coverImage.asset->url,
+    }`);
+
+  return allBlogs;
+}
+
+export const getBlogBySlug: ( slug: string  ) => Promise<SanityBlog> = async ( slug: string  ) => {
+  const getBlogData: SanityBlog = await client.fetch(`*[_type == 'blog' && slug.current == '${slug}'][0] {
+    ...,
+    "previewImage": previewImage.asset->url,
+    "previewVideo": previewVideo.asset->url
+  }`);
+  return getBlogData;
 }
