@@ -22,7 +22,7 @@ interface SingleBlogProps {
 
 const Index: NextPage<SingleBlogProps> = ({ data: {blog, seoData, homePageData} }) => {
   const {title, blogContent, coverImage, topics, author, _id, slug, summary} = blog;
-  const blogUrl = `http://localhost:3000/blog/${slug}`;
+  const blogUrl = `https://opensauced.pizza/blog/${slug}`;
 
   return (
     <>
