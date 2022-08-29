@@ -27,25 +27,25 @@ const Index: NextPage<SingleBlogProps> = ({ data: {blog, seoData, homePageData} 
   return (
     <>
       <Head>
-        <title>Open Sauced</title>
-        <meta name="title" content={seoData.title}></meta>
+        <title>Open Sauced | Blog</title>
+        <meta name="title" content={title}></meta>
         <meta name="description" content={summary} />
         <link rel="icon" href="/favicon.svg" />
 
         {/* <!-- Open Graph / Facebook --> */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content={blogUrl} />
-        <meta property="og:title" content={seoData.title} />
+        <meta property="og:title" content={title} />
         <meta property="og:description" content={summary} />
         <meta
           property="og:image"
-          content={seoData.image as unknown as string}
+          content={coverImage as unknown as string}
         />
 
         {/* <!-- Twitter --> */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content={blogUrl} />
-        <meta property="twitter:title" content={seoData.title} />
+        <meta property="twitter:title" content={title} />
         <meta property="twitter:description" content={summary} />
         <meta
           property="twitter:image"
