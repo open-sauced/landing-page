@@ -64,7 +64,7 @@ const Index: NextPage<SingleBlogProps> = ({ data: {blog, seoData, homePageData} 
         
           <h1 className="font-semibold text-[25px] text-gray-700 mt-[100px] mb-[20px] ">{title}</h1>
 
-          <div className="rounded-[15px] w-full h-[500px] overflow-hidden">
+          <div className="rounded-[15px] w-full max-h-[500px] overflow-hidden">
             <Image objectFit="cover" alt={title} width={1100} height={900} layout="responsive" src={coverImage as unknown as string}/>
           </div>
           <div className="flex gap-[8px] w-full flex-wrap items-center mt-[20px] tablet:mt-[20px] mb-[10px]">
@@ -85,7 +85,7 @@ const Index: NextPage<SingleBlogProps> = ({ data: {blog, seoData, homePageData} 
             <p className="text-gray-600 font-semibold text-[14px]">{author}</p>
           </div>
           <div>
-            <p className="text-[18px] cursor-pointer hidden laptop:block">
+            <p className="text-[18px] cursor-pointer">
               <PortableText value={blogContent as unknown as [] | []}/>
             </p>
           </div>
