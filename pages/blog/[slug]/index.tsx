@@ -6,9 +6,13 @@ import { PortableText } from '@portabletext/react';
 import BlogBackgroundDrip from '../../../components/BlogBackgroundDrip';
 import Head from 'next/head';
 import Image from 'next/image';
-import { BiUserCircle } from 'react-icons/bi';
+import { BiUserCircle,  } from 'react-icons/bi';
+import { BsTwitter, BsLinkedin } from 'react-icons/bs';
+import { FaHackerNewsSquare } from 'react-icons/fa';
 import { RiHashtag } from 'react-icons/ri';
 import Navigation from '../../../components/Header';
+import Link from 'next/link';
+import ellipseOrange from '../../../public/ellipseOrange.svg'
 
 interface SingleBlogProps {
   data: {
@@ -22,7 +26,7 @@ interface SingleBlogProps {
 
 const Index: NextPage<SingleBlogProps> = ({ data: {blog, seoData, homePageData} }) => {
   const {title, blogContent, coverImage, topics, author, _id, slug, summary} = blog;
-  const blogUrl = `https://opensauced.pizza/blog/${slug}`;
+  const blogUrl = `https://opensauced.pizza/blog/${slug?.current}`;
 
   return (
     <>
@@ -64,6 +68,27 @@ const Index: NextPage<SingleBlogProps> = ({ data: {blog, seoData, homePageData} 
         
           <h1 className="font-semibold text-[25px] text-gray-700 mt-[100px] mb-[20px] ">{title}</h1>
 
+          <div className='flex items-center gap-x-4 mb-[20px] justify-end'>
+            <Link href={`https://twitter.com/intent/tweet?text=Check out the blog! ${blogUrl}`}>
+              <a target="_blank" rel="noopener noreferrer">
+                <BsTwitter className='text-xl text-gray-500'/>
+              </a>
+            </Link>
+            <Link href={`https://twitter.com/intent/tweet?text=Check out the blog! ${blogUrl}`}>
+              <a target="_blank" rel="noopener noreferrer">
+                <BsLinkedin className='text-xl text-gray-500'/>
+              </a>
+            </Link>
+            <Link href={`https://twitter.com/intent/tweet?text=Check out the blog! ${blogUrl}`}>
+              <a target="_blank" rel="noopener noreferrer">
+                <FaHackerNewsSquare className='text-xl text-gray-500'/>
+              </a>
+            </Link>
+          <div>
+
+          </div>
+          </div>
+
           <div className="rounded-[15px] w-full max-h-[500px] overflow-hidden">
             <Image objectFit="cover" alt={title} width={1100} height={900} layout="responsive" src={coverImage as unknown as string}/>
           </div>
@@ -89,6 +114,18 @@ const Index: NextPage<SingleBlogProps> = ({ data: {blog, seoData, homePageData} 
               <PortableText value={blogContent as unknown as [] | []}/>
             </p>
           </div>
+
+          <div className="flexitems-center w-[150px] my-6 cursor-pointer">
+            <Link passHref href={"https://opensauced.pizza/blog"}>
+              <div className='flex gap-x-2 items-center'>
+                <div className="w-[18px] h-[18px] rounded-full">
+                  <Image alt='vector art' src={ellipseOrange}/>
+                </div>
+                <p className="text-[15px] font-semibold text-gray-600">Return home</p>
+              </div>
+            </Link>
+          </div>
+
         </BlogBackgroundDrip>
       </div>
     </>
