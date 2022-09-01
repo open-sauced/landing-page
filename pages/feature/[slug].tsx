@@ -96,7 +96,7 @@ export async function getStaticPaths() {
   
     const data = { homePageData, seoData }
 
-    const path = data.homePageData.feature .map( feature => {
+    const path = data.homePageData.feature.map( feature => {
       return { params: { slug: feature.slug?.current } }
     })
 
