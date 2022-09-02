@@ -22,7 +22,7 @@ const Button: React.FC<Props> = ({
       styles = `${styles} text-white bg-gray400 bg-opacity-100 normal-case text-[12px]`
       break
     case 'secondary':
-      styles = `${styles} text-gray-700 normal-case `
+      styles = `${styles} text-gray400 normal-case `
     default:
     case 'default':
       break
