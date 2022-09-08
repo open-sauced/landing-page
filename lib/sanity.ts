@@ -137,8 +137,7 @@ export const getAllBlogs: () => Promise<SanityBlog[]> = async () => {
 export const getBlogBySlug: ( slug: string  ) => Promise<SanityBlog> = async ( slug: string  ) => {
   const getBlogData: SanityBlog = await client.fetch(`*[_type == 'blog' && slug.current == '${slug}'][0] {
     ...,
-    "previewImage": previewImage.asset->url,
-    "previewVideo": previewVideo.asset->url
+    "coverImage": coverImage.asset->url,
   }`);
   return getBlogData;
 }
