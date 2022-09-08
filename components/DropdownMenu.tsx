@@ -17,7 +17,7 @@ const DropdownMenu = ({ menuItems, className, label }: DropdownMenuProps) => {
     <Menu as="div" className={`relative inline-block text-left ${className}`}>
       <div>
         <Menu.Button
-          className="text-white bg-gray100 rounded-3xl py-2 px-4 bg-opacity-40 items-center gap-2 tablet:hidden inline-flex justify-center w-full text-sm font-medium hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+          className="text-white bg-gray100 rounded-3xl py-2 px-4 bg-opacity-40 items-center gap-2 inline-flex justify-center w-full text-sm font-medium hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
           aria-label={label}
         >
           <svg width="18" height="18" fill="none" viewBox="0 0 24 24">

@@ -52,7 +52,7 @@ const ExternalLink = ({ href, label, variant }: ExternalLinkProps) => {
 
 const DesktopNavigation = ({ navigationItems, variant="white" }: NavigationProps) => {
   return (
-    <div className="text-[14px] tracking-[-3%] items-center hidden tablet:flex">
+    <div className="text-[14px] tracking-[-3%] items-center hidden largeTablet:flex">
       <nav>
         <ul className="flex gap-[46px]">
           {navigationItems.map((link) => (
@@ -79,12 +79,12 @@ const DesktopNavigation = ({ navigationItems, variant="white" }: NavigationProps
 const MobileNavigation = ({ navigationItems }: NavigationProps) => {
   return (
     <DropdownMenu
-      className="block tablet:hidden"
-      menuItems={navigationItems.map((navItem) => ({
-        label: navItem.label as string,
-        href: navItem.url as string,
-      }))}
-      label="Navigation"
+    className="block largeTablet:hidden"
+    menuItems={navigationItems.map((navItem) => ({
+      label: navItem.label as string,
+      href: navItem.url as string,
+    }))}
+    label="Navigation"
     />
   )
 }
