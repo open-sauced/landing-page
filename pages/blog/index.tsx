@@ -98,7 +98,7 @@ const Index: NextPage<BlogPageProps> = ({ data: {seoData, homePageData, saucyBlo
         
         <div className="py-[15px] flex items-center gap-x-[8px]">
           <FaPizzaSlice size={25} className="text-gray-800"/>
-          <h6 className="font-semibold text-[25px] text-gray-800">Saucy blog</h6>
+          <h6 className="font-semibold text-[25px] text-gray-800">Featured</h6>
         </div>
         <div className="flex flex-col tablet:flex-row gap-x-4 gap-y-10">
           {
