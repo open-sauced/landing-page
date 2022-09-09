@@ -612,6 +612,78 @@ export interface SanityBlog extends SanityDocument {
   blogContent?: Array<SanityKeyed<SanityBlock>>
 }
 
+/**
+ * Press
+ *
+ *
+ */
+export interface SanityPress extends SanityDocument {
+  _type: 'press'
+
+  /**
+   * Title — `string`
+   *
+   *
+   */
+  title?: string
+
+  /**
+   * Subtitle — `string`
+   *
+   *
+   */
+  subtitle?: string
+
+  /**
+   * dos — `array`
+   *
+   *
+   */
+  dos?: Array<SanityKeyed<string>>
+
+  /**
+   * donts — `array`
+   *
+   *
+   */
+  donts?: Array<SanityKeyed<string>>
+
+  /**
+   * OpenSauced Logo — `array`
+   *
+   *
+   */
+  openSaucedLogo?: Array<SanityKeyedReference<SanityOpenSaucedLogo>>
+}
+
+/**
+ * OpenSauced Logo
+ *
+ *
+ */
+export interface SanityOpenSaucedLogo extends SanityDocument {
+  _type: 'openSaucedLogo'
+
+  /**
+   * Title — `string`
+   *
+   *
+   */
+  title?: string
+
+  /**
+   * Logo — `image`
+   *
+   *
+   */
+  logo?: {
+    _type: 'image'
+    asset: SanityReference<SanityImageAsset>
+    crop?: SanityImageCrop
+    hotspot?: SanityImageHotspot
+  }
+}
+
 export type Documents =
   | SanityAbout
   | SanityUser
@@ -624,3 +696,5 @@ export type Documents =
   | SanityFooter
   | SanitySaucyBlog
   | SanityBlog
+  | SanityPress
+  | SanityOpenSaucedLogo

@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import React, { FC } from 'react'
-import { getFeaturePageDataBySlug, getHomePageData, getSEOData } from '../../lib/sanity'
-import { SanityAbout, SanityFooter, SanityNavigation, SanitySeo } from '../../types/schema'
+import { getHomePageData, getSEOData, getPressData } from '../../lib/sanity'
+import { SanityAbout, SanityFooter, SanityNavigation, SanitySeo, SanityPress } from '../../types/schema'
 import Footer from '../../components/Footer'
 import Navigation from '../../components/Header'
 
@@ -12,10 +12,11 @@ import Navigation from '../../components/Header'
       footer: SanityFooter,
     }
     seoData: SanitySeo,
+    pressData: SanityPress
    }
  }
 
-const index:FC<FeaturePageProps> = ({data: {seoData, homePageData}}) => {
+const index:FC<FeaturePageProps> = ({data: {seoData, homePageData, pressData}}) => {
   
   return (
     <>
@@ -63,12 +64,13 @@ const index:FC<FeaturePageProps> = ({data: {seoData, homePageData}}) => {
 }
 
 export async function getStaticProps(context: any) {
-    const [homePageData, seoData] = await Promise.all([
+    const [homePageData, seoData, pressData] = await Promise.all([
         getHomePageData(),
         getSEOData(),
+        getPressData(),
     ])
 
-    const data = { homePageData, seoData }
+    const data = { homePageData, seoData, pressData }
 
     return {
         props: {
