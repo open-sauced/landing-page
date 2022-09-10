@@ -4,8 +4,10 @@ import { getHomePageData, getSEOData, getPressData } from '../../lib/sanity'
 import { SanityAbout, SanityFooter, SanityNavigation, SanitySeo, SanityPress } from '../../types/schema'
 import Footer from '../../components/Footer'
 import Navigation from '../../components/Header'
-import Image from 'next/image'
 import { TbCheckbox, TbHandStop } from 'react-icons/tb';
+import { TiTick } from 'react-icons/ti';
+import { BsX } from 'react-icons/bs';
+import PermittedLogos from '../../components/PermittedLogos'
 
  interface FeaturePageProps{
    data: {
@@ -19,7 +21,7 @@ import { TbCheckbox, TbHandStop } from 'react-icons/tb';
  }
 
 const index:FC<FeaturePageProps> = ({data: {seoData, homePageData, pressData}}) => {
-  const { title, subtitle, dos, donts } = pressData
+  const { title, subtitle, dos, donts, openSaucedLogo } = pressData
   return (
     <>
         <Head>
@@ -57,13 +59,14 @@ const index:FC<FeaturePageProps> = ({data: {seoData, homePageData, pressData}}) 
                 }
             />
 
-            <footer className='mt-[100px]' >
-                <div className='flex flex-col text-center items-center justify-center gap-y-5'>
+                <div className='mt-16 flex flex-col text-center items-center justify-center gap-y-5'>
                     <h1 className='text-gray-700 font-bold text-[2.8rem] '>{title}</h1>
-                    <p className='text-gray-700 font-normal text-[1.2rem]'>{subtitle}</p>
+                    <p className='text-gray-700 max-w-lg font-normal text-[1.2rem]'>{subtitle}</p>
                 </div>
 
-                <div className='flex justify-between px-8'>
+                <PermittedLogos logos={openSaucedLogo as unknown as []}/>
+
+                <div className='flex flex-col tablet:flex-row tablet:justify-between gap-y-8 tablet:px-8'>
                     {/* Do */}
                     <div>
                         <div className='flex items-center gap-4 mb-4 text-[1.5rem] font-semibold'>
@@ -78,7 +81,9 @@ const index:FC<FeaturePageProps> = ({data: {seoData, homePageData, pressData}}) 
                             dos.map((singleDo)=> (
                                 <div key={singleDo} className='flex flex-col gap-y-2'>
                                     <div className='pl-2 flex items-center gap-x-4'>
-                                        <div className='bg-green-400 opacity-20 w-4 h-4 rounded-full'></div>
+                                        <div className='bg-green-400 bg-opacity-20 w-4 h-4 rounded-full'>
+                                            <TiTick className='text-green-400'/>
+                                        </div>
                                         <p>{singleDo}</p>
                                     </div>
                                 </div>
@@ -100,7 +105,9 @@ const index:FC<FeaturePageProps> = ({data: {seoData, homePageData, pressData}}) 
                             donts.map((singleDont)=> (
                                 <div key={singleDont} className='flex flex-col gap-y-2'>
                                     <div className='pl-2 flex items-center gap-x-4'>
-                                        <div className='bg-red-400 opacity-20 w-4 h-4 rounded-full'></div>
+                                        <div className='bg-red-400 bg-opacity-20 w-4 h-4 rounded-full'>
+                                            <BsX className='text-red-400'/>
+                                        </div>
                                         <p>{singleDont}</p>
                                     </div>
                                 </div>
@@ -110,7 +117,8 @@ const index:FC<FeaturePageProps> = ({data: {seoData, homePageData, pressData}}) 
                     
                 </div>
 
-            <Footer footer={homePageData.footer as unknown as SanityFooter[] || []} />
+            <footer className='mt-[100px]' >
+                <Footer footer={homePageData.footer as unknown as SanityFooter[] || []} />
             </footer>
         </div>
   </>
