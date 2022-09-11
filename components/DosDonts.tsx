@@ -11,7 +11,7 @@ interface DosDontsProps {
 const DosDonts = ({ dos, donts }: DosDontsProps) => {
   return (
     <section >
-      <div className='flex flex-col tablet:flex-row tablet:justify-between gap-y-8 tablet:px-8'>
+      <div className='flex flex-col gap-x-16 tablet:flex-row tablet:justify-between gap-y-8 tablet:px-8'>
           {/* Do */}
           <div className='flex-1'>
               <div className='flex items-center gap-4 mb-4 text-[1.5rem] font-semibold'>
