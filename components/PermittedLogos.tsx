@@ -27,17 +27,16 @@ const PermittedLogos = ({ logos }: PermittedLogosProps) => {
                             <div>
                                 <h6 className='text-[1.1rem] font-semibold text-gray-600'>{logo.title}</h6>
                             </div>
-                            <button className="py-1 px-2 bg-opacity-20 bg-darkOrange rounded-lg ">
-                                <ImCloudDownload className=' text-[20px] text-darkOrange ' />
-                            </button>
 
+                            <a href={logo.logo as unknown as string} title="ImageName">
+                                <button className="py-1 px-2 bg-opacity-20 bg-darkOrange rounded-lg ">
+                                    <ImCloudDownload className=' text-[20px] text-darkOrange ' />
+                                </button>
+                            </a>
                         </div>
                     </div>
-                    
                 ))
             }
-
-
         </div>
     </section>
   )
