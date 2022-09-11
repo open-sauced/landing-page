@@ -68,7 +68,7 @@ const index:FC<FeaturePageProps> = ({data: {seoData, homePageData, pressData}}) 
 
                 <div className='flex flex-col tablet:flex-row tablet:justify-between gap-y-8 tablet:px-8'>
                     {/* Do */}
-                    <div>
+                    <div className='flex-1'>
                         <div className='flex items-center gap-4 mb-4 text-[1.5rem] font-semibold'>
                             <div className='bg-green-400 rounded-[8px] p-1 bg-opacity-20 '>
                                 <TbCheckbox className='text-green-400'/>
@@ -79,12 +79,12 @@ const index:FC<FeaturePageProps> = ({data: {seoData, homePageData, pressData}}) 
                         {
                             dos &&
                             dos.map((singleDo)=> (
-                                <div key={singleDo} className='flex flex-col gap-y-2'>
-                                    <div className='pl-2 flex items-center gap-x-4'>
-                                        <div className='bg-green-400 bg-opacity-20 w-4 h-4 rounded-full'>
+                                <div key={singleDo} className='flex flex-col mb-2 gap-y-2'>
+                                    <div className='pl-2 flex gap-x-4'>
+                                        <div className='bg-green-400 mt-[6px] bg-opacity-20 w-4 h-4 rounded-full'>
                                             <TiTick className='text-green-400'/>
                                         </div>
-                                        <p>{singleDo}</p>
+                                        <p className='m-0 p-0'>{singleDo}</p>
                                     </div>
                                 </div>
                             ))
@@ -92,7 +92,7 @@ const index:FC<FeaturePageProps> = ({data: {seoData, homePageData, pressData}}) 
                     </div>
 
                     {/* donts */}
-                    <div>
+                    <div className='flex-1'>
                         <div className='flex items-center gap-4 mb-4 text-[1.5rem] font-semibold'>
                             <div className='bg-red-400 rounded-[8px] p-1 bg-opacity-20 '>
                                 <TbHandStop className='text-red-400'/>
@@ -103,9 +103,9 @@ const index:FC<FeaturePageProps> = ({data: {seoData, homePageData, pressData}}) 
                         {
                             donts &&
                             donts.map((singleDont)=> (
-                                <div key={singleDont} className='flex flex-col gap-y-2'>
-                                    <div className='pl-2 flex items-center gap-x-4'>
-                                        <div className='bg-red-400 bg-opacity-20 w-4 h-4 rounded-full'>
+                                <div key={singleDont} className='flex flex-col mb-2 gap-y-2'>
+                                    <div className='pl-2 flex gap-x-4'>
+                                        <div className='bg-red-400 mt-[6px] bg-opacity-20 w-4 h-4 rounded-full'>
                                             <BsX className='text-red-400'/>
                                         </div>
                                         <p>{singleDont}</p>
