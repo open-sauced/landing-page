@@ -1,5 +1,5 @@
 import sanityClient from '@sanity/client'
-import { SanityAbout, SanityCalender, SanityFeature, SanityGithubMock, SanitySeo, SanityTestimonial, SanityFooter, SanitySaucyBlog, SanityBlog } from '../types/schema'
+import { SanityAbout, SanityCalender, SanityFeature, SanityGithubMock, SanitySeo, SanityTestimonial, SanityFooter, SanityFeaturedBlog, SanityBlog } from '../types/schema'
 
 const client = sanityClient({
   projectId: 'r7m53vrk',
@@ -104,8 +104,8 @@ export const getFeaturePageDataBySlug: ( slug: string  ) => Promise<SanityFeatur
 
 }
 
-export const getSaucyBlogs: () => Promise<SanitySaucyBlog> = async () => {
-  const saucyBlog: SanitySaucyBlog = await client.fetch(
+export const getFeaturedBlogs: () => Promise<SanityFeaturedBlog> = async () => {
+  const saucyBlog: SanityFeaturedBlog = await client.fetch(
     `*[_type == 'saucyBlog'] {
       ...,
       "coverImage": coverImage.asset->url,
