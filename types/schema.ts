@@ -445,12 +445,12 @@ export interface SanityFooter extends SanityDocument {
 }
 
 /**
- * Saucy Blog
+ * Featured Blog
  *
  *
  */
-export interface SanitySaucyBlog extends SanityDocument {
-  _type: 'saucyBlog'
+export interface SanityFeaturedBlog extends SanityDocument {
+  _type: 'featuredBlog'
 
   /**
    * Is it native blog? — `boolean`
@@ -694,7 +694,7 @@ export type Documents =
   | SanityFeature
   | SanityTestimonial
   | SanityFooter
-  | SanitySaucyBlog
+  | SanityFeaturedBlog
   | SanityBlog
   | SanityPress
   | SanityOpenSaucedLogo

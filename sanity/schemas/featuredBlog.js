@@ -1,6 +1,6 @@
 export default {
-    title: 'Featured',
-    name: 'saucyBlog',
+    title: 'Featured Blog',
+    name: 'featuredBlog',
     type: 'document',
     fields: [
       {

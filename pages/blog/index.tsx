@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import type { NextPage } from 'next'
-import { getBlogs, getHomePageData, getSaucyBlogs, getSEOData } from '../../lib/sanity'
+import { getBlogs, getHomePageData, getFeaturedBlogs, getSEOData } from '../../lib/sanity'
 import Head from 'next/head'
-import { SanityAbout, SanityBlog, SanityNavigation, SanitySaucyBlog, SanitySeo } from '../../types/schema'
+import { SanityAbout, SanityBlog, SanityFeaturedBlog, SanityNavigation, SanitySeo } from '../../types/schema'
 import BlogBackgroundDrip from '../../components/BlogBackgroundDrip'
 import Navigation from '../../components/Header'
 import { FaPizzaSlice } from 'react-icons/fa';
@@ -20,11 +20,11 @@ interface BlogPageProps {
       about: SanityAbout,
     }
     seoData: SanitySeo,
-    saucyBlogs: SanitySaucyBlog[],
+    featuredBlog: SanityFeaturedBlog[],
   }
 }
 
-const Index: NextPage<BlogPageProps> = ({ data: {seoData, homePageData, saucyBlogs} }) => {
+const Index: NextPage<BlogPageProps> = ({ data: {seoData, homePageData, featuredBlog} }) => {
   const [blogs, setBlogs] = useState<SanityBlog[] | []>([])
   const [blogLimit, setBlogLimit] = useState(3);
   const [loadingBlog, setLoadingBlog] = useState(false);
@@ -102,7 +102,7 @@ const Index: NextPage<BlogPageProps> = ({ data: {seoData, homePageData, saucyBlo
         </div>
         <div className="flex flex-col tablet:flex-row gap-x-4 gap-y-10">
           {
-            saucyBlogs.map( ({_id, title, summary, author, readTime, topics, blogUrl, isNative, slug, coverImage}) => (
+            featuredBlog.map( ({_id, title, summary, author, readTime, topics, blogUrl, isNative, slug, coverImage}) => (
               <div key={_id} className=" flex-grow">
                 <Link passHref href={getBlogLink(isNative, slug?.current, blogUrl )}>
                   <div className="rounded-[15px] w-full h-auto overflow-hidden cursor-pointer">
@@ -231,13 +231,13 @@ const Index: NextPage<BlogPageProps> = ({ data: {seoData, homePageData, saucyBlo
 export default Index
 
 export async function getStaticProps() {
-  const [seoData, homePageData, saucyBlogs] = await Promise.all([
+  const [seoData, homePageData, featuredBlog] = await Promise.all([
     getSEOData(),
     getHomePageData(),
-    getSaucyBlogs(),
+    getFeaturedBlogs(),
   ])
 
-  const data = {seoData, homePageData, saucyBlogs}
+  const data = {seoData, homePageData, featuredBlog}
 
   return {
     props: {
