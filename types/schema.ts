@@ -445,7 +445,7 @@ export interface SanityFooter extends SanityDocument {
 }
 
 /**
- * Saucy Blog
+ * Featured
  *
  *
  */
