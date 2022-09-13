@@ -1,5 +1,5 @@
 import sanityClient from '@sanity/client'
-import { SanityAbout, SanityCalender, SanityFeature, SanityGithubMock, SanitySeo, SanityTestimonial, SanityFooter, SanitySaucyBlog, SanityBlog } from '../types/schema'
+import { SanityAbout, SanityCalender, SanityFeature, SanityGithubMock, SanitySeo, SanityTestimonial, SanityFooter, SanitySaucyBlog, SanityBlog, SanityPress } from '../types/schema'
 
 const client = sanityClient({
   projectId: 'r7m53vrk',
@@ -140,4 +140,15 @@ export const getBlogBySlug: ( slug: string  ) => Promise<SanityBlog> = async ( s
     "coverImage": coverImage.asset->url,
   }`);
   return getBlogData;
+}
+
+export const getPressData: () => Promise<SanityPress> = async () => {
+  const getPressData: SanityPress = await client.fetch(`*[_type == 'press'][0] {
+    ...,
+    openSaucedLogo[]-> {
+      ...,
+      "logo": logo.asset->url
+    },
+  }`);
+  return getPressData;
 }
