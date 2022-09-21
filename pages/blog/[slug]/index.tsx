@@ -79,7 +79,7 @@ const Index: NextPage<SingleBlogProps> = ({ data: {blog, seoData, homePageData} 
                 <BsLinkedin className='text-xl text-gray-500'/>
               </a>
             </Link>
-            <Link href={`https://twitter.com/intent/tweet?text=Check out the blog! ${blogUrl}`}>
+            <Link href={`https://news.ycombinator.com/submitlink?u=${blogUrl}t=${title}`}>
               <a target="_blank" rel="noopener noreferrer">
                 <FaHackerNewsSquare className='text-xl text-gray-500'/>
               </a>
