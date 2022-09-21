@@ -74,7 +74,7 @@ const Index: NextPage<SingleBlogProps> = ({ data: {blog, seoData, homePageData} 
                 <BsTwitter className='text-xl text-gray-500'/>
               </a>
             </Link>
-            <Link href={`https://twitter.com/intent/tweet?text=Check out the blog! ${blogUrl}`}>
+            <Link href={`https://www.linkedin.com/sharing/share-offsite/?url=${blogUrl}`}>
               <a target="_blank" rel="noopener noreferrer">
                 <BsLinkedin className='text-xl text-gray-500'/>
               </a>
