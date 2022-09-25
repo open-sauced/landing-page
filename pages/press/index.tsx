@@ -53,25 +53,7 @@ const index:FC<FeaturePageProps> = ({data: {seoData, homePageData, pressData}}) 
         </Head>
     
         <div className="max-w-6xl mx-auto px-8">
-            <Navigation
-                variant='grey'
-                navigationItems={
-                    homePageData.about.navigationURLs as unknown as SanityNavigation[]
-                }
-            />
 
-                <div className='mt-16 flex flex-col text-center items-center justify-center gap-y-5'>
-                    <h1 className='text-gray-700 font-bold text-[2.8rem] '>{title}</h1>
-                    <p className='text-gray-700 max-w-lg font-normal text-[1.2rem]'>{subtitle}</p>
-                </div>
-
-                <PermittedLogos logos={openSaucedLogo as unknown as []}/>
-
-                <DosDonts dos={dos as unknown as []} donts={donts as unknown as []} />
-
-            <footer className='mt-[100px]' >
-                <Footer footer={homePageData.footer as unknown as SanityFooter[] || []} />
-            </footer>
         </div>
   </>
   )
