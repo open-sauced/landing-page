@@ -4,7 +4,7 @@ import github from '../public/social-proof/github.png'
 
 const OpenSaucedLogo:FC = () => {
   return (
-    <div className='max-w-[290px]'>
+    <div className='w-full tablet:max-w-[290px]'>
         <div className='flex min-h-[164px] bg-black justify-center items-center'>
             <div className=' w-3/4 mx-auto h-auto'>
                 <Image  src={github} alt="github" />
