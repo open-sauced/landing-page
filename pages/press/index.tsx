@@ -4,11 +4,9 @@ import { getHomePageData, getSEOData, getPressData } from '../../lib/sanity'
 import { SanityAbout, SanityFooter, SanityNavigation, SanitySeo, SanityPress } from '../../types/schema'
 import Footer from '../../components/Footer'
 import Navigation from '../../components/Header'
-import { TbCheckbox, TbHandStop } from 'react-icons/tb';
-import { TiTick } from 'react-icons/ti';
-import { BsX } from 'react-icons/bs';
-import PermittedLogos from '../../components/PermittedLogos'
-import DosDonts from '../../components/DosDonts'
+import PressBackground from '../../components/PressBackground'
+import PressHeading from '../../components/PressHeading'
+import OpenSaucedLogos from '../../components/OpenSaucedLogos'
 
  interface FeaturePageProps{
    data: {
@@ -51,10 +49,20 @@ const index:FC<FeaturePageProps> = ({data: {seoData, homePageData, pressData}}) 
             content={seoData.image as unknown as string}
             ></meta>
         </Head>
-    
-        <div className="max-w-6xl mx-auto px-8">
 
-        </div>
+        <PressBackground>
+            <Navigation
+                variant='white'
+                navigationItems={
+                homePageData.about.navigationURLs as unknown as SanityNavigation[]
+                }
+            />
+            <PressHeading/>
+        </PressBackground>
+
+        <OpenSaucedLogos/>
+
+        <Footer footer={homePageData.footer as unknown as SanityFooter[] || []}/>
   </>
   )
 }
