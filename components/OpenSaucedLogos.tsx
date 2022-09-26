@@ -1,20 +1,29 @@
 import React, { FC } from 'react'
 import OpenSaucedLogo from './OpenSaucedLogo'
 
-const OpenSaucedLogos:FC = () => {
-    const logos = [1,2,3,4,5,6]
+interface Props {
+    logos: {
+        title: string,
+        description: string,
+        svgLogo: string,
+        pngLogo: string,
+        isBlackBG: boolean,
+        _createdAt: string,
+    }[]
+}
+
+const OpenSaucedLogos:FC<Props> = ({logos}) => {
     return (
-    <div className='max-w-6xl mx-auto px-4 pt-10 pb-16'>
-        <div className='flex justify-center gap-x-8 gap-y-16 flex-wrap'>
+    <div className='max-w-6xl mx-auto px-4 pt-4 tablet:pt-20 pb-20'>
+        <div className='flex justify-center gap-x-16 gap-y-16 flex-wrap'>
             {
                 logos && 
-                logos.map((logo, index)=> (
-                    <div key={index+3}>
-                        <OpenSaucedLogo/>
+                logos.map((logo)=> (
+                    <div key={logo._createdAt+logo.title}>
+                        <OpenSaucedLogo logo={logo}/>
                     </div>
                 ))
             }
-
         </div>
     </div>
     )

@@ -19,9 +19,17 @@ import OpenSaucedLogos from '../../components/OpenSaucedLogos'
    }
  }
 
- interface Heading {
+ interface HeadingProps {
   title : string,
   subtitle: string,
+}
+interface LogosProps {
+  title: string,
+  description: string,
+  svgLogo: string,
+  pngLogo: string,
+  isBlackBG: boolean,
+  _createdAt: string,
 }
 
 const index:FC<FeaturePageProps> = ({data: {seoData, homePageData, pressData}}) => {
@@ -63,10 +71,10 @@ const index:FC<FeaturePageProps> = ({data: {seoData, homePageData, pressData}}) 
                 homePageData.about.navigationURLs as unknown as SanityNavigation[]
                 }
             />
-            <PressHeading headingData={{title, subtitle} as unknown as Heading} />
+            <PressHeading headingData={{title, subtitle} as unknown as HeadingProps || {}} />
         </PressBackground>
 
-        <OpenSaucedLogos/>
+        <OpenSaucedLogos logos={openSaucedLogo as unknown as LogosProps[] || []} />
 
         <Footer footer={homePageData.footer as unknown as SanityFooter[] || []}/>
   </>

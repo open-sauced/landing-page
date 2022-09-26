@@ -17,13 +17,19 @@ export default {
       },
       {
         title: 'Black Background?',
-        name: 'isBackBG',
+        name: 'isBlackBG',
         type: 'boolean',
         required: true,
       },
       {
-        title: 'Logo',
-        name: 'logo',
+        title: 'SVG Logo',
+        name: 'svgLogo',
+        type: 'image',
+        required: true,
+      },
+      {
+        title: 'PNG Logo',
+        name: 'pngLogo',
         type: 'image',
         required: true,
       },
