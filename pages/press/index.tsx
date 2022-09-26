@@ -20,7 +20,7 @@ import OpenSaucedLogos from '../../components/OpenSaucedLogos'
  }
 
 const index:FC<FeaturePageProps> = ({data: {seoData, homePageData, pressData}}) => {
-  const { title, subtitle, dos, donts, openSaucedLogo } = pressData
+  const { title, subtitle, openSaucedLogo } = pressData
   return (
     <>
         <Head>
