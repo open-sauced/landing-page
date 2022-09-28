@@ -68,7 +68,7 @@ const DesktopNavigation = ({ navigationItems, variant="white" }: NavigationProps
       </nav>
 
       <div className="pl-[100px] ">
-        <a href="https://app.opensauced.pizza/">
+        <a href="https://insights.opensauced.pizza/signin">
           <Button>Login</Button>
         </a>
       </div>
