@@ -24,7 +24,7 @@ const footerContext = [
     },
     {
       hot: { url: "https://hot.opensauced.pizza", text: "hot.opensauced.pizza" },
-      openSauced: { url: "https://opensauced.pizza", text: "opensauced.pizza" }
+      openSauced: { url: "https://insights.opensauced.pizza", text: "insights.opensauced.pizza" }
     },
     {
       socials: [
