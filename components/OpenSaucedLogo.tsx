@@ -14,14 +14,14 @@ const OpenSaucedLogo:FC<Props> = ({logo}) => {
     const { title, description, pngLogo, svgLogo, isBlackBG} = logo;
 
     return (
-    <div className='w-full tablet:max-w-[290px]'>
-        <div className={`flex h-[164px] w-full justify-center items-center ${ isBlackBG ? "bg-black" : "bg-none"} ` }>
-            <div className='h-[100px] w-auto'>
-                <img className='w-full h-full ' src={svgLogo} alt={title} />
+    <div className='w-full tablet:max-w-xs'>
+        <div className={`flex h-40 w-full justify-center items-center ${ isBlackBG ? "bg-black" : "bg-none"} ` }>
+            <div className='h-24 w-auto'>
+                <img className='w-full h-full' src={svgLogo} alt={title} />
             </div>
         </div>
 
-        <div className='mt-[20px]'>
+        <div className='mt-5'>
             <h2 className='text-[20px] tracking-tight mb-[5px] text-gray-700 font-bold'>{title}</h2>
             <p className='text-[1rem] tracking-tight text-gray-700'>{description}</p>
         </div>

@@ -683,7 +683,7 @@ export interface SanityOpenSaucedLogo extends SanityDocument {
    *
    *
    */
-  isBackBG?: boolean
+  isBlackBG?: boolean
 
   /**
    * SVG Logo — `image`
