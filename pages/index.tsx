@@ -91,8 +91,8 @@ const Home: NextPage<HomePageProps> = ({ data: { homePageData, seoData, } }) => 
 
         <Testimonials testimonial={homePageData.testimonial as unknown as SanityTestimonial[] || []} />
 
-        <Footer footer={homePageData.footer as unknown as SanityFooter[] || []} />
       </div>
+      <Footer footer={homePageData.footer as unknown as SanityFooter[] || []} />
     </>
   )
 }
