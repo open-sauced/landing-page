@@ -107,7 +107,7 @@ export const getFeaturePageDataBySlug: ( slug: string  ) => Promise<SanityFeatur
 
 export const getFeaturedBlogs: () => Promise<SanityFeaturedBlog> = async () => {
   const saucyBlog: SanityFeaturedBlog = await client.fetch(
-    `*[_type == 'saucyBlog'] {
+    `*[_type == 'featuredBlog'] {
       ...,
       "coverImage": coverImage.asset->url,
     }`);
