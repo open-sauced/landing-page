@@ -50,13 +50,13 @@ footer: SanityFooter[]
     "calenderImage": calenderImage.asset->url
   }`);
 
-  const getFeatureData: SanityFeature[] = await client.fetch(`*[_type == 'feature'] | order(_createdAt asc) {
+  const getFeatureData: SanityFeature[] = await client.fetch(`*[_type == 'feature' && !(_id in path('drafts.**'))] | order(_createdAt asc) {
     ...,
     "previewImage": previewImage.asset->url,
     "previewVideo": previewVideo.asset->url
   }`);
 
-  const getTestimonialData: SanityTestimonial[] = await client.fetch(`*[_type == 'testimonial'] | order(_createdAt asc) {
+  const getTestimonialData: SanityTestimonial[] = await client.fetch(`*[_type == 'testimonial' && !(_id in path('drafts.**')) ] | order(_createdAt asc) {
     ...,
     "userImage": userImage.asset->url,
   }`);
