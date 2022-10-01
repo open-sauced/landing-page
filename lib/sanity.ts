@@ -127,7 +127,7 @@ export const getBlogs: (limit: number) => Promise<SanityBlog[]> = async (limit: 
 
 export const getAllBlogs: () => Promise<SanityBlog[]> = async () => {
   const allBlogs: SanityBlog[] = await client.fetch(
-    `*[_type == 'blog']  {
+    `*[_type == 'blog' && !(_id in path('drafts.**'))]  {
       ...,
       "coverImage": coverImage.asset->url,
     }`);
