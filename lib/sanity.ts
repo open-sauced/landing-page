@@ -117,7 +117,7 @@ export const getFeaturedBlogs: () => Promise<SanityFeaturedBlog> = async () => {
 
 export const getBlogs: (limit: number) => Promise<SanityBlog[]> = async (limit: number=2) => {
   const saucyBlog: SanityBlog[] = await client.fetch(
-    `*[_type == 'blog'] {
+    `*[_type == 'blog' && !(_id in path('drafts.**'))] {
       ...,
       "coverImage": coverImage.asset->url,
     }[0..${limit-1}]`);
@@ -127,7 +127,7 @@ export const getBlogs: (limit: number) => Promise<SanityBlog[]> = async (limit: 
 
 export const getAllBlogs: () => Promise<SanityBlog[]> = async () => {
   const allBlogs: SanityBlog[] = await client.fetch(
-    `*[_type == 'blog'] {
+    `*[_type == 'blog']  {
       ...,
       "coverImage": coverImage.asset->url,
     }`);
