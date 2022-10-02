@@ -42,58 +42,58 @@ const Footer:FC<FooterProps> = ({footer}) =>  {
 
   return (
     <div className='w-full'>
-        <footer className="px-6 tablet:px-16 h-24 w-full bg-light-slate-2 transition">
-            <div className=" font-medium desktop:border-t lg:py-8 lg:items-center desktop:justify-between desktop:gap-x-4 flex flex-col gap-y-4 desktop:flex-row py-2 w-full">
+        <footer className="px-6 tablet:px-16 w-full bg-light-slate-2 transition">
+            <div className=" font-medium desktop:border-t desktop:py-8 desktop:items-center desktop:justify-between desktop:gap-x-4 flex flex-col gap-y-4 desktop:flex-row py-2 w-full">
                 <div className="text-center lg:text-left justify-center gap-1 flex items-center">
-                <div className="w-6 h-6 relative !min-w-[24px] min-h-[24px]">
-                    <Image layout="fill" alt="brand logo" src={OpenSaucedLogo} />
-                </div>
-                <span className="desktop:hidden font-bold text-light-slate-12 ">OpenSauced</span>
-                <p className="hidden !text-light-slate-9 lg:inline-block">
-                    © 2022 <span className="hidden lg:inline-block">OpenSauced</span>
-                </p>
+                    <div className="w-6 h-6 relative !min-w-[24px] min-h-[24px]">
+                        <Image layout="fill" alt="brand logo" src={OpenSaucedLogo} />
+                    </div>
+                    <span className="desktop:hidden font-bold text-light-slate-12 ">OpenSauced</span>
+                    <p className="hidden !text-light-slate-9 lg:inline-block">
+                        © 2022 <span className="hidden desktop:inline-block">OpenSauced</span>
+                    </p>
                 </div>
                 <div className="flex desktop:mr-auto lg:text-sm text-light-slate-11 justify-center gap-x-4">
-                <a className="px-2 hover:text-light-slate-12 " target="_blank" href={footerContext[1].hot?.url} rel="noopener noreferrer">
-                    {footerContext[1].hot?.text}
-                </a>
-                <a className="px-2 hover:text-light-slate-12" target="_blank" href={footerContext[1].openSauced?.url} rel="noopener noreferrer">
-                    {footerContext[1].openSauced?.text}
-                </a>
+                    <a className="px-2 hover:text-light-slate-12 " target="_blank" href={footerContext[1].hot?.url} rel="noopener noreferrer">
+                        {footerContext[1].hot?.text}
+                    </a>
+                    <a className="px-2 hover:text-light-slate-12" target="_blank" href={footerContext[1].openSauced?.url} rel="noopener noreferrer">
+                        {footerContext[1].openSauced?.text}
+                    </a>
                 </div>
                 <div className="flex justify-center gap-x-4 ">
-                <div className=" hidden desktop:flex items-center border-r pr-4   gap-x-4 text-light-slate-11 text-sm">
-                    <a className="px-2 hover:text-light-slate-12" href={footerContext[0].terms?.url} target="_blank" rel="noreferrer">
-                    {footerContext[0].terms?.text}
-                    </a>
-                    <a className="px-2 hover:text-light-slate-12" href={footerContext[0].privacy?.url} target="_blank" rel="noreferrer">
-                    {footerContext[0].privacy?.text}
-                    </a>
-                    <a className="px-2 hover:text-light-slate-12" href={footerContext[0].status?.url} target="_blank" rel="noreferrer">
-                    {footerContext[0].status?.text}
-                    </a>
-                </div>
-                {footerContext[2].socials?.map(({ url, icon }, index) => (
-                    <a target="_blank" href={url} key={index} rel="noopener noreferrer">
-                    {icon}
-                    </a>
-                ))}
+                    <div className=" hidden desktop:flex items-center border-r pr-4   gap-x-4 text-light-slate-11 text-sm">
+                        <a className="px-2 hover:text-light-slate-12" href={footerContext[0].terms?.url} target="_blank" rel="noreferrer">
+                        {footerContext[0].terms?.text}
+                        </a>
+                        <a className="px-2 hover:text-light-slate-12" href={footerContext[0].privacy?.url} target="_blank" rel="noreferrer">
+                        {footerContext[0].privacy?.text}
+                        </a>
+                        <a className="px-2 hover:text-light-slate-12" href={footerContext[0].status?.url} target="_blank" rel="noreferrer">
+                        {footerContext[0].status?.text}
+                        </a>
+                    </div>
+                    {footerContext[2].socials?.map(({ url, icon }, index) => (
+                        <a target="_blank" href={url} key={index} rel="noopener noreferrer">
+                        {icon}
+                        </a>
+                    ))}
                 </div>
                 <div className="flex tablet:justify-center desktop:hidden desktop:border-none desktop:order-2 border-t py-3 pb-4 mt-2 text-sm justify-between">
-                <p className="text-light-slate-9">
+                    <p className="text-light-slate-9">
                     © 2022 <span className="hidden tablet:inline-block">Open sauced</span>
-                </p>
-                <div className="flex items-center gap-x-3 text-light-slate-11 text-sm">
-                    <a className="px-2" href={footerContext[0].terms?.url} target="_blank" rel="noreferrer">
-                    {footerContext[0].terms?.text}
-                    </a>
-                    <a className="px-2" href={footerContext[0].privacy?.url} target="_blank" rel="noreferrer">
-                    {footerContext[0].privacy?.text}
-                    </a>
-                    <a className="px-2" href={footerContext[0].status?.url} target="_blank" rel="noreferrer">
-                    {footerContext[0].status?.text}
-                    </a>
-                </div>
+                    </p>
+                    <div className="flex items-center gap-x-3 text-light-slate-11 text-sm">
+                        <a className="px-2" href={footerContext[0].terms?.url} target="_blank" rel="noreferrer">
+                        {footerContext[0].terms?.text}
+                        </a>
+                        <a className="px-2" href={footerContext[0].privacy?.url} target="_blank" rel="noreferrer">
+                        {footerContext[0].privacy?.text}
+                        </a>
+                        <a className="px-2" href={footerContext[0].status?.url} target="_blank" rel="noreferrer">
+                        {footerContext[0].status?.text}
+                        </a>
+                    </div>
                 </div>
             </div>
         </footer>
