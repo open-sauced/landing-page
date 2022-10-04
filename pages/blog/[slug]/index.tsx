@@ -29,11 +29,19 @@ const Index: NextPage<SingleBlogProps> = ({ data }) => {
   const router = useRouter()
 
   if (router.isFallback) {
-    return <div>Loading...</div>
+    return (
+      <div>
+          <h1 className="text-center font-medium text-lg mt-5">Loading ...</h1>
+      </div>
+    ) 
   }
 
   if (!data.blog) {
-    return <div>Nothing found!</div>
+    return (
+      <div>
+        <h1 className="text-center font-medium text-lg mt-5">Nothing found!</h1>
+      </div>
+    )  
   }
 
 
