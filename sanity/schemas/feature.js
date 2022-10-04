@@ -17,6 +17,7 @@ export default {
       },
       {
         type: 'slug',
+        validation: Rule => Rule.required(),
         required: true,
         title: 'Slug',
         name: 'slug',

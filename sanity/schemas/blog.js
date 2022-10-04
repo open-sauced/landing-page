@@ -44,6 +44,7 @@ export default {
         required: true,
         title: 'Slug',
         name: 'slug',
+        validation: Rule => Rule.required(),
         options: {
           source: 'title',
           maxLength: 200, // will be ignored if slugify is set
