@@ -13,6 +13,7 @@ import { RiHashtag } from 'react-icons/ri';
 import Navigation from '../../../components/Header';
 import Link from 'next/link';
 import ellipseOrange from '../../../public/ellipseOrange.svg'
+import { useRouter } from 'next/router';
 
 interface SingleBlogProps {
   data: {
@@ -24,9 +25,42 @@ interface SingleBlogProps {
   }
 }
 
-const Index: NextPage<SingleBlogProps> = ({ data: {blog, seoData, homePageData} }) => {
-  const {title, blogContent, coverImage, topics, author, _id, slug, summary} = blog;
+const Index: NextPage<SingleBlogProps> = ({ data }) => {
+  const router = useRouter()
+
+  if (router.isFallback) {
+    return (
+      <div>
+          <h1 className="text-center font-medium text-lg mt-5">Loading ...</h1>
+      </div>
+    ) 
+  }
+
+  if (!data.blog) {
+    return (
+      <div>
+        <h1 className="text-center font-medium text-lg mt-5">Nothing found!</h1>
+      </div>
+    )  
+  }
+
+
+
+  const {
+    blog: {
+      title,
+      blogContent,
+      coverImage,
+      topics,
+      author,
+      _id,
+      slug,
+      summary},
+      homePageData
+  } = data;
+
   const blogUrl = `https://opensauced.pizza/blog/${slug?.current}`;
+
 
   return (
     <>
@@ -148,7 +182,7 @@ export async function getStaticPaths() {
 
   return {
     paths: path,
-    fallback: false
+    fallback: true
   }
 }
 
