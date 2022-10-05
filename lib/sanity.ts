@@ -148,7 +148,8 @@ export const getPressData: () => Promise<SanityPress> = async () => {
     ...,
     openSaucedLogo[]-> {
       ...,
-      "logo": logo.asset->url
+      "svgLogo": svgLogo.asset->url,
+      "pngLogo": pngLogo.asset->url,
     },
   }`);
   return getPressData;

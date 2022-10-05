@@ -10,8 +10,26 @@ export default {
         required: true,
       },
       {
-        title: 'Logo',
-        name: 'logo',
+        title: 'Description',
+        name: 'description',
+        type: 'string',
+        required: true,
+      },
+      {
+        title: 'Black Background?',
+        name: 'isBlackBG',
+        type: 'boolean',
+        required: true,
+      },
+      {
+        title: 'SVG Logo',
+        name: 'svgLogo',
+        type: 'image',
+        required: true,
+      },
+      {
+        title: 'PNG Logo',
+        name: 'pngLogo',
         type: 'image',
         required: true,
       },

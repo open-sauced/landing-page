@@ -672,11 +672,37 @@ export interface SanityOpenSaucedLogo extends SanityDocument {
   title?: string
 
   /**
-   * Logo — `image`
+   * Description — `string`
    *
    *
    */
-  logo?: {
+  description?: string
+
+  /**
+   * Black Background? — `boolean`
+   *
+   *
+   */
+  isBlackBG?: boolean
+
+  /**
+   * SVG Logo — `image`
+   *
+   *
+   */
+  svgLogo?: {
+    _type: 'image'
+    asset: SanityReference<SanityImageAsset>
+    crop?: SanityImageCrop
+    hotspot?: SanityImageHotspot
+  }
+
+  /**
+   * PNG Logo — `image`
+   *
+   *
+   */
+  pngLogo?: {
     _type: 'image'
     asset: SanityReference<SanityImageAsset>
     crop?: SanityImageCrop

@@ -4,11 +4,9 @@ import { getHomePageData, getSEOData, getPressData } from '../../lib/sanity'
 import { SanityAbout, SanityFooter, SanityNavigation, SanitySeo, SanityPress } from '../../types/schema'
 import Footer from '../../components/Footer'
 import Navigation from '../../components/Header'
-import { TbCheckbox, TbHandStop } from 'react-icons/tb';
-import { TiTick } from 'react-icons/ti';
-import { BsX } from 'react-icons/bs';
-import PermittedLogos from '../../components/PermittedLogos'
-import DosDonts from '../../components/DosDonts'
+import PressBackground from '../../components/PressBackground'
+import PressHeading from '../../components/PressHeading'
+import OpenSaucedLogos from '../../components/OpenSaucedLogos'
 
  interface FeaturePageProps{
    data: {
@@ -21,8 +19,22 @@ import DosDonts from '../../components/DosDonts'
    }
  }
 
+ interface HeadingProps {
+  title : string,
+  subtitle: string,
+}
+interface LogosProps {
+  title: string,
+  description: string,
+  svgLogo: string,
+  pngLogo: string,
+  isBlackBG: boolean,
+  _createdAt: string,
+}
+
 const index:FC<FeaturePageProps> = ({data: {seoData, homePageData, pressData}}) => {
-  const { title, subtitle, dos, donts, openSaucedLogo } = pressData
+  const { title, subtitle, openSaucedLogo } = pressData
+
   return (
     <>
         <Head>
@@ -51,28 +63,20 @@ const index:FC<FeaturePageProps> = ({data: {seoData, homePageData, pressData}}) 
             content={seoData.image as unknown as string}
             ></meta>
         </Head>
-    
-        <div className="max-w-6xl mx-auto px-8">
+
+        <PressBackground>
             <Navigation
-                variant='grey'
+                variant='white'
                 navigationItems={
-                    homePageData.about.navigationURLs as unknown as SanityNavigation[]
+                homePageData.about.navigationURLs as unknown as SanityNavigation[]
                 }
             />
+            <PressHeading headingData={{title, subtitle} as unknown as HeadingProps || {}} />
+        </PressBackground>
 
-                <div className='mt-16 flex flex-col text-center items-center justify-center gap-y-5'>
-                    <h1 className='text-gray-700 font-bold text-[2.8rem] '>{title}</h1>
-                    <p className='text-gray-700 max-w-lg font-normal text-[1.2rem]'>{subtitle}</p>
-                </div>
+        <OpenSaucedLogos logos={openSaucedLogo as unknown as LogosProps[] || []} />
 
-                <PermittedLogos logos={openSaucedLogo as unknown as []}/>
-
-                <DosDonts dos={dos as unknown as []} donts={donts as unknown as []} />
-
-            <footer className='mt-[100px]' >
-                <Footer footer={homePageData.footer as unknown as SanityFooter[] || []} />
-            </footer>
-        </div>
+        <Footer footer={homePageData.footer as unknown as SanityFooter[] || []}/>
   </>
   )
 }
