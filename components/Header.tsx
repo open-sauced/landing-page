@@ -41,7 +41,6 @@ const ExternalLink = ({ href, label, variant }: ExternalLinkProps) => {
   return (
     <a
       href={href}
-      target="_blank"
       rel="noreferrer"
       className={"font-semibold "+colorVariant}
     >
