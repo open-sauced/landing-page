@@ -50,13 +50,13 @@ footer: SanityFooter[]
     "calenderImage": calenderImage.asset->url
   }`);
 
-  const getFeatureData: SanityFeature[] = await client.fetch(`*[_type == 'feature'] | order(_createdAt asc) {
+  const getFeatureData: SanityFeature[] = await client.fetch(`*[_type == 'feature' && !(_id in path('drafts.**'))] | order(_createdAt asc) {
     ...,
     "previewImage": previewImage.asset->url,
     "previewVideo": previewVideo.asset->url
   }`);
 
-  const getTestimonialData: SanityTestimonial[] = await client.fetch(`*[_type == 'testimonial'] | order(_createdAt asc) {
+  const getTestimonialData: SanityTestimonial[] = await client.fetch(`*[_type == 'testimonial' && !(_id in path('drafts.**')) ] | order(_createdAt asc) {
     ...,
     "userImage": userImage.asset->url,
   }`);
@@ -117,7 +117,7 @@ export const getFeaturedBlogs: () => Promise<SanityFeaturedBlog> = async () => {
 
 export const getBlogs: (limit: number) => Promise<SanityBlog[]> = async (limit: number=2) => {
   const saucyBlog: SanityBlog[] = await client.fetch(
-    `*[_type == 'blog'] {
+    `*[_type == 'blog' && !(_id in path('drafts.**'))] {
       ...,
       "coverImage": coverImage.asset->url,
     }[0..${limit-1}]`);
@@ -127,7 +127,7 @@ export const getBlogs: (limit: number) => Promise<SanityBlog[]> = async (limit: 
 
 export const getAllBlogs: () => Promise<SanityBlog[]> = async () => {
   const allBlogs: SanityBlog[] = await client.fetch(
-    `*[_type == 'blog'] {
+    `*[_type == 'blog' && !(_id in path('drafts.**'))]  {
       ...,
       "coverImage": coverImage.asset->url,
     }`);

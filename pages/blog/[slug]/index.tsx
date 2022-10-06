@@ -14,6 +14,7 @@ import Navigation from '../../../components/Header';
 import Link from 'next/link';
 import ellipseOrange from '../../../public/ellipseOrange.svg'
 import Footer from '../../../components/Footer';
+import { useRouter } from 'next/router';
 
 interface SingleBlogProps {
   data: {
@@ -26,9 +27,42 @@ interface SingleBlogProps {
   }
 }
 
-const Index: NextPage<SingleBlogProps> = ({ data: {blog, seoData, homePageData} }) => {
-  const {title, blogContent, coverImage, topics, author, _id, slug, summary} = blog;
+const Index: NextPage<SingleBlogProps> = ({ data }) => {
+  const router = useRouter()
+
+  if (router.isFallback) {
+    return (
+      <div>
+          <h1 className="text-center font-medium text-lg mt-5">Loading ...</h1>
+      </div>
+    ) 
+  }
+
+  if (!data.blog) {
+    return (
+      <div>
+        <h1 className="text-center font-medium text-lg mt-5">Nothing found!</h1>
+      </div>
+    )  
+  }
+
+
+
+  const {
+    blog: {
+      title,
+      blogContent,
+      coverImage,
+      topics,
+      author,
+      _id,
+      slug,
+      summary},
+      homePageData
+  } = data;
+
   const blogUrl = `https://opensauced.pizza/blog/${slug?.current}`;
+
 
   return (
     <>
@@ -92,7 +126,10 @@ const Index: NextPage<SingleBlogProps> = ({ data: {blog, seoData, homePageData} 
           </div>
 
           <div className="rounded-[15px] w-full max-h-[500px] overflow-hidden">
-            <Image objectFit="cover" alt={title} width={1100} height={900} layout="responsive" src={coverImage as unknown as string}/>
+            { 
+              coverImage &&
+              <Image objectFit="cover" alt={title} width={1100} height={900} layout="responsive" src={coverImage as unknown as string}/>
+            }
           </div>
           <div className="flex gap-[8px] w-full flex-wrap items-center mt-[20px] tablet:mt-[20px] mb-[10px]">
             <RiHashtag size={18}/>
@@ -148,7 +185,7 @@ export async function getStaticPaths() {
 
   return {
     paths: path,
-    fallback: false
+    fallback: true
   }
 }
 

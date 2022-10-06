@@ -108,7 +108,11 @@ const Index: NextPage<BlogPageProps> = ({ data: {seoData, homePageData, featured
               <div key={_id} className=" flex-grow">
                 <Link passHref href={getBlogLink(isNative, slug?.current, blogUrl )}>
                   <div className="rounded-[15px] w-full h-auto overflow-hidden cursor-pointer">
-                    <Image objectFit="cover" alt={title} width={1100} height={900} layout="responsive" src={coverImage as unknown as string}/>
+                    {
+                      coverImage &&
+                      <Image objectFit="cover" alt={title} width={1100} height={900} layout="responsive" src={coverImage as unknown as string}/>
+
+                    }
                   </div>
                 </Link>
 
@@ -167,7 +171,10 @@ const Index: NextPage<BlogPageProps> = ({ data: {seoData, homePageData, featured
                     <div className="flex-1">
                       <Link href={getBlogLink(isNative, slug?.current, blogUrl )} passHref>
                         <div className="rounded-[15px] cursor-pointer overflow-hidden bg-gray-100 max-h-[245px]">
-                          <Image objectFit="cover" alt={title} width={1100} height={900} layout="responsive" src={coverImage as unknown as string}/>
+                          {
+                            coverImage &&
+                            <Image objectFit="cover" alt={title} width={1100} height={900} layout="responsive" src={coverImage as unknown as string}/>
+                          }
                         </div>
                       </Link>
                       <div>
