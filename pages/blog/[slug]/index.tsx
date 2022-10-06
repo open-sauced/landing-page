@@ -1,7 +1,7 @@
 import React from 'react'
 import type { NextPage } from 'next'
 import { getAllBlogs, getBlogBySlug, getHomePageData, getSEOData } from '../../../lib/sanity';
-import { SanityAbout, SanityBlog, SanityNavigation, SanitySeo } from '../../../types/schema';
+import { SanityAbout, SanityBlog, SanityFooter, SanityNavigation, SanitySeo } from '../../../types/schema';
 import { PortableText } from '@portabletext/react';
 import BlogBackgroundDrip from '../../../components/BlogBackgroundDrip';
 import Head from 'next/head';
@@ -13,6 +13,7 @@ import { RiHashtag } from 'react-icons/ri';
 import Navigation from '../../../components/Header';
 import Link from 'next/link';
 import ellipseOrange from '../../../public/ellipseOrange.svg'
+import Footer from '../../../components/Footer';
 import { useRouter } from 'next/router';
 
 interface SingleBlogProps {
@@ -21,6 +22,7 @@ interface SingleBlogProps {
     blog: SanityBlog,
     homePageData: {
       about: SanityAbout,
+      footer: SanityFooter,
     }
   }
 }
@@ -165,6 +167,7 @@ const Index: NextPage<SingleBlogProps> = ({ data }) => {
 
         </BlogBackgroundDrip>
       </div>
+      <Footer footer={homePageData.footer as unknown as SanityFooter[] || []} />
     </>
   )
 }

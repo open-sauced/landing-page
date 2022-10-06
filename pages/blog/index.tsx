@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import type { NextPage } from 'next'
 import { getBlogs, getHomePageData, getFeaturedBlogs, getSEOData } from '../../lib/sanity'
 import Head from 'next/head'
-import { SanityAbout, SanityBlog, SanityFeaturedBlog, SanityNavigation, SanitySeo } from '../../types/schema'
+import { SanityAbout, SanityBlog, SanityFeaturedBlog, SanityFooter, SanityNavigation, SanitySeo } from '../../types/schema'
 import BlogBackgroundDrip from '../../components/BlogBackgroundDrip'
 import Navigation from '../../components/Header'
 import { FaPizzaSlice } from 'react-icons/fa';
@@ -13,11 +13,13 @@ import { BiUserCircle } from 'react-icons/bi'
 import ellipseOrange from '../../public/ellipseOrange.svg'
 import Image from 'next/image'
 import Link from 'next/link'
+import Footer from '../../components/Footer'
 
 interface BlogPageProps {
   data: {
     homePageData: {
       about: SanityAbout,
+      footer: SanityFooter,
     }
     seoData: SanitySeo,
     featuredBlog: SanityFeaturedBlog[],
@@ -231,6 +233,7 @@ const Index: NextPage<BlogPageProps> = ({ data: {seoData, homePageData, featured
           </div>
         </div>
       </div>
+      <Footer footer={homePageData.footer as unknown as SanityFooter[] || []} />
     </>
   )
 }
