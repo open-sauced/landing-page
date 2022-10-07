@@ -15,6 +15,7 @@ import Link from 'next/link';
 import ellipseOrange from '../../../public/ellipseOrange.svg'
 import Footer from '../../../components/Footer';
 import { useRouter } from 'next/router';
+import { BsArrowReturnLeft } from 'react-icons/bs'
 
 interface SingleBlogProps {
   data: {
@@ -102,22 +103,22 @@ const Index: NextPage<SingleBlogProps> = ({ data }) => {
           />
 
         
-          <h1 className="font-semibold text-[25px] text-gray-700 mt-[100px] mb-[20px] ">{title}</h1>
+          <h1 className="font-semibold text-2xl text-gray-700 mt-[100px] mb-5 ">{title}</h1>
 
-          <div className='flex items-center gap-x-4 mb-[20px] justify-end'>
+          <div className='flex items-center gap-x-2 mb-5 justify-end'>
             <Link href={`https://twitter.com/intent/tweet?text=Check out the blog! ${blogUrl}`}>
               <a target="_blank" rel="noopener noreferrer">
-                <BsTwitter className='text-xl text-gray-500'/>
+                <BsTwitter className='text-xl text-gray-800'/>
               </a>
             </Link>
             <Link href={`https://www.linkedin.com/sharing/share-offsite/?url=${blogUrl}`}>
               <a target="_blank" rel="noopener noreferrer">
-                <BsLinkedin className='text-xl text-gray-500'/>
+                <BsLinkedin className='text-xl text-gray-800'/>
               </a>
             </Link>
             <Link href={`https://news.ycombinator.com/submitlink?u=${blogUrl}t=${title}`}>
               <a target="_blank" rel="noopener noreferrer">
-                <FaHackerNewsSquare className='text-xl text-gray-500'/>
+                <FaHackerNewsSquare className='text-xl text-gray-800'/>
               </a>
             </Link>
           <div>
@@ -125,46 +126,42 @@ const Index: NextPage<SingleBlogProps> = ({ data }) => {
           </div>
           </div>
 
-          <div className="rounded-[15px] w-full max-h-[500px] overflow-hidden">
+          <div className="rounded-sm w-full max-h-[50vh] overflow-hidden">
             { 
               coverImage &&
               <Image objectFit="cover" alt={title} width={1100} height={900} layout="responsive" src={coverImage as unknown as string}/>
             }
           </div>
-          <div className="flex gap-[8px] w-full flex-wrap items-center mt-[20px] tablet:mt-[20px] mb-[10px]">
+          <div className="flex gap-2 w-full flex-wrap items-center mt-5 tablet:mt-5 mb-3">
             <RiHashtag size={18}/>
             {
               topics?.slice(0,6).map( (topic, index) => (
-                <div key={_id+index} className="flex items-center gap-[5px] min-h-[6px] overflow-hidden">
-                  <div className="w-[6px] h-[6px] bg-orange-600 rounded-full"></div>
+                <div key={_id+index} className="flex items-center gap-1 overflow-hidden">
+                  <div className="w-2 h-2 bg-orange-600 rounded-full"></div>
 
                   <p className="text-sm">{topic}</p>
                 </div>
               ))
             }
           </div>
-          <div className="flex items-center gap-x-[5px]">
+          <div className="flex items-center gap-x-1">
             <BiUserCircle size={18} className="text-gray-600"/>
-
-            <p className="text-gray-600 font-semibold text-[14px]">{author}</p>
+            <p className="text-gray-600 font-semibold text-sm">{author}</p>
           </div>
-          <div>
-            <p className="text-[18px] cursor-pointer">
+          <div className="py-6">
+            <p className="text-lg styledDocument">
               <PortableText value={blogContent as unknown as [] | []}/>
             </p>
           </div>
 
-          <div className="flexitems-center w-[150px] my-6 cursor-pointer">
+          <div className="flexitems-center my-6 cursor-pointer">
             <Link passHref href={"https://opensauced.pizza/blog"}>
               <div className='flex gap-x-2 items-center'>
-                <div className="w-[18px] h-[18px] rounded-full">
-                  <Image alt='vector art' src={ellipseOrange}/>
-                </div>
-                <p className="text-[15px] font-semibold text-gray-600">Return home</p>
+                <BsArrowReturnLeft/>
+                <p className="text-sm font-semibold text-gray-800">Back</p>
               </div>
             </Link>
           </div>
-
         </BlogBackgroundDrip>
       </div>
       <Footer footer={homePageData.footer as unknown as SanityFooter[] || []} />
