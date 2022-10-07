@@ -158,7 +158,7 @@ const Index: NextPage<SingleBlogProps> = ({ data }) => {
             <Link passHref href={"https://opensauced.pizza/blog"}>
               <div className='flex gap-x-2 items-center'>
                 <BsArrowReturnLeft/>
-                <p className="text-sm font-semibold text-gray-800">Go back</p>
+                <p className="text-sm font-semibold text-gray-800">Back</p>
               </div>
             </Link>
           </div>
