@@ -10,7 +10,7 @@ export default {
       name: 'label',
     },
     {
-      type: 'url',
+      type: 'string',
       required: true,
       title: 'URL',
       name: 'url',
