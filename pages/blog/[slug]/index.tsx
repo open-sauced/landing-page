@@ -62,8 +62,6 @@ const Index: NextPage<SingleBlogProps> = ({ data }) => {
   } = data;
 
   const blogUrl = `https://opensauced.pizza/blog/${slug?.current}`;
-  console.log(data)
-
 
   return (
     <>
