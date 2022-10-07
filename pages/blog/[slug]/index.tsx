@@ -28,12 +28,6 @@ interface SingleBlogProps {
   }
 }
 
-const documentStyle = {
-  a: {
-    
-  }
-}
-
 const Index: NextPage<SingleBlogProps> = ({ data }) => {
   const router = useRouter()
 
