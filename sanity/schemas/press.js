@@ -7,13 +7,36 @@ export default {
         title: 'Title',
         name: 'title',
         type: 'string',
-        required: true,
       },
       {
         title: 'Subtitle',
         name: 'subtitle',
         type: 'string',
-        required: true,
+      },
+      {
+        title: 'CTA Button Label',
+        name: 'CTAButtonLabel',
+        type: 'string',
+      },
+      {
+        title: 'CTA Button Link',
+        name: 'CTAButtonLink',
+        type: 'string',
+      },
+      {
+        title: 'All Assets',
+        name: 'AllAssets',
+        type: 'file',
+      },
+      {
+        title: 'Last Updated',
+        name: 'LastUpdated',
+        type: 'string',
+        type: 'date',
+        options: {
+          dateFormat: 'YYYY-MM-DD',
+          calendarTodayLabel: 'Today'
+        }
       },
       {
         title: 'dos',
