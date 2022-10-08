@@ -146,6 +146,7 @@ export const getBlogBySlug: ( slug: string  ) => Promise<SanityBlog> = async ( s
 export const getPressData: () => Promise<SanityPress> = async () => {
   const getPressData: SanityPress = await client.fetch(`*[_type == 'press'][0] {
     ...,
+    "AllAssetsURL": AllAssets.asset->url,
     openSaucedLogo[]-> {
       ...,
       "svgLogo": svgLogo.asset->url,
