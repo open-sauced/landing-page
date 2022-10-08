@@ -25,12 +25,12 @@ const PressHeading:FC<Props> = ({headingData}) => {
   } = headingData;
 
   return (
-    <div className="px-0 tablet:px-8">
+    <div className="px-4 tablet:px-4 largeTablet:px-0">
       <div className="flex justify-center items-center flex-wrap">
         <div className="flex-1 my-32">
             <Link href="/" passHref>
               <div className="flex items-end gap-x-2 mb-20">
-                <div className="h-[66px] w-[386px]  cursor-pointer">
+                <div className="h-[66px] w-[300px] tablet:w-[386px]  cursor-pointer">
                   <Image src={OsIconWhiteText} layout="responsive" alt="OpenSauced Icon"/>
                 </div>
 
@@ -51,7 +51,7 @@ const PressHeading:FC<Props> = ({headingData}) => {
           </div>
         </div>
 
-        <div className="flex-1 relative">
+        <div className="flex-1 hidden tablet:block relative">
           <img className="w-auto h-full" src={featureImage as unknown as string} alt="OpenSauced logo stack" />
         </div>
       </div>
