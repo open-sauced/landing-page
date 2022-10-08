@@ -40,6 +40,7 @@ module.exports = {
       },
       fontFamily: {
         primary: "'Open Sans', 'Segoe UI', Tahoma, sans-serif",
+        inter: "'Inter', sans-serif",
         secondary:
           'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
       },

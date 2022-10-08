@@ -22,6 +22,11 @@ import OpenSaucedLogos from '../../components/OpenSaucedLogos'
  interface HeadingProps {
   title : string,
   subtitle: string,
+  featureImage : string,
+  LastUpdated : string,
+  CTAButtonLabel: string,
+  CTAButtonLink: string,
+  AllAssets: string,
 }
 interface LogosProps {
   title: string,
@@ -36,6 +41,7 @@ const index:FC<FeaturePageProps> = ({data: {seoData, homePageData, pressData}}) 
   const {
     title,
     subtitle,
+    featureImage,
     LastUpdated,
     CTAButtonLabel,
     CTAButtonLink,
@@ -45,7 +51,7 @@ const index:FC<FeaturePageProps> = ({data: {seoData, homePageData, pressData}}) 
     console.log(pressData)
 
   return (
-    <>
+    <div className="font-inter">
         <Head>
             <title>Open Sauced</title>
             <meta name="title" content={seoData.title}></meta>
@@ -74,19 +80,19 @@ const index:FC<FeaturePageProps> = ({data: {seoData, homePageData, pressData}}) 
         </Head>
 
         <PressBackground>
-            <Navigation
+            {/* <Navigation
                 variant='white'
                 navigationItems={
                 homePageData.about.navigationURLs as unknown as SanityNavigation[]
                 }
-            />
-            <PressHeading headingData={{title, subtitle} as unknown as HeadingProps || {}} />
+            /> */}
+            <PressHeading headingData={{subtitle, featureImage, LastUpdated, CTAButtonLabel, CTAButtonLink, AllAssets } as unknown as HeadingProps || {}} />
         </PressBackground>
 
         <OpenSaucedLogos logos={openSaucedLogo as unknown as LogosProps[] || []} />
 
         <Footer footer={homePageData.footer as unknown as SanityFooter[] || []}/>
-  </>
+  </div>
   )
 }
 
