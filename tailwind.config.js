@@ -21,11 +21,13 @@ module.exports = {
       colors: {
         gray50: '#C8C8C8',
         gray100: '#f6f5f0',
+        gray110: '#D8DADB',
         gray120: '#C5C5C5',
         gray150: '#8C8C8C',
         gray300: '#595959',
         gray200: '#E5E5E5',
         gray400: '#333333',
+        gray550: '#11181C',
         bgGray: '#F9F9F9',
         bgWhite: '#FCFCFC',
         blueAccent: '#2379EC',

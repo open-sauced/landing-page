@@ -14,6 +14,11 @@ export default {
         type: 'string',
       },
       {
+        title: 'Feature Image',
+        name: 'featureImage',
+        type: 'image',
+      },
+      {
         title: 'CTA Button Label',
         name: 'CTAButtonLabel',
         type: 'string',

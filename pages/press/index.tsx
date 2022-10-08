@@ -33,7 +33,16 @@ interface LogosProps {
 }
 
 const index:FC<FeaturePageProps> = ({data: {seoData, homePageData, pressData}}) => {
-  const { title, subtitle, openSaucedLogo } = pressData
+  const {
+    title,
+    subtitle,
+    LastUpdated,
+    CTAButtonLabel,
+    CTAButtonLink,
+    openSaucedLogo,
+    AllAssets } = pressData
+
+    console.log(pressData)
 
   return (
     <>
