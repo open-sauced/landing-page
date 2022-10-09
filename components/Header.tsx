@@ -5,19 +5,21 @@ import Logo from '../public/logo.svg'
 import Button from './Button'
 import DropdownMenu from './DropdownMenu'
 import { SanityNavigation } from '../types/schema'
+import OsIconWhiteText from '../public/osIconWhiteText.svg'
 
 interface NavigationProps {
   navigationItems: SanityNavigation[]
   variant?: string,
+  logoColor?: string,
 }
 
-const Navigation = ({ navigationItems, variant="white" }: NavigationProps) => {
+const Navigation = ({ navigationItems, variant="white", logoColor="grey" }: NavigationProps) => {
   return (
     <header className="flex justify-between pt-[20px] items-center">
       <div className="h-[26px] w-[150px] cursor-pointer">
         <Link href="/">
           <a>
-            <Image src={Logo} layout="responsive" alt="" /> 
+            <Image src={(logoColor === "grey" ? Logo : OsIconWhiteText)} layout="responsive" alt="" /> 
           </a>
         </Link>
       </div>
