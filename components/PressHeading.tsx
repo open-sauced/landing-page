@@ -25,7 +25,7 @@ const PressHeading:FC<Props> = ({headingData}) => {
   } = headingData;
 
   return (
-    <div className="px-4 tablet:px-4 largeTablet:px-0">
+    <div className="px-4 desktop:px-0">
       <div className="flex justify-center items-center flex-wrap">
         <div className="flex-1 my-32">
             <Link href="/" passHref>
