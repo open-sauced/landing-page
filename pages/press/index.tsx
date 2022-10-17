@@ -78,16 +78,6 @@ const index:FC<FeaturePageProps> = ({data: {seoData, homePageData, pressData}}) 
         </Head>
 
         <PressBackground>
-            <div className="px-4 desktop:px-0">
-              <Navigation
-                  variant='white'
-                  logoColor='white'
-                  navigationItems={
-                  homePageData.about.navigationURLs as unknown as SanityNavigation[]
-                  }
-              />
-            </div>
-            
             <PressHeading headingData={{subtitle, featureImage, LastUpdated, CTAButtonLabel, CTAButtonLink, AllAssets } as unknown as HeadingProps || {}} />
         </PressBackground>
 

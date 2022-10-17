@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { Attributes, FC } from 'react'
-import OsIconWhiteText from '../public/osIconWhiteText.svg'
+import BrandKitLogo from '../public/brandkit-logo.svg'
 
 interface Props {
   headingData : {
@@ -27,14 +27,12 @@ const PressHeading:FC<Props> = ({headingData}) => {
   return (
     <div className="px-4 desktop:px-0">
       <div className="flex justify-center items-center flex-wrap">
-        <div className="flex-1 my-32">
+        <div className="flex-1">
             <Link href="/" passHref>
               <div className="flex items-end gap-x-2 mb-20">
                 <div className="h-[66px] w-[300px] tablet:w-[386px]  cursor-pointer">
-                  <Image src={OsIconWhiteText} layout="responsive" alt="OpenSauced Icon"/>
+                  <Image src={BrandKitLogo} layout="responsive" alt="OpenSauced Icon"/>
                 </div>
-
-                <p className="font-semibold text-sm text-gray-400">Brand Kit</p>
               </div>
             </Link>
           <p className="text-2xl text-white leading-8">{subtitle}</p>
