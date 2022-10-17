@@ -1,7 +1,5 @@
 import Image from 'next/image'
 import React, { FC } from 'react'
-import ellipesOverlap from '../public/ellipesOverlap.svg'
-import pizzaSlices from '../public/pizzaSlices.svg'
 
 const PressHero: FC = ({children}) => {
   return (

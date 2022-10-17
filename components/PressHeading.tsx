@@ -25,7 +25,7 @@ const PressHeading:FC<Props> = ({headingData}) => {
   } = headingData;
 
   return (
-    <div className="px-4 desktop:px-0">
+    <div className="">
       <div className="flex justify-center items-center flex-wrap">
         <div className="flex-1">
             <Link href="/" passHref>
@@ -35,7 +35,7 @@ const PressHeading:FC<Props> = ({headingData}) => {
                 </div>
               </div>
             </Link>
-          <p className="text-2xl text-white leading-8">{subtitle}</p>
+          <p className="text-2xl text-gray-700 font-normal tracking-normal leading-8">{subtitle}</p>
 
           <div className="flex mt-9">
             <div className="font-bold bg-orange-500 text-sm text-white rounded-md px-5 py-3">
@@ -47,10 +47,6 @@ const PressHeading:FC<Props> = ({headingData}) => {
               <p>{`Last updated on ${LastUpdated}`}</p>
             </div>
           </div>
-        </div>
-
-        <div className="flex-1 hidden tablet:block relative">
-          <img className="w-auto h-full" src={featureImage as unknown as string} alt="OpenSauced logo stack" />
         </div>
       </div>
     </div>
