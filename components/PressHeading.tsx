@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { Attributes, FC } from 'react'
+import React, { FC } from 'react'
 import BrandKitLogo from '../public/brandkit-logo.svg'
 import UShape from '../public/uShape.svg'
 
@@ -26,44 +26,53 @@ const PressHeading:FC<Props> = ({headingData}) => {
   } = headingData;
 
   return (
-    <div className="">
-      <div className="flex items-center flex-wrap px-6 pt-6 pb-10">
-        {/* Left Portion */}
-        <div className="flex-1">
-          <Link href="/" passHref>
-            <div className="flex items-end gap-x-2 mb-20">
-              <div className="h-[66px] w-[300px] largeTablet:w-[386px]  cursor-pointer">
-                <Image src={BrandKitLogo} layout="responsive" alt="OpenSauced Icon"/>
-              </div>
-            </div>
+    <div>
+      <div className="px-6 pt-6 pb-10">
+        <div className="justify-end hidden py-4 tablet:flex ">
+          <Link passHref href="/">
+            <button className="text-gray-700 hover:text-white hover:bg-opacity-70 transition-all duration-300 bg-orange-600 px-3 py-2 rounded-md bg-opacity-20 font-semibold text-sm">
+              Visit OpenSauced.pizza
+            </button>
           </Link>
 
-          <img className="tablet:hidden" src={featureImage} alt="feature" />
-          <p className="text-2xl text-gray-700 font-normal tracking-normal leading-8">{subtitle}</p>
+        </div>
+        <div className="flex items-center flex-wrap">
+          {/* Left Portion */}
+          <div className="flex-1">
+            <Link href="/" passHref>
+              <div className="flex items-end gap-x-2 mb-8">
+                <div className="h-[66px] w-[300px] largeTablet:w-[386px]  cursor-pointer">
+                  <Image src={BrandKitLogo} layout="responsive" alt="OpenSauced Icon"/>
+                </div>
+              </div>
+            </Link>
 
-          <div className="flex gap-7 mt-9 items-center">
-            <div className="relative w-fit flex">
-              <div className="bg-orange-500 absolute rounded-md blur-sm -inset-1 "></div>
-              <Link href={AllAssets} passHref>
-                <button className="font-bold ring-2 shadow-md blur-0 bg-white ring-orange-400 text-sm text-gray-700 opacity-90 rounded-md px-5 py-3">
-                    {CTAButtonLabel}
-                </button>
-              </Link>
+            <img className="tablet:hidden" src={featureImage} alt="feature" />
+            <p className="text-xl  largeTablet:text-2xl text-gray-700 font-normal tracking-normal leading-8">{subtitle}</p>
+
+            <div className="flex gap-7 mt-12 items-center">
+              <div className="relative w-fit flex">
+                <div className="bg-orange-500 absolute rounded-md blur-sm -inset-1 transition-all"></div>
+                <Link href={AllAssets} passHref>
+                  <button className="font-bold bg-white text-sm text-gray-700 opacity-90 rounded-md px-5 py-3">
+                      {CTAButtonLabel}
+                  </button>
+                </Link>
+              </div>
+
+              <span className="text-xs text-gray-700 font-semibold">{LastUpdated}</span>
             </div>
+          </div>
 
-            <span className="text-xs text-gray-700 font-semibold">{LastUpdated}</span>
+          {/* Right Portion */}
+          <div className="hidden relative tablet:flex tablet:w-[275px] largeTablet:w-[390px]  largeTablet:flex-1 laptop:w-[600px]">
+            {/* <img src={UShape} className="" alt="" /> */}
+            <div className="absolute max-w-[190px] largeTablet:max-w-[250px] laptop:max-w-[360px] laptop:right-26 -top-40 desktop:right-36 largeTablet:-top-44 laptop:-top-64  largeTablet:right-24 right-16">
+              <Image src={UShape} alt="graphics"/>
+            </div>
+            <img className="w-full h-full z-50 " src={featureImage} alt="feature"/>
           </div>
         </div>
-
-        {/* Right Portion */}
-        <div className="hidden relative tablet:flex tablet:w-[275px] largeTablet:w-[390px]  largeTablet:flex-1 laptop:w-[600px] ">
-          {/* <img src={UShape} className="" alt="" /> */}
-          <div className="absolute max-w-[180px] largeTablet:max-w-[250px] laptop:max-w-[370px] -top-40 largeTablet:-top-44 laptop:-top-64 laptop:right-36 largeTablet:right-24 right-16 ">
-            <Image src={UShape} alt="graphics" />
-          </div>
-          <img className="w-full h-full z-50 " src={featureImage} alt="feature" />
-        </div>
-
       </div>
     </div>
   )
