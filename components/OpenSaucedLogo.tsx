@@ -15,7 +15,7 @@ const OpenSaucedLogo:FC<Props> = ({logo}) => {
 
     return (
         <div className="w-full tablet:max-w-sm">
-            <div className={`flex h-40 w-full border-2 border-orange-500 bg-white rounded-lg border-2 relative border-gray-100 justify-center items-center ${ isBlackBG ? "bg-black" : "bg-none"} ` }>
+            <div className={`flex h-40 w-full border-2 border-orange-500 bg-white rounded-lg relative justify-center items-center ${ isBlackBG ? "bg-black" : "bg-none"} ` }>
                 <div className="h-24 w-auto">
                     <img className="w-full h-full" src={svgLogo} alt={title} />
                 </div>
