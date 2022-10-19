@@ -14,8 +14,8 @@ interface Props {
 
 const OpenSaucedLogos:FC<Props> = ({logos}) => {
     return (
-    <div className='max-w-8xl mx-auto px-4 tablet:px-0 pt-4 tablet:pt-20 pb-20'>
-        <div className='flex justify-center gap-x-24 gap-y-24 flex-wrap'>
+    <div className='max-w-7xl px-6 tablet:px-0 mx-auto pt-4 tablet:pt-20 pb-20'>
+        <div className='flex justify-center gap-x-12 gap-y-24 flex-wrap'>
             {
                 logos && 
                 logos.map((logo)=> (
