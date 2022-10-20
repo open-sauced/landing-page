@@ -7,6 +7,7 @@ import Navigation from '../../components/Header'
 import PressBackground from '../../components/PressBackground'
 import PressHeading from '../../components/PressHeading'
 import OpenSaucedLogos from '../../components/OpenSaucedLogos'
+import Footer2 from '../../components/Footer2'
 
  interface FeaturePageProps{
    data: {
@@ -83,7 +84,7 @@ const index:FC<FeaturePageProps> = ({data: {seoData, homePageData, pressData}}) 
 
         <OpenSaucedLogos logos={openSaucedLogo as unknown as LogosProps[] || []} />
 
-        <Footer footer={homePageData.footer as unknown as SanityFooter[] || []}/>
+        <Footer2/>
   </div>
   )
 }

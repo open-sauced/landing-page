@@ -26,7 +26,7 @@ const PressHeading:FC<Props> = ({headingData}) => {
   } = headingData;
 
   return (
-    <div className="px-6 pt-6 pb-10">
+    <div className="px-6 pt-6 pb-36">
       <div className="justify-end hidden py-4 tablet:flex ">
         <Link passHref href="/">
           <button className="text-gray-700 hover:text-white hover:bg-opacity-70 transition-all duration-300 bg-orange-600 px-3 py-2 rounded-md bg-opacity-20 font-semibold text-sm">
