@@ -41,7 +41,7 @@ const Footer2 = () => {
                 </ul>
             </div>
             <div className="grow">
-                <div className="font-bold mb-2 text-gray-600 text-xs">MORE SAUCE</div>
+                <div className="font-bold mb-2 text-gray-600 text-xs">ADDITIONAL RESOURCES</div>
                 <ul className="text-sm text-gray-400">
                     <li><a href="https://hot.opensauced.pizza">hot.opensauced.pizza</a></li>
                     <li><a href="https://insights.opensauced.pizza">insights.opensauced.pizza</a></li>
