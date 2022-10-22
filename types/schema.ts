@@ -635,6 +635,46 @@ export interface SanityPress extends SanityDocument {
   subtitle?: string
 
   /**
+   * Feature Image — `image`
+   *
+   *
+   */
+  featureImage?: {
+    _type: 'image'
+    asset: SanityReference<SanityImageAsset>
+    crop?: SanityImageCrop
+    hotspot?: SanityImageHotspot
+  }
+
+  /**
+   * CTA Button Label — `string`
+   *
+   *
+   */
+  CTAButtonLabel?: string
+
+  /**
+   * CTA Button Link — `string`
+   *
+   *
+   */
+  CTAButtonLink?: string
+
+  /**
+   * All Assets — `file`
+   *
+   *
+   */
+  AllAssets?: { _type: 'file'; asset: SanityReference<any> }
+
+  /**
+   * Last Updated — `date`
+   *
+   *
+   */
+  LastUpdated?: string
+
+  /**
    * dos — `array`
    *
    *
