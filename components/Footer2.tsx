@@ -36,15 +36,15 @@ const Footer2 = () => {
             <div className="grow">
                 <div className="font-bold mb-2 text-gray-600 text-xs">MENU</div>
                 <ul className="text-sm text-gray-400">
-                    <li> <Link href="/blog">Blog</Link></li>
-                    <li> <Link href="/press">Press Kit</Link></li>
+                    <li><Link href="/blog">Blog</Link></li>
+                    <li><Link href="/press">Press Kit</Link></li>
                 </ul>
             </div>
             <div className="grow">
                 <div className="font-bold mb-2 text-gray-600 text-xs">MORE SAUCE</div>
                 <ul className="text-sm text-gray-400">
-                    <li><Link href="hot.opensauced.pizza">hot.opensauced.pizza</Link></li>
-                    <li><Link href="insight.opensauced.pizza">insight.opensauced.pizza</Link></li>
+                    <li><a href="https://hot.opensauced.pizza">hot.opensauced.pizza</a></li>
+                    <li><a href="https://insights.opensauced.pizza">insights.opensauced.pizza</a></li>
                 </ul>
             </div>
             <div className="grow">
