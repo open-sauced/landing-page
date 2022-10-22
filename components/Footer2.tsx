@@ -50,7 +50,7 @@ const Footer2 = () => {
             <div className="grow">
                 <div className="font-bold mb-2 text-gray-600 text-xs">CONTACT</div>
                 <div className="text-sm text-gray-400">
-                    +1(123) 456-7890
+                    <p>hello@opensauced.pizza</p>
                 </div>
             </div>
         </div>
@@ -58,9 +58,9 @@ const Footer2 = () => {
             <div className="text-sm text-gray-500">C 2022 Open Sauced, LLC. All rights reserved.</div>
             <div className="text-sm text-gray-500">
                 <ul className="flex gap-2">
-                    <li>Privacy</li>
-                    <li>Terms</li>
-                    <li>Status</li>
+                    <li><a href="https://app.termly.io/document/privacy-policy/5e303854-d262-468a-80ec-54b645d01c2e"> Privacy </a></li>
+                    <li><a href="https://app.termly.io/document/terms-of-use-for-saas/03e4e1c1-53ad-4fc4-b415-5c3f0e8c25ef">Terms</a></li>
+                    <li><a href="https://api.opensauced.pizza/docs#/Health%20check%20service/healthStatusWeb">Status</a></li>
                 </ul>
             </div>
         </div>
