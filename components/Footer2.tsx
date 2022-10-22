@@ -34,7 +34,7 @@ const Footer2 = () => {
 
             </div>
             <div className="grow">
-                <div className="font-bold mb-2 text-gray-600 text-xs">MENU</div>
+                <div className="font-bold mb-2 text-gray-600 text-xs">LINKS</div>
                 <ul className="text-sm text-gray-400">
                     <li><Link href="/blog">Blog</Link></li>
                     <li><Link href="/press">Press Kit</Link></li>
