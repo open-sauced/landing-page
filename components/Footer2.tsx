@@ -50,7 +50,7 @@ const Footer2 = () => {
             <div className="grow">
                 <div className="font-bold mb-2 text-gray-600 text-xs">CONTACT</div>
                 <div className="text-sm text-gray-400">
-                    <p>hello@opensauced.pizza</p>
+                    <p><a href="mailto:hello@opensauced.pizza">hello@opensauced.pizza</a></p>
                 </div>
             </div>
         </div>
