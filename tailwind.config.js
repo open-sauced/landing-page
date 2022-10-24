@@ -37,6 +37,7 @@ module.exports = {
         twitterBlue: '#0EA0DA',
         lightOrange: '#F18A21',
         darkOrange: '#ED5332',
+        darkBG: '#11181C'
         
       },
       fontFamily: {

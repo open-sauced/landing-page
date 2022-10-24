@@ -22,6 +22,7 @@ import Features from '../components/Features'
 import GradientBackground from '../components/GradientBackground'
 import Testimonials from '../components/Testimonials'
 import Footer from '../components/Footer'
+import Background from '../components/Background'
 
 interface HomePageProps {
   data: {
@@ -68,7 +69,11 @@ const Home: NextPage<HomePageProps> = ({ data: { homePageData, seoData, } }) => 
           content={seoData.image as unknown as string}
         ></meta>
       </Head>
-      
+      <Background>
+        <div className="max-w-7xl mx-auto h-[2000px]">
+
+        </div>
+      </Background>
     </>
   )
 }
