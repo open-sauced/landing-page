@@ -68,31 +68,7 @@ const Home: NextPage<HomePageProps> = ({ data: { homePageData, seoData, } }) => 
           content={seoData.image as unknown as string}
         ></meta>
       </Head>
-      <div className="max-w-6xl mx-auto px-8 ">
-        <BackgroundDrip>
-          <Navigation
-            navigationItems={
-              homePageData.about.navigationURLs as unknown as SanityNavigation[]
-            }
-          />
-          <Hero sanityData={homePageData.about} />
-        </BackgroundDrip>
-        <Logos
-          users={(homePageData.about.users as unknown as SanityUser[]) || []}
-        />
-      </div>
-      <GitHubMock  githubMockData={homePageData.githubMock as unknown as SanityGithubMock} />
-      <div className=' max-w-6xl mx-auto px-3 tablet:px-8 ' >
-        <Calender calender={homePageData.calender} />
-
-        <GradientBackground>
-          <Features features={homePageData.feature as unknown as SanityFeature[] || [] } />
-        </GradientBackground>
-
-        <Testimonials testimonial={homePageData.testimonial as unknown as SanityTestimonial[] || []} />
-
-      </div>
-      <Footer footer={homePageData.footer as unknown as SanityFooter[] || []} />
+      
     </>
   )
 }
