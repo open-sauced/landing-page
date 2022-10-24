@@ -34,8 +34,26 @@ a {
 }
 
 @layer components {
-  .styledDocument a{
+  .styledDocument a {
     @apply font-semibold text-darkBlue;
+  }
+  .styledDocument h1 {
+    @apply text-[2em] font-semibold py-6
+  }
+  .styledDocument h2 {
+    @apply text-[1.5em] font-semibold py-5
+  }
+  .styledDocument h3 {
+    @apply text-[1.17em] font-semibold py-4
+  }
+  .styledDocument h4 {
+    @apply text-[1em] font-semibold py-3
+  }
+  .styledDocument h5 {
+    @apply text-[0.83em] font-semibold py-2
+  }
+  .styledDocument h6 {
+    @apply text-[0.67em] font-semibold py-1
   }
 }
 

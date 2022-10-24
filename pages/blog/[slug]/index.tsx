@@ -12,7 +12,6 @@ import { FaHackerNewsSquare } from 'react-icons/fa';
 import { RiHashtag } from 'react-icons/ri';
 import Navigation from '../../../components/Header';
 import Link from 'next/link';
-import ellipseOrange from '../../../public/ellipseOrange.svg'
 import Footer from '../../../components/Footer';
 import { useRouter } from 'next/router';
 import { BsArrowReturnLeft } from 'react-icons/bs'
