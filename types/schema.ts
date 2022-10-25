@@ -164,7 +164,7 @@ export interface SanityNavigation extends SanityDocument {
   label?: string
 
   /**
-   * URL — `url`
+   * URL — `string`
    *
    *
    */

@@ -71,7 +71,7 @@ const Home: NextPage<HomePageProps> = ({ data: { homePageData, seoData, } }) => 
       </Head>
       <Background>
         <div className="max-w-7xl mx-auto h-[2000px]">
-
+          <Navigation variant="orangeWhite" navigationItems={homePageData.about.navigationURLs as unknown as SanityNavigation[] } />
         </div>
       </Background>
     </>
