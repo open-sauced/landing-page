@@ -70,12 +70,14 @@ const Home: NextPage<HomePageProps> = ({ data: { homePageData, seoData, } }) => 
         ></meta>
       </Head>
       <Background>
-        <div className="max-w-7xl mx-auto h-[2000px]">
+        <div className="max-w-7xl mx-auto">
           <Navigation variant="orangeWhite" navigationItems={homePageData.about.navigationURLs as unknown as SanityNavigation[] } />
 
           <Hero sanityData={homePageData.about as unknown as SanityAbout} />
 
           <Logos users={homePageData.about.users as unknown as SanityUser[]} />
+
+          <GitHubMock githubMockData={homePageData.githubMock as unknown as SanityGithubMock}/>          
         </div>
       </Background>
     </>

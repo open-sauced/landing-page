@@ -1,7 +1,8 @@
 import Image from 'next/image'
 import React, { FC } from 'react'
 import { SanityGithubMock } from '../types/schema'
-import {PortableText} from '@portabletext/react'
+import WeAreMore from '../public/weAreMore.svg'
+import GreenSquares from '../public/greenSquares.svg'
 
 interface GitHubMockProps {
   githubMockData: SanityGithubMock
@@ -9,30 +10,27 @@ interface GitHubMockProps {
 
 const GitHubMock: FC<GitHubMockProps> = ( { githubMockData: {title, subtitle, mockimage, titleRich}}) => {
   return (
-    <div className= ' bg-bgGray shadow-inner '>
-      <section className=' max-w-6xl mx-auto px-8 tablet:px-40 py-24  text-gray400   ' >
-          <div className=' flex flex-col items-center ' >
-            <h1 className=' font-bold text-[36px] boldToGrad '>
-              <PortableText value={titleRich as unknown as [] | []}/>
-              </h1>
-            
-            <div className='py-12 '>
-              <img
-              alt=""
-              src={`${mockimage as unknown as string}?auto=format`}
-              loading="eager"
-              />
-            </div>
+      <section className="px-4 font-inter">
+        <div className="flex pb-14 px-10 tablet:px-0 items-center justify-center">
+          <Image alt="We are more than" src={WeAreMore} />
+        </div>
+        <div>
+          <Image alt="GitHub green squares" src={GreenSquares} />
+        </div>
 
-            <div className='bg-gray400 w-[248px] h-[1px] mb-12' ></div>
+        <p className="pt-24 tablet:pt-52 font-bold text-3xl tablet:text-5xl text-white text-center  ">
+          A green contribution graph <span className="bg-gradient-to-r from-orange-300 to-orange-700 text-transparent bg-clip-text">looks cool</span>
+          <br />
+          and can encourage building <span className="bg-gradient-to-r from-orange-300 to-orange-700 text-transparent bg-clip-text">coding habits</span>
+        </p>
 
-            <p className=' text-[18px] leading-[26px] tracking-[-2%] text-center '  > {subtitle} </p>
-            
-          </div>
-          
+        <div className="pt-28 tablet:pt-40">
+          <p className="text-center font-bold text-gray-500 text-xl tablet:text-2xl pb-24">However...</p>
+
+          <p className="font-bold text-2xl tablet:text-3xl text-center pb-5">It&apos;s only a surface-level indicator of</p>
+          <p className="font-bold text-5xl tablet:text-[4rem] text-center pb-24">how capable a developer is.</p>
+        </div>
       </section>
-
-    </div>
   )
 }
 
