@@ -19,9 +19,9 @@ const GitHubMock: FC<GitHubMockProps> = ( { githubMockData: {title, subtitle, mo
         </div>
 
         <p className="pt-24 tablet:pt-52 font-bold text-3xl tablet:text-5xl text-white text-center  ">
-          A green contribution graph <span className="bg-gradient-to-r from-orange-300 to-orange-700 text-transparent bg-clip-text">looks cool</span>
+          <span className="leading-tight"> A green contribution graph </span> <span className=" leading-tight bg-gradient-to-r from-orange-300 to-orange-700 text-transparent bg-clip-text">looks cool</span>
           <br />
-          and can encourage building <span className="bg-gradient-to-r from-orange-300 to-orange-700 text-transparent bg-clip-text">coding habits</span>
+          <span className="leading-tight">and can encourage building</span> <span className="leading-tight bg-gradient-to-r from-orange-300 to-orange-700 text-transparent bg-clip-text">coding habits</span>
         </p>
 
         <div className="pt-28 tablet:pt-40">
