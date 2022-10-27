@@ -1,6 +1,5 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import BackgroundDrip from '../components/BackgroundDrip'
 import Hero from '../components/Hero'
 import Logos from '../components/Logos'
 import Navigation from '../components/Header'
@@ -17,11 +16,6 @@ import {
   SanityUser,
 } from '../types/schema'
 import GitHubMock from '../components/GitHubMock'
-import Calender from '../components/Calender'
-import Features from '../components/Features'
-import GradientBackground from '../components/GradientBackground'
-import Testimonials from '../components/Testimonials'
-import Footer from '../components/Footer'
 import Background from '../components/Background'
 
 interface HomePageProps {

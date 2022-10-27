@@ -46,7 +46,7 @@ const Hero = ({ sanityData }: HeroProps) => {
       <div className="relative hidden tablet:block">
         <div className="h-[400px] tablet:h-[800px] aspect-square absolute pointer-events-none">
           {/*  eslint-disable-next-line @next/next/no-img-element */}
-          <Image src={PRsHero} />
+          <Image alt="PRs" src={PRsHero} />
         </div>
       </div>
     </main>
