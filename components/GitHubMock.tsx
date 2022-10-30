@@ -12,7 +12,11 @@ const GitHubMock: FC<GitHubMockProps> = ( { githubMockData: {title, subtitle, mo
   return (
       <section className="px-4 font-inter">
         <div className="flex pb-14 px-10 tablet:px-0 items-center justify-center">
-          <Image alt="We are more than" src={WeAreMore} />
+          <div>
+            <p className="text-white text-5xl font-bold">We are</p>
+            <p className=" pl-20 text-8xl font-bold bg-gradient-to-r from-brandRed via-brandRed to-brandYellow text-transparent bg-clip-text">more</p>
+            <p className=" pl-40 text-9xl font-bold bg-gradient-to-r from-brandRed via-brandRed to-brandYellow text-transparent bg-clip-text">than</p>
+          </div>
         </div>
         <div>
           <Image alt="GitHub green squares" src={GreenSquares} />
