@@ -18,7 +18,7 @@ const Hero = ({ sanityData }: HeroProps) => {
       <div className="flex flex-col gap-7 tablet:gap-7 items-start">
         <p className="text-gray-400 uppercase text-xs font-bold">Open Source Insights</p>
         <h1 className="font-bold text-6xl laptop:text-5xl leading-none">
-          {titleExceptLastTwoWords}<br/> <span className="bg-gradient-to-r from-orange-300 to-orange-700 text-transparent bg-clip-text">{lastTwoWordsOfTitle}</span>
+          {titleExceptLastTwoWords}<br/> <span className="bg-gradient-to-r from-brandYellow via-brandRed to-brandRed text-transparent bg-clip-text">{lastTwoWordsOfTitle}</span>
         </h1>
         <p className="text-gray-400 text-xl">
           {sanityData.subtitle}
