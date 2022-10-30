@@ -16,10 +16,10 @@ const Logos = ({ users }: LogosProps) => {
       logo: "/logos/supabase.svg"
     },
     {
-      _id: "qwerzxquest",
-      name: "Quest",
-      website: "https://questdb.io",
-      logo: "/logos/questDB.svg"
+      _id: "qwerzxsupabase",
+      name: "Supabase",
+      website: "https://digitalocean.com/",
+      logo: "/logos/digitalOcean.svg"
     },
     {
       _id: "qwerzxmedusa",
