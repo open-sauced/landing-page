@@ -16,8 +16,8 @@ const Logos = ({ users }: LogosProps) => {
       logo: "/logos/supabase.svg"
     },
     {
-      _id: "qwerzxsupabase",
-      name: "Supabase",
+      _id: "qwerzxdigitalOcean",
+      name: "Digital Ocean",
       website: "https://digitalocean.com/",
       logo: "/logos/digitalOcean.svg"
     },

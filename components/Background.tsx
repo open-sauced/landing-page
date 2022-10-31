@@ -3,10 +3,11 @@ import React, { FC } from 'react'
 import upperStroke from '../public/upperStroke.svg'
 import leftSidePizzaStroke from '../public/leftSidePizzaStroke.svg'
 import rightSidePizzaStroke from '../public/rightSidePizzaStroke.svg'
+import middleRightStroke from '../public/middleRight.svg'
 
 const Background:FC = ({ children }) => {
   return (
-    <div className="bg-darkBG text-white h-fit relative">
+    <div className="bg-darkBG text-white h-fit overflow-hidden relative">
         <div className="absolute -top-[44rem] tablet:-top-[42rem] -left-[28rem] largeTablet:-left-[16rem] laptop:-left-[14rem] desktop:-left-[10rem]">
             <Image alt="Doodles" src={upperStroke} />
         </div>
@@ -18,6 +19,12 @@ const Background:FC = ({ children }) => {
         </div>
         <div className="absolute top-[58rem] -right-[28rem] largeTablet:-right-[22rem] laptop:-right-[19rem] desktop:-right-[16rem]">
             <Image alt="Doodles" src={rightSidePizzaStroke} />
+        </div>
+
+        <div className="max-w-7xl relative">
+            <div className="absolute hidden tablet:block top-[160rem] tablet:top-[155rem] largeTablet:top-[145rem] laptop:right-[4rem] tablet:-right-[2rem] desktop:-right-[15rem] right-0">
+                <Image alt="Doodles" src={middleRightStroke} />
+            </div>
         </div>
 
         <div className="relative">
