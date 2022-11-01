@@ -17,6 +17,7 @@ import {
 } from '../types/schema'
 import GitHubMock from '../components/GitHubMock'
 import Background from '../components/Background'
+import CTA from '../components/CTA'
 
 interface HomePageProps {
   data: {
@@ -72,7 +73,8 @@ const Home: NextPage<HomePageProps> = ({ data: { homePageData, seoData, } }) => 
           <Logos users={homePageData.about.users as unknown as SanityUser[]} />
 
           <GitHubMock githubMockData={homePageData.githubMock as unknown as SanityGithubMock}/>
-          <div className="h-[900px]"></div>          
+          
+          <CTA/>      
         </div>
       </Background>
     </>

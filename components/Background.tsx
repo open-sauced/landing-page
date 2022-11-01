@@ -23,17 +23,15 @@ const Background:FC = ({ children }) => {
         <div className="absolute top-[58rem] -right-[28rem] largeTablet:-right-[22rem] laptop:-right-[19rem] desktop:-right-[16rem]">
             <Image alt="Doodles" src={rightSidePizzaStroke} />
         </div>
-
         <div className="max-w-7xl relative">
             <div className="absolute hidden tablet:block top-[160rem] tablet:top-[155rem] largeTablet:top-[145rem] laptop:right-[4rem] tablet:-right-[2rem] desktop:-right-[15rem] right-0">
                 <Image alt="Doodles" src={middleRightStroke} />
             </div>
         </div>
-
         <div className="absolute top-[185rem] -left-[28rem] largeTablet:-left-[18rem] laptop:-left-[15rem] desktop:-left-[11rem]">
             <Image alt="Doodles" src={_5_leftStroke} />
         </div>
-        <div className="absolute top-[190rem] -right-[28rem] largeTablet:-right-[22rem] laptop:-right-[19rem] desktop:-right-[16rem]">
+        <div className="absolute top-[190rem] -right-[32rem] largeTablet:-right-[22rem] laptop:-right-[19rem] desktop:-right-[16rem]">
             <Image alt="Doodles" src={_5_rightStroke} />
         </div>
 
