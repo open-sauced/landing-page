@@ -71,7 +71,8 @@ const Home: NextPage<HomePageProps> = ({ data: { homePageData, seoData, } }) => 
 
           <Logos users={homePageData.about.users as unknown as SanityUser[]} />
 
-          <GitHubMock githubMockData={homePageData.githubMock as unknown as SanityGithubMock}/>          
+          <GitHubMock githubMockData={homePageData.githubMock as unknown as SanityGithubMock}/>
+          <div className="h-[900px]"></div>          
         </div>
       </Background>
     </>
