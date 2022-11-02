@@ -1,6 +1,6 @@
 import React from 'react'
 import { SanityAbout } from '../types/schema'
-import PRsHero from '../public/PRs-hero.svg'
+import PRsHero from '../public/PRs-hero.png'
 import Image from 'next/image'
 
 interface HeroProps {
