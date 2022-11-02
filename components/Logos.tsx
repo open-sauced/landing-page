@@ -5,18 +5,46 @@ interface LogosProps {
   users: SanityUser[]
 }
 
+
 const Logos = ({ users }: LogosProps) => {
+  
+  const logos = [
+    {
+      _id: "qwerzxsupabase",
+      name: "Supabase",
+      website: "https://supabase.com",
+      logo: "/logos/supabase.svg"
+    },
+    {
+      _id: "qwerzxdigitalOcean",
+      name: "Digital Ocean",
+      website: "https://digitalocean.com/",
+      logo: "/logos/digitalOcean.svg"
+    },
+    {
+      _id: "qwerzxmedusa",
+      name: "Medusa",
+      website: "https://medusajs.com",
+      logo: "/logos/medusa.svg"
+    },
+    {
+      _id: "qwerzxgithub",
+      name: "GitHub",
+      website: "https://github.com",
+      logo: "/logos/github.svg"
+    }
+  ]
+
   return (
-    <section >
-      <h3 className=' font-semibold text-[10px] text-gray150 text-center py-3 '>TRUSTED BY</h3>
-      <div className=" border-[1px] bg-white bg-opacity-[90%] border-gray200 mobile:rounded-2xl tablet:rounded-full grid grid-cols-2 sm:grid-cols-3 tablet:grid-cols-3 laptop:grid-cols-4 gap-x-8 tablet:gap-x-28 gap-y-16 tablet:gap-y-11 mb-24 py-8 tablet:py-16 items-center justify-items-center grid-rows-[38px] auto-rows-[38px] px-4 tablet:px-20">
-        {users.map((user) => (
+    <section className="py-28 px-4">
+      <div className="w-full flex gap-x-14 gap-y-8 flex-wrap justify-center items-center">
+        {logos.map((user) => (
             <a
               key={user._id}
               href={user.website}
               target="_blank"
               rel="noreferrer"
-              className="max-w-[150px] "
+              className="h-6 w-auto"
               
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}

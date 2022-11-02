@@ -1,72 +1,52 @@
 import React from 'react'
-import Button from './Button'
 import { SanityAbout } from '../types/schema'
+import PRsHero from '../public/PRs-hero.png'
+import Image from 'next/image'
 
 interface HeroProps {
   sanityData: SanityAbout
 }
 
 const Hero = ({ sanityData }: HeroProps) => {
+
+  const heroTitle = sanityData.title || ""
+  const titleExceptLastTwoWords = heroTitle.split(" ").slice(0, heroTitle.split(" ").length - 2).join(" ")
+  const lastTwoWordsOfTitle = heroTitle.split(" ").slice(heroTitle.split(" ").length - 2, heroTitle.split(" ").length).join(" ")
+
   return (
-    <main className="pt-[88px] tablet:pt-[186px] tablet:grid grid-cols-[1.5fr_1fr] gap-[20px] laptop:gap-[0px]">
-      <div className="flex flex-col text-gray400 gap-[32px] tablet:gap-[40px] items-start">
-        <h1 className="font-bold text-[46px] tracking-[-5%] laptop:text-[48px] leading-[54px]">
-          {sanityData.title}
+    <main className=" pt-20 px-4 tablet:pt-[12rem] tablet:grid grid-cols-[1.5fr_1fr] gap-5 laptop:gap-0 font-inter">
+      <div className="flex flex-col gap-7 tablet:gap-7 items-start">
+        <p className="text-gray-400 uppercase text-xs font-bold">Open Source Insights</p>
+        <h1 className="font-bold text-6xl laptop:text-5xl leading-none">
+          {titleExceptLastTwoWords}<br/> <span className="bg-gradient-to-r from-brandYellow via-brandRed to-brandRed text-transparent bg-clip-text">{lastTwoWordsOfTitle}</span>
         </h1>
-        <p className="text-[16px] tracking-[-2%] leading-[26px] font-secondary">
+        <p className="text-gray-400 text-xl">
           {sanityData.subtitle}
         </p>
 
-        <div className=' flex gap-4 items-center'>
-          <Button
-            asLink
-            href={sanityData.CTAButtonURL}
-            type="primary"
-            endIcon={
-              <svg width="0.6rem" height="0.6rem" fill="none" viewBox="8 8 8 8">
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="1.5"
-                  d="M10.75 8.75L14.25 12L10.75 15.25"
-                ></path>
-              </svg>
-            }
-          >
-            {sanityData.CTAButtonLabel}
-          </Button>
-          <Button
-            asLink
-            href={sanityData.projectsButtonUrl}
-            type="secondary"
-            endIcon={
-              <svg width="0.6rem" height="0.6rem" fill="none" viewBox="8 8 8 8">
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="1.5"
-                  d="M10.75 8.75L14.25 12L10.75 15.25"
-                ></path>
-              </svg>
-            }
-          >
-            {sanityData.projectsButtonLabel}
-            
-          </Button>
-          
+        <div className="flex gap-4 items-center">
+          <div className="relative">
+            <div className="bg-gradient-to-r -inset-0 blur-sm rounded-md absolute from-orange-400 to-orange-600">
+            </div>
+            <a href={sanityData.CTAButtonURL}>
+              <button className="rounded-md relative border-orange-500 border-2 text-white text-sm font-bold py-2 px-4 largeTablet:px-12 bg-darkBG">
+                {sanityData.CTAButtonLabel}
+              </button>
+            </a>
+          </div>
+
+          <a href={sanityData.projectsButtonUrl}>
+            <button className="rounded-md relative border-gray-500 border-2 text-white text-sm font-bold py-2 px-4 largeTablet:px-12 bg-darkBG">
+              {sanityData.projectsButtonLabel}
+            </button>
+          </a>
         </div>
         
       </div>
       <div className="relative hidden tablet:block">
-        <div className="top-[-80px] h-[400px] tablet:top-[-120px] tablet:h-[800px] aspect-square absolute pointer-events-none">
+        <div className="h-[400px] tablet:h-[800px] aspect-square absolute pointer-events-none">
           {/*  eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            alt=""
-            src={`${sanityData.previewImage as unknown as string}?auto=format`}
-            loading="eager"
-          />
+          <Image alt="PRs" src={PRsHero} />
         </div>
       </div>
     </main>
