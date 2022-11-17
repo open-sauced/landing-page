@@ -1,6 +1,6 @@
 import React from 'react'
-import { SanityAbout } from '../types/schema'
-import PRsHero from '../public/PRs-hero.png'
+import { SanityAbout } from '../../types/schema'
+import PRsHero from '../../public/PRs-hero.png'
 import Image from 'next/image'
 
 interface HeroProps {
@@ -14,7 +14,7 @@ const Hero = ({ sanityData }: HeroProps) => {
   const lastTwoWordsOfTitle = heroTitle.split(" ").slice(heroTitle.split(" ").length - 2, heroTitle.split(" ").length).join(" ")
 
   return (
-    <main className=" pt-20 px-4 tablet:pt-[12rem] tablet:grid grid-cols-[1.5fr_1fr] gap-5 laptop:gap-0 font-inter">
+    <main className="pt-20 px-6 max-w tablet:pt-[12rem] tablet:grid grid-cols-[1.5fr_1fr] gap-5 laptop:gap-0 font-inter">
       <div className="flex flex-col gap-7 tablet:gap-7 items-start">
         <p className="text-gray-400 uppercase text-xs font-bold">Open Source Insights</p>
         <h1 className="font-bold text-6xl laptop:text-5xl leading-none">

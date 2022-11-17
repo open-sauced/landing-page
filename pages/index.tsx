@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Hero from '../components/Hero'
-import Logos from '../components/Logos'
+import Hero from '../sections/home-page/Hero'
+import Logos from '../sections/home-page/Logos'
 import Navigation from '../components/Header'
 import { getHomePageData, getSEOData } from '../lib/sanity'
 import {
@@ -15,27 +15,26 @@ import {
   SanityTestimonial,
   SanityUser,
 } from '../types/schema'
-import GitHubMock from '../components/GitHubMock'
+import GitHubMock from '../sections/home-page/GitHubMock'
 import Background from '../components/Background'
-import CTA from '../components/CTA'
+import CTA from '../sections/home-page/CTA'
+import Footer from '../sections/Footer'
 
 interface HomePageProps {
   data: {
     homePageData: {
-      about: SanityAbout,
-      githubMock: SanityGithubMock,
-      calender: SanityCalender,
-      feature: SanityFeature,
-      testimonial: SanityTestimonial,
-      footer: SanityFooter,
+      about: SanityAbout
+      githubMock: SanityGithubMock
+      calender: SanityCalender
+      feature: SanityFeature
+      testimonial: SanityTestimonial
+      footer: SanityFooter
     }
-    seoData: SanitySeo,
-
-
+    seoData: SanitySeo
   }
 }
 
-const Home: NextPage<HomePageProps> = ({ data: { homePageData, seoData, } }) => {
+const Home: NextPage<HomePageProps> = ({ data: { homePageData, seoData } }) => {
   return (
     <>
       <Head>
@@ -65,16 +64,26 @@ const Home: NextPage<HomePageProps> = ({ data: { homePageData, seoData, } }) => 
         ></meta>
       </Head>
       <Background>
-        <div className="max-w-7xl mx-auto">
-          <Navigation variant="orangeWhite" navigationItems={homePageData.about.navigationURLs as unknown as SanityNavigation[] } />
+        <div className="max-w-6xl mx-auto">
+          <Navigation
+            variant="orangeWhite"
+            navigationItems={
+              homePageData.about.navigationURLs as unknown as SanityNavigation[]
+            }
+          />
 
           <Hero sanityData={homePageData.about as unknown as SanityAbout} />
 
           <Logos users={homePageData.about.users as unknown as SanityUser[]} />
 
-          <GitHubMock githubMockData={homePageData.githubMock as unknown as SanityGithubMock}/>
-          
-          <CTA/>      
+          <GitHubMock
+            githubMockData={
+              homePageData.githubMock as unknown as SanityGithubMock
+            }
+          />
+
+          <CTA />
+          <Footer footer={[]} />
         </div>
       </Background>
     </>
