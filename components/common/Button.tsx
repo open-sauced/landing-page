@@ -1,15 +1,18 @@
 import Link from 'next/link'
 import React, { FC, ReactElement } from 'react'
+import { AiFillGithub } from 'react-icons/ai'
 
 interface ButtonProps {
   href?: string
   variant?: 'gray' | 'neon'
+  gitHub?: boolean
 }
 
 const Button: FC<ButtonProps> = ({
   children,
   href = '#',
   variant = 'neon',
+  gitHub,
 }): ReactElement => {
   const commonStyle = `h-fit min-h-[38px] w-fit min-w-[180px] rounded-md p-[1px] cursor-pointer `
   const variantStyle =
@@ -18,15 +21,20 @@ const Button: FC<ButtonProps> = ({
       : `bg-[#687076]`
 
   return (
-    <div className={`${commonStyle} ${variantStyle}`}>
-      <div className="h-full w-full min-h-[38px] rounded-md bg-darkBG flex justify-center items-center px-3 py-[6px]">
-        <Link href={href}>
-          <span className="font-bold text-sm leading-[1] text-[#FEF8F4] ">
+    <Link href={href}>
+      <div className={`${commonStyle} ${variantStyle}`}>
+        <div className="h-full w-full min-h-[38px] rounded-md bg-darkBG flex justify-center items-center px-3 py-[6px]">
+          <span className="font-bold text-sm leading-[1] text-[#FEF8F4] flex">
+            {gitHub && (
+              <span className="mr-2">
+                <AiFillGithub />
+              </span>
+            )}
             {children}
           </span>
-        </Link>
+        </div>
       </div>
-    </div>
+    </Link>
   )
 }
 

@@ -5,8 +5,8 @@ import DropdownMenu from './DropdownMenu'
 import { SanityNavigation } from '../types/schema'
 import BrandLogo from '../public/brandLogo.svg'
 import BrandLogoDark from '../public/brandLogoDark.svg'
-import { AiFillGithub } from 'react-icons/ai'
 import SectionWrapper from './SectionWrapper'
+import { Button } from './common'
 
 interface NavigationProps {
   navigationItems: SanityNavigation[]
@@ -31,7 +31,7 @@ const Navigation = ({
   }
 
   return (
-    <SectionWrapper justify="between" >
+    <SectionWrapper justify="between">
       <header className="flex flex-grow py-9 font-inter justify-between items-center">
         <DesktopNavigation
           textColor={textColor}
@@ -93,15 +93,9 @@ const DesktopNavigation = ({
         </ul>
       </nav>
 
-      <div className="relative border-orange-500 border-2 font-semibold text-sm text-white rounded-md">
-        <div className="bg-orange-500 absolute -inset-1 rounded-md blur-sm"></div>
-        <a href="https://insights.opensauced.pizza/signin">
-          <button className="relative bg-darkBG rounded-md px-3 py-2 flex items-center gap-2">
-            <AiFillGithub />
-            Connect with GitHub
-          </button>
-        </a>
-      </div>
+      <Button href="https://insights.opensauced.pizza/signin" gitHub>
+        Connect with GitHub
+      </Button>
     </div>
   )
 }
