@@ -8,7 +8,7 @@ import {
   SanitySeo,
   SanityPress,
 } from '../../types/schema'
-import Footer from '../../sections/Footer'
+import Footer from '../../components/sections/Footer'
 import Navigation from '../../components/Header'
 import PressBackground from '../../components/PressBackground'
 import PressHeading from '../../components/PressHeading'

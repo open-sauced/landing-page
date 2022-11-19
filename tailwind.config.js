@@ -12,7 +12,7 @@ module.exports = {
     screens: {
       mobile: '320px',
       tablet: '640px',
-      largeTablet: "840px",
+      largeTablet: '840px',
       laptop: '1024px',
       desktop: '1280px',
       _2k: '2000px',
@@ -41,7 +41,6 @@ module.exports = {
         brandYellow: '#FCB60A',
         brandRed: '#ED5332',
         brandOrange: '#ED6A32',
-        
       },
       fontFamily: {
         primary: "'Open Sans', 'Segoe UI', Tahoma, sans-serif",
@@ -51,7 +50,8 @@ module.exports = {
       },
       backgroundImage: {
         'pizza-slices': "url('/pizzaSlices.svg')",
-      }
+      },
+      
     },
   },
   plugins: [],

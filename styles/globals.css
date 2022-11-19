@@ -14,6 +14,7 @@ html {
 
 body {
   overflow-x: hidden;
+  color: '#FFF9ED' !important;
 }
 
 body > div {
@@ -30,7 +31,7 @@ a {
 }
 
 .boldToGrad > p > strong {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-lightOrange to-darkOrange 
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-lightOrange to-darkOrange;
 }
 
 @layer components {
@@ -38,23 +39,21 @@ a {
     @apply font-semibold text-darkBlue;
   }
   .styledDocument h1 {
-    @apply text-3xl font-semibold py-5 leading-10
+    @apply text-3xl font-semibold py-5 leading-10;
   }
   .styledDocument h2 {
-    @apply text-2xl font-semibold py-4 leading-8
+    @apply text-2xl font-semibold py-4 leading-8;
   }
   .styledDocument h3 {
-    @apply text-lg font-semibold py-3 leading-7
+    @apply text-lg font-semibold py-3 leading-7;
   }
   .styledDocument h4 {
-    @apply text-base font-semibold py-3 leading-7
+    @apply text-base font-semibold py-3 leading-7;
   }
   .styledDocument h5 {
-    @apply text-sm font-semibold py-2 leading-6
+    @apply text-sm font-semibold py-2 leading-6;
   }
   .styledDocument h6 {
-    @apply text-xs font-semibold py-1 leading-5
+    @apply text-xs font-semibold py-1 leading-5;
   }
 }
-
-

@@ -23,7 +23,7 @@ import { FaHackerNewsSquare } from 'react-icons/fa'
 import { RiHashtag } from 'react-icons/ri'
 import Navigation from '../../../components/Header'
 import Link from 'next/link'
-import Footer from '../../../sections/Footer'
+import Footer from '../../../components/sections/Footer'
 import { useRouter } from 'next/router'
 import { BsArrowReturnLeft } from 'react-icons/bs'
 

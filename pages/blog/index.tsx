@@ -25,7 +25,7 @@ import { BiUserCircle } from 'react-icons/bi'
 import ellipseOrange from '../../public/ellipseOrange.svg'
 import Image from 'next/image'
 import Link from 'next/link'
-import Footer from '../../sections/Footer'
+import Footer from '../../components/sections/Footer'
 
 interface BlogPageProps {
   data: {

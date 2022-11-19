@@ -17,7 +17,7 @@ import Link from 'next/link'
 import Navigation from '../../components/Header'
 import BackgroundDrip from '../../components/BackgroundDrip'
 import ReactPlayer from 'react-player'
-import Footer from '../../sections/Footer'
+import Footer from '../../components/sections/Footer'
 
 interface FeaturePageProps {
   data: {
