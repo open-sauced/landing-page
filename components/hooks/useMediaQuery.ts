@@ -11,7 +11,7 @@ const useMediaQuery = (): boolean => {
     if (typeof window !== 'undefined') {
       const media = window.matchMedia(`(min-width:840px)`)
       media.addListener(updateTarget)
-
+      setTargetReached(media.matches)
       return () => media.removeListener(updateTarget)
     }
   }, [])

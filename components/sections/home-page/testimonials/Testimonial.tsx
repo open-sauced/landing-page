@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React, { FC } from 'react'
 import { SanityTestimonial } from '../../../../types/schema'
+import GradientBorderWrapper from '../../../common/GradientBorderWrapper'
 import { Paragraph } from '../../../common/text'
 
 interface TestimonialProps {
@@ -18,18 +19,14 @@ const Testimonial: FC<TestimonialProps> = ({
   },
 }) => {
   return (
-    <div
-      className={`h-[272px] w-full rounded-lg p-[1px] bg-gradient-to-tr from-[#ED5432] via-[#EDA232] to-[#ED5432] drop-shadow-[0_0_4px_#ED5432] `}
-    >
-      <div className="h-full w-full p-10 bg-darkBG rounded-lg flex flex-col">
+    <GradientBorderWrapper radius={'8px'}>
+      <div className="h-[272px] w-full p-10 bg-darkBG rounded-lg flex flex-col">
         <div className="flex-grow">
           <Typography>{testimonial}</Typography>
         </div>
 
         <div className=" flex items-center gap-2 ">
-          <div
-            className={`h-[73px] w-[73px] rounded-full p-[1px] bg-gradient-to-tr from-[#ED5432] via-[#EDA232] to-[#ED5432] drop-shadow-[0_0_4px_#ED5432] `}
-          >
+          <GradientBorderWrapper radius={'50%'}>
             <div className=" shadow-md overflow-hidden rounded-full w-[72px] h-[72px]">
               <Image
                 className=" rounded-full flex-[1] shadow-md  "
@@ -39,7 +36,8 @@ const Testimonial: FC<TestimonialProps> = ({
                 height={72}
               />
             </div>
-          </div>
+          </GradientBorderWrapper>
+
           <div className="pl-6">
             <h6 className="text-gray400 font-bold text-[14px] flex-[3]">
               <Typography variant="username">{twitterName} </Typography>
@@ -54,7 +52,7 @@ const Testimonial: FC<TestimonialProps> = ({
           </div>
         </div>
       </div>
-    </div>
+    </GradientBorderWrapper>
   )
 }
 

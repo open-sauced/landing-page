@@ -22,6 +22,9 @@ import Footer from '../components/sections/Footer'
 import Features from '../components/sections/home-page/features/Features'
 import Testimonials from '../components/sections/home-page/testimonials/Testimonials'
 import Insights from '../components/sections/home-page/Insights'
+import HandleDecoratedText from '../components/common/text/utils/DecoratedText'
+import Subscribe from '../components/sections/Subscribe'
+import GradientBorderWrapper from '../components/common/GradientBorderWrapper'
 
 interface HomePageProps {
   data: {
@@ -77,7 +80,6 @@ const Home: NextPage<HomePageProps> = ({ data: { homePageData, seoData } }) => {
         <Hero data={homePageData.about as unknown as SanityAbout} />
 
         <Logos users={homePageData.about.users as unknown as SanityUser[]} />
-
         <GitHubMock
           githubMockData={
             homePageData.githubMock as unknown as SanityGithubMock
@@ -88,6 +90,7 @@ const Home: NextPage<HomePageProps> = ({ data: { homePageData, seoData } }) => {
         <Features data={homePageData.feature} />
         <Insights />
         <Testimonials data={homePageData.testimonial} />
+        <Subscribe />
         <Footer footer={[]} />
       </Background>
     </>

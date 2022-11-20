@@ -10,13 +10,10 @@ interface TestimonialsProps {
 
 const Testimonials: FC<TestimonialsProps> = ({ data }) => {
   return (
-    <SectionWrapper direction="col">
+    <SectionWrapper direction="col" pb={215} pbs={120}> 
       <Subheading>Testimonials</Subheading>
       <Heading component="h3" align="center">
-        The value of{' '}
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-lightOrange to-darkOrange">
-          open source
-        </span>
+        The value of $yOpen Source$y
       </Heading>
 
       <div className=" mt-[46px] grid mobile:grid-cols-1 tablet:grid-cols-3 gap-9 largeTablet:mt-24  ">

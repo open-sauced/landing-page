@@ -13,6 +13,7 @@ interface GitHubMockProps {
 const GitHubMock: FC<GitHubMockProps> = ({
   githubMockData: { title, subtitle, mockimage, titleRich },
 }) => {
+
   return (
     <SectionWrapper>
       <section className="font-inter">
@@ -64,8 +65,7 @@ const GitHubMock: FC<GitHubMockProps> = ({
         <ResponsiveWrapper mb={350}>
           <div className="flex-1">
             <Heading component="h2">
-              Find out the <span className="text-brandRed">true impact</span> to
-              the OSS community
+            Find out the $otrue impact$o to the OSS community
             </Heading>
             <div className="mt-10">
               <Paragraph>

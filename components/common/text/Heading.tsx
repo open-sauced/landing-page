@@ -1,17 +1,10 @@
 import React, { FC, ReactElement } from 'react'
+import DecoratedText from './utils/DecoratedText'
 
 interface HeadingProps {
   component?: 'h1' | 'h2' | 'h3'
   align?: 'center' | 'right' | 'left'
 }
-
-/* <h1 className="font-bold text-6xl laptop:text-5xl leading-none">
-            {titleExceptLastTwoWords}
-            <br />{' '}
-            <span className="bg-gradient-to-r from-brandYellow via-brandRed to-brandRed text-transparent bg-clip-text">
-              {lastTwoWordsOfTitle}
-            </span>
-          </h1> */
 
 const Heading: FC<HeadingProps> = ({
   children,
@@ -25,7 +18,7 @@ const Heading: FC<HeadingProps> = ({
         className={`${commonStyle}
         largeTablet:text-5xl`}
       >
-        {children}
+        <DecoratedText content={children as string} />
       </h2>
     )
   }
@@ -35,7 +28,7 @@ const Heading: FC<HeadingProps> = ({
         className={`${commonStyle} 
         largeTablet:text-4xl`}
       >
-        {children}
+        <DecoratedText content={children as string} />
       </h3>
     )
   }
@@ -44,7 +37,7 @@ const Heading: FC<HeadingProps> = ({
       className={`${commonStyle}
       largeTablet:text-6xl largeTablet:tracking-[-0.03em]`}
     >
-      {children}
+      <DecoratedText content={children as string} />
     </h1>
   )
 }
