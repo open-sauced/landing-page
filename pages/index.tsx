@@ -20,6 +20,8 @@ import Background from '../components/Background'
 import CTA from '../components/sections/home-page/CTA'
 import Footer from '../components/sections/Footer'
 import Features from '../components/sections/home-page/features/Features'
+import Testimonials from '../components/sections/home-page/testimonials/Testimonials'
+import Insights from '../components/sections/home-page/Insights'
 
 interface HomePageProps {
   data: {
@@ -28,7 +30,7 @@ interface HomePageProps {
       githubMock: SanityGithubMock
       calender: SanityCalender
       feature: SanityFeature[]
-      testimonial: SanityTestimonial
+      testimonial: SanityTestimonial[]
       footer: SanityFooter
     }
     seoData: SanitySeo
@@ -84,6 +86,8 @@ const Home: NextPage<HomePageProps> = ({ data: { homePageData, seoData } }) => {
 
         <CTA data={homePageData.calender} />
         <Features data={homePageData.feature} />
+        <Insights />
+        <Testimonials data={homePageData.testimonial} />
         <Footer footer={[]} />
       </Background>
     </>

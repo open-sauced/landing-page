@@ -5,7 +5,7 @@ import DropdownMenu from './DropdownMenu'
 import { SanityNavigation } from '../types/schema'
 import BrandLogo from '../public/brandLogo.svg'
 import BrandLogoDark from '../public/brandLogoDark.svg'
-import SectionWrapper from './SectionWrapper'
+import SectionWrapper from './common/layout/SectionWrapper'
 import { Button } from './common'
 
 interface NavigationProps {

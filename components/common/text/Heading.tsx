@@ -1,7 +1,7 @@
 import React, { FC, ReactElement } from 'react'
 
 interface HeadingProps {
-  component?: 'h1' | 'h2'
+  component?: 'h1' | 'h2' | 'h3'
   align?: 'center' | 'right' | 'left'
 }
 
@@ -18,21 +18,31 @@ const Heading: FC<HeadingProps> = ({
   component = 'h1',
   align = 'left',
 }): ReactElement => {
-  const commonStyle = `font-bold text-[#FFF9ED] text-${align} tracking-[-0.02em]`
+  const commonStyle = `font-bold text-[#FFF9ED] text-${align} tracking-[-0.02em] text-3xl`
   if (component === 'h2') {
     return (
       <h2
-        className={`${commonStyle} text-2xl
-        laptop:text-5xl`}
+        className={`${commonStyle}
+        largeTablet:text-5xl`}
       >
         {children}
       </h2>
     )
   }
+  if (component === 'h3') {
+    return (
+      <h3
+        className={`${commonStyle} 
+        largeTablet:text-4xl`}
+      >
+        {children}
+      </h3>
+    )
+  }
   return (
     <h1
-      className={`${commonStyle} text-3xl  
-      laptop:text-6xl laptop:tracking-[-0.03em]`}
+      className={`${commonStyle}
+      largeTablet:text-6xl largeTablet:tracking-[-0.03em]`}
     >
       {children}
     </h1>

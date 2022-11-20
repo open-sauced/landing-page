@@ -3,8 +3,9 @@ import React, { FC } from 'react'
 import { SanityGithubMock } from '../../../types/schema'
 import GreenSquares from '../../../public/greenSquares.svg'
 import trueImpact from '../../../public/trueImpact.svg'
-import SectionWrapper from '../../SectionWrapper'
+import SectionWrapper from '../../common/layout/SectionWrapper'
 import { Paragraph, Heading } from '../../common/text'
+import ResponsiveWrapper from '../../common/layout/ResponsiveWrapper'
 interface GitHubMockProps {
   githubMockData: SanityGithubMock
 }
@@ -60,31 +61,25 @@ const GitHubMock: FC<GitHubMockProps> = ({
             how capable a developer is.
           </p>
         </div>
-
-        <div className="flex flex-col tablet:flex-row gap-x-4 gap-y-16 items-center pt-28 tablet:pt-40">
-          <div className="flex-1 max-w-lg">
+        <ResponsiveWrapper mb={350}>
+          <div className="flex-1">
             <Heading component="h2">
               Find out the <span className="text-brandRed">true impact</span> to
               the OSS community
             </Heading>
-
-            {/* <h2 className="font-bold text-5xl text-white">
-              Find out the <span className="text-brandRed">true impact</span> to
-              the OSS community
-            </h2> */}
-            <div className='mt-10'>
+            <div className="mt-10">
               <Paragraph>
                 Using our developer first metrics, you can see a true
                 representation of any developer’s ability.
               </Paragraph>
             </div>
           </div>
-          <div className="flex-1 flex">
-            <div className="flex w-full justify-center tablet:justify-end">
+          <div className="flex-1 flex mt-14 largeTablet:mt-0" >
+            <div className="flex w-full justify-center">
               <Image src={trueImpact} />
             </div>
           </div>
-        </div>
+        </ResponsiveWrapper>
       </section>
     </SectionWrapper>
   )

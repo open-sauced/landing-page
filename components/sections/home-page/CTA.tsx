@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import SectionWrapper from '../../SectionWrapper'
+import SectionWrapper from '../../common/layout/SectionWrapper'
 import { SanityCalender } from '../../../types/schema'
 import Image from 'next/image'
 import { Paragraph, Heading } from '../../common/text'
