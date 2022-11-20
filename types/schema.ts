@@ -436,12 +436,7 @@ export interface SanityFooter extends SanityDocument {
    *
    *
    */
-  icon?: {
-    _type: 'image'
-    asset: SanityReference<SanityImageAsset>
-    crop?: SanityImageCrop
-    hotspot?: SanityImageHotspot
-  }
+  icon?: string
 }
 
 /**

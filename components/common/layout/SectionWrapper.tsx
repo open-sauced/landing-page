@@ -16,7 +16,7 @@ const SectionWrapper: FC<SectionWrapperProps> = ({
   pt = 0,
   pb = 0,
   pts = 0,
-  pbs = 0,
+  pbs = 120,
   children,
 }): ReactElement => {
   const isLargeTablet = useMediaQuery()

@@ -13,19 +13,23 @@ const CTA: FC<CTAProps> = ({ data }) => {
   const { title, subtitle, calenderImage } = data
   const featureImage = calenderImage || ''
   return (
-    <SectionWrapper>
-      <div className="flex justify-center items-center flex-col text-center font-inter">
-        <Heading component="h2" align="center">
-          {title}
-        </Heading>
-        <div className="my-10 w-full laptop:w-[55%]">
-          <Paragraph align="center">{subtitle}</Paragraph>
-        </div>
-        <Button href="https://insights.opensauced.pizza">Get Started</Button>
+    <SectionWrapper pb={400} direction="col">
+      <Heading component="h2" align="center">
+        {title}
+      </Heading>
+      <div className="my-10 w-full laptop:w-[55%]">
+        <Paragraph align="center">{subtitle}</Paragraph>
+      </div>
+      <Button href="https://insights.opensauced.pizza">Get Started</Button>
 
-        <div className="w-[344px] h-[390px] shrink-0 relative mt-[120px]">
-          <Image alt={title} src={featureImage as string} layout="fill" />
-        </div>
+      <div className="w-[100%] h-fit max-w-[953px] shrink-0 relative mt-[120px]">
+        <Image
+          alt={title}
+          src={featureImage as string}
+          layout="responsive"
+          width={828}
+          height={722}
+        />
       </div>
     </SectionWrapper>
   )

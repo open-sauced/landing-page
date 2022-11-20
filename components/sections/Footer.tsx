@@ -1,158 +1,143 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import React, { FC } from 'react'
 import { SanityFooter } from '../../types/schema'
-import OpenSaucedLogo from '../../public/openSauced-icon.png'
-
-// icons
-import { AiOutlineTwitter } from 'react-icons/ai'
-import { AiOutlineGithub } from 'react-icons/ai'
-import { AiFillInstagram } from 'react-icons/ai'
-import { AiFillYoutube } from 'react-icons/ai'
-import { FaDiscord } from 'react-icons/fa'
-import { FaDev } from 'react-icons/fa'
+import OpenSaucedLogo from '../../public/logos/FooterLogo.png'
+import SectionWrapper from '../common/layout/SectionWrapper'
 interface FooterProps {
-  footer: SanityFooter[]
+  data: SanityFooter[]
 }
 
 const footerContext = {
   pages: [
     {
       url: 'https://app.termly.io/document/privacy-policy/5e303854-d262-468a-80ec-54b645d01c2e',
-      text: 'Privacy',
+      label: 'Privacy',
     },
     {
       url: 'https://app.termly.io/document/terms-of-use-for-saas/03e4e1c1-53ad-4fc4-b415-5c3f0e8c25ef',
-      text: 'Terms',
+      label: 'Terms',
     },
     {
       url: 'https://api.opensauced.pizza/docs#/Health%20check%20service/healthStatusWeb',
-      text: 'Status',
+      label: 'Status',
     },
   ],
   apps: [
     {
       url: 'https://hot.opensauced.pizza',
-      text: 'hot.opensauced.pizza',
+      label: 'hot.opensauced.pizza',
     },
     {
       url: 'https://insights.opensauced.pizza',
-      text: 'insights.opensauced.pizza',
-    },
-  ],
-  socials: [
-    {
-      url: 'https://twitter.com/saucedopen',
-      icon: (
-        <AiOutlineTwitter className="text-2xl hover:text-light-slate-10 text-light-slate-9" />
-      ),
-    },
-    {
-      url: 'https://github.com/open-sauced',
-      icon: (
-        <AiOutlineGithub className="text-2xl hover:text-light-slate-10  text-light-slate-9" />
-      ),
-    },
-    {
-      url: 'https://www.instagram.com/opensauced/',
-      icon: (
-        <AiFillInstagram className="text-2xl hover:text-light-slate-10  text-light-slate-9" />
-      ),
-    },
-    {
-      url: 'https://www.youtube.com/opensauced',
-      icon: (
-        <AiFillYoutube className="text-2xl hover:text-light-slate-10  text-light-slate-9" />
-      ),
-    },
-    {
-      url: 'https://discord.com/invite/U2peSNf23P',
-      icon: (
-        <FaDiscord className="text-2xl hover:text-light-slate-10  text-light-slate-9" />
-      ),
-    },
-    {
-      url: 'https://dev.to/opensauced/',
-      icon: (
-        <FaDev className="text-2xl hover:text-light-slate-10  text-light-slate-9" />
-      ),
+      label: 'insights.opensauced.pizza',
     },
   ],
 }
 
-const Footer: FC<FooterProps> = ({ footer }) => {
+const Footer: FC<FooterProps> = ({ data }) => {
+  const { pages, apps } = footerContext
   return (
-    <div className="w-full">
-      <footer className="px-6 tablet:px-16 w-full bg-light-slate-2 transition">
-        <div className="font-medium desktop:border-t desktop:py-8 desktop:items-center desktop:justify-between desktop:gap-x-4 flex flex-col gap-y-4 desktop:flex-row py-2 w-full">
-          <div className="text-center desktop:text-left justify-center gap-1 flex items-center">
-            <div className="w-6 h-6 relative !min-w-[24px] min-h-[24px]">
-              <Image layout="fill" alt="brand logo" src={OpenSaucedLogo} />
+    <footer className="w-full min-h-[200px] bg-footerBG pb-10">
+      <SectionWrapper direction="col">
+        <div className="w-full pt-10 pb-16 largeTablet:pt-12">
+          <div className="w-[140px] h-6 relative">
+            <Image layout="fill" alt="Brand logo" src={OpenSaucedLogo} />
+          </div>
+        </div>
+        <div className="w-full flex flex-col largeTablet:flex-row">
+          <div className="w-full largeTablet:w-[45%]">
+            <Typography variant="title">SOCIALS</Typography>
+            <div className="flex relative">
+              {data.map(({ url, icon }) => {
+                const src = icon || ''
+                const href = url || ''
+                return (
+                  <div className="cursor-pointer pr-3">
+                    <a href={href} target="_blank">
+                      <Image
+                        alt="Brand logo"
+                        src={src}
+                        width={36}
+                        height={36}
+                      />
+                    </a>
+                  </div>
+                )
+              })}
             </div>
-            <span className="desktop:hidden font-bold text-light-slate-12 ">
-              OpenSauced
-            </span>
-            <p className="hidden !text-light-slate-9 lg:inline-block">
-              © 2022{' '}
-              <span className="hidden desktop:inline-block">OpenSauced</span>
-            </p>
           </div>
-          <div className="flex flex-wrap gap-y-2 desktop:mr-auto desktop:text-sm text-light-slate-11 justify-center gap-x-4">
-            {footerContext.apps.map(({ url, text }) => (
-              <a
-                key={url}
-                className="px-2 hover:text-light-slate-12 "
-                target="_blank"
-                href={url}
-                rel="noopener noreferrer"
-              >
-                {text}
-              </a>
-            ))}
-          </div>
-          <div className="flex justify-center gap-x-4 ">
-            <div className=" hidden desktop:flex items-center border-r pr-4   gap-x-4 text-light-slate-11 text-sm">
-              {footerContext.pages.map(({ url, text }) => (
-                <a
-                  key={url}
-                  className="px-2 hover:text-light-slate-12"
-                  href={url}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {text}
-                </a>
-              ))}
+          <div className="w-full flex flex-wrap">
+            <div className="w-1/2 my-10 largeTablet:w-[35%] largeTablet:my-0">
+              <Typography variant="title">MENU</Typography>
+              <div className="w-full flex flex-col">
+                <Typography variant="item1">About</Typography>
+                <Typography variant="item1">Blog</Typography>
+                <Typography variant="item1">Services</Typography>
+              </div>
             </div>
-            {footerContext.socials?.map(({ url, icon }) => (
-              <a target="_blank" href={url} key={url} rel="noopener noreferrer">
-                {icon}
-              </a>
-            ))}
-          </div>
-          <div className="flex tablet:justify-center desktop:hidden desktop:border-none desktop:order-2 border-t py-3 pb-4 mt-2 text-sm justify-between">
-            <p className="text-light-slate-9">
-              © 2022{' '}
-              <span className="hidden tablet:inline-block">Open sauced</span>
-            </p>
-            <div className="flex items-center gap-x-3 text-light-slate-11 text-sm">
-              {footerContext.pages.map(({ url, text }) => (
-                <a
-                  key={text}
-                  className="px-2"
-                  href={url}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {text}
-                </a>
-              ))}
+            <div className="w-1/2 my-10 largeTablet:w-[35%] largeTablet:my-0">
+              <Typography variant="title">More Sauce</Typography>
+              <div className="w-full flex flex-col">
+                {apps.map(({ label, url }) => (
+                  <a href={url} target="_blank">
+                    <Typography variant="item1">{label}</Typography>
+                  </a>
+                ))}
+              </div>
+            </div>
+            <div className="w-1/2 mb-10 largeTablet:w-[30%] largeTablet:mb-0">
+              <Typography variant="title">Contact Us</Typography>
+              <div className="w-full flex flex-col">
+                <Typography variant="item1">+1 (123) 456-7890</Typography>
+                <Typography variant="item1">email@domain.com</Typography>
+              </div>
             </div>
           </div>
         </div>
-      </footer>
-    </div>
+
+        <div className="w-full pt-9 flex flex-col-reverse border-t-[0.5px] border-gray-700 largeTablet:flex-row ">
+          <div className="flex-grow">
+            <Typography variant="item2">{`© ${new Date().getFullYear()} Open Sauced, LLC. All rights reserved.`}</Typography>
+          </div>
+          <div className="flex mb-5 largeTablet:mb-0 ">
+            {pages.map(({ url, label }, i) => (
+              <div className="flex">
+                <a href={url} target="_blank">
+                  <Typography variant="item2">{label}</Typography>
+                </a>
+                {i < pages.length - 1 && (
+                  <div className=" mx-2">
+                    <Typography variant="item2">•</Typography>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </SectionWrapper>
+    </footer>
   )
+}
+
+interface TypographyProps {
+  variant?: 'title' | 'item1' | 'item2'
+}
+
+const Typography: FC<TypographyProps> = ({ variant = 'item1', children }) => {
+  const titleStyle =
+    'font-bold text-[#FFF9ED] opacity-[0.35] text-xs uppercase tracking-[0.2em] pb-8'
+  const item1Style =
+    'font-normal text-[#FFF9ED] text-sm tracking-[-0.02em] opacity-[0.7] pb-3'
+  const item2Style =
+    'font-normal text-[#FFF9ED] text-sm tracking-[-0.02em] opacity-[0.35]'
+
+  const appliedStyle =
+    variant === 'title'
+      ? titleStyle
+      : variant === 'item1'
+      ? item1Style
+      : item2Style
+  return <p className={appliedStyle}>{children}</p>
 }
 
 export default Footer

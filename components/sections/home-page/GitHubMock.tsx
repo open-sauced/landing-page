@@ -15,8 +15,7 @@ const GitHubMock: FC<GitHubMockProps> = ({
 }) => {
 
   return (
-    <SectionWrapper>
-      <section className="font-inter">
+    <SectionWrapper direction='col'>
         <div className="flex pb-14 px-10 tablet:px-0 items-center justify-center">
           <div>
             <p className="text-white text-4xl tablet:text-5xl font-bold">
@@ -80,7 +79,6 @@ const GitHubMock: FC<GitHubMockProps> = ({
             </div>
           </div>
         </ResponsiveWrapper>
-      </section>
     </SectionWrapper>
   )
 }

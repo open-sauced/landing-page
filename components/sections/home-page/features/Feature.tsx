@@ -18,7 +18,7 @@ const Feature: FC<Props> = ({
   const reverse = index % 2 === 1
   return (
     <ResponsiveWrapper reverse={reverse}>
-      <div className={`flex-[1] ${!reverse && 'pl-6'}`}>
+      <div className={`flex-[1] ${!reverse && 'largeTablet:pl-6'}`}>
         <Subheading>{subtitle}</Subheading>
         <Heading component="h2">{title}</Heading>
         <div className="my-10">

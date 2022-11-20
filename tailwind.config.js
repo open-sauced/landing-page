@@ -41,6 +41,8 @@ module.exports = {
         brandYellow: '#FCB60A',
         brandRed: '#ED5332',
         brandOrange: '#ED6A32',
+        footerBG: 'rgba(248, 114, 22, 0.07)',
+        footerDividerColor: 'rgba(248, 114, 22, 0.07)',
       },
       fontFamily: {
         primary: "'Open Sans', 'Segoe UI', Tahoma, sans-serif",

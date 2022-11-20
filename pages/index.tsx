@@ -34,7 +34,7 @@ interface HomePageProps {
       calender: SanityCalender
       feature: SanityFeature[]
       testimonial: SanityTestimonial[]
-      footer: SanityFooter
+      footer: SanityFooter[]
     }
     seoData: SanitySeo
   }
@@ -91,7 +91,7 @@ const Home: NextPage<HomePageProps> = ({ data: { homePageData, seoData } }) => {
         <Insights />
         <Testimonials data={homePageData.testimonial} />
         <Subscribe />
-        <Footer footer={[]} />
+        <Footer data={homePageData.footer} />
       </Background>
     </>
   )
