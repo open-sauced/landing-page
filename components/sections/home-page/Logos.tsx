@@ -3,10 +3,10 @@ import SectionWrapper from '../../common/layout/SectionWrapper'
 import { SanityUser } from '../../../types/schema'
 
 interface LogosProps {
-  users: SanityUser[]
+  data: SanityUser[]
 }
 
-const Logos = ({ users }: LogosProps) => {
+const Logos = ({ data }: LogosProps) => {
   const logos = [
     {
       _id: 'qwerzxsupabase',
@@ -32,31 +32,44 @@ const Logos = ({ users }: LogosProps) => {
       website: 'https://github.com',
       logo: '/logos/github.svg',
     },
+    {
+      _id: 'qwerzxmedusa',
+      name: 'Medusa',
+      website: 'https://medusajs.com',
+      logo: '/logos/medusa.svg',
+    },
+    {
+      _id: 'qwerzxgithub',
+      name: 'GitHub',
+      website: 'https://github.com',
+      logo: '/logos/github.svg',
+    },
   ]
 
   return (
-    <SectionWrapper>
-      <section className="py-28 px-4">
-        <div className="w-full flex gap-x-14 gap-y-8 flex-wrap justify-center items-center">
-          {logos.map((user) => (
+    <SectionWrapper pb={150} pbs={150}>
+      <div className="w-full max-w-[900px] mt-[-200px] flex gap-x-14 gap-y-8 flex-wrap justify-center items-center largeTablet:mt-0">
+        {logos.map((item) => {
+          const href = item.website || ''
+          const src = item.logo || ''
+          return (
             <a
-              key={user._id}
-              href={user.website}
+              key={item._id}
+              href={href}
               target="_blank"
               rel="noreferrer"
-              className="h-6 w-auto"
+              className="relative h-[18px] largeTablet:h-6"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                className="w-full"
-                src={`${user.logo as unknown as string}?auto=format&h=64`}
-                alt={user.name}
+                className="h-full"
+                src={src as string}
+                alt={item.name}
                 loading="lazy"
               />
             </a>
-          ))}
-        </div>
-      </section>
+          )
+        })}
+      </div>
     </SectionWrapper>
   )
 }

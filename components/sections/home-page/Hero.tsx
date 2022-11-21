@@ -12,37 +12,26 @@ interface HeroProps {
 
 const Hero = ({ data }: HeroProps) => {
   const { title, subtitle } = data
-  const heroTitle = data.title || ''
-  const titleExceptLastTwoWords = heroTitle
-    .split(' ')
-    .slice(0, heroTitle.split(' ').length - 2)
-    .join(' ')
-  const lastTwoWordsOfTitle = heroTitle
-    .split(' ')
-    .slice(heroTitle.split(' ').length - 2, heroTitle.split(' ').length)
-    .join(' ')
 
   return (
-    <SectionWrapper>
-      <main className="pt-20 tablet:pt-[12rem] tablet:grid grid-cols-[1.5fr_1fr] gap-5 laptop:gap-0 font-inter">
-        <div className="flex flex-col items-start">
+    <SectionWrapper pt={80} pts={5}>
+      <main className="flex flex-col largeTablet:flex-row largeTablet:min-h-[450px]">
+        <div className="flex flex-col items-start flex-1">
           <Subheading>Open Source Insights</Subheading>
-
-          <Heading>{heroTitle}</Heading>
+          <Heading>{title}</Heading>
           <div className="mt-8 mb-10 tablet:mt-4">
-            <Paragraph variant="hero">{data.subtitle}</Paragraph>
+            <Paragraph variant="hero">{subtitle}</Paragraph>
           </div>
 
-          <div className="flex gap-4 items-center">
+          <div className="flex gap-4 items-center flex-col largeTablet:flex-row">
             <Button href={data.CTAButtonURL}>{data.CTAButtonLabel}</Button>
             <Button href={data.projectsButtonUrl} variant="gray">
               {data.projectsButtonLabel}
             </Button>
           </div>
         </div>
-        <div className="relative">
-          <div className="h-[400px] tablet:h-[800px] aspect-square absolute pointer-events-none">
-            {/*  eslint-disable-next-line @next/next/no-img-element */}
+        <div className="flex mt-6 justify-center items-center flex-1 largeTablet:justify-end largeTablet:mt-0">
+          <div className="w-fit relative pointer-events-none largeTablet:left-16 largeTablet:bottom-4">
             <Image alt="PRs" src={PRsHero} />
           </div>
         </div>

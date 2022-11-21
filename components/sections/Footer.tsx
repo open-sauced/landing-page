@@ -56,7 +56,7 @@ const Footer: FC<FooterProps> = ({ data }) => {
                     <a href={href} target="_blank">
                       <Image
                         alt="Brand logo"
-                        src={src}
+                        src={src as string}
                         width={36}
                         height={36}
                       />
@@ -95,7 +95,7 @@ const Footer: FC<FooterProps> = ({ data }) => {
           </div>
         </div>
 
-        <div className="w-full pt-9 flex flex-col-reverse border-t-[0.5px] border-gray-700 largeTablet:flex-row ">
+        <div className="w-full pt-9 mt-7 flex flex-col-reverse border-t-[0.5px] border-gray-700 largeTablet:flex-row largeTablet:mt-12">
           <div className="flex-grow">
             <Typography variant="item2">{`© ${new Date().getFullYear()} Open Sauced, LLC. All rights reserved.`}</Typography>
           </div>

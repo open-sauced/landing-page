@@ -79,7 +79,7 @@ const Home: NextPage<HomePageProps> = ({ data: { homePageData, seoData } }) => {
 
         <Hero data={homePageData.about as unknown as SanityAbout} />
 
-        <Logos users={homePageData.about.users as unknown as SanityUser[]} />
+        <Logos data={homePageData.about.users as unknown as SanityUser[]} />
         <GitHubMock
           githubMockData={
             homePageData.githubMock as unknown as SanityGithubMock

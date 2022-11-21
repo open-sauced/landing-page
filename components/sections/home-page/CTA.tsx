@@ -17,7 +17,7 @@ const CTA: FC<CTAProps> = ({ data }) => {
       <Heading component="h2" align="center">
         {title}
       </Heading>
-      <div className="my-10 w-full laptop:w-[55%]">
+      <div className="my-10 w-full largeTablet:w-[55%]">
         <Paragraph align="center">{subtitle}</Paragraph>
       </div>
       <Button href="https://insights.opensauced.pizza">Get Started</Button>
