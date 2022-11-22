@@ -3,9 +3,15 @@ import Head from 'next/head'
 import Hero from '../components/sections/home-page/Hero'
 import Logos from '../components/sections/home-page/Logos'
 import Navigation from '../components/Header'
-import { getHomePageData, getSEOData } from '../lib/sanity'
+import {
+  getBlogs,
+  getFeaturedBlogs,
+  getHomePageData,
+  getSEOData,
+} from '../lib/sanity'
 import {
   SanityAbout,
+  SanityBlog,
   SanityCalender,
   SanityFeature,
   SanityFooter,
@@ -25,6 +31,7 @@ import Insights from '../components/sections/home-page/Insights'
 import HandleDecoratedText from '../components/common/text/utils/DecoratedText'
 import Subscribe from '../components/sections/Subscribe'
 import GradientBorderWrapper from '../components/common/GradientBorderWrapper'
+import Blogs from '../components/sections/home-page/blogs/Blogs'
 
 interface HomePageProps {
   data: {
@@ -37,10 +44,13 @@ interface HomePageProps {
       footer: SanityFooter[]
     }
     seoData: SanitySeo
+    blogs: SanityBlog[]
   }
 }
 
-const Home: NextPage<HomePageProps> = ({ data: { homePageData, seoData } }) => {
+const Home: NextPage<HomePageProps> = ({
+  data: { homePageData, seoData, blogs },
+}) => {
   return (
     <>
       <Head>
@@ -80,6 +90,7 @@ const Home: NextPage<HomePageProps> = ({ data: { homePageData, seoData } }) => {
         <Hero data={homePageData.about as unknown as SanityAbout} />
 
         <Logos data={homePageData.about.users as unknown as SanityUser[]} />
+
         <GitHubMock
           githubMockData={
             homePageData.githubMock as unknown as SanityGithubMock
@@ -90,6 +101,7 @@ const Home: NextPage<HomePageProps> = ({ data: { homePageData, seoData } }) => {
         <Features data={homePageData.feature} />
         <Insights />
         <Testimonials data={homePageData.testimonial} />
+        <Blogs data={blogs} />
         <Subscribe />
         <Footer data={homePageData.footer} />
       </Background>
@@ -100,12 +112,14 @@ const Home: NextPage<HomePageProps> = ({ data: { homePageData, seoData } }) => {
 export default Home
 
 export async function getStaticProps() {
-  const [homePageData, seoData] = await Promise.all([
+  const [homePageData, seoData, blogs] = await Promise.all([
     getHomePageData(),
     getSEOData(),
+    // getBlogs(4),
+    getFeaturedBlogs()
   ])
 
-  const data = { homePageData, seoData }
+  const data = { homePageData, seoData, blogs }
 
   return {
     props: {

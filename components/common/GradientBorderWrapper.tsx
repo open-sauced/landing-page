@@ -2,16 +2,19 @@ import React, { FC, ReactElement } from 'react'
 
 interface GradientBorderWrapperProps {
   radius?: string
+  style?: React.CSSProperties
 }
 
 const GradientBorderWrapper: FC<GradientBorderWrapperProps> = ({
   children,
   radius = '6px',
+  style,
 }): ReactElement => {
   return (
     <div
       style={{
         borderRadius: `${radius}`,
+        ...style,
       }}
       className={`h-fit w-fit p-[1px] bg-gradient-to-tr from-[#ED5432] via-[#EDA232] to-[#ED5432] drop-shadow-[0_0_4px_#ED5432]`}
     >
