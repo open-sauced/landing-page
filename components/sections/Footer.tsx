@@ -79,7 +79,7 @@ const Footer: FC<FooterProps> = ({ data }) => {
               <Typography variant="title">More Sauce</Typography>
               <div className="w-full flex flex-col">
                 {apps.map(({ label, url }) => (
-                  <a href={url} target="_blank">
+                  <a key={url} href={url} target="_blank">
                     <Typography variant="item1">{label}</Typography>
                   </a>
                 ))}

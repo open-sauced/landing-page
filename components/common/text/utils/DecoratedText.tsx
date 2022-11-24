@@ -1,20 +1,24 @@
 import React, { FC } from 'react'
 
-const gradientKey = '$yog'
+const gradientYOKey = '$yog'
+const gradientROKey = '$rog'
 const orangeKey = '$o'
-const yellowKey = "$y"
+const yellowKey = '$y'
 
-const gradientStyle = `bg-gradient-to-r from-brandYellow via-brandRed to-brandRed text-transparent bg-clip-text`
+const gradientYOStyle = `bg-gradient-to-r from-brandYellow via-brandRed to-brandRed text-transparent bg-clip-text`
+const gradientROStyle = `bg-gradient-to-r from-brandRed via-brandRed to-brandOrange text-transparent bg-clip-text`
 const orangeStyle = `bg-brandRed text-transparent bg-clip-text`
 const yellowStyle = `bg-brandYellow text-transparent bg-clip-text`
 
 const getStyle = (value: string) => {
-  if (value.includes(gradientKey)) {
-    return { key: gradientKey, style: gradientStyle }
+  if (value.includes(gradientYOKey)) {
+    return { key: gradientYOKey, style: gradientYOStyle }
   } else if (value.includes(orangeKey)) {
     return { key: orangeKey, style: orangeStyle }
   } else if (value.includes(yellowKey)) {
     return { key: yellowKey, style: yellowStyle }
+  } else if (value.includes(gradientROKey)) {
+    return { key: gradientROKey, style: gradientROStyle }
   } else {
     return { key: '', style: '' }
   }

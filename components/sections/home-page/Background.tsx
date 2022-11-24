@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import React, { FC } from 'react'
-import upperStroke from '../public/upperStroke.svg'
-import leftSidePizzaStroke from '../public/leftSidePizzaStroke.svg'
-import rightSidePizzaStroke from '../public/rightSidePizzaStroke.svg'
-import middleRightStroke from '../public/middleRight.svg'
-import _5_leftStroke from '../public/_5_leftStroke.svg'
-import _5_rightStroke from '../public/_5_rightStroke.svg'
+import upperStroke from '../../../public/upperStroke.svg'
+import leftSidePizzaStroke from '../../../public/leftSidePizzaStroke.svg'
+import rightSidePizzaStroke from '../../../public/rightSidePizzaStroke.svg'
+import middleRightStroke from '../../../public/middleRight.svg'
+import _5_leftStroke from '../../../public/_5_leftStroke.svg'
+import _5_rightStroke from '../../../public/_5_rightStroke.svg'
 
 
 const Background:FC = ({ children }) => {
