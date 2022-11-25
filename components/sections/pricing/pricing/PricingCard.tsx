@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import OrangeCheckmark from '../../../../public/orangeCheckmark.png'
 import Image from 'next/image'
 import { Button } from '../../../common'
+import { Subheading, Typography } from '../../../common/text'
 
 interface PricingCardProps {
   data: {
@@ -17,23 +18,25 @@ interface PricingCardProps {
 const PricingCard: FC<PricingCardProps> = ({ data, index }) => {
   const { type, price, per, options, href } = data
   const paddingY =
-    index !== 1 ? 'largeTablet:py-[48px]' : 'largeTablet:py-[80px]'
+    index !== 1 ? 'largeTablet:py-[48px]' : 'largeTablet:py-[60px]'
   return (
     <div
       className={`w-full h-full p-10 bg-darkBG rounded-[5px] flex flex-col largeTablet:px-14 ${paddingY}`}
     >
-      <p>{type}</p>
-      <h3>
-        {price} {!!per && <span>{` ${per}`}</span>}{' '}
-      </h3>
+      <Subheading>{type}</Subheading>
+      <div className="flex items-end pb-4 largeTablet:pb-8">
+        <Typography>{price}</Typography>{' '}
+        {!!per && <span className="pl-1">{` ${per}`}</span>}{' '}
+      </div>
+
       <div>
         {options.map((item) => (
-          <div className="w-full flex">
+          <div className="w-full flex pb-2">
             <div className="w-[30px] flex-shrink-0">
               <Image src={OrangeCheckmark} />
             </div>
             <div>
-              <p>{item}</p>
+              <Typography variant="body2">{item}</Typography>
             </div>
           </div>
         ))}

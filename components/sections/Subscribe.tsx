@@ -14,7 +14,7 @@ const Subscribe: FC<SubscribeProps> = (): ReactElement => {
       <Heading align="center" component="h2">
         Subscribe for $oExtra Sauce$o
       </Heading>
-      <div className="mt-4 mb-14">
+      <div className="max-w-[680px] mt-4 mb-14">
         <Paragraph align="center">
           Identifying contributors in a project can be opaque. With Open Sauced,
           you get actionable insights into contributions that you can see.

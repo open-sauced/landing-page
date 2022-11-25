@@ -3,6 +3,8 @@ import React, { FC, ReactElement } from 'react'
 import OrangeRocket from '../../../../public/orange_rocket.png'
 import GradientBorderWrapper from '../../../common/GradientBorderWrapper'
 
+// orange_right_arrow
+
 interface FeatureCardProps {}
 
 const FeatureCard: FC<FeatureCardProps> = (): ReactElement => {

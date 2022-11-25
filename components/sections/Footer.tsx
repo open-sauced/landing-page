@@ -48,14 +48,14 @@ const Footer: FC<FooterProps> = ({ data }) => {
           <div className="w-full largeTablet:w-[45%]">
             <Typography variant="title">SOCIALS</Typography>
             <div className="flex relative">
-              {data.map(({ url, icon }) => {
+              {data.map(({ url, icon, label }) => {
                 const src = icon || ''
                 const href = url || ''
                 return (
                   <div className="cursor-pointer pr-3">
                     <a href={href} target="_blank">
                       <Image
-                        alt="Brand logo"
+                        alt={label}
                         src={src as string}
                         width={36}
                         height={36}
