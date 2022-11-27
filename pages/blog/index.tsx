@@ -1,9 +1,8 @@
 import type { NextPage } from 'next'
 import { ReactElement } from 'react'
 import PageLayout from '../../components/common/layout/PageLayout'
-import Background from '../../components/sections/about/Background'
+import Background from '../../components/sections/blog/Background'
 import Blogs from '../../components/sections/blog/Blogs'
-import FeaturedPost from '../../components/sections/blog/FeaturedPost'
 import { getFeaturedBlogs, getHomePageData, getSEOData } from '../../lib/sanity'
 import {
   SanityAbout,
@@ -38,7 +37,6 @@ const BlogsPage: NextPage<BlogsPageProps> = ({
       navigationURLs={about.navigationURLs as unknown as SanityNavigation[]}
       BackgorundWrapper={Background}
     >
-      
       <Blogs data={blogs} />
     </PageLayout>
   )
