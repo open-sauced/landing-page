@@ -31,7 +31,7 @@ const PricingCard: FC<PricingCardProps> = ({ data, index }) => {
 
       <div>
         {options.map((item) => (
-          <div className="w-full flex pb-2">
+          <div className="w-full flex pb-1">
             <div className="w-[30px] flex-shrink-0">
               <Image src={OrangeCheckmark} />
             </div>

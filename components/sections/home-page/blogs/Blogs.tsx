@@ -10,10 +10,9 @@ interface BlogsProps {
 }
 
 const Blogs: FC<BlogsProps> = ({ data }): ReactElement => {
-  console.log(data)
   return (
     <SectionWrapper direction="col" pb={320}>
-      <Subheading>OUr Secret Sauce</Subheading>
+      <Subheading>Our Secret Sauce</Subheading>
       <Heading>$yogOpenSauced$yog Blog</Heading>
       <div className="w-full max-w-3xl mt-4 mb-14 largeTablet:mt-10 largeTablet:mb-24">
         <Paragraph align="center">

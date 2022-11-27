@@ -2,7 +2,6 @@ import type { NextPage } from 'next'
 import Hero from '../components/sections/home-page/Hero'
 import Logos from '../components/sections/home-page/Logos'
 import {
-  getBlogs,
   getFeaturedBlogs,
   getHomePageData,
   getSEOData,
@@ -75,7 +74,6 @@ export async function getStaticProps() {
   const [homePageData, seoData, blogs] = await Promise.all([
     getHomePageData(),
     getSEOData(),
-    // getBlogs(4),
     getFeaturedBlogs(),
   ])
 
