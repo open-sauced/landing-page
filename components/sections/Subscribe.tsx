@@ -11,7 +11,7 @@ const Subscribe: FC<SubscribeProps> = (): ReactElement => {
   }
   return (
     <SectionWrapper pbs={120} pb={310}>
-      <Heading align="center" component="h2">
+      <Heading alignSmall="center" component="h2">
         Subscribe for $oExtra Sauce$o
       </Heading>
       <div className="max-w-[680px] mt-4 mb-14">

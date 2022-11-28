@@ -13,8 +13,8 @@ const Blogs: FC<BlogsProps> = ({ data }): ReactElement => {
   return (
     <SectionWrapper pt={0} pb={265} pbs={135}>
       <Typography variant="preHeading">Blog</Typography>
-      <div className="max-w-[750px]">
-        <Heading align="center">
+      <div className="w-full max-w-[750px]">
+        <Heading>
           $yogArticles and updates$yog from OpenSauced
         </Heading>
       </div>

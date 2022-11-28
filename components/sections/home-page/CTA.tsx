@@ -14,7 +14,7 @@ const CTA: FC<CTAProps> = ({ data }) => {
   const featureImage = calenderImage || ''
   return (
     <SectionWrapper pb={400}>
-      <Heading component="h2" align="center">
+      <Heading component="h2">
         {title}
       </Heading>
       <div className="my-10 w-full largeTablet:w-[55%]">

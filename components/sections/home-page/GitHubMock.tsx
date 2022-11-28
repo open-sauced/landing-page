@@ -40,7 +40,7 @@ const GitHubMock: FC<GitHubMockProps> = ({
         )}
       </div>
       <div className="pb-10 largeTablet:pb-44">
-        <Heading component="h2" align="center">
+        <Heading component="h2" alignSmall="center">
           {subtitle}
         </Heading>
       </div>
@@ -57,7 +57,7 @@ const GitHubMock: FC<GitHubMockProps> = ({
 
       <ResponsiveWrapper mb={350}>
         <div className="flex-1">
-          <Heading component="h2">
+          <Heading component="h2" alignLarge="left">
             Find out the $otrue impact$o to the OSS community
           </Heading>
           <div className="mt-10">

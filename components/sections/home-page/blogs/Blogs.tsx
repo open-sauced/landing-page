@@ -16,7 +16,7 @@ const Blogs: FC<BlogsProps> = ({ data }): ReactElement => {
         Our Secret Sauce
       </Typography>
 
-      <Heading>$yogOpenSauced$yog Blog</Heading>
+      <Heading alignSmall="center">$yogOpenSauced$yog Blog</Heading>
       <div className="w-full max-w-3xl mt-4 mb-14 largeTablet:mt-10 largeTablet:mb-24">
         <Paragraph align="center">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec

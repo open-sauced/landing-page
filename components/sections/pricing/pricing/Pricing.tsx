@@ -1,11 +1,7 @@
 import React, { FC, ReactElement } from 'react'
 import GradientBorderWrapper from '../../../common/GradientBorderWrapper'
 import SectionWrapper from '../../../common/layout/SectionWrapper'
-import {
-  Heading,
-  Paragraph,
-  Typography,
-} from '../../../common/text'
+import { Heading, Paragraph, Typography } from '../../../common/text'
 import PricingCard from './PricingCard'
 
 const data = [
@@ -48,10 +44,8 @@ const Pricing = (): ReactElement => {
   return (
     <SectionWrapper pt={205} pts={45} pb={260}>
       <Typography variant="preHeading">Pricing</Typography>
-      <div className="largeTablet:w-2/3">
-        <Heading align="center">
-          $yogAccess insights$yog you never knew existed
-        </Heading>
+      <div className="w-full largeTablet:w-2/3">
+        <Heading>$yogAccess insights$yog you never knew existed</Heading>
       </div>
 
       <div className="pt-4 pb-10 largeTablet:pt-10 largeTablet:pb-20 largeTablet:w-[58%]">

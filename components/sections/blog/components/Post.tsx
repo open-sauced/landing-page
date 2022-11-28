@@ -48,9 +48,11 @@ const Post: FC<PostProps> = ({ data, featured }): ReactElement => {
         </GradientBorderWrapper>
       </div>
 
-      <div className="flex justify-start gap-5 pt-6 pb-2 largeTablet:pt-10">
+      <div className="flex justify-start pt-6 pb-2 largeTablet:pt-10">
         {topics?.map((item) => (
-          <Typography key={item} variant="body4">{`#${item}`}</Typography>
+          <div className="mr-5">
+            <Typography key={item} variant="body4">{`#${item}`}</Typography>
+          </div>
         ))}
       </div>
       <div className=" min-h-[55px] largeTablet:min-h-[90px]">

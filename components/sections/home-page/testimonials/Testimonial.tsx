@@ -19,14 +19,14 @@ const Testimonial: FC<TestimonialProps> = ({
   },
 }) => {
   return (
-    <GradientBorderWrapper style={{borderRadius: '8px'}}>
-      <div className="h-[272px] w-full p-10 bg-darkBG rounded-lg flex flex-col">
+    <GradientBorderWrapper style={{ borderRadius: '8px' }}>
+      <div className="h-fit min-h-[272px] w-full p-10 bg-darkBG rounded-lg flex flex-col">
         <div className="flex-grow">
           <Typography>{testimonial}</Typography>
         </div>
 
         <div className=" flex items-center gap-2 ">
-          <GradientBorderWrapper style={{borderRadius: '50%'}}>
+          <GradientBorderWrapper style={{ borderRadius: '50%' }}>
             <div className=" shadow-md overflow-hidden rounded-full w-[72px] h-[72px]">
               <Image
                 className=" rounded-full flex-[1] shadow-md  "

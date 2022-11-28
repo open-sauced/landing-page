@@ -10,7 +10,7 @@ const Features: FC<FeaturesProps> = (): ReactElement => {
     <SectionWrapper pb={288}>
       <Typography variant="preHeading">Features</Typography>
 
-      <Heading align="center">$rogFeatures Section$rog Title Goes Here</Heading>
+      <Heading>$rogFeatures Section$rog Title Goes Here</Heading>
       <div className="pt-4 pb-10  largeTablet:w-2/3 largeTablet:pt-10 largeTablet:pb-24 ">
         <Paragraph align="center">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec

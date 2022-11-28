@@ -10,7 +10,7 @@ const About: FC<AboutProps> = (): ReactElement => {
     <SectionWrapper pt={205} pts={45} pb={80} pbs={90}>
       <Typography variant='preHeading'>About</Typography>
       <div className="w-full largeTablet:w-2/3 ">
-        <Heading align="center">
+        <Heading>
           Let’s make open source $yogaccessible for everyone$yog
         </Heading>
       </div>

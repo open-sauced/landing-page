@@ -29,13 +29,15 @@ const PageContent: FC<PageContentProps> = ({
     blogs.filter((item) => item.slug?.current != query.slug) || []
   return (
     <SectionWrapper pt={205} pb={235}>
-      <div className=" w-full flex gap-5 justify-start largeTablet:justify-center">
+      <div className=" w-full flex justify-start largeTablet:justify-center">
         {topics?.map((item) => (
-          <Typography key={item} variant="body4">{`#${item}`}</Typography>
+          <div className="mr-5">
+            <Typography key={item} variant="body4">{`#${item}`}</Typography>
+          </div>
         ))}
       </div>
-      <div className="max-w-[750px] pt-3 pb-4 largeTablet:pt-4 largeTablet:pb-10 ">
-        <Heading align="center">{title}</Heading>
+      <div className="w-full max-w-[750px] pt-3 pb-4 largeTablet:pt-4 largeTablet:pb-10 ">
+        <Heading>{title}</Heading>
       </div>
       <div className="w-full flex justify-start pb-11 largeTablet:pb-20 largeTablet:justify-center">
         <div className="flex-shrink-0 mr-2">

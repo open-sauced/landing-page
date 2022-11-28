@@ -3,15 +3,17 @@ import DecoratedText from './utils/DecoratedText'
 
 interface HeadingProps {
   component?: 'h1' | 'h2' | 'h3'
-  align?: 'center' | 'right' | 'left'
+  alignSmall?: 'center' | 'right' | 'left'
+  alignLarge?: 'center' | 'right' | 'left'
 }
 
 const Heading: FC<HeadingProps> = ({
   children,
   component = 'h1',
-  align = 'left',
+  alignLarge = 'center',
+  alignSmall = 'left',
 }): ReactElement => {
-  const commonStyle = `font-bold text-textPrimary text-${align} tracking-[-0.02em] text-3xl`
+  const commonStyle = `w-full font-bold text-textPrimary text-${alignSmall} tracking-[-0.02em] text-3xl largeTablet:text-${alignLarge}`
   if (component === 'h2') {
     return (
       <h2

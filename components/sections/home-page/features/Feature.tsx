@@ -22,7 +22,9 @@ const Feature: FC<Props> = ({
         <Typography variant="preHeading" alignLarge="left">
           {subtitle}
         </Typography>
-        <Heading component="h2">{title}</Heading>
+        <Heading component="h2" alignLarge="left">
+          {title}
+        </Heading>
         <div className="my-10">
           <Paragraph>{description}</Paragraph>
         </div>

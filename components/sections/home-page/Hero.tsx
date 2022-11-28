@@ -21,7 +21,7 @@ const Hero = ({ data }: HeroProps) => {
             Open Source Insights
           </Typography>
 
-          <Heading>{title}</Heading>
+          <Heading alignLarge="left">{title}</Heading>
           <div className="mt-8 mb-10 tablet:mt-4">
             <Paragraph variant="hero">{subtitle}</Paragraph>
           </div>

@@ -14,7 +14,7 @@ const Testimonials: FC<TestimonialsProps> = ({ data }) => {
       <Typography variant="preHeading" alignSmall="center">
         Testimonials
       </Typography>
-      <Heading component="h3" align="center">
+      <Heading component="h3" alignSmall="center">
         The value of $yOpen Source$y
       </Heading>
 
