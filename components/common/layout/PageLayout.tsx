@@ -5,7 +5,7 @@ import {
   SanityNavigation,
   SanitySeo,
 } from '../../../types/schema'
-import Navigation from '../../Header'
+import Header from "../../sections/navigation/Header"
 import Footer from '../../sections/Footer'
 import Subscribe from '../../sections/Subscribe'
 
@@ -52,7 +52,7 @@ const PageLayout: FC<PageLayoutProps> = ({
         ></meta>
       </Head>
       <BackgorundWrapper>
-        <Navigation variant="orangeWhite" navigationItems={navigationURLs} />
+        <Header navigationItems={navigationURLs} socialLinks={footerData}/>
         <div>{children}</div>
         <Subscribe />
 

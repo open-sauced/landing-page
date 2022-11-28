@@ -46,7 +46,7 @@ const Footer: FC<FooterProps> = ({ data }) => {
         </div>
         <div className="w-full flex flex-col largeTablet:flex-row">
           <div className="w-full largeTablet:w-[45%]">
-            <Typography variant="title">SOCIALS</Typography>
+            <LocalTypography variant="title">SOCIALS</LocalTypography>
             <div className="flex relative">
               {data.map(({ url, icon, label }) => {
                 const src = icon || ''
@@ -68,28 +68,32 @@ const Footer: FC<FooterProps> = ({ data }) => {
           </div>
           <div className="w-full flex flex-wrap">
             <div className="w-1/2 my-10 largeTablet:w-[35%] largeTablet:my-0">
-              <Typography variant="title">MENU</Typography>
+              <LocalTypography variant="title">MENU</LocalTypography>
               <div className="w-full flex flex-col">
-                <Typography variant="item1">About</Typography>
-                <Typography variant="item1">Blog</Typography>
-                <Typography variant="item1">Services</Typography>
+                <LocalTypography variant="item1">About</LocalTypography>
+                <LocalTypography variant="item1">Blog</LocalTypography>
+                <LocalTypography variant="item1">Services</LocalTypography>
               </div>
             </div>
             <div className="w-1/2 my-10 largeTablet:w-[35%] largeTablet:my-0">
-              <Typography variant="title">More Sauce</Typography>
+              <LocalTypography variant="title">More Sauce</LocalTypography>
               <div className="w-full flex flex-col">
                 {apps.map(({ label, url }) => (
                   <a key={url} href={url} target="_blank">
-                    <Typography variant="item1">{label}</Typography>
+                    <LocalTypography variant="item1">{label}</LocalTypography>
                   </a>
                 ))}
               </div>
             </div>
             <div className="w-1/2 mb-10 largeTablet:w-[30%] largeTablet:mb-0">
-              <Typography variant="title">Contact Us</Typography>
+              <LocalTypography variant="title">Contact Us</LocalTypography>
               <div className="w-full flex flex-col">
-                <Typography variant="item1">+1 (123) 456-7890</Typography>
-                <Typography variant="item1">email@domain.com</Typography>
+                <LocalTypography variant="item1">
+                  +1 (123) 456-7890
+                </LocalTypography>
+                <LocalTypography variant="item1">
+                  email@domain.com
+                </LocalTypography>
               </div>
             </div>
           </div>
@@ -97,17 +101,17 @@ const Footer: FC<FooterProps> = ({ data }) => {
 
         <div className="w-full pt-9 mt-7 flex flex-col-reverse border-t-[0.5px] border-gray-700 largeTablet:flex-row largeTablet:mt-12">
           <div className="flex-grow">
-            <Typography variant="item2">{`© ${new Date().getFullYear()} Open Sauced, LLC. All rights reserved.`}</Typography>
+            <LocalTypography variant="item2">{`© ${new Date().getFullYear()} Open Sauced, LLC. All rights reserved.`}</LocalTypography>
           </div>
           <div className="flex mb-5 largeTablet:mb-0 ">
             {pages.map(({ url, label }, i) => (
               <div className="flex">
                 <a href={url} target="_blank">
-                  <Typography variant="item2">{label}</Typography>
+                  <LocalTypography variant="item2">{label}</LocalTypography>
                 </a>
                 {i < pages.length - 1 && (
                   <div className=" mx-2">
-                    <Typography variant="item2">•</Typography>
+                    <LocalTypography variant="item2">•</LocalTypography>
                   </div>
                 )}
               </div>
@@ -119,11 +123,14 @@ const Footer: FC<FooterProps> = ({ data }) => {
   )
 }
 
-interface TypographyProps {
+interface LocalTypographyProps {
   variant?: 'title' | 'item1' | 'item2'
 }
 
-const Typography: FC<TypographyProps> = ({ variant = 'item1', children }) => {
+const LocalTypography: FC<LocalTypographyProps> = ({
+  variant = 'item1',
+  children,
+}) => {
   const titleStyle =
     'font-bold text-[#FFF9ED] opacity-[0.35] text-xs uppercase tracking-[0.2em] pb-8'
   const item1Style =
