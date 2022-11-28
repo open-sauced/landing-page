@@ -2,7 +2,7 @@ import Image from 'next/image'
 import React, { FC, ReactElement } from 'react'
 import { SanityBlog } from '../../../types/schema'
 import GradientBorderWrapper from '../../common/GradientBorderWrapper'
-import Blog from './Post'
+import Blog from './components/Post'
 
 interface FeaturedPostProps {
   data: SanityBlog

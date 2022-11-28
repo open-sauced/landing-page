@@ -2,7 +2,7 @@ import React, { FC, ReactElement } from 'react'
 import { SanityBlog } from '../../../types/schema'
 import SectionWrapper from '../../common/layout/SectionWrapper'
 import { Heading, Paragraph, Subheading } from '../../common/text'
-import Blog from './Post'
+import Post from './components/Post'
 import FeaturedPost from './FeaturedPost'
 
 interface BlogsProps {
@@ -29,7 +29,7 @@ const Blogs: FC<BlogsProps> = ({ data }): ReactElement => {
         <Subheading>Recent Posts</Subheading>
         <div className="grid grid-cols-1 gap-y-20 mt-10 largeTablet:grid-cols-2 largeTablet:gap-x-11 ">
           {data.slice(1).map((item) => (
-            <Blog key={item._id} data={item} />
+            <Post key={item._id} data={item} />
           ))}
         </div>
       </div>

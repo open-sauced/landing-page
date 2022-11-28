@@ -38,7 +38,6 @@ const GitHubMock: FC<GitHubMockProps> = ({
           <Image
             alt="GitHub green squares"
             src={GreenSquaresSmall}
-            width={400}
           />
         )}
       </div>

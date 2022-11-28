@@ -1,21 +1,22 @@
 import Image from 'next/image'
 import React, { FC, ReactElement } from 'react'
-import { SanityBlog } from '../../../types/schema'
-import GradientBorderWrapper from '../../common/GradientBorderWrapper'
-import { Typography } from '../../common/text'
-import OrangeClock from '../../../public/orange_clock.png'
-import OrangeAuthor from '../../../public/orange_author.png'
-import { Button } from '../../common'
+import { SanityBlog } from '../../../../types/schema'
+import GradientBorderWrapper from '../../../common/GradientBorderWrapper'
+import { Typography } from '../../../common/text'
+import OrangeClock from '../../../../public/orange_clock.png'
+import OrangeAuthor from '../../../../public/orange_author.png'
+import { Button } from '../../../common'
+import LocalTypography from './LocalTypography'
 
-interface BlogProps {
+interface PostProps {
   data: SanityBlog
   featured?: boolean
 }
 
-const Blog: FC<BlogProps> = ({ data, featured }): ReactElement => {
+const Post: FC<PostProps> = ({ data, featured }): ReactElement => {
   const { title, topics, coverImage, author, readTime, summary, slug } = data
   const src = coverImage || ''
-  const href = `blog/${slug?.current}`
+  const href = `/blog/${slug?.current}`
 
   const getDisplaySummary = (): string => {
     if (summary) {
@@ -29,7 +30,7 @@ const Blog: FC<BlogProps> = ({ data, featured }): ReactElement => {
   return (
     <div className="w-full">
       {featured && (
-        <div className="mb-6  largeTablet:mb-0 ">
+        <div className="mb-6 largeTablet:mb-0 ">
           <GradientBorderWrapper
             style={{ borderRadius: '24px', padding: '4px 16px 6px' }}
           >
@@ -77,26 +78,4 @@ const Blog: FC<BlogProps> = ({ data, featured }): ReactElement => {
   )
 }
 
-export default Blog
-
-interface LocalTypographyProps {
-  variant?: 'title' | 'content1'
-}
-
-const LocalTypography: FC<LocalTypographyProps> = ({
-  variant = 'content1',
-  children,
-}) => {
-  const titleStyle = 'font-bold text-[#FFF9ED] text-2xl'
-  const content1Style = 'font-normal opacity-70 text-[#FFF9ED] text-base'
-
-  const appliedStyle = variant === 'title' ? titleStyle : content1Style
-
-  return (
-    <p
-      className={appliedStyle}
-    >
-      {children}
-    </p>
-  )
-}
+export default Post

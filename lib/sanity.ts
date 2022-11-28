@@ -115,8 +115,8 @@ export const getFeaturePageDataBySlug: (
   return getFeatureData
 }
 
-export const getFeaturedBlogs: () => Promise<SanityFeaturedBlog> = async () => {
-  const saucyBlog: SanityFeaturedBlog = await client.fetch(
+export const getFeaturedBlogs: () => Promise<SanityFeaturedBlog[]> = async () => {
+  const saucyBlog: SanityFeaturedBlog[] = await client.fetch(
     `*[_type == 'featuredBlog'] {
       ...,
       "coverImage": coverImage.asset->url,
@@ -155,6 +155,17 @@ export const getBlogBySlug: (slug: string) => Promise<SanityBlog> = async (
 ) => {
   const getBlogData: SanityBlog =
     await client.fetch(`*[_type == 'blog' && slug.current == '${slug}'][0] {
+    ...,
+    "coverImage": coverImage.asset->url,
+  }`)
+  return getBlogData
+}
+
+export const getFeaturedBlogBySlug: (slug: string) => Promise<SanityFeaturedBlog> = async (
+  slug: string
+) => {
+  const getBlogData: SanityFeaturedBlog =
+    await client.fetch(`*[_type == 'featuredBlog' && slug.current == '${slug}'][0] {
     ...,
     "coverImage": coverImage.asset->url,
   }`)

@@ -11,7 +11,7 @@ const Typography: FC<TypographyProps> = ({
   const title1Style = 'font-bold text-3xl text-[#FFF9ED] largeTablet:text-4xl'
   const body1Style = 'text-lg opacity-70 text-[#FFF9ED] largeTablet:text-xl'
   const body2Style = 'text-base opacity-70 text-[#FFF9ED] largeTablet:text-lg'
-  const body4Style = 'text-base opacity-70 text-[#FFF9ED] largeTablet:text-lg'
+  const body4Style = 'text-sm opacity-70 text-[#FFF9ED]'
   const appliedStyle =
     variant === 'title1'
       ? title1Style
