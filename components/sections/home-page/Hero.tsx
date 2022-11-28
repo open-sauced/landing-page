@@ -4,7 +4,7 @@ import PRsHero from '../../../public/PRs-hero.png'
 import Image from 'next/image'
 import SectionWrapper from '../../common/layout/SectionWrapper'
 import { Button } from '../../common'
-import { Paragraph, Heading, Subheading } from '../../common/text'
+import { Paragraph, Heading, Typography } from '../../common/text'
 
 interface HeroProps {
   data: SanityAbout
@@ -14,10 +14,13 @@ const Hero = ({ data }: HeroProps) => {
   const { title, subtitle } = data
 
   return (
-    <SectionWrapper direction='row' pt={80} pts={5}>
+    <SectionWrapper direction="row" pt={80} pts={5}>
       <main className="flex flex-col largeTablet:flex-row largeTablet:min-h-[450px]">
         <div className="flex flex-col items-start flex-1">
-          <Subheading>Open Source Insights</Subheading>
+          <Typography variant="preHeading" alignLarge="left">
+            Open Source Insights
+          </Typography>
+
           <Heading>{title}</Heading>
           <div className="mt-8 mb-10 tablet:mt-4">
             <Paragraph variant="hero">{subtitle}</Paragraph>

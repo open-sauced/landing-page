@@ -1,13 +1,19 @@
 import React, { FC, ReactElement } from 'react'
 
 interface TypographyProps {
-  variant?: 'title1' | 'body1' | 'body2' | 'body4'
+  variant?: 'preHeading' | 'title1' | 'body1' | 'body2' | 'body4'
+  alignSmall?: 'center' | 'right' | 'left'
+  alignLarge?: 'center' | 'right' | 'left'
 }
 
 const Typography: FC<TypographyProps> = ({
   variant = 'title1',
   children,
+  alignLarge = 'center',
+  alignSmall = 'left',
 }): ReactElement => {
+  const commonStyle = `w-full text-${alignSmall} largeTablet:text-${alignLarge}`
+  const preHeadingStyle = `font-bold text-xs text-textPrimary tracking-[0.2em] opacity-70 uppercase mb-4`
   const title1Style = 'font-bold text-3xl text-textPrimary largeTablet:text-4xl'
   const body1Style = 'text-lg opacity-70 text-textPrimary largeTablet:text-xl'
   const body2Style = 'text-base opacity-70 text-textPrimary largeTablet:text-lg'
@@ -21,10 +27,12 @@ const Typography: FC<TypographyProps> = ({
       ? body2Style
       : variant === 'body4'
       ? body4Style
+      : variant === 'preHeading'
+      ? preHeadingStyle
       : ''
   return (
     <p
-      className={appliedStyle}
+      className={`${commonStyle} ${appliedStyle}`}
       // className="text-sm opacity-70 text-textPrimary"
     >
       {children}

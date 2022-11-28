@@ -3,7 +3,7 @@ import React, { FC } from 'react'
 import { SanityFeature } from '../../../../types/schema'
 import { Button } from '../../../common'
 import ResponsiveWrapper from '../../../common/layout/ResponsiveWrapper'
-import { Paragraph, Heading, Subheading } from '../../../common/text'
+import { Paragraph, Heading, Typography } from '../../../common/text'
 
 interface Props {
   feature: SanityFeature
@@ -19,7 +19,9 @@ const Feature: FC<Props> = ({
   return (
     <ResponsiveWrapper reverse={reverse}>
       <div className={`flex-[1] ${!reverse && 'largeTablet:pl-6'}`}>
-        <Subheading>{subtitle}</Subheading>
+        <Typography variant="preHeading" alignLarge="left">
+          {subtitle}
+        </Typography>
         <Heading component="h2">{title}</Heading>
         <div className="my-10">
           <Paragraph>{description}</Paragraph>

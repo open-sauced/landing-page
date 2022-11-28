@@ -2,7 +2,7 @@ import React, { FC, ReactElement } from 'react'
 import { SanityBlog } from '../../../../types/schema'
 import { Button } from '../../../common'
 import SectionWrapper from '../../../common/layout/SectionWrapper'
-import { Heading, Paragraph, Subheading } from '../../../common/text'
+import { Heading, Paragraph, Typography } from '../../../common/text'
 import Blog from './Blog'
 
 interface BlogsProps {
@@ -12,7 +12,10 @@ interface BlogsProps {
 const Blogs: FC<BlogsProps> = ({ data }): ReactElement => {
   return (
     <SectionWrapper pb={320}>
-      <Subheading>Our Secret Sauce</Subheading>
+      <Typography variant="preHeading" alignSmall="center">
+        Our Secret Sauce
+      </Typography>
+
       <Heading>$yogOpenSauced$yog Blog</Heading>
       <div className="w-full max-w-3xl mt-4 mb-14 largeTablet:mt-10 largeTablet:mb-24">
         <Paragraph align="center">

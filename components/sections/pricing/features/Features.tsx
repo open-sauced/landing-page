@@ -1,6 +1,6 @@
 import React, { FC, ReactElement } from 'react'
 import SectionWrapper from '../../../common/layout/SectionWrapper'
-import { Heading, Paragraph, Subheading } from '../../../common/text'
+import { Heading, Paragraph, Typography } from '../../../common/text'
 import FeatureCard from './FeatureCard'
 
 interface FeaturesProps {}
@@ -8,8 +8,9 @@ interface FeaturesProps {}
 const Features: FC<FeaturesProps> = (): ReactElement => {
   return (
     <SectionWrapper pb={288}>
-      <Subheading>Features</Subheading>
-      <Heading align="center">$rogFeatures Section$rog Title Goes Here </Heading>
+      <Typography variant="preHeading">Features</Typography>
+
+      <Heading align="center">$rogFeatures Section$rog Title Goes Here</Heading>
       <div className="pt-4 pb-10  largeTablet:w-2/3 largeTablet:pt-10 largeTablet:pb-24 ">
         <Paragraph align="center">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec

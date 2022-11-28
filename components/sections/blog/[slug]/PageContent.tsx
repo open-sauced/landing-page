@@ -1,7 +1,7 @@
 import React, { FC, ReactElement } from 'react'
 import { SanityBlog, SanityFeaturedBlog } from '../../../../types/schema'
 import SectionWrapper from '../../../common/layout/SectionWrapper'
-import { Heading, Subheading, Typography } from '../../../common/text'
+import { Heading, Typography } from '../../../common/text'
 import OrangeClock from '../../../../public/orange_clock.png'
 import OrangeAuthor from '../../../../public/orange_author.png'
 import Image from 'next/image'
@@ -62,7 +62,9 @@ const PageContent: FC<PageContentProps> = ({
         <ReactPlayer url={blogUrl} />
       </div>
       <div className="w-full mt-9 largeTablet:mt-28">
-        <Subheading>Recent Posts</Subheading>
+        <Typography variant="preHeading" alignLarge="left">
+          Recent Posts
+        </Typography>
         <div className="grid grid-cols-1 gap-y-20 mt-10 largeTablet:grid-cols-2 largeTablet:gap-x-11">
           {displayBlogs.slice(0, 2).map((item) => (
             <Blog key={item._id} data={item} />

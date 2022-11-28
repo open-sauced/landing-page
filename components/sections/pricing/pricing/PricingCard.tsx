@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import OrangeCheckmark from '../../../../public/orangeCheckmark.png'
 import Image from 'next/image'
 import { Button } from '../../../common'
-import { Subheading, Typography } from '../../../common/text'
+import { Typography } from '../../../common/text'
 
 interface PricingCardProps {
   data: {
@@ -23,7 +23,9 @@ const PricingCard: FC<PricingCardProps> = ({ data, index }) => {
     <div
       className={`w-full h-full p-10 bg-darkBG rounded-[5px] flex flex-col largeTablet:px-14 ${paddingY}`}
     >
-      <Subheading>{type}</Subheading>
+      <Typography variant="preHeading" alignLarge="left">
+        {type}
+      </Typography>
       <div className="flex items-end pb-4 largeTablet:pb-8">
         <Typography>{price}</Typography>{' '}
         {!!per && <span className="pl-1">{` ${per}`}</span>}{' '}

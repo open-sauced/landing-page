@@ -1,6 +1,6 @@
 import React, { FC, ReactElement } from 'react'
 import SectionWrapper from '../../../common/layout/SectionWrapper'
-import { Heading, Paragraph, Subheading } from '../../../common/text'
+import { Heading, Paragraph, Typography } from '../../../common/text'
 import MetricCard from './MetricCard'
 
 interface AboutProps {}
@@ -8,7 +8,7 @@ interface AboutProps {}
 const About: FC<AboutProps> = (): ReactElement => {
   return (
     <SectionWrapper pt={205} pts={45} pb={80} pbs={90}>
-      <Subheading>About</Subheading>
+      <Typography variant='preHeading'>About</Typography>
       <div className="w-full largeTablet:w-2/3 ">
         <Heading align="center">
           Let’s make open source $yogaccessible for everyone$yog

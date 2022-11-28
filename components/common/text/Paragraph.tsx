@@ -12,10 +12,10 @@ const Paragraph: FC<ParagraphProps> = ({
 }): ReactElement => {
   const variantStyle =
     variant === 'hero'
-      ? `text-xl tablet:leading-8`
+      ? `text-xl largeTablet:leading-8`
       : variant === 'testemonial'
       ? `text-base`
-      : `text-base tablet:text-2xl`
+      : `text-base largeTablet:text-2xl`
   const commonStyle = `font-normal text-textPrimary text-${align} tracking-[-0.02em] opacity-70 `
   return <p className={`${commonStyle} ${variantStyle}`}>{children}</p>
 }

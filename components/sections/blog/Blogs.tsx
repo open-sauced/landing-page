@@ -1,7 +1,7 @@
 import React, { FC, ReactElement } from 'react'
 import { SanityBlog } from '../../../types/schema'
 import SectionWrapper from '../../common/layout/SectionWrapper'
-import { Heading, Paragraph, Subheading } from '../../common/text'
+import { Heading, Paragraph, Typography } from '../../common/text'
 import Post from './components/Post'
 import FeaturedPost from './FeaturedPost'
 
@@ -12,7 +12,7 @@ interface BlogsProps {
 const Blogs: FC<BlogsProps> = ({ data }): ReactElement => {
   return (
     <SectionWrapper pt={0} pb={265} pbs={135}>
-      <Subheading>Blog</Subheading>
+      <Typography variant="preHeading">Blog</Typography>
       <div className="max-w-[750px]">
         <Heading align="center">
           $yogArticles and updates$yog from OpenSauced
@@ -26,7 +26,10 @@ const Blogs: FC<BlogsProps> = ({ data }): ReactElement => {
       </div>
       <FeaturedPost data={data[0]} />
       <div className="w-full mt-20">
-        <Subheading>Recent Posts</Subheading>
+        <Typography variant="preHeading" alignLarge="left">
+          Recent Posts
+        </Typography>
+
         <div className="grid grid-cols-1 gap-y-20 mt-10 largeTablet:grid-cols-2 largeTablet:gap-x-11 ">
           {data.slice(1).map((item) => (
             <Post key={item._id} data={item} />

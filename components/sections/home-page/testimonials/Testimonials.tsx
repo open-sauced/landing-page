@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { SanityTestimonial } from '../../../../types/schema'
 import SectionWrapper from '../../../common/layout/SectionWrapper'
-import { Heading, Subheading } from '../../../common/text'
+import { Heading, Typography } from '../../../common/text'
 import Testimonial from './Testimonial'
 
 interface TestimonialsProps {
@@ -11,7 +11,9 @@ interface TestimonialsProps {
 const Testimonials: FC<TestimonialsProps> = ({ data }) => {
   return (
     <SectionWrapper pb={215}>
-      <Subheading>Testimonials</Subheading>
+      <Typography variant="preHeading" alignSmall="center">
+        Testimonials
+      </Typography>
       <Heading component="h3" align="center">
         The value of $yOpen Source$y
       </Heading>
