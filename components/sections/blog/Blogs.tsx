@@ -11,7 +11,7 @@ interface BlogsProps {
 
 const Blogs: FC<BlogsProps> = ({ data }): ReactElement => {
   return (
-    <SectionWrapper direction="col" pt={0} pb={265} pbs={135}>
+    <SectionWrapper pt={0} pb={265} pbs={135}>
       <Subheading>Blog</Subheading>
       <div className="max-w-[750px]">
         <Heading align="center">

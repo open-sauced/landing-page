@@ -42,7 +42,9 @@ const PricingCard: FC<PricingCardProps> = ({ data, index }) => {
         ))}
       </div>
       <div className="flex-grow"></div>
-      <Button href={href}>Get Started</Button>
+      <Button href={href} fullWidth>
+        Get Started
+      </Button>
     </div>
   )
 }

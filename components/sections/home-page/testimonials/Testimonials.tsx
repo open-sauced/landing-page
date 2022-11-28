@@ -10,7 +10,7 @@ interface TestimonialsProps {
 
 const Testimonials: FC<TestimonialsProps> = ({ data }) => {
   return (
-    <SectionWrapper direction="col" pb={215}>
+    <SectionWrapper pb={215}>
       <Subheading>Testimonials</Subheading>
       <Heading component="h3" align="center">
         The value of $yOpen Source$y

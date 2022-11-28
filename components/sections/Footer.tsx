@@ -38,7 +38,7 @@ const Footer: FC<FooterProps> = ({ data }) => {
   const { pages, apps } = footerContext
   return (
     <footer className="w-full min-h-[200px] bg-footerBG pb-10">
-      <SectionWrapper direction="col">
+      <SectionWrapper>
         <div className="w-full pt-10 pb-16 largeTablet:pt-12">
           <div className="w-[140px] h-6 relative">
             <Image layout="fill" alt="Brand logo" src={OpenSaucedLogo} />
@@ -132,11 +132,11 @@ const LocalTypography: FC<LocalTypographyProps> = ({
   children,
 }) => {
   const titleStyle =
-    'font-bold text-[#FFF9ED] opacity-[0.35] text-xs uppercase tracking-[0.2em] pb-8'
+    'font-bold text-textPrimary opacity-[0.35] text-xs uppercase tracking-[0.2em] pb-8'
   const item1Style =
-    'font-normal text-[#FFF9ED] text-sm tracking-[-0.02em] opacity-[0.7] pb-3'
+    'font-normal text-textPrimary text-sm tracking-[-0.02em] opacity-[0.7] pb-3'
   const item2Style =
-    'font-normal text-[#FFF9ED] text-sm tracking-[-0.02em] opacity-[0.35]'
+    'font-normal text-textPrimary text-sm tracking-[-0.02em] opacity-[0.35]'
 
   const appliedStyle =
     variant === 'title'

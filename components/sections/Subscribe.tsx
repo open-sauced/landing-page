@@ -10,7 +10,7 @@ const Subscribe: FC<SubscribeProps> = (): ReactElement => {
     alert('Subscribed')
   }
   return (
-    <SectionWrapper direction="col" pbs={120} pb={310}>
+    <SectionWrapper pbs={120} pb={310}>
       <Heading align="center" component="h2">
         Subscribe for $oExtra Sauce$o
       </Heading>

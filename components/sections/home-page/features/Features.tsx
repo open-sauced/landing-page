@@ -10,7 +10,7 @@ interface Props {
 
 const Features: FC<Props> = ({ data }) => {
   return (
-    <SectionWrapper direction="col" pb={20} pbs={0}  >
+    <SectionWrapper pb={20} pbs={0}  >
       {data.map((feature, i) => (
         <Feature
           key={feature.slug?.current}

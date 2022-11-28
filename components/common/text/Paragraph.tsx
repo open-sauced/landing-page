@@ -16,7 +16,7 @@ const Paragraph: FC<ParagraphProps> = ({
       : variant === 'testemonial'
       ? `text-base`
       : `text-base tablet:text-2xl`
-  const commonStyle = `font-normal text-[#FFF9ED] text-${align} tracking-[-0.02em] opacity-70 `
+  const commonStyle = `font-normal text-textPrimary text-${align} tracking-[-0.02em] opacity-70 `
   return <p className={`${commonStyle} ${variantStyle}`}>{children}</p>
 }
 

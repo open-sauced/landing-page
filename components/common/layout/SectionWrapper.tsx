@@ -12,7 +12,7 @@ interface SectionWrapperProps {
 
 const SectionWrapper: FC<SectionWrapperProps> = ({
   justify = 'center',
-  direction = 'row',
+  direction = 'col',
   pt = 0,
   pb = 0,
   pts = 0,

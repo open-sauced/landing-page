@@ -11,7 +11,7 @@ const Heading: FC<HeadingProps> = ({
   component = 'h1',
   align = 'left',
 }): ReactElement => {
-  const commonStyle = `font-bold text-[#FFF9ED] text-${align} tracking-[-0.02em] text-3xl`
+  const commonStyle = `font-bold text-textPrimary text-${align} tracking-[-0.02em] text-3xl`
   if (component === 'h2') {
     return (
       <h2

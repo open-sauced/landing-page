@@ -7,7 +7,7 @@ interface FeaturesProps {}
 
 const Features: FC<FeaturesProps> = (): ReactElement => {
   return (
-    <SectionWrapper direction="col" pb={288}>
+    <SectionWrapper pb={288}>
       <Subheading>Features</Subheading>
       <Heading align="center">$rogFeatures Section$rog Title Goes Here </Heading>
       <div className="pt-4 pb-10  largeTablet:w-2/3 largeTablet:pt-10 largeTablet:pb-24 ">

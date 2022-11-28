@@ -28,7 +28,7 @@ const PageContent: FC<PageContentProps> = ({
   const displayBlogs =
     blogs.filter((item) => item.slug?.current != query.slug) || []
   return (
-    <SectionWrapper direction="col" pt={205} pb={235}>
+    <SectionWrapper pt={205} pb={235}>
       <div className=" w-full flex gap-5 justify-start largeTablet:justify-center">
         {topics?.map((item) => (
           <Typography key={item} variant="body4">{`#${item}`}</Typography>

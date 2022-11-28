@@ -40,11 +40,9 @@ const data = [
   },
 ]
 
-interface PricingProps {}
-
-const Pricing: FC<PricingProps> = (): ReactElement => {
+const Pricing = (): ReactElement => {
   return (
-    <SectionWrapper direction="col" pt={205} pts={45} pb={260}>
+    <SectionWrapper pt={205} pts={45} pb={260}>
       <Subheading>Pricing</Subheading>
       <div className="largeTablet:w-2/3">
         <Heading align="center">
@@ -60,13 +58,14 @@ const Pricing: FC<PricingProps> = (): ReactElement => {
       </div>
       <div className="w-full flex flex-col gap-6 justify-center items-center largeTablet:flex-row">
         {data.map((item, i) => {
-          const height = i !== 1 ? '454px' : '486px'
+          const height =
+            i !== 1 ? 'largeTablet:min-h-[454px]' : 'largeTablet:min-h-[486px]'
+          const wrapperStyle = ` h-fit min-h-[402px] ${height}]`
           return (
-            <div className={`h-[402px] largeTablet:h-[${height}]`}>
+            <div className={wrapperStyle}>
               <GradientBorderWrapper
                 key={item.type}
-                style={{ width: '100%', height: '100%' }}
-                radius="5px"
+                style={{ width: '100%', height: '100%', borderRadius: '5px' }}
               >
                 <PricingCard data={item} index={i} />
               </GradientBorderWrapper>

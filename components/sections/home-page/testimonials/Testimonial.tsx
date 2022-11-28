@@ -19,14 +19,14 @@ const Testimonial: FC<TestimonialProps> = ({
   },
 }) => {
   return (
-    <GradientBorderWrapper radius={'8px'}>
+    <GradientBorderWrapper style={{borderRadius: '8px'}}>
       <div className="h-[272px] w-full p-10 bg-darkBG rounded-lg flex flex-col">
         <div className="flex-grow">
           <Typography>{testimonial}</Typography>
         </div>
 
         <div className=" flex items-center gap-2 ">
-          <GradientBorderWrapper radius={'50%'}>
+          <GradientBorderWrapper style={{borderRadius: '50%'}}>
             <div className=" shadow-md overflow-hidden rounded-full w-[72px] h-[72px]">
               <Image
                 className=" rounded-full flex-[1] shadow-md  "
@@ -64,8 +64,8 @@ const Typography: FC<TypographyProps> = ({
   children,
   variant = 'content',
 }): React.ReactElement => {
-  const contentStyle = `font-normal text-base text-[#FFF9ED] tracking-[-0.02em] opacity-70 `
-  const usernameStyle = `font-semibold text-base text-[#FFF9ED] tracking-[-0.02em] `
+  const contentStyle = `font-normal text-base text-textPrimary tracking-[-0.02em] opacity-70 `
+  const usernameStyle = `font-semibold text-base text-textPrimary tracking-[-0.02em] `
   const twitterStyle = `font-normal text-[14px] leading-[150%] text-[#ED5432] tracking-[-0.02em]`
 
   const apliedStyle =

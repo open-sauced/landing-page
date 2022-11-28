@@ -17,7 +17,7 @@ const GitHubMock: FC<GitHubMockProps> = ({
 }) => {
   const isLargeTablet = useMediaQuery()
   return (
-    <SectionWrapper direction="col">
+    <SectionWrapper>
       <div className="flex pb-16 px-10 tablet:px-0 items-center justify-center largeTablet:pb-14">
         <div>
           <p className="text-white text-4xl tablet:text-5xl font-bold">

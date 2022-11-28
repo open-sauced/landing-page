@@ -7,7 +7,7 @@ interface AboutProps {}
 
 const About: FC<AboutProps> = (): ReactElement => {
   return (
-    <SectionWrapper direction="col" pt={205} pts={45} pb={80} pbs={90}>
+    <SectionWrapper pt={205} pts={45} pb={80} pbs={90}>
       <Subheading>About</Subheading>
       <div className="w-full largeTablet:w-2/3 ">
         <Heading align="center">

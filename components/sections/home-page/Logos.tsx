@@ -47,7 +47,7 @@ const Logos = ({ data }: LogosProps) => {
   ]
 
   return (
-    <SectionWrapper pb={150} pbs={150}>
+    <SectionWrapper direction='row' pb={150} pbs={150}>
       <div className="w-full max-w-[900px] mt-[-200px] flex gap-x-14 gap-y-8 flex-wrap justify-center items-center largeTablet:mt-0">
         {logos.map((item) => {
           const href = item.website || ''

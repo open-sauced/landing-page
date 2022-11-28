@@ -13,7 +13,7 @@ const CTA: FC<CTAProps> = ({ data }) => {
   const { title, subtitle, calenderImage } = data
   const featureImage = calenderImage || ''
   return (
-    <SectionWrapper pb={400} direction="col">
+    <SectionWrapper pb={400}>
       <Heading component="h2" align="center">
         {title}
       </Heading>

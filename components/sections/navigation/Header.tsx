@@ -24,7 +24,7 @@ const Header: FC<HeaderProps> = ({
 }): ReactElement => {
   let logo = BrandLogo
   return (
-    <SectionWrapper pbs={0}>
+    <SectionWrapper direction='row' pbs={0}>
       <header className="flex flex-grow py-9 font-inter justify-between items-center">
         <DesktopNavigation logo={logo} navigationItems={links} />
         <div className="flex w-full largeTablet:hidden">

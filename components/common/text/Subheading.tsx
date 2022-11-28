@@ -10,7 +10,7 @@ const Subheading: FC<SubheadingProps> = ({
 }): ReactElement => {
   return (
     <p
-      className={`font-bold text-xs text-[#FFF9ED] text-${align} tracking-[0.2em] opacity-70 uppercase mb-4`}
+      className={`font-bold text-xs text-textPrimary text-${align} tracking-[0.2em] opacity-70 uppercase mb-4`}
     >
       {children}
     </p>

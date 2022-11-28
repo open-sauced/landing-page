@@ -41,6 +41,7 @@ module.exports = {
         brandYellow: '#FCB60A',
         brandRed: '#ED5332',
         brandOrange: '#ED6A32',
+        textPrimary: '#FFF9ED',
         footerBG: 'rgba(248, 114, 22, 0.07)',
         footerDividerColor: 'rgba(248, 114, 22, 0.07)',
       },

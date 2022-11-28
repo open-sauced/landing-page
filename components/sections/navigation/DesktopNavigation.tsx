@@ -15,7 +15,7 @@ const DesktopNavigation: FC<DesktopNavigationProps> = ({
   logo,
 }) => {
   const { pathname } = useRouter()
-  const defaultStyle = 'font-bold text-[#FFF9ED] text-sm'
+  const defaultStyle = 'font-bold text-textPrimary text-sm'
   const activeLinkStyle =
     'after:absolute after:bg-gradient-to-r from-[#ED5432] to-[#EDA232] after:w-full after:h-[3px] after:bottom-[-8px] after:left-0'
 

@@ -7,7 +7,7 @@ interface InsightsProps {}
 
 const Insights: FC<InsightsProps> = (): ReactElement => {
   return (
-    <SectionWrapper direction="col" pb={285}>
+    <SectionWrapper pb={285}>
       <Heading component="h2" align="center">
         Get insights from $oStars to PRs$o
       </Heading>

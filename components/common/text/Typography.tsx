@@ -8,10 +8,10 @@ const Typography: FC<TypographyProps> = ({
   variant = 'title1',
   children,
 }): ReactElement => {
-  const title1Style = 'font-bold text-3xl text-[#FFF9ED] largeTablet:text-4xl'
-  const body1Style = 'text-lg opacity-70 text-[#FFF9ED] largeTablet:text-xl'
-  const body2Style = 'text-base opacity-70 text-[#FFF9ED] largeTablet:text-lg'
-  const body4Style = 'text-sm opacity-70 text-[#FFF9ED]'
+  const title1Style = 'font-bold text-3xl text-textPrimary largeTablet:text-4xl'
+  const body1Style = 'text-lg opacity-70 text-textPrimary largeTablet:text-xl'
+  const body2Style = 'text-base opacity-70 text-textPrimary largeTablet:text-lg'
+  const body4Style = 'text-sm opacity-70 text-textPrimary'
   const appliedStyle =
     variant === 'title1'
       ? title1Style
@@ -25,7 +25,7 @@ const Typography: FC<TypographyProps> = ({
   return (
     <p
       className={appliedStyle}
-      // className="text-sm opacity-70 text-[#FFF9ED]"
+      // className="text-sm opacity-70 text-textPrimary"
     >
       {children}
     </p>

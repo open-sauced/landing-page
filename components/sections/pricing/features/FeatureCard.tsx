@@ -11,8 +11,7 @@ const FeatureCard: FC<FeatureCardProps> = (): ReactElement => {
   return (
     <div className="w-full">
       <GradientBorderWrapper
-        style={{ width: '100px', height: '100px' }}
-        radius="50%"
+        style={{ width: '100px', height: '100px', borderRadius: '50%' }}
       >
         <div className="w-full h-full bg-[#211e1c] rounded-full flex justify-center items-center">
           <div>
