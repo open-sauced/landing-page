@@ -41,7 +41,7 @@ const PricingCard: FC<PricingCardProps> = ({ data, index }) => {
           </div>
         ))}
       </div>
-      <div className="flex-grow"></div>
+      <div className="mb-8"></div>
       <Button href={href} fullWidth>
         Get Started
       </Button>

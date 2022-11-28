@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React, { FC, ReactElement } from 'react'
 import { SanityBlog } from '../../../../types/schema'
 import GradientBorderWrapper from '../../../common/GradientBorderWrapper'
@@ -8,14 +9,19 @@ interface BlogProps {
 }
 
 const Blog: FC<BlogProps> = ({ data }): ReactElement => {
-  const { title, topics, coverImage } = data
+  const { title, topics, coverImage, slug } = data
   const src = coverImage || ''
+  const href = `/blog/${slug?.current}`
   return (
     <div className="w-full">
-      <GradientBorderWrapper style={{ width: '100%', borderRadius: '5px' }}>
-        <div className="w-full h-[304px] relative rounded-[5px] overflow-hidden ">
-          <Image src={src as string} layout="fill" objectFit="cover" />
-        </div>
+      <GradientBorderWrapper
+        style={{ width: '100%', borderRadius: '5px', cursor: 'pointer' }}
+      >
+        <Link href={href}>
+          <div className="w-full h-[304px] relative rounded-[5px] overflow-hidden ">
+            <Image src={src as string} layout="fill" objectFit="cover" />
+          </div>
+        </Link>
       </GradientBorderWrapper>
       <Typography variant="title">{title}</Typography>
       <div className="flex justify-center gap-5">

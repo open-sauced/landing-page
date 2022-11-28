@@ -3,7 +3,7 @@ import { ReactElement } from 'react'
 import PageLayout from '../../components/common/layout/PageLayout'
 import Background from '../../components/sections/blog/Background'
 import Blogs from '../../components/sections/blog/Blogs'
-import { getCommonData } from '../../lib/sanity'
+import { getCommonData, getFeaturedBlogs } from '../../lib/sanity'
 import {
   SanityBlog,
   SanityFooter,
@@ -43,9 +43,12 @@ const BlogsPage: NextPage<BlogsPageProps> = ({
 export default BlogsPage
 
 export async function getStaticProps() {
-  const [commonData] = await Promise.all([getCommonData()])
+  const [commonData, blogs] = await Promise.all([
+    getCommonData(),
+    getFeaturedBlogs(),
+  ])
 
-  const data = { commonData }
+  const data = { commonData, blogs }
 
   return {
     props: {

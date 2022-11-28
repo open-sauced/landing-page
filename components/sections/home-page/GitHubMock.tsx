@@ -8,6 +8,7 @@ import SectionWrapper from '../../common/layout/SectionWrapper'
 import { Paragraph, Heading } from '../../common/text'
 import ResponsiveWrapper from '../../common/layout/ResponsiveWrapper'
 import useMediaQuery from '../../hooks/useMediaQuery'
+import DecoratedText from '../../common/text/utils/DecoratedText'
 interface GitHubMockProps {
   githubMockData: SanityGithubMock
 }
@@ -20,14 +21,14 @@ const GitHubMock: FC<GitHubMockProps> = ({
     <SectionWrapper>
       <div className="flex pb-16 px-10 tablet:px-0 items-center justify-center largeTablet:pb-14">
         <div>
-          <p className="text-white text-4xl tablet:text-5xl font-bold">
+          <p className="text-textPrimary font-bold text-[2.375rem] leading-[3.625rem] largeTablet:text-5xl largeTablet:leading-[4.5rem]">
             We are
           </p>
-          <p className="pl-16 tablet:pl-20 text-7xl tablet:text-8xl font-bold bg-gradient-to-r from-brandRed via-brandRed to-brandYellow text-transparent bg-clip-text">
-            more
+          <p className="font-bold pl-16 tablet:pl-20 text-[3.25rem] leading-none largeTablet:text-8xl">
+            <DecoratedText content="$oygmore" />
           </p>
-          <p className="pl-32 tablet:pl-40 text-8xl tablet:text-9xl font-bold bg-gradient-to-r from-brandRed via-brandRed to-brandYellow text-transparent bg-clip-text">
-            than
+          <p className="font-bold pl-32 tablet:pl-40 tracking-[-0.03em] text-[4.25rem] leading-none largeTablet:text-9xl">
+            <DecoratedText content="$oygthan..." />
           </p>
         </div>
       </div>
@@ -35,10 +36,7 @@ const GitHubMock: FC<GitHubMockProps> = ({
         {isLargeTablet ? (
           <Image alt="GitHub green squares" src={GreenSquares} />
         ) : (
-          <Image
-            alt="GitHub green squares"
-            src={GreenSquaresSmall}
-          />
+          <Image alt="GitHub green squares" src={GreenSquaresSmall} />
         )}
       </div>
       <div className="pb-10 largeTablet:pb-44">
@@ -47,13 +45,13 @@ const GitHubMock: FC<GitHubMockProps> = ({
         </Heading>
       </div>
 
-      <p className="text-center font-bold text-gray-500 text-xl tablet:text-2xl pb-10 largeTablet:pb-24">
+      <p className="text-center font-bold text-textPrimary opacity-40 text-base largeTablet:text-2xl leading-none pb-10 largeTablet:pb-24">
         However...
       </p>
-      <p className="font-bold text-2xl tablet:text-3xl text-center pb-2 largeTablet:pb-6">
+      <p className="text-center font-bold pb-2 tracking-[-0.03em] text-xl largeTablet:text-[2rem] largeTablet:pb-6">
         It&apos;s only a surface-level indicator of
       </p>
-      <p className="font-bold text-5xl tablet:text-[4rem] text-center pb-32 largeTablet:pb-[350px]">
+      <p className="font-bold text-3xl largeTablet:text-[4rem] leading-none text-center pb-32 largeTablet:pb-[350px]">
         how capable a developer is.
       </p>
 

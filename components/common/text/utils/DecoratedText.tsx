@@ -1,12 +1,14 @@
 import React, { FC } from 'react'
 
 const gradientYOKey = '$yog'
+const gradientOYKey = '$oyg'
 const gradientROKey = '$rog'
 const gradientORKey = '$org'
 const orangeKey = '$o'
 const yellowKey = '$y'
 
 const gradientYOStyle = `bg-gradient-to-r from-brandYellow via-brandRed to-brandRed text-transparent bg-clip-text`
+const gradientOYStyle = `bg-gradient-to-r from-brandRed to-brandYellow text-transparent bg-clip-text`
 const gradientROStyle = `bg-gradient-to-r from-brandRed via-brandRed to-brandOrange text-transparent bg-clip-text`
 const gradientORStyle = `bg-gradient-to-r from-brandOrange via-brandRed to-brandRed text-transparent bg-clip-text`
 const orangeStyle = `bg-brandRed text-transparent bg-clip-text`
@@ -15,6 +17,8 @@ const yellowStyle = `bg-brandYellow text-transparent bg-clip-text`
 const getStyle = (value: string) => {
   if (value.includes(gradientYOKey)) {
     return { key: gradientYOKey, style: gradientYOStyle }
+  } else if (value.includes(gradientOYKey)) {
+    return { key: gradientOYKey, style: gradientOYStyle }
   } else if (value.includes(gradientORKey)) {
     return { key: gradientORKey, style: gradientORStyle }
   } else if (value.includes(gradientROKey)) {
@@ -28,11 +32,11 @@ const getStyle = (value: string) => {
   }
 }
 
-interface HandleDecoratedTextProps {
+interface DecoratedTextProps {
   content: string
 }
 
-const HandleDecoratedText: FC<HandleDecoratedTextProps> = ({
+const DecoratedText: FC<DecoratedTextProps> = ({
   content,
 }): React.ReactElement => {
   if (content && typeof content === 'string') {
@@ -55,4 +59,4 @@ const HandleDecoratedText: FC<HandleDecoratedTextProps> = ({
   return <></>
 }
 
-export default HandleDecoratedText
+export default DecoratedText
