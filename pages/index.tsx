@@ -1,11 +1,7 @@
 import type { NextPage } from 'next'
 import Hero from '../components/sections/home-page/Hero'
 import Logos from '../components/sections/home-page/Logos'
-import {
-  getFeaturedBlogs,
-  getHomePageData,
-  getSEOData,
-} from '../lib/sanity'
+import { getCommonData, getFeaturedBlogs, getHomePageData } from '../lib/sanity'
 import {
   SanityAbout,
   SanityBlog,
@@ -29,29 +25,30 @@ import PageLayout from '../components/common/layout/PageLayout'
 
 interface HomePageProps {
   data: {
+    commonData: {
+      navigationLinks: SanityNavigation[]
+      seoData: SanitySeo
+      footer: SanityFooter[]
+    }
     homePageData: {
       about: SanityAbout
       githubMock: SanityGithubMock
       calender: SanityCalender
       feature: SanityFeature[]
       testimonial: SanityTestimonial[]
-      footer: SanityFooter[]
     }
-    seoData: SanitySeo
     blogs: SanityBlog[]
   }
 }
 
 const Home: NextPage<HomePageProps> = ({
-  data: { homePageData, seoData, blogs },
+  data: { commonData, homePageData, blogs },
 }) => {
   return (
     <PageLayout
-      footerData={homePageData.footer}
-      seoData={seoData}
-      navigationURLs={
-        homePageData.about.navigationURLs as unknown as SanityNavigation[]
-      }
+      footerData={commonData.footer}
+      seoData={commonData.seoData}
+      navigationURLs={commonData.navigationLinks}
       BackgorundWrapper={Background}
     >
       <Hero data={homePageData.about as unknown as SanityAbout} />
@@ -71,13 +68,13 @@ const Home: NextPage<HomePageProps> = ({
 export default Home
 
 export async function getStaticProps() {
-  const [homePageData, seoData, blogs] = await Promise.all([
+  const [commonData, homePageData, blogs] = await Promise.all([
+    getCommonData(),
     getHomePageData(),
-    getSEOData(),
     getFeaturedBlogs(),
   ])
 
-  const data = { homePageData, seoData, blogs }
+  const data = { commonData, homePageData, blogs }
 
   return {
     props: {

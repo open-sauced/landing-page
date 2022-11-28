@@ -10,6 +10,8 @@ import {
   SanityFeaturedBlog,
   SanityBlog,
   SanityPress,
+  SanityKeyedReference,
+  SanityNavigation,
 } from '../types/schema'
 
 const client = sanityClient({
@@ -21,13 +23,40 @@ const client = sanityClient({
   ignoreBrowserTokenWarning: true,
 })
 
+type CommonData = () => Promise<{
+  navigationLinks: SanityNavigation[]
+  seoData: SanitySeo
+  footer: SanityFooter[]
+}>
+
+export const getCommonData: CommonData = async () => {
+  const navigationLinks = await client.fetch(
+    `
+    *[_id == "da83ea19-890f-43be-9757-d4eab5271392"][0] {
+	      navigationURLs[]->,
+      }
+    `
+  )
+  const seoData = await getSEOData()
+  const footer =
+    await await client.fetch(`*[_type == 'footer'] | order(_createdAt asc) {
+    ...,
+    "icon": icon.asset->url,
+  }`)
+
+  return {
+    navigationLinks,
+    seoData,
+    footer,
+  }
+}
+
 export const getHomePageData: () => Promise<{
   about: SanityAbout
   githubMock: SanityGithubMock
   calender: SanityCalender
   feature: SanityFeature[]
   testimonial: SanityTestimonial[]
-  footer: SanityFooter[]
 }> = async () => {
   const aboutData = await client.fetch(
     `
@@ -73,19 +102,12 @@ export const getHomePageData: () => Promise<{
     "userImage": userImage.asset->url,
   }`)
 
-  const getFooterData: SanityFooter[] =
-    await client.fetch(`*[_type == 'footer'] | order(_createdAt asc) {
-    ...,
-    "icon": icon.asset->url,
-  }`)
-
   return {
     about: aboutData,
     githubMock: githubMockData,
     calender: getCalenderData,
     feature: getFeatureData,
     testimonial: getTestimonialData,
-    footer: getFooterData,
   }
 }
 
@@ -115,7 +137,9 @@ export const getFeaturePageDataBySlug: (
   return getFeatureData
 }
 
-export const getFeaturedBlogs: () => Promise<SanityFeaturedBlog[]> = async () => {
+export const getFeaturedBlogs: () => Promise<
+  SanityFeaturedBlog[]
+> = async () => {
   const saucyBlog: SanityFeaturedBlog[] = await client.fetch(
     `*[_type == 'featuredBlog'] {
       ...,
@@ -161,9 +185,9 @@ export const getBlogBySlug: (slug: string) => Promise<SanityBlog> = async (
   return getBlogData
 }
 
-export const getFeaturedBlogBySlug: (slug: string) => Promise<SanityFeaturedBlog> = async (
+export const getFeaturedBlogBySlug: (
   slug: string
-) => {
+) => Promise<SanityFeaturedBlog> = async (slug: string) => {
   const getBlogData: SanityFeaturedBlog =
     await client.fetch(`*[_type == 'featuredBlog' && slug.current == '${slug}'][0] {
     ...,

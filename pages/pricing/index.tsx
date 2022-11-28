@@ -3,34 +3,29 @@ import PageLayout from '../../components/common/layout/PageLayout'
 import Background from '../../components/sections/pricing/Background'
 import Features from '../../components/sections/pricing/features/Features'
 import Pricing from '../../components/sections/pricing/pricing/Pricing'
-import { getHomePageData, getSEOData } from '../../lib/sanity'
-import {
-  SanityAbout,
-  SanityFooter,
-  SanityNavigation,
-  SanitySeo,
-} from '../../types/schema'
+import { getCommonData } from '../../lib/sanity'
+import { SanityFooter, SanityNavigation, SanitySeo } from '../../types/schema'
 
 interface PricingPageProps {
   data: {
-    homePageData: {
-      about: SanityAbout
+    commonData: {
+      navigationLinks: SanityNavigation[]
+      seoData: SanitySeo
       footer: SanityFooter[]
     }
-    seoData: SanitySeo
   }
 }
 
 const PricingPage: NextPage<PricingPageProps> = ({
-  data: { homePageData, seoData },
+  data: {
+    commonData: { footer, navigationLinks, seoData },
+  },
 }) => {
   return (
     <PageLayout
-      footerData={homePageData.footer}
+      footerData={footer}
       seoData={seoData}
-      navigationURLs={
-        homePageData.about.navigationURLs as unknown as SanityNavigation[]
-      }
+      navigationURLs={navigationLinks}
       BackgorundWrapper={Background}
     >
       <Pricing />
@@ -42,12 +37,9 @@ const PricingPage: NextPage<PricingPageProps> = ({
 export default PricingPage
 
 export async function getStaticProps() {
-  const [homePageData, seoData] = await Promise.all([
-    getHomePageData(),
-    getSEOData(),
-  ])
+  const [commonData] = await Promise.all([getCommonData()])
 
-  const data = { homePageData, seoData }
+  const data = { commonData }
 
   return {
     props: {

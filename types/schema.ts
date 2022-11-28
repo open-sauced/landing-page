@@ -49,7 +49,7 @@ export interface SanityAbout extends SanityDocument {
    *
    *
    */
-  navigationURLs?: Array<SanityKeyedReference<SanityNavigation>>
+  navigationURLs?: SanityNavigation[]
 
   /**
    * Title — `string`

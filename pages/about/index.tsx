@@ -5,35 +5,29 @@ import About from '../../components/sections/about/about/About'
 import Background from '../../components/sections/about/Background'
 import FollowUs from '../../components/sections/about/FollowUs'
 import Links from '../../components/sections/about/Links'
-import { getHomePageData, getSEOData } from '../../lib/sanity'
-import {
-  SanityAbout,
-  SanityFooter,
-  SanityNavigation,
-  SanitySeo,
-} from '../../types/schema'
+import { getCommonData } from '../../lib/sanity'
+import { SanityFooter, SanityNavigation, SanitySeo } from '../../types/schema'
 
 interface AboutPageProps {
   data: {
-    aboutPageData: {
-      about: SanityAbout
+    commonData: {
+      navigationLinks: SanityNavigation[]
+      seoData: SanitySeo
       footer: SanityFooter[]
     }
-    seoData: SanitySeo
   }
 }
 
 const AboutPage: NextPage<AboutPageProps> = ({
   data: {
-    aboutPageData: { footer, about },
-    seoData,
+    commonData: { footer, navigationLinks, seoData },
   },
 }): ReactElement => {
   return (
     <PageLayout
       footerData={footer}
       seoData={seoData}
-      navigationURLs={about.navigationURLs as unknown as SanityNavigation[]}
+      navigationURLs={navigationLinks}
       BackgorundWrapper={Background}
     >
       <About />
@@ -46,12 +40,9 @@ const AboutPage: NextPage<AboutPageProps> = ({
 export default AboutPage
 
 export async function getStaticProps() {
-  const [aboutPageData, seoData] = await Promise.all([
-    getHomePageData(),
-    getSEOData(),
-  ])
+  const [commonData] = await Promise.all([getCommonData()])
 
-  const data = { aboutPageData, seoData }
+  const data = { commonData }
 
   return {
     props: {

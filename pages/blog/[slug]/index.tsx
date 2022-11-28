@@ -4,13 +4,11 @@ import PageLayout from '../../../components/common/layout/PageLayout'
 import Background from '../../../components/sections/blog/Background'
 import PageContent from '../../../components/sections/blog/[slug]/PageContent'
 import {
+  getCommonData,
   getFeaturedBlogBySlug,
   getFeaturedBlogs,
-  getHomePageData,
-  getSEOData,
 } from '../../../lib/sanity'
 import {
-  SanityAbout,
   SanityBlog,
   SanityFeaturedBlog,
   SanityFooter,
@@ -20,11 +18,11 @@ import {
 
 interface BlogsPageProps {
   data: {
-    blogPageData: {
-      about: SanityAbout
+    commonData: {
+      navigationLinks: SanityNavigation[]
+      seoData: SanitySeo
       footer: SanityFooter[]
     }
-    seoData: SanitySeo
     blogs: SanityBlog[]
     pageData: SanityFeaturedBlog
   }
@@ -32,8 +30,7 @@ interface BlogsPageProps {
 
 const BlogsPage: NextPage<BlogsPageProps> = ({
   data: {
-    blogPageData: { footer, about },
-    seoData,
+    commonData: { footer, navigationLinks, seoData },
     blogs,
     pageData,
   },
@@ -42,7 +39,7 @@ const BlogsPage: NextPage<BlogsPageProps> = ({
     <PageLayout
       footerData={footer}
       seoData={seoData}
-      navigationURLs={about.navigationURLs as unknown as SanityNavigation[]}
+      navigationURLs={navigationLinks}
       BackgorundWrapper={Background}
     >
       <PageContent pageContent={pageData} blogs={blogs} />
@@ -66,14 +63,13 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }: { params: { slug: string } }) {
-  const [blogPageData, seoData, blogs, pageData] = await Promise.all([
-    getHomePageData(),
-    getSEOData(),
+  const [commonData, blogs, pageData] = await Promise.all([
+    getCommonData(),
     getFeaturedBlogs(),
     getFeaturedBlogBySlug(params.slug),
   ])
 
-  const data = { blogPageData, seoData, blogs, pageData }
+  const data = { commonData, blogs, pageData }
 
   return {
     props: {
