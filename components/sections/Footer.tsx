@@ -38,7 +38,7 @@ const Footer: FC<FooterProps> = ({ data }) => {
   const { pages, apps } = footerContext
   return (
     <footer className="w-full min-h-[200px] bg-footerBG pb-10">
-      <SectionWrapper>
+      <SectionWrapper pbs={0} >
         <div className="w-full pt-10 pb-16 largeTablet:pt-12">
           <div className="w-[140px] h-6 relative">
             <Image layout="fill" alt="Brand logo" src={OpenSaucedLogo} />

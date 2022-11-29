@@ -31,13 +31,13 @@ const Logos = ({ data }: LogosProps) => {
       name: 'GitHub',
       website: 'https://github.com',
       logo: '/logos/github.svg',
-    }
+    },
   ]
 
   return (
-    <SectionWrapper direction='row' pb={150} pbs={150}>
+    <SectionWrapper direction="row" pb={150} pbs={150}>
       <div className="w-full max-w-[900px] mt-[-200px] flex gap-x-14 gap-y-8 flex-wrap justify-center items-center largeTablet:mt-0">
-        {data.map((item) => {
+        {logos.map((item) => {
           const href = item.website || ''
           const src = item.logo || ''
           return (

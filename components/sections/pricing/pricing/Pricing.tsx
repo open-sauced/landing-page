@@ -40,9 +40,9 @@ const data = [
   },
 ]
 
-const Pricing = (): ReactElement => {
+const Pricing: FC = (): ReactElement => {
   return (
-    <SectionWrapper pt={205} pts={45} pb={260}>
+    <SectionWrapper pt={205} pts={60} pb={260}>
       <Typography variant="preHeading">Pricing</Typography>
       <div className="w-full largeTablet:w-2/3">
         <Heading>$yogAccess insights$yog you never knew existed</Heading>

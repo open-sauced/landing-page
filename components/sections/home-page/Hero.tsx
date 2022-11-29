@@ -14,7 +14,7 @@ const Hero = ({ data }: HeroProps) => {
   const { title, subtitle } = data
 
   return (
-    <SectionWrapper direction="row" pt={80} pts={5}>
+    <SectionWrapper direction="row" pt={115} pts={60}>
       <main className="flex flex-col largeTablet:flex-row largeTablet:min-h-[450px]">
         <div className="flex flex-col items-start flex-1">
           <Typography variant="preHeading" alignLarge="left">

@@ -28,7 +28,7 @@ const PageContent: FC<PageContentProps> = ({
   const displayBlogs =
     blogs.filter((item) => item.slug?.current != query.slug) || []
   return (
-    <SectionWrapper pt={205} pb={235}>
+    <SectionWrapper pt={205} pts={60} pb={235}>
       <div className=" w-full flex justify-start largeTablet:justify-center">
         {topics?.map((item) => (
           <div key={item} className="mr-5">
@@ -60,8 +60,8 @@ const PageContent: FC<PageContentProps> = ({
         </div>
       </GradientBorderWrapper>
       <BlogTextContent data={blogContent} />
-      <div className="mt-6 largeTablet:mt-10">
-        <ReactPlayer url={blogUrl} />
+      <div className="w-full mt-6 largeTablet:mt-10">
+        <ReactPlayer url={blogUrl} width="100%" />
       </div>
       <div className="w-full mt-9 largeTablet:mt-28">
         <Typography variant="preHeading" alignLarge="left">

@@ -7,7 +7,7 @@ interface AboutProps {}
 
 const About: FC<AboutProps> = (): ReactElement => {
   return (
-    <SectionWrapper pt={205} pts={45} pb={80} pbs={90}>
+    <SectionWrapper pt={205} pts={60} pb={80} pbs={90}>
       <Typography variant="preHeading">About</Typography>
       <div className="w-full largeTablet:w-2/3 ">
         <Heading>

@@ -72,7 +72,7 @@ const Post: FC<PostProps> = ({ data, featured }): ReactElement => {
           readTime === 1 ? 'min' : 'mins'
         } read`}</LocalTypography>
       </div>
-      <Typography variant="body1">{getDisplaySummary()}</Typography>
+      <Typography variant="body1" alignLarge='left'>{getDisplaySummary()}</Typography>
       <div className="pt-10">
         <Button href={href}>Read More</Button>
       </div>
