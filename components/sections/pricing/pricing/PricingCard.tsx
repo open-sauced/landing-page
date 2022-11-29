@@ -35,9 +35,9 @@ const PricingCard: FC<PricingCardProps> = ({ data, index }) => {
 
       <div>
         {options.map((item) => (
-          <div className="w-full flex pb-1">
+          <div key={item} className="w-full flex pb-1">
             <div className="w-[30px] flex-shrink-0">
-              <Image src={OrangeCheckmark} />
+              <Image src={OrangeCheckmark} alt='Check mark' />
             </div>
             <div>
               <Typography variant="body2">{item}</Typography>

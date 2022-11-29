@@ -14,7 +14,7 @@ const useMediaQuery = (): boolean => {
       setTargetReached(media.matches)
       return () => media.removeListener(updateTarget)
     }
-  }, [])
+  }, [updateTarget])
 
   return targetReached
 }

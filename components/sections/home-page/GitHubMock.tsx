@@ -69,7 +69,7 @@ const GitHubMock: FC<GitHubMockProps> = ({
         </div>
         <div className="flex-1 flex mt-14 largeTablet:mt-0">
           <div className="flex w-full justify-center">
-            <Image src={trueImpact} />
+            <Image src={trueImpact} alt="True Impact" />
           </div>
         </div>
       </ResponsiveWrapper>

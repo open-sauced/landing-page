@@ -39,7 +39,7 @@ const Links: FC<LinksProps> = (): ReactElement => {
     <SectionWrapper direction="row" pb={255} pbs={135}>
       <div className="max-w-[660px] gap-y-12 flex flex-col ">
         {data.map(({ title, content, href }) => (
-          <div className="w-full">
+          <div key={title} className="w-full">
             <div className="flex">
               <div>
                 <Typography alignLarge="left">{title}</Typography>
@@ -62,6 +62,7 @@ const Links: FC<LinksProps> = (): ReactElement => {
                               ? OrangeRightArrow
                               : OrangeRightArrowSmall
                           }
+                          alt="Visit"
                         />
                       </div>
                     </div>

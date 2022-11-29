@@ -35,7 +35,7 @@ const DesktopNavigation: FC<DesktopNavigationProps> = ({
 
       <nav className="flex gap-8">
         {navigationItems.map((link) => (
-          <div className="relative cursor-pointer top">
+          <div key={link._id} className="relative cursor-pointer top">
             <Link key={link.label} href={link.url as string}>
               <p className={`${getProperStyle(link.url)}`}>{link.label}</p>
             </Link>

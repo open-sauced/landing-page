@@ -52,8 +52,8 @@ const Footer: FC<FooterProps> = ({ data }) => {
                 const src = icon || ''
                 const href = url || ''
                 return (
-                  <div className="cursor-pointer pr-3">
-                    <a href={href} target="_blank">
+                  <div key={label} className="cursor-pointer pr-3">
+                    <a href={href} target="_blank" rel="noreferrer">
                       <Image
                         alt={label}
                         src={src as string}
@@ -79,7 +79,7 @@ const Footer: FC<FooterProps> = ({ data }) => {
               <LocalTypography variant="title">More Sauce</LocalTypography>
               <div className="w-full flex flex-col">
                 {apps.map(({ label, url }) => (
-                  <a key={url} href={url} target="_blank">
+                  <a key={url} href={url} target="_blank" rel="noreferrer">
                     <LocalTypography variant="item1">{label}</LocalTypography>
                   </a>
                 ))}
@@ -105,8 +105,8 @@ const Footer: FC<FooterProps> = ({ data }) => {
           </div>
           <div className="flex mb-5 largeTablet:mb-0 ">
             {pages.map(({ url, label }, i) => (
-              <div className="flex">
-                <a href={url} target="_blank">
+              <div key={label} className="flex">
+                <a href={url} target="_blank" rel="noreferrer">
                   <LocalTypography variant="item2">{label}</LocalTypography>
                 </a>
                 {i < pages.length - 1 && (

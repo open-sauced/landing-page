@@ -19,7 +19,12 @@ const Blog: FC<BlogProps> = ({ data }): ReactElement => {
       >
         <Link href={href}>
           <div className="w-full h-[304px] relative rounded-[5px] overflow-hidden ">
-            <Image src={src as string} layout="fill" objectFit="cover" />
+            <Image
+              src={src as string}
+              layout="fill"
+              objectFit="cover"
+              alt="Post cover"
+            />
           </div>
         </Link>
       </GradientBorderWrapper>

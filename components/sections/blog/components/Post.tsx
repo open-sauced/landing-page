@@ -43,14 +43,14 @@ const Post: FC<PostProps> = ({ data, featured }): ReactElement => {
       <div className={`${featured && 'largeTablet:hidden'}`}>
         <GradientBorderWrapper style={{ width: '100%', borderRadius: '5px' }}>
           <div className="w-full h-[304px] relative rounded-[5px] overflow-hidden ">
-            <Image src={src as string} layout="fill" objectFit="cover" />
+            <Image src={src as string} layout="fill" objectFit="cover" alt="Cover"/>
           </div>
         </GradientBorderWrapper>
       </div>
 
       <div className="flex justify-start pt-6 pb-2 largeTablet:pt-10">
         {topics?.map((item) => (
-          <div className="mr-5">
+          <div key={item} className="mr-5">
             <Typography key={item} variant="body4">{`#${item}`}</Typography>
           </div>
         ))}
@@ -60,12 +60,12 @@ const Post: FC<PostProps> = ({ data, featured }): ReactElement => {
       </div>
       <div className="flex items-center pb-6 largeTablet:pb-10 ">
         <div className="flex-shrink-0 mr-2">
-          <Image src={OrangeAuthor} />
+          <Image src={OrangeAuthor} alt="Author" />
         </div>
 
         <LocalTypography>{author}</LocalTypography>
         <div className="flex-shrink-0 mr-2 ml-4">
-          <Image src={OrangeClock} />
+          <Image src={OrangeClock} alt="Time" />
         </div>
 
         <LocalTypography>{`${readTime} ${

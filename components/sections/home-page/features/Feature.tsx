@@ -33,7 +33,7 @@ const Feature: FC<Props> = ({
         <Button href={href}>Learn more</Button>
       </div>
       <div className="flex-[1] flex justify-center items-center mt-14 largeTablet:mt-0">
-        <img src={previewImage as unknown as string} />
+        <img src={previewImage as unknown as string} alt={title} />
       </div>
     </ResponsiveWrapper>
   )

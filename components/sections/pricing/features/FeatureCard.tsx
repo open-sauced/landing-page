@@ -12,7 +12,7 @@ const FeatureCard: FC = (): ReactElement => {
       >
         <div className="w-full h-full bg-[#211e1c] rounded-full flex justify-center items-center">
           <div>
-            <Image src={OrangeRocket} />
+            <Image src={OrangeRocket} alt="Logo image" />
           </div>
         </div>
       </GradientBorderWrapper>

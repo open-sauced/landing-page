@@ -24,7 +24,7 @@ const About: FC<AboutProps> = (): ReactElement => {
         {Array(4)
           .fill({ title: 'Metric', label: 'label' })
           .map((item, i) => (
-            <MetricCard data={item} index={i} />
+            <MetricCard key={i} data={item} index={i} />
           ))}
       </div>
     </SectionWrapper>

@@ -21,8 +21,8 @@ const FollowUs: FC<FollowUsProps> = ({ data }): ReactElement => {
               const src = icon || ''
               const href = url || ''
               return (
-                <div className="cursor-pointer">
-                  <a href={href} target="_blank">
+                <div key={label} className="cursor-pointer">
+                  <a href={href} target="_blank" rel="noreferrer">
                     <Image
                       alt={label}
                       src={src as string}

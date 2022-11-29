@@ -27,7 +27,7 @@ const DropdownMenu = ({
     <Menu as="div" className={` inline-block text-left ${className}`}>
       <div>
         <Menu.Button className="text-white" aria-label={label}>
-          <Image src={MobileMenu} />
+          <Image src={MobileMenu} alt="Menu" />
         </Menu.Button>
       </div>
       <Transition
@@ -63,14 +63,13 @@ const DropdownMenu = ({
                 const src = icon || ''
                 const href = url || ''
                 return (
-                  <div className="cursor-pointer pr-3">
-                    <a href={href} target="_blank">
+                  <div key={label} className="cursor-pointer pr-3">
+                    <a href={href} target="_blank" rel="noreferrer">
                       <Image
                         alt={label}
                         src={src as string}
                         width={36}
                         height={36}
-                       
                       />
                     </a>
                   </div>

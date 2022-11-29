@@ -60,7 +60,7 @@ const Pricing = (): ReactElement => {
             i !== 1 ? 'largeTablet:min-h-[454px]' : 'largeTablet:min-h-[486px]'
           const wrapperStyle = ` h-fit min-h-[402px] ${height}]`
           return (
-            <div className={wrapperStyle}>
+            <div key={item.href} className={wrapperStyle}>
               <GradientBorderWrapper
                 key={item.type}
                 style={{ width: '100%', height: '100%', borderRadius: '5px' }}
