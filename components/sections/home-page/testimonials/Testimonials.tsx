@@ -18,7 +18,7 @@ const Testimonials: FC<TestimonialsProps> = ({ data }) => {
         The value of $yOpen Source$y
       </Heading>
 
-      <div className=" mt-[46px] grid mobile:grid-cols-1 tablet:grid-cols-3 gap-9 largeTablet:mt-24  ">
+      <div className="w-full mt-[46px] grid grid-cols-1 largeTablet:grid-cols-3 gap-9 largeTablet:mt-24  ">
         {data.map((testimonial) => (
           <Testimonial
             key={testimonial.twitterUsername}

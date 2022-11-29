@@ -48,7 +48,11 @@ const DecoratedText: FC<DecoratedTextProps> = ({
             if (i % 2 === 0) {
               return text
             }
-            return <span className={style}>{text}</span>
+            return (
+              <span key={text} className={style}>
+                {text}
+              </span>
+            )
           })}
         </>
       )

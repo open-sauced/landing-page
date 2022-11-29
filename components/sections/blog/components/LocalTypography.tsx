@@ -1,4 +1,4 @@
-import React, { FC, ReactElement } from 'react'
+import React, { FC } from 'react'
 
 interface LocalTypographyProps {
   variant?: 'title' | 'content1'

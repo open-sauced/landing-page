@@ -3,7 +3,7 @@ import React, { FC } from 'react'
 import { SanityFeature } from '../../../../types/schema'
 import { Button } from '../../../common'
 import ResponsiveWrapper from '../../../common/layout/ResponsiveWrapper'
-import { Paragraph, Heading, Typography } from '../../../common/text'
+import { Heading, Typography } from '../../../common/text'
 
 interface Props {
   feature: SanityFeature
@@ -26,7 +26,9 @@ const Feature: FC<Props> = ({
           {title}
         </Heading>
         <div className="my-10">
-          <Paragraph>{description}</Paragraph>
+          <Typography variant="subheading" alignLarge="left">
+            {description}
+          </Typography>
         </div>
         <Button href={href}>Learn more</Button>
       </div>

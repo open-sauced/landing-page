@@ -1,7 +1,7 @@
 import React, { FC, ReactElement } from 'react'
 import GradientBorderWrapper from '../../../common/GradientBorderWrapper'
 import SectionWrapper from '../../../common/layout/SectionWrapper'
-import { Heading, Paragraph, Typography } from '../../../common/text'
+import { Heading, Typography } from '../../../common/text'
 import PricingCard from './PricingCard'
 
 const data = [
@@ -49,10 +49,10 @@ const Pricing = (): ReactElement => {
       </div>
 
       <div className="pt-4 pb-10 largeTablet:pt-10 largeTablet:pb-20 largeTablet:w-[58%]">
-        <Paragraph align="center">
+        <Typography variant="subheading">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
           placerat, ipsum ac auctor ornare, nunc ligula scelerisque eros.
-        </Paragraph>
+        </Typography>
       </div>
       <div className="w-full flex flex-col gap-6 justify-center items-center largeTablet:flex-row">
         {data.map((item, i) => {

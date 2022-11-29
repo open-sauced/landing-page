@@ -5,7 +5,7 @@ import GreenSquares from '../../../public/greenSquares.svg'
 import GreenSquaresSmall from '../../../public/greenSquares_small.svg'
 import trueImpact from '../../../public/trueImpact.svg'
 import SectionWrapper from '../../common/layout/SectionWrapper'
-import { Paragraph, Heading } from '../../common/text'
+import { Heading, Typography } from '../../common/text'
 import ResponsiveWrapper from '../../common/layout/ResponsiveWrapper'
 import useMediaQuery from '../../hooks/useMediaQuery'
 import DecoratedText from '../../common/text/utils/DecoratedText'
@@ -61,10 +61,10 @@ const GitHubMock: FC<GitHubMockProps> = ({
             Find out the $otrue impact$o to the OSS community
           </Heading>
           <div className="mt-10">
-            <Paragraph>
+            <Typography variant="subheading" alignLarge="left">
               Using our developer first metrics, you can see a true
               representation of any developer’s ability.
-            </Paragraph>
+            </Typography>
           </div>
         </div>
         <div className="flex-1 flex mt-14 largeTablet:mt-0">

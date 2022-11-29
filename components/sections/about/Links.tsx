@@ -36,19 +36,22 @@ const Links: FC<LinksProps> = (): ReactElement => {
 
   const imgDimension = isLargeTablet ? 40 : 24
   return (
-    <SectionWrapper direction='row' pb={255} pbs={135}>
+    <SectionWrapper direction="row" pb={255} pbs={135}>
       <div className="max-w-[660px] gap-y-12 flex flex-col ">
         {data.map(({ title, content, href }) => (
           <div className="w-full">
             <div className="flex">
-              <Typography>{title}</Typography>
+              <div>
+                <Typography alignLarge="left">{title}</Typography>
+              </div>
+
               <Link href={href}>
                 <div className="flex justify-center items-center pl-6 cursor-pointer">
                   <GradientBorderWrapper
                     style={{
                       width: `${imgDimension}px`,
                       height: `${imgDimension}px`,
-                      borderRadius: '50%'
+                      borderRadius: '50%',
                     }}
                   >
                     <div className="w-full h-full bg-[#211e1c] rounded-full flex justify-center items-center">
@@ -67,7 +70,9 @@ const Links: FC<LinksProps> = (): ReactElement => {
               </Link>
             </div>
             <div className="pt-8 pb-12 largeTablet:pt-10">
-              <Typography variant="body1">{content}</Typography>
+              <Typography variant="body1" alignLarge="left">
+                {content}
+              </Typography>
             </div>
             <div className="w-full h-[2px] bg-gradient-to-tr from-brandRed to-brandYellow"></div>
           </div>

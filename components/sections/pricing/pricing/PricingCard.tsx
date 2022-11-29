@@ -27,7 +27,9 @@ const PricingCard: FC<PricingCardProps> = ({ data, index }) => {
         {type}
       </Typography>
       <div className="flex items-end pb-4 largeTablet:pb-8">
-        <Typography>{price}</Typography>{' '}
+        <div>
+          <Typography>{price}</Typography>
+        </div>
         {!!per && <span className="pl-1">{` ${per}`}</span>}{' '}
       </div>
 

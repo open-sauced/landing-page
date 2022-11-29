@@ -1,7 +1,7 @@
 import React, { FC, ReactElement } from 'react'
 import GradientBorderWrapper from '../common/GradientBorderWrapper'
 import SectionWrapper from '../common/layout/SectionWrapper'
-import { Heading, Paragraph } from '../common/text'
+import { Heading, Typography } from '../common/text'
 
 interface SubscribeProps {}
 
@@ -15,10 +15,10 @@ const Subscribe: FC<SubscribeProps> = (): ReactElement => {
         Subscribe for $oExtra Sauce$o
       </Heading>
       <div className="max-w-[680px] mt-4 mb-14">
-        <Paragraph align="center">
+        <Typography alignSmall="center" variant='subheading'>
           Identifying contributors in a project can be opaque. With Open Sauced,
           you get actionable insights into contributions that you can see.
-        </Paragraph>
+        </Typography>
       </div>
       <GradientBorderWrapper>
         <div className="relative flex items-center w-[280px] h-[38px] text-[#FEEADD] pr-4 py-3 text-sm font-medium bg-darkBG rounded-md largeTablet:w-[394px]">

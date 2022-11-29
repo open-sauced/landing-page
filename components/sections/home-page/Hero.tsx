@@ -4,7 +4,7 @@ import PRsHero from '../../../public/PRs-hero.png'
 import Image from 'next/image'
 import SectionWrapper from '../../common/layout/SectionWrapper'
 import { Button } from '../../common'
-import { Paragraph, Heading, Typography } from '../../common/text'
+import { Heading, Typography } from '../../common/text'
 
 interface HeroProps {
   data: SanityAbout
@@ -23,7 +23,9 @@ const Hero = ({ data }: HeroProps) => {
 
           <Heading alignLarge="left">{title}</Heading>
           <div className="mt-8 mb-10 tablet:mt-4">
-            <Paragraph variant="hero">{subtitle}</Paragraph>
+            <p className="text-xl text-textPrimary opacity-70 largeTablet:leading-8">
+              {subtitle}
+            </p>
           </div>
 
           <div className="flex gap-4 items-center flex-col largeTablet:flex-row">

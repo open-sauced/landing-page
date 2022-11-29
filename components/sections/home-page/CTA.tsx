@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import SectionWrapper from '../../common/layout/SectionWrapper'
 import { SanityCalender } from '../../../types/schema'
 import Image from 'next/image'
-import { Paragraph, Heading } from '../../common/text'
+import { Heading, Typography } from '../../common/text'
 import { Button } from '../../common'
 
 interface CTAProps {
@@ -14,11 +14,13 @@ const CTA: FC<CTAProps> = ({ data }) => {
   const featureImage = calenderImage || ''
   return (
     <SectionWrapper pb={400}>
-      <Heading component="h2">
+      <Heading component="h2" alignSmall="center">
         {title}
       </Heading>
       <div className="my-10 w-full largeTablet:w-[55%]">
-        <Paragraph align="center">{subtitle}</Paragraph>
+        <Typography variant="subheading" alignSmall="center">
+          {subtitle}
+        </Typography>
       </div>
       <Button href="https://insights.opensauced.pizza">Get Started</Button>
 

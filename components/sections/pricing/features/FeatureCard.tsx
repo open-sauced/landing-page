@@ -2,12 +2,9 @@ import Image from 'next/image'
 import React, { FC, ReactElement } from 'react'
 import OrangeRocket from '../../../../public/orange_rocket.png'
 import GradientBorderWrapper from '../../../common/GradientBorderWrapper'
+import { Typography } from '../../../common/text'
 
-// orange_right_arrow
-
-interface FeatureCardProps {}
-
-const FeatureCard: FC<FeatureCardProps> = (): ReactElement => {
+const FeatureCard: FC = (): ReactElement => {
   return (
     <div className="w-full">
       <GradientBorderWrapper
@@ -20,12 +17,15 @@ const FeatureCard: FC<FeatureCardProps> = (): ReactElement => {
         </div>
       </GradientBorderWrapper>
       <div className="w-full pt-6 pb-4">
-        <h3>Feature Name</h3>
+        <Typography variant="title2" alignLarge="left">
+          Feature Name
+        </Typography>
       </div>
-      <p>
+      <Typography variant="body3" alignLarge="left">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat,
         ipsum ac auctor ornare.
-      </p>
+      </Typography>
+      <p></p>
     </div>
   )
 }

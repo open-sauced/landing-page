@@ -1,4 +1,5 @@
 import React, { FC, ReactElement } from 'react'
+import { Typography } from '../../../common/text'
 import DecoratedText from '../../../common/text/utils/DecoratedText'
 
 interface MetricCardProps {
@@ -16,10 +17,12 @@ const MetricCard: FC<MetricCardProps> = ({
   const content = `$org${title} ${index + 1}$org`
   return (
     <div className="w-full flex flex-col justify-center items-center ">
-      <p>
+      <p className="font-bold text-2xl largeTablet:text-3xl">
         <DecoratedText content={content} />
       </p>
-      <p className="pt-4">{label}</p>
+      <div className="pt-4">
+        <Typography variant="preHeading">{label}</Typography>
+      </div>
     </div>
   )
 }

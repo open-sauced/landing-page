@@ -2,7 +2,6 @@ import Image from 'next/image'
 import React, { FC } from 'react'
 import { SanityTestimonial } from '../../../../types/schema'
 import GradientBorderWrapper from '../../../common/GradientBorderWrapper'
-import { Paragraph } from '../../../common/text'
 
 interface TestimonialProps {
   testimonial: SanityTestimonial
@@ -19,7 +18,7 @@ const Testimonial: FC<TestimonialProps> = ({
   },
 }) => {
   return (
-    <GradientBorderWrapper style={{ borderRadius: '8px' }}>
+    <GradientBorderWrapper style={{ borderRadius: '8px', width: '100%' }}>
       <div className="h-fit min-h-[272px] w-full p-10 bg-darkBG rounded-lg flex flex-col">
         <div className="flex-grow">
           <Typography>{testimonial}</Typography>
