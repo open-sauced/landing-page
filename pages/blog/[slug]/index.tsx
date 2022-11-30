@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import { useRouter } from 'next/router'
 import { ReactElement } from 'react'
 import PageLayout from '../../../components/common/layout/PageLayout'
 import Background from '../../../components/sections/blog/Background'
@@ -16,7 +17,7 @@ import {
   SanitySeo,
 } from '../../../types/schema'
 
-interface BlogsPageProps {
+interface BlogPageProps {
   data: {
     commonData: {
       navigationLinks: SanityNavigation[]
@@ -24,30 +25,32 @@ interface BlogsPageProps {
       footer: SanityFooter[]
     }
     blogs: SanityBlog[]
-    pageData: SanityFeaturedBlog
+    pageContent: SanityFeaturedBlog
   }
 }
 
-const BlogsPage: NextPage<BlogsPageProps> = ({
-  data: {
-    commonData: { footer, navigationLinks, seoData },
-    blogs,
-    pageData,
-  },
-}): ReactElement => {
+const BlogPage: NextPage<BlogPageProps> = ({ data }): ReactElement => {
+  const { isFallback } = useRouter()
+
+  if (isFallback) {
+    return <div>Loading...</div>
+  }
+
+  const { commonData, blogs, pageContent } = data
+
   return (
     <PageLayout
-      footerData={footer}
-      seoData={seoData}
-      navigationURLs={navigationLinks}
+      footerData={commonData.footer}
+      seoData={commonData.seoData}
+      navigationURLs={commonData.navigationLinks}
       BackgorundWrapper={Background}
     >
-      <PageContent pageContent={pageData} blogs={blogs} />
+      <PageContent pageContent={pageContent} blogs={blogs} />
     </PageLayout>
   )
 }
 
-export default BlogsPage
+export default BlogPage
 
 export async function getStaticPaths() {
   const blogs = await getFeaturedBlogs()
@@ -63,13 +66,13 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }: { params: { slug: string } }) {
-  const [commonData, blogs, pageData] = await Promise.all([
+  const [commonData, blogs, pageContent] = await Promise.all([
     getCommonData(),
     getFeaturedBlogs(),
     getFeaturedBlogBySlug(params.slug),
   ])
 
-  const data = { commonData, blogs, pageData }
+  const data = { commonData, blogs, pageContent }
 
   return {
     props: {
