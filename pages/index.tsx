@@ -18,6 +18,7 @@ import {
 import GitHubMock from '../components/GitHubMock'
 import Background from '../components/Background'
 import CTA from '../components/CTA'
+import Footer2 from '../components/Footer2'
 
 interface HomePageProps {
   data: {
@@ -74,8 +75,10 @@ const Home: NextPage<HomePageProps> = ({ data: { homePageData, seoData, } }) => 
 
           <GitHubMock githubMockData={homePageData.githubMock as unknown as SanityGithubMock}/>
           
-          <CTA/>      
+          <CTA/> 
+
         </div>
+        <Footer2/>     
       </Background>
     </>
   )
