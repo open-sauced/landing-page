@@ -3,6 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 import osWhiteLogo from '../public/osWhiteLogo.svg'
 import { BsDiscord, BsGithub, BsTwitter, BsYoutube } from 'react-icons/bs'
+import { FaTiktok } from 'react-icons/fa'
 import { FaDev } from 'react-icons/fa'
 
 const Footer2 = () => {
@@ -29,6 +30,9 @@ const Footer2 = () => {
                     </a>
                     <a href="https://dev.to/opensauced">
                         <FaDev className="text-white text-2xl" />
+                    </a>
+                    <a href="https://www.tiktok.com/@opensauced_">
+                        <FaTiktok className="text-white text-2xl" />
                     </a>
                 </div>
 
