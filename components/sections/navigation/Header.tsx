@@ -2,10 +2,7 @@ import React, { FC, ReactElement } from 'react'
 import SectionWrapper from '../../common/layout/SectionWrapper'
 import DesktopNavigation from './DesktopNavigation'
 import BrandLogo from '../../../public/brandLogo.svg'
-import {
-  SanityFooter,
-  SanityNavigation,
-} from '../../../types/schema'
+import { SanityFooter, SanityNavigation } from '../../../types/schema'
 import MobileNavigation from './MobileNavigation'
 
 interface HeaderProps {
@@ -14,7 +11,7 @@ interface HeaderProps {
 }
 
 const links = [
-  { url: '/features', label: 'Features' },
+  // { url: '/features', label: 'Features' },
   { url: '/pricing', label: 'Pricing' },
   { url: '/about', label: 'About' },
   { url: '/blog', label: 'Blog' },

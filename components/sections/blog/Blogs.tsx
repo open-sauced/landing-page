@@ -14,11 +14,13 @@ const Blogs: FC<BlogsProps> = ({ data }): ReactElement => {
     <SectionWrapper pt={205} pts={60} pb={265} pbs={135}>
       <Typography variant="preHeading">Blog</Typography>
       <div className="w-full max-w-[750px]">
-        <Heading>$yogArticles and updates$yog from OpenSauced</Heading>
+        <Heading>
+          $yogArticles and updates$yog from OpenSauced
+        </Heading>
       </div>
       <div className="w-full max-w-[750px] pt-4 pb-16 largeTablet:pt-10 largeTablet:pb-32 ">
         <Typography variant="subheading">
-          A collection of the latest OpenSauced thoughts, insights, updates  and
+          A collection of the latest OpenSauced thoughts, insights, updates and
           announcements.
         </Typography>
       </div>
