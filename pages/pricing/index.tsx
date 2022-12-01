@@ -18,12 +18,11 @@ interface PricingPageProps {
 
 const PricingPage: NextPage<PricingPageProps> = ({
   data: {
-    commonData: { footer, navigationLinks, seoData },
+    commonData: { navigationLinks, seoData },
   },
 }) => {
   return (
     <PageLayout
-      footerData={footer}
       seoData={seoData}
       navigationURLs={navigationLinks}
       BackgorundWrapper={Background}

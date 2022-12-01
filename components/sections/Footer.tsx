@@ -1,11 +1,8 @@
 import Image from 'next/image'
 import React, { FC } from 'react'
-import { SanityFooter } from '../../types/schema'
 import OpenSaucedLogo from '../../public/logos/FooterLogo.png'
 import SectionWrapper from '../common/layout/SectionWrapper'
-interface FooterProps {
-  data: SanityFooter[]
-}
+import Socials from '../common/Socials'
 
 const footerContext = {
   pages: [
@@ -34,11 +31,11 @@ const footerContext = {
   ],
 }
 
-const Footer: FC<FooterProps> = ({ data }) => {
+const Footer: FC = () => {
   const { pages, apps } = footerContext
   return (
     <footer className="w-full min-h-[200px] bg-footerBG pb-10">
-      <SectionWrapper pbs={0} >
+      <SectionWrapper pbs={0}>
         <div className="w-full pt-10 pb-16 largeTablet:pt-12">
           <div className="w-[140px] h-6 relative">
             <Image layout="fill" alt="Brand logo" src={OpenSaucedLogo} />
@@ -47,24 +44,7 @@ const Footer: FC<FooterProps> = ({ data }) => {
         <div className="w-full flex flex-col largeTablet:flex-row">
           <div className="w-full largeTablet:w-[45%]">
             <LocalTypography variant="title">SOCIALS</LocalTypography>
-            <div className="flex relative">
-              {data.map(({ url, icon, label }) => {
-                const src = icon || ''
-                const href = url || ''
-                return (
-                  <div key={label} className="cursor-pointer pr-3">
-                    <a href={href} target="_blank" rel="noreferrer">
-                      <Image
-                        alt={label}
-                        src={src as string}
-                        width={36}
-                        height={36}
-                      />
-                    </a>
-                  </div>
-                )
-              })}
-            </div>
+            <Socials />
           </div>
           <div className="w-full flex flex-wrap">
             <div className="w-1/2 my-10 largeTablet:w-[35%] largeTablet:my-0">

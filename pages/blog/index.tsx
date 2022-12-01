@@ -24,13 +24,12 @@ interface BlogsPageProps {
 
 const BlogsPage: NextPage<BlogsPageProps> = ({
   data: {
-    commonData: { footer, navigationLinks, seoData },
+    commonData: { navigationLinks, seoData },
     blogs,
   },
 }): ReactElement => {
   return (
     <PageLayout
-      footerData={footer}
       seoData={seoData}
       navigationURLs={navigationLinks}
       BackgorundWrapper={Background}

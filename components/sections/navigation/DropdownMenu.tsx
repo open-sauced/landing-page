@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Fragment } from 'react'
 import MobileMenu from '../../../public/mobile_menu.svg'
-import { SanityFooter } from '../../../types/schema'
+import Socials from '../../common/Socials'
 
 interface MenuItem {
   label: string
@@ -14,14 +14,12 @@ interface DropdownMenuProps {
   menuItems: MenuItem[]
   className?: string
   label: string
-  socialLinks: SanityFooter[]
 }
 
 const DropdownMenu = ({
   menuItems,
   className,
   label,
-  socialLinks,
 }: DropdownMenuProps) => {
   return (
     <Menu as="div" className={` inline-block text-left ${className}`}>
@@ -58,24 +56,7 @@ const DropdownMenu = ({
             <p className="font-bold text-textPrimary text-xs opacity-70 tracking-[0.2em] pb-10">
               SOCIALS
             </p>
-            <div className="flex relative">
-              {socialLinks.map(({ url, icon, label }) => {
-                const src = icon || ''
-                const href = url || ''
-                return (
-                  <div key={label} className="cursor-pointer pr-3">
-                    <a href={href} target="_blank" rel="noreferrer">
-                      <Image
-                        alt={label}
-                        src={src as string}
-                        width={36}
-                        height={36}
-                      />
-                    </a>
-                  </div>
-                )
-              })}
-            </div>
+            <Socials />
           </div>
         </Menu.Items>
       </Transition>

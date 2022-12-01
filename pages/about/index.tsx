@@ -20,18 +20,17 @@ interface AboutPageProps {
 
 const AboutPage: NextPage<AboutPageProps> = ({
   data: {
-    commonData: { footer, navigationLinks, seoData },
+    commonData: { navigationLinks, seoData },
   },
 }): ReactElement => {
   return (
     <PageLayout
-      footerData={footer}
       seoData={seoData}
       navigationURLs={navigationLinks}
       BackgorundWrapper={Background}
     >
       <About />
-      <FollowUs data={footer} />
+      <FollowUs />
       <Links />
     </PageLayout>
   )

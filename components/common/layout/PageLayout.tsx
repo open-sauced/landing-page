@@ -1,11 +1,6 @@
 import Head from 'next/head'
 import React, { FC, ReactElement } from 'react'
-import {
-  SanityFooter,
-  SanityKeyedReference,
-  SanityNavigation,
-  SanitySeo,
-} from '../../../types/schema'
+import { SanityNavigation, SanitySeo } from '../../../types/schema'
 import Header from '../../sections/navigation/Header'
 import Footer from '../../sections/Footer'
 import Subscribe from '../../sections/Subscribe'
@@ -13,7 +8,6 @@ import Subscribe from '../../sections/Subscribe'
 interface PageLayoutProps {
   seoData: SanitySeo
   navigationURLs: SanityNavigation[]
-  footerData: SanityFooter[]
   BackgorundWrapper: React.FC
 }
 
@@ -21,7 +15,6 @@ const PageLayout: FC<PageLayoutProps> = ({
   children,
   seoData,
   navigationURLs,
-  footerData,
   BackgorundWrapper,
 }): ReactElement => {
   return (
@@ -53,11 +46,10 @@ const PageLayout: FC<PageLayoutProps> = ({
         ></meta>
       </Head>
       <BackgorundWrapper>
-        <Header navigationItems={navigationURLs} socialLinks={footerData} />
+        <Header navigationItems={navigationURLs} />
         <div>{children}</div>
         <Subscribe />
-
-        <Footer data={footerData} />
+        <Footer />
       </BackgorundWrapper>
     </div>
   )

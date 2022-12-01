@@ -46,7 +46,6 @@ const Home: NextPage<HomePageProps> = ({
 }) => {
   return (
     <PageLayout
-      footerData={commonData.footer}
       seoData={commonData.seoData}
       navigationURLs={commonData.navigationLinks}
       BackgorundWrapper={Background}
