@@ -1,7 +1,7 @@
 import React, { FC, ReactElement } from 'react'
 import SectionWrapper from '../../common/layout/SectionWrapper'
 import GradientBorderWrapper from '../../common/GradientBorderWrapper'
-import Socials from '../../common/Socials'
+import SocialLinks from '../../common/SocialLinks'
 
 const FollowUs: FC = (): ReactElement => {
   return (
@@ -11,7 +11,7 @@ const FollowUs: FC = (): ReactElement => {
           <p className="text-sm font-semibold text-textPrimary pb-4 largeTablet:pb-0 largeTablet:mr-8 ">
             Follow us on
           </p>
-          <Socials aboutPage />
+          <SocialLinks aboutPage />
         </div>
       </GradientBorderWrapper>
     </SectionWrapper>

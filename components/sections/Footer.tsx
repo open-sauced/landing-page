@@ -2,7 +2,7 @@ import Image from 'next/image'
 import React, { FC } from 'react'
 import OpenSaucedLogo from '../../public/logos/FooterLogo.png'
 import SectionWrapper from '../common/layout/SectionWrapper'
-import Socials from '../common/Socials'
+import SocialLinks from '../common/SocialLinks'
 
 const footerContext = {
   pages: [
@@ -44,7 +44,7 @@ const Footer: FC = () => {
         <div className="w-full flex flex-col largeTablet:flex-row">
           <div className="w-full largeTablet:w-[45%]">
             <LocalTypography variant="title">SOCIALS</LocalTypography>
-            <Socials />
+            <SocialLinks />
           </div>
           <div className="w-full flex flex-wrap">
             <div className="w-1/2 my-10 largeTablet:w-[35%] largeTablet:my-0">

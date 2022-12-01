@@ -40,11 +40,11 @@ const data = [
   },
 ]
 
-interface SocialsProps {
+interface SocialLinksProps {
   aboutPage?: boolean
 }
 
-const Socials: FC<SocialsProps> = ({ aboutPage }): ReactElement => {
+const SocialLinks: FC<SocialLinksProps> = ({ aboutPage }): ReactElement => {
   const wrapperStyle = aboutPage
     ? 'grid grid-cols-3 gap-x-8 gap-y-3 largeTablet:flex'
     : 'flex relative gap-x-3'
@@ -62,4 +62,4 @@ const Socials: FC<SocialsProps> = ({ aboutPage }): ReactElement => {
   )
 }
 
-export default Socials
+export default SocialLinks

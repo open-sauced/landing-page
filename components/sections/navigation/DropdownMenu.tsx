@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Fragment } from 'react'
 import MobileMenu from '../../../public/mobile_menu.svg'
-import Socials from '../../common/Socials'
+import SocialLinks from '../../common/SocialLinks'
 
 interface MenuItem {
   label: string
@@ -16,11 +16,7 @@ interface DropdownMenuProps {
   label: string
 }
 
-const DropdownMenu = ({
-  menuItems,
-  className,
-  label,
-}: DropdownMenuProps) => {
+const DropdownMenu = ({ menuItems, className, label }: DropdownMenuProps) => {
   return (
     <Menu as="div" className={` inline-block text-left ${className}`}>
       <div>
@@ -56,7 +52,7 @@ const DropdownMenu = ({
             <p className="font-bold text-textPrimary text-xs opacity-70 tracking-[0.2em] pb-10">
               SOCIALS
             </p>
-            <Socials />
+            <SocialLinks />
           </div>
         </Menu.Items>
       </Transition>
