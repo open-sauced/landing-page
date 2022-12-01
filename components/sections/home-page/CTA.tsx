@@ -1,7 +1,6 @@
 import React, { FC } from 'react'
 import SectionWrapper from '../../common/layout/SectionWrapper'
 import { SanityCalender } from '../../../types/schema'
-import Image from 'next/image'
 import { Heading, Typography } from '../../common/text'
 import { Button } from '../../common'
 
@@ -10,10 +9,9 @@ interface CTAProps {
 }
 
 const CTA: FC<CTAProps> = ({ data }) => {
-  const { title, subtitle, calenderImage } = data
-  const featureImage = calenderImage || ''
+  const { title, subtitle } = data
   return (
-    <SectionWrapper pb={400}>
+    <SectionWrapper pb={245}>
       <Heading component="h2" alignSmall="center">
         {title}
       </Heading>
@@ -23,16 +21,6 @@ const CTA: FC<CTAProps> = ({ data }) => {
         </Typography>
       </div>
       <Button href="https://insights.opensauced.pizza">Get Started</Button>
-
-      <div className="w-[100%] h-fit max-w-[953px] shrink-0 relative mt-[120px]">
-        <Image
-          alt={title}
-          src={featureImage as string}
-          layout="responsive"
-          width={828}
-          height={722}
-        />
-      </div>
     </SectionWrapper>
   )
 }

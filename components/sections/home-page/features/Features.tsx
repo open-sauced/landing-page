@@ -1,7 +1,6 @@
 import React, { FC } from 'react'
 import { SanityFeature } from '../../../../types/schema'
 import Feature from './Feature'
-import { PortableText } from '@portabletext/react'
 import SectionWrapper from '../../../common/layout/SectionWrapper'
 
 interface Props {

@@ -9,6 +9,7 @@ import { Heading, Typography } from '../../common/text'
 import ResponsiveWrapper from '../../common/layout/ResponsiveWrapper'
 import useMediaQuery from '../../hooks/useMediaQuery'
 import DecoratedText from '../../common/text/utils/DecoratedText'
+import BackgroundStroke from '../../../public/middleRight.svg'
 interface GitHubMockProps {
   githubMockData: SanityGithubMock
 }
@@ -21,13 +22,13 @@ const GitHubMock: FC<GitHubMockProps> = ({
     <SectionWrapper>
       <div className="flex pb-16 px-10 tablet:px-0 items-center justify-center largeTablet:pb-14">
         <div>
-          <p className="text-textPrimary font-bold text-[2.375rem] leading-[3.625rem] largeTablet:text-5xl largeTablet:leading-[4.5rem]">
+          <p className="text-textPrimary font-inter font-bold text-[2.375rem] leading-[3.625rem] largeTablet:text-5xl largeTablet:leading-[4.5rem]">
             We are
           </p>
-          <p className="font-bold pl-16 tablet:pl-20 text-[3.25rem] leading-none largeTablet:text-8xl">
+          <p className="font-inter font-bold pl-16 tablet:pl-20 text-[3.25rem] leading-none largeTablet:text-8xl">
             <DecoratedText content="$oygmore" />
           </p>
-          <p className="font-bold pl-32 tablet:pl-40 tracking-[-0.03em] text-[4.25rem] leading-none largeTablet:text-9xl">
+          <p className="font-inter font-bold pl-32 tablet:pl-40 tracking-[-0.03em] text-[4.25rem] leading-none largeTablet:text-9xl">
             <DecoratedText content="$oygthan..." />
           </p>
         </div>
@@ -68,8 +69,13 @@ const GitHubMock: FC<GitHubMockProps> = ({
           </div>
         </div>
         <div className="flex-1 flex mt-14 largeTablet:mt-0">
-          <div className="flex w-full justify-center">
-            <Image src={trueImpact} alt="True Impact" />
+          <div className="flex w-full justify-center relative">
+            <div className="absolute hidden largeTablet:block largeTablet:top-[-70px]">
+              <Image alt="Doodles" src={BackgroundStroke} />
+            </div>
+            <div className="relative largeTablet:left-6">
+              <Image src={trueImpact} alt="True Impact" />
+            </div>
           </div>
         </div>
       </ResponsiveWrapper>

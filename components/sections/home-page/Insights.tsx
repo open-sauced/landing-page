@@ -3,9 +3,7 @@ import { Button } from '../../common'
 import SectionWrapper from '../../common/layout/SectionWrapper'
 import { Heading, Typography } from '../../common/text'
 
-interface InsightsProps {}
-
-const Insights: FC<InsightsProps> = (): ReactElement => {
+const Insights: FC = (): ReactElement => {
   return (
     <SectionWrapper pb={285}>
       <Heading component="h2" alignSmall="center">
