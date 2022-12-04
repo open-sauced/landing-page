@@ -3,9 +3,7 @@ import SectionWrapper from '../../../common/layout/SectionWrapper'
 import { Heading, Typography } from '../../../common/text'
 import MetricCard from './MetricCard'
 
-interface AboutProps {}
-
-const About: FC<AboutProps> = (): ReactElement => {
+const About: FC = (): ReactElement => {
   return (
     <SectionWrapper pt={205} pts={60} pb={80} pbs={90}>
       <Typography variant="preHeading">About</Typography>

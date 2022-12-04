@@ -1,4 +1,5 @@
 import React, { FC, ReactElement } from 'react'
+import useMediaQuery from '../../hooks/useMediaQuery'
 import DecoratedText from './utils/DecoratedText'
 
 interface HeadingProps {
@@ -13,10 +14,14 @@ const Heading: FC<HeadingProps> = ({
   alignLarge = 'center',
   alignSmall = 'left',
 }): ReactElement => {
-  const commonStyle = `w-full font-bold text-textPrimary text-${alignSmall} tracking-[-0.02em] text-3xl largeTablet:text-${alignLarge}`
+  const isLargeTablet = useMediaQuery()
+  const commonStyle = `w-full font-bold text-textPrimary tracking-[-0.02em] text-3xl`
   if (component === 'h2') {
     return (
       <h2
+        style={{
+          textAlign: isLargeTablet ? alignLarge : alignSmall,
+        }}
         className={`${commonStyle}
         largeTablet:text-5xl`}
       >
@@ -27,7 +32,10 @@ const Heading: FC<HeadingProps> = ({
   if (component === 'h3') {
     return (
       <h3
-        className={`${commonStyle} 
+        style={{
+          textAlign: isLargeTablet ? alignLarge : alignSmall,
+        }}
+        className={`${commonStyle} largeTablet:
         largeTablet:text-4xl`}
       >
         <DecoratedText content={children as string} />
@@ -36,6 +44,9 @@ const Heading: FC<HeadingProps> = ({
   }
   return (
     <h1
+      style={{
+        textAlign: isLargeTablet ? alignLarge : alignSmall,
+      }}
       className={`${commonStyle}
       largeTablet:text-6xl largeTablet:tracking-[-0.03em]`}
     >

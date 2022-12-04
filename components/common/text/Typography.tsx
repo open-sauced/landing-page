@@ -1,4 +1,5 @@
 import React, { FC, ReactElement } from 'react'
+import useMediaQuery from '../../hooks/useMediaQuery'
 
 interface TypographyProps {
   variant?:
@@ -20,7 +21,8 @@ const Typography: FC<TypographyProps> = ({
   alignLarge = 'center',
   alignSmall = 'left',
 }): ReactElement => {
-  const commonStyle = `w-full text-textPrimary text-${alignSmall} largeTablet:text-${alignLarge}`
+  const isLargeTablet = useMediaQuery()
+  const commonStyle = `w-full text-textPrimary`
 
   const preHeadingStyle = `font-bold text-xs tracking-[0.2em] opacity-70 uppercase mb-4`
   const subheadingStyle =
@@ -50,7 +52,16 @@ const Typography: FC<TypographyProps> = ({
       : variant === 'subheading'
       ? subheadingStyle
       : ''
-  return <p className={`${commonStyle} ${appliedStyle}`}>{children}</p>
+  return (
+    <p
+      style={{
+        textAlign: isLargeTablet ? alignLarge : alignSmall,
+      }}
+      className={`${commonStyle} ${appliedStyle}`}
+    >
+      {children}
+    </p>
+  )
 }
 
 export default Typography
