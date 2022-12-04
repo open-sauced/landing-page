@@ -6,10 +6,10 @@ import GreenSquaresSmall from '../../../public/greenSquares_small.svg'
 import trueImpact from '../../../public/trueImpact.svg'
 import SectionWrapper from '../../common/layout/SectionWrapper'
 import { Heading, Typography } from '../../common/text'
-import ResponsiveWrapper from '../../common/layout/ResponsiveWrapper'
 import useMediaQuery from '../../hooks/useMediaQuery'
 import DecoratedText from '../../common/text/utils/DecoratedText'
 import BackgroundStroke from '../../../public/middleRight.svg'
+
 interface GitHubMockProps {
   githubMockData: SanityGithubMock
 }
@@ -19,7 +19,7 @@ const GitHubMock: FC<GitHubMockProps> = ({
 }) => {
   const isLargeTablet = useMediaQuery()
   return (
-    <SectionWrapper>
+    <SectionWrapper pbs={100} >
       <div className="flex pb-16 px-10 tablet:px-0 items-center justify-center largeTablet:pb-14">
         <div>
           <p className="text-textPrimary font-inter font-bold text-[2.375rem] leading-[3.625rem] largeTablet:text-5xl largeTablet:leading-[4.5rem]">
@@ -41,9 +41,9 @@ const GitHubMock: FC<GitHubMockProps> = ({
         )}
       </div>
       <div className="pb-10 largeTablet:pb-44">
-        <Heading component="h2" alignSmall="center">
-          {subtitle}
-        </Heading>
+        <h2 className="text-center text-2xl font-bold font-inter largeTablet:text-5xl">
+          <DecoratedText content={subtitle || ''} />
+        </h2>
       </div>
 
       <p className="text-center font-bold text-textPrimary opacity-40 text-base largeTablet:text-2xl leading-none pb-10 largeTablet:pb-24">
@@ -52,23 +52,23 @@ const GitHubMock: FC<GitHubMockProps> = ({
       <p className="text-center font-bold pb-2 tracking-[-0.03em] text-xl largeTablet:text-[2rem] largeTablet:pb-6">
         It&apos;s only a surface-level indicator of
       </p>
-      <p className="font-bold text-3xl largeTablet:text-[4rem] leading-none text-center pb-32 largeTablet:pb-[350px]">
+      <p className="font-bold text-3xl largeTablet:text-[4rem] leading-none text-center pb-32 largeTablet:pb-[300px]">
         how capable a developer is.
       </p>
 
-      <ResponsiveWrapper mb={350}>
-        <div className="flex-1">
+      <div className='w-full grid grid-cols-1 largeTablet:grid-cols-2 pb-0 largeTablet:pb-[280px]' >
+        <div className="w-full my-auto">
           <Heading component="h2" alignLarge="left">
             Find out the $otrue impact$o to the OSS community
           </Heading>
-          <div className="mt-10">
+          <div className="mt-4 largeTablet:mt-10">
             <Typography variant="subheading" alignLarge="left">
               Using our developer first metrics, you can see a true
               representation of any developer’s ability.
             </Typography>
           </div>
         </div>
-        <div className="flex-1 flex mt-14 largeTablet:mt-0">
+        <div className="w-full  flex mt-14 largeTablet:mt-0">
           <div className="flex w-full justify-center relative">
             <div className="absolute hidden largeTablet:block largeTablet:top-[-70px]">
               <Image alt="Doodles" src={BackgroundStroke} />
@@ -78,7 +78,7 @@ const GitHubMock: FC<GitHubMockProps> = ({
             </div>
           </div>
         </div>
-      </ResponsiveWrapper>
+      </div>
     </SectionWrapper>
   )
 }

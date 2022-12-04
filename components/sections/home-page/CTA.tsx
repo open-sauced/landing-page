@@ -11,7 +11,7 @@ interface CTAProps {
 const CTA: FC<CTAProps> = ({ data }) => {
   const { title, subtitle } = data
   return (
-    <SectionWrapper pb={245}>
+    <SectionWrapper pb={245} pbs={135} >
       <Heading component="h2" alignSmall="center">
         {title}
       </Heading>

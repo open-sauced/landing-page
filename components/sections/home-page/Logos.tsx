@@ -49,7 +49,7 @@ const Logos = ({ data }: LogosProps) => {
 
   return (
     <SectionWrapper direction="row" pb={150} pbs={150}>
-      <div className="w-full max-w-[900px] mt-[-200px] grid grid-cols-3 gap-x-10 gap-y-8 justify-center items-center content-center largeTablet:mt-0 largeTablet:grid-cols-6">
+      <div className="w-full max-w-[900px] grid grid-cols-3 gap-x-10 gap-y-8 justify-center items-center content-center largeTablet:mt-0 largeTablet:grid-cols-6">
         {logos.map((item) => {
           const href = item.website || ''
           const src = item.logo || ''
