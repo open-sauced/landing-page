@@ -24,7 +24,7 @@ const Button: FC<ButtonProps> = ({
       : `bg-[#687076]`
 
   return (
-    <Link href={href}>
+    <Link href={href} passHref>
       <div className={`${commonStyle} ${widthStyle} ${variantStyle}`}>
         <div className="h-full w-full min-h-[38px] rounded-md bg-darkBG flex justify-center items-center px-3 py-[6px]">
           <span className="font-bold text-sm leading-[1] text-[#FEF8F4] flex">

@@ -1,5 +1,5 @@
 import React, { FC, ReactElement } from 'react'
-import { SanityBlog, SanityFeaturedBlog } from '../../../../types/schema'
+import { SanityBlog } from '../../../../types/schema'
 import SectionWrapper from '../../../common/layout/SectionWrapper'
 import { Heading, Typography } from '../../../common/text'
 import OrangeClock from '../../../../public/orange_clock.png'
@@ -11,15 +11,18 @@ import BlogTextContent from './BlogTextContent'
 import { useRouter } from 'next/router'
 import Blog from '../components/Post'
 import ReactPlayer from 'react-player'
+import DecoratedText from '../../../common/text/utils/DecoratedText'
 
 interface PageContentProps {
-  pageContent: SanityFeaturedBlog
+  pageContent: SanityBlog
   blogs: SanityBlog[]
+  featuredPost?: boolean
 }
 
 const PageContent: FC<PageContentProps> = ({
   pageContent,
   blogs,
+  featuredPost,
 }): ReactElement => {
   const { query } = useRouter()
   const { topics, title, author, readTime, coverImage, blogContent, blogUrl } =
@@ -56,13 +59,32 @@ const PageContent: FC<PageContentProps> = ({
 
       <GradientBorderWrapper style={{ width: '100%', borderRadius: '8px' }}>
         <div className="w-full h-[304px] relative rounded-[5px] overflow-hidden largeTablet:h-[496px]  ">
-          <Image src={src as string} layout="fill" objectFit="cover" alt="Cover" />
+          <Image
+            src={src as string}
+            layout="fill"
+            objectFit="cover"
+            alt="Cover"
+          />
         </div>
       </GradientBorderWrapper>
       <BlogTextContent data={blogContent} />
-      <div className="w-full mt-6 largeTablet:mt-10">
-        <ReactPlayer url={blogUrl} width="100%" />
-      </div>
+      {featuredPost && (
+        <div className="w-full mt-6 largeTablet:mt-10">
+          <ReactPlayer url={blogUrl} width="100%" />
+        </div>
+      )}
+      {!featuredPost && (
+        <a
+          className="w-full max-w-[780px]"
+          href={blogUrl}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <p className="text-left font-bold text-2xl border-b-[1px] w-fit tracking-[0.14em] pt-6">
+            <DecoratedText content="$yogRead entire article" />
+          </p>
+        </a>
+      )}
       <div className="w-full mt-9 largeTablet:mt-28">
         <Typography variant="preHeading" alignLarge="left">
           Recent Posts

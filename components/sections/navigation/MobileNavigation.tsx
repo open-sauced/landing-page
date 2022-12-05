@@ -16,7 +16,7 @@ const MobileNavigation: FC<MobileNavigationProps> = ({
   return (
     <div className="flex justify-between items-center w-full">
       <div className="h-[26px] w-[150px] largeTablet:hidden  cursor-pointer">
-        <Link href="/">
+        <Link href="/" passHref>
           <Image src={logo} layout="responsive" alt="" />
         </Link>
       </div>

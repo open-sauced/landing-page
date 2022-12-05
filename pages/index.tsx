@@ -1,7 +1,12 @@
 import type { NextPage } from 'next'
 import Hero from '../components/sections/home-page/Hero'
 import Logos from '../components/sections/home-page/Logos'
-import { getCommonData, getFeaturedBlogs, getHomePageData } from '../lib/sanity'
+import {
+  getAllBlogs,
+  getCommonData,
+  getFeaturedBlogs,
+  getHomePageData,
+} from '../lib/sanity'
 import {
   SanityAbout,
   SanityBlog,
@@ -38,12 +43,17 @@ interface HomePageProps {
       testimonial: SanityTestimonial[]
     }
     blogs: SanityBlog[]
+    featuredBlogs: SanityBlog[]
   }
 }
 
 const Home: NextPage<HomePageProps> = ({
-  data: { commonData, homePageData, blogs },
+  data: { commonData, homePageData, blogs, featuredBlogs },
 }) => {
+  const displayBlogs = [...blogs, ...featuredBlogs].sort(
+    (a, b) => +new Date(b._createdAt) - +new Date(a._createdAt)
+  )
+
   return (
     <PageLayout
       seoData={commonData.seoData}
@@ -59,7 +69,7 @@ const Home: NextPage<HomePageProps> = ({
       <Features data={homePageData.feature} />
       <Insights />
       <Testimonials data={homePageData.testimonial} />
-      <Blogs data={blogs} />
+      <Blogs data={displayBlogs.slice(0, 4)} />
     </PageLayout>
   )
 }
@@ -67,13 +77,14 @@ const Home: NextPage<HomePageProps> = ({
 export default Home
 
 export async function getStaticProps() {
-  const [commonData, homePageData, blogs] = await Promise.all([
+  const [commonData, homePageData, featuredBlogs, blogs] = await Promise.all([
     getCommonData(),
     getHomePageData(),
     getFeaturedBlogs(),
+    getAllBlogs(),
   ])
 
-  const data = { commonData, homePageData, blogs }
+  const data = { commonData, homePageData, featuredBlogs, blogs }
 
   return {
     props: {

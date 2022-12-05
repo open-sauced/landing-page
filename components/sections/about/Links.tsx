@@ -8,8 +8,6 @@ import OrangeRightArrowSmall from '../../../public/orange_right_arrow_small.png'
 import useMediaQuery from '../../hooks/useMediaQuery'
 import Link from 'next/link'
 
-interface LinksProps {}
-
 const data = [
   {
     title: 'Blog',
@@ -31,7 +29,7 @@ const data = [
   },
 ]
 
-const Links: FC<LinksProps> = (): ReactElement => {
+const Links: FC= (): ReactElement => {
   const isLargeTablet = useMediaQuery()
 
   const imgDimension = isLargeTablet ? 40 : 24
@@ -45,7 +43,7 @@ const Links: FC<LinksProps> = (): ReactElement => {
                 <Typography alignLarge="left">{title}</Typography>
               </div>
 
-              <Link href={href}>
+              <Link href={href} passHref>
                 <div className="flex justify-center items-center pl-6 cursor-pointer">
                   <GradientBorderWrapper
                     style={{

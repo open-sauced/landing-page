@@ -17,7 +17,7 @@ const Blog: FC<BlogProps> = ({ data }): ReactElement => {
       <GradientBorderWrapper
         style={{ width: '100%', borderRadius: '5px', cursor: 'pointer' }}
       >
-        <Link href={href}>
+        <Link href={href} passHref>
           <div className="w-full h-[304px] relative rounded-[5px] overflow-hidden ">
             <Image
               src={src as string}
