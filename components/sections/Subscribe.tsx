@@ -25,7 +25,7 @@ const Subscribe: FC = (): ReactElement => {
   return (
     <SectionWrapper pbs={120} pb={310}>
       <Heading alignSmall="center" component="h2">
-        Subscribe for $oExtra Sauce$o
+        Subscribe for $orangeExtra Sauce$orange
       </Heading>
       <div className="max-w-[680px] mt-4 mb-14">
         <Typography alignSmall="center" variant="subheading">

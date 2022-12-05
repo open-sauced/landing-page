@@ -40,7 +40,7 @@ const Testimonials: FC<TestimonialsProps> = ({ data }) => {
         Testimonials
       </Typography>
       <Heading component="h3" alignSmall="center">
-        The value of $yOpen Source$y
+        The value of $yellowOpen Source$yellow
       </Heading>
 
       <div className="w-full mt-[46px] grid-cols-1 largeTablet:grid-cols-3 gap-9 largeTablet:mt-24 hidden largeTablet:grid ">

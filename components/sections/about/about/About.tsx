@@ -9,7 +9,8 @@ const About: FC = (): ReactElement => {
       <Typography variant="preHeading">About</Typography>
       <div className="w-full largeTablet:w-2/3 ">
         <Heading>
-          Let’s make open source $yogaccessible for everyone$yog
+          Let’s make open source $yellow-to-orangeaccessible for
+          everyone$yellow-to-orange
         </Heading>
       </div>
       <div className="w-full largeTablet:w-2/3 pt-4 pb-16 largeTablet:pt-10 largeTablet:pb-20 ">

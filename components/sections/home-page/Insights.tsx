@@ -7,7 +7,7 @@ const Insights: FC = (): ReactElement => {
   return (
     <SectionWrapper pb={285}>
       <Heading component="h2" alignSmall="center">
-        Get insights from $oStars to PRs$o
+        Get insights from $orangeStars to PRs$orange
       </Heading>
       <div className="my-4 w-full largeTablet:my-10 largeTablet:w-2/3">
         <Typography variant="subheading" alignSmall="center">

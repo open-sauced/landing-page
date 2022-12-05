@@ -45,7 +45,10 @@ const Pricing: FC = (): ReactElement => {
     <SectionWrapper pt={205} pts={60} pb={260}>
       <Typography variant="preHeading">Pricing</Typography>
       <div className="w-full largeTablet:w-2/3">
-        <Heading>$yogAccess insights$yog you never knew existed</Heading>
+        <Heading>
+          $yellow-to-orangeAccess insights$yellow-to-orange you never knew
+          existed
+        </Heading>
       </div>
 
       <div className="pt-4 pb-10 largeTablet:pt-10 largeTablet:pb-20 largeTablet:w-[58%]">

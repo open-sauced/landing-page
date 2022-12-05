@@ -15,7 +15,7 @@ const Blogs: FC<BlogsProps> = ({ data }): ReactElement => {
       <Typography variant="preHeading">Blog</Typography>
       <div className="w-full max-w-[750px]">
         <Heading>
-          $yogArticles and updates$yog from OpenSauced
+          $yellow-to-orangeArticles and updates$yellow-to-orange from OpenSauced
         </Heading>
       </div>
       <div className="w-full max-w-[750px] pt-4 pb-16 largeTablet:pt-10 largeTablet:pb-32 ">

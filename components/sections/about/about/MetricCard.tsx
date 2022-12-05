@@ -14,7 +14,7 @@ const MetricCard: FC<MetricCardProps> = ({
   data: { title, label },
   index,
 }): ReactElement => {
-  const content = `$org${title} ${index + 1}$org`
+  const content = `$orange-to-red${title} ${index + 1}$orange-to-red`
   return (
     <div className="w-full flex flex-col justify-center items-center ">
       <p className="font-bold text-2xl largeTablet:text-3xl">

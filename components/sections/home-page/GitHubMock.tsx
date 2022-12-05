@@ -19,17 +19,17 @@ const GitHubMock: FC<GitHubMockProps> = ({
 }) => {
   const isLargeTablet = useMediaQuery()
   return (
-    <SectionWrapper pbs={100} >
+    <SectionWrapper pbs={100}>
       <div className="flex pb-16 px-10 tablet:px-0 items-center justify-center largeTablet:pb-14">
         <div>
           <p className="text-textPrimary font-inter font-bold text-[2.375rem] leading-[3.625rem] largeTablet:text-5xl largeTablet:leading-[4.5rem]">
             We are
           </p>
           <p className="font-inter font-bold pl-16 tablet:pl-20 text-[3.25rem] leading-none largeTablet:text-8xl">
-            <DecoratedText content="$oygmore" />
+            <DecoratedText content="$orange-to-yellowmore" />
           </p>
           <p className="font-inter font-bold pl-32 tablet:pl-40 tracking-[-0.03em] text-[4.25rem] leading-none largeTablet:text-9xl">
-            <DecoratedText content="$oygthan..." />
+            <DecoratedText content="$orange-to-yellowthan..." />
           </p>
         </div>
       </div>
@@ -56,10 +56,10 @@ const GitHubMock: FC<GitHubMockProps> = ({
         how capable a developer is.
       </p>
 
-      <div className='w-full grid grid-cols-1 largeTablet:grid-cols-2 pb-0 largeTablet:pb-[280px]' >
+      <div className="w-full grid grid-cols-1 largeTablet:grid-cols-2 pb-0 largeTablet:pb-[280px]">
         <div className="w-full my-auto">
           <Heading component="h2" alignLarge="left">
-            Find out the $otrue impact$o to the OSS community
+            Find out the $orangetrue impact$orange to the OSS community
           </Heading>
           <div className="mt-4 largeTablet:mt-10">
             <Typography variant="subheading" alignLarge="left">
@@ -74,7 +74,10 @@ const GitHubMock: FC<GitHubMockProps> = ({
               <Image alt="Doodles" src={BackgroundStroke} />
             </div>
             <div className="relative largeTablet:left-6">
-              <Image src={trueImpact} alt="True impact to the OSS community image" />
+              <Image
+                src={trueImpact}
+                alt="True impact to the OSS community image"
+              />
             </div>
           </div>
         </div>

@@ -1,11 +1,11 @@
 import React, { FC } from 'react'
 
-const gradientYOKey = '$yog'
-const gradientOYKey = '$oyg'
-const gradientROKey = '$rog'
-const gradientORKey = '$org'
-const orangeKey = '$o'
-const yellowKey = '$y'
+const gradientYOKey = '$yellow-to-orange'
+const gradientOYKey = '$orange-to-yellow'
+const gradientROKey = '$red-to-orange'
+const gradientORKey = '$orange-to-red'
+const orangeKey = '$orange'
+const yellowKey = '$yellow'
 
 const gradientYOStyle = `bg-gradient-to-r from-brandYellow via-brandRed to-brandRed text-transparent bg-clip-text`
 const gradientOYStyle = `bg-gradient-to-r from-brandRed to-brandYellow text-transparent bg-clip-text`
