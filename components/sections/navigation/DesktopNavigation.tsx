@@ -28,8 +28,10 @@ const DesktopNavigation: FC<DesktopNavigationProps> = ({
   return (
     <div className="items-center w-full justify-between hidden largeTablet:flex">
       <div className="h-[26px] w-[150px] cursor-pointer">
-        <Link href="/">
-          <Image src={logo} layout="responsive" alt="" />
+        <Link href="/" passHref>
+          <a>
+            <Image src={logo} layout="responsive" alt="Logo image" />
+          </a>
         </Link>
       </div>
 

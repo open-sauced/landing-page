@@ -15,16 +15,18 @@ interface Props {
 
 const Features: FC<Props> = ({ data }) => {
   return (
-    <SectionWrapper pb={20} pbs={0}>
-      {data.map((feature, i) => (
-        <Feature
-          key={feature.slug?.current}
-          feature={feature as SanityFeature}
-          img={featureImages[i]}
-          index={i}
-        />
-      ))}
-    </SectionWrapper>
+    <div id="features" className="pt-[30px]">
+      <SectionWrapper pb={20} pbs={0}>
+        {data.map((feature, i) => (
+          <Feature
+            key={feature.slug?.current}
+            feature={feature as SanityFeature}
+            img={featureImages[i]}
+            index={i}
+          />
+        ))}
+      </SectionWrapper>
+    </div>
   )
 }
 

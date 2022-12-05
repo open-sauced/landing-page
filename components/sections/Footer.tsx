@@ -1,8 +1,10 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React, { FC } from 'react'
 import OpenSaucedLogo from '../../public/logos/FooterLogo.png'
 import SectionWrapper from '../common/layout/SectionWrapper'
 import SocialLinks from '../common/SocialLinks'
+import { navigationLinks } from './navigation/Header'
 
 const footerContext = {
   pages: [
@@ -50,9 +52,17 @@ const Footer: FC = () => {
             <div className="w-1/2 my-10 largeTablet:w-[35%] largeTablet:my-0">
               <LocalTypography variant="title">MENU</LocalTypography>
               <div className="w-full flex flex-col">
-                <LocalTypography variant="item1">About</LocalTypography>
-                <LocalTypography variant="item1">Blog</LocalTypography>
-                <LocalTypography variant="item1">Services</LocalTypography>
+                {navigationLinks.map(({ url, label }) => (
+                  <div key={label} className="cursor-pointer">
+                    <Link href={url || '/#'} passHref>
+                      <a>
+                        <LocalTypography variant="item1">
+                          {label}
+                        </LocalTypography>
+                      </a>
+                    </Link>
+                  </div>
+                ))}
               </div>
             </div>
             <div className="w-1/2 my-10 largeTablet:w-[35%] largeTablet:my-0">

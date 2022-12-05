@@ -9,8 +9,8 @@ interface HeaderProps {
   navigationItems: SanityNavigation[]
 }
 
-const links = [
-  // { url: '/features', label: 'Features' },
+export const navigationLinks = [
+  { url: '/#features', label: 'Features' },
   { url: '/pricing', label: 'Pricing' },
   { url: '/about', label: 'About' },
   { url: '/blog', label: 'Blog' },
@@ -21,9 +21,9 @@ const Header: FC<HeaderProps> = ({ navigationItems }): ReactElement => {
   return (
     <SectionWrapper direction="row" pbs={0}>
       <header className="flex flex-grow py-9 font-inter justify-between items-center">
-        <DesktopNavigation logo={logo} navigationItems={links} />
+        <DesktopNavigation logo={logo} navigationItems={navigationLinks} />
         <div className="flex w-full largeTablet:hidden">
-          <MobileNavigation logo={logo} navigationItems={links} />
+          <MobileNavigation logo={logo} navigationItems={navigationLinks} />
         </div>
       </header>
     </SectionWrapper>

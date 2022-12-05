@@ -35,9 +35,9 @@ const GitHubMock: FC<GitHubMockProps> = ({
       </div>
       <div className="pb-16 largeTablet:pb-52">
         {isLargeTablet ? (
-          <Image alt="GitHub green squares" src={GreenSquares} />
+          <Image alt="Green Squares text" src={GreenSquares} />
         ) : (
-          <Image alt="GitHub green squares" src={GreenSquaresSmall} />
+          <Image alt="Green Squares text" src={GreenSquaresSmall} />
         )}
       </div>
       <div className="pb-10 largeTablet:pb-44">
@@ -74,7 +74,7 @@ const GitHubMock: FC<GitHubMockProps> = ({
               <Image alt="Doodles" src={BackgroundStroke} />
             </div>
             <div className="relative largeTablet:left-6">
-              <Image src={trueImpact} alt="True Impact" />
+              <Image src={trueImpact} alt="True impact to the OSS community image" />
             </div>
           </div>
         </div>
