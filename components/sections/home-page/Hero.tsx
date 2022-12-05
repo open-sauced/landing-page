@@ -1,6 +1,6 @@
 import React from 'react'
 import { SanityAbout } from '../../../types/schema'
-import PRsHero from '../../../public/hero.svg'
+import PRsHero from '../../../public/hero.png'
 import Image from 'next/image'
 import SectionWrapper from '../../common/layout/SectionWrapper'
 import { Button } from '../../common'
