@@ -3,8 +3,8 @@ import { SanityFeature } from '../../../../types/schema'
 import Feature from './Feature'
 import SectionWrapper from '../../../common/layout/SectionWrapper'
 import Feature1IMG from '../../../../public/feature_1.svg'
-import Feature2IMG from '../../../../public/feature_2.svg'
-import Feature3IMG from '../../../../public/feature_3.svg'
+import Feature2IMG from '../../../../public/feature_2.png'
+import Feature3IMG from '../../../../public/feature_3.png'
 import Feature4IMG from '../../../../public/feature_4.svg'
 
 const featureImages = [Feature1IMG, Feature2IMG, Feature3IMG, Feature4IMG]

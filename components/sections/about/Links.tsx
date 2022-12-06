@@ -19,7 +19,7 @@ const data = [
     title: 'Brand Assets',
     content:
       'Want to use our Pizza Slice? Looking for the right way to display the OpenSauced logo for your latest project? Download the assets and see how and where to use them.',
-    href: 'about/#',
+    href: 'https://www.figma.com/proto/a2Ay1zhFAIDPmiEbTYVOID/OpenSauced-Brand?node-id=140%3A11324&scaling=min-zoom&page-id=0%3A1',
   },
   {
     title: 'hot.opensauced.pizza',
@@ -29,53 +29,61 @@ const data = [
   },
 ]
 
-const Links: FC= (): ReactElement => {
+const Links: FC = (): ReactElement => {
   const isLargeTablet = useMediaQuery()
 
   const imgDimension = isLargeTablet ? 40 : 24
   return (
     <SectionWrapper direction="row" pb={255} pbs={135}>
       <div className="max-w-[660px] gap-y-12 flex flex-col ">
-        {data.map(({ title, content, href }) => (
-          <div key={title} className="w-full">
-            <div className="flex">
-              <div>
-                <Typography alignLarge="left">{title}</Typography>
-              </div>
-
-              <Link href={href} passHref>
-                <div className="flex justify-center items-center pl-6 cursor-pointer">
-                  <GradientBorderWrapper
-                    style={{
-                      width: `${imgDimension}px`,
-                      height: `${imgDimension}px`,
-                      borderRadius: '50%',
-                    }}
-                  >
-                    <div className="w-full h-full bg-[#211e1c] rounded-full flex justify-center items-center">
-                      <div className="relative left-[1px] largeTablet:top-[2px] largeTablet:left-[2px]  ">
-                        <Image
-                          src={
-                            isLargeTablet
-                              ? OrangeRightArrow
-                              : OrangeRightArrowSmall
-                          }
-                          alt="Visit"
-                        />
-                      </div>
-                    </div>
-                  </GradientBorderWrapper>
+        {data.map(({ title, content, href }) => {
+          const internalLink = href && href.startsWith('/')
+          return (
+            <div key={title} className="w-full">
+              <div className="flex">
+                <div>
+                  <Typography alignLarge="left">{title}</Typography>
                 </div>
-              </Link>
+
+                <Link href={href} passHref>
+                  <a
+                    target={internalLink ? '_self' : '_blank'}
+                    rel="noreferrer"
+                  >
+                    <div className="flex justify-center items-center pl-6 cursor-pointer">
+                      <GradientBorderWrapper
+                        style={{
+                          width: `${imgDimension}px`,
+                          height: `${imgDimension}px`,
+                          borderRadius: '50%',
+                        }}
+                      >
+                        <div className="w-full h-full bg-[#211e1c] rounded-full flex justify-center items-center">
+                          <div className="relative left-[1px] largeTablet:top-[2px] largeTablet:left-[2px]  ">
+                            <Image
+                              src={
+                                isLargeTablet
+                                  ? OrangeRightArrow
+                                  : OrangeRightArrowSmall
+                              }
+                              alt="Visit"
+                            />
+                          </div>
+                        </div>
+                      </GradientBorderWrapper>
+                    </div>
+                  </a>
+                </Link>
+              </div>
+              <div className="pt-8 pb-12 largeTablet:pt-10">
+                <Typography variant="body1" alignLarge="left">
+                  {content}
+                </Typography>
+              </div>
+              <div className="w-full h-[2px] bg-gradient-to-tr from-brandRed to-brandYellow"></div>
             </div>
-            <div className="pt-8 pb-12 largeTablet:pt-10">
-              <Typography variant="body1" alignLarge="left">
-                {content}
-              </Typography>
-            </div>
-            <div className="w-full h-[2px] bg-gradient-to-tr from-brandRed to-brandYellow"></div>
-          </div>
-        ))}
+          )
+        })}
       </div>
     </SectionWrapper>
   )

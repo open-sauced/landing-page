@@ -29,25 +29,30 @@ const Feature: FC<Props> = ({
       <div
         className={`w-full flex justify-center items-center mb-14 largeTablet:mt-0 ${dropShadow} largeTablet:w-1/2`}
       >
-        <div className='w-full max-w-[550px]' >
+        <div className="w-full max-w-[550px]">
           <Image src={img} alt={`${title} image`} />
         </div>
       </div>
       <div
-        className={`w-full ${reverse && 'largeTablet:pl-28'} ${!reverse && 'largeTablet:pr-28'} largeTablet:w-1/2`}
+        className={`w-full ${reverse && 'largeTablet:pl-28'} ${
+          !reverse && 'largeTablet:pr-28'
+        } largeTablet:w-1/2`}
       >
         <Typography variant="preHeading" alignLarge="left">
           {subtitle}
         </Typography>
-        <Heading component="h2" alignLarge="left">
-          {title}
-        </Heading>
-        <div className="my-10 max-w-[500px]">
+        <div className={`${index === 0 && 'largeTablet:max-w-[400px]'}`}>
+          <Heading component="h2" alignLarge="left">
+            {title}
+          </Heading>
+        </div>
+
+        <div className="my-10 largeTablet:max-w-[500px]">
           <Typography variant="subheading" alignLarge="left">
             {description}
           </Typography>
         </div>
-        <Button href={href}>Learn more</Button>
+        {false && <Button href={href}>Learn more</Button>}
       </div>
     </div>
   )

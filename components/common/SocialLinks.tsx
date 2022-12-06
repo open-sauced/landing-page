@@ -53,7 +53,7 @@ const SocialLinks: FC<SocialLinksProps> = ({ aboutPage }): ReactElement => {
     <div className={wrapperStyle}>
       {data.map(({ url, icon, label }) => (
         <div key={label} className="flex items-center cursor-pointer">
-          <a href={url} target="_blank" rel="noreferrer">
+          <a href={url} target="_blank" rel="noreferrer" className="opacity-70">
             <Image alt={label} src={icon} />
           </a>
         </div>

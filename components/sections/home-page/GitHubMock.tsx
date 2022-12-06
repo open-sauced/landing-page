@@ -3,7 +3,7 @@ import React, { FC } from 'react'
 import { SanityGithubMock } from '../../../types/schema'
 import GreenSquares from '../../../public/greenSquares.svg'
 import GreenSquaresSmall from '../../../public/greenSquares_small.svg'
-import trueImpact from '../../../public/trueImpact.svg'
+import TrueImpactIMG from '../../../public/trueImpact.png'
 import SectionWrapper from '../../common/layout/SectionWrapper'
 import { Heading, Typography } from '../../common/text'
 import useMediaQuery from '../../hooks/useMediaQuery'
@@ -57,7 +57,7 @@ const GitHubMock: FC<GitHubMockProps> = ({
       </p>
 
       <div className="w-full grid grid-cols-1 largeTablet:grid-cols-2 pb-0 largeTablet:pb-[280px]">
-        <div className="w-full my-auto">
+        <div className="w-full my-auto largeTablet:max-w-[560px]">
           <Heading component="h2" alignLarge="left">
             Find out the $orangetrue impact$orange to the OSS community
           </Heading>
@@ -68,14 +68,14 @@ const GitHubMock: FC<GitHubMockProps> = ({
             </Typography>
           </div>
         </div>
-        <div className="w-full  flex mt-14 largeTablet:mt-0">
+        <div className="w-full flex mt-14 largeTablet:mt-0">
           <div className="flex w-full justify-center relative">
             <div className="absolute hidden largeTablet:block largeTablet:top-[-70px]">
               <Image alt="Doodles" src={BackgroundStroke} />
             </div>
-            <div className="relative largeTablet:left-6">
+            <div className="relative largeTablet:left-8 largeTablet:w-4/5 largeTablet:top-8">
               <Image
-                src={trueImpact}
+                src={TrueImpactIMG}
                 alt="True impact to the OSS community image"
               />
             </div>

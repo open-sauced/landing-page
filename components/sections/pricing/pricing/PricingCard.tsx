@@ -3,6 +3,7 @@ import OrangeCheckmark from '../../../../public/orangeCheckmark.png'
 import Image from 'next/image'
 import { Button } from '../../../common'
 import { Typography } from '../../../common/text'
+import useMediaQuery from '../../../hooks/useMediaQuery'
 
 interface PricingCardProps {
   data: {
@@ -16,6 +17,7 @@ interface PricingCardProps {
 }
 
 const PricingCard: FC<PricingCardProps> = ({ data, index }) => {
+  const isLargeTablet = useMediaQuery()
   const { type, price, per, options, href } = data
   const paddingY =
     index !== 1 ? 'largeTablet:py-[48px]' : 'largeTablet:py-[60px]'
@@ -28,7 +30,11 @@ const PricingCard: FC<PricingCardProps> = ({ data, index }) => {
       </Typography>
       <div className="flex items-end pb-4 largeTablet:pb-8">
         <div>
-          <Typography>{price}</Typography>
+          {isLargeTablet && index === 1 ? (
+            <p className="text-5xl font-bold tracking-[-0.03em]">{price}</p>
+          ) : (
+            <Typography>{price}</Typography>
+          )}
         </div>
         {!!per && <span className="pl-1">{` ${per}`}</span>}{' '}
       </div>
@@ -37,7 +43,7 @@ const PricingCard: FC<PricingCardProps> = ({ data, index }) => {
         {options.map((item) => (
           <div key={item} className="w-full flex pb-1">
             <div className="w-[30px] flex-shrink-0">
-              <Image src={OrangeCheckmark} alt='Check mark' />
+              <Image src={OrangeCheckmark} alt="Check mark" />
             </div>
             <div>
               <Typography variant="body2">{item}</Typography>

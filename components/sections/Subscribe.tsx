@@ -34,12 +34,12 @@ const Subscribe: FC = (): ReactElement => {
         </Typography>
       </div>
       <GradientBorderWrapper>
-        <div className="relative box-border px-4 flex items-center w-[280px] h-[38px] text-[#FEEADD] pr-4 py-3 text-sm font-medium bg-darkBG rounded-md largeTablet:w-[394px]">
+        <div className="relative box-border px-4 flex items-center w-[280px] h-[38px] text-[#FEEADD] pr-4 py-3 text-sm font-medium bg-[#211E1C] rounded-md largeTablet:w-[394px]">
           <div className="pr-4">
             <input
               ref={inputValue}
               placeholder="Your Work Email"
-              className=" outline-none focus:outline-none bg-darkBG w-[165px] largeTablet:w-[275px]"
+              className=" outline-none focus:outline-none bg-[#211E1C] w-[165px] largeTablet:w-[275px]"
             ></input>
           </div>
           <span
