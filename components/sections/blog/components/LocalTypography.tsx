@@ -11,7 +11,7 @@ const LocalTypography: FC<LocalTypographyProps> = ({
   children,
 }) => {
   const titleStyle = `font-bold text-textPrimary text-2xl ${
-    featured && 'largeTablet:text-4xl'
+    featured ? 'largeTablet:text-4xl' : 'largeTablet:text-2xl'
   }`
   const content1Style = 'font-normal opacity-70 text-textPrimary text-base'
 
