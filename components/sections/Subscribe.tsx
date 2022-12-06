@@ -2,6 +2,11 @@ import React, { FC, ReactElement, useRef } from 'react'
 import GradientBorderWrapper from '../common/GradientBorderWrapper'
 import SectionWrapper from '../common/layout/SectionWrapper'
 import { Heading, Typography } from '../common/text'
+import Image from 'next/image'
+import StrokeR3 from '../../public/background-strokes/stroke_r_3.svg'
+import StrokeL3 from '../../public/background-strokes/stroke_l_3.svg'
+import StrokeMobile2 from '../../public/background-strokes/stroke_mobile_2.svg'
+import StrokeMobile3 from '../../public/background-strokes/stroke_mobile_3.svg'
 
 const Subscribe: FC = (): ReactElement => {
   const inputValue = useRef<HTMLInputElement>(null)
@@ -24,32 +29,50 @@ const Subscribe: FC = (): ReactElement => {
 
   return (
     <SectionWrapper pbs={120} pb={310}>
-      <Heading alignSmall="center" component="h2">
-        Subscribe for $orangeExtra Sauce$orange
-      </Heading>
-      <div className="max-w-[680px] mt-4 mb-14">
-        <Typography alignSmall="center" variant="subheading">
-          Identifying contributors in a project can be opaque. With Open Sauced,
-          you get actionable insights into contributions that you can see.
-        </Typography>
-      </div>
-      <GradientBorderWrapper>
-        <div className="relative box-border px-4 flex items-center w-[280px] h-[38px] text-[#FEEADD] pr-4 py-3 text-sm font-medium bg-[#211E1C] rounded-md largeTablet:w-[394px]">
-          <div className="pr-4">
-            <input
-              ref={inputValue}
-              placeholder="Your Work Email"
-              className=" outline-none focus:outline-none bg-[#211E1C] w-[165px] largeTablet:w-[275px]"
-            ></input>
-          </div>
-          <span
-            className=" text-brandOrange text-sm cursor-pointer"
-            onClick={handleSubscribe}
-          >
-            Subscribe
-          </span>
+      <div className="w-full flex flex-col justify-center items-center">
+        <Heading alignSmall="center" component="h2">
+          Subscribe for $orangeExtra Sauce$orange
+        </Heading>
+        <div className="max-w-[680px] mt-4 mb-14">
+          <Typography alignSmall="center" variant="subheading">
+            Identifying contributors in a project can be opaque. With Open
+            Sauced, you get actionable insights into contributions that you can
+            see.
+          </Typography>
         </div>
-      </GradientBorderWrapper>
+        <GradientBorderWrapper>
+          <div className="relative box-border px-4 flex items-center w-[280px] h-[38px] text-[#FEEADD] pr-4 py-3 text-sm font-medium bg-[#211E1C] rounded-md largeTablet:w-[394px]">
+            <div className="pr-4">
+              <input
+                ref={inputValue}
+                placeholder="Your Work Email"
+                className=" outline-none focus:outline-none bg-[#211E1C] w-[165px] largeTablet:w-[275px]"
+              ></input>
+            </div>
+            <span
+              className=" text-brandOrange text-sm cursor-pointer"
+              onClick={handleSubscribe}
+            >
+              Subscribe
+            </span>
+          </div>
+        </GradientBorderWrapper>
+        <div className="absolute hidden largeTablet:block largeTablet:bottom-[36rem] largeTablet:left-0">
+          <Image alt="Doodles" src={StrokeL3} />
+        </div>
+
+        <div className="absolute hidden largeTablet:block largeTablet:bottom-[35rem] largeTablet:right-0">
+          <Image alt="Doodles" src={StrokeR3} />
+        </div>
+
+        <div className="absolute bottom-[55rem] right-0  largeTablet:hidden">
+          <Image alt="Doodles" src={StrokeMobile2} />
+        </div>
+
+        <div className="absolute bottom-[34rem] left-0  largeTablet:hidden">
+          <Image alt="Doodles" src={StrokeMobile3} />
+        </div>
+      </div>
     </SectionWrapper>
   )
 }

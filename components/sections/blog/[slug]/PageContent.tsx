@@ -73,7 +73,7 @@ const PageContent: FC<PageContentProps> = ({
           <ReactPlayer url={blogUrl} width="100%" />
         </div>
       )}
-      {!featuredPost && (
+      {!featuredPost && !!blogUrl && (
         <a
           className="w-full max-w-[780px]"
           href={blogUrl}

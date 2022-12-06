@@ -34,15 +34,17 @@ const Links: FC = (): ReactElement => {
 
   const imgDimension = isLargeTablet ? 40 : 24
   return (
-    <SectionWrapper direction="row" pb={255} pbs={135}>
-      <div className="max-w-[660px] gap-y-12 flex flex-col ">
+    <SectionWrapper pb={255} pbs={135}>
+      <div className="max-w-[660px] gap-y-12 flex flex-col">
         {data.map(({ title, content, href }) => {
           const internalLink = href && href.startsWith('/')
           return (
             <div key={title} className="w-full">
-              <div className="flex">
+              <div className="flex items-center">
                 <div>
-                  <Typography alignLarge="left">{title}</Typography>
+                  <Typography variant="title3" alignLarge="left">
+                    {title}
+                  </Typography>
                 </div>
 
                 <Link href={href} passHref>

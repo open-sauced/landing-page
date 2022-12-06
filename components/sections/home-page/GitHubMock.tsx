@@ -70,7 +70,7 @@ const GitHubMock: FC<GitHubMockProps> = ({
         </div>
         <div className="w-full flex mt-14 largeTablet:mt-0">
           <div className="flex w-full justify-center relative">
-            <div className="absolute hidden largeTablet:block largeTablet:top-[-70px]">
+            <div className="absolute right-[-25rem] top-[5rem] largeTablet:top-[-70px] largeTablet:right-[3rem]">
               <Image alt="Doodles" src={BackgroundStroke} />
             </div>
             <div className="relative largeTablet:left-8 largeTablet:w-4/5 largeTablet:top-8">

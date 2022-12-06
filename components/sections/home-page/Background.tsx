@@ -9,22 +9,35 @@ import _5_rightStroke from '../../../public/_5_rightStroke.svg'
 const Background: FC = ({ children }) => {
   return (
     <div className="bg-darkBG text-white h-fit overflow-hidden relative">
-      <div className="absolute -top-[44rem] tablet:-top-[42rem] -left-[28rem] largeTablet:-left-[16rem] laptop:-left-[14rem] desktop:-left-[10rem]">
+      <div className="absolute hidden largeTablet:block largeTablet:top-[-40rem] largeTablet:left-[-23rem] desktop:-left-[0rem]">
         <Image alt="Doodles" src={upperStroke} />
       </div>
-      <div className="absolute top-[6rem] -right-[20rem] tablet:-right-[8rem] largeTablet:laptop:-right-[6rem] laptop:-right-[4rem] desktop:-right-[3rem]">
+
+      <div className="absolute top-[30rem] right-[-15rem] tablet:-right-[8rem] largeTablet:top-[6rem] largeTablet:laptop:-right-[6rem] laptop:-right-[4rem] desktop:-right-[3rem]">
         <Image alt="Doodles" src={upperStroke} />
       </div>
-      <div className="absolute top-[50rem] -left-[28rem] largeTablet:-left-[18rem] laptop:-left-[15rem] desktop:-left-[11rem]">
+
+      <div className="absolute hidden largeTablet:block largeTablet:top-[56rem]  largeTablet:-left-[18rem] laptop:-left-[15rem] desktop:-left-[11rem]">
         <Image alt="Doodles" src={leftSidePizzaStroke} />
       </div>
-      <div className="absolute top-[58rem] -right-[28rem] largeTablet:-right-[22rem] laptop:-right-[19rem] desktop:-right-[16rem]">
+
+      <div className="absolute hidden largeTablet:block largeTablet:top-[65rem] largeTablet:-right-[22rem] laptop:-right-[19rem] desktop:-right-[16rem]">
         <Image alt="Doodles" src={rightSidePizzaStroke} />
       </div>
-      <div className="absolute top-[185rem] -left-[28rem] largeTablet:-left-[18rem] laptop:-left-[15rem] desktop:-left-[11rem]">
+
+      <div className="absolute top-[107rem] -left-[25rem] largeTablet:top-[192rem]  largeTablet:-left-[18rem] laptop:-left-[15rem] desktop:-left-[13rem]">
         <Image alt="Doodles" src={_5_leftStroke} />
       </div>
-      <div className="absolute top-[190rem] -right-[32rem] largeTablet:-right-[22rem] laptop:-right-[19rem] desktop:-right-[16rem]">
+
+      <div className="absolute hidden largeTablet:block largeTablet:top-[192rem] largeTablet:-right-[29rem] ">
+        <Image alt="Doodles" src={_5_rightStroke} />
+      </div>
+
+      <div className="absolute hidden largeTablet:block largeTablet:top-[402rem]  largeTablet:-left-[18rem] laptop:-left-[15rem] desktop:-left-[13rem]">
+        <Image alt="Doodles" src={_5_leftStroke} />
+      </div>
+
+      <div className="absolute hidden largeTablet:block largeTablet:top-[402rem] largeTablet:-right-[29rem] ">
         <Image alt="Doodles" src={_5_rightStroke} />
       </div>
 

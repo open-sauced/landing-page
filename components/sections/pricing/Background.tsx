@@ -1,43 +1,42 @@
 import Image from 'next/image'
 import React, { FC } from 'react'
-import upperStroke from '../../../public/upperStroke.svg'
-import leftSidePizzaStroke from '../../../public/leftSidePizzaStroke.svg'
-import rightSidePizzaStroke from '../../../public/rightSidePizzaStroke.svg'
-import middleRightStroke from '../../../public/middleRight.svg'
-import _5_leftStroke from '../../../public/_5_leftStroke.svg'
-import _5_rightStroke from '../../../public/_5_rightStroke.svg'
+import StrokeL1 from '../../../public/background-strokes/stroke_l_1.svg'
+import StrokeL2 from '../../../public/background-strokes/stroke_l_2.svg'
+import StrokeR1 from '../../../public/background-strokes/stroke_r_1.svg'
+import StrokeR2 from '../../../public/background-strokes/stroke_r_2.svg'
+import StrokeMobile1 from '../../../public/background-strokes/stroke_mobile_1.svg'
+import StrokeMobile2 from '../../../public/background-strokes/stroke_mobile_2.svg'
 
-
-const Background:FC = ({ children }) => {
+const Background: FC = ({ children }) => {
   return (
     <div className="bg-darkBG text-white h-fit overflow-hidden relative">
-        <div className="absolute -top-[44rem] tablet:-top-[42rem] -left-[28rem] largeTablet:-left-[16rem] laptop:-left-[14rem] desktop:-left-[10rem]">
-            <Image alt="Doodles" src={upperStroke} />
-        </div>
-        <div className="absolute top-[6rem] -right-[20rem] tablet:-right-[8rem] largeTablet:laptop:-right-[6rem] laptop:-right-[4rem] desktop:-right-[3rem]">
-            <Image alt="Doodles" src={upperStroke} />
-        </div>
-        <div className="absolute top-[50rem] -left-[28rem] largeTablet:-left-[18rem] laptop:-left-[15rem] desktop:-left-[11rem]">
-            <Image alt="Doodles" src={leftSidePizzaStroke} />
-        </div>
-        <div className="absolute top-[58rem] -right-[28rem] largeTablet:-right-[22rem] laptop:-right-[19rem] desktop:-right-[16rem]">
-            <Image alt="Doodles" src={rightSidePizzaStroke} />
-        </div>
-        <div className="max-w-7xl relative">
-            <div className="absolute hidden tablet:block top-[160rem] tablet:top-[155rem] largeTablet:top-[145rem] laptop:right-[4rem] tablet:-right-[2rem] desktop:-right-[15rem] right-0">
-                <Image alt="Doodles" src={middleRightStroke} />
-            </div>
-        </div>
-        <div className="absolute top-[185rem] -left-[28rem] largeTablet:-left-[18rem] laptop:-left-[15rem] desktop:-left-[11rem]">
-            <Image alt="Doodles" src={_5_leftStroke} />
-        </div>
-        <div className="absolute top-[190rem] -right-[32rem] largeTablet:-right-[22rem] laptop:-right-[19rem] desktop:-right-[16rem]">
-            <Image alt="Doodles" src={_5_rightStroke} />
-        </div>
+      <div className="absolute hidden largeTablet:block largeTablet:top-[9rem] largeTablet:right-0">
+        <Image alt="Doodles" src={StrokeR1} />
+      </div>
 
-        <div className="relative">
-            {children}
-        </div>
+      <div className="absolute hidden largeTablet:block largeTablet:top-[3rem] largeTablet:left-0">
+        <Image alt="Doodles" src={StrokeL1} />
+      </div>
+
+      <div className="absolute hidden largeTablet:block largeTablet:top-[77rem] largeTablet:left-0">
+        <Image alt="Doodles" src={StrokeL2} />
+      </div>
+
+      <div className="absolute hidden largeTablet:block largeTablet:top-[65rem] largeTablet:right-0">
+        <Image alt="Doodles" src={StrokeR2} />
+      </div>
+
+      {/* MOBILE */}
+
+      <div className="absolute top-0 right-0  largeTablet:hidden">
+        <Image alt="Doodles" src={StrokeMobile1} />
+      </div>
+
+      <div className="absolute top-[95rem] right-0  largeTablet:hidden">
+        <Image alt="Doodles" src={StrokeMobile2} />
+      </div>
+
+      <div className="relative">{children}</div>
     </div>
   )
 }
