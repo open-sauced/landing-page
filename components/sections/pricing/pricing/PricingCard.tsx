@@ -23,7 +23,7 @@ const PricingCard: FC<PricingCardProps> = ({ data, index }) => {
     index !== 1 ? 'largeTablet:py-[48px]' : 'largeTablet:py-[60px]'
   return (
     <div
-      className={`w-full h-full p-10 bg-darkBG rounded-[5px] flex flex-col largeTablet:px-14 ${paddingY}`}
+      className={`w-full h-full p-10 bg-[#211E1C] rounded-[5px] flex flex-col largeTablet:px-14 ${paddingY}`}
     >
       <Typography variant="preHeading" alignLarge="left">
         {type}
@@ -52,7 +52,7 @@ const PricingCard: FC<PricingCardProps> = ({ data, index }) => {
         ))}
       </div>
       <div className="mb-8"></div>
-      <Button href={href} fullWidth>
+      <Button backgroundVariant="orange" href={href} fullWidth>
         Get Started
       </Button>
     </div>

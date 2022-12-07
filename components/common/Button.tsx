@@ -4,7 +4,8 @@ import { AiFillGithub } from 'react-icons/ai'
 
 interface ButtonProps {
   href?: string
-  variant?: 'gray' | 'neon'
+  borderVariant?: 'gray' | 'neon'
+  backgroundVariant?: 'orange' | 'dark'
   fullWidth?: boolean
   gitHub?: boolean
 }
@@ -12,21 +13,26 @@ interface ButtonProps {
 const Button: FC<ButtonProps> = ({
   children,
   href = '#',
-  variant = 'neon',
+  borderVariant = 'neon',
+  backgroundVariant = 'dark',
   fullWidth,
   gitHub,
 }): ReactElement => {
   const commonStyle = `h-fit min-h-[38px] min-w-[180px] rounded-md p-[1px] cursor-pointer`
   const widthStyle = fullWidth ? `w-full largeTablet:w-fit` : `w-fit`
-  const variantStyle =
-    variant === 'neon'
+  const borderVariantStyle =
+    borderVariant === 'neon'
       ? `bg-gradient-to-br from-[#ED5432] via-[#EDA232] to-[#ED5432] drop-shadow-[0_0_4px_#ED5432]`
       : `bg-[#687076]`
+  const backgroundVariantStyle =
+    backgroundVariant === 'orange' || gitHub ? 'bg-[#211E1C]' : 'bg-darkBG'
 
   return (
     <Link href={href} passHref>
-      <div className={`${commonStyle} ${widthStyle} ${variantStyle}`}>
-        <div className="h-full w-full min-h-[38px] rounded-md bg-darkBG flex justify-center items-center px-3 py-[6px]">
+      <div className={`${commonStyle} ${widthStyle} ${borderVariantStyle}`}>
+        <div
+          className={`h-full w-full min-h-[38px] rounded-md flex justify-center items-center px-3 py-[6px] ${backgroundVariantStyle}`}
+        >
           <span className="font-bold text-sm leading-[1] text-[#FEF8F4] flex">
             {gitHub && (
               <span className="mr-2">

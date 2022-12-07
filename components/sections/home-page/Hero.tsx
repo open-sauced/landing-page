@@ -30,7 +30,7 @@ const Hero = ({ data }: HeroProps) => {
 
           <div className="flex gap-4 items-center flex-col largeTablet:flex-row">
             <Button href={data.CTAButtonURL}>{data.CTAButtonLabel}</Button>
-            <Button href={data.projectsButtonUrl} variant="gray">
+            <Button href={data.projectsButtonUrl} borderVariant="gray">
               {data.projectsButtonLabel}
             </Button>
           </div>

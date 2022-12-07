@@ -78,11 +78,11 @@ const Footer: FC = () => {
             <div className="w-1/2 mb-10 largeTablet:w-[30%] largeTablet:mb-0">
               <LocalTypography variant="title">Contact Us</LocalTypography>
               <div className="w-full flex flex-col">
-                <LocalTypography variant="item1">
+                {/* <LocalTypography variant="item1">
                   +1 (123) 456-7890
-                </LocalTypography>
+                </LocalTypography> */}
                 <LocalTypography variant="item1">
-                  email@domain.com
+                  hello@opensauced.pizza
                 </LocalTypography>
               </div>
             </div>
