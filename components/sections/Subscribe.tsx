@@ -23,7 +23,13 @@ const Subscribe: FC = (): ReactElement => {
       if (!valid) {
         return alert('Not a valid Email')
       }
-      alert('Check your email for the confirmation!')
+      fetch('/favicon.svg', {
+        method: 'POST', 
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, 
+        body: 'form-name=newsletter', 
+       })
+       .then(responseFromServer => console.log('responseFromServer',responseFromServer))
+       .catch(networkError => console.error('networkError',networkError))
     } else {
       alert('Email is required!')
     }
@@ -50,6 +56,7 @@ const Subscribe: FC = (): ReactElement => {
           <form 
             className="relative box-border px-4 flex items-center w-[280px] h-[38px] text-[#FEEADD] pr-4 py-3 text-sm font-medium bg-[#211E1C] rounded-md largeTablet:w-[394px]"
             name="newsletter" 
+            action="?success=true"
             method="POST" 
             data-netlify="true" 
           >
