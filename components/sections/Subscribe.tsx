@@ -59,7 +59,13 @@ const Subscribe: FC = (): ReactElement => {
             action="?success=true"
             method="POST" 
             data-netlify="true" 
+            netlify-honeypot="bot-field"
           >
+            <p hidden>
+                <label>
+                    Don’t fill this out: <input name="bot-field" />
+                </label>
+            </p>
             <div className="pr-4">
               <input
                 ref={inputValue}
