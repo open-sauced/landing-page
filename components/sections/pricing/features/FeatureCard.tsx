@@ -4,7 +4,14 @@ import OrangeRocket from '../../../../public/orange_rocket.png'
 import GradientBorderWrapper from '../../../common/GradientBorderWrapper'
 import { Typography } from '../../../common/text'
 
-const FeatureCard: FC = (): ReactElement => {
+interface FeatureCardProps {
+  data: {
+    name: string
+    description: string
+  }
+}
+
+const FeatureCard: FC<FeatureCardProps> = ({data}): ReactElement => {
   return (
     <div className="w-full">
       <GradientBorderWrapper
@@ -18,12 +25,11 @@ const FeatureCard: FC = (): ReactElement => {
       </GradientBorderWrapper>
       <div className="w-full pt-6 pb-4">
         <Typography variant="title2" alignLarge="left">
-          Feature Name
+          {data.name} 
         </Typography>
       </div>
       <Typography variant="body3" alignLarge="left">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat,
-        ipsum ac auctor ornare.
+        {data.description}
       </Typography>
       <p></p>
     </div>

@@ -19,10 +19,9 @@ const Features: FC<FeaturesProps> = (): ReactElement => {
         </Typography>
       </div>
       <div className="w-full grid grid-cols-2  gap-y-16 gap-x-9 largeTablet:grid-cols-3 largeTablet:gap-y-[88px]">
-        {Array(6)
-          .fill('')
-          .map((x, i) => (
-            <FeatureCard key={i} />
+        {data
+          .map((item, i) => (
+            <FeatureCard data={item} key={i} />
           ))}
       </div>
     </SectionWrapper>
@@ -30,3 +29,12 @@ const Features: FC<FeaturesProps> = (): ReactElement => {
 }
 
 export default Features
+
+const data = [
+  {name: "Insights", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat, ipsum ac auctor ornare, nunc ligula scelerisque eros."},
+  {name: "Industry Trend Data", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat, ipsum ac auctor ornare, nunc ligula scelerisque eros."},
+  {name: "CSV Exports", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat, ipsum ac auctor ornare, nunc ligula scelerisque eros."},
+  {name: "Contributor Profiles", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat, ipsum ac auctor ornare, nunc ligula scelerisque eros."},
+  {name: "Alerts and notifications", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat, ipsum ac auctor ornare, nunc ligula scelerisque eros."},
+  {name: "Talent Pipeline", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat, ipsum ac auctor ornare, nunc ligula scelerisque eros."},
+]

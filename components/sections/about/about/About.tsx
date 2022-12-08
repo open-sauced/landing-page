@@ -18,7 +18,7 @@ const About: FC = (): ReactElement => {
         </Typography>
       </div>
       <div className="w-full grid grid-cols-2 gap-y-9 largeTablet:grid-cols-4 largeTablet:gap-y-0 ">
-        {Metrics
+        {data
           .map((item, i) => (
             <MetricCard key={i} data={item} index={i} />
           ))}
@@ -29,7 +29,7 @@ const About: FC = (): ReactElement => {
 
 export default About
 
-const Metrics = [
+const data = [
   {label: "Projects with 5+ Contributors", title: "230k"},
   {label: "Developers on GitHub", title: "94 million"},
   {label: "Available Contributors on OpenSauced", title: "800"},
