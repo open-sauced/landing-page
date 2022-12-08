@@ -21,8 +21,7 @@ const Blogs: FC<BlogsProps> = ({ data }): ReactElement => {
       </Heading>
       <div className="w-full max-w-3xl mt-4 mb-14 largeTablet:mt-10 largeTablet:mb-24">
         <Typography variant="subheading" alignSmall="center">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-          placerat,ipsum ac auctor ornare, nunc ligula scelerisque eros.
+          Musings on the open-source community, engineering, and the future of talent acquisition.
         </Typography>
       </div>
       <div className="w-full grid grid-cols-1 gap-10 mb-12 largeTablet:grid-cols-2 largeTablet:mb-24">

@@ -22,7 +22,7 @@ const data = [
     per: '/ mo',
     options: [
       '3 months of data',
-      'More Insights*',
+      'All Insights*',
       'CSV data exports',
     ],
     href: '/#',
