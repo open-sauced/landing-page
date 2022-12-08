@@ -65,6 +65,7 @@ const Subscribe: FC = (): ReactElement => {
                 <label>
                     Don’t fill this out: <input name="bot-field" />
                 </label>
+                <input type="hidden" name="newsletter" value="contact"/>
             </p>
             <div className="pr-4">
               <input
@@ -75,7 +76,7 @@ const Subscribe: FC = (): ReactElement => {
             </div>
             <button
               className=" text-brandOrange text-sm cursor-pointer"
-              // onClick={handleSubscribe}
+              onClick={handleSubscribe}
               type="submit"
             >
               Subscribe
