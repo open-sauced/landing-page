@@ -10,20 +10,20 @@ const data = [
     price: 'Free',
     per: '',
     options: [
-      'Lorem ipsum dolor sit amet.',
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet.',
-      'Lorem ipsum dolor sit amet.',
+      '30 days of data',
+      'Limited insights*',
+      'Explore OSS data',
     ],
     href: '/#',
   },
   {
     type: 'Full Access',
-    price: '$99',
+    price: '$9',
     per: '/ mo',
     options: [
-      'Lorem ipsum dolor sit amet.',
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet.',
-      'Lorem ipsum dolor sit amet.',
+      '3 months of data',
+      'More Insights*',
+      'CSV data exports',
     ],
     href: '/#',
   },
@@ -32,9 +32,9 @@ const data = [
     price: 'Contact us',
     per: '',
     options: [
-      'Lorem ipsum dolor sit amet.',
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet.',
-      'Lorem ipsum dolor sit amet.',
+      'Insights on organizations',
+      'Talent Pipeline',
+      'Custom alerts and notifications', 
     ],
     href: '/#',
   },
@@ -53,8 +53,9 @@ const Pricing: FC = (): ReactElement => {
 
       <div className="pt-4 pb-10 largeTablet:pt-10 largeTablet:pb-20 largeTablet:w-[58%]">
         <Typography variant="subheading">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-          placerat, ipsum ac auctor ornare, nunc ligula scelerisque eros.
+          Build your own dashboard to identify the best engineers across the
+          world. OpenSauced is best with your own custom insights dashboard. Get
+          notifications when contributions are trending.
         </Typography>
       </div>
       <div className="w-full flex flex-col gap-6 justify-center items-center largeTablet:flex-row">
