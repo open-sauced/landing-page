@@ -57,16 +57,16 @@ const Subscribe: FC = (): ReactElement => {
             className="relative box-border px-4 flex items-center w-[280px] h-[38px] text-[#FEEADD] pr-4 py-3 text-sm font-medium bg-[#211E1C] rounded-md largeTablet:w-[394px]"
             name="newsletter" 
             action="?success=true"
+            encType="application/x-www-form-urlencoded"
             method="POST" 
             data-netlify="true" 
-            netlify-honeypot="bot-field"
           >
-            <p hidden>
-                <label>
-                    Don’t fill this out: <input name="bot-field" />
-                </label>
-                <input type="hidden" name="newsletter" value="contact"/>
-            </p>
+            <div hidden aria-hidden="true">
+              <label>
+                Don’t fill this out if you're human: 
+                <input type="hidden" value="contact" name="newsletter" />
+              </label>
+            </div>
             <div className="pr-4">
               <input
                 ref={inputValue}
