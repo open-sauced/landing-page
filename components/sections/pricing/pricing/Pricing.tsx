@@ -18,7 +18,7 @@ const data = [
   },
   {
     type: 'Full Access',
-    price: '$9',
+    price: '$19',
     per: '/ mo',
     options: [
       '3 months of data',
