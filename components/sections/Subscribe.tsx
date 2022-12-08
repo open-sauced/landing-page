@@ -62,7 +62,7 @@ const Subscribe: FC = (): ReactElement => {
           >
             <div hidden aria-hidden="true">
               <label>
-                Don’t fill this out if you're human: 
+                Try your luck
                 <input type="hidden" value="contact" name="newsletter" />
               </label>
             </div>
