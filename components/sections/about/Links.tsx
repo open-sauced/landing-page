@@ -24,7 +24,7 @@ const data = [
   {
     title: 'hot.opensauced.pizza',
     content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat, ipsum ac auctor ornare, nunc ligula scelerisque eros.',
+      'Explore some of the hottest projects on GitHub. This is a curated list of the most popular repositories.',
     href: 'https://hot.opensauced.pizza',
   },
 ]

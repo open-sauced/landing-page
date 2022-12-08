@@ -35,9 +35,7 @@ const Subscribe: FC = (): ReactElement => {
         </Heading>
         <div className="max-w-[680px] mt-4 mb-14">
           <Typography alignSmall="center" variant="subheading">
-            Identifying contributors in a project can be opaque. With Open
-            Sauced, you get actionable insights into contributions that you can
-            see.
+            Stay up to date with the latest OpenSauced news and trends.
           </Typography>
         </div>
         <GradientBorderWrapper>

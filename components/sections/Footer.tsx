@@ -91,7 +91,7 @@ const Footer: FC = () => {
 
         <div className="w-full pt-9 mt-7 flex flex-col-reverse border-t-[0.5px] border-gray-700 largeTablet:flex-row largeTablet:mt-12">
           <div className="flex-grow">
-            <LocalTypography variant="item2">{`© ${new Date().getFullYear()} Open Sauced, LLC. All rights reserved.`}</LocalTypography>
+            <LocalTypography variant="item2">{`© ${new Date().getFullYear()} Open Sauced, INC. All rights reserved.`}</LocalTypography>
           </div>
           <div className="flex mb-5 largeTablet:mb-0 ">
             {pages.map(({ url, label }, i) => (

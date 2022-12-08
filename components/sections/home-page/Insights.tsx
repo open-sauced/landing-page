@@ -11,7 +11,7 @@ const Insights: FC = (): ReactElement => {
       </Heading>
       <div className="my-4 w-full largeTablet:my-10 largeTablet:w-2/3">
         <Typography variant="subheading" alignSmall="center">
-          Most projects give data when developers start your project. Find out
+          Most projects give data when developers star your project. Find out
           what happens after that star with OpenSauced.
         </Typography>
       </div>

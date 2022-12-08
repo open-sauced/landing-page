@@ -37,7 +37,7 @@ const Hero = ({ data }: HeroProps) => {
         </div>
         <div className="flex mt-16 justify-center items-center flex-1 largeTablet:justify-end largeTablet:mt-0">
           <div className="w-fit relative pointer-events-none largeTablet:max-h-[300px] ">
-            <Image alt="Open Sauced hero image" src={PRsHero} />
+            <Image alt="OpenSauced hero image" src={PRsHero} />
           </div>
         </div>
       </main>
