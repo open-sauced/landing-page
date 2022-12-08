@@ -23,7 +23,7 @@ const Subscribe: FC = (): ReactElement => {
       if (!valid) {
         return alert('Not a valid Email')
       }
-      fetch('/favicon.svg', {
+      fetch('/', {
         method: 'POST', 
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, 
         body: 'form-name=newsletter', 
@@ -70,6 +70,8 @@ const Subscribe: FC = (): ReactElement => {
               <input
                 ref={inputValue}
                 placeholder="Email"
+                name="email"
+                type="email"
                 className=" outline-none focus:outline-none bg-[#211E1C] w-[165px] largeTablet:w-[275px]"
               ></input>
             </div>
