@@ -9,22 +9,14 @@ const data = [
     type: 'Limited Access',
     price: 'Free',
     per: '',
-    options: [
-      '30 days of data',
-      'Limited insights*',
-      'Explore OSS data',
-    ],
+    options: ['30 days of data', 'Limited insights*', 'Explore OSS data'],
     href: '/#',
   },
   {
     type: 'Full Access',
     price: '$19',
     per: '/ mo',
-    options: [
-      '3 months of data',
-      'All Insights*',
-      'CSV data exports',
-    ],
+    options: ['3 months of data', 'All Insights*', 'CSV data exports'],
     href: '/#',
   },
   {
@@ -34,7 +26,7 @@ const data = [
     options: [
       'Insights on organizations',
       'Talent Pipeline',
-      'Custom alerts and notifications', 
+      'Custom alerts and notifications',
     ],
     href: '/#',
   },
@@ -62,7 +54,7 @@ const Pricing: FC = (): ReactElement => {
         {data.map((item, i) => {
           const height =
             i !== 1 ? 'largeTablet:min-h-[454px]' : 'largeTablet:min-h-[486px]'
-          const wrapperStyle = ` h-fit min-h-[402px] ${height}]`
+          const wrapperStyle = `h-fit w-full ${height}] largeTablet:w-1/3 `
           return (
             <div key={item.href} className={wrapperStyle}>
               <GradientBorderWrapper

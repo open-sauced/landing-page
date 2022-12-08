@@ -23,7 +23,7 @@ const PricingCard: FC<PricingCardProps> = ({ data, index }) => {
     index !== 1 ? 'largeTablet:py-[48px]' : 'largeTablet:py-[60px]'
   return (
     <div
-      className={`w-full h-full p-10 bg-[#211E1C] rounded-[5px] flex flex-col largeTablet:px-14 ${paddingY}`}
+      className={`w-full h-full p-10 bg-[#211E1C] rounded-[5px] flex flex-col largeTablet:px-11 ${paddingY}`}
     >
       <Typography variant="preHeading" alignLarge="left">
         {type}
@@ -46,7 +46,9 @@ const PricingCard: FC<PricingCardProps> = ({ data, index }) => {
               <Image src={OrangeCheckmark} alt="Check mark" />
             </div>
             <div>
-              <Typography variant="body2">{item}</Typography>
+              <Typography alignLarge="left" variant="body2">
+                {item}
+              </Typography>
             </div>
           </div>
         ))}
