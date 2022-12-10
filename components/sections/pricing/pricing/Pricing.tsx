@@ -14,7 +14,7 @@ const data = [
       'Limited insights*',
       'Explore OSS data',
     ],
-    href: '/#',
+    href: 'https://insights.opensauced.pizza/start',
   },
   {
     type: 'Full Access',
@@ -25,7 +25,7 @@ const data = [
       'All Insights*',
       'CSV data exports',
     ],
-    href: '/#',
+    href: 'mailto:hello@opensauced.pizza',
   },
   {
     type: 'Enterprise',
@@ -36,7 +36,7 @@ const data = [
       'Talent Pipeline',
       'Custom alerts and notifications', 
     ],
-    href: '/#',
+    href: 'mailto:hello@opensauced.pizza',
   },
 ]
 
