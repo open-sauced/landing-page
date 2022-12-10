@@ -60,12 +60,12 @@ const Subscribe: FC = (): ReactElement => {
             method="POST" 
             data-netlify="true" 
           >
-            <div hidden aria-hidden="true">
+            {/* <div hidden aria-hidden="true">
               <label>
                 Try your luck
                 <input type="hidden" value="contact" name="newsletter" />
               </label>
-            </div>
+            </div> */}
             <div className="pr-4">
               <input
                 ref={inputValue}
