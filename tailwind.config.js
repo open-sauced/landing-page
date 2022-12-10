@@ -5,14 +5,14 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      display: ['Open Sans', 'Segoe UI', 'Tahoma', 'sans-serif'],
-      body: ['Open Sans', 'Segoe UI', 'Tahoma', 'sans-serif'],
-      sans: ['Open Sans', 'Segoe UI', 'Tahoma', 'sans-serif'],
+      display: ["'Inter', sans-serif"],
+      body: ["'Inter', sans-serif"],
+      sans: ["'Inter', sans-serif"],
     },
     screens: {
       mobile: '320px',
       tablet: '640px',
-      largeTablet: "840px",
+      largeTablet: '840px',
       laptop: '1024px',
       desktop: '1280px',
       _2k: '2000px',
@@ -41,17 +41,19 @@ module.exports = {
         brandYellow: '#FCB60A',
         brandRed: '#ED5332',
         brandOrange: '#ED6A32',
-        
+        textPrimary: '#FFF9ED',
+        footerBG: 'rgba(248, 114, 22, 0.07)',
+        footerDividerColor: 'rgba(248, 114, 22, 0.07)',
       },
       fontFamily: {
-        primary: "'Open Sans', 'Segoe UI', Tahoma, sans-serif",
+        primary: "'Inter', sans-serif",
         inter: "'Inter', sans-serif",
         secondary:
           'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
       },
       backgroundImage: {
         'pizza-slices': "url('/pizzaSlices.svg')",
-      }
+      },
     },
   },
   plugins: [],

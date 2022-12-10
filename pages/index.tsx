@@ -1,11 +1,15 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import Hero from '../components/Hero'
-import Logos from '../components/Logos'
-import Navigation from '../components/Header'
-import { getHomePageData, getSEOData } from '../lib/sanity'
+import Hero from '../components/sections/home-page/Hero'
+import Logos from '../components/sections/home-page/Logos'
+import {
+  getAllBlogs,
+  getCommonData,
+  getFeaturedBlogs,
+  getHomePageData,
+} from '../lib/sanity'
 import {
   SanityAbout,
+  SanityBlog,
   SanityCalender,
   SanityFeature,
   SanityFooter,
@@ -15,89 +19,77 @@ import {
   SanityTestimonial,
   SanityUser,
 } from '../types/schema'
-import GitHubMock from '../components/GitHubMock'
-import Background from '../components/Background'
-import CTA from '../components/CTA'
-import Footer2 from '../components/Footer2'
+import GitHubMock from '../components/sections/home-page/GitHubMock'
+import Background from '../components/sections/home-page/Background'
+import CTA from '../components/sections/home-page/CTA'
+import Features from '../components/sections/home-page/features/Features'
+import Testimonials from '../components/sections/home-page/testimonials/Testimonials'
+import Insights from '../components/sections/home-page/Insights'
+import Blogs from '../components/sections/home-page/blogs/Blogs'
+import PageLayout from '../components/common/layout/PageLayout'
 
 interface HomePageProps {
   data: {
-    homePageData: {
-      about: SanityAbout,
-      githubMock: SanityGithubMock,
-      calender: SanityCalender,
-      feature: SanityFeature,
-      testimonial: SanityTestimonial,
-      footer: SanityFooter,
+    commonData: {
+      navigationLinks: SanityNavigation[]
+      seoData: SanitySeo
+      footer: SanityFooter[]
     }
-    seoData: SanitySeo,
-
-
+    homePageData: {
+      about: SanityAbout
+      githubMock: SanityGithubMock
+      calender: SanityCalender
+      feature: SanityFeature[]
+      testimonial: SanityTestimonial[]
+    }
+    blogs: SanityBlog[]
+    featuredBlogs: SanityBlog[]
   }
 }
 
-const Home: NextPage<HomePageProps> = ({ data: { homePageData, seoData, } }) => {
+const Home: NextPage<HomePageProps> = ({
+  data: { commonData, homePageData, blogs, featuredBlogs },
+}) => {
+  const displayBlogs = [...blogs, ...featuredBlogs].sort(
+    (a, b) => +new Date(b._createdAt) - +new Date(a._createdAt)
+  )
+
   return (
-    <>
-      <Head>
-        <title>Open Sauced</title>
-        <meta name="title" content={seoData.title}></meta>
-        <meta name="description" content={seoData.description} />
-        <link rel="icon" href="/favicon.svg" />
-
-        {/* <!-- Open Graph / Facebook --> */}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={seoData.url} />
-        <meta property="og:title" content={seoData.title} />
-        <meta property="og:description" content={seoData.description} />
-        <meta
-          property="og:image"
-          content={seoData.image as unknown as string}
-        />
-
-        {/* <!-- Twitter --> */}
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content={seoData.url} />
-        <meta property="twitter:title" content={seoData.title} />
-        <meta property="twitter:description" content={seoData.description} />
-        <meta
-          property="twitter:image"
-          content={seoData.image as unknown as string}
-        ></meta>
-      </Head>
-      <Background>
-        <div className="max-w-7xl mx-auto">
-          <Navigation variant="orangeWhite" navigationItems={homePageData.about.navigationURLs as unknown as SanityNavigation[] } />
-
-          <Hero sanityData={homePageData.about as unknown as SanityAbout} />
-
-          <Logos users={homePageData.about.users as unknown as SanityUser[]} />
-
-          <GitHubMock githubMockData={homePageData.githubMock as unknown as SanityGithubMock}/>
-          
-          <CTA/> 
-
-        </div>
-        <Footer2/>     
-      </Background>
-    </>
+    <PageLayout
+      seoData={commonData.seoData}
+      navigationURLs={commonData.navigationLinks}
+      BackgorundWrapper={Background}
+    >
+      <Hero data={homePageData.about as unknown as SanityAbout} />
+      <Logos data={homePageData.about.users as unknown as SanityUser[]} />
+      <GitHubMock
+        githubMockData={homePageData.githubMock as unknown as SanityGithubMock}
+      />
+      <CTA data={homePageData.calender} />
+      <Features data={homePageData.feature} />
+      <Insights />
+      <Testimonials data={homePageData.testimonial} />
+      <Blogs data={displayBlogs.slice(0, 4)} />
+    </PageLayout>
   )
 }
 
 export default Home
 
 export async function getStaticProps() {
-  const [homePageData, seoData] = await Promise.all([
+  const [commonData, homePageData, featuredBlogs, blogs] = await Promise.all([
+    getCommonData(),
     getHomePageData(),
-    getSEOData(),
+    getFeaturedBlogs(),
+    getAllBlogs(),
   ])
 
-  const data = { homePageData, seoData }
+  const data = { commonData, homePageData, featuredBlogs, blogs }
 
   return {
     props: {
       data,
     },
-    revalidate: 1,
+    revalidate: 30,
   }
 }
