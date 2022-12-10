@@ -23,7 +23,7 @@ const Subscribe: FC = (): ReactElement => {
       if (!valid) {
         return alert('Not a valid Email')
       }
-      fetch('/', {
+      fetch('/favicon.svg', {
         method: 'POST', 
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, 
         body: 'form-name=newsletter', 
@@ -57,24 +57,22 @@ const Subscribe: FC = (): ReactElement => {
             className="relative box-border px-4 flex items-center w-[280px] h-[38px] text-[#FEEADD] pr-4 py-3 text-sm font-medium bg-[#211E1C] rounded-md largeTablet:w-[394px]"
             name="newsletter" 
             action="?success=true"
-            method="POST" 
             data-netlify="true" 
+            data-netlify-honeypot="bot-field"
           >
-            {/* <div hidden aria-hidden="true">
+            <div hidden aria-hidden="true">
               <label>
                 Try your luck
-                <input type="hidden" value="contact" name="newsletter" />
+                <input type="hidden" value="bot-field" name="newsletter" />
               </label>
-            </div> */}
-            <div className="pr-4">
-              <input
-                ref={inputValue}
-                placeholder="Email"
-                name="email"
-                type="email"
-                className=" outline-none focus:outline-none bg-[#211E1C] w-[165px] largeTablet:w-[275px]"
-              ></input>
             </div>
+            <input
+              ref={inputValue}
+              placeholder="Email"
+              name="email"
+              type="email"
+              className="pr-4 outline-none focus:outline-none bg-[#211E1C] w-[165px] largeTablet:w-[275px]"
+            ></input>
             <button
               className=" text-brandOrange text-sm cursor-pointer"
               onClick={handleSubscribe}
