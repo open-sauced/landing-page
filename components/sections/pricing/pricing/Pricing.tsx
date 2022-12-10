@@ -10,14 +10,14 @@ const data = [
     price: 'Free',
     per: '',
     options: ['30 days of data', 'Limited insights*', 'Explore OSS data'],
-    href: '/#',
+    href: 'https://insights.opensauced.pizza/start',
   },
   {
     type: 'Full Access',
     price: '$19',
     per: '/ mo',
     options: ['3 months of data', 'All Insights*', 'CSV data exports'],
-    href: '/#',
+    href: 'mailto:hello@opensauced.pizza?subject=I would like to pay for OpenSauced',
   },
   {
     type: 'Enterprise',
@@ -28,7 +28,7 @@ const data = [
       'Talent Pipeline',
       'Custom alerts and notifications',
     ],
-    href: '/#',
+    href: 'mailto:hello@opensauced.pizza',
   },
 ]
 

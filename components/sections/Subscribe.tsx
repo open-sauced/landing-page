@@ -1,4 +1,4 @@
-import React, { FC, ReactElement, useRef } from 'react'
+import React, { FC, ReactElement, useRef, useState, useEffect } from 'react'
 import GradientBorderWrapper from '../common/GradientBorderWrapper'
 import SectionWrapper from '../common/layout/SectionWrapper'
 import { Heading, Typography } from '../common/text'
@@ -10,6 +10,8 @@ import StrokeMobile3 from '../../public/background-strokes/stroke_mobile_3.svg'
 
 const Subscribe: FC = (): ReactElement => {
   const inputValue = useRef<HTMLInputElement>(null)
+  const [success, setSuccess] = useState(false);
+
   const handleSubscribe = () => {
     const email = inputValue.current?.value
     if (email) {
@@ -21,11 +23,24 @@ const Subscribe: FC = (): ReactElement => {
       if (!valid) {
         return alert('Not a valid Email')
       }
-      alert('What we should do with ' + email + ' ?')
+      fetch('/favicon.svg', {
+        method: 'POST', 
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, 
+        body: `form-name=newsletter&email=${email}`, 
+
+       })
+       .then(responseFromServer => console.log('responseFromServer',responseFromServer))
+       .catch(networkError => console.error('networkError',networkError))
     } else {
       alert('Email is required!')
     }
   }
+
+  useEffect(() => {
+    if ( window.location.search.includes('success=true') ) {
+      setSuccess(true);
+    }
+  }, []);
 
   return (
     <SectionWrapper pbs={120} pb={310}>
@@ -39,21 +54,39 @@ const Subscribe: FC = (): ReactElement => {
           </Typography>
         </div>
         <GradientBorderWrapper>
-          <div className="relative box-border px-4 flex items-center w-[280px] h-[38px] text-[#FEEADD] pr-4 py-3 text-sm font-medium bg-[#211E1C] rounded-md largeTablet:w-[394px]">
-            <div className="pr-4">
-              <input
-                ref={inputValue}
-                placeholder="Your Work Email"
-                className=" outline-none focus:outline-none bg-[#211E1C] w-[165px] largeTablet:w-[275px]"
-              ></input>
+          <form 
+            className="relative box-border px-4 flex items-center w-[280px] h-[38px] text-[#FEEADD] pr-4 py-3 text-sm font-medium bg-[#211E1C] rounded-md largeTablet:w-[394px]"
+            name="newsletter" 
+            action="?success=true"
+            data-netlify="true" 
+            data-netlify-honeypot="bot-field"
+          >
+            <div hidden aria-hidden="true">
+              <label>
+                Try your luck
+                <input type="hidden" value="bot-field" name="newsletter" />
+              </label>
             </div>
-            <span
+            <input
+              ref={inputValue}
+              placeholder="Email"
+              name="email"
+              type="email"
+              className="pr-4 outline-none focus:outline-none bg-[#211E1C] w-[165px] largeTablet:w-[275px]"
+            ></input>
+            <button
               className=" text-brandOrange text-sm cursor-pointer"
               onClick={handleSubscribe}
+              type="submit"
             >
               Subscribe
-            </span>
-          </div>
+            </button>
+          </form>
+          {success && (
+            <p>
+              Successfully submitted form!
+            </p>
+          )}
         </GradientBorderWrapper>
         <div className="absolute hidden largeTablet:block largeTablet:bottom-[36rem] largeTablet:left-0">
           <Image alt="Doodles" src={StrokeL3} />
