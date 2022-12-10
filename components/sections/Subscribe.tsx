@@ -26,7 +26,8 @@ const Subscribe: FC = (): ReactElement => {
       fetch('/favicon.svg', {
         method: 'POST', 
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, 
-        body: 'form-name=newsletter', 
+        body: `form-name=newsletter&email=${email},`, 
+
        })
        .then(responseFromServer => console.log('responseFromServer',responseFromServer))
        .catch(networkError => console.error('networkError',networkError))
