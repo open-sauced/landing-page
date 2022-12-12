@@ -76,17 +76,11 @@ const Subscribe: FC = (): ReactElement => {
             action="?success=true"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
-            autoComplete="off"
           >
             <div hidden aria-hidden="true">
               <label>
                 Try your luck
-                <input
-                  type="hidden"
-                  value="bot-field"
-                  name="newsletter"
-                  autoComplete="off"
-                />
+                <input type="hidden" value="bot-field" name="newsletter" />
               </label>
             </div>
             <input
