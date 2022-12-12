@@ -9,6 +9,7 @@ const data = [
     type: 'Limited Access',
     price: 'Free',
     per: '',
+    buttonLabel: "Get Started",
     options: ['30 days of data', 'Limited insights*', 'Explore OSS data'],
     href: 'https://insights.opensauced.pizza/start',
   },
@@ -16,6 +17,7 @@ const data = [
     type: 'Full Access',
     price: '$19',
     per: '/ mo',
+    buttonLabel: "Get Started",
     options: ['3 months of data', 'All Insights*', 'CSV data exports'],
     href: 'mailto:hello@opensauced.pizza?subject=I would like to pay for OpenSauced',
   },
@@ -23,6 +25,7 @@ const data = [
     type: 'Enterprise',
     price: 'Contact us',
     per: '',
+    buttonLabel: "Contact Us",
     options: [
       'Insights on organizations',
       'Talent Pipeline',
