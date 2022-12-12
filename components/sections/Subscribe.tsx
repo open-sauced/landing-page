@@ -76,6 +76,7 @@ const Subscribe: FC = (): ReactElement => {
             action="?success=true"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
+            autoComplete="off"
           >
             <div hidden aria-hidden="true">
               <label>
@@ -88,7 +89,7 @@ const Subscribe: FC = (): ReactElement => {
               placeholder="Email"
               name="email"
               type="email"
-              className="pr-4 outline-none focus:outline-none bg-[#211E1C] w-[165px] largeTablet:w-[275px]"
+              className="pr-4 outline-none focus:outline-none bg-[#211E1C] w-[180px] largeTablet:w-[290px]"
             ></input>
             <button
               className=" text-brandOrange text-sm cursor-pointer"
