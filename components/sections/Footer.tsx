@@ -33,10 +33,15 @@ const footerContext = {
   ],
 }
 
-const Footer: FC = () => {
+interface FooterProps {
+  pressPage?: boolean
+}
+
+const Footer: FC<FooterProps> = ({ pressPage }) => {
   const { pages, apps } = footerContext
+  const bgColor = pressPage ? 'bg-[#221e1c]' : 'bg-footerBG'
   return (
-    <footer className="w-full min-h-[200px] bg-footerBG pb-10">
+    <footer className={`w-full min-h-[200px] ${bgColor} pb-10`}>
       <SectionWrapper pbs={0}>
         <div className="w-full pt-10 pb-16 largeTablet:pt-12">
           <div className="w-[140px] h-6 relative">

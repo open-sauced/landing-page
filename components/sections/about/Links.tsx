@@ -19,7 +19,7 @@ const data = [
     title: 'Brand Assets',
     content:
       'Want to use our Pizza Slice? Looking for the right way to display the OpenSauced logo for your latest project? Download the assets and see how and where to use them.',
-    href: 'https://www.figma.com/proto/a2Ay1zhFAIDPmiEbTYVOID/OpenSauced-Brand?node-id=140%3A11324&scaling=min-zoom&page-id=0%3A1',
+    href: '/press',
   },
   {
     title: 'hot.opensauced.pizza',
