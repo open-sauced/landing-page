@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { FC } from 'react'
-import OpenSaucedLogo from '../../public/logos/FooterLogo.png'
+import OpenSaucedLogo from '../../public/logos/brandLogo.svg'
 import SectionWrapper from '../common/layout/SectionWrapper'
 import SocialLinks from '../common/SocialLinks'
 import { navigationLinks } from './navigation/Header'

@@ -1,7 +1,7 @@
 import React, { FC, ReactElement } from 'react'
 import SectionWrapper from '../../common/layout/SectionWrapper'
 import DesktopNavigation from './DesktopNavigation'
-import BrandLogo from '../../../public/brandLogo.svg'
+import BrandLogo from '../../../public/logos/brandLogo.svg'
 import { SanityNavigation } from '../../../types/schema'
 import MobileNavigation from './MobileNavigation'
 
