@@ -21,8 +21,11 @@ const Hero = ({ data }: HeroProps) => {
             Open Source Insights
           </Typography>
 
-          <Heading alignLarge="left">{title}</Heading>
-          <div className="mt-8 mb-10 tablet:mt-4">
+          <div className="largeTablet:max-w-lg">
+            <Heading alignLarge="left">{title}</Heading>
+          </div>
+
+          <div className="mt-8 mb-10 tablet:mt-4 ">
             <p className="text-xl text-textPrimary opacity-70 largeTablet:leading-8">
               {subtitle}
             </p>
@@ -37,7 +40,7 @@ const Hero = ({ data }: HeroProps) => {
         </div>
         <div className="flex mt-16 justify-center items-center flex-1 largeTablet:justify-end largeTablet:mt-0">
           <div className="w-fit relative pointer-events-none largeTablet:max-h-[300px] ">
-            <Image alt="OpenSauced hero image" src={PRsHero} />
+            <Image alt="OpenSauced hero image" src={PRsHero} quality={100} />
           </div>
         </div>
       </main>
