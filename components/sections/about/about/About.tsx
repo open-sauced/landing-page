@@ -30,8 +30,8 @@ const About: FC = (): ReactElement => {
 export default About
 
 const data = [
-  {label: "Projects with 5+ Contributors", title: "230k"},
-  {label: "Developers on GitHub", title: "94 million"},
-  {label: "Available Contributors on OpenSauced", title: "800"},
-  {label: "Projects with more than 100 Stars", title: "2.3k"},
+  {label: "Countries represented by team", title: "4"},
+  {label: "Projects indexed", title: "120k"},
+  {label: "Community members", title: "800+"},
+  {label: "Pizza slices consumed YTD", title: "320"},
 ]

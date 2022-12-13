@@ -18,7 +18,10 @@ const data = [
     price: '$19',
     per: '/ mo',
     buttonLabel: "Get Started",
-    options: ['3 months of data', 'All Insights*', 'CSV data exports'],
+    options: [
+      '6 months of data', 'Full Insights*', 'CSV data exports',
+      'Repository Comparisons', 'Team Sharing', 'Insights up to 10 repos'
+    ],
     href: 'mailto:hello@opensauced.pizza?subject=I would like to pay for OpenSauced',
   },
   {
