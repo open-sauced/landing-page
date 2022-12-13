@@ -21,7 +21,7 @@ const Testimonials: FC<TestimonialsProps> = ({ data }) => {
   const properties = {
     duration: 5000,
     autoplay: false,
-    transitionDuration: 500,
+    transitionDuration: 200,
     arrows: false,
     infinite: true,
     easing: 'ease',
