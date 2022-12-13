@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import OrangeCheckmark from '../../../../public/orangeCheckmark.png'
+import OrangeCheckmark from '../../../../public/orangeCheckmark.svg'
 import Image from 'next/image'
 import { Button } from '../../../common'
 import { Typography } from '../../../common/text'
@@ -10,6 +10,7 @@ interface PricingCardProps {
     type: string
     price: string
     per: string
+    buttonLabel: string
     options: string[]
     href: string
   }
@@ -18,7 +19,7 @@ interface PricingCardProps {
 
 const PricingCard: FC<PricingCardProps> = ({ data, index }) => {
   const isLargeTablet = useMediaQuery()
-  const { type, price, per, options, href } = data
+  const { type, price, per, options, href, buttonLabel } = data
   const paddingY =
     index !== 1 ? 'largeTablet:py-[48px]' : 'largeTablet:py-[60px]'
   return (
@@ -55,7 +56,7 @@ const PricingCard: FC<PricingCardProps> = ({ data, index }) => {
       </div>
       <div className="mb-8"></div>
       <Button backgroundVariant="orange" href={href} fullWidth>
-        Get Started
+        {buttonLabel}
       </Button>
     </div>
   )

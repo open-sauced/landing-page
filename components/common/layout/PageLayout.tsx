@@ -9,6 +9,7 @@ interface PageLayoutProps {
   seoData: SanitySeo
   navigationURLs: SanityNavigation[]
   BackgorundWrapper: React.FC
+  pressPage?: boolean
 }
 
 const PageLayout: FC<PageLayoutProps> = ({
@@ -16,6 +17,7 @@ const PageLayout: FC<PageLayoutProps> = ({
   seoData,
   navigationURLs,
   BackgorundWrapper,
+  pressPage
 }): ReactElement => {
   return (
     <div>
@@ -46,10 +48,10 @@ const PageLayout: FC<PageLayoutProps> = ({
         ></meta>
       </Head>
       <BackgorundWrapper>
-        <Header navigationItems={navigationURLs} />
+        {!pressPage && <Header navigationItems={navigationURLs} />}
         <div>{children}</div>
-        <Subscribe />
-        <Footer />
+        {!pressPage && <Subscribe />}
+        <Footer pressPage={pressPage} />
       </BackgorundWrapper>
     </div>
   )

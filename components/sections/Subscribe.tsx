@@ -10,7 +10,7 @@ import StrokeMobile3 from '../../public/background-strokes/stroke_mobile_3.svg'
 
 const Subscribe: FC = (): ReactElement => {
   const inputValue = useRef<HTMLInputElement>(null)
-  const [success, setSuccess] = useState(false);
+  const [success, setSuccess] = useState(false)
 
   const handleSubscribe = () => {
     const email = inputValue.current?.value
@@ -24,23 +24,24 @@ const Subscribe: FC = (): ReactElement => {
         return alert('Not a valid Email')
       }
       fetch('/favicon.svg', {
-        method: 'POST', 
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, 
-        body: `form-name=newsletter&email=${email}`, 
-
-       })
-       .then(responseFromServer => console.log('responseFromServer',responseFromServer))
-       .catch(networkError => console.error('networkError',networkError))
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `form-name=newsletter&email=${email}`,
+      })
+        .then((responseFromServer) =>
+          console.log('responseFromServer', responseFromServer)
+        )
+        .catch((networkError) => console.error('networkError', networkError))
     } else {
       alert('Email is required!')
     }
   }
 
   useEffect(() => {
-    if ( window.location.search.includes('success=true') ) {
-      setSuccess(true);
+    if (window.location.search.includes('success=true')) {
+      setSuccess(true)
     }
-  }, []);
+  }, [])
 
   return (
     <SectionWrapper pbs={120} pb={310}>
@@ -53,13 +54,29 @@ const Subscribe: FC = (): ReactElement => {
             Stay up to date with the latest OpenSauced news and trends.
           </Typography>
         </div>
+        <div className="absolute hidden largeTablet:block largeTablet:bottom-[36rem] largeTablet:left-0">
+          <Image alt="Doodles" src={StrokeL3} />
+        </div>
+
+        <div className="absolute hidden largeTablet:block largeTablet:bottom-[35rem] largeTablet:right-0">
+          <Image alt="Doodles" src={StrokeR3} />
+        </div>
+
+        <div className="absolute bottom-[51rem] right-0  largeTablet:hidden">
+          <Image alt="Doodles" src={StrokeMobile2} />
+        </div>
+
+        <div className="absolute bottom-[32rem] left-0  largeTablet:hidden">
+          <Image alt="Doodles" src={StrokeMobile3} />
+        </div>
         <GradientBorderWrapper>
-          <form 
+          <form
             className="relative box-border px-4 flex items-center w-[280px] h-[38px] text-[#FEEADD] pr-4 py-3 text-sm font-medium bg-[#211E1C] rounded-md largeTablet:w-[394px]"
-            name="newsletter" 
+            name="newsletter"
             action="?success=true"
-            data-netlify="true" 
+            data-netlify="true"
             data-netlify-honeypot="bot-field"
+            autoComplete="off"
           >
             <div hidden aria-hidden="true">
               <label>
@@ -72,7 +89,7 @@ const Subscribe: FC = (): ReactElement => {
               placeholder="Email"
               name="email"
               type="email"
-              className="pr-4 outline-none focus:outline-none bg-[#211E1C] w-[165px] largeTablet:w-[275px]"
+              className="pr-4 outline-none focus:outline-none bg-[#211E1C] w-[180px] largeTablet:w-[290px]"
             ></input>
             <button
               className=" text-brandOrange text-sm cursor-pointer"
@@ -82,27 +99,8 @@ const Subscribe: FC = (): ReactElement => {
               Subscribe
             </button>
           </form>
-          {success && (
-            <p>
-              Successfully submitted form!
-            </p>
-          )}
+          {success && <p>Successfully submitted form!</p>}
         </GradientBorderWrapper>
-        <div className="absolute hidden largeTablet:block largeTablet:bottom-[36rem] largeTablet:left-0">
-          <Image alt="Doodles" src={StrokeL3} />
-        </div>
-
-        <div className="absolute hidden largeTablet:block largeTablet:bottom-[35rem] largeTablet:right-0">
-          <Image alt="Doodles" src={StrokeR3} />
-        </div>
-
-        <div className="absolute bottom-[55rem] right-0  largeTablet:hidden">
-          <Image alt="Doodles" src={StrokeMobile2} />
-        </div>
-
-        <div className="absolute bottom-[34rem] left-0  largeTablet:hidden">
-          <Image alt="Doodles" src={StrokeMobile3} />
-        </div>
       </div>
     </SectionWrapper>
   )

@@ -1,0 +1,102 @@
+import React, { FC } from 'react'
+import { getPressData, getCommonData } from '../../lib/sanity'
+import {
+  SanityFooter,
+  SanityNavigation,
+  SanitySeo,
+  SanityPress,
+} from '../../types/schema'
+import PageLayout from '../../components/common/layout/PageLayout'
+import PressBackground from '../../components/sections/press/PressBackground'
+import PressHeading from '../../components/sections/press/PressHeading'
+import OpenSaucedLogos from '../../components/sections/press/OpenSaucedLogos'
+
+interface FeaturePageProps {
+  data: {
+    commonData: {
+      navigationLinks: SanityNavigation[]
+      seoData: SanitySeo
+      footer: SanityFooter[]
+    }
+    pressData: SanityPress
+  }
+}
+
+interface HeadingProps {
+  title: string
+  subtitle: string
+  featureImage: string
+  LastUpdated: string
+  CTAButtonLabel: string
+  CTAButtonLink: string
+  AllAssets: string
+}
+interface LogosProps {
+  title: string
+  description: string
+  svgLogo: string
+  pngLogo: string
+  isBlackBG: boolean
+  _createdAt: string
+}
+
+const index: FC<FeaturePageProps> = ({
+  data: {
+    commonData: { seoData, navigationLinks },
+    pressData,
+  },
+}) => {
+  const {
+    subtitle,
+    featureImage,
+    LastUpdated,
+    CTAButtonLabel,
+    CTAButtonLink,
+    openSaucedLogo,
+    AllAssets,
+  } = pressData
+
+  return (
+    <PageLayout
+      seoData={seoData}
+      navigationURLs={navigationLinks}
+      BackgorundWrapper={PressBackground}
+      pressPage
+    >
+      <PressHeading
+        headingData={
+          ({
+            subtitle,
+            featureImage,
+            LastUpdated,
+            CTAButtonLabel,
+            CTAButtonLink,
+            AllAssets,
+          } as unknown as HeadingProps) || {}
+        }
+      />
+
+      <OpenSaucedLogos
+        logos={(openSaucedLogo as unknown as LogosProps[]) || []}
+      />
+    </PageLayout>
+  )
+}
+
+export async function getStaticProps() {
+  const [commonData, pressData] = await Promise.all([
+    getCommonData(),
+    getPressData(),
+  ])
+
+  const data = { commonData, pressData }
+
+  return {
+    props: {
+      data,
+    },
+    revalidate: 30,
+  }
+}
+
+export default index
