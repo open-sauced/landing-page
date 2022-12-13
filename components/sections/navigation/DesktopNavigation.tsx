@@ -45,7 +45,7 @@ const DesktopNavigation: FC<DesktopNavigationProps> = ({
         ))}
       </nav>
 
-      <Button href="https://insights.opensauced.pizza/signin" gitHub>
+      <Button href="https://insights.opensauced.pizza/start" gitHub>
         Connect with GitHub
       </Button>
     </div>
