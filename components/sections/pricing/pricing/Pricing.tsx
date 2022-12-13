@@ -15,7 +15,7 @@ const data = [
   },
   {
     type: 'Full Access',
-    price: '$19',
+    price: '$99',
     per: '/ mo',
     buttonLabel: "Get Started",
     options: [
