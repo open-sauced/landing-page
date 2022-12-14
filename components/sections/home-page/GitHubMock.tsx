@@ -60,7 +60,7 @@ const GitHubMock: FC<GitHubMockProps> = ({
       <div className="w-full grid grid-cols-1 largeTablet:grid-cols-2 pb-0 largeTablet:pb-[280px]">
         <div className="w-full my-auto largeTablet:max-w-[560px]">
           <Heading component="h2" alignLarge="left">
-            Find the engineers $orange making true impact$orange in OSS communities
+            Find the engineers $orange making real impact$orange in OSS projects
           </Heading>
           <div className="mt-4 largeTablet:mt-10">
             <Typography variant="subheading" alignLarge="left">
