@@ -46,8 +46,9 @@ const GitHubMock: FC<GitHubMockProps> = ({
         </h2>
       </div>
 
-      <p className="text-center font-bold text-textPrimary opacity-40 text-base largeTablet:text-2xl leading-none pb-10 largeTablet:pb-24">
-        However...
+      <p className="text-center font-bold text-textPrimary text-base largeTablet:text-2xl leading-none pb-10 largeTablet:pb-24">
+        {/* This text needs cololr, grey was hard to read */}
+        <DecoratedText content="$orange-to-yellowHowever..." />
       </p>
       <p className="text-center font-bold pb-2 tracking-[-0.03em] text-xl largeTablet:text-[2rem] largeTablet:pb-6">
         It&apos;s only a surface-level indicator of
