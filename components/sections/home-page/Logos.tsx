@@ -28,10 +28,10 @@ const Logos = ({ data }: LogosProps) => {
     },
 
     {
-      _id: 'qwerzxmedusa',
+      _id: 'qwerzxtechstars',
       name: 'Medusa',
-      website: 'https://medusajs.com',
-      logo: '/logos/medusa.svg',
+      website: 'https://techstars.com',
+      logo: '/logos/techstars.svg',
     },
     {
       _id: 'qwerzxswim',
