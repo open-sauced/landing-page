@@ -9,6 +9,12 @@ interface LogosProps {
 const Logos = ({ data }: LogosProps) => {
   const logos = [
     {
+      _id: 'qwerzxgithub',
+      name: 'GitHub',
+      website: 'https://github.com',
+      logo: '/logos/github.svg',
+    },
+    {
       _id: 'qwerzxdigitalOcean',
       name: 'Digital Ocean',
       website: 'https://digitalocean.com/',
@@ -26,24 +32,17 @@ const Logos = ({ data }: LogosProps) => {
       website: 'https://questdb.io',
       logo: '/logos/questDB.svg',
     },
-
     {
-      _id: 'qwerzxmedusa',
+      _id: 'qwerzxtechstars',
       name: 'Medusa',
-      website: 'https://medusajs.com',
-      logo: '/logos/medusa.svg',
+      website: 'https://techstars.com',
+      logo: '/logos/techstars.svg',
     },
     {
       _id: 'qwerzxswim',
       name: 'Swimm',
       website: 'https://swimm.io/',
       logo: '/logos/swim.svg',
-    },
-    {
-      _id: 'qwerzxgithub',
-      name: 'GitHub',
-      website: 'https://github.com',
-      logo: '/logos/github.svg',
     },
   ]
 
