@@ -21,23 +21,10 @@ const Logos = ({ data }: LogosProps) => {
       logo: '/logos/supabase.svg',
     },
     {
-      _id: 'qwerzxquestdb',
-      name: 'QuestDB',
-      website: 'https://questdb.io',
-      logo: '/logos/questDB.svg',
-    },
-
-    {
       _id: 'qwerzxtechstars',
       name: 'Medusa',
       website: 'https://techstars.com',
       logo: '/logos/techstars.svg',
-    },
-    {
-      _id: 'qwerzxswim',
-      name: 'Swimm',
-      website: 'https://swimm.io/',
-      logo: '/logos/swim.svg',
     },
     {
       _id: 'qwerzxgithub',
@@ -45,6 +32,13 @@ const Logos = ({ data }: LogosProps) => {
       website: 'https://github.com',
       logo: '/logos/github.svg',
     },
+    {
+      _id: 'qwerzxswim',
+      name: 'Swimm',
+      website: 'https://swimm.io/',
+      logo: '/logos/swim.svg',
+    },
+
   ]
 
   return (
