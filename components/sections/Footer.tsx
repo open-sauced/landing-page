@@ -49,7 +49,7 @@ const Footer: FC<FooterProps> = ({ pressPage }) => {
           </div>
         </div>
         <div className="w-full flex flex-col largeTablet:flex-row">
-          <div className="w-full largeTablet:w-[45%]">
+          <div className="w-full largeTablet:w-[45%] mr-5">
             <LocalTypography variant="title">SOCIALS</LocalTypography>
             <SocialLinks />
           </div>

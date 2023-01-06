@@ -15,7 +15,7 @@ import {
 } from '../types/schema'
 
 const client = sanityClient({
-  projectId: process.env.SANITY_PROJECT_ID,
+  projectId: process.env.SANITY_PRO,
   dataset: 'production',
   token: process.env.SANITY_TOKEN,
   useCdn: false,
