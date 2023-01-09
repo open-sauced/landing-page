@@ -48,8 +48,8 @@ const Footer: FC<FooterProps> = ({ pressPage }) => {
             <Image layout="fill" alt="Brand logo" src={OpenSaucedLogo} />
           </div>
         </div>
-        <div className="w-full flex flex-col largeTablet:flex-row">
-          <div className="w-full largeTablet:w-[45%] mr-5">
+        <div className="w-full flex flex-col largeTablet:flex-row flex-wrap gap-2">
+          <div className="w-full largeTablet:w-[45%]">
             <LocalTypography variant="title">SOCIALS</LocalTypography>
             <SocialLinks />
           </div>
@@ -143,3 +143,5 @@ const LocalTypography: FC<LocalTypographyProps> = ({
 }
 
 export default Footer
+
+    
