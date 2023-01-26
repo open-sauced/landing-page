@@ -16,7 +16,7 @@ import {
 
 const client = sanityClient({
   projectId: process.env.SANITY_PROJECT_ID,
-  dataset: 'production',
+  dataset: 'development',
   token: process.env.SANITY_TOKEN,
   useCdn: false,
   apiVersion: '2021-10-21',

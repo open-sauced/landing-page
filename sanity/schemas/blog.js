@@ -67,11 +67,11 @@ export default {
         name: 'blogUrl',
       },
       {
+        type: "markdown",
         title: 'Blog Content', 
         name: 'blogContent',
-        type: 'array',
         required: false, 
-        of: [{type: 'block'}]
+        description: "Markdown content for the blog",
       },
     ],
   }
