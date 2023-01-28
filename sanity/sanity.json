@@ -11,13 +11,13 @@
     "@sanity/base",
     "@sanity/default-layout",
     "@sanity/default-login",
-    "@sanity/desk-tool"
+    "@sanity/desk-tool",
+    "markdown"
   ],
   "env": {
     "development": {
       "plugins": [
-        "@sanity/vision",
-        "markdown"
+        "@sanity/vision"
       ]
     }
   },
