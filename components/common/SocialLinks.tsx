@@ -47,7 +47,7 @@ interface SocialLinksProps {
 const SocialLinks: FC<SocialLinksProps> = ({ aboutPage }): ReactElement => {
   const wrapperStyle = aboutPage
     ? 'grid grid-cols-3 gap-x-8 gap-y-3 largeTablet:flex'
-    : 'flex relative gap-x-3'
+    : 'flex flex-wrap relative gap-x-3 pr-2'
 
   return (
     <div className={wrapperStyle}>
@@ -63,3 +63,4 @@ const SocialLinks: FC<SocialLinksProps> = ({ aboutPage }): ReactElement => {
 }
 
 export default SocialLinks
+
