@@ -605,11 +605,11 @@ export interface SanityBlog extends SanityDocument {
   blogUrl?: string
 
   /**
-   * Blog Content — `array`
+   * Blog Content — `markdown`
    *
-   *
+   * Markdown content for the blog
    */
-  blogContent?: Array<SanityKeyed<SanityBlock>>
+  blogContent?: SanityMarkdown
 }
 
 /**
@@ -764,3 +764,10 @@ export type Documents =
   | SanityBlog
   | SanityPress
   | SanityOpenSaucedLogo
+
+/**
+ * This interface is a stub. It was referenced in your sanity schema but
+ * the definition was not actually found. Future versions of
+ * sanity-codegen will let you type this explicity.
+ */
+type SanityMarkdown = any
