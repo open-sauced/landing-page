@@ -25,20 +25,20 @@ const OgData:FC<HeadProps> = ({
         <meta property="og:type" content="website" />
         <meta property="og:url" content={ogUrl || "https://opensauced.pizza"} />
         <meta property="og:title" content={ogTitle || "Open Sauced"} />
-        <meta property="og:description" content={ogDescription} />
+        <meta property="og:description" content={ogDescription || ""} />
         <meta
           property="og:image"
-          content={ogImageUrl as unknown as string}
+          content={ogImageUrl as unknown as string || ""}
         />
 
         {/* <!-- Twitter --> */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content={ogUrl || "https://opensauced.pizza/"} />
         <meta property="twitter:title" content={ogTitle || "Open Sauced"} />
-        <meta property="twitter:description" content={ogDescription} />
+        <meta property="twitter:description" content={ogDescription || ""} />
         <meta
           property="twitter:image"
-          content={ogImageUrl as unknown as string}
+          content={ogImageUrl as unknown as string || ""}
         ></meta>
       </Head>
   )
