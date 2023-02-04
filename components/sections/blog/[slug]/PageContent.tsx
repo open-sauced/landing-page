@@ -12,6 +12,7 @@ import { useRouter } from 'next/router'
 import Blog from '../components/Post'
 import ReactPlayer from 'react-player'
 import DecoratedText from '../../../common/text/utils/DecoratedText'
+import getReadTime from '../../../../utils/getReadTime'
 
 interface PageContentProps {
   pageContent: SanityBlog
@@ -25,7 +26,7 @@ const PageContent: FC<PageContentProps> = ({
   featuredPost,
 }): ReactElement => {
   const { query } = useRouter()
-  const { topics, title, author, readTime, coverImage, blogContent, blogUrl } =
+  const { topics, title, author, coverImage, blogContent, blogUrl } =
     pageContent
   const src = coverImage || ''
   const displayBlogs =
@@ -52,8 +53,8 @@ const PageContent: FC<PageContentProps> = ({
           <Image src={OrangeClock} alt="Clock" />
         </div>
 
-        <LocalTypography>{`${readTime} ${
-          readTime === 1 ? 'min' : 'mins'
+        <LocalTypography>{`${getReadTime(blogContent || "")} ${
+          getReadTime(blogContent || "") === 1 ? 'min' : 'mins'
         } read`}</LocalTypography>
       </div>
 
