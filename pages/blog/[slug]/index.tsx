@@ -53,6 +53,7 @@ const BlogPage: NextPage<BlogPageProps> = ({ data }): ReactElement => {
       seoData={commonData.seoData}
       navigationURLs={commonData.navigationLinks}
       BackgorundWrapper={Background}
+      blogPage={true}
     >
       {pageContent && (
         <PageContent
