@@ -14,6 +14,7 @@ import ReactPlayer from 'react-player'
 import DecoratedText from '../../../common/text/utils/DecoratedText'
 import OgData from '../../../common/OgData'
 
+
 interface PageContentProps {
   pageContent: SanityBlog
   blogs: SanityBlog[]
@@ -38,7 +39,7 @@ const PageContent: FC<PageContentProps> = ({
       ogTitle={title || ""}
       ogDescription={summary || ""}
       ogImageUrl={ogImage as unknown as string || ""}
-      ogUrl={"https://opensauced.pizza/blog/good-first-issues-dont-exist/blog/"+slug?.current}
+      ogUrl={"https://opensauced.pizza/blog/"+slug?.current}
 
       />
       <SectionWrapper pt={205} pts={60} pb={235}>
