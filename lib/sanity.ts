@@ -16,7 +16,7 @@ import {
 
 const client = sanityClient({
   projectId: 'r7m53vrk',
-  dataset: 'production',
+  dataset: 'development',
   token: process.env.SANITY_TOKEN,
   useCdn: false,
   apiVersion: '2021-10-21',
@@ -168,6 +168,7 @@ export const getAllBlogs: () => Promise<SanityBlog[]> = async () => {
     `*[_type == 'blog' && !(_id in path('drafts.**'))]  {
       ...,
       "coverImage": coverImage.asset->url,
+      "ogImage": ogImage.asset->url,
     }`
   )
 

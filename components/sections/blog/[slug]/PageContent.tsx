@@ -12,6 +12,7 @@ import { useRouter } from 'next/router'
 import Blog from '../components/Post'
 import ReactPlayer from 'react-player'
 import DecoratedText from '../../../common/text/utils/DecoratedText'
+import OgData from '../../../common/OgData'
 
 interface PageContentProps {
   pageContent: SanityBlog
@@ -25,12 +26,22 @@ const PageContent: FC<PageContentProps> = ({
   featuredPost,
 }): ReactElement => {
   const { query } = useRouter()
-  const { topics, title, author, readTime, coverImage, blogContent, blogUrl } =
+  const { topics, title, author, readTime, coverImage, blogContent, blogUrl, ogImage, summary, slug } =
     pageContent
   const src = coverImage || ''
   const displayBlogs =
     blogs.filter((item) => item.slug?.current != query.slug) || []
+
+  console.log(pageContent)
   return (
+    <>
+    <OgData
+    ogTitle={title || ""}
+    ogDescription={summary || ""}
+    ogImageUrl={ogImage as unknown as string || ""}
+    ogUrl={"https://opensauced.pizza/blog/good-first-issues-dont-exist/blog/"+slug?.current}
+
+    />
     <SectionWrapper pt={205} pts={60} pb={235}>
       <div className=" w-full flex justify-start largeTablet:justify-center">
         {topics?.map((item) => (
@@ -96,6 +107,7 @@ const PageContent: FC<PageContentProps> = ({
         </div>
       </div>
     </SectionWrapper>
+    </>
   )
 }
 
