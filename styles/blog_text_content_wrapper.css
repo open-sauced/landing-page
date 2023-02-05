@@ -1,5 +1,6 @@
 .contentWrapper {
   background: transparent;
+  white-space: pre-wrap;
 }
 .contentWrapper > h1 {
   font-weight: 700;

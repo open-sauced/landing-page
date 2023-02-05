@@ -7,6 +7,7 @@ import OrangeClock from '../../../../public/orange_clock.png'
 import OrangeAuthor from '../../../../public/orange_author.png'
 import { Button } from '../../../common'
 import LocalTypography from './LocalTypography'
+import getReadTime from '../../../../utils/getReadTime'
 
 interface PostProps {
   data: SanityBlog
@@ -14,7 +15,7 @@ interface PostProps {
 }
 
 const Post: FC<PostProps> = ({ data, featured }): ReactElement => {
-  const { title, topics, coverImage, author, readTime, summary, slug } = data
+  const { title, topics, coverImage, author, summary, slug, blogContent } = data
   const src = coverImage || ''
   const href = `/blog/${slug?.current}`
 
@@ -68,8 +69,8 @@ const Post: FC<PostProps> = ({ data, featured }): ReactElement => {
           <Image src={OrangeClock} alt="Time" />
         </div>
 
-        <LocalTypography>{`${readTime} ${
-          readTime === 1 ? 'min' : 'mins'
+        <LocalTypography>{`${getReadTime(blogContent || "")} ${
+          getReadTime(blogContent || "") === 1 ? 'min' : 'mins'
         } read`}</LocalTypography>
       </div>
       <Typography variant="body1" alignLarge='left'>{getDisplaySummary()}</Typography>

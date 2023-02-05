@@ -13,7 +13,7 @@ import Blog from '../components/Post'
 import ReactPlayer from 'react-player'
 import DecoratedText from '../../../common/text/utils/DecoratedText'
 import OgData from '../../../common/OgData'
-
+import getReadTime from '../../../../utils/getReadTime'
 
 interface PageContentProps {
   pageContent: SanityBlog
@@ -63,11 +63,11 @@ const PageContent: FC<PageContentProps> = ({
             <Image src={OrangeClock} alt="Clock" />
           </div>
 
-          <LocalTypography>{`${readTime} ${
-            readTime === 1 ? 'min' : 'mins'
-          } read`}</LocalTypography>
+          <LocalTypography>{`${getReadTime(blogContent || "")} ${
+            getReadTime(blogContent || "") === 1 ? 'min' : 'mins'
+          } read`}
+          </LocalTypography>
         </div>
-
         <GradientBorderWrapper style={{ width: '100%', borderRadius: '8px' }}>
           <div className="w-full h-[304px] relative rounded-[5px] overflow-hidden largeTablet:h-[496px]  ">
             <Image
