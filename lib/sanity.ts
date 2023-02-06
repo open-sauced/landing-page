@@ -168,6 +168,7 @@ export const getAllBlogs: () => Promise<SanityBlog[]> = async () => {
     `*[_type == 'blog' && !(_id in path('drafts.**'))]  {
       ...,
       "coverImage": coverImage.asset->url,
+      "ogImage": ogImage.asset->url,
     }`
   )
 

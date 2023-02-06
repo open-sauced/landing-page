@@ -539,56 +539,56 @@ export interface SanityBlog extends SanityDocument {
   /**
    * Is it native blog? — `boolean`
    *
-   *
+   * Please select yes if it is a native blog, for external blogs please select no.
    */
   isNative?: boolean
 
   /**
    * Title — `string`
    *
-   *
+   * Please enter the title of the blog, title should be less than 100 characters.
    */
   title?: string
 
   /**
    * Summary — `string`
    *
-   *
+   * Please enter the summary of the blog, this will be used in the blog listing page, summary should be less than 30 characters.
    */
   summary?: string
 
   /**
    * Author — `string`
    *
-   *
+   * Please enter the author name.
    */
   author?: string
 
   /**
    * Read Time — `number`
    *
-   *
+   * Please enter the read time of the blog in minutes (this is depcrecated, read time is calculated automatically).
    */
   readTime?: number
 
   /**
    * Topic — `array`
    *
-   *
+   * Please add the topics for the blog.
    */
   topics?: Array<SanityKeyed<string>>
 
   /**
    * Slug — `slug`
    *
-   *
+   * Click generate button to generate the slug automaticlly, or you can enter the slug manually making sure it is unique.
    */
   slug?: { _type: 'slug'; current: string }
 
   /**
    * Cover Image — `image`
    *
-   *
+   * Please select the cover image for the blog.
    */
   coverImage?: {
     _type: 'image'
@@ -598,9 +598,21 @@ export interface SanityBlog extends SanityDocument {
   }
 
   /**
+   * Social sharing image — `image`
+   *
+   * Click the dot icon on top of the right corner and then select browse.
+   */
+  ogImage?: {
+    _type: 'image'
+    asset: SanityReference<SanityImageAsset>
+    crop?: SanityImageCrop
+    hotspot?: SanityImageHotspot
+  }
+
+  /**
    * Blog Url — `url`
    *
-   *
+   * Please enter the blog url (Only if it is not a native blog).
    */
   blogUrl?: string
 
