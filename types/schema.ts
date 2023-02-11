@@ -762,6 +762,141 @@ export interface SanityOpenSaucedLogo extends SanityDocument {
   }
 }
 
+export type SanityPricingPage = {
+  _type: 'pricingPage'
+  /**
+   * Introduction Section — `object`
+   *
+   *
+   */
+  introduction?: {
+    _type: 'introduction'
+    /**
+     * Heading — `text`
+     *
+     * Heading of the section.
+     */
+    heading?: string
+
+    /**
+     * Subheading — `text`
+     *
+     * Subheading of the section.
+     */
+    subheading?: string
+  }
+
+  /**
+   * Package Options — `array`
+   *
+   * List of all the available packages to purchase.
+   */
+  packageOptions?: Array<
+    SanityKeyed<{
+      _type: 'packageDetails'
+      /**
+       * Package Name — `string`
+       *
+       *
+       */
+      packageName?: string
+
+      /**
+       * Price for price. — `number`
+       *
+       * Enter a monthly price. (Enter "0" if the package is for free, enter "-1" if the price is not applicable)
+       */
+      packagePrice?: number
+
+      /**
+       * Key features — `array`
+       *
+       * The key features that are included in the package.
+       */
+      keyFeatures?: Array<SanityKeyed<string>>
+
+      /**
+       * CTA — `object`
+       *
+       * Call to action for the package.
+       */
+      cta?: {
+        _type: 'cta'
+        /**
+         * CTA Text — `string`
+         *
+         *
+         */
+        ctaText?: string
+
+        /**
+         * CTA Link — `string`
+         *
+         *
+         */
+        ctaLink?: string
+      }
+    }>
+  >
+
+  /**
+   * Premium feature Introduction — `object`
+   *
+   *
+   */
+  premiumFeatureIntro?: {
+    _type: 'premiumFeatureIntro'
+    /**
+     * Heading — `text`
+     *
+     * Heading of the section.
+     */
+    heading?: string
+
+    /**
+     * Subheading — `text`
+     *
+     * Subheading of the section.
+     */
+    subheading?: string
+  }
+
+  /**
+   * Premium Features Details — `array`
+   *
+   * Details section for the premium features.
+   */
+  premiumFeatures?: Array<
+    SanityKeyed<{
+      /**
+       * Feature title — `string`
+       *
+       *
+       */
+      feature?: string
+
+      /**
+       * Feature Description — `text`
+       *
+       * Detailed description of the feature.
+       */
+      featureDescription?: string
+
+      /**
+       * Feature Icon — `image`
+       *
+       * This is the icon that will be displayed for the feature.
+       */
+      featureIcon?: {
+        _type: 'image'
+        asset: SanityReference<SanityImageAsset>
+        crop?: SanityImageCrop
+        hotspot?: SanityImageHotspot
+      }
+    }>
+  >
+}
+
 export type Documents =
   | SanityAbout
   | SanityUser

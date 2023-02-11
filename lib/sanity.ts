@@ -12,6 +12,7 @@ import {
   SanityPress,
   SanityKeyedReference,
   SanityNavigation,
+  SanityPricingPage,
 } from '../types/schema'
 
 const client = sanityClient({
@@ -209,4 +210,14 @@ export const getPressData: () => Promise<SanityPress> = async () => {
     },
   }`)
   return getPressData
+}
+export const getPricingPageData: () => Promise<SanityPricingPage> = async () => {
+  const getPricingPageData: SanityPricingPage = await client.fetch(`*[_type == 'pricingPage'][0] {
+    ...,
+    premiumFeatures[] {
+      ...,
+      "featureIcon": featureIcon.asset->url,
+    }
+  }`)
+  return getPricingPageData
 }
