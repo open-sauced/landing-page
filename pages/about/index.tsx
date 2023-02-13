@@ -31,7 +31,7 @@ const AboutPage: NextPage<AboutPageProps> = ({
       navigationURLs={navigationLinks}
       BackgorundWrapper={Background}
     >
-      <About intro={aboutPageData.introduction} />
+      <About intro={aboutPageData.introduction} numeralHighlight={aboutPageData.numeralHighlight as unknown as any} />
       <FollowUs social={aboutPageData.socialLinks} />
       <Links services={aboutPageData.services} />
     </PageLayout>

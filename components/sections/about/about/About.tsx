@@ -7,9 +7,10 @@ import MetricCard from './MetricCard'
 
 interface AboutProps {
   intro: SanityAboutPage['introduction']
+  numeralHighlight: SanityAboutPage['numeralHighlight'][]
 }
 
-const About: FC<AboutProps> = ({ intro }): ReactElement => {
+const About: FC<AboutProps> = ({ intro, numeralHighlight }): ReactElement => {
   return (
     <SectionWrapper pt={205} pts={60} pb={80} pbs={90}>
       <Typography variant="preHeading">About</Typography>
@@ -24,8 +25,8 @@ const About: FC<AboutProps> = ({ intro }): ReactElement => {
         </Typography>
       </div>
       <div className="w-full grid grid-cols-2 gap-y-9 largeTablet:grid-cols-4 largeTablet:gap-y-0 ">
-        {data
-          .map((item, i) => (
+        {numeralHighlight &&
+          numeralHighlight.map((item, i) => (
             <MetricCard key={i} data={item} index={i} />
           ))}
       </div>
@@ -34,10 +35,3 @@ const About: FC<AboutProps> = ({ intro }): ReactElement => {
 }
 
 export default About
-
-const data = [
-  {label: "Countries represented by team", title: "4"},
-  {label: "Projects indexed", title: "120k"},
-  {label: "Community members", title: "800+"},
-  {label: "Pizza slices consumed YTD", title: "320"},
-]
