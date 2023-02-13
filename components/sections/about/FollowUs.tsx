@@ -2,8 +2,15 @@ import React, { FC, ReactElement } from 'react'
 import SectionWrapper from '../../common/layout/SectionWrapper'
 import GradientBorderWrapper from '../../common/GradientBorderWrapper'
 import SocialLinks from '../../common/SocialLinks'
+import { SanityAboutPage } from '../../../types/schema'
 
-const FollowUs: FC = (): ReactElement => {
+interface FollowUsProps {
+  social: SanityAboutPage['socialLinks']
+}
+
+const FollowUs: FC<FollowUsProps> = ({
+  social,
+}): ReactElement => {
   return (
     <SectionWrapper direction="row" pb={250} pbs={110}>
       <GradientBorderWrapper>
@@ -11,7 +18,7 @@ const FollowUs: FC = (): ReactElement => {
           <p className="text-sm font-semibold text-textPrimary pb-4 largeTablet:pb-0 largeTablet:mr-8 ">
             Follow us on
           </p>
-          <SocialLinks aboutPage />
+          <SocialLinks social={social} aboutPage />
         </div>
       </GradientBorderWrapper>
     </SectionWrapper>

@@ -13,6 +13,7 @@ import {
   SanityKeyedReference,
   SanityNavigation,
   SanityPricingPage,
+  SanityAboutPage,
 } from '../types/schema'
 
 const client = sanityClient({
@@ -211,6 +212,7 @@ export const getPressData: () => Promise<SanityPress> = async () => {
   }`)
   return getPressData
 }
+
 export const getPricingPageData: () => Promise<SanityPricingPage> = async () => {
   const getPricingPageData: SanityPricingPage = await client.fetch(`*[_type == 'pricingPage'][0] {
     ...,
@@ -220,4 +222,15 @@ export const getPricingPageData: () => Promise<SanityPricingPage> = async () => 
     }
   }`)
   return getPricingPageData
+}
+
+export const getAboutPageData: () => Promise<SanityAboutPage> = async () => {
+  const getAboutPageData: SanityAboutPage = await client.fetch(`*[_type == 'aboutPage'][0] {
+    ...,
+    socialLinks[] {
+      ...,
+      "socialIcon": socialIcon.asset->url,
+    }
+  }`)
+  return getAboutPageData
 }
