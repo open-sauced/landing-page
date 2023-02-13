@@ -21,7 +21,7 @@ const Links: FC<LinksProps> = ({ services }): ReactElement => {
         {services?.map(({ serviceName , serviceUrl, serviceDescription }) => {
           const internalLink = serviceUrl && serviceUrl.startsWith('/')
           return (
-            <div key={"title"} className="w-full">
+            <div key={serviceName} className="w-full">
               <div className="flex items-center">
                 <div>
                   <Typography variant="title3" alignLarge="left">

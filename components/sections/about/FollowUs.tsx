@@ -8,9 +8,7 @@ interface FollowUsProps {
   social: SanityAboutPage['socialLinks']
 }
 
-const FollowUs: FC<FollowUsProps> = ({
-  social,
-}): ReactElement => {
+const FollowUs: FC<FollowUsProps> = ({ social }): ReactElement => {
   return (
     <SectionWrapper direction="row" pb={250} pbs={110}>
       <GradientBorderWrapper>

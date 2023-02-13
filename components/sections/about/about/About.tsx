@@ -9,9 +9,7 @@ interface AboutProps {
   intro: SanityAboutPage['introduction']
 }
 
-const About: FC<AboutProps> = ({
-  intro,
-}): ReactElement => {
+const About: FC<AboutProps> = ({ intro }): ReactElement => {
   return (
     <SectionWrapper pt={205} pts={60} pb={80} pbs={90}>
       <Typography variant="preHeading">About</Typography>
