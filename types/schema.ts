@@ -897,6 +897,119 @@ export type SanityPricingPage = {
   >
 }
 
+export type SanityAboutPage = {
+  _type: 'aboutPage'
+  /**
+   * Introduction section — `object`
+   *
+   *
+   */
+  introduction?: {
+    _type: 'introduction'
+    /**
+     * Heading — `text`
+     *
+     * Heading of the section.
+     */
+    heading?: string
+
+    /**
+     * Subheading — `text`
+     *
+     * Subheading of the section.
+     */
+    subheading?: string
+  }
+
+  /**
+   * Numeral highlight — `array`
+   *
+   *
+   */
+  numeralHighlight?: Array<
+    SanityKeyed<{
+      /**
+       * Numerical value — `string`
+       *
+       * The numerical value to be highlighted. Accepts numbers and strings. Example: "1,000" or "1K".
+       */
+      numericalValue?: string
+
+      /**
+       * Context — `string`
+       *
+       * The context of the numerical value.
+       */
+      context?: string
+    }>
+  >
+
+  /**
+   * Social links — `array`
+   *
+   * Open Sauced social links to be displayed.
+   */
+  socialLinks?: Array<
+    SanityKeyed<{
+      /**
+       * Social link placeholder — `string`
+       *
+       * Placeholder for the social link. Example: "Twitter"
+       */
+      socialLinkPlaceholder?: string
+
+      /**
+       * Social Url — `string`
+       *
+       * The actual social link.
+       */
+      socialUrl?: string
+
+      /**
+       * Social icon — `image`
+       *
+       * The social icon to be displayed.
+       */
+      socialIcon?: {
+        _type: 'image'
+        asset: SanityReference<SanityImageAsset>
+        crop?: SanityImageCrop
+        hotspot?: SanityImageHotspot
+      }
+    }>
+  >
+
+  /**
+   * Services section — `array`
+   *
+   * Services by Open Sauced.
+   */
+  services?: Array<
+    SanityKeyed<{
+      /**
+       * Service name — `string`
+       *
+       * Name of the service.
+       */
+      serviceName?: string
+
+      /**
+       * Service url — `string`
+       *
+       * The url of the service. Example: "https://insights.opensauced.pizza".
+       */
+      serviceUrl?: string
+
+      /**
+       * Service description — `text`
+       *
+       * Description of the service.
+       */
+      serviceDescription?: string
+    }>
+  >
+}
+
 export type Documents =
   | SanityAbout
   | SanityUser

@@ -7,47 +7,29 @@ import OrangeRightArrow from '../../../public/orange_right_arrow.png'
 import OrangeRightArrowSmall from '../../../public/orange_right_arrow_small.png'
 import useMediaQuery from '../../hooks/useMediaQuery'
 import Link from 'next/link'
+import { SanityAboutPage } from '../../../types/schema'
+interface LinksProps {
+  services: SanityAboutPage['services']
+}
 
-const data = [
-  {
-    title: 'Blog',
-    content:
-      'Read up on product innovations and updates, company announcements, community spotlights, and more.',
-    href: '/blog',
-  },
-  {
-    title: 'Brand Assets',
-    content:
-      'Want to use our Pizza Slice? Looking for the right way to display the OpenSauced logo for your latest project? Download the assets and see how and where to use them.',
-    href: '/press',
-  },
-  {
-    title: 'hot.opensauced.pizza',
-    content:
-      'Explore some of the hottest projects on GitHub. This is a curated list of the most popular repositories.',
-    href: 'https://hot.opensauced.pizza',
-  },
-]
-
-const Links: FC = (): ReactElement => {
+const Links: FC<LinksProps> = ({ services }): ReactElement => {
   const isLargeTablet = useMediaQuery()
-
   const imgDimension = isLargeTablet ? 40 : 24
   return (
     <SectionWrapper pb={255} pbs={135}>
       <div className="max-w-[660px] gap-y-12 flex flex-col">
-        {data.map(({ title, content, href }) => {
-          const internalLink = href && href.startsWith('/')
+        {services?.map(({ serviceName , serviceUrl, serviceDescription }) => {
+          const internalLink = serviceUrl && serviceUrl.startsWith('/')
           return (
-            <div key={title} className="w-full">
+            <div key={serviceName} className="w-full">
               <div className="flex items-center">
                 <div>
                   <Typography variant="title3" alignLarge="left">
-                    {title}
+                    {serviceName}
                   </Typography>
                 </div>
 
-                <Link href={href} passHref>
+                <Link href={serviceUrl as unknown as string} passHref>
                   <a
                     target={internalLink ? '_self' : '_blank'}
                     rel="noreferrer"
@@ -79,7 +61,7 @@ const Links: FC = (): ReactElement => {
               </div>
               <div className="pt-8 pb-12 largeTablet:pt-10">
                 <Typography variant="body1" alignLarge="left">
-                  {content}
+                  {serviceDescription}
                 </Typography>
               </div>
               <div className="w-full h-[2px] bg-gradient-to-tr from-brandRed to-brandYellow"></div>
