@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React, { FC } from 'react'
-import { SanityGithubMock } from '../../../types/schema'
+import { SanityGithubMock, SanityHomePage } from '../../../types/schema'
 import GreenSquares from '../../../public/greenSquares.svg'
 import GreenSquaresSmall from '../../../public/greenSquares_small.svg'
 import TrueImpactIMG from '../../../public/trueImpact.png'
@@ -11,12 +11,11 @@ import DecoratedText from '../../common/text/utils/DecoratedText'
 import BackgroundStroke from '../../../public/middleRight.svg'
 
 interface GitHubMockProps {
-  githubMockData: SanityGithubMock
+  moreHeading: string[]
+  topFeature: SanityHomePage['topFeature']
 }
 
-const GitHubMock: FC<GitHubMockProps> = ({
-  githubMockData: { title, subtitle, mockimage, titleRich },
-}) => {
+const GitHubMock: FC<GitHubMockProps> = ({ moreHeading, topFeature }) => {
   const isLargeTablet = useMediaQuery()
   return (
     <SectionWrapper pbs={100}>
@@ -42,30 +41,29 @@ const GitHubMock: FC<GitHubMockProps> = ({
       </div>
       <div className="pb-10 largeTablet:pb-44">
         <h2 className="text-center text-2xl font-bold font-inter largeTablet:text-5xl">
-          <DecoratedText content={subtitle || ''} />
+          <DecoratedText content={moreHeading[0] || ''} />
         </h2>
       </div>
 
       <p className="text-center font-bold text-textPrimary text-base largeTablet:text-2xl leading-none pb-10 largeTablet:pb-24">
         {/* This text needs cololr, grey was hard to read */}
-        <DecoratedText content="$orange-to-yellowHowever..." />
+        <DecoratedText content={`$orange-to-yellow${moreHeading[1] || ""}`} />
       </p>
       <p className="text-center font-bold pb-2 tracking-[-0.03em] text-xl largeTablet:text-[2rem] largeTablet:pb-6">
-        It&apos;s only a surface-level indicator of
+        {moreHeading[2] || ''}
       </p>
       <p className="font-bold text-3xl largeTablet:text-[4rem] leading-none text-center pb-32 largeTablet:pb-[300px]">
-        how capable a developer is.
+        {moreHeading[3] || ''}
       </p>
 
       <div className="w-full grid grid-cols-1 largeTablet:grid-cols-2 pb-0 largeTablet:pb-[280px]">
         <div className="w-full my-auto largeTablet:max-w-[560px]">
           <Heading component="h2" alignLarge="left">
-            Find the engineers $orange making real impact$orange in OSS projects
+            {topFeature?.heading || ''}
           </Heading>
           <div className="mt-4 largeTablet:mt-10">
             <Typography variant="subheading" alignLarge="left">
-              Using our developer first metrics, you can see a true
-              representation of any developer’s ability.
+              {topFeature?.description || ''}
             </Typography>
           </div>
         </div>
@@ -75,10 +73,10 @@ const GitHubMock: FC<GitHubMockProps> = ({
               <Image alt="Doodles" src={BackgroundStroke} />
             </div>
             <div className="relative largeTablet:left-8 largeTablet:w-4/5 largeTablet:top-8">
-              <Image
-                src={TrueImpactIMG}
-                alt="True impact to the OSS community image"
-              />
+                <img
+                  src={topFeature?.image as unknown as string}
+                  alt="True impact to the OSS community image"
+                />
             </div>
           </div>
         </div>

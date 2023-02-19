@@ -1,19 +1,15 @@
 import sanityClient from '@sanity/client'
 import {
-  SanityAbout,
-  SanityCalender,
   SanityFeature,
-  SanityGithubMock,
   SanitySeo,
-  SanityTestimonial,
   SanityFooter,
   SanityFeaturedBlog,
   SanityBlog,
   SanityPress,
-  SanityKeyedReference,
   SanityNavigation,
   SanityPricingPage,
   SanityAboutPage,
+  SanityHomePage,
 } from '../types/schema'
 
 const client = sanityClient({
@@ -53,64 +49,46 @@ export const getCommonData: CommonData = async () => {
   }
 }
 
-export const getHomePageData: () => Promise<{
-  about: SanityAbout
-  githubMock: SanityGithubMock
-  calender: SanityCalender
-  feature: SanityFeature[]
-  testimonial: SanityTestimonial[]
-}> = async () => {
-  const aboutData = await client.fetch(
+export const getHomePageData: () => Promise<SanityHomePage> = async () => {
+  const homePageData = await client.fetch(
     `
-    *[_id == "da83ea19-890f-43be-9757-d4eab5271392"][0] {
-	CTAButtonLabel,
-	CTAButtonURL,
-	navigationURLs[]->,
-	"previewImage": previewImage.asset->url,
-	subtitle,
-	title,
-  projectsButtonLabel,
-  projectsButtonUrl,
-	users[]->{
-	  ...,
-	  "logo": logo.asset->url
-	},
+    *[_type == "homePage"][0] {
+      ...,
+      hero {
+        ...,
+        "image": image.asset->url,
+        users[] {
+          ...,
+          "name": *[ _type == "user" && _id == ^._ref][0].name,
+          "website": *[ _type == "user" && _id == ^._ref][0].website,
+          "logo": *[ _type == "user" && _id == ^._ref][0].logo.asset->url,
+        }
+      },
+      topFeature {
+        ...,
+        "image": image.asset->url,
+      },
+      features[] {
+        ...,
+        "image": image.asset->url,
+      },
+      testimonialsSection {
+        ...,
+        testimonials[] {
+          ...,
+          "twitterUsername": *[ _type == "testimonial" && _id == ^._ref][0].twitterUsername,
+          "twitterName": *[ _type == "testimonial" && _id == ^._ref][0].twitterName,
+          "userImage": *[ _type == "testimonial" && _id == ^._ref][0].userImage.asset->url,
+          "testimonial": *[ _type == "testimonial" && _id == ^._ref][0].testimonial,
+          "testimonial": *[ _type == "testimonial" && _id == ^._ref][0].testimonial,
+          "tweetLink": *[ _type == "testimonial" && _id == ^._ref][0].tweetLink,
+        }
       }
+    }
     `
   )
-
-  const githubMockData: SanityGithubMock =
-    await client.fetch(`*[_type == 'githubMock'][0]{
-    ...,
-    "mockimage": mockimage.asset->url
-  }`)
-
-  const getCalenderData: SanityCalender =
-    await client.fetch(`*[_type == 'calender'][0]{
-    ...,
-    "calenderImage": calenderImage.asset->url
-  }`)
-
-  const getFeatureData: SanityFeature[] =
-    await client.fetch(`*[_type == 'feature' && !(_id in path('drafts.**'))] | order(_createdAt asc) {
-    ...,
-    "previewImage": previewImage.asset->url,
-    "previewVideo": previewVideo.asset->url
-  }`)
-
-  const getTestimonialData: SanityTestimonial[] =
-    await client.fetch(`*[_type == 'testimonial' && !(_id in path('drafts.**')) ] | order(_createdAt asc) {
-    ...,
-    "userImage": userImage.asset->url,
-  }`)
-
-  return {
-    about: aboutData,
-    githubMock: githubMockData,
-    calender: getCalenderData,
-    feature: getFeatureData,
-    testimonial: getTestimonialData,
-  }
+  
+  return homePageData
 }
 
 export const getSEOData: () => Promise<SanitySeo> = async () => {

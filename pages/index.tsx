@@ -8,15 +8,11 @@ import {
   getHomePageData,
 } from '../lib/sanity'
 import {
-  SanityAbout,
   SanityBlog,
-  SanityCalender,
-  SanityFeature,
   SanityFooter,
-  SanityGithubMock,
+  SanityHomePage,
   SanityNavigation,
   SanitySeo,
-  SanityTestimonial,
   SanityUser,
 } from '../types/schema'
 import GitHubMock from '../components/sections/home-page/GitHubMock'
@@ -35,13 +31,7 @@ interface HomePageProps {
       seoData: SanitySeo
       footer: SanityFooter[]
     }
-    homePageData: {
-      about: SanityAbout
-      githubMock: SanityGithubMock
-      calender: SanityCalender
-      feature: SanityFeature[]
-      testimonial: SanityTestimonial[]
-    }
+    homePageData: SanityHomePage
     blogs: SanityBlog[]
     featuredBlogs: SanityBlog[]
   }
@@ -60,16 +50,17 @@ const Home: NextPage<HomePageProps> = ({
       navigationURLs={commonData.navigationLinks}
       BackgorundWrapper={Background}
     >
-      <Hero data={homePageData.about as unknown as SanityAbout} />
-      <Logos data={homePageData.about.users as unknown as SanityUser[]} />
+      <Hero data={homePageData.hero as unknown as SanityHomePage['hero']} />
+      <Logos data={homePageData.hero?.users as unknown as SanityUser[] || []} />
       <GitHubMock
-        githubMockData={homePageData.githubMock as unknown as SanityGithubMock}
+        moreHeading={homePageData.moreHeading || []}
+        topFeature={homePageData.topFeature}
       />
-      <CTA data={homePageData.calender} />
-      <Features data={homePageData.feature} />
-      <Insights />
-      <Testimonials data={homePageData.testimonial} />
-      <Blogs data={displayBlogs.slice(0, 4)} />
+      <CTA data={homePageData.ctaSection} />
+      <Features data={homePageData.features as unknown as SanityHomePage['features']} />
+      <Insights data={homePageData.secondCtaSection as unknown as SanityHomePage['secondCtaSection']} />
+      <Testimonials data={homePageData.testimonialsSection} />
+      <Blogs data={homePageData.blogSection} blogs={displayBlogs.slice(0, 4)}  />
     </PageLayout>
   )
 }
