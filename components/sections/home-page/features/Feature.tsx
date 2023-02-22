@@ -1,21 +1,18 @@
-import Image from 'next/image'
 import React, { FC } from 'react'
-import { SanityFeature } from '../../../../types/schema'
-import { Button } from '../../../common'
 import { Heading, Typography } from '../../../common/text'
+import { FeatureProps } from './Features'
 
 interface Props {
-  feature: SanityFeature
+  feature: FeatureProps
   img: string
   index: number
 }
 
 const Feature: FC<Props> = ({
-  feature: { title, subtitle, slug, description },
+  feature: { description, heading, image, title },
   img,
   index,
 }) => {
-  const href = slug ? `/feature/${slug.current}` : `/`
   const reverse = index % 2 === 1
   const dropShadow =
     index === 0 || index === 3 ? 'drop-shadow-[0_0_60px_#f8721666]' : ''
@@ -30,7 +27,7 @@ const Feature: FC<Props> = ({
         className={`w-full flex justify-center items-center mb-14 largeTablet:mt-0 ${dropShadow} largeTablet:w-1/2`}
       >
         <div className="w-full max-w-[550px]">
-          <Image src={img} alt={`${title} image`} />
+          <img src={image as unknown as string} alt={`${title} image`} />
         </div>
       </div>
       <div
@@ -39,11 +36,11 @@ const Feature: FC<Props> = ({
         } largeTablet:w-1/2`}
       >
         <Typography variant="preHeading" alignLarge="left">
-          {subtitle}
+          {title}
         </Typography>
         <div className={`${index === 0 && 'largeTablet:max-w-[400px]'}`}>
           <Heading component="h2" alignLarge="left">
-            {title}
+            {heading}
           </Heading>
         </div>
 
@@ -52,7 +49,7 @@ const Feature: FC<Props> = ({
             {description}
           </Typography>
         </div>
-        {false && <Button href={href}>Learn more</Button>}
+        {/* {false && <Button href={href}>Learn more</Button>} */}
       </div>
     </div>
   )

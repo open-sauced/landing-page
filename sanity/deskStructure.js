@@ -1,6 +1,6 @@
 // /deskStructure.js
 import S from '@sanity/desk-tool/structure-builder'
-import { FaMoneyCheckAlt, FaInfoCircle } from 'react-icons/fa'
+import { FaMoneyCheckAlt, FaInfoCircle, FaHome } from 'react-icons/fa'
 
 export default () => 
   S.list()
@@ -9,6 +9,16 @@ export default () =>
     [ 
       ...S.documentTypeListItems()
       .filter(listItem => !['pricingPage'].includes(listItem.getId()) && !['aboutPage'].includes(listItem.getId())),
+
+      S.listItem()
+      .title("Home Page")
+      .icon(FaHome)
+      .child(
+        S.document()
+        .schemaType("homePage")
+        .documentId("homePage")
+        .title("Home Page")
+      ),  
 
       S.listItem()
       .title("Pricing Page")

@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react'
-import { SanityTestimonial } from '../../../../types/schema'
+import { SanityHomePage, SanityTestimonial } from '../../../../types/schema'
 import SectionWrapper from '../../../common/layout/SectionWrapper'
 import { Heading, Typography } from '../../../common/text'
 import Testimonial from './Testimonial'
@@ -7,12 +7,13 @@ import 'react-slideshow-image/dist/styles.css'
 import { Slide, SlideshowRef } from 'react-slideshow-image'
 
 interface TestimonialsProps {
-  data: SanityTestimonial[]
+  data: SanityHomePage['testimonialsSection']
 }
 
 const Testimonials: FC<TestimonialsProps> = ({ data }) => {
   const [slideIndex, setSlideIndex] = useState(0)
   const slideRef = React.createRef<SlideshowRef>()
+  const testimonials = data?.testimonials as unknown as SanityTestimonial[]
 
   const handleSlideChange = (index: number) => {
     setSlideIndex(index)
@@ -37,14 +38,14 @@ const Testimonials: FC<TestimonialsProps> = ({ data }) => {
   return (
     <SectionWrapper pb={215}>
       <Typography variant="preHeading" alignSmall="center">
-        Testimonials
+        {data?.title || ''}
       </Typography>
       <Heading component="h3" alignSmall="center">
-        The value of $yellowOpen Source$yellow
+        {data?.heading || ''}
       </Heading>
 
       <div className="w-full mt-[46px] grid-cols-1 largeTablet:grid-cols-3 gap-9 largeTablet:mt-24 hidden largeTablet:grid ">
-        {data.map((testimonial) => (
+        {testimonials.map((testimonial) => (
           <Testimonial
             key={testimonial.twitterUsername}
             testimonial={testimonial as unknown as SanityTestimonial}
@@ -57,7 +58,7 @@ const Testimonials: FC<TestimonialsProps> = ({ data }) => {
           {...properties}
           onChange={(x, y) => handleSlideChange(y)}
         >
-          {data.map((testimonial) => (
+          {testimonials.map((testimonial) => (
             <div
               key={testimonial.twitterUsername}
               style={{

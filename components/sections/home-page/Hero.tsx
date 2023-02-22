@@ -1,46 +1,43 @@
 import React from 'react'
-import { SanityAbout } from '../../../types/schema'
-import PRsHero from '../../../public/hero.png'
+import { SanityHomePage } from '../../../types/schema'
 import Image from 'next/image'
 import SectionWrapper from '../../common/layout/SectionWrapper'
 import { Button } from '../../common'
 import { Heading, Typography } from '../../common/text'
 
 interface HeroProps {
-  data: SanityAbout
+  data: SanityHomePage['hero']
 }
 
 const Hero = ({ data }: HeroProps) => {
-  const { title, subtitle } = data
-
   return (
     <SectionWrapper direction="row" pt={115} pts={60} pb={120} pbs={0}>
       <main className="flex flex-col largeTablet:flex-row ">
         <div className="flex flex-col items-start flex-1">
           <Typography variant="preHeading" alignLarge="left">
-            Open Source Insights
+            {data?.title}
           </Typography>
 
           <div className="largeTablet:max-w-lg">
-            <Heading alignLarge="left">{title}</Heading>
+            <Heading alignLarge="left">{data?.heading}</Heading>
           </div>
 
           <div className="mt-8 mb-10 tablet:mt-4 ">
             <p className="text-xl text-textPrimary opacity-70 largeTablet:leading-8">
-              {subtitle}
+              {data?.description}
             </p>
           </div>
-
           <div className="flex gap-4 items-center flex-col largeTablet:flex-row">
-            <Button href={data.CTAButtonURL}>{data.CTAButtonLabel}</Button>
-            <Button href={data.projectsButtonUrl} borderVariant="gray">
-              {data.projectsButtonLabel}
-            </Button>
+            {data?.cta?.map((item, i) => (
+              <Button key={i} href={item.ctaLink} borderVariant={ i !== 0 ? "gray" : "neon" }>
+                {item.ctaLabel}
+              </Button>
+            ))}
           </div>
         </div>
         <div className="flex mt-16 justify-center items-center flex-1 largeTablet:justify-end largeTablet:mt-0">
-          <div className="w-fit relative pointer-events-none largeTablet:max-h-[300px] ">
-            <Image alt="OpenSauced hero image" src={PRsHero} quality={100} />
+          <div className="w-full h-full relative pointer-events-none max-w-[463px] largeTablet:max-h-[299px]">
+            <img alt="OpenSauced hero image" src={data?.image as unknown as string} />
           </div>
         </div>
       </main>
