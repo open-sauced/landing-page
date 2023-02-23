@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { BsTwitter, BsLinkedin } from 'react-icons/bs'
+import { BsTwitter, BsLinkedin, BsFacebook, BsInstagram } from 'react-icons/bs'
 
 interface SocialShareProps {
   url: string
@@ -8,11 +8,13 @@ interface SocialShareProps {
   gap?: number
   twitter?: boolean
   linkedin?: boolean
+  facebook?: boolean
 }
 
 const SocialShare:FC<SocialShareProps> = ({
   twitter = true,
   linkedin = true,
+  facebook = false,
   url,
   direction = "row",
   size = "xl" || "lg" || "md" || "sm" || "xs",
@@ -26,6 +28,7 @@ const SocialShare:FC<SocialShareProps> = ({
     <div className={` ${commonStyle} ${iconSize} flex  gap-2`}>
       {twitter && <TwitterLink url={url} />}
       {linkedin && <LinkedinLink url={url}/>}
+      {facebook && <FacebookLink url={url}/>}
     </div>
   )
 }
@@ -47,6 +50,13 @@ const LinkedinLink:FC<SocialLinkProps> = ({url}) => {
   return (
     <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}`}>
       <BsLinkedin/>
+    </a>
+  )
+}
+const FacebookLink:FC<SocialLinkProps> = ({url}) => {
+  return (
+    <a href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}>
+      <BsFacebook/>
     </a>
   )
 }

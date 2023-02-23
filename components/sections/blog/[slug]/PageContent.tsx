@@ -71,7 +71,7 @@ const PageContent: FC<PageContentProps> = ({
           </LocalTypography>
         </div>
         <div className="pb-11 largeTablet:pb-20">
-          <SocialShare url={absoluteURL} size="lg" gap={6} />
+          <SocialShare url={absoluteURL} size="lg" gap={6} facebook />
         </div>
         <GradientBorderWrapper style={{ width: '100%', borderRadius: '8px' }}>
           <div className="w-full h-[304px] relative rounded-[5px] overflow-hidden largeTablet:h-[496px]  ">
