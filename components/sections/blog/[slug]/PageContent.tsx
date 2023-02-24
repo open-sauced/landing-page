@@ -14,6 +14,7 @@ import ReactPlayer from 'react-player'
 import DecoratedText from '../../../common/text/utils/DecoratedText'
 import OgData from '../../../common/OgData'
 import getReadTime from '../../../../utils/getReadTime'
+import SocialShare from '../../../common/SocialShare'
 
 interface PageContentProps {
   pageContent: SanityBlog
@@ -32,6 +33,7 @@ const PageContent: FC<PageContentProps> = ({
   const src = coverImage || ''
   const displayBlogs =
     blogs.filter((item) => item.slug?.current != query.slug) || []
+  const absoluteURL = "https://opensauced.pizza/blog/"+slug?.current
 
   return (
     <>
@@ -39,7 +41,7 @@ const PageContent: FC<PageContentProps> = ({
       ogTitle={title || ""}
       ogDescription={summary || ""}
       ogImageUrl={ogImage as unknown as string || ""}
-      ogUrl={"https://opensauced.pizza/blog/"+slug?.current}
+      ogUrl={absoluteURL}
 
       />
       <SectionWrapper pt={205} pts={60} pb={235}>
@@ -53,7 +55,7 @@ const PageContent: FC<PageContentProps> = ({
         <div className="w-full max-w-[750px] pt-3 pb-4 largeTablet:pt-4 largeTablet:pb-10 ">
           <Heading>{title}</Heading>
         </div>
-        <div className="w-full flex justify-start pb-11 largeTablet:pb-20 largeTablet:justify-center">
+        <div className="w-full flex justify-start pb-4 largeTablet:pb-6 largeTablet:justify-center">
           <div className="flex-shrink-0 mr-2">
             <Image src={OrangeAuthor} alt="Author" />
           </div>
@@ -67,6 +69,9 @@ const PageContent: FC<PageContentProps> = ({
             getReadTime(blogContent || "") === 1 ? 'min' : 'mins'
           } read`}
           </LocalTypography>
+        </div>
+        <div className="pb-11 largeTablet:pb-20">
+          <SocialShare url={absoluteURL} size="lg" gap={6} hackerNews />
         </div>
         <GradientBorderWrapper style={{ width: '100%', borderRadius: '8px' }}>
           <div className="w-full h-[304px] relative rounded-[5px] overflow-hidden largeTablet:h-[496px]  ">
