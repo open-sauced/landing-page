@@ -31,14 +31,6 @@ interface HeadingProps {
   CTAButtonLink: string
   AllAssets: string
 }
-interface LogosProps {
-  title: string
-  description: string
-  svgLogo: string
-  pngLogo: string
-  isBlackBG: boolean
-  _createdAt: string
-}
 
 const index: FC<FeaturePageProps> = ({
   data: {
@@ -52,7 +44,6 @@ const index: FC<FeaturePageProps> = ({
     LastUpdated,
     CTAButtonLabel,
     CTAButtonLink,
-    openSaucedLogo,
     AllAssets,
   } = pressData
 
@@ -76,9 +67,7 @@ const index: FC<FeaturePageProps> = ({
         }
       />
 
-      <OpenSaucedLogos
-        logos={(openSaucedLogo as unknown as LogosProps[]) || []}
-      />
+      <OpenSaucedLogos/>
     </PageLayout>
   )
 }
