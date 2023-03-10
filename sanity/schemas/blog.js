@@ -113,7 +113,7 @@ export default {
         name: 'blogContent',
         description: "Markdown content for the blog",
         validation: Rule => Rule.required(),
-      },
+      }
     ],
   }
   
