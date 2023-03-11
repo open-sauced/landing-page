@@ -20,7 +20,7 @@ const data = [
     label: 'Github',
   },
   {
-    url: 'https://instagram.com/opensauced?igshid=ZmVmZTY5ZGE=',
+    url: 'https://instagram.com/opensauced',
     icon: InstagramLogoW,
     label: 'Instagram',
   },
