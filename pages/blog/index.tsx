@@ -10,6 +10,7 @@ import {
   SanityNavigation,
   SanitySeo,
 } from '../../types/schema'
+import generateRssFeed from '../../utils/generateRssFeed'
 
 interface BlogsPageProps {
   data: {
@@ -52,6 +53,7 @@ export async function getStaticProps() {
     getFeaturedBlogs(),
     getAllBlogs(),
   ])
+  await generateRssFeed();
 
   const data = { commonData, featuredBlogs, blogs }
 
