@@ -24,7 +24,7 @@ node_modules
 /sanity/dist/
 
 # rss
-/public/rss/blog/*
+/public/rss/blog/*.xml
 
 # debug
 npm-debug.log*
