@@ -3,7 +3,7 @@ import RSS from 'rss';
 import fs from 'fs';
 
 export default async function generateRssFeed() {
- const site_url = 'http://localhost:3000/rss/logo.png';
+ const site_url = 'https://opensauced.pizza';
  const blogs = await getAllBlogs();
  
  const feedOptions = {
