@@ -23,8 +23,6 @@ node_modules
 # sanity
 /sanity/dist/
 
-# rss
-/public/rss/blog/*.xml
 
 # debug
 npm-debug.log*
