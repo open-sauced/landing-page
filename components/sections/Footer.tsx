@@ -87,7 +87,7 @@ const Footer: FC<FooterProps> = ({ pressPage }) => {
                   +1 (123) 456-7890
                 </LocalTypography> */}
                 <LocalTypography variant="item1">
-                  hello@opensauced.pizza
+                  <a href="mailto:hello@opensauced.pizza">hello@opensauced.pizza</a>
                 </LocalTypography>
               </div>
             </div>
