@@ -5,6 +5,7 @@ interface TypographyProps {
   variant?:
     | 'preHeading'
     | 'subheading'
+    | 'subheading2'
     | 'title1'
     | 'title2'
     | 'title3'
@@ -28,6 +29,8 @@ const Typography: FC<TypographyProps> = ({
   const preHeadingStyle = `font-bold text-xs tracking-[0.2em] opacity-70 uppercase mb-4`
   const subheadingStyle =
     'font-normal opacity-70 text-base largeTablet:text-2xl'
+  const subheadingStyle2 =
+    'font-normal opacity-70 text-xl largeTablet:text-2xl'
   const title1Style = 'font-bold text-3xl largeTablet:text-4xl'
   const title2Style =
     'font-bold tracking-[-0.03em] text-lg largeTablet:text-xl '

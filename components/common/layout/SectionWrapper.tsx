@@ -4,6 +4,7 @@ import useMediaQuery from '../../hooks/useMediaQuery'
 interface SectionWrapperProps {
   justify?: 'center' | 'between'
   direction?: 'col' | 'row'
+  items?: 'center' | 'start'
   pt?: number
   pb?: number
   pts?: number
@@ -13,6 +14,7 @@ interface SectionWrapperProps {
 const SectionWrapper: FC<SectionWrapperProps> = ({
   justify = 'center',
   direction = 'col',
+  items = 'center',
   pt = 0,
   pb = 0,
   pts = 0,
@@ -26,7 +28,7 @@ const SectionWrapper: FC<SectionWrapperProps> = ({
         paddingBottom: isLargeTablet ? `${pb}px` : `${pbs}px`,
         paddingTop: isLargeTablet ? `${pt}px` : `${pts}px`,
       }}
-      className={`w-full max-w-[1256px] mx-auto px-6 flex justify-${justify} flex-${direction} items-center`}
+      className={`w-full max-w-[1256px] mx-auto px-6 flex justify-${justify} flex-${direction} items-${items}`}
     >
       {children}
     </div>

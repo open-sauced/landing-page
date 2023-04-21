@@ -5,6 +5,7 @@ import Header from '../../sections/navigation/Header'
 import Footer from '../../sections/Footer'
 import Subscribe from '../../sections/Subscribe'
 import OgData from '../OgData'
+import JourneyLine from '../../sections/home-page/JourneyLine'
 
 interface PageLayoutProps {
   seoData: SanitySeo

@@ -1,9 +1,9 @@
 import React from 'react'
 import { SanityHomePage } from '../../../types/schema'
-import Image from 'next/image'
 import SectionWrapper from '../../common/layout/SectionWrapper'
 import { Button } from '../../common'
 import { Heading, Typography } from '../../common/text'
+import JourneyLine from './JourneyLine'
 
 interface HeroProps {
   data: SanityHomePage['hero']
@@ -12,19 +12,24 @@ interface HeroProps {
 const Hero = ({ data }: HeroProps) => {
   return (
     <SectionWrapper direction="row" pt={115} pts={60} pb={120} pbs={0}>
-      <main className="flex flex-col largeTablet:flex-row ">
+
+      <main className="flex relative flex-col largeTablet:flex-row pl-14">
+        <JourneyLine journeyIndex={0} left={-20} top={-14} />
+
         <div className="flex flex-col items-start flex-1">
           <Typography variant="preHeading" alignLarge="left">
-            {data?.title}
+            YOU GOT THIS 
           </Typography>
 
-          <div className="largeTablet:max-w-lg">
-            <Heading alignLarge="left">{data?.heading}</Heading>
+          <div className="largeTablet:max-w-2xl">
+            <Heading alignLarge="left">
+              Your next open source journey $orange-to-yellowstarts here$orange-to-yellow
+            </Heading>
           </div>
 
-          <div className="mt-8 mb-10 tablet:mt-4 ">
+          <div className="mt-8 mb-10 tablet:mt-4 largeTablet:max-w-xl">
             <p className="text-xl text-textPrimary opacity-70 largeTablet:leading-8">
-              {data?.description}
+              Start the path to your next contribution and join the global community of open source developers making an impact around the world.
             </p>
           </div>
           <div className="flex gap-4 items-center flex-col largeTablet:flex-row">
@@ -35,9 +40,9 @@ const Hero = ({ data }: HeroProps) => {
             ))}
           </div>
         </div>
-        <div className="flex mt-16 justify-center items-center flex-1 largeTablet:justify-end largeTablet:mt-0">
-          <div className="w-full h-full relative pointer-events-none max-w-[463px] largeTablet:max-h-[299px]">
-            <img alt="OpenSauced hero image" src={data?.image as unknown as string} />
+        <div className="flex mt-10 justify-center items-center largeTablet:justify-end largeTablet:mt-0">
+          <div className="w-full h-full relative scale-125 pointer-events-none max-w-[500px]">
+            <img alt="OpenSauced hero image" src="/static-temp/insightsDashboard.svg" />
           </div>
         </div>
       </main>
