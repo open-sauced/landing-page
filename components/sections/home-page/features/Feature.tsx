@@ -2,19 +2,26 @@ import React, { FC } from 'react'
 import { Heading, Typography } from '../../../common/text'
 import { FeatureProps } from './Features'
 import JourneyLine from '../JourneyLine'
+import FeatureImage from './FeatureImage'
 
 interface Props {
-  feature: FeatureProps
   index: number
+  feature: FeatureProps
+  coverStyle: {
+    top: number
+    left: number
+    scale: number
+  }
 }
 
 const Feature: FC<Props> = ({
-  feature: { title, description, image,  },
   index,
+  feature: { title, description, cover },
+  coverStyle: { top, left, scale }
 }) => {
   return (
     <div
-    className={`w-full relative flex items-center px-12 mb-[120px] largeTablet:mb-[250px]`}
+    className={`w-full relative flex flex-col px-12 mb-[120px] largeTablet:mb-[250px]`}
     >
       <JourneyLine journeyIndex={index+1} left={-28} top={-7} />
       <div>
@@ -30,8 +37,15 @@ const Feature: FC<Props> = ({
           </Typography>
         </div>
       </div>
-      <div>
-        img
+      <div className="relative">
+        <FeatureImage
+          top={top}
+          left={left}
+          scale={scale}
+          src={cover}
+          alt={title}
+        />
+        {/* <img className="relative left-10" src="/hotRepos.svg" alt="Feature cover" /> */}
       </div>
     </div>
   )
