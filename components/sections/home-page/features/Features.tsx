@@ -17,12 +17,12 @@ const featureData = [
     _key: '1',
     title: 'Find $orange-to-yellowhot repositories$orange-to-yellow to contribute to today',
     description: 'Discovering projects is more than stars. Focus on PRs. Discover active projects and get recommendations based on the developers you follow.',
-    cover: '/hotRepos.png'
+    cover: '/hotRepos.svg'
   },
   {
     _key: '2',
     title: '$orange-to-yellowShareable highlights$orange-to-yellow  you can promote',
-    description: 'Generate shareable insights using our unique and customizable widgets. Sometimes it&apos;s  better to show than tell.',
+    description: "Generate shareable insights using our unique and customizable widgets. Sometimes it's better to show than tell.",
     cover: '/prHighlights.svg'
   },
   {
@@ -33,22 +33,10 @@ const featureData = [
   },
 ]
 
-const CoverStyle = [
-  {
-    top: 20,
-    left: 0,
-    scale: 1.293
-  },
-  {
-    top: -180,
-    left: 350,
-    scale: 1
-  },
-  {
-    top: 30,
-    left: 270,
-    scale: 1
-  }
+const classNames = [
+  "top-2 largeTablet:top-[120px] largeTablet:scale-[1.2]",
+  "top-2 left-0 largeTablet:top-[-180px] largeTablet:left-[21rem]",
+  "top-2 left-0 largeTablet:top-[50px] largeTablet:left-[13rem]",
 ]
 
 const Features: FC<Props> = ({ data }) => {
@@ -60,7 +48,7 @@ const Features: FC<Props> = ({ data }) => {
             key={feature._key}
             feature={feature as unknown as FeatureProps}
             index={i}
-            coverStyle={CoverStyle[i]}
+            className={classNames[i]}
           />
         ))}
       </SectionWrapper>

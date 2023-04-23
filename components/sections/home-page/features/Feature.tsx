@@ -7,23 +7,19 @@ import FeatureImage from './FeatureImage'
 interface Props {
   index: number
   feature: FeatureProps
-  coverStyle: {
-    top: number
-    left: number
-    scale: number
-  }
+  className?: string
 }
 
 const Feature: FC<Props> = ({
   index,
   feature: { title, description, cover },
-  coverStyle: { top, left, scale }
+  className
 }) => {
   return (
     <div
     className={`w-full relative flex flex-col px-12 mb-[120px] largeTablet:mb-[250px]`}
     >
-      <JourneyLine journeyIndex={index+1} left={-28} top={-7} />
+      <JourneyLine journeyIndex={index+1} className="left-[-28px] top-[-7px]"/>
       <div>
         <div className="largeTablet:max-w-[500px]">
           <Heading component="h2" alignLarge="left">
@@ -37,15 +33,12 @@ const Feature: FC<Props> = ({
           </Typography>
         </div>
       </div>
-      <div className="relative">
+      <div className="relative h-fit largeTablet:max-h-[470px]">
         <FeatureImage
-          top={top}
-          left={left}
-          scale={scale}
+          className={className}
           src={cover}
           alt={title}
         />
-        {/* <img className="relative left-10" src="/hotRepos.svg" alt="Feature cover" /> */}
       </div>
     </div>
   )

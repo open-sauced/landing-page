@@ -1,33 +1,20 @@
 import React, { FC } from 'react'
 
 interface FeatureImageProps {
-  top: number
-  left: number
-  scale: number
   src: string
   alt: string
+  className?: string
 }
 
 const FeatureImage: FC<FeatureImageProps> = (
   {
-    top,
-    left,
-    scale,
     src,
     alt,
+    className = ""
   }
 ) => {
-  
-  const style = {
-    zIndex: 50,
-    position: "relative",
-    left: `${left}px`,
-    top: `${top}px`,
-    transform: `scale(${scale})`,
-  }
-
   return (
-    <img src={src} alt={alt} />
+    <img className={`${className} z-50 relative`} src={src} alt={alt} />
   )
 }
 

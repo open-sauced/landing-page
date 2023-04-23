@@ -58,6 +58,8 @@ const Typography: FC<TypographyProps> = ({
       ? preHeadingStyle
       : variant === 'subheading'
       ? subheadingStyle
+      : variant === 'subheading2'
+      ? subheadingStyle2
       : ''
   return (
     <p

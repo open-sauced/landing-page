@@ -10,22 +10,16 @@ const journeyLine = [
 
 interface JourneyLineProps {
   journeyIndex: 0 | 1 | 2 | 3 | 4 | number
-  top: number
-  left: number
+  className?: string
 }
 
 const JourneyLine :FC<JourneyLineProps> = ({
-  top,
-  left,
   journeyIndex,
+  className
 }) => {
   return (
-    <div style={{
-      position: "absolute",
-      left: `${left}px`,
-      top: `${top}px`,
-    }}>
-      <img src={journeyLine[journeyIndex]} alt="Journey line" />
+    <div>
+      <img className={`${className} absolute`} src={journeyLine[journeyIndex]} alt="Journey line" />
     </div>
   )
 }
