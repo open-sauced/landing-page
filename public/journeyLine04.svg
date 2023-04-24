@@ -1,6 +1,6 @@
-<svg width="56" height="769" viewBox="0 0 56 769" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="56" height="856" viewBox="0 0 56 856" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_d_9_5465)">
-<line x1="28.5" y1="28" x2="28.5" y2="765" stroke="#F87216"/>
+<line x1="28.5" y1="28" x2="28.5" y2="852" stroke="#F87216"/>
 </g>
 <g filter="url(#filter1_d_9_5465)">
 <circle cx="28" cy="28" r="16" fill="url(#paint0_linear_9_5465)"/>
@@ -14,7 +14,7 @@
 <path d="M34.7504 28.3746C34.75 26.9084 34.2283 25.4859 33.2711 24.3412C32.3138 23.1964 30.978 22.3976 29.4834 22.0759" stroke="#FFF9ED" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 <defs>
-<filter id="filter0_d_9_5465" x="24" y="24" width="9" height="745" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_d_9_5465" x="24" y="24" width="9" height="832" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset/>

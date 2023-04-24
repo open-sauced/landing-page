@@ -20,12 +20,12 @@ const Features: FC<FeatureProps> = ({
       <Heading>
         {`$red-to-orange${getPartialString(premiumIntro?.heading as unknown as string, 0.3)}$red-to-orange ${getPartialStringFromEnd(premiumIntro?.heading as unknown as string, 0.7)}`}
       </Heading>
-      <div className="pt-4 pb-10  largeTablet:w-2/3 largeTablet:pt-10 largeTablet:pb-24 ">
+      <div className="pt-4 pb-10 largeTablet:w-2/3 largeTablet:pt-10 largeTablet:pb-24 ">
         <Typography variant="subheading">
           {premiumIntro?.subheading}
         </Typography>
       </div>
-      <div className="w-full grid grid-cols-2  gap-y-16 gap-x-9 largeTablet:grid-cols-3 largeTablet:gap-y-[88px]">
+      <div className="w-full grid grid-cols-2 overflow-y-hidden  gap-y-16 gap-x-9 largeTablet:grid-cols-3 largeTablet:gap-y-[88px]">
         {premiumFeatures.map((item, i) => (
           <FeatureCard data={item as unknown as any} key={i} />
         ))}

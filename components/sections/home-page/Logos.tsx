@@ -9,7 +9,7 @@ interface LogosProps {
 
 const Logos = ({ data }: LogosProps) => {
   return (
-    <SectionWrapper items='start' direction="col" pb={150} pbs={150}>
+    <SectionWrapper items='start' direction="col" pb={150} pbs={100}>
       <div className="mt-20 mb-4 pl-14 largeTablet:my-0 mx-auto largeTablet:mx-0">
         <Typography variant="preHeading" alignLarge="left">
           TRUSTED BY 

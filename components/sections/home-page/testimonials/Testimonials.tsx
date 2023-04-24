@@ -37,6 +37,14 @@ const Testimonials: FC<TestimonialsProps> = ({ data }) => {
   }
   return (
     <SectionWrapper pb={215}>
+      <div className="flex w-full mb-14">
+        <div className="relative flex-1 border-t-[1.5px] border-r-[1.5px] h-40 border-orange-500">
+          <img className="absolute top-[-28px] right-[-28px] " src="/quote-icon.svg" alt="Quote" />
+        </div>
+        <div className=" flex-1">
+        </div>
+      </div>
+      
       <Typography variant="preHeading" alignSmall="center">
         {data?.title || ''}
       </Typography>

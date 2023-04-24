@@ -41,8 +41,8 @@ const classNames = [
 
 const Features: FC<Props> = ({ data }) => {
   return (
-    <div id="features">
-      <SectionWrapper>
+    <div className="overflow-hidden" id="features">
+      <SectionWrapper pbs={0}>
         {featureData?.map((feature, i) => (
           <Feature
             key={feature._key}

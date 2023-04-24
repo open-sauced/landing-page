@@ -13,7 +13,7 @@ const Hero = ({ data }: HeroProps) => {
   return (
     <SectionWrapper direction="row" pt={115} pts={60} pb={120} pbs={0}>
 
-      <main className="flex relative flex-col largeTablet:flex-row pl-14">
+      <main className="flex relative flex-col largeTablet:flex-row px-8 largeTablet:px-14">
         <JourneyLine journeyIndex={0} className="left-[-20px] top-[-14px]"/>
 
         <div className="flex flex-col items-start flex-1">
