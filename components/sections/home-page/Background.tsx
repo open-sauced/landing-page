@@ -29,23 +29,6 @@ const Background: FC = ({ children }) => {
       <div className="absolute hidden largeTablet:block largeTablet:top-[195rem] largeTablet:-right-[22rem] laptop:-right-[19rem] desktop:-right-[0rem]">
         <Image alt="Doodles" src={rightSidePizzaStroke2} />
       </div>
-
-      {/* <div className="absolute top-[107rem] -left-[25rem] largeTablet:top-[192rem]  largeTablet:-left-[18rem] laptop:-left-[15rem] desktop:-left-[13rem]">
-        <Image alt="Doodles" src={_5_leftStroke} />
-      </div>
-
-      <div className="absolute hidden largeTablet:block largeTablet:top-[192rem] largeTablet:-right-[29rem] ">
-        <Image alt="Doodles" src={_5_rightStroke} />
-      </div> */}
-
-      {/* <div className="absolute hidden largeTablet:block largeTablet:top-[402rem]  largeTablet:-left-[18rem] laptop:-left-[15rem] desktop:-left-[13rem]">
-        <Image alt="Doodles" src={_5_leftStroke} />
-      </div> */}
-
-      {/* <div className="absolute hidden largeTablet:block largeTablet:top-[402rem] largeTablet:-right-[29rem] ">
-        <Image alt="Doodles" src={_5_rightStroke} />
-      </div> */}
-
       <div className="relative">{children}</div>
     </div>
   )
