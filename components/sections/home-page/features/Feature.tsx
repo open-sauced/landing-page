@@ -34,7 +34,7 @@ const Feature: FC<Props> = ({
           </Typography>
         </div>
       </div>
-      <div className="relative h-fit max-h-[400px] largeTablet:max-h-[470px]">
+      <div className="relative h-fit max-h-[700px] largeTablet:max-h-[470px]">
         <FeatureImage
           className={className}
           src={cover}
