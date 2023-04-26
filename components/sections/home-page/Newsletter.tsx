@@ -12,24 +12,22 @@ import StrokeMobile3 from '../../../public/background-strokes/stroke_mobile_3.sv
 const Newsletter = () => {
   return (
     <SectionWrapper pt={100} pb={250}>
-        <div className="relative w-screen">
-          <div className="absolute largeTablet:block top-[-14rem] largeTablet:-top-[10rem] left-[-30rem] largeTablet:left-[-15rem]">
-            <Image alt="Doodles" src={StrokeL3} />
-          </div>
+      <div className="absolute largeTablet:block top-[-14rem] largeTablet:-top-[10rem] left-[-30rem] largeTablet:left-[-15rem]">
+        <Image alt="Doodles" src={StrokeL3} />
+      </div>
 
-          <div className="absolute largeTablet:block top-[-14rem] largeTablet:-top-[22rem] right-[-34rem] largeTablet:-right-[32rem]">
-            <Image alt="Doodles" src={StrokeR3} />
-          </div>
+      <div className="absolute largeTablet:block top-[-14rem] largeTablet:-top-[22rem] right-[-34rem] largeTablet:-right-[32rem]">
+        <Image alt="Doodles" src={StrokeR3} />
+      </div>
 
-          <div className="absolute bottom-[51rem] right-0  largeTablet:hidden">
-            <Image alt="Doodles" src={StrokeMobile2} />
-          </div>
+      <div className="absolute bottom-[51rem] right-0  largeTablet:hidden">
+        <Image alt="Doodles" src={StrokeMobile2} />
+      </div>
 
-          <div className="absolute bottom-[32rem] left-0  largeTablet:hidden">
-            <Image alt="Doodles" src={StrokeMobile3} />
-          </div>
-        <div className="flex flex-col items-center gap-y-8">
-          
+      <div className="absolute bottom-[32rem] left-0  largeTablet:hidden">
+        <Image alt="Doodles" src={StrokeMobile3} />
+      </div>
+      <div className="flex flex-col items-center gap-y-8">
         <Heading alignSmall="center">
           $orange-to-yellowThe fast track$orange-to-yellow to open source
         </Heading>
@@ -38,24 +36,35 @@ const Newsletter = () => {
           Stay up to date with the latest OpenSauced news and trends.
         </Typography>
 
-        <form className="flex relative box-border px-4  w-full flex-col gap-x-8 gap-y-6 largeTablet:flex-row justify-center">
-          <GradientBorderWrapper>
-            <input placeholder="Your name" className="w-full largeTablet:w-[190px] rounded-md outline-none focus:outline-none h-[38px] text-[#FEEADD] px-4 py-3 text-sm font-medium bg-[#211E1C]" type="text"/>
-          </GradientBorderWrapper>
-
-          <GradientBorderWrapper>
-            <div className="flex bg-[#211E1C] rounded-md overflow-hidden">
-              <input placeholder="Your email" className="flex-1 largeTablet:w-[394px] bg-transparent outline-none focus:outline-none h-[38px] text-[#FEEADD] px-4 py-3 text-sm font-medium" type="text"/>
-              <button
-                className=" text-brandOrange font-medium w-20 text-sm cursor-pointer"
-                type="submit"
-              >
-                Sign Up
-              </button>
+        <GradientBorderWrapper>
+          <form
+            className="relative box-border px-4 flex items-center w-[280px] h-[38px] text-[#FEEADD] pr-4 py-3 text-sm font-medium bg-[#211E1C] rounded-md largeTablet:w-[394px]"
+            name="newsletter"
+            action="?success=true"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            autoComplete="off"
+          >
+            <div hidden aria-hidden="true">
+              <label>
+                Try your luck
+                <input type="hidden" value="bot-field" name="newsletter" />
+              </label>
             </div>
-          </GradientBorderWrapper>
-        </form>
-      </div>
+            <input
+              placeholder="Email"
+              name="email"
+              type="email"
+              className="pr-4 outline-none focus:outline-none bg-[#211E1C] w-[180px] largeTablet:w-[290px]"
+            ></input>
+            <button
+              className=" text-brandOrange text-sm cursor-pointer"
+              type="submit"
+            >
+              Subscribe
+            </button>
+          </form>
+        </GradientBorderWrapper>
       </div>
     </SectionWrapper>
   )
