@@ -4,6 +4,7 @@ import SectionWrapper from '../../common/layout/SectionWrapper'
 import { Button } from '../../common'
 import { Heading, Typography } from '../../common/text'
 import JourneyLine from './JourneyLine'
+import Link from 'next/link'
 
 interface HeroProps {
   data: SanityHomePage['hero']
@@ -38,9 +39,11 @@ const Hero = ({ data }: HeroProps) => {
               </Button>
             ))}
           </div>
-          <a className="text-sm text-wh pt-7" href="#">
-            Working with a team? Click here 
-          </a>
+          <Link href="/teams">
+            <a className="text-sm text-wh pt-7" href="#">
+              Working with a team? Click here 
+            </a>
+          </Link>
         </div>
         <div className="flex mx-2 mt-10 justify-center items-center largeTablet:justify-end largeTablet:mt-0">
           <div className="w-full h-full relative largeTablet:left-10 scale-125 pointer-events-none max-w-[500px]">
