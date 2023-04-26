@@ -5,6 +5,7 @@ import { Button } from '../../common'
 import { Heading, Typography } from '../../common/text'
 import JourneyLine from './JourneyLine'
 import Link from 'next/link'
+import DecoratedText from '../../common/text/utils/DecoratedText'
 
 interface HeroProps {
   data: SanityHomePage['hero']
@@ -39,11 +40,14 @@ const Hero = ({ data }: HeroProps) => {
               </Button>
             ))}
           </div>
-          <Link href="/teams">
-            <a className="text-sm text-wh pt-7" href="#">
-              Working with a team? Click here 
-            </a>
-          </Link>
+          
+          <div className="text-sm font-medium text-textPrimary opacity-70 mt-7">
+            <Link href="/enterprise">
+              <a>
+                Working with a team? <span className="font-bold cursor-pointer"><DecoratedText content="$orange-to-yellowClick here" /> </span>
+              </a>
+            </Link>
+          </div>
         </div>
         <div className="flex mx-2 mt-10 justify-center items-center largeTablet:justify-end largeTablet:mt-0">
           <div className="w-full h-full relative largeTablet:left-10 scale-125 pointer-events-none max-w-[500px]">

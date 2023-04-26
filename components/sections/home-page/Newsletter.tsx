@@ -53,7 +53,7 @@ const Newsletter = () => {
             </div>
             <input
               placeholder="Email"
-              name="email"
+              name="Your email"
               type="email"
               className="pr-4 outline-none focus:outline-none bg-[#211E1C] w-[180px] largeTablet:w-[290px]"
             ></input>
