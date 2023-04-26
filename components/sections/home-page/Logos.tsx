@@ -15,7 +15,7 @@ const Logos = ({ data }: LogosProps) => {
           TRUSTED BY 
         </Typography>
       </div>
-      <div className="w-full pl-14 max-w-[900px] grid grid-cols-3 gap-x-6 largeTablet:gap-x-16 gap-y-8 largeTablet:mt-4 largeTablet:grid-cols-6">
+      <div className="w-full pl-8 largeTablet:pl-14 max-w-[900px] grid grid-cols-3 gap-x-6 largeTablet:gap-x-16 gap-y-8 largeTablet:mt-4 largeTablet:grid-cols-6">
         {data?.map((item) => {
           const href = item.website || ''
           const src = item.logo || ''

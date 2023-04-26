@@ -34,7 +34,7 @@ const featureData = [
 ]
 
 const classNames = [
-  "top-2 largeTablet:top-[120px] mx-0 largeTablet:scale-[1.2]",
+  "top-2 largeTablet:top-[120px] mx-0 scale-[1.3] tablet:scale-[1.14] largeTablet:scale-[1.2]",
   "top-2 left-0 largeTablet:top-[-180px] largeTablet:left-[21rem]",
   "top-2 left-0 largeTablet:top-[50px] largeTablet:left-[13rem]",
 ]

@@ -12,9 +12,8 @@ interface HeroProps {
 const Hero = ({ data }: HeroProps) => {
   return (
     <SectionWrapper direction="row" pt={115} pts={60} pb={120} pbs={0}>
-
-      <main className="flex relative items-center flex-col largeTablet:flex-row px-8 largeTablet:px-8">
-        <JourneyLine journeyIndex={0} className="left-[-20px] top-[-14px]"/>
+      <main className="flex flex-1 relative items-center flex-col largeTablet:flex-row px-8 largeTablet:px-8">
+        <JourneyLine journeyIndex={0} className="left-[-20px] top-[-10px]"/>
 
         <div className="flex flex-col items-start flex-1">
           <Typography variant="preHeading" alignLarge="left">
@@ -39,10 +38,13 @@ const Hero = ({ data }: HeroProps) => {
               </Button>
             ))}
           </div>
+          <a className="text-sm text-wh pt-7" href="#">
+            Working with a team? Click here 
+          </a>
         </div>
         <div className="flex mx-2 mt-10 justify-center items-center largeTablet:justify-end largeTablet:mt-0">
           <div className="w-full h-full relative largeTablet:left-10 scale-125 pointer-events-none max-w-[500px]">
-            <img alt="OpenSauced hero image" src="/insightsDashboard.svg" />
+            <img alt="OpenSauced hero image" loading="eager" src="/insightsDashboard.svg"/>
           </div>
         </div>
       </main>
