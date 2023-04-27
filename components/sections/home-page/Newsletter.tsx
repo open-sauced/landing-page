@@ -12,20 +12,19 @@ import StrokeMobile3 from '../../../public/background-strokes/stroke_mobile_3.sv
 const Newsletter = () => {
   return (
     <SectionWrapper pt={100} pb={250}>
-      <div className="absolute largeTablet:block top-[-14rem] largeTablet:-top-[10rem] left-[-30rem] largeTablet:left-[-15rem]">
-        <Image alt="Doodles" src={StrokeL3} />
-      </div>
-
-      <div className="absolute largeTablet:block top-[-14rem] largeTablet:-top-[22rem] right-[-34rem] largeTablet:-right-[32rem]">
-        <Image alt="Doodles" src={StrokeR3} />
-      </div>
-
-      <div className="absolute bottom-[51rem] right-0  largeTablet:hidden">
-        <Image alt="Doodles" src={StrokeMobile2} />
-      </div>
-
-      <div className="absolute bottom-[32rem] left-0  largeTablet:hidden">
-        <Image alt="Doodles" src={StrokeMobile3} />
+      <div className="relative w-screen">
+        <div className="absolute largeTablet:block top-[-14rem] largeTablet:-top-[10rem] left-[-30rem] largeTablet:left-[-15rem]">
+          <Image alt="Doodles" src={StrokeL3} />
+        </div>
+        <div className="absolute largeTablet:block top-[-14rem] largeTablet:-top-[22rem] right-[-34rem] largeTablet:-right-[32rem]">
+          <Image alt="Doodles" src={StrokeR3} />
+        </div>
+        <div className="absolute bottom-[51rem] right-0  largeTablet:hidden">
+          <Image alt="Doodles" src={StrokeMobile2} />
+        </div>
+        <div className="absolute bottom-[32rem] left-0  largeTablet:hidden">
+          <Image alt="Doodles" src={StrokeMobile3} />
+        </div>
       </div>
       <div className="flex flex-col items-center gap-y-8">
         <Heading alignSmall="center">

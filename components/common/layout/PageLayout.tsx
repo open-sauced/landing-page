@@ -3,7 +3,6 @@ import React, { FC, ReactElement } from 'react'
 import { SanityNavigation, SanitySeo } from '../../../types/schema'
 import Header from '../../sections/navigation/Header'
 import Footer from '../../sections/Footer'
-import Subscribe from '../../sections/Subscribe'
 import OgData from '../OgData'
 
 interface PageLayoutProps {
