@@ -44,7 +44,7 @@ const Hero = ({ data }: HeroProps) => {
           <div className="text-sm font-medium text-textPrimary opacity-70 mt-7">
             <Link href="/enterprise">
               <a>
-                Working with a team? <span className="font-bold cursor-pointer"><DecoratedText content="$orange-to-yellowClick here" /> </span>
+                Working with a team? <span className="cursor-pointer"><DecoratedText content="$orange-to-yellowClick here" /> </span>
               </a>
             </Link>
           </div>
