@@ -10,6 +10,7 @@ export interface FeatureProps {
   title : string
   description: string
   cover : string
+  coverSmall?: string
 }
 
 const featureData = [
@@ -17,13 +18,14 @@ const featureData = [
     _key: '1',
     title: 'Find $orange-to-yellowhot repositories$orange-to-yellow to contribute to today',
     description: 'Discovering projects is more than stars. Focus on PRs. Discover active projects and get recommendations based on the developers you follow.',
-    cover: '/hotRepos.svg'
+    cover: '/hotRepos.svg',
+    coverSmall: '/hotReposSmall.svg'
   },
   {
     _key: '2',
     title: '$orange-to-yellowShareable highlights$orange-to-yellow  you can promote',
     description: "Generate shareable insights using our unique and customizable widgets. Sometimes it's better to show than tell.",
-    cover: '/prHighlights.svg'
+    cover: '/prHighlights.svg',
   },
   {
     _key: '3',

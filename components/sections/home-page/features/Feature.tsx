@@ -12,7 +12,7 @@ interface Props {
 
 const Feature: FC<Props> = ({
   index,
-  feature: { title, description, cover },
+  feature: { title, description, cover, coverSmall },
   className
 }) => {
   return (
@@ -34,13 +34,23 @@ const Feature: FC<Props> = ({
           </Typography>
         </div>
       </div>
-      <div className="relative h-fit largeTablet:max-h-[470px]">
+      <div className={`relative h-fit largeTablet:max-h-[470px] ${index === 0 ? "hidden largeTablet:block" : ""}`}>
         <FeatureImage
           className={className}
           src={cover}
           alt={title}
-        />
+          />
       </div>
+      {
+        coverSmall &&
+        <div className="largeTablet:hidden relative flex justify-center scale-[1.25] py-10 right-5">
+          <FeatureImage
+          className={className}
+          src={coverSmall || ""}
+          alt={title}
+          />
+        </div>
+      }
     </div>
   )
 }
