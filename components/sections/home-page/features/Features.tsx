@@ -32,8 +32,8 @@ const featureData = [
 
 const className = [
   "-left-[22px] px-[100px] scale-[1.30] ",
-  "largeTablet:-top-[270px] px-5 largeTablet:-right-[90px] largeTablet:!absolute ",
-  "",
+  "largeTablet:-top-[270px] largeTablet:px-5 largeTablet:-right-[90px] largeTablet:!absolute ",
+  "largeTablet:-right-[100px] largeTablet:px-24 ",
 ]
 
 interface Props {
