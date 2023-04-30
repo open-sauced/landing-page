@@ -53,7 +53,6 @@ const Home: NextPage<HomePageProps> = ({
       <Hero data={homePageData.hero as unknown as SanityHomePage['hero']} />
       <Logos data={homePageData.hero?.users as unknown as SanityUser[] || []} />
       <Features data={homePageData.features as unknown as SanityHomePage['features']} />
-      <Insights data={homePageData.secondCtaSection as unknown as SanityHomePage['secondCtaSection']} />
       <Testimonials data={homePageData.testimonialsSection} />
       <Blogs data={homePageData.blogSection} blogs={displayBlogs.slice(0, 4)}  />
     </PageLayout>
