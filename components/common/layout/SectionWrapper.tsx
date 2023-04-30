@@ -8,6 +8,7 @@ interface SectionWrapperProps {
   pb?: number
   pts?: number
   pbs?: number
+  px?: number
 }
 
 const SectionWrapper: FC<SectionWrapperProps> = ({
@@ -17,6 +18,7 @@ const SectionWrapper: FC<SectionWrapperProps> = ({
   pb = 0,
   pts = 0,
   pbs = 120,
+  px = 6, 
   children,
 }): ReactElement => {
   const isLargeTablet = useMediaQuery()
@@ -26,7 +28,7 @@ const SectionWrapper: FC<SectionWrapperProps> = ({
         paddingBottom: isLargeTablet ? `${pb}px` : `${pbs}px`,
         paddingTop: isLargeTablet ? `${pt}px` : `${pts}px`,
       }}
-      className={`w-full max-w-[1256px] mx-auto px-6 flex justify-${justify} flex-${direction} items-center`}
+      className={`w-full max-w-[1256px] mx-auto px-${px} flex justify-${justify} flex-${direction} items-center`}
     >
       {children}
     </div>
