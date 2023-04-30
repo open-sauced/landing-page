@@ -9,7 +9,7 @@ import OgData from '../OgData'
 interface PageLayoutProps {
   seoData: SanitySeo
   navigationURLs: SanityNavigation[]
-  BackgorundWrapper: React.FC
+  BackgroundWrapper: React.FC
   pressPage?: boolean
   blogPage?: boolean
 }
@@ -18,7 +18,7 @@ const PageLayout: FC<PageLayoutProps> = ({
   children,
   seoData,
   navigationURLs,
-  BackgorundWrapper,
+  BackgroundWrapper,
   pressPage,
   blogPage = false
 }): ReactElement => {
@@ -32,12 +32,12 @@ const PageLayout: FC<PageLayoutProps> = ({
             ogUrl={seoData.url || 'https://opensauced.pizza'}
             />
         }
-      <BackgorundWrapper>
+      <BackgroundWrapper>
         {!pressPage && <Header navigationItems={navigationURLs} />}
         <div>{children}</div>
         {!pressPage && <Subscribe />}
         <Footer pressPage={pressPage} />
-      </BackgorundWrapper>
+      </BackgroundWrapper>
     </div>
   )
 }

@@ -48,7 +48,7 @@ const Home: NextPage<HomePageProps> = ({
     <PageLayout
       seoData={commonData.seoData}
       navigationURLs={commonData.navigationLinks}
-      BackgorundWrapper={Background}
+      BackgroundWrapper={Background}
     >
       <Hero data={homePageData.hero as unknown as SanityHomePage['hero']} />
       <Logos data={homePageData.hero?.users as unknown as SanityUser[] || []} />
