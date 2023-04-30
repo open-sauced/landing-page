@@ -30,6 +30,12 @@ const featureData = [
   },
 ]
 
+const className = [
+  "-left-[22px] px-[100px] scale-[1.30] ",
+  "largeTablet:-top-[270px] px-5 largeTablet:-right-[90px] largeTablet:!absolute ",
+  "",
+]
+
 interface Props {
   data: SanityHomePage['features']
 }
@@ -50,6 +56,7 @@ const Features: FC<Props> = ({ data }) => {
           key={feature._key}
           feature={feature as unknown as FeatureProps}
           index={i}
+          className={className[i]}
         />
       ))}
     </SectionWrapper>
