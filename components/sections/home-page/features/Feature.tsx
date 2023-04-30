@@ -1,5 +1,4 @@
 import React, { FC } from 'react'
-import { Heading, Typography } from '../../../common/text'
 import { FeatureProps } from './Features'
 
 interface Props {
