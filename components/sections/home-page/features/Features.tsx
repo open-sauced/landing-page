@@ -15,18 +15,16 @@ export interface FeatureProps {
 
 const Features: FC<Props> = ({ data }) => {
   return (
-    <div id="features" className="pt-[30px]">
-      <SectionWrapper pb={20} pbs={0}>
-        {data?.map((feature, i) => (
-          <Feature
-            key={feature._key}
-            feature={feature as unknown as FeatureProps}
-            img={feature.image as unknown as string}
-            index={i}
-          />
-        ))}
-      </SectionWrapper>
-    </div>
+    <SectionWrapper>
+      {data?.map((feature, i) => (
+        <Feature
+          key={feature._key}
+          feature={feature as unknown as FeatureProps}
+          img={feature.image as unknown as string}
+          index={i}
+        />
+      ))}
+    </SectionWrapper>
   )
 }
 
