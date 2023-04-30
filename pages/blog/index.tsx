@@ -37,7 +37,7 @@ const BlogsPage: NextPage<BlogsPageProps> = ({
     <PageLayout
       seoData={seoData}
       navigationURLs={navigationLinks}
-      BackgorundWrapper={Background}
+      BackgroundWrapper={Background}
     >
       <Blogs data={displayBlogs} />
     </PageLayout>

@@ -27,7 +27,7 @@ const PricingPage: NextPage<PricingPageProps> = ({
     <PageLayout
       seoData={seoData}
       navigationURLs={navigationLinks}
-      BackgorundWrapper={Background}
+      BackgroundWrapper={Background}
     >
       <Pricing introduction={pricingPageData.introduction} packageOption={pricingPageData.packageOptions} />
       <Features premiumIntro={pricingPageData.premiumFeatureIntro} premiumFeatures={pricingPageData.premiumFeatures as unknown as []} />

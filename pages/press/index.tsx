@@ -51,7 +51,7 @@ const index: FC<FeaturePageProps> = ({
     <PageLayout
       seoData={seoData}
       navigationURLs={navigationLinks}
-      BackgorundWrapper={PressBackground}
+      BackgroundWrapper={PressBackground}
       pressPage
     >
       <PressHeading
