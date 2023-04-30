@@ -10,7 +10,7 @@ interface LogosProps {
 
 const Logos = ({ data }: LogosProps) => {
   return (
-    <SectionWrapper>
+    <SectionWrapper pbs={0}>
       <ContainerWithLine>
         <div className="px-6 pt-32 pb-4 largeTablet:pt-10 ">
           <Typography alignLarge="left" alignSmall="center" variant="preHeading">
