@@ -13,7 +13,7 @@ interface HeroProps {
 
 const Hero = ({ data }: HeroProps) => {
   return (
-    <SectionWrapper pt={115} pts={60} >
+    <SectionWrapper pt={115} pts={60} pbs={0}>
       <ContainerWithLine>
         <main>
           <div className="flex largeTablet:items-center h-full flex-col gap-x-6 gap-y-10 largeTablet:flex-row mx-6">
