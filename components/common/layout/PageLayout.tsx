@@ -12,6 +12,7 @@ interface PageLayoutProps {
   BackgroundWrapper: React.FC
   pressPage?: boolean
   blogPage?: boolean
+  homePage?: boolean
 }
 
 const PageLayout: FC<PageLayoutProps> = ({
@@ -20,7 +21,8 @@ const PageLayout: FC<PageLayoutProps> = ({
   navigationURLs,
   BackgroundWrapper,
   pressPage,
-  blogPage = false
+  blogPage = false,
+  homePage = false,
 }): ReactElement => {
   return (
     <div>
@@ -35,7 +37,7 @@ const PageLayout: FC<PageLayoutProps> = ({
       <BackgroundWrapper>
         {!pressPage && <Header navigationItems={navigationURLs} />}
         <div>{children}</div>
-        {!pressPage && <Subscribe />}
+        {!pressPage && !homePage && <Subscribe />}
         <Footer pressPage={pressPage} />
       </BackgroundWrapper>
     </div>

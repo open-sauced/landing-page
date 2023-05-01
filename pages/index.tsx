@@ -15,12 +15,9 @@ import {
   SanitySeo,
   SanityUser,
 } from '../types/schema'
-import GitHubMock from '../components/sections/home-page/GitHubMock'
 import Background from '../components/sections/home-page/Background'
-import CTA from '../components/sections/home-page/CTA'
 import Features from '../components/sections/home-page/features/Features'
 import Testimonials from '../components/sections/home-page/testimonials/Testimonials'
-import Insights from '../components/sections/home-page/Insights'
 import Blogs from '../components/sections/home-page/blogs/Blogs'
 import PageLayout from '../components/common/layout/PageLayout'
 import Newsletter from '../components/sections/home-page/Newsletter'
@@ -50,6 +47,7 @@ const Home: NextPage<HomePageProps> = ({
       seoData={commonData.seoData}
       navigationURLs={commonData.navigationLinks}
       BackgroundWrapper={Background}
+      homePage
     >
       <Hero data={homePageData.hero as unknown as SanityHomePage['hero']} />
       <Logos data={homePageData.hero?.users as unknown as SanityUser[] || []} />
