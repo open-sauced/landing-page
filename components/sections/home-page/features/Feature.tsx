@@ -6,13 +6,18 @@ import ContainerWithLine from '../../../common/ContainerWithLine'
 interface Props {
   feature: FeatureProps
   index: number
-  className: string
+  className: {
+    lg: string
+    sm: string
+  }
 }
 
 const Feature: FC<Props> = ({
-  feature: { description, heading, image, title, icon },
+  feature: { description, heading, image, smallImage, title, icon },
   className
 }) => {
+  const hide = smallImage ? 'hidden' : ''
+
   return (
     <ContainerWithLine>
       <div className="pb-14 largeTablet:mb-32">
@@ -32,9 +37,15 @@ const Feature: FC<Props> = ({
             </div>
           </div>
 
-          <div className="relative flex justify-center largeTablet:min-h-[350px] ">
-            <img className={`relative ${className}`} src={image} alt="Fature"/>
+          <div className={`relative largeTablet:flex justify-center largeTablet:min-h-[350px] ${hide}`}>
+            <img className={`relative ${className.lg}`} src={image} alt="Feature"/>
           </div>
+
+          { smallImage && (
+          <div className="relative flex largeTablet:hidden justify-center largeTablet:min-h-[350px]">
+            <img className={`relative ${className.sm}`} src={smallImage} alt="Feature"/>
+          </div>)
+          }
         </div>
       </div>
     </ContainerWithLine>

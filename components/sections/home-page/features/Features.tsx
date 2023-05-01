@@ -11,7 +11,7 @@ const featureData = [
     description: 'Discovering projects is more than stars. Focus on PRs. Discover active projects and get recommendations based on the developers you follow.',
     icon: '/icons/find_icon.svg',
     image: '/features/hot_repo.svg',
-    smallImage: '/hotReposSmall.svg'
+    smallImage: '/features/hot_repo_sm.svg'
   },
   {
     _key: '2',
@@ -32,9 +32,18 @@ const featureData = [
 ]
 
 const className = [
-  "-left-[22px] px-[100px] scale-[1.30] ",
-  "largeTablet:-top-[270px] largeTablet:px-5 largeTablet:-right-[90px] largeTablet:!absolute ",
-  "largeTablet:-right-[100px] largeTablet:px-24 ",
+  {
+    lg:  "-left-[22px] px-[100px] scale-[1.30] ",
+    sm: "scale-[1.3] right-[10px] " 
+  },
+  {
+    lg:  "largeTablet:-top-[270px] largeTablet:px-5 largeTablet:-right-[90px] largeTablet:!absolute ",
+    sm: "" 
+  },
+  {
+    lg:  "largeTablet:-right-[100px] largeTablet:px-24 ",
+    sm: "" 
+  },
 ]
 
 interface Props {
@@ -45,6 +54,7 @@ export interface FeatureProps {
   description: string
   heading : string
   image : string
+  smallImage : string
   icon : string
   title : string
 }
