@@ -23,7 +23,7 @@ const Hero = ({ data }: HeroProps) => {
               </Typography>
 
               <div className="relative">
-                <img className="absolute -left-[68px] -top-[50px]" src="/icons/journey_ball.svg" alt="Starting point"/>
+                <img className="absolute -left-[49px] largeTablet:-left-[68px] -top-[50px]" src="/icons/journey_ball.svg" alt="Starting point"/>
 
                 <Heading component="h1" alignSmall="left" alignLarge="left">
                   Your next open source journey $orange-to-yellowstarts here$orange-to-yellow
@@ -60,7 +60,7 @@ const Hero = ({ data }: HeroProps) => {
             
             <div className="flex-1 ">
               <div className="">
-                <img className="relative scale-105 largeTablet:scale-110 -right-4" src="/hero.svg" alt="" />
+                <img loading="eager" className="relative scale-105 largeTablet:scale-110 -right-4" src="/hero.svg" alt="" />
               </div>
             </div>
           </div>

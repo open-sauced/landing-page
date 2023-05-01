@@ -24,7 +24,7 @@ const Feature: FC<Props> = ({
         <div className="flex gap-y-24 py-10 flex-col-reverse largeTablet:flex-col">
           <div className=" flex flex-col px-6 gap-y-8">
             <div className="relative largeTablet:max-w-[500px]">
-              <img className="absolute -left-[76px] -top-[8px] largeTablet:-top-[4px]" src={icon} alt="" />
+              <img className="absolute -left-[56px] largeTablet:-left-[77px] -top-[8px] largeTablet:-top-[4px]" src={icon} alt="" />
               <Heading component="h2" alignLarge="left">
                 {title}
               </Heading>
