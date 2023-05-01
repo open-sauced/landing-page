@@ -23,6 +23,7 @@ import Testimonials from '../components/sections/home-page/testimonials/Testimon
 import Insights from '../components/sections/home-page/Insights'
 import Blogs from '../components/sections/home-page/blogs/Blogs'
 import PageLayout from '../components/common/layout/PageLayout'
+import Newsletter from '../components/sections/home-page/Newsletter'
 
 interface HomePageProps {
   data: {
@@ -54,6 +55,7 @@ const Home: NextPage<HomePageProps> = ({
       <Logos data={homePageData.hero?.users as unknown as SanityUser[] || []} />
       <Features data={homePageData.features as unknown as SanityHomePage['features']} />
       <Testimonials data={homePageData.testimonialsSection} />
+      <Newsletter/>
       <Blogs data={homePageData.blogSection} blogs={displayBlogs.slice(0, 4)}  />
     </PageLayout>
   )
