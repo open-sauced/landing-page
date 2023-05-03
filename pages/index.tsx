@@ -15,14 +15,12 @@ import {
   SanitySeo,
   SanityUser,
 } from '../types/schema'
-import GitHubMock from '../components/sections/home-page/GitHubMock'
 import Background from '../components/sections/home-page/Background'
-import CTA from '../components/sections/home-page/CTA'
 import Features from '../components/sections/home-page/features/Features'
 import Testimonials from '../components/sections/home-page/testimonials/Testimonials'
-import Insights from '../components/sections/home-page/Insights'
 import Blogs from '../components/sections/home-page/blogs/Blogs'
 import PageLayout from '../components/common/layout/PageLayout'
+import Newsletter from '../components/sections/home-page/Newsletter'
 
 interface HomePageProps {
   data: {
@@ -48,18 +46,14 @@ const Home: NextPage<HomePageProps> = ({
     <PageLayout
       seoData={commonData.seoData}
       navigationURLs={commonData.navigationLinks}
-      BackgorundWrapper={Background}
+      BackgroundWrapper={Background}
+      homePage
     >
       <Hero data={homePageData.hero as unknown as SanityHomePage['hero']} />
       <Logos data={homePageData.hero?.users as unknown as SanityUser[] || []} />
-      <GitHubMock
-        moreHeading={homePageData.moreHeading || []}
-        topFeature={homePageData.topFeature}
-      />
-      <CTA data={homePageData.ctaSection} />
       <Features data={homePageData.features as unknown as SanityHomePage['features']} />
-      <Insights data={homePageData.secondCtaSection as unknown as SanityHomePage['secondCtaSection']} />
       <Testimonials data={homePageData.testimonialsSection} />
+      <Newsletter/>
       <Blogs data={homePageData.blogSection} blogs={displayBlogs.slice(0, 4)}  />
     </PageLayout>
   )

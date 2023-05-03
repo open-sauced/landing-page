@@ -1,9 +1,11 @@
 import React from 'react'
 import { SanityHomePage } from '../../../types/schema'
-import Image from 'next/image'
 import SectionWrapper from '../../common/layout/SectionWrapper'
-import { Button } from '../../common'
+import ContainerWithLine from '../../common/ContainerWithLine'
 import { Heading, Typography } from '../../common/text'
+import { Button } from '../../common'
+import DecoratedText from '../../common/text/utils/DecoratedText'
+import Link from 'next/link'
 
 interface HeroProps {
   data: SanityHomePage['hero']
@@ -11,37 +13,64 @@ interface HeroProps {
 
 const Hero = ({ data }: HeroProps) => {
   return (
-    <SectionWrapper direction="row" pt={115} pts={60} pb={120} pbs={0}>
-      <main className="flex flex-col largeTablet:flex-row ">
-        <div className="flex flex-col items-start flex-1">
-          <Typography variant="preHeading" alignLarge="left">
-            {data?.title}
-          </Typography>
+    <SectionWrapper pt={115} pts={60} pbs={0}>
+      <ContainerWithLine>
+        <main>
+          <div className="flex largeTablet:items-center h-full flex-col gap-x-6 gap-y-10 largeTablet:flex-row mx-6">
+            <div className="flex-1 ">
+              <Typography alignSmall="left" alignLarge="left" variant="preHeading">
+                YOU GOT THIS
+              </Typography>
 
-          <div className="largeTablet:max-w-lg">
-            <Heading alignLarge="left">{data?.heading}</Heading>
-          </div>
+              <div className="relative">
+                <img className="absolute -left-[49px] largeTablet:-left-[68px] -top-[50px]" src="/icons/journey_ball.svg" alt="Starting point"/>
 
-          <div className="mt-8 mb-10 tablet:mt-4 ">
-            <p className="text-xl text-textPrimary opacity-70 largeTablet:leading-8">
-              {data?.description}
-            </p>
+                <Heading component="h1" alignSmall="left" alignLarge="left">
+                  Your next open source journey $orange-to-yellowstarts here$orange-to-yellow
+                </Heading>
+              </div>
+              
+              <div className="py-10">
+                <Typography alignLarge="left" alignSmall="left" variant="body3">
+                  Start the path to your next contribution and join the global community of open source developers making an impact around the world.
+                </Typography>
+              </div>
+
+              <div className="flex gap-4 flex-col largeTablet:flex-row">
+              {data?.cta?.map((item, i) => (
+                <Button key={i} href={item.ctaLink} borderVariant={ i !== 0 ? "gray" : "neon" }>
+                  {item.ctaLabel}
+                </Button>
+              ))}
+              </div>
+              
+{/*  needs to be implemented
+
+              <div className="pt-6 pb-10">
+                <Typography alignLarge="left" alignSmall="left" variant="body3">
+                  Working with team?
+                  <span>
+                    <Link href="/teams">
+                      <a>
+                        <DecoratedText content="$orange-to-yellow Click here$orange-to-yellow"/>
+                      </a>
+                    </Link>
+                  </span> 
+                </Typography>
+              </div>
+                                            */} 
+
+            </div>
+
+            
+            <div className="flex-1 ">
+              <div className="">
+                <img loading="eager" className="relative scale-105 largeTablet:scale-110 -right-4" src="/hero.svg" alt="" />
+              </div>
+            </div>
           </div>
-          <div className="flex gap-4 items-center flex-col largeTablet:flex-row">
-            {data?.cta?.map((item, i) => (
-              <Button key={i} href={item.ctaLink} borderVariant={ i !== 0 ? "gray" : "neon" }>
-                {item.ctaLabel}
-              </Button>
-            ))}
-          </div>
-        </div>
-        <div className="flex mt-16 justify-center items-center flex-1 largeTablet:justify-end largeTablet:mt-0">
-          <div className="w-full h-full relative pointer-events-none max-w-[463px] largeTablet:max-h-[299px]">
-            <img alt="OpenSauced hero image" src={data?.image as unknown as string} />
-          </div>
-        </div>
-      </main>
-      {/* largeTablet:left-16 largeTablet:bottom-4 */}
+        </main>
+      </ContainerWithLine>
     </SectionWrapper>
   )
 }

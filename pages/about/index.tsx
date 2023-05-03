@@ -29,7 +29,7 @@ const AboutPage: NextPage<AboutPageProps> = ({
     <PageLayout
       seoData={seoData}
       navigationURLs={navigationLinks}
-      BackgorundWrapper={Background}
+      BackgroundWrapper={Background}
     >
       <About intro={aboutPageData.introduction} numeralHighlight={aboutPageData.numeralHighlight as unknown as any} />
       <FollowUs social={aboutPageData.socialLinks} />

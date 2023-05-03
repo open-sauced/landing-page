@@ -1,58 +1,55 @@
 import React, { FC } from 'react'
-import { Heading, Typography } from '../../../common/text'
 import { FeatureProps } from './Features'
+import { Heading, Typography } from '../../../common/text'
+import ContainerWithLine from '../../../common/ContainerWithLine'
 
 interface Props {
   feature: FeatureProps
-  img: string
   index: number
+  className: {
+    lg: string
+    sm: string
+  }
 }
 
 const Feature: FC<Props> = ({
-  feature: { description, heading, image, title },
-  img,
-  index,
+  feature: { description, heading, image, smallImage, title, icon },
+  className
 }) => {
-  const reverse = index % 2 === 1
-  const dropShadow =
-    index === 0 || index === 3 ? 'drop-shadow-[0_0_60px_#f8721666]' : ''
-  const flexDirection = !reverse
-    ? 'largeTablet:flex-row-reverse'
-    : 'largeTablet:flex-row'
-  return (
-    <div
-      className={`w-full flex flex-col items-center ${flexDirection} mb-[120px] largeTablet:mb-[250px] `}
-    >
-      <div
-        className={`w-full flex justify-center items-center mb-14 largeTablet:mt-0 ${dropShadow} largeTablet:w-1/2`}
-      >
-        <div className="w-full max-w-[550px]">
-          <img src={image as unknown as string} alt={`${title} image`} />
-        </div>
-      </div>
-      <div
-        className={`w-full ${reverse && 'largeTablet:pl-28'} ${
-          !reverse && 'largeTablet:pr-28'
-        } largeTablet:w-1/2`}
-      >
-        <Typography variant="preHeading" alignLarge="left">
-          {title}
-        </Typography>
-        <div className={`${index === 0 && 'largeTablet:max-w-[400px]'}`}>
-          <Heading component="h2" alignLarge="left">
-            {heading}
-          </Heading>
-        </div>
+  const hide = smallImage ? 'hidden' : ''
 
-        <div className="my-10 largeTablet:max-w-[500px]">
-          <Typography variant="subheading" alignLarge="left">
-            {description}
-          </Typography>
+  return (
+    <ContainerWithLine>
+      <div className="pb-14 largeTablet:mb-32">
+        <div className="flex gap-y-24 py-10 flex-col-reverse largeTablet:flex-col">
+          <div className=" flex flex-col px-6 gap-y-8">
+            <div className="relative largeTablet:max-w-[500px]">
+              <img className="absolute -left-[56px] largeTablet:-left-[77px] -top-[8px] largeTablet:-top-[4px]" src={icon} alt="" />
+              <Heading component="h2" alignLarge="left">
+                {title}
+              </Heading>
+            </div>
+
+            <div className="largeTablet:max-w-[500px]">
+              <Typography variant="subheading" alignLarge="left">
+                {description}
+              </Typography>
+            </div>
+          </div>
+
+          <div className={`relative largeTablet:flex justify-center largeTablet:min-h-[350px] ${hide}`}>
+            <img className={`relative ${className.lg}`} src={image} alt="Feature"/>
+          </div>
+
+          { smallImage && (
+          <div className="relative flex largeTablet:hidden justify-center largeTablet:min-h-[350px]">
+            <img className={`relative ${className.sm}`} src={smallImage} alt="Feature"/>
+          </div>)
+          }
         </div>
-        {/* {false && <Button href={href}>Learn more</Button>} */}
       </div>
-    </div>
+    </ContainerWithLine>
   )
 }
 
-export default Feature
+export default Feature 
