@@ -58,8 +58,9 @@ const Hero = ({ data }: HeroProps) => {
                   </span> 
                 </Typography>
               </div>
+                                            */} 
+
             </div>
-                              */} 
 
             
             <div className="flex-1 ">
