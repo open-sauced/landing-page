@@ -47,6 +47,7 @@ const Hero = ({ data }: HeroProps) => {
               <div className="pt-6 pb-10">
                 <Typography alignLarge="left" alignSmall="left" variant="body3">
                   Working with team?
+{/*  needs to be implemented
                   <span>
                     <Link href="/teams">
                       <a>
@@ -54,6 +55,7 @@ const Hero = ({ data }: HeroProps) => {
                       </a>
                     </Link>
                   </span> 
+                  */} 
                 </Typography>
               </div>
             </div>
