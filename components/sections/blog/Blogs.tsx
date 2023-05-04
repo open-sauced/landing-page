@@ -7,7 +7,6 @@ import Post from './components/Post'
 import FeaturedPost from './FeaturedPost'
 
 interface BlogsProps {
-  blogs: SanityBlog[]
   data: SanityBlog[]
 }
 
