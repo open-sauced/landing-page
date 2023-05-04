@@ -1,3 +1,4 @@
+
 import React, { FC, ReactElement } from 'react'
 import { SanityBlog } from '../../../types/schema'
 import SectionWrapper from '../../common/layout/SectionWrapper'

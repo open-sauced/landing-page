@@ -43,12 +43,10 @@ const Hero = ({ data }: HeroProps) => {
                 </Button>
               ))}
               </div>
-              
-{/*  needs to be implemented
 
               <div className="pt-6 pb-10">
                 <Typography alignLarge="left" alignSmall="left" variant="body3">
-                  Working with team?
+                  Maintaining a team?
                   <span>
                     <Link href="/teams">
                       <a>
@@ -58,10 +56,7 @@ const Hero = ({ data }: HeroProps) => {
                   </span> 
                 </Typography>
               </div>
-                                            */} 
-
             </div>
-
             
             <div className="flex-1 ">
               <div className="">
