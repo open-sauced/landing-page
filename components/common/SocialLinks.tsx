@@ -57,7 +57,7 @@ const SocialLinks: FC<SocialLinksProps> = ({ aboutPage, social }): ReactElement 
         {social.map(({ socialUrl, socialIcon, socialLinkPlaceholder }) => (
           <div key={socialLinkPlaceholder} className="flex items-center cursor-pointer">
             <a href={socialUrl} target="_blank" rel="noreferrer" className="opacity-70">
-              <Image width={37} height={37} alt={socialLinkPlaceholder} src={socialIcon as unknown as string || ""} />
+              <Image width={37} height={37} alt={socialLinkPlaceholder as string} src={socialIcon as unknown as string || ""} />
             </a>
           </div>
         ))}

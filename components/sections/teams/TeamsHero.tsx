@@ -41,9 +41,7 @@ const TeamsHero = ({ data }: HeroProps) => {
               Are you an individual contributor?
               <span>
                 <Link href="/">
-                  <a>
-                    <DecoratedText content="$orange-to-yellow Click here$orange-to-yellow"/>
-                  </a>
+                  <DecoratedText content="$orange-to-yellow Click here$orange-to-yellow"/>
                 </Link>
               </span> 
             </Typography>
