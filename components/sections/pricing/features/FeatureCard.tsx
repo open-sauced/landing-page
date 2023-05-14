@@ -15,7 +15,7 @@ const FeatureCard: FC<FeatureCardProps> = ({ data }): ReactElement => {
   
   return (
     <div className="w-full">
-      <Image width="100%" height="100%" src={featureIcon as unknown as string} alt="Logo image" />
+      <Image width={100} height={100} src={featureIcon as unknown as string} alt="Logo image" />
 
       <div className="w-full pt-6 pb-4">
         <Typography variant="title2" alignLarge="left">

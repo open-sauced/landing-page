@@ -60,11 +60,9 @@ const Footer: FC<FooterProps> = ({ pressPage }) => {
                 {navigationLinks.map(({ url, label }) => (
                   <div key={label} className="cursor-pointer">
                     <Link href={url || '/#'} passHref>
-                      <a>
-                        <LocalTypography variant="item1">
-                          {label}
-                        </LocalTypography>
-                      </a>
+                      <LocalTypography variant="item1">
+                        {label}
+                      </LocalTypography>
                     </Link>
                   </div>
                 ))}

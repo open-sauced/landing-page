@@ -29,7 +29,7 @@ const Links: FC<LinksProps> = ({ services }): ReactElement => {
                   </Typography>
                 </div>
 
-                <Link href={serviceUrl as unknown as string} passHref>
+                <Link href={serviceUrl as unknown as string} legacyBehavior passHref>
                   <a
                     target={internalLink ? '_self' : '_blank'}
                     rel="noreferrer"
