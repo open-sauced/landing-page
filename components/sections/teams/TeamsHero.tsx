@@ -1,6 +1,5 @@
 import React from 'react'
 import { SanityHomePage } from '../../../types/schema'
-import Image from 'next/image'
 import SectionWrapper from '../../common/layout/SectionWrapper'
 import { Button } from '../../common'
 import { Heading, Typography } from '../../common/text'

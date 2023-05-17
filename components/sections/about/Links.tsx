@@ -8,6 +8,7 @@ import OrangeRightArrowSmall from '../../../public/orange_right_arrow_small.png'
 import useMediaQuery from '../../hooks/useMediaQuery'
 import Link from 'next/link'
 import { SanityAboutPage } from '../../../types/schema'
+
 interface LinksProps {
   services: SanityAboutPage['services']
 }

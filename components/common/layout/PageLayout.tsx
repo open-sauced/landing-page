@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import React, { FC, ReactElement } from 'react'
 import { SanityNavigation, SanitySeo } from '../../../types/schema'
 import Header from '../../sections/navigation/Header'

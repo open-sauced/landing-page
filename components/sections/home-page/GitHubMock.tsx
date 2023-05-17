@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React, { FC } from 'react'
-import { SanityGithubMock, SanityHomePage } from '../../../types/schema'
+import { SanityHomePage } from '../../../types/schema'
 import GreenSquares from '../../../public/greenSquares.svg'
 import GreenSquaresSmall from '../../../public/greenSquares_small.svg'
 import TrueImpactIMG from '../../../public/trueImpact.png'
