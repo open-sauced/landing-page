@@ -8,7 +8,7 @@ import SectionWrapper from '../../common/layout/SectionWrapper'
 import { Heading, Typography } from '../../common/text'
 import useMediaQuery from '../../hooks/useMediaQuery'
 import DecoratedText from '../../common/text/utils/DecoratedText'
-import BackgroundStroke from '../../../public/middleRight.svg'
+import BackgroundStroke from '../../../public/background-strokes/middleRight.svg'
 
 interface GitHubMockProps {
   moreHeading: string[]
