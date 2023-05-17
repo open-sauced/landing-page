@@ -1,5 +1,7 @@
-import Image from 'next/image'
 import React, { FC } from 'react'
+import Image from 'next/image'
+
+// Static Assets
 import StrokeL4 from '../../../public/background-strokes/stroke_l_4.svg'
 import StrokeR3 from '../../../public/background-strokes/stroke_r_3.svg'
 import StrokeMobile1 from '../../../public/background-strokes/stroke_mobile_1.svg'

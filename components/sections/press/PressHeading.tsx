@@ -45,7 +45,6 @@ const PressHeading: FC<Props> = ({ headingData }) => {
                   <div className="h-[66px] w-[300px] largeTablet:w-[386px]  cursor-pointer">
                     <Image
                       src={BrandKitLogo}
-                      layout="responsive"
                       alt="OpenSauced Icon"
                     />
                   </div>

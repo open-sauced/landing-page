@@ -45,7 +45,7 @@ const Footer: FC<FooterProps> = ({ pressPage }) => {
       <SectionWrapper pbs={0}>
         <div className="w-full pt-10 pb-16 largeTablet:pt-12">
           <div className="w-[140px] h-6 relative">
-            <Image layout="fill" alt="Brand logo" src={OpenSaucedLogo} />
+            <Image alt="Brand logo" src={OpenSaucedLogo} />
           </div>
         </div>
         <div className="w-full flex flex-col largeTablet:flex-row">
