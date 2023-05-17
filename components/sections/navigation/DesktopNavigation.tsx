@@ -1,9 +1,11 @@
-import Link from 'next/link'
-import { Button } from '../../common'
-import Image from 'next/image'
-import { SanityNavigation } from '../../../types/schema'
 import { FC } from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
+
+// Components
+import { Button } from '../../common'
+import { SanityNavigation } from '../../../types/schema'
 
 interface DesktopNavigationProps {
   navigationItems: SanityNavigation[]

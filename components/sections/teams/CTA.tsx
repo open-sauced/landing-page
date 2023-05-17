@@ -1,6 +1,8 @@
 import React, { FC } from 'react'
-import SectionWrapper from '../../common/layout/SectionWrapper'
 import { SanityHomePage } from '../../../types/schema'
+
+// Components
+import SectionWrapper from '../../common/layout/SectionWrapper'
 import { Heading, Typography } from '../../common/text'
 import { Button } from '../../common'
 

@@ -1,5 +1,8 @@
 import React, { FC, ReactElement } from 'react'
 import { SanityBlog } from '../../../../types/schema'
+import getReadTime from '../../../../utils/getReadTime'
+
+// Components
 import SectionWrapper from '../../../common/layout/SectionWrapper'
 import { Heading, Typography } from '../../../common/text'
 import OrangeClock from '../../../../public/orange_clock.png'
@@ -13,7 +16,6 @@ import Blog from '../components/Post'
 import ReactPlayer from 'react-player'
 import DecoratedText from '../../../common/text/utils/DecoratedText'
 import OgData from '../../../common/OgData'
-import getReadTime from '../../../../utils/getReadTime'
 import SocialShare from '../../../common/SocialShare'
 
 interface PageContentProps {

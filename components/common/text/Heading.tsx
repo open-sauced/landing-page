@@ -1,5 +1,7 @@
 import React, { FC, ReactElement } from 'react'
 import useMediaQuery from '../../hooks/useMediaQuery'
+
+// Components
 import DecoratedText from './utils/DecoratedText'
 
 interface HeadingProps {

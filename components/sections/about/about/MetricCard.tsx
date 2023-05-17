@@ -1,4 +1,6 @@
 import React, { FC, ReactElement } from 'react'
+
+// Components
 import { Typography } from '../../../common/text'
 import DecoratedText from '../../../common/text/utils/DecoratedText'
 

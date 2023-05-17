@@ -2,6 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { FC, ReactElement } from 'react'
 import { SanityBlog } from '../../../../types/schema'
+
+// Components
 import GradientBorderWrapper from '../../../common/GradientBorderWrapper'
 
 interface BlogProps {

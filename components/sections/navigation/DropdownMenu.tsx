@@ -1,9 +1,10 @@
-import { Menu, Transition } from '@headlessui/react'
-import Image from 'next/image'
-import Link from 'next/link'
 import { Fragment } from 'react'
-import MobileMenu from '../../../public/mobile_menu.svg'
+import Image from 'next/image'
+import { Menu, Transition } from '@headlessui/react'
+import Link from 'next/link'
+
 import SocialLinks from '../../common/SocialLinks'
+import MobileMenu from '../../../public/mobile_menu.svg'
 
 interface MenuItem {
   label: string

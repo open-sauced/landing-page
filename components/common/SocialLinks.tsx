@@ -1,12 +1,14 @@
 import React, { FC, ReactElement } from 'react'
 import Image from 'next/image'
+import { SanityAboutPage } from '../../types/schema'
+
+// Static assets
 import InstagramLogoW from '../../public/logos/instagramLogoW.svg'
 import TwitterLogoW from '../../public/logos/twitterLogoW.svg'
 import GithubLogoW from '../../public/logos/githubLogoW.svg'
 import DiscordLogoW from '../../public/logos/discordLogoW.svg'
 import DevLogoW from '../../public/logos/devLogoW.svg'
 import YoutubeLogoW from '../../public/logos/youtubeLogoW.svg'
-import { SanityAboutPage } from '../../types/schema'
 
 const data = [
   {

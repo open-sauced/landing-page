@@ -1,10 +1,11 @@
 import React from 'react'
-import { SanityHomePage } from '../../../types/schema'
-import SectionWrapper from '../../common/layout/SectionWrapper'
-import { Button } from '../../common'
-import { Heading, Typography } from '../../common/text'
 import Link from 'next/link'
+import { SanityHomePage } from '../../../types/schema'
+
+import SectionWrapper from '../../common/layout/SectionWrapper'
 import DecoratedText from '../../common/text/utils/DecoratedText'
+import { Heading, Typography } from '../../common/text'
+import { Button } from '../../common'
 
 interface HeroProps {
   data: SanityHomePage['hero']

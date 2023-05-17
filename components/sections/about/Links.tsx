@@ -1,4 +1,8 @@
 import React, { FC, ReactElement } from 'react'
+import Image from 'next/image'
+import { SanityAboutPage } from '../../../types/schema'
+
+// Components
 import GradientBorderWrapper from '../../common/GradientBorderWrapper'
 import SectionWrapper from '../../common/layout/SectionWrapper'
 import { Typography } from '../../common/text'
@@ -6,8 +10,6 @@ import OrangeRightArrow from '../../../public/orange_right_arrow.png'
 import OrangeRightArrowSmall from '../../../public/orange_right_arrow_small.png'
 import useMediaQuery from '../../hooks/useMediaQuery'
 import Link from 'next/link'
-import { SanityAboutPage } from '../../../types/schema'
-import Image from 'next/image'
 
 interface LinksProps {
   services: SanityAboutPage['services']

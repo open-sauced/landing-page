@@ -1,5 +1,6 @@
-import Image from 'next/image'
 import React, { FC, ReactElement } from 'react'
+import Image from 'next/image'
+
 import { Typography } from '../../../common/text'
 
 interface FeatureCardProps {

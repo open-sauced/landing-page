@@ -1,4 +1,6 @@
 import React, { FC } from 'react'
+
+// Components
 import { Heading, Typography } from '../../../common/text'
 import { FeatureProps } from './TeamsFeatures'
 

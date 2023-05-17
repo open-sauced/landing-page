@@ -1,10 +1,12 @@
-import Image from 'next/image'
 import React, { FC } from 'react'
-import { SanityTestimonial } from '../../../../types/schema'
-import GradientBorderWrapper from '../../../common/GradientBorderWrapper'
-
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import { SanityTestimonial } from '../../../../types/schema'
+
+// Components
+import GradientBorderWrapper from '../../../common/GradientBorderWrapper'
+
 
 interface TestimonialProps {
   testimonial: SanityTestimonial

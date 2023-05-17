@@ -1,9 +1,12 @@
 import React, { FC, ReactElement } from 'react'
+import { SanityNavigation } from '../../../types/schema'
+
+// Components
 import SectionWrapper from '../../common/layout/SectionWrapper'
 import DesktopNavigation from './DesktopNavigation'
-import BrandLogo from '../../../public/logos/brandLogo.svg'
-import { SanityNavigation } from '../../../types/schema'
 import MobileNavigation from './MobileNavigation'
+
+import BrandLogo from '../../../public/logos/brandLogo.svg'
 
 interface HeaderProps {
   navigationItems: SanityNavigation[]

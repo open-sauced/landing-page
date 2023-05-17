@@ -1,10 +1,14 @@
-import Image from 'next/image'
-import Link from 'next/link'
 import React, { FC } from 'react'
-import OpenSaucedLogo from '../../public/logos/brandLogo.svg'
+import Link from 'next/link'
+import Image from 'next/image'
+
+// Components
 import SectionWrapper from '../common/layout/SectionWrapper'
 import SocialLinks from '../common/SocialLinks'
 import { navigationLinks } from './navigation/Header'
+
+import OpenSaucedLogo from '../../public/logos/brandLogo.svg'
+
 
 const footerContext = {
   pages: [

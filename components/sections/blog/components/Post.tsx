@@ -1,13 +1,15 @@
 import Image from 'next/image'
 import React, { FC, ReactElement } from 'react'
 import { SanityBlog } from '../../../../types/schema'
+import getReadTime from '../../../../utils/getReadTime'
+
+// Components
 import GradientBorderWrapper from '../../../common/GradientBorderWrapper'
 import { Typography } from '../../../common/text'
 import OrangeClock from '../../../../public/orange_clock.png'
 import OrangeAuthor from '../../../../public/orange_author.png'
 import { Button } from '../../../common'
 import LocalTypography from './LocalTypography'
-import getReadTime from '../../../../utils/getReadTime'
 
 interface PostProps {
   data: SanityBlog

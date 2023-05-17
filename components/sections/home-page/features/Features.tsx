@@ -1,5 +1,7 @@
 import React, { FC } from 'react'
 import { SanityHomePage } from '../../../../types/schema'
+
+// Components
 import Feature from './Feature'
 import SectionWrapper from '../../../common/layout/SectionWrapper'
 import EndingLine from '../../../common/EndingLine'

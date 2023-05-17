@@ -1,6 +1,7 @@
 import React from 'react'
-import SectionWrapper from '../../common/layout/SectionWrapper'
 import { SanityUser } from '../../../types/schema'
+
+import SectionWrapper from '../../common/layout/SectionWrapper'
 
 interface LogosProps {
   data: SanityUser[]
