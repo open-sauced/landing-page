@@ -1,8 +1,12 @@
 import React, { FC, ReactElement, useRef, useState, useEffect } from 'react'
+import Image from 'next/image'
+
+// Components
 import GradientBorderWrapper from '../common/GradientBorderWrapper'
 import SectionWrapper from '../common/layout/SectionWrapper'
 import { Heading, Typography } from '../common/text'
-import Image from 'next/image'
+
+// Static Assets
 import StrokeR3 from '../../public/background-strokes/stroke_r_3.svg'
 import StrokeL3 from '../../public/background-strokes/stroke_l_3.svg'
 import StrokeMobile2 from '../../public/background-strokes/stroke_mobile_2.svg'

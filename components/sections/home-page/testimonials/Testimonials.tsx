@@ -1,5 +1,7 @@
 import React, { FC, useState } from 'react'
 import { SanityHomePage, SanityTestimonial } from '../../../../types/schema'
+
+// Components
 import SectionWrapper from '../../../common/layout/SectionWrapper'
 import { Heading, Typography } from '../../../common/text'
 import Testimonial from './Testimonial'

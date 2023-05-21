@@ -1,6 +1,8 @@
 import React from 'react'
-import SectionWrapper from '../../common/layout/SectionWrapper'
 import { SanityUser } from '../../../types/schema'
+
+// Components
+import SectionWrapper from '../../common/layout/SectionWrapper'
 import ContainerWithLine from '../../common/ContainerWithLine'
 import { Typography } from '../../common/text'
 

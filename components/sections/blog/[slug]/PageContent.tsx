@@ -1,5 +1,8 @@
 import React, { FC, ReactElement } from 'react'
 import { SanityBlog } from '../../../../types/schema'
+import getReadTime from '../../../../utils/getReadTime'
+
+// Components
 import SectionWrapper from '../../../common/layout/SectionWrapper'
 import { Heading, Typography } from '../../../common/text'
 import OrangeClock from '../../../../public/orange_clock.png'
@@ -13,7 +16,6 @@ import Blog from '../components/Post'
 import ReactPlayer from 'react-player'
 import DecoratedText from '../../../common/text/utils/DecoratedText'
 import OgData from '../../../common/OgData'
-import getReadTime from '../../../../utils/getReadTime'
 import SocialShare from '../../../common/SocialShare'
 
 interface PageContentProps {
@@ -57,12 +59,12 @@ const PageContent: FC<PageContentProps> = ({
         </div>
         <div className="w-full flex justify-start pb-4 largeTablet:pb-6 largeTablet:justify-center">
           <div className="flex-shrink-0 mr-2">
-            <Image src={OrangeAuthor} alt="Author" />
+            <Image width={16} height={16} src={OrangeAuthor} alt="Author" />
           </div>
 
           <LocalTypography>{author}</LocalTypography>
           <div className="flex-shrink-0 mr-2 ml-4">
-            <Image src={OrangeClock} alt="Clock" />
+            <Image width={16} height={16} src={OrangeClock} alt="Clock" />
           </div>
 
           <LocalTypography>{`${getReadTime(blogContent || "")} ${
@@ -76,9 +78,9 @@ const PageContent: FC<PageContentProps> = ({
         <GradientBorderWrapper style={{ width: '100%', borderRadius: '8px' }}>
           <div className="w-full h-[304px] relative rounded-[5px] overflow-hidden largeTablet:h-[496px]  ">
             <Image
+              width={1206}
+              height={496}
               src={src as string}
-              layout="fill"
-              objectFit="cover"
               alt="Cover"
             />
           </div>

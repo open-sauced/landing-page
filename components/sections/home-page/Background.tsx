@@ -1,11 +1,11 @@
-import Image from 'next/image'
 import React, { FC } from 'react'
-import upperStroke from '../../../public/upperStroke.svg'
+import Image from 'next/image'
+
+// Static assets
+import upperStroke from '../../../public/background-strokes/upperStroke.svg'
 import left_2_stroke from '../../../public/background-strokes/left_2_stroke.svg'
 import right_2_stroke from '../../../public/background-strokes/right_2_stroke.svg'
 import right_3_stroke from '../../../public/background-strokes/right_3_stroke.svg'
-import StrokeMobile2 from '../../../public/background-strokes/stroke_mobile_2.svg'
-import StrokeMobile3 from '../../../public/background-strokes/stroke_mobile_3.svg'
 
 const Background: FC = ({ children }) => {
   return (

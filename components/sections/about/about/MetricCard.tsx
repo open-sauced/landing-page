@@ -1,5 +1,6 @@
 import React, { FC, ReactElement } from 'react'
-import { SanityAboutPage } from '../../../../types/schema'
+
+// Components
 import { Typography } from '../../../common/text'
 import DecoratedText from '../../../common/text/utils/DecoratedText'
 

@@ -1,10 +1,14 @@
-import Image from 'next/image'
-import Link from 'next/link'
 import React, { FC } from 'react'
-import OpenSaucedLogo from '../../public/logos/brandLogo.svg'
+import Link from 'next/link'
+import Image from 'next/image'
+
+// Components
 import SectionWrapper from '../common/layout/SectionWrapper'
 import SocialLinks from '../common/SocialLinks'
 import { navigationLinks } from './navigation/Header'
+
+import OpenSaucedLogo from '../../public/logos/brandLogo.svg'
+
 
 const footerContext = {
   pages: [
@@ -45,7 +49,7 @@ const Footer: FC<FooterProps> = ({ pressPage }) => {
       <SectionWrapper pbs={0}>
         <div className="w-full pt-10 pb-16 largeTablet:pt-12">
           <div className="w-[140px] h-6 relative">
-            <Image layout="fill" alt="Brand logo" src={OpenSaucedLogo} />
+            <Image alt="Brand logo" src={OpenSaucedLogo} />
           </div>
         </div>
         <div className="w-full flex flex-col largeTablet:flex-row">

@@ -1,9 +1,11 @@
 import React, { FC, ReactElement } from 'react'
 import SectionWrapper from '../../../common/layout/SectionWrapper'
-import { Heading, Typography } from '../../../common/text'
-import FeatureCard from './FeatureCard'
 import { SanityPricingPage } from '../../../../types/schema'
 import { getPartialString, getPartialStringFromEnd } from '../../../../utils/stringUtils'
+
+// Components
+import { Heading, Typography } from '../../../common/text'
+import FeatureCard from './FeatureCard'
 
 interface FeatureProps {
   premiumFeatures: SanityPricingPage['premiumFeatures'][]

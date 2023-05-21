@@ -1,6 +1,8 @@
 
 import React, { FC, ReactElement } from 'react'
 import { SanityBlog } from '../../../types/schema'
+
+// Components
 import SectionWrapper from '../../common/layout/SectionWrapper'
 import { Heading, Typography } from '../../common/text'
 import Post from './components/Post'

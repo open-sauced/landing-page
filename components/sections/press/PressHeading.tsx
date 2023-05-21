@@ -1,9 +1,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { FC } from 'react'
-import BrandKitLogo from '../../../public/brandkit-logo.svg'
-import UShape from '../../../public/uShape.svg'
 import SectionWrapper from '../../common/layout/SectionWrapper'
+
+// Static Assets
+import BrandKitLogo from '../../../public/brandkit-logo.svg'
+import UShape from '../../../public/background-strokes/uShape.svg'
 
 interface Props {
   headingData: {
@@ -43,7 +45,6 @@ const PressHeading: FC<Props> = ({ headingData }) => {
                   <div className="h-[66px] w-[300px] largeTablet:w-[386px]  cursor-pointer">
                     <Image
                       src={BrandKitLogo}
-                      layout="responsive"
                       alt="OpenSauced Icon"
                     />
                   </div>

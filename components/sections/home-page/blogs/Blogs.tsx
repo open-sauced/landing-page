@@ -1,12 +1,14 @@
 import React, { FC, ReactElement } from 'react'
 import { SanityBlog, SanityHomePage } from '../../../../types/schema'
+import { useInView } from 'react-intersection-observer'
+import { motion } from 'framer-motion'
+
+// Components
 import { Button } from '../../../common'
 import SectionWrapper from '../../../common/layout/SectionWrapper'
 import { Heading, Typography } from '../../../common/text'
 import Blog from './Blog'
-import { useInView } from 'react-intersection-observer'
 
-import { motion } from 'framer-motion'
 
 interface BlogsProps {
   blogs: SanityBlog[]

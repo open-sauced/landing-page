@@ -1,8 +1,10 @@
 import React, { FC, ReactElement } from 'react'
+import { SanityAboutPage } from '../../../types/schema'
+
+// Components
 import SectionWrapper from '../../common/layout/SectionWrapper'
 import GradientBorderWrapper from '../../common/GradientBorderWrapper'
 import SocialLinks from '../../common/SocialLinks'
-import { SanityAboutPage } from '../../../types/schema'
 
 interface FollowUsProps {
   social: SanityAboutPage['socialLinks']

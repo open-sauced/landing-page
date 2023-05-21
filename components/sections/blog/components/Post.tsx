@@ -1,13 +1,15 @@
 import Image from 'next/image'
 import React, { FC, ReactElement } from 'react'
 import { SanityBlog } from '../../../../types/schema'
+import getReadTime from '../../../../utils/getReadTime'
+
+// Components
 import GradientBorderWrapper from '../../../common/GradientBorderWrapper'
 import { Typography } from '../../../common/text'
 import OrangeClock from '../../../../public/orange_clock.png'
 import OrangeAuthor from '../../../../public/orange_author.png'
 import { Button } from '../../../common'
 import LocalTypography from './LocalTypography'
-import getReadTime from '../../../../utils/getReadTime'
 
 interface PostProps {
   data: SanityBlog
@@ -44,7 +46,7 @@ const Post: FC<PostProps> = ({ data, featured }): ReactElement => {
       <div className={`${featured && 'largeTablet:hidden'}`}>
         <GradientBorderWrapper style={{ width: '100%', borderRadius: '5px' }}>
           <div className="w-full h-[304px] relative rounded-[5px] overflow-hidden ">
-            <Image src={src as string} layout="fill" objectFit="cover" alt="Cover"/>
+            <Image width="580" height={304} src={src as string} alt="Cover"/>
           </div>
         </GradientBorderWrapper>
       </div>

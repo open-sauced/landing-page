@@ -1,11 +1,14 @@
 import React from 'react'
+import Image from 'next/image'
+
+// Components
 import SectionWrapper from '../../common/layout/SectionWrapper'
 import { Heading, Typography } from '../../common/text'
 import GradientBorderWrapper from '../../common/GradientBorderWrapper'
-import Image from 'next/image'
 
-import StrokeR3 from '../../../public/_3_rightStroke.svg'
-import StrokeL3 from '../../../public/_3_leftStroke.svg'
+// Static assets
+import StrokeR3 from '../../../public/background-strokes/_3_rightStroke.svg'
+import StrokeL3 from '../../../public/background-strokes/_3_leftStroke.svg'
 
 const Newsletter = () => {
   return (

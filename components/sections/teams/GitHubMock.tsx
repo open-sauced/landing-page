@@ -1,14 +1,17 @@
-import Image from 'next/image'
 import React, { FC } from 'react'
-import { SanityGithubMock, SanityHomePage } from '../../../types/schema'
+import Image from 'next/image'
+import { SanityHomePage } from '../../../types/schema'
+import useMediaQuery from '../../hooks/useMediaQuery'
+
+// Static Assets
 import GreenSquares from '../../../public/greenSquares.svg'
 import GreenSquaresSmall from '../../../public/greenSquares_small.svg'
-import TrueImpactIMG from '../../../public/trueImpact.png'
+import BackgroundStroke from '../../../public/middleRight.svg'
+
+// Components
 import SectionWrapper from '../../common/layout/SectionWrapper'
 import { Heading, Typography } from '../../common/text'
-import useMediaQuery from '../../hooks/useMediaQuery'
 import DecoratedText from '../../common/text/utils/DecoratedText'
-import BackgroundStroke from '../../../public/middleRight.svg'
 
 interface GitHubMockProps {
   moreHeading: string[]

@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
-import OpenSaucedLogo from './OpenSaucedLogo'
+
 import { openSaucedlogos } from '../../../staticFiles/assetsData'
+import OpenSaucedLogo from './OpenSaucedLogo'
 
 const OpenSaucedLogos:FC = () => {
   return (

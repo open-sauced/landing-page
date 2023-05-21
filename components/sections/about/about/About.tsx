@@ -1,6 +1,8 @@
 import React, { FC, ReactElement } from 'react'
 import { SanityAboutPage } from '../../../../types/schema'
 import { getPartialString, getPartialStringFromEnd } from '../../../../utils/stringUtils'
+
+// Components
 import SectionWrapper from '../../../common/layout/SectionWrapper'
 import { Heading, Typography } from '../../../common/text'
 import MetricCard from './MetricCard'

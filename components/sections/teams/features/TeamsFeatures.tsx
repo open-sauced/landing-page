@@ -1,7 +1,10 @@
 import React, { FC } from 'react'
 import { SanityHomePage } from '../../../../types/schema'
+
+// Components
 import Feature from './TeamsFeature'
 import SectionWrapper from '../../../common/layout/SectionWrapper'
+
 interface Props {
   data: SanityHomePage['features']
 }
