@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 
 interface LocalTypographyProps {
+  children: React.ReactNode
   variant?: 'title' | 'content1'
   featured?: boolean
 }

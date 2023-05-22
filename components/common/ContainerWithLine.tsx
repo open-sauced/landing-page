@@ -1,6 +1,10 @@
 import React from 'react'
 
-const ContainerWithLine: React.FC = ({ children }) => {
+type Props = {
+  children: React.ReactNode
+}
+
+const ContainerWithLine: React.FC<Props> = ({ children }) => {
   return (
     <div className="flex w-full">
       <div className="relative w-[1.5px] mx-1 largeTablet:mx-6">

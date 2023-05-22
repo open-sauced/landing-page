@@ -13,10 +13,10 @@ import GradientBorderWrapper from '../../../common/GradientBorderWrapper'
 import BlogTextContent from './BlogTextContent'
 import { useRouter } from 'next/router'
 import Blog from '../components/Post'
-import ReactPlayer from 'react-player'
 import DecoratedText from '../../../common/text/utils/DecoratedText'
 import OgData from '../../../common/OgData'
 import SocialShare from '../../../common/SocialShare'
+import ReactPlayer from 'react-player'
 
 interface PageContentProps {
   pageContent: SanityBlog

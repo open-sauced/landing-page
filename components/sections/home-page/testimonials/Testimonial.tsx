@@ -73,6 +73,7 @@ const Testimonial: FC<TestimonialProps> = ({
 }
 
 interface TypographyProps {
+  children: React.ReactNode
   variant?: 'content' | 'username' | 'twitter'
 }
 

@@ -10,10 +10,11 @@ import OgData from '../OgData'
 interface PageLayoutProps {
   seoData: SanitySeo
   navigationURLs: SanityNavigation[]
-  BackgroundWrapper: React.FC
+  BackgroundWrapper: any
   pressPage?: boolean
   blogPage?: boolean
   homePage?: boolean
+  children: React.ReactNode
 }
 
 const PageLayout: FC<PageLayoutProps> = ({

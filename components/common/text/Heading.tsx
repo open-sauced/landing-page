@@ -5,6 +5,7 @@ import useMediaQuery from '../../hooks/useMediaQuery'
 import DecoratedText from './utils/DecoratedText'
 
 interface HeadingProps {
+  children: React.ReactNode
   component?: 'h1' | 'h2' | 'h3'
   alignSmall?: 'center' | 'right' | 'left'
   alignLarge?: 'center' | 'right' | 'left'

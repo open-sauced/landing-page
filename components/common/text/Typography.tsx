@@ -2,6 +2,7 @@ import React, { FC, ReactElement } from 'react'
 import useMediaQuery from '../../hooks/useMediaQuery'
 
 interface TypographyProps {
+  children: React.ReactNode
   variant?:
     | 'preHeading'
     | 'subheading'

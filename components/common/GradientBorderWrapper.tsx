@@ -2,6 +2,7 @@ import React, { FC, ReactElement } from 'react'
 
 interface GradientBorderWrapperProps {
   style?: React.CSSProperties
+  children: React.ReactNode
 }
 
 const GradientBorderWrapper: FC<GradientBorderWrapperProps> = ({

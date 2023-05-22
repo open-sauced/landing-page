@@ -121,6 +121,7 @@ const Footer: FC<FooterProps> = ({ pressPage }) => {
 }
 
 interface LocalTypographyProps {
+  children: React.ReactNode
   variant?: 'title' | 'item1' | 'item2'
 }
 

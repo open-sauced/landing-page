@@ -10,6 +10,7 @@ interface ButtonProps {
   backgroundVariant?: 'orange' | 'dark'
   fullWidth?: boolean
   gitHub?: boolean
+  children: React.ReactNode
 }
 
 const Button: FC<ButtonProps> = ({
