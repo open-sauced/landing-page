@@ -7,10 +7,14 @@ import Footer from '../../sections/Footer'
 import Subscribe from '../../sections/Subscribe'
 import OgData from '../OgData'
 
+interface BackgroundWrapperProps {
+  children: React.ReactNode
+}
+
 interface PageLayoutProps {
   seoData: SanitySeo
   navigationURLs: SanityNavigation[]
-  BackgroundWrapper: any
+  BackgroundWrapper: React.FC<BackgroundWrapperProps>
   pressPage?: boolean
   blogPage?: boolean
   homePage?: boolean
