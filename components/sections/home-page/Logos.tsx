@@ -16,7 +16,7 @@ const Logos = ({ data }: LogosProps) => {
       <ContainerWithLine>
         <div className="px-6 pt-32 pb-4 largeTablet:pt-10 ">
           <Typography alignLarge="left" alignSmall="center" variant="preHeading">
-            TRUSTED BT
+            TRUSTED BY
           </Typography>
         </div>
         <div className="w-full px-6 pb-40 grid grid-cols-3 gap-x-10 gap-y-8 justify-center items-center content-center largeTablet:mt-0 largeTablet:grid-cols-6">
