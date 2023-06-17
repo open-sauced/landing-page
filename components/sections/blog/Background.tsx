@@ -6,7 +6,11 @@ import StrokeL5 from '../../../public/background-strokes/stroke_l_5.svg'
 import StrokeR4 from '../../../public/background-strokes/stroke_r_4.svg'
 import StrokeMobile1 from '../../../public/background-strokes/stroke_mobile_1.svg'
 
-const Background: FC = ({ children }) => {
+interface BackgroundProps {
+  children: React.ReactNode
+}
+
+const Background: FC<BackgroundProps> = ({ children }) => {
   return (
     <div className="bg-darkBG text-white h-fit overflow-hidden relative">
       <div className="absolute hidden largeTablet:block largeTablet:top-[0rem] largeTablet:right-0">

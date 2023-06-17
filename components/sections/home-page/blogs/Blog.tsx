@@ -43,6 +43,7 @@ const Blog: FC<BlogProps> = ({ data }): ReactElement => {
 export default Blog
 
 interface TypographyProps {
+  children: React.ReactNode
   variant?: 'title' | 'item1'
 }
 

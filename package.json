@@ -21,13 +21,13 @@
     "react-icons": "^4.4.0",
     "react-intersection-observer": "^9.4.3",
     "react-markdown": "^8.0.5",
-    "react-player": "^2.11.0",
+    "react-player": "^2.12.0",
     "react-slideshow-image": "^4.0.5",
     "rss": "^1.2.2"
   },
   "devDependencies": {
     "@types/node": "17.0.21",
-    "@types/react": "17.0.40",
+    "@types/react": "^18.2.6",
     "@types/rss": "^0.0.30",
     "autoprefixer": "^10.4.4",
     "eslint": "8.11.0",

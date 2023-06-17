@@ -2,6 +2,7 @@ import React, { FC, ReactElement } from 'react'
 import useMediaQuery from '../../hooks/useMediaQuery'
 
 interface SectionWrapperProps {
+  children: React.ReactNode
   justify?: 'center' | 'between'
   direction?: 'col' | 'row'
   pt?: number

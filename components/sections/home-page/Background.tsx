@@ -7,7 +7,11 @@ import left_2_stroke from '../../../public/background-strokes/left_2_stroke.svg'
 import right_2_stroke from '../../../public/background-strokes/right_2_stroke.svg'
 import right_3_stroke from '../../../public/background-strokes/right_3_stroke.svg'
 
-const Background: FC = ({ children }) => {
+interface BackgroundProps {
+  children: React.ReactNode
+}
+
+const Background: FC<BackgroundProps> = ({ children }) => {
   return (
     <div className="bg-darkBG text-white h-fit overflow-hidden relative">
       <div className="absolute hidden largeTablet:block largeTablet:top-[-40rem] largeTablet:left-[-23rem] desktop:-left-[0rem]">

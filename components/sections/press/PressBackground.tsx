@@ -1,6 +1,10 @@
 import React, { FC } from 'react'
 
-const PressBackground: FC = ({ children }) => {
+interface PressBackgroundProps {
+  children: React.ReactNode
+}
+
+const PressBackground: FC<PressBackgroundProps> = ({ children }) => {
   return <div>{children}</div>
 }
 
