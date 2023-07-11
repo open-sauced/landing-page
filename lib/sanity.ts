@@ -117,19 +117,6 @@ export const getFeaturePageDataBySlug: (
   return getFeatureData
 }
 
-export const getFeaturedBlogs: () => Promise<
-  SanityFeaturedBlog[]
-> = async () => {
-  const saucyBlog: SanityFeaturedBlog[] = await client.fetch(
-    `*[_type == 'featuredBlog'] {
-      ...,
-      "coverImage": coverImage.asset->url,
-    }`
-  )
-
-  return saucyBlog
-}
-
 export const getBlogs: (limit: number) => Promise<SanityBlog[]> = async (
   limit: number = 2
 ) => {
@@ -145,7 +132,7 @@ export const getBlogs: (limit: number) => Promise<SanityBlog[]> = async (
 
 export const getAllBlogs: () => Promise<SanityBlog[]> = async () => {
   const allBlogs: SanityBlog[] = await client.fetch(
-    `*[_type == 'blog' && !(_id in path('drafts.**'))]  {
+    `*[_type == 'blog' && !(_id in path('drafts.**'))] | order(_createdAt desc)  {
       ...,
       "coverImage": coverImage.asset->url,
       "ogImage": ogImage.asset->url,
