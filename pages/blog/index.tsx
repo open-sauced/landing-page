@@ -33,6 +33,8 @@ const BlogsPage: NextPage<BlogsPageProps> = ({
   const displayBlogs = [...blogs, ...featuredBlogs].sort(
     (a, b) => +new Date(b._createdAt) - +new Date(a._createdAt)
   )
+
+  console.log('blogs:', blogs)
   return (
     <PageLayout
       seoData={seoData}
