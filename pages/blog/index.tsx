@@ -28,6 +28,7 @@ const BlogsPage: NextPage<BlogsPageProps> = ({
     blogs,
   },
 }): ReactElement => {
+  console.log(blogs)
 
   return (
     <PageLayout
