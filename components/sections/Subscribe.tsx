@@ -73,7 +73,7 @@ const Subscribe: FC = (): ReactElement => {
         <div className="absolute bottom-[32rem] left-0  largeTablet:hidden">
           <Image alt="Doodles" src={StrokeMobile3} />
         </div>
-        <GradientBorderWrapper>
+        <GradientBorderWrapper>  
           <form
             className="relative box-border px-4 flex items-center w-[280px] h-[38px] text-[#FEEADD] pr-4 py-3 text-sm font-medium bg-[#211E1C] rounded-md largeTablet:w-[394px]"
             name="newsletter"
