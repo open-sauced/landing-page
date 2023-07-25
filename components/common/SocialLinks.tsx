@@ -68,7 +68,7 @@ const SocialLinks: FC<SocialLinksProps> = ({ aboutPage, social }): ReactElement 
         {data.map(({ url, icon, label }) => (
           <div key={label} className="flex items-center cursor-pointer">
             <a href={url} target="_blank" rel="noreferrer" className="opacity-70">
-              <Image alt={label} src={icon} />
+              <Image width={18} height={18} alt={label} src={icon} />
             </a>
           </div>
         ))}
