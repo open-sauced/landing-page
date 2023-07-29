@@ -66,7 +66,7 @@ const Footer: FC<FooterProps> = ({ pressPage }) => {
             <SocialLinks />
           </div>
           <div className="w-full flex flex-wrap">
-            <div className="w-1/2 my-10 largeTablet:w-[35%] largeTablet:my-0">
+            <div className="w-[35%] sm:w-1/2 my-10 largeTablet:w-[35%] largeTablet:my-0">
               <LocalTypography variant="title">MENU</LocalTypography>
               <div className="w-full flex flex-col">
                 {navigationLinks.map(({ url, label }) => (
