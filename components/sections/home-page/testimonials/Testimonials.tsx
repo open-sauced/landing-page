@@ -46,7 +46,7 @@ const Testimonials: FC<TestimonialsProps> = ({ data }) => {
         {data?.heading || ''}
       </Heading>
 
-      <div className="w-full mt-[46px] grid-cols-1 largeTablet:grid-cols-3 gap-9 largeTablet:mt-24 hidden largeTablet:grid ">
+      <div className="w-full mt-[46px] grid-cols-1 largeTablet:grid-cols-2 laptop:grid-cols-3 laptop:grid gap-9 largeTablet:mt-24 hidden largeTablet:grid ">
         {testimonials.map((testimonial) => (
           <Testimonial
             key={testimonial.twitterUsername}
