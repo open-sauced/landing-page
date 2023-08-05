@@ -1,12 +1,11 @@
 import React, { FC } from 'react'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
+import { Transition, motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { SanityTestimonial } from '../../../../types/schema'
 
 // Components
 import GradientBorderWrapper from '../../../common/GradientBorderWrapper'
-
 
 interface TestimonialProps {
   testimonial: SanityTestimonial
@@ -21,19 +20,47 @@ const Testimonial: FC<TestimonialProps> = ({
     tweetLink,
   },
 }) => {
-  const [ refCard, cardInView ] = useInView()
+  const [refCard, cardInView] = useInView()
+  const wordArrayOfTestimonial = testimonial?.split(' ')
+  const testimonialLinksConverter = wordArrayOfTestimonial?.map(
+    (word, index) => {
+      const saveTwitterUsername = word.includes('@') && word
+      if (saveTwitterUsername) {
+        return (
+          <a
+            key={index}
+            className="text-brandOrange"
+            href={'https://twitter.com/' + saveTwitterUsername.substring(1)}
+            target="_blank"
+            rel="noonpener noreferrer"
+          >
+            {saveTwitterUsername}
+          </a>
+        )
+      }
+      return word + ' '
+    }
+  )
 
   return (
     <motion.div
       ref={refCard}
       initial={{ opacity: 0, y: cardInView ? 100 : 0 }}
-      animate={{ opacity: cardInView ? 1 : 0 , y: cardInView ? 0 : 100 }}
-      transition={{ duration: 0.5, delay: 0.2, ease: 'easeInOut', type: 'spring', stiffness: 50}}
+      animate={{ opacity: cardInView ? 1 : 0, y: cardInView ? 0 : 100 }}
+      transition={
+        {
+          duration: 0.5,
+          delay: 0.2,
+          ease: 'easeInOut',
+          type: 'spring',
+          stiffness: 50,
+        } as Transition
+      }
     >
       <GradientBorderWrapper style={{ borderRadius: '8px', width: '100%' }}>
         <div className="h-fit min-h-[320px] w-full p-10 bg-[#211E1C] rounded-lg flex flex-col largeTablet:min-h-[300px]">
           <div className="flex-grow">
-            <LocalTypography>{testimonial}</LocalTypography>
+            <LocalTypography>{testimonialLinksConverter}</LocalTypography>
           </div>
 
           <div className=" flex items-center gap-2 ">
