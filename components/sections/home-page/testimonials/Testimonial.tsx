@@ -56,6 +56,7 @@ const Testimonial: FC<TestimonialProps> = ({
           stiffness: 50,
         } as Transition
       }
+      className='py-3'
     >
       <GradientBorderWrapper style={{ borderRadius: '8px', width: '100%' }}>
         <div className="h-fit min-h-[320px] w-full p-10 bg-[#211E1C] rounded-lg flex flex-col largeTablet:min-h-[300px]">
