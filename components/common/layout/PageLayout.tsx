@@ -34,11 +34,12 @@ const PageLayout: FC<PageLayoutProps> = ({
     <div>
       {!blogPage
         && <OgData
-          ogTitle={seoData.title || 'Open Sauced'}
-          ogDescription={seoData.description || ''}
-          ogImageUrl={seoData.image as unknown as string || ''}
-          ogUrl={seoData.url || 'https://opensauced.pizza'}
-          noindex={false} />
+        ogTitle={seoData.title || 'Open Sauced'}
+        ogDescription={seoData.description || ''}
+        ogImageUrl={seoData.image as unknown as string || ''}
+        ogUrl={seoData.url || 'https://opensauced.pizza'}
+        noindex={false} 
+        linkHref={''} />
       }
       <BackgroundWrapper>
         {!pressPage && <Header navigationItems={navigationURLs} />}

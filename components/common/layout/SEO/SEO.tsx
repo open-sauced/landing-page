@@ -7,6 +7,7 @@ interface HeadProps {
   ogImageUrl: string
   ogUrl: string
   noindex: boolean
+  linkHref: string
 }
 
 const OgData:FC<HeadProps> = ({
@@ -15,6 +16,7 @@ const OgData:FC<HeadProps> = ({
   ogImageUrl,
   ogUrl,
   noindex,
+  linkHref
 }) => {
   return (
       <Head>
@@ -43,6 +45,12 @@ const OgData:FC<HeadProps> = ({
           content={ogImageUrl as unknown as string || ""}
         ></meta>
         {noindex && <meta name="robots" content="noindex" key="noindex" />}
+
+        {/* for links */}
+        <link
+            href={linkHref || "https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700;800&display=swap"}
+            rel="stylesheet"
+        />
       </Head>
   )
 }
