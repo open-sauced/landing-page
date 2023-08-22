@@ -44,7 +44,8 @@ const PageContent: FC<PageContentProps> = ({
       ogDescription={summary || ""}
       ogImageUrl={ogImage as unknown as string || ""}
       ogUrl={absoluteURL}
-
+      noindex={false} 
+      linkHref={''}
       />
       <SectionWrapper pt={205} pts={60} pb={235}>
         <div className=" w-full flex justify-start largeTablet:justify-center">
