@@ -5,7 +5,7 @@ import { SanityNavigation, SanitySeo } from '../../../types/schema'
 import Header from '../../sections/navigation/Header'
 import Footer from '../../sections/Footer'
 import Subscribe from '../../sections/Subscribe'
-import OgData from '../OgData'
+import OgData from './SEO/SEO'
 
 interface BackgroundWrapperProps {
   children: React.ReactNode
@@ -32,14 +32,15 @@ const PageLayout: FC<PageLayoutProps> = ({
 }): ReactElement => {
   return (
     <div>
-        {!blogPage
-          && <OgData
-            ogTitle={seoData.title || 'Open Sauced'}
-            ogDescription={seoData.description || ''}
-            ogImageUrl={seoData.image as unknown as string || ''}
-            ogUrl={seoData.url || 'https://opensauced.pizza'}
-            />
-        }
+      {!blogPage
+        && <OgData
+        ogTitle={seoData.title || 'Open Sauced'}
+        ogDescription={seoData.description || ''}
+        ogImageUrl={seoData.image as unknown as string || ''}
+        ogUrl={seoData.url || 'https://opensauced.pizza'}
+        noindex={false} 
+        />
+      }
       <BackgroundWrapper>
         {!pressPage && <Header navigationItems={navigationURLs} />}
         <div>{children}</div>

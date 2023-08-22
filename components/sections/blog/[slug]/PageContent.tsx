@@ -14,7 +14,7 @@ import BlogTextContent from './BlogTextContent'
 import { useRouter } from 'next/router'
 import Blog from '../components/Post'
 import DecoratedText from '../../../common/text/utils/DecoratedText'
-import OgData from '../../../common/OgData'
+import OgData from '../../../common/layout/SEO/SEO'
 import SocialShare from '../../../common/SocialShare'
 import ReactPlayer from 'react-player'
 
@@ -44,7 +44,7 @@ const PageContent: FC<PageContentProps> = ({
       ogDescription={summary || ""}
       ogImageUrl={ogImage as unknown as string || ""}
       ogUrl={absoluteURL}
-
+      noindex={false}
       />
       <SectionWrapper pt={205} pts={60} pb={235}>
         <div className=" w-full flex justify-start largeTablet:justify-center">
