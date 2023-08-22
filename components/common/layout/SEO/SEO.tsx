@@ -7,7 +7,7 @@ interface HeadProps {
   ogImageUrl: string
   ogUrl: string
   noindex: boolean
-  linkHref: string
+  linkHref?: string
 }
 
 const OgData:FC<HeadProps> = ({
