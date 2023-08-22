@@ -39,7 +39,7 @@ const PageLayout: FC<PageLayoutProps> = ({
         ogImageUrl={seoData.image as unknown as string || ''}
         ogUrl={seoData.url || 'https://opensauced.pizza'}
         noindex={false} 
-        linkHref={''} />
+        />
       }
       <BackgroundWrapper>
         {!pressPage && <Header navigationItems={navigationURLs} />}
