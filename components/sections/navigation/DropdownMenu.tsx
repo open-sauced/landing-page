@@ -1,3 +1,4 @@
+import { Fragment, useState } from 'react'
 import Image from 'next/image'
 import { Menu, Transition } from '@headlessui/react'
 import Link from 'next/link'
@@ -18,20 +19,22 @@ interface DropdownMenuProps {
 }
 
 const DropdownMenu = ({ menuItems, className, label }: DropdownMenuProps) => {
+  const [isOpen, setIsOpen] = useState(false);
 
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <Menu as="div" className={`inline-block text-left ${className}`}>
-      {({ open }) => (
-        <>
-
       <div>
-        <Menu.Button className="text-white" aria-label={label}>
-          <Image src={open ? MobileCloseMenu : MobileMenu}  alt="Menu" />
+        <Menu.Button className="text-white" aria-label={label} onClick={toggleMenu}>
+          <Image src={isOpen ? MobileCloseMenu : MobileMenu} alt="Menu" />
         </Menu.Button>
       </div>
       <Transition
-        show={open}
+        as={Fragment}
+        show={isOpen}
         enter="transition ease-out duration-100"
         enterFrom="transform opacity-0 scale-95"
         enterTo="transform opacity-100 scale-100"
@@ -39,7 +42,8 @@ const DropdownMenu = ({ menuItems, className, label }: DropdownMenuProps) => {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items static className="absolute z-50 h-fit min-h-[470px] right-6 left-6 mt-6 bg-gradient-to-r from-[#ED5432] to-[#EDA232] py-9 px-7 rounded-lg">
+        {/* Place Menu.Items here */}
+        <Menu.Items className="absolute z-50 h-fit min-h-[470px] right-6 left-6 mt-6 bg-gradient-to-r from-[#ED5432] to-[#EDA232] py-9 px-7 rounded-lg">
           <p className="font-bold text-textPrimary text-xs opacity-70 tracking-[0.2em] pb-8">
             MENU
           </p>
@@ -62,8 +66,6 @@ const DropdownMenu = ({ menuItems, className, label }: DropdownMenuProps) => {
           </div>
         </Menu.Items>
       </Transition>
-      </>
-      )}
     </Menu>
   )
 }
