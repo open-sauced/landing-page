@@ -1,10 +1,10 @@
-import { Fragment } from 'react'
 import Image from 'next/image'
 import { Menu, Transition } from '@headlessui/react'
 import Link from 'next/link'
 
 import SocialLinks from '../../common/SocialLinks'
 import MobileMenu from '../../../public/mobile_menu.svg'
+import MobileCloseMenu from '../../../public/close_btn.svg'
 
 interface MenuItem {
   label: string
@@ -18,15 +18,20 @@ interface DropdownMenuProps {
 }
 
 const DropdownMenu = ({ menuItems, className, label }: DropdownMenuProps) => {
+
+
   return (
-    <Menu as="div" className={` inline-block text-left ${className}`}>
+    <Menu as="div" className={`inline-block text-left ${className}`}>
+      {({ open }) => (
+        <>
+
       <div>
         <Menu.Button className="text-white" aria-label={label}>
-          <Image src={MobileMenu} alt="Menu" />
+          <Image src={open ? MobileCloseMenu : MobileMenu}  alt="Menu" />
         </Menu.Button>
       </div>
       <Transition
-        as={Fragment}
+        show={open}
         enter="transition ease-out duration-100"
         enterFrom="transform opacity-0 scale-95"
         enterTo="transform opacity-100 scale-100"
@@ -34,7 +39,7 @@ const DropdownMenu = ({ menuItems, className, label }: DropdownMenuProps) => {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute z-50 h-fit min-h-[470px] right-6 left-6 mt-6 bg-gradient-to-r from-[#ED5432] to-[#EDA232] py-9 px-7 rounded-lg">
+        <Menu.Items static className="absolute z-50 h-fit min-h-[470px] right-6 left-6 mt-6 bg-gradient-to-r from-[#ED5432] to-[#EDA232] py-9 px-7 rounded-lg">
           <p className="font-bold text-textPrimary text-xs opacity-70 tracking-[0.2em] pb-8">
             MENU
           </p>
@@ -57,6 +62,8 @@ const DropdownMenu = ({ menuItems, className, label }: DropdownMenuProps) => {
           </div>
         </Menu.Items>
       </Transition>
+      </>
+      )}
     </Menu>
   )
 }
