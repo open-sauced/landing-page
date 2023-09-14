@@ -27,8 +27,8 @@ const DropdownMenu = ({ menuItems, className, label }: DropdownMenuProps) => {
 
   return (
     <Menu as="div" className={`inline-block text-left ${className}`}>
-      <div>
-        <Menu.Button className="text-white" aria-label={label} onClick={toggleMenu}>
+      <div onClick={toggleMenu}>
+        <Menu.Button className="text-white" aria-label={label}>
           <Image src={isOpen ? MobileCloseMenu : MobileMenu} alt="Menu" />
         </Menu.Button>
       </div>
