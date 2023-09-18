@@ -8,6 +8,7 @@ import ContainerWithLine from '../../common/ContainerWithLine'
 import { Heading, Typography } from '../../common/text'
 import { Button } from '../../common'
 import DecoratedText from '../../common/text/utils/DecoratedText'
+import Image from 'next/image'
 interface HeroProps {
   data: SanityHomePage['hero']
 }
@@ -58,8 +59,8 @@ const Hero = ({ data }: HeroProps) => {
             </div>
             
             <div className="flex-1 ">
-              <div className="">
-                <img loading="eager" className="relative scale-105 largeTablet:scale-110 -right-4" src="/hero.svg" alt="" />
+              <div>
+                <Image width={600} height={600} loading="eager" className="relative scale-105 largeTablet:scale-110 -right-4" src="/hero.svg" alt="Insight Dashboard" />
               </div>
             </div>
           </div>
