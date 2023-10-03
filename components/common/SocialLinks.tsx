@@ -14,7 +14,7 @@ const data = [
   {
     url: 'https://twitter.com/saucedopen',
     icon: xLogoW,
-    label: 'Twitter',
+    label: 'X',
   },
   {
     url: 'https://github.com/open-sauced',
