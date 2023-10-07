@@ -15,6 +15,21 @@ interface TypographyProps {
     | 'body4'
   alignSmall?: 'center' | 'right' | 'left'
   alignLarge?: 'center' | 'right' | 'left'
+  tracking?: 'tighter' | 'tight' | 'normal' | 'wide' | 'wider' | 'widest'
+  leading?: '3'
+    | '4'
+    | '5'
+    | '6'
+    | '7'
+    | '8'
+    | '9'
+    | '10'
+    | 'none'
+    | 'tight'
+    | 'snug'
+    | 'normal'
+    | 'relaxed'
+    | 'loose'
 }
 
 const Typography: FC<TypographyProps> = ({
@@ -22,6 +37,8 @@ const Typography: FC<TypographyProps> = ({
   children,
   alignLarge = 'center',
   alignSmall = 'left',
+  tracking = 'normal',
+  leading= 'normal',
 }): ReactElement => {
   const isLargeTablet = useMediaQuery()
   const commonStyle = `w-full text-textPrimary`
@@ -57,12 +74,57 @@ const Typography: FC<TypographyProps> = ({
       : variant === 'subheading'
       ? subheadingStyle
       : ''
+  const leadingStyle =
+    leading === '3'
+      ? 'leading-3'
+      : leading === '4'
+      ? 'leading-4'
+      : leading === '5'
+      ? 'leading-5'
+      : leading === '6'
+      ? 'leading-6'
+      : leading === '7'
+      ? 'leading-7'
+      : leading === '8'
+      ? 'leading-8'
+      : leading === '9'
+      ? 'leading-9'
+      : leading === '10'
+      ? 'leading-10'
+      : leading === 'none'
+      ? 'leading-none'
+      : leading === 'tight'
+      ? 'leading-tight'
+      : leading === 'snug'
+      ? 'leading-snug'
+      : leading === 'normal'
+      ? 'leading-normal'
+      : leading === 'relaxed'
+      ? 'leading-relaxed'
+      : leading === 'loose'
+      ? 'leading-loose'
+      : ''
+
+  const trackingStyle = 
+    tracking === 'tighter'
+      ? 'tracking-tighter'
+      : tracking === 'tight'
+      ? 'tracking-tight'
+      : tracking === 'normal'
+      ? 'tracking-normal'
+      : tracking === 'wide'
+      ? 'tracking-wide'
+      : tracking === 'wider'
+      ? 'tracking-wider'
+      : tracking === 'widest'
+      ? 'tracking-widest'
+      : ''
   return (
     <p
       style={{
         textAlign: isLargeTablet ? alignLarge : alignSmall,
       }}
-      className={`${commonStyle} ${appliedStyle}`}
+      className={`${commonStyle} ${appliedStyle} ${leadingStyle} ${trackingStyle}`}
     >
       {children}
     </p>
