@@ -17,7 +17,7 @@ const Hero = ({ data }: HeroProps) => {
     <SectionWrapper pt={115} pts={60} pbs={0}>
       <ContainerWithLine>
         <main>
-          <div className="flex largeTablet:items-center h-full flex-col gap-x-6 gap-y-10 largeTablet:flex-row mx-6">
+          <div className="flex items-center h-full flex-col gap-x-6 gap-y-10 _1054:flex-row mx-6">
             <div>
               <Typography alignSmall="left" alignLarge="left" variant="preHeading">
                 YOU GOT THIS
@@ -31,7 +31,7 @@ const Hero = ({ data }: HeroProps) => {
                 </Heading>
               </div>
               
-              <div className="py-10 max-w-xl">
+              <div className="py-10 max-w-md _1106:max-w-xl">
                 <Typography leading='8' tracking='tight' alignLarge="left" alignSmall="left" variant="body1">
                   Start the path to your next contribution and join the global community of open source developers making an impact around the world.
                 </Typography>
@@ -54,7 +54,7 @@ const Hero = ({ data }: HeroProps) => {
             
             <div className="max-w-md">
               <div>
-                <Image width={800} height={800} priority={true} loading="eager" className="relative  largeTablet:scale-125 largeTablet:-right-16" src="/maintainers/maintainer_dashboard.svg" alt="Maintainer Insight Dashboard" />
+                <Image width={800} height={800} priority={true} loading="eager" className="relative  _1106:scale-125 _1106:-right-16" src="/maintainers/maintainer_dashboard_comp.png" alt="Maintainer Insight Dashboard"/>
               </div>
             </div>
           </div>

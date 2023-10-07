@@ -15,9 +15,11 @@ module.exports = {
       largeTablet: '840px',
       laptop: '1024px',
       desktop: '1280px',
-      _2k: '2000px',
-      _1764: '1764px',
+      _1054: '1054px',
+      _1106: '1106px',
       _1594: '1594px',
+      _1764: '1764px',
+      _2k: '2000px',
     },
     extend: {
       colors: {
