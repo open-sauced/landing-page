@@ -33,7 +33,7 @@ const Feature: FC<Props> = ({
       <div className="pb-14 largeTablet:mb-32">
         <div className="flex gap-y-24 py-10 flex-col-reverse largeTablet:flex-col">
           <div ref={refIcon} className=" flex flex-col px-6 gap-y-8">
-            <div className="relative largeTablet:max-w-[500px]">
+            <div className="relative largeTablet:max-w-[700px]">
               <motion.img
                 initial={{ opacity: 0, scale: 0.2 }}
                 animate={{ opacity: iconInView ? 1 : 0, scale: iconInView ? 1 : 0.5 }}
@@ -48,19 +48,19 @@ const Feature: FC<Props> = ({
                 animate={{ opacity: iconInView ? 1 : 0, y: posY, x: iconInView ? 0 : -10 }}
                 transition={{ duration: 0.7, delay: 0.2, ease: 'easeInOut' }}
               >
-                <Heading component="h2" alignLarge="left">
+                <Heading component="h1" alignLarge="left">
                   {title}
                 </Heading>
               </motion.div>
             </div>
 
-            <div className="largeTablet:max-w-[500px]">
+            <div className="largeTablet:max-w-[650px]">
               <motion.div
                 initial={{ opacity: 0, y: initPosY, x: 10 }}
                 animate={{ opacity: iconInView ? 1 : 0, y: posY, x: iconInView ? 0 : 10 }}
                 transition={{ duration: 0.7, delay: 0.2, ease: 'easeInOut' }}
               >
-                <Typography variant="subheading" alignLarge="left">
+                <Typography tracking='wide' variant="body1" alignLarge="left">
                   {description}
                 </Typography>
               </motion.div>
