@@ -33,7 +33,7 @@ const Hero = ({ data }: HeroProps) => {
               
               <div className="py-10 max-w-md _1106:max-w-xl">
                 <Typography leading='8' tracking='tight' alignLarge="left" alignSmall="left" variant="body1">
-                  Start the path to your next contribution and join the global community of open source developers making an impact around the world.
+                  Optimize Your Open Source Project with Deep Insights: Join a platform crafted for maintainers seeking to drive innovation and community growth.
                 </Typography>
               </div>
 

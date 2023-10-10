@@ -9,7 +9,7 @@ import EndingLine from '../../../common/EndingLine'
 const featureData = [
   {
     _key: '1',
-    title: '$orange-to-yellowGrow and Celebrate$orange-to-yellow Your Open Source Community',
+    title: '$orange-to-yellowGrow and celebrate$orange-to-yellow your open source community',
     description: 'Illuminate your project’s growth with Highlights. Seek collaboration, as you champion and encourage contributions. Dive in and together, let’s grow your community!',
     icon: '/icons/find_icon.svg',
     image: '/maintainers/features/pr_highlights.png',
@@ -17,7 +17,7 @@ const featureData = [
   },
   {
     _key: '2',
-    title: 'Connect with $orange-to-yellowcontributors$orange-to-yellow Like Never Before',
+    title: 'Connect with $orange-to-yellowcontributors$orange-to-yellow like never before',
     description: "Get to truly know your contributors and build trust. With streamlined collaboration, not only achieve milestones but also celebrate successes together. Amplify your open-source journey.",
     icon: '/icons/share_icon.svg',
     image: '/features/collaboration.svg',
