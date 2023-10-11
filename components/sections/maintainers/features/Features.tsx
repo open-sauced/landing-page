@@ -36,7 +36,7 @@ const featureData = [
 const className = [
   {
     // lg:  "-left-[22px] px-[100px] scale-[1.30] ",
-    lg:  "_1594:-right-[280px] px-4 largeTablet:px-0  _1764:-right-[380px] _1594:-top-36",
+    lg:  "_1594:-right-[280px]  _1764:-right-[380px] _1594:-top-36",
     sm: "" 
   },
   {
