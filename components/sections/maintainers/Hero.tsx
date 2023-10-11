@@ -48,9 +48,9 @@ const Hero = ({ data }: HeroProps) => {
 
               <div className="pt-6 pb-10">
                 <Typography alignLarge="left" alignSmall="left" variant="body3">
-                  Working with a team?
+                  Are you an individual contributor?
                   <span>
-                    <Link href="/teams">
+                    <Link href="/">
                       <DecoratedText content="$orange-to-yellow Click here$orange-to-yellow"/>
                     </Link>
                   </span> 
