@@ -18,8 +18,8 @@ const Hero = ({ data }: HeroProps) => {
     <SectionWrapper pt={115} pts={60} pbs={0}>
       <ContainerWithLine>
         <main>
-          <div className="flex items-center h-full flex-col gap-x-6 gap-y-10 _1054:flex-row mx-6">
-            <div>
+          <div className="flex largeTablet:items-center h-full w-full flex-col gap-x-6 gap-y-10 _1054:flex-row mx-6">
+            <div className="_1255:max-w-2xl mr-2 largeTablet:mr-0">
               <Typography alignSmall="left" alignLarge="left" variant="preHeading">
                 YOU GOT THIS
               </Typography>
@@ -34,7 +34,7 @@ const Hero = ({ data }: HeroProps) => {
               
               <div className="py-10 max-w-md _1106:max-w-xl">
                 <Typography leading='8' tracking='tight' alignLarge="left" alignSmall="left" variant="body1">
-                  Optimize Your Open Source Project with Deep Insights: Join a platform crafted for maintainers seeking to drive innovation and community growth.
+                  Optimize your open source project with deep insights: Join a platform crafted for maintainers seeking to drive innovation and community growth
                 </Typography>
               </div>
 
@@ -58,9 +58,9 @@ const Hero = ({ data }: HeroProps) => {
               </div>
             </div>
             
-            <div className="max-w-md">
+            <div className="max-w-m">
               <div>
-                <Image width={800} height={800} priority={true} loading="eager" className="relative  _1106:scale-125 _1106:-right-16" src="/maintainers/maintainer_dashboard_comp.png" alt="Maintainer Insight Dashboard"/>
+                <Image width={600} height={650} priority={true} loading="eager" className="relative" src="/maintainers/hero_maintainer.png" alt="Maintainer Insight Dashboard"/>
               </div>
             </div>
           </div>
