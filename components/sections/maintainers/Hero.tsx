@@ -7,7 +7,6 @@ import SectionWrapper from '../../common/layout/SectionWrapper'
 import ContainerWithLine from '../../common/ContainerWithLine'
 import { Heading, Typography } from '../../common/text'
 import { Button } from '../../common'
-import DecoratedText from '../../common/text/utils/DecoratedText'
 import Image from 'next/image'
 interface HeroProps {
   data: SanityHomePage['hero']
@@ -18,8 +17,8 @@ const Hero = ({ data }: HeroProps) => {
     <SectionWrapper pt={115} pts={60} pbs={0}>
       <ContainerWithLine>
         <main>
-          <div className="flex largeTablet:items-center h-full flex-col gap-x-6 gap-y-10 largeTablet:flex-row mx-6">
-            <div className="flex-1 ">
+          <div className="flex items-center h-full flex-col gap-x-6 gap-y-10 _1054:flex-row mx-6">
+            <div>
               <Typography alignSmall="left" alignLarge="left" variant="preHeading">
                 YOU GOT THIS
               </Typography>
@@ -28,13 +27,13 @@ const Hero = ({ data }: HeroProps) => {
                 <img className="absolute -left-[49px] largeTablet:-left-[68px] -top-[50px]" src="/icons/journey_ball.svg" alt="Starting point"/>
 
                 <Heading component="h1" alignSmall="left" alignLarge="left">
-                  Your next open source journey $orange-to-yellowstarts here$orange-to-yellow
+                  The first tool designed for $orange-to-yellowmaintainers$orange-to-yellow
                 </Heading>
               </div>
               
-              <div className="py-10">
-                <Typography alignLarge="left" alignSmall="left" variant="body3">
-                  Start the path to your next contribution and join the global community of open source developers making an impact around the world.
+              <div className="py-10 max-w-md _1106:max-w-xl">
+                <Typography leading='8' tracking='tight' alignLarge="left" alignSmall="left" variant="body1">
+                  Optimize Your Open Source Project with Deep Insights: Join a platform crafted for maintainers seeking to drive innovation and community growth.
                 </Typography>
               </div>
 
@@ -48,19 +47,14 @@ const Hero = ({ data }: HeroProps) => {
 
               <div className="pt-6 pb-10">
                 <Typography alignLarge="left" alignSmall="left" variant="body3">
-                  Maintaining a team?
-                  <span>
-                    <Link href="/maintainers">
-                      <DecoratedText content="$orange-to-yellow Click here$orange-to-yellow"/>
-                    </Link>
-                  </span> 
+                  Are you an individual contributor? <Link href="/">Click here</Link>
                 </Typography>
               </div>
             </div>
             
-            <div className="flex-1">
+            <div className="max-w-md">
               <div>
-                <Image width={600} height={600} priority={true} loading="eager" className="relative scale-125 largeTablet:scale-125 scl -right-4" src="/hero.svg" alt="Insight Dashboard" />
+                <Image width={800} height={800} priority={true} loading="eager" className="relative  _1106:scale-125 _1106:-right-16" src="/maintainers/maintainer_dashboard_comp.png" alt="Maintainer Insight Dashboard"/>
               </div>
             </div>
           </div>
