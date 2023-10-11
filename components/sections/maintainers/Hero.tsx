@@ -8,6 +8,7 @@ import ContainerWithLine from '../../common/ContainerWithLine'
 import { Heading, Typography } from '../../common/text'
 import { Button } from '../../common'
 import Image from 'next/image'
+import DecoratedText from '../../common/text/utils/DecoratedText'
 interface HeroProps {
   data: SanityHomePage['hero']
 }
@@ -47,7 +48,12 @@ const Hero = ({ data }: HeroProps) => {
 
               <div className="pt-6 pb-10">
                 <Typography alignLarge="left" alignSmall="left" variant="body3">
-                  Are you an individual contributor? <Link href="/">Click here</Link>
+                  Working with a team?
+                  <span>
+                    <Link href="/teams">
+                      <DecoratedText content="$orange-to-yellow Click here$orange-to-yellow"/>
+                    </Link>
+                  </span> 
                 </Typography>
               </div>
             </div>
