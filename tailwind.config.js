@@ -8,6 +8,7 @@ module.exports = {
       display: ["'Inter', sans-serif"],
       body: ["'Inter', sans-serif"],
       sans: ["'Inter', sans-serif"],
+      openSans: ["'OpenSans', sans-serif"],
     },
     screens: {
       mobile: '320px',
