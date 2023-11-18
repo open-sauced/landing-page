@@ -6,6 +6,7 @@ import Header from '../../sections/navigation/Header'
 import Footer from '../../sections/Footer'
 import Subscribe from '../../sections/Subscribe'
 import OgData from './SEO/SEO'
+import PHBadge from '../product-hunt/PHBadge'
 
 interface BackgroundWrapperProps {
   children: React.ReactNode
@@ -42,6 +43,7 @@ const PageLayout: FC<PageLayoutProps> = ({
         />
       }
       <BackgroundWrapper>
+        <PHBadge/>
         {!pressPage && <Header navigationItems={navigationURLs} />}
         <div>{children}</div>
         {!pressPage && !homePage && <Subscribe />}
