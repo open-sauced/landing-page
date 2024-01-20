@@ -27,9 +27,9 @@ const GitHubMock: FC<GitHubMockProps> = ({ moreHeading, topFeature }) => {
     <SectionWrapper pbs={100}>
       <div className="flex pb-16 px-10 tablet:px-0 items-center justify-center largeTablet:pb-14">
 +         <p>
-+           <span className="block text-textPrimary font-inter font-bold text-[2.375rem] leading-[3.+ 625rem] largeTablet:text-5xl largeTablet:leading-[4.5rem]">
-+             We are
-+           </span>
++            <span className="block text-textPrimary font-inter font-bold text-[2.375rem] leading-[3.625rem] largeTablet:text-5xl largeTablet:leading-[4.5rem]">
+            We are
+          </span>
 +           <span className="block font-inter font-bold pl-16 tablet:pl-20 text-[3.25rem] leading-none + largeTablet:text-8xl">
 +             <DecoratedText content="$orange-to-yellowmore" />
 +           </span>
@@ -91,5 +91,4 @@ const GitHubMock: FC<GitHubMockProps> = ({ moreHeading, topFeature }) => {
     </SectionWrapper>
   )
 }
-
 export default GitHubMock
