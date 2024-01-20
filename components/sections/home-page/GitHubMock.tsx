@@ -42,9 +42,9 @@ const GitHubMock: FC<GitHubMockProps> = ({ moreHeading, topFeature }) => {
 +       <div className="pb-16 largeTablet:pb-52">
 +         {isLargeTablet ? (
 +           <Image alt="" src={GreenSquares} />
-+         ) : (
++          : 
 +           <Image alt="" src={GreenSquaresSmall} />
-+         )}
++         }
 +       </div>
       <div className="pb-10 largeTablet:pb-44">
         <h2 className="text-center text-2xl font-bold font-inter largeTablet:text-5xl">
@@ -89,6 +89,5 @@ const GitHubMock: FC<GitHubMockProps> = ({ moreHeading, topFeature }) => {
         </div>
       </div>
     </SectionWrapper>
-  )
 }
 export default GitHubMock
