@@ -22,7 +22,6 @@ interface GitHubMockProps {
 
 const GitHubMock: FC<GitHubMockProps> = ({ moreHeading, topFeature }) => {
   const isLargeTablet = useMediaQuery()
-  const imageSource = isLargeTablet ? GreenSquares : GreenSquaresSmall;
   return (
     <SectionWrapper pbs={100}>
       <div className="flex pb-16 px-10 tablet:px-0 items-center justify-center largeTablet:pb-14">
