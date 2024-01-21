@@ -42,7 +42,7 @@ const GitHubMock: FC<GitHubMockProps> = ({ moreHeading, topFeature }) => {
 +       <div className="pb-16 largeTablet:pb-52">
 +         {isLargeTablet ? (
 +           <Image alt="" src={GreenSquares} />
-+          : 
++         ) : (
 +           <Image alt="" src={GreenSquaresSmall} />
 +         }
 +       </div>
