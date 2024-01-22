@@ -88,5 +88,6 @@ const GitHubMock: FC<GitHubMockProps> = ({ moreHeading, topFeature }) => {
         </div>
       </div>
     </SectionWrapper>
+  )
 }
 export default GitHubMock
