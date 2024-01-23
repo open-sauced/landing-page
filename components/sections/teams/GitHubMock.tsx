@@ -30,7 +30,7 @@ const GitHubMock: FC<GitHubMockProps> = ({ moreHeading, topFeature }) => {
           </p>
           <p className="font-inter font-bold pl-16 tablet:pl-20 text-[3.25rem] leading-none largeTablet:text-8xl">
             <DecoratedText content="$orange-to-yellowmore" />
-          </p>
+          </span>
           <span className="font-inter font-bold pl-32 tablet:pl-40 tracking-[-0.03em] text-[4.25rem] leading-none largeTablet:text-9xl">
             <DecoratedText content="$orange-to-yellowthan..." />
             </span>
