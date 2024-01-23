@@ -25,26 +25,25 @@ const GitHubMock: FC<GitHubMockProps> = ({ moreHeading, topFeature }) => {
   return (
     <SectionWrapper pbs={100}>
       <div className="flex pb-16 px-10 tablet:px-0 items-center justify-center largeTablet:pb-14">
-+         <p>
-+            <span className="block text-textPrimary font-inter font-bold text-[2.375rem] leading-[3.625rem] largeTablet:text-5xl largeTablet:leading-[4.5rem]">
+        <div>
+          <p className="text-textPrimary font-inter font-bold text-[2.375rem] leading-[3.625rem] largeTablet:text-5xl largeTablet:leading-[4.5rem]">
             We are
-          </span>
-+           <span className="block font-inter font-bold pl-16 tablet:pl-20 text-[3.25rem] leading-none + largeTablet:text-8xl">
-+             <DecoratedText content="$orange-to-yellowmore" />
-+           </span>
-+           <span className="block font-inter font-bold pl-32 tablet:pl-40 tracking-[-0.03em] text-[4.+ 25rem] leading-none largeTablet:text-9xl">
-+             <DecoratedText content="$orange-to-yellowthan..." />
-+           </span>
-+           <span className="sr-only">green squares</span>
-+         </p>
-+       </div>
-+       <div className="pb-16 largeTablet:pb-52">
-+         {isLargeTablet ? (
-+           <Image alt="" src={GreenSquares} />
-+         ) : (
-+           <Image alt="" src={GreenSquaresSmall} />
-+         )}
-+       </div>
+          </p>
+          <p className="font-inter font-bold pl-16 tablet:pl-20 text-[3.25rem] leading-none largeTablet:text-8xl">
+            <DecoratedText content="$orange-to-yellowmore" />
+          </p>
+          <p className="font-inter font-bold pl-32 tablet:pl-40 tracking-[-0.03em] text-[4.25rem] leading-none largeTablet:text-9xl">
+            <DecoratedText content="$orange-to-yellowthan..." />
+          </p>
+        </div>
+      </div>
+      <div className="pb-16 largeTablet:pb-52">
+        {isLargeTablet ? (
+          <Image alt="Green Squares text" src={GreenSquares} />
+        ) : (
+          <Image alt="Green Squares text" src={GreenSquaresSmall} />
+        )}
+      </div>
       <div className="pb-10 largeTablet:pb-44">
         <h2 className="text-center text-2xl font-bold font-inter largeTablet:text-5xl">
           <DecoratedText content={moreHeading[0] || ''} />
@@ -90,4 +89,5 @@ const GitHubMock: FC<GitHubMockProps> = ({ moreHeading, topFeature }) => {
     </SectionWrapper>
   )
 }
+
 export default GitHubMock
