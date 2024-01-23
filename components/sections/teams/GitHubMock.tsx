@@ -23,7 +23,6 @@ const GitHubMock: FC<GitHubMockProps> = ({ moreHeading, topFeature }) => {
   return (
     <SectionWrapper pbs={100}>
       <div className="flex pb-16 px-10 tablet:px-0 items-center justify-center largeTablet:pb-14">
-        <div>
           <p>
           <span className="text-textPrimary font-inter font-bold text-[2.375rem] leading-[3.625rem] largeTablet:text-5xl largeTablet:leading-[4.5rem]">
             We are
