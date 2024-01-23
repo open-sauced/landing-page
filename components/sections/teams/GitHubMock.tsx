@@ -38,7 +38,6 @@ const GitHubMock: FC<GitHubMockProps> = ({ moreHeading, topFeature }) => {
             <span className="sr-only">green squares</span>
           </p>
         </div>
-      </div>
       <div className="pb-16 largeTablet:pb-52">
         {isLargeTablet ? (
           <Image alt="Green Squares text" src={GreenSquares} />
