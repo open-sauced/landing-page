@@ -27,7 +27,6 @@ const GitHubMock: FC<GitHubMockProps> = ({ moreHeading, topFeature }) => {
           <span className="text-textPrimary font-inter font-bold text-[2.375rem] leading-[3.625rem] largeTablet:text-5xl largeTablet:leading-[4.5rem]">
             We are
             </span>
-          </p>
           <span className="font-inter font-bold pl-16 tablet:pl-20 text-[3.25rem] leading-none largeTablet:text-8xl">
             <DecoratedText content="$orange-to-yellowmore" />
           </span>
