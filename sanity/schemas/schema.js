@@ -20,6 +20,9 @@ import openSaucedLogo from './openSaucedLogo'
 import pricingPage from './pages/pricingPage'
 import aboutPage from './pages/aboutPage'
 import homePage from './pages/homePage'
+import changelog from './changelog'
+import changelogCategory from './changelogCategory'
+
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -42,6 +45,8 @@ export default createSchema({
     openSaucedLogo,
     pricingPage,
     aboutPage,
-    homePage
+    homePage,
+    changelog,
+    changelogCategory
   ]),
 })

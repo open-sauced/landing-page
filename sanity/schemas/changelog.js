@@ -1,0 +1,67 @@
+import React from 'react'
+
+export default {
+    title: 'Changelog',
+    name: 'changelog',
+    type: 'document',
+    fields: [
+      {
+        type: 'string',
+        name: 'title',
+        title: 'Title',
+        description: 'Please enter the title of the blog, title should be less than 100 characters.',
+        validation: Rule => Rule.required(),
+      },
+      {
+        type: 'object',
+        title: 'Category',
+        name: 'changelogCategory',
+        description: 'Please select the category for the changelog.',
+        fields: [
+          {
+            title: 'Category',
+            name: 'changelogCategory',
+            type: 'reference',
+            to: [{type: 'changelogCategory'}]
+          }
+        ]
+      },
+      {
+        type: 'date',
+        title: 'Date',
+        name: 'date',
+        description: 'Please select the date for the changelog.',
+      },
+      {
+        type: 'array',
+        title: 'Topic',
+        name: 'topics',
+        description: 'Please add the topics for the content.',
+        of: [{type: 'string'}]
+      },
+      {
+        type: 'slug',
+        title: 'Slug',
+        name: 'slug',
+        description: 'Click generate button to generate the slug automatically, or you can enter the slug manually making sure it is unique.',
+        validation: Rule => Rule.required(),
+        options: {
+          source: 'title',
+          maxLength: 200, // will be ignored if slugify is set
+          slugify: input => input
+                               .toLowerCase()
+                               .replace(/\s+/g, '-')
+                               .slice(0, 200)
+        },
+        validation: Rule => Rule.required(),
+      },
+      {
+        type: "markdown",
+        title: 'Changelog Content', 
+        name: 'changelogContent',
+        description: "Markdown content for the changelog",
+        validation: Rule => Rule.required(),
+      }
+    ],
+  }
+  
