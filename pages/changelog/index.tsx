@@ -28,8 +28,8 @@ const Index: NextPage<BlogsPageProps> = ({
       navigationURLs={navigationLinks}
       BackgroundWrapper={Background}
     >
-      <Hero />
-      <Changelogs />
+      <Hero/>
+      <Changelogs/>
     </PageLayout>
   )
 }
@@ -41,7 +41,7 @@ export async function getStaticProps() {
     getCommonData(),
   ])
 
-  const data = { commonData }
+  const data = {commonData}
 
   return {
     props: {

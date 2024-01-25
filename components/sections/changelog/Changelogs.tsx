@@ -7,11 +7,9 @@ import GradientBorderWrapper from '../../common/GradientBorderWrapper'
 
 const Changelogs = () => {
   const [changelogs, setChangelogs] = useState<SanityChangelog[]>([])
-  const [limit, setLimit] = useState(2)
+  const [limit, setLimit] = useState(5)
 
-  const loadMore = () => {
-    setLimit(limit + 2)
-  }
+  const loadMore = () => setLimit(limit + 5)
 
   useEffect(() => {
     const getChangeLog = async () => {
@@ -26,16 +24,14 @@ const Changelogs = () => {
     <section>
       <SectionWrapper>
         <main className="flex flex-col">
-          {
-            changelogs.length > 0 && changelogs.map((changelog, index) => (
-              <Changelog count={changelogs.length} index={index} key={index} changelog={changelog} />
-            ))
-          }
+          {changelogs.length > 0 && changelogs.map((changelog, index) => (
+            <Changelog count={changelogs.length} index={index} key={changelog._id} changelog={changelog}/>
+          ))}
         </main>
 
         <div className="flex justify-center pt-20 pb-36">
           <GradientBorderWrapper>
-            <button className=" bg-brandOrange px-3 py-1 rounded-md font-bold" onClick={loadMore}>
+            <button className="bg-brandOrange px-3 py-1 rounded-md font-bold" onClick={loadMore}>
               Load More
             </button>
           </GradientBorderWrapper>
