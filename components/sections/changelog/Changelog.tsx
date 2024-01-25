@@ -99,7 +99,7 @@ const Changelog: FC<ChangelogProps> = ({
           </div>
         </div>
         
-        {getContentHeight() > 210 && (
+        { changelogContent && getContentHeight() > 210 && (
           <button onClick={expandChangelog} className="text-textPrimary font-bold flex items-center gap-x-2 transition-all hover:text-brandOrange">
             {isExpanded ? "Collapse" : "See more"}
             {isExpanded ? <MdOutlineExpandMore className="transform rotate-180" /> : <MdOutlineExpandMore />}
