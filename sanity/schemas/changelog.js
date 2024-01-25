@@ -9,7 +9,7 @@ export default {
         type: 'string',
         name: 'title',
         title: 'Title',
-        description: 'Please enter the title of the blog, title should be less than 100 characters.',
+        description: 'Please enter the title of the changelog.',
         validation: Rule => Rule.required(),
       },
       {
@@ -24,13 +24,15 @@ export default {
             type: 'reference',
             to: [{type: 'changelogCategory'}]
           }
-        ]
+        ],
+        validation: Rule => Rule.required(),
       },
       {
         type: 'date',
         title: 'Date',
         name: 'date',
         description: 'Please select the date for the changelog.',
+        validation: Rule => Rule.required(),
       },
       {
         type: 'array',
