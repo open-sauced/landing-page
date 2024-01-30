@@ -34,17 +34,15 @@ const Changelogs: FC<ChangelogsProps> = ({
             <Changelog count={changelogs.length} index={index} key={changelog._id} changelog={changelog}/>
           ))}
         </main>
-        {
-          changelogs.length < totalChangelogCount && (
-            <div className="flex justify-center pt-20 pb-36">
-              <GradientBorderWrapper>
-                <button className="bg-brandOrange px-3 py-1 rounded-md font-bold" onClick={loadMore}>
-                  Load More
-                </button>
-              </GradientBorderWrapper>
-            </div>
-          )
-        }
+        {changelogs.length < totalChangelogCount && (
+          <div className="flex justify-center pt-20 pb-36">
+            <GradientBorderWrapper>
+              <button className="bg-brandOrange px-3 py-1 rounded-md font-bold" onClick={loadMore}>
+                Load More
+              </button>
+            </GradientBorderWrapper>
+          </div>
+        )}
       </SectionWrapper>
     </section>
   )
