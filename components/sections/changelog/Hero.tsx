@@ -8,7 +8,7 @@ const Hero = () => {
         $yellow-to-orangeChangelog$yellow-to-orange
       </Heading>
       <Typography alignSmall="center" variant="subheading">
-        See what’s new with OpenSauced.
+        See what’s new in OpenSauced.
       </Typography>
     </section>
   )
