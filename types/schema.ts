@@ -773,7 +773,7 @@ export interface SanityChangelog extends SanityDocument {
   /**
    * Title — `string`
    *
-   * Please enter the title of the blog, title should be less than 100 characters.
+   * Please enter the title of the changelog.
    */
   title?: string
 
