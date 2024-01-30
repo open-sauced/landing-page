@@ -2,7 +2,7 @@ import React from 'react'
 import Hero from '../../components/sections/changelog/Hero'
 import Changelogs from '../../components/sections/changelog/Changelogs'
 import PageLayout from '../../components/common/layout/PageLayout'
-import { getCommonData } from '../../lib/sanity'
+import { getAllChangelog, getCommonData } from '../../lib/sanity'
 import { NextPage } from 'next'
 import { SanityFooter, SanityNavigation, SanitySeo } from '../../types/schema'
 import Background from '../../components/sections/changelog/Background'
@@ -14,12 +14,14 @@ interface BlogsPageProps {
       seoData: SanitySeo
       footer: SanityFooter[]
     }
+    totalChangelogCount: number
   }
 }
 
 const Index: NextPage<BlogsPageProps> = ({
   data: {
     commonData: { navigationLinks, seoData },
+    totalChangelogCount,
   },
 })=> {
   return (
@@ -29,7 +31,7 @@ const Index: NextPage<BlogsPageProps> = ({
       BackgroundWrapper={Background}
     >
       <Hero/>
-      <Changelogs/>
+      <Changelogs totalChangelogCount={totalChangelogCount}/>
     </PageLayout>
   )
 }
@@ -37,11 +39,13 @@ const Index: NextPage<BlogsPageProps> = ({
 export default Index
 
 export async function getStaticProps() {
-  const [commonData] = await Promise.all([
+  const [commonData, AllChangelog ] = await Promise.all([
     getCommonData(),
+    getAllChangelog()
   ])
 
-  const data = {commonData}
+  const totalChangelogCount = AllChangelog.length
+  const data = {commonData, totalChangelogCount}
 
   return {
     props: {
