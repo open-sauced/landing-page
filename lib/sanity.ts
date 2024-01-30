@@ -227,7 +227,7 @@ export const getChangelog: (limit: number) => Promise<SanityChangelog[]> = async
   limit: number = 2
 ) => {
   const changelog: SanityChangelog[] = await client.fetch(
-    `*[_type == 'changelog' && !(_id in path('drafts.**'))] {
+    `*[_type == 'changelog' && !(_id in path('drafts.**'))] | order(date desc) {
       ...,
     }[0..${limit - 1}]`
   )
