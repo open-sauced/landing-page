@@ -762,6 +762,81 @@ export interface SanityOpenSaucedLogo extends SanityDocument {
   }
 }
 
+/**
+ * Changelog
+ *
+ *
+ */
+export interface SanityChangelog extends SanityDocument {
+  _type: 'changelog'
+
+  /**
+   * Title — `string`
+   *
+   * Please enter the title of the changelog.
+   */
+  title?: string
+
+  /**
+   * Category — `object`
+   *
+   * Please select the category for the changelog.
+   */
+  changelogCategory?: {
+    _type: 'changelogCategory'
+    /**
+     * Category — `reference`
+     *
+     *
+     */
+    changelogCategory?: SanityReference<SanityChangelogCategory>
+  }
+
+  /**
+   * Date — `date`
+   *
+   * Please select the date for the changelog.
+   */
+  date?: string
+
+  /**
+   * Topic — `array`
+   *
+   * Please add the topics for the content.
+   */
+  topics?: Array<SanityKeyed<string>>
+
+  /**
+   * Slug — `slug`
+   *
+   * Click generate button to generate the slug automatically, or you can enter the slug manually making sure it is unique.
+   */
+  slug?: { _type: 'slug'; current: string }
+
+  /**
+   * Changelog Content — `markdown`
+   *
+   * Markdown content for the changelog
+   */
+  changelogContent?: SanityMarkdown
+}
+
+/**
+ * Changelog Category
+ *
+ *
+ */
+export interface SanityChangelogCategory extends SanityDocument {
+  _type: 'changelogCategory'
+
+  /**
+   * Label — `string`
+   *
+   *
+   */
+  label?: string
+}
+
 export type SanityPricingPage = {
   _type: 'pricingPage'
   /**
@@ -1312,6 +1387,8 @@ export type Documents =
   | SanityBlog
   | SanityPress
   | SanityOpenSaucedLogo
+  | SanityChangelog
+  | SanityChangelogCategory
 
 /**
  * This interface is a stub. It was referenced in your sanity schema but
