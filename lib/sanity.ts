@@ -10,6 +10,7 @@ import {
   SanityPricingPage,
   SanityAboutPage,
   SanityHomePage,
+  SanityChangelog,
 } from '../types/schema'
 
 const client = sanityClient({
@@ -211,4 +212,25 @@ export const getAboutPageData: () => Promise<SanityAboutPage> = async () => {
     }
   }`)
   return getAboutPageData
+}
+
+export const getAllChangelog: () => Promise<SanityChangelog[]> = async () => {
+  const allChangelog: SanityChangelog[] = await client.fetch(
+    `*[_type == 'changelog' && !(_id in path('drafts.**'))] | order(_createdAt desc)  {
+      ...,
+    }`
+  )
+  return allChangelog
+}
+
+export const getChangelog: (limit: number) => Promise<SanityChangelog[]> = async (
+  limit: number = 2
+) => {
+  const changelog: SanityChangelog[] = await client.fetch(
+    `*[_type == 'changelog' && !(_id in path('drafts.**'))] | order(date desc) {
+      ...,
+    }[0..${limit - 1}]`
+  )
+
+  return changelog
 }
