@@ -26,23 +26,22 @@ const Changelog: FC<ChangelogProps> = ({
   const [isExpanded, setIsExpanded] = useState(false)
   const contentRef = useRef<HTMLDivElement>(null)
 
-  // function to get the height of the changelog content
-  const getContentHeight = () => {
-    if (contentRef.current) {
-      return contentRef.current.clientHeight
-    }
-    return 0
-  }
-
   // function to expand the changelog
   const expandChangelog = () => {
     setIsExpanded(!isExpanded)
   }
 
   const containerHeightStyle = {
-    height: isExpanded ? "auto" : "240px",
     overflow: "hidden",
+    transition: "height 0.5s ease-in-out",
+    height: isExpanded ? `${contentRef.current?.clientHeight}px` : "120px",
   }
+
+  // check if the changelog content has an image
+  const hasImageInContent = changelogContent.includes("![image](")
+
+  // check the line of the changelog content
+  const lineCount = changelogContent.split("\n").length
 
   return (
     <div className="flex gap-x-10">
@@ -91,19 +90,19 @@ const Changelog: FC<ChangelogProps> = ({
         </div>
 
         <div style={containerHeightStyle}>
-          <div ref={contentRef}>
+          <div className="relative" ref={contentRef}>
             <ReactMarkdown
               className="prose prose-sm prose-headings:text-textPrimary prose-p:text-textPrimary prose-p:text-base">
               {changelogContent}
             </ReactMarkdown>
           </div>
         </div>
-        
-
-        <button onClick={expandChangelog} className="text-textPrimary font-bold flex items-center gap-x-2 transition-all hover:text-brandOrange">
-          {isExpanded ? "Collapse" : "See more"}
-          {isExpanded ? <MdOutlineExpandMore className="transform rotate-180" /> : <MdOutlineExpandMore />}
-        </button>
+        {(hasImageInContent || changelogContent.length > 260) && (
+          <button onClick={expandChangelog} className="text-textPrimary font-bold flex items-center mt-8 gap-x-2 transition-all hover:text-brandOrange">
+            {isExpanded ? "Collapse" : "See more"}
+            {isExpanded ? <MdOutlineExpandMore className="transform rotate-180" /> : <MdOutlineExpandMore />}
+          </button>
+        )}
       </div>
     </div>
   )
