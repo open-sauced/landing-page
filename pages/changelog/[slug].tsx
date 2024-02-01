@@ -44,7 +44,12 @@ export default function ChangelogPage({ changelog, commonData, latestChanges } :
       navigationURLs={commonData.navigationLinks}
       BackgroundWrapper={Background}
     >
-      <IndividualHero title={changelog.title ?? "Test"} topics={changelog.topics ?? []} date={changelog.date ?? "2001-02-02"} /> 
+      <IndividualHero 
+        title={changelog.title ?? "Test"} 
+        topics={changelog.topics ?? []} 
+        date={changelog.date ?? "2001-02-02"} 
+        url={`https://opensauced.pizza/changelog/${changelog.slug?.current}`}
+      /> 
       <ReactMarkdown
         className="mx-auto mb-24 leading-loose prose prose-xl prose-headings:text-textPrimary prose-p:text-textPrimary prose-img:mx-auto prose-img:rounded-md 
         prose-img:border-4 prose-img:border-brandOrange prose-img:bg-gradient-to-tr prose-img:from-[#ED5432] prose-img:via-[#EDA232] prose-img:to-[#ED5432] prose-img:drop-shadow-[0_0_4px_#ED5432]"
