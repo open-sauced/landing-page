@@ -234,3 +234,17 @@ export const getChangelog: (limit: number) => Promise<SanityChangelog[]> = async
 
   return changelog
 }
+
+export const getChangelogBySlug: (slug: string) => Promise<SanityChangelog> = async (slug) => {
+  const changelog = await client.fetch(
+    `
+    *[_type == 'changelog' && !(_id in path('drafts.**')) && slug.current == '${slug}'] {
+      ...,
+    }[0]
+    `
+  );
+
+  console.log({ changelog });
+
+  return changelog;
+}
