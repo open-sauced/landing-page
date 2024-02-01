@@ -12,14 +12,14 @@ import { getCommonData, getChangelogBySlug, getLatestChangelogsExceptSlug } from
 
 export async function getServerSideProps({ params } : { params: { slug: string }}) {
   if (!params.slug) { 
-    return { redirect: { destination: "/changelog" } } 
+    return { notFound: true };
   }
 
   const changelog = await getChangelogBySlug(params.slug);
 
   // there's no associated log to the slug given
   if (!changelog) {
-    return { redirect: { destination: "/changelog" } } 
+    return { notFound: true };
   }
 
   const commonData = await getCommonData();
