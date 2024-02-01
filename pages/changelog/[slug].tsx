@@ -10,7 +10,7 @@ import IndividualHero from "../../components/sections/changelog/IndividualHero";
 import { SanityChangelog, SanityFooter, SanityNavigation, SanitySeo } from "../../types/schema";
 import { getCommonData, getChangelogBySlug, getLatestChangelogsExceptSlug } from "../../lib/sanity";
 
-export async function getServerSideProps({ params }) {
+export async function getServerSideProps({ params } : { params: { slug: string }}) {
   if (!params.slug) { 
     return { redirect: { destination: "/changelog" } } 
   }
