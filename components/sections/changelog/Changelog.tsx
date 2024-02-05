@@ -46,32 +46,35 @@ const Changelog: FC<ChangelogProps> = ({
   const lineCount = changelogContent.split("\n").length
 
   return (
-    <div className="flex gap-x-10">
-      <div className={`hidden  tablet:flex relative pb-28 flex-1 border-textPrimary border-opacity-50 pl-10 max-w-md flex-col ${index+1 === count ? "" : "border-l-2"}`}>
-        <span>
-          <IoMdGitCommit className="absolute -left-5 bg-darkBG text-4xl" />
-        </span>
-        <Typography alignLarge="left" variant="title3">
-          <a href={`/changelog/${slug?.current}`} className="hover:text-brandOrange hover:underline hover:decoration-brandOrange">
-            {title}
-          </a>
-        </Typography>
-        <span className="py-4">
-          <Typography alignLarge="left" variant="body4">
-            {moment(date).format("DD MMM YYYY")}
+    <article className="flex gap-x-10 h-full relative">
+      <div className={`relative pb-28 border-textPrimary border-opacity-50 ${index+1 === count ? "" : "border-l-2"}`}>
+        <section className={`hidden self-start sticky top-8 tablet:flex flex-1 pl-10 max-w-md flex-col`}>
+          <span>
+            <IoMdGitCommit className="absolute -left-5 bg-darkBG text-4xl" />
+          </span>
+          <Typography alignLarge="left" variant="title3">
+            <a href={`/changelog/${slug?.current}`} className="hover:text-brandOrange hover:underline hover:decoration-brandOrange">
+              {title}
+            </a>
           </Typography>
-        </span>
-        <div className="flex gap-3">
-          {topics && topics.map((category, index) => (
-            <GradientBorderWrapper key={index} style={{borderRadius: "16px"}}>
-              <div className="bg-darkBG rounded-2xl text-sm px-2 py-1">
-                {category}
-              </div>
-            </GradientBorderWrapper>
-          ))}
-        </div>
+          <span className="py-4">
+            <Typography alignLarge="left" variant="body4">
+              {moment(date).format("DD MMM YYYY")}
+            </Typography>
+          </span>
+          <div className="flex gap-3">
+            {topics && topics.map((category, index) => (
+              <GradientBorderWrapper key={index} style={{borderRadius: "16px"}}>
+                <div className="bg-darkBG rounded-2xl text-sm px-2 py-1">
+                  {category}
+                </div>
+              </GradientBorderWrapper>
+            ))}
+          </div>
+        </section>
       </div>
-      <div className={`flex-1 relative pb-10 tablet:border-0 tablet:pl-0 pl-6 ${index+1 === count ? "" : "border-l-2"}`}>
+
+      <section className={`flex-1 relative pb-10 tablet:border-0 tablet:pl-0 pl-6 ${index+1 === count ? "" : "border-l-2"}`}>
         <div className="tablet:hidden relative flex-col flex gap-y-2 pb-4">
           <span className=" -left-6 -top-4 z-50 absolute">
             <IoMdGitCommit className="absolute -left-4 top-4 bg-darkBG text-3xl" />
@@ -107,8 +110,8 @@ const Changelog: FC<ChangelogProps> = ({
             {isExpanded ? <MdOutlineExpandMore className="transform rotate-180" /> : <MdOutlineExpandMore />}
           </button>
         )}
-      </div>
-    </div>
+      </section>
+    </article>
   )
 }
 
