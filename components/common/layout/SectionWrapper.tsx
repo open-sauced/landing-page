@@ -29,7 +29,7 @@ const SectionWrapper: FC<SectionWrapperProps> = ({
         paddingBottom: isLargeTablet ? `${pb}px` : `${pbs}px`,
         paddingTop: isLargeTablet ? `${pt}px` : `${pts}px`,
       }}
-      className={`w-full max-w-[1256px] mx-auto px-${px} flex justify-${justify} flex-${direction} items-center`}
+      className={`w-full max-w-[1256px] mx-auto px-${px} h-fit flex justify-${justify} flex-${direction} items-center`}
     >
       {children}
     </div>

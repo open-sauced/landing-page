@@ -12,7 +12,7 @@ interface BackgroundProps {
 
 const Background: FC<BackgroundProps> = ({ children }) => {
   return (
-    <div className="bg-darkBG text-white h-fit overflow-hidden relative">
+    <div className="bg-darkBG text-white h-fit relative">
       <div className="absolute hidden largeTablet:block largeTablet:top-[0rem] largeTablet:right-0">
         <Image alt="Doodles" src={StrokeR4} />
       </div>
