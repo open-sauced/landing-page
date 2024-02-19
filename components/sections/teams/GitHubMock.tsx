@@ -23,18 +23,19 @@ const GitHubMock: FC<GitHubMockProps> = ({ moreHeading, topFeature }) => {
   return (
     <SectionWrapper pbs={100}>
       <div className="flex pb-16 px-10 tablet:px-0 items-center justify-center largeTablet:pb-14">
-        <div>
-          <p className="text-textPrimary font-inter font-bold text-[2.375rem] leading-[3.625rem] largeTablet:text-5xl largeTablet:leading-[4.5rem]">
+          <p>
+          <span className="text-textPrimary font-inter font-bold text-[2.375rem] leading-[3.625rem] largeTablet:text-5xl largeTablet:leading-[4.5rem]">
             We are
-          </p>
-          <p className="font-inter font-bold pl-16 tablet:pl-20 text-[3.25rem] leading-none largeTablet:text-8xl">
+            </span>
+          <span className="font-inter font-bold pl-16 tablet:pl-20 text-[3.25rem] leading-none largeTablet:text-8xl">
             <DecoratedText content="$orange-to-yellowmore" />
-          </p>
-          <p className="font-inter font-bold pl-32 tablet:pl-40 tracking-[-0.03em] text-[4.25rem] leading-none largeTablet:text-9xl">
+          </span>
+          <span className="font-inter font-bold pl-32 tablet:pl-40 tracking-[-0.03em] text-[4.25rem] leading-none largeTablet:text-9xl">
             <DecoratedText content="$orange-to-yellowthan..." />
+            </span>
+            <span className="sr-only">green squares</span>
           </p>
         </div>
-      </div>
       <div className="pb-16 largeTablet:pb-52">
         {isLargeTablet ? (
           <Image alt="Green Squares text" src={GreenSquares} />
@@ -49,7 +50,7 @@ const GitHubMock: FC<GitHubMockProps> = ({ moreHeading, topFeature }) => {
       </div>
 
       <p className="text-center font-bold text-textPrimary text-base largeTablet:text-2xl leading-none pb-10 largeTablet:pb-24">
-        {/* This text needs cololr, grey was hard to read */}
+        {/* This text needs color, grey was hard to read */}
         <DecoratedText content={`$orange-to-yellow${moreHeading[1] || ""}`} />
       </p>
       <p className="text-center font-bold pb-2 tracking-[-0.03em] text-xl largeTablet:text-[2rem] largeTablet:pb-6">
