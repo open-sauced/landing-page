@@ -23,8 +23,8 @@ const Blog: FC<BlogProps> = ({ data }): ReactElement => {
           <div className="w-full h-[304px] relative rounded-[5px] overflow-hidden ">
             <Image
               src={src as string}
-              layout="fill"
-              objectFit="cover"
+              fill
+              style={{objectFit: "cover"}}
               alt="Post cover"
             />
           </div>

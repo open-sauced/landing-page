@@ -31,25 +31,31 @@ const TeamsHero = ({ data }: HeroProps) => {
           </div>
           <div className="flex gap-4 items-center flex-col largeTablet:flex-row">
             {data?.cta?.map((item, i) => (
-              <Button key={i} href={item.ctaLink} borderVariant={ i !== 0 ? "gray" : "neon" }>
+              <Button
+                key={i}
+                href={item.ctaLink}
+                borderVariant={i !== 0 ? 'gray' : 'neon'}
+              >
                 {item.ctaLabel}
               </Button>
             ))}
           </div>
           <div className="pt-6 pb-10">
             <Typography alignLarge="left" alignSmall="left" variant="body3">
-              Are you an individual contributor?
-              <span>
-                <Link href="/">
-                  <DecoratedText content="$orange-to-yellow Click here$orange-to-yellow"/>
-                </Link>
-              </span> 
+              {/* changing this because of this seo error https://developer.chrome.com/docs/lighthouse/seo/link-text/?utm_source=lighthouse&utm_medium=devtools */}
+            <span className='cursor-default'>Are you an individual contributor?</span>
+              <a href="/"> 
+              <DecoratedText content="$orange-to-yellow Explore opportunities$orange-to-yellow" />
+              </a>
             </Typography>
           </div>
         </div>
         <div className="flex mt-16 justify-center items-center flex-1 largeTablet:justify-end largeTablet:mt-0">
           <div className="w-full h-full relative pointer-events-none max-w-[463px] largeTablet:max-h-[299px]">
-            <img alt="OpenSauced hero image" src={data?.image as unknown as string} />
+            <img
+              alt="OpenSauced hero image"
+              src={data?.image as unknown as string}
+            />
           </div>
         </div>
       </main>

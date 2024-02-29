@@ -40,12 +40,7 @@ const Newsletter = () => {
             data-netlify-honeypot="bot-field"
             autoComplete="off"
           >
-            <div hidden aria-hidden="true">
-              <label>
-                Try your luck
-                <input type="hidden" value="bot-field" name="newsletter" />
-              </label>
-            </div>
+            
             <input
               placeholder="Email"
               name="Your email"

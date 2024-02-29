@@ -5,6 +5,7 @@ import { Heading, Typography } from "../components/common/text";
 import { getCommonData } from "../lib/sanity";
 import { SanityFooter, SanityNavigation, SanitySeo } from "../types/schema";
 import { Button } from "../components/common";
+import Link from "next/link";
 
 export async function getStaticProps() {
   const commonData = await getCommonData();
@@ -31,12 +32,12 @@ export default function NotFound({ commonData } : {
             $yellow-to-orange404: Page Not Found - But Opportunities are Everywhere$yellow-to-orange
           </Heading>
           <Typography alignSmall="center" variant="subheading">
-            It seems you've stumbled upon a path that doesn't exist... yet. If you believe this page should exist,  
-            <a 
+            It seems you&apos;ve stumbled upon a path that doesn&apos;t exist... yet. If you believe this page should exist,  
+            <Link
               className="text-brandYellow"
               href="https://github.com/open-sauced/landing-page/issues/new?assignees=&labels=%F0%9F%91%80+needs+triage%2C%F0%9F%90%9B+bug&projects=&template=bug_report.yml&title=Bug%3A+">
               {" let us know. "}
-            </a>
+            </Link>
             Your feedback is a valuable contribution to our community.
           </Typography>
           <Button href="/" fullWidth>

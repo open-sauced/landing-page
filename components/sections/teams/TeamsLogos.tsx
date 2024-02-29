@@ -2,6 +2,7 @@ import React from 'react'
 import { SanityUser } from '../../../types/schema'
 
 import SectionWrapper from '../../common/layout/SectionWrapper'
+import Link from 'next/link'
 
 interface LogosProps {
   data: SanityUser[]
@@ -15,7 +16,7 @@ const TeamLogos = ({ data }: LogosProps) => {
           const href = item.website || ''
           const src = item.logo || ''
           return (
-            <a
+            <Link
               key={item.name}
               href={href}
               target="_blank"
@@ -28,7 +29,7 @@ const TeamLogos = ({ data }: LogosProps) => {
                 alt={item.name}
                 loading="lazy"
               />
-            </a>
+            </Link>
           )
         })}
       </div>

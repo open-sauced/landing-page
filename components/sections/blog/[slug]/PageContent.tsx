@@ -17,6 +17,7 @@ import DecoratedText from '../../../common/text/utils/DecoratedText'
 import OgData from '../../../common/layout/SEO/SEO'
 import SocialShare from '../../../common/SocialShare'
 import ReactPlayer from 'react-player'
+import Link from 'next/link'
 
 interface PageContentProps {
   pageContent: SanityBlog
@@ -92,7 +93,7 @@ const PageContent: FC<PageContentProps> = ({
           </div>
         )}
         {!featuredPost && !!blogUrl && (
-          <a
+          <Link
             className="w-full max-w-[780px]"
             href={blogUrl}
             target="_blank"
@@ -101,7 +102,7 @@ const PageContent: FC<PageContentProps> = ({
             <p className="text-left font-bold text-2xl border-b-[1px] w-fit tracking-[0.14em] pt-6">
               <DecoratedText content="$yellow-to-orangeRead entire article" />
             </p>
-          </a>
+          </Link>
         )}
         <div className="w-full mt-9 largeTablet:mt-28">
           <Typography variant="preHeading" alignLarge="left">

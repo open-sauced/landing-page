@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['cdn.sanity.io'],
+    domains: ['cdn.sanity.io','api.producthunt.com'],
   },
   async headers() {
     return [

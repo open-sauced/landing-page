@@ -61,7 +61,7 @@ const Footer: FC<FooterProps> = ({ pressPage }) => {
           </div>
         </div>
         <div className="w-full flex flex-col largeTablet:flex-row">
-          <div className="w-full largeTablet:w-[45%]">
+          <div className="w-full  largeTablet:w-[45%]">
             <LocalTypography variant="title">SOCIALS</LocalTypography>
             <SocialLinks />
           </div>
@@ -84,9 +84,9 @@ const Footer: FC<FooterProps> = ({ pressPage }) => {
               <LocalTypography variant="title">More Sauce</LocalTypography>
               <div className="w-full flex flex-col">
                 {apps.map(({ label, url }) => (
-                  <a key={url} href={url} target="_blank" rel="noreferrer">
+                  <Link key={url} href={url} target="_blank" rel="noreferrer">
                     <LocalTypography variant="item1">{label}</LocalTypography>
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -97,7 +97,7 @@ const Footer: FC<FooterProps> = ({ pressPage }) => {
                   +1 (123) 456-7890
                 </LocalTypography> */}
                 <LocalTypography variant="item1">
-                  <a href="mailto:hello@opensauced.pizza">hello@opensauced.pizza</a>
+                  <Link href="mailto:hello@opensauced.pizza">hello@opensauced.pizza</Link>
                 </LocalTypography>
               </div>
             </div>
@@ -111,9 +111,9 @@ const Footer: FC<FooterProps> = ({ pressPage }) => {
           <div className="flex mb-5 largeTablet:mb-0 ">
             {pages.map(({ url, label }, i) => (
               <div key={label} className="flex">
-                <a href={url} target="_blank" rel="noreferrer">
+                <Link href={url} target="_blank" rel="noreferrer">
                   <LocalTypography variant="item2">{label}</LocalTypography>
-                </a>
+                </Link>
                 {i < pages.length - 1 && (
                   <div className=" mx-2">
                     <LocalTypography variant="item2">•</LocalTypography>
@@ -138,11 +138,11 @@ const LocalTypography: FC<LocalTypographyProps> = ({
   children,
 }) => {
   const titleStyle =
-    'font-bold text-textPrimary opacity-[0.35] text-xs uppercase tracking-[0.2em] pb-8'
+    'font-bold text-textPrimary opacity-[0.9] text-xs uppercase tracking-[0.2em] pb-8'
   const item1Style =
     'font-normal text-textPrimary text-sm tracking-[-0.02em] opacity-[0.7] pb-3'
   const item2Style =
-    'font-normal text-textPrimary text-sm tracking-[-0.02em] opacity-[0.35]'
+    'font-normal text-textPrimary text-sm tracking-[-0.02em] opacity-[0.8]'
 
   const appliedStyle =
     variant === 'title'

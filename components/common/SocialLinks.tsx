@@ -9,6 +9,7 @@ import GithubLogoW from '../../public/logos/githubLogoW.svg'
 import DiscordLogoW from '../../public/logos/discordLogoW.svg'
 import DevLogoW from '../../public/logos/devLogoW.svg'
 import YoutubeLogoW from '../../public/logos/youtubeLogoW.svg'
+import Link from 'next/link'
 
 const data = [
   {
@@ -58,18 +59,18 @@ const SocialLinks: FC<SocialLinksProps> = ({ aboutPage, social }): ReactElement 
     ? <div className={wrapperStyle}>
         {social.map(({ socialUrl, socialIcon, socialLinkPlaceholder }) => (
           <div key={socialLinkPlaceholder} className="flex items-center cursor-pointer">
-            <a href={socialUrl} target="_blank" rel="noreferrer" className="opacity-70">
+            <Link href={socialUrl || "/#"} aria-label={socialLinkPlaceholder} target="_blank" rel="noreferrer" className="opacity-70">
               <Image width={37} height={37} alt={socialLinkPlaceholder as string} src={socialIcon as unknown as string || ""} />
-            </a>
+            </Link>
           </div>
         ))}
       </div>
     : <div className={wrapperStyle}>
         {data.map(({ url, icon, label }) => (
           <div key={label} className="flex items-center cursor-pointer">
-            <a href={url} target="_blank" rel="noreferrer" className="opacity-70">
+            <Link href={url || "/#"} aria-label={label} target="_blank" rel="noreferrer" className="opacity-70">
               <Image width={18} height={18} alt={label} src={icon} />
-            </a>
+            </Link>
           </div>
         ))}
       </div>

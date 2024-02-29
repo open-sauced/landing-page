@@ -27,7 +27,7 @@ const Newsletter = () => {
           $orange-to-yellowThe fast track$orange-to-yellow to open source
         </Heading>
 
-        <Typography alignSmall="center" variant="body1" >
+        <Typography alignSmall="center" variant="body1">
           Stay up to date with the latest OpenSauced news and trends.
         </Typography>
 
@@ -40,12 +40,7 @@ const Newsletter = () => {
             data-netlify-honeypot="bot-field"
             autoComplete="off"
           >
-            <div hidden aria-hidden="true">
-              <label>
-                Try your luck
-                <input type="hidden" value="bot-field" name="newsletter" />
-              </label>
-            </div>
+
             <input
               placeholder="Email"
               name="Your email"

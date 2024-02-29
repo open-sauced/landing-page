@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React, { FC } from 'react'
 
 // Icons
@@ -47,29 +48,29 @@ interface SocialLinkProps {
 
 const TwitterLink:FC<SocialLinkProps> = ({url}) => {
   return (
-    <a href={`https://twitter.com/intent/tweet?url=${url}`}>
+    <Link href={`https://twitter.com/intent/tweet?url=${url}`}>
       <BsTwitter/>
-    </a>
+    </Link>
   )
 }
 const LinkedinLink:FC<SocialLinkProps> = ({url}) => {
   return (
-    <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}`}>
+    <Link href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}`}>
       <BsLinkedin/>
-    </a>
+    </Link>
   )
 }
 const FacebookLink:FC<SocialLinkProps> = ({url}) => {
   return (
-    <a href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}>
+    <Link href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}>
       <BsFacebook/>
-    </a>
+    </Link>
   )
 }
 const HackerNewsLink:FC<SocialLinkProps> = ({url}) => {
   return (
-    <a href={`https://news.ycombinator.com/submitlink?u=${url}`}>
+    <Link href={`https://news.ycombinator.com/submitlink?u=${url}`}>
       <FaHackerNewsSquare/>
-    </a>
+    </Link>
   )
 }
