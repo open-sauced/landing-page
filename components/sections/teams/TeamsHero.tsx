@@ -45,10 +45,10 @@ const TeamsHero = ({ data }: HeroProps) => {
               {/* changing this because of this seo error https://developer.chrome.com/docs/lighthouse/seo/link-text/?utm_source=lighthouse&utm_medium=devtools */}
               <span className="cursor-default">
                 Are you an individual contributor?
+                <Link href="/">
+                  <DecoratedText content="$orange-to-yellow Explore opportunities$orange-to-yellow" />
+                </Link>
               </span>
-              <Link href="/">
-                <DecoratedText content="$orange-to-yellow Explore opportunities$orange-to-yellow" />
-              </Link>
             </Typography>
           </div>
         </div>
