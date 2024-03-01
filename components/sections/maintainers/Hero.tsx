@@ -51,7 +51,7 @@ const Hero = ({ data }: HeroProps) => {
                   Are you an individual contributor?
                   <span>
                     <Link href="/">
-                      <DecoratedText content="$orange-to-yellow Click here$orange-to-yellow"/>
+                      <DecoratedText content="$orange-to-yellow Explore opportunities$orange-to-yellow"/>
                     </Link>
                   </span> 
                 </Typography>

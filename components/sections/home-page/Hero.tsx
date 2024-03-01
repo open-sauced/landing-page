@@ -57,10 +57,9 @@ const Hero = ({ data }: HeroProps) => {
                 </Typography>
               </div>
             </div>
-            
             <div className="flex-1">
               <div>
-                <Image width={600} height={600} priority={true} loading="eager" className="relative scale-125 largeTablet:scale-125 scl -right-4" src="/hero.svg" alt="Insight Dashboard" />
+                <Image width={600} height={600} priority={true} loading="eager" className="relative scale-125 largeTablet:scale-125 -right-4" src="/home-page/hero.png" alt="Insight Dashboard" />
               </div>
             </div>
           </div>

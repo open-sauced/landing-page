@@ -6,6 +6,7 @@ import ReactMarkdown from 'react-markdown';
 import { MdOutlineExpandMore } from "react-icons/md";
 import { SanityChangelog } from '../../../types/schema';
 import moment from 'moment';
+import Link from 'next/link';
 
 interface ChangelogProps {
   changelog: SanityChangelog
@@ -53,9 +54,9 @@ const Changelog: FC<ChangelogProps> = ({
             <IoMdGitCommit className="absolute -left-5 bg-darkBG text-4xl" />
           </span>
           <Typography alignLarge="left" variant="title3">
-            <a href={`/changelog/${slug?.current}`} className="hover:text-brandOrange hover:underline hover:decoration-brandOrange">
+            <Link href={`/changelog/${slug?.current}`} className="hover:text-brandOrange hover:underline hover:decoration-brandOrange">
               {title}
-            </a>
+            </Link>
           </Typography>
           <span className="py-4">
             <Typography alignLarge="left" variant="body4">

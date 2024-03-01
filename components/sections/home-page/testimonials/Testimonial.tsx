@@ -6,6 +6,7 @@ import { SanityTestimonial } from '../../../../types/schema'
 
 // Components
 import GradientBorderWrapper from '../../../common/GradientBorderWrapper'
+import Link from 'next/link'
 
 interface TestimonialProps {
   testimonial: SanityTestimonial
@@ -27,7 +28,7 @@ const Testimonial: FC<TestimonialProps> = ({
       const saveTwitterUsername = word.includes('@') && word
       if (saveTwitterUsername) {
         return (
-          <a
+          <Link
             key={index}
             className="text-brandOrange"
             href={'https://twitter.com/' + saveTwitterUsername.substring(1)}
@@ -35,7 +36,7 @@ const Testimonial: FC<TestimonialProps> = ({
             rel="noonpener noreferrer"
           >
             {saveTwitterUsername}
-          </a>
+          </Link>
         )
       }
       return word + ' '
@@ -78,20 +79,20 @@ const Testimonial: FC<TestimonialProps> = ({
             </GradientBorderWrapper>
 
             <div className="pl-6">
-              <h6 className="text-gray400 font-bold text-[14px] flex-[3]">
+              <h1 className="text-gray400 font-bold text-[14px] flex-[3]">
                 <LocalTypography variant="username">
                   {twitterName}{' '}
                 </LocalTypography>
-                <a
+                <Link
                   className=" hover:text-gray150 font-normal text-[14px] tracking-[-4%] "
                   href={tweetLink as unknown as string}
                 >
                   <LocalTypography variant="twitter">
                     @{twitterUsername}{' '}
                   </LocalTypography>
-                </a>
+                </Link>
                 <span />
-              </h6>
+              </h1>
             </div>
           </div>
         </div>

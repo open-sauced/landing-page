@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React, { FC } from 'react'
 
 interface Props {
@@ -35,7 +36,7 @@ const OpenSaucedLogo: FC<Props> = ({ logo }) => {
       <div className="flex gap-x-4 pt-20">
         <div className="relative">
           <div className="bg-orange-500 rounded-md blur-sm absolute -inset-[.01rem]"></div>
-          <a
+          <Link
             className="relative"
             href={svgLogo as unknown as string}
             title="Image title"
@@ -44,11 +45,11 @@ const OpenSaucedLogo: FC<Props> = ({ logo }) => {
             <button className="hover:bg-gradient-to-l text-white text-sm font-bold px-4 py-1 rounded-md bg-gradient-to-r from-yellow-500 to-orange-500">
               SVG
             </button>
-          </a>
+          </Link>
         </div>
         <div className="relative">
           <div className="bg-orange-500 rounded-md blur-sm absolute -inset-[.01rem]"></div>
-          <a
+          <Link
             className="relative"
             href={pngLogo as unknown as string}
             title="Image title"
@@ -57,7 +58,7 @@ const OpenSaucedLogo: FC<Props> = ({ logo }) => {
             <button className="text-white text-sm font-bold bg-gradient-to-r px-4 py-1 rounded-md transition-all transform duration-500 hover:bg-gradient-to-l from-yellow-500 to-orange-500">
               PNG
             </button>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

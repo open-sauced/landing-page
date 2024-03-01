@@ -6,14 +6,12 @@ import useMediaQuery from '../../hooks/useMediaQuery'
 // Static assets
 import GreenSquares from '../../../public/greenSquares.svg'
 import GreenSquaresSmall from '../../../public/greenSquares_small.svg'
-import TrueImpactIMG from '../../../public/trueImpact.png'
 
 // Components
 import SectionWrapper from '../../common/layout/SectionWrapper'
 import { Heading, Typography } from '../../common/text'
 import DecoratedText from '../../common/text/utils/DecoratedText'
 import BackgroundStroke from '../../../public/background-strokes/middleRight.svg'
-
 
 interface GitHubMockProps {
   moreHeading: string[]
@@ -52,7 +50,7 @@ const GitHubMock: FC<GitHubMockProps> = ({ moreHeading, topFeature }) => {
 
       <p className="text-center font-bold text-textPrimary text-base largeTablet:text-2xl leading-none pb-10 largeTablet:pb-24">
         {/* This text needs cololr, grey was hard to read */}
-        <DecoratedText content={`$orange-to-yellow${moreHeading[1] || ""}`} />
+        <DecoratedText content={`$orange-to-yellow${moreHeading[1] || ''}`} />
       </p>
       <p className="text-center font-bold pb-2 tracking-[-0.03em] text-xl largeTablet:text-[2rem] largeTablet:pb-6">
         {moreHeading[2] || ''}
@@ -77,11 +75,13 @@ const GitHubMock: FC<GitHubMockProps> = ({ moreHeading, topFeature }) => {
             <div className="absolute right-[-25rem] top-[5rem] largeTablet:top-[-70px] largeTablet:right-[3rem]">
               <Image alt="Doodles" src={BackgroundStroke} />
             </div>
-            <div className="relative largeTablet:left-8 largeTablet:w-4/5 largeTablet:top-8">
+            <div className="relative aria-required largeTablet:left-8 largeTablet:w-4/5 largeTablet:top-8">
+              {topFeature && (
                 <img
-                  src={topFeature?.image as unknown as string}
+                  src={topFeature.image as unknown as string}
                   alt="True impact to the OSS community image"
                 />
+              )}
             </div>
           </div>
         </div>

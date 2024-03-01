@@ -5,6 +5,7 @@ import { SanityUser } from '../../../types/schema'
 import SectionWrapper from '../../common/layout/SectionWrapper'
 import ContainerWithLine from '../../common/ContainerWithLine'
 import { Typography } from '../../common/text'
+import Link from 'next/link'
 
 interface LogosProps {
   data: SanityUser[]
@@ -24,7 +25,7 @@ const Logos = ({ data }: LogosProps) => {
             const href = item.website || ''
             const src = item.logo || ''
             return (
-              <a
+              <Link
                 key={item.name}
                 href={href}
                 target="_blank"
@@ -37,7 +38,7 @@ const Logos = ({ data }: LogosProps) => {
                   alt={item.name}
                   loading="lazy"
                 />
-              </a>
+              </Link>
             )
           })}
         </div>
