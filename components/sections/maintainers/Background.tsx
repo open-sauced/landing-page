@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import Image from 'next/image'
 
 // Static assets
-import upperStroke from '../../../public/background-strokes/upperStroke.svg'
+import upperStroke from '../../../public/background-strokes/upperStroke.png'
 import left_2_stroke from '../../../public/background-strokes/left_2_stroke.svg'
 import right_2_stroke from '../../../public/background-strokes/right_2_stroke.svg'
 import right_3_stroke from '../../../public/background-strokes/right_3_stroke.svg'
