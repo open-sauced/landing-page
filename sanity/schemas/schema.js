@@ -20,6 +20,7 @@ import openSaucedLogo from './openSaucedLogo'
 import pricingPage from './pages/pricingPage'
 import aboutPage from './pages/aboutPage'
 import homePage from './pages/homePage'
+import teamsPage from './pages/teamsPage'
 import changelog from './changelog'
 import changelogCategory from './changelogCategory'
 
@@ -46,6 +47,7 @@ export default createSchema({
     pricingPage,
     aboutPage,
     homePage,
+    teamsPage,
     changelog,
     changelogCategory
   ]),

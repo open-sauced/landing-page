@@ -14,6 +14,7 @@ interface HeaderProps {
 
 export const navigationLinks = [
   { url: '/#features', label: 'Features' },
+  { url: '/teams', label: 'For Teams' },
   { url: '/about', label: 'About' },
   { url: '/blog', label: 'Blog' },
   { url: '/changelog', label: 'Changelog' },

@@ -19,6 +19,7 @@ interface PageLayoutProps {
   pressPage?: boolean
   blogPage?: boolean
   homePage?: boolean
+  teamsPage?: boolean
   children: React.ReactNode
 }
 
@@ -30,6 +31,7 @@ const PageLayout: FC<PageLayoutProps> = ({
   pressPage,
   blogPage = false,
   homePage = false,
+  teamsPage = false,
 }): ReactElement => {
   return (
     <div>
@@ -46,7 +48,7 @@ const PageLayout: FC<PageLayoutProps> = ({
         <PHBadge/>
         {!pressPage && <Header navigationItems={navigationURLs} />}
         <div>{children}</div>
-        {!pressPage && !homePage && <Subscribe />}
+        {!pressPage && !homePage && !teamsPage && <Subscribe />}
         <Footer pressPage={pressPage} />
       </BackgroundWrapper>
     </div>
