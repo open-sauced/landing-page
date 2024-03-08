@@ -8,6 +8,7 @@ import Hero from '../../components/sections/home-page/Hero'
 import Logos from '../../components/sections/home-page/Logos'
 import Newsletter from '../../components/sections/home-page/Newsletter'
 import TeamsFeatures from '../../components/sections/home-page/features/TeamsFeatures'
+import CTA from '../../components/sections/teams/CTA'
 
 interface Props {
   data: {
@@ -34,11 +35,19 @@ const index:FC<Props> = ({
       seoData={commonData.seoData}
       navigationURLs={commonData.navigationLinks}
       BackgroundWrapper={Background}
-      teamsPage
     >
       <Hero teamsPage data={teamsPageData.hero as unknown as SanityTeamsPage['hero']} />
       <Logos data={teamsPageData.hero?.users as unknown as SanityUser[] || []} />
       <TeamsFeatures topUseCase={teamsPageData.topUseCase} features={teamsPageData.features} />
+      <CTA data={teamsPageData.ctaSection} />
+      <Blogs 
+        data={{
+          _type: "blogSection",
+          title: "Our secret sauce",
+          heading: "$yellow-to-orange OpenSauced$yellow-to-orange Blog",
+          description: "Musings on the open-source community, engineering, and the future of talent acquisition."
+        }} 
+        blogs={displayBlogs.slice(0, 4)}  />
       <Newsletter />
     </PageLayout>
   )

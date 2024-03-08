@@ -21,7 +21,7 @@ const CTA: FC<CTAProps> = ({ data }) => {
           {data?.description}
         </Typography>
       </div>
-      <Button href={data?.ctaLink}>Get Started</Button>
+      <Button backgroundVariant="orange" href={data?.ctaLink}>{data?.ctaLabel}</Button>
     </SectionWrapper>
   )
 }
