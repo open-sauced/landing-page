@@ -11,6 +11,7 @@ import {
   SanityAboutPage,
   SanityHomePage,
   SanityChangelog,
+  SanityTeamsPage,
 } from '../types/schema'
 
 const client = sanityClient({
@@ -90,6 +91,36 @@ export const getHomePageData: () => Promise<SanityHomePage> = async () => {
   )
   
   return homePageData
+}
+
+export const getTeamsPageData: () => Promise<SanityTeamsPage> = async () => {
+  const teamsPageData = await client.fetch(
+    `
+    *[_type == "teamsPage"][0] {
+      ...,
+      hero {
+        ...,
+        "image": image.asset->url,
+        users[] {
+          ...,
+          "name": *[ _type == "user" && _id == ^._ref][0].name,
+          "website": *[ _type == "user" && _id == ^._ref][0].website,
+          "logo": *[ _type == "user" && _id == ^._ref][0].logo.asset->url,
+        }
+      },
+      topUseCase {
+        ...,
+        "image": image.asset->url,
+      },
+      features[] {
+        ...,
+        "image": image.asset->url,
+      },
+    }
+    `
+  );
+  console.log('fetch', { teamsPageData });
+  return teamsPageData;
 }
 
 export const getSEOData: () => Promise<SanitySeo> = async () => {

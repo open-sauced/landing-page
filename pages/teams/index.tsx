@@ -1,16 +1,14 @@
 import React, { FC } from 'react'
 import PageLayout from '../../components/common/layout/PageLayout'
-import { getAllBlogs, getCommonData, getFeaturedBlogs, getHomePageData } from '../../lib/sanity'
+import { getAllBlogs, getCommonData, getFeaturedBlogs, getHomePageData, getTeamsPageData } from '../../lib/sanity'
 import Background from '../../components/sections/about/Background'
-import TeamsHero from '../../components/sections/teams/TeamsHero'
-import TeamLogos from '../../components/sections/teams/TeamsLogos'
-import GitHubMock from '../../components/sections/home-page/GitHubMock'
-import CTA from '../../components/sections/home-page/CTA'
-import TeamsFeatures from '../../components/sections/teams/features/TeamsFeatures'
-import Insights from '../../components/sections/home-page/Insights'
-import Testimonials from '../../components/sections/home-page/testimonials/Testimonials'
-import { SanityBlog, SanityFooter, SanityHomePage, SanityNavigation, SanitySeo, SanityUser } from '../../types/schema'
+import { SanityBlog, SanityFooter, SanityNavigation, SanitySeo, SanityTeamsPage, SanityUser } from '../../types/schema'
 import Blogs from '../../components/sections/home-page/blogs/Blogs'
+import Hero from '../../components/sections/home-page/Hero'
+import Logos from '../../components/sections/home-page/Logos'
+import Newsletter from '../../components/sections/home-page/Newsletter'
+import TeamsFeatures from '../../components/sections/home-page/features/TeamsFeatures'
+import CTA from '../../components/sections/teams/CTA'
 
 interface Props {
   data: {
@@ -19,14 +17,14 @@ interface Props {
       seoData: SanitySeo
       footer: SanityFooter[]
     }
-    homePageData: SanityHomePage
+    teamsPageData: SanityTeamsPage
     blogs: SanityBlog[]
     featuredBlogs: SanityBlog[]
   }
 }
 
 const index:FC<Props> = ({
-  data: { commonData, homePageData, blogs, featuredBlogs },
+  data: { commonData, teamsPageData, blogs, featuredBlogs },
 }) => {
   const displayBlogs = [...blogs, ...featuredBlogs].sort(
     (a, b) => +new Date(b._createdAt) - +new Date(a._createdAt)
@@ -37,19 +35,20 @@ const index:FC<Props> = ({
       seoData={commonData.seoData}
       navigationURLs={commonData.navigationLinks}
       BackgroundWrapper={Background}
-      homePage
     >
-      <TeamsHero data={homePageData.hero as unknown as SanityHomePage['hero']} />
-      <TeamLogos data={homePageData.hero?.users as unknown as SanityUser[] || []} />
-      <GitHubMock
-        moreHeading={homePageData.moreHeading || []}
-        topFeature={homePageData.topFeature}
-      />
-      <CTA data={homePageData.ctaSection} />
-      <TeamsFeatures data={homePageData.features as unknown as SanityHomePage['features']} />
-      <Insights data={homePageData.secondCtaSection as unknown as SanityHomePage['secondCtaSection']} />
-      <Testimonials data={homePageData.testimonialsSection} />
-      <Blogs data={homePageData.blogSection} blogs={displayBlogs.slice(0, 4)}  />
+      <Hero teamsPage data={teamsPageData.hero as unknown as SanityTeamsPage['hero']} />
+      <Logos data={teamsPageData.hero?.users as unknown as SanityUser[] || []} />
+      <TeamsFeatures topUseCase={teamsPageData.topUseCase} features={teamsPageData.features} />
+      <CTA data={teamsPageData.ctaSection} />
+      <Blogs 
+        data={{
+          _type: "blogSection",
+          title: "Our secret sauce",
+          heading: "$yellow-to-orange OpenSauced$yellow-to-orange Blog",
+          description: "Musings on the open-source community, engineering, and the future of talent acquisition."
+        }} 
+        blogs={displayBlogs.slice(0, 4)}  />
+      <Newsletter />
     </PageLayout>
   )
 }
@@ -57,14 +56,14 @@ const index:FC<Props> = ({
 export default index
 
 export async function getStaticProps() {
-  const [commonData, homePageData, featuredBlogs, blogs] = await Promise.all([
+  const [commonData, teamsPageData, featuredBlogs, blogs] = await Promise.all([
     getCommonData(),
-    getHomePageData(),
+    getTeamsPageData(),
     getFeaturedBlogs(),
     getAllBlogs(),
   ])
 
-  const data = { commonData, homePageData, featuredBlogs, blogs }
+  const data = { commonData, teamsPageData, featuredBlogs, blogs }
   
   return {
     props: {

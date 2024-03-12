@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { SanityHomePage } from '../../../types/schema'
+import { SanityHomePage, SanityTeamsPage } from '../../../types/schema'
 
 // Components
 import SectionWrapper from '../../common/layout/SectionWrapper'
@@ -10,10 +10,11 @@ import { Button } from '../../common'
 import DecoratedText from '../../common/text/utils/DecoratedText'
 import Image from 'next/image'
 interface HeroProps {
-  data: SanityHomePage['hero']
+  data: SanityHomePage['hero'] | SanityTeamsPage['hero']
+  teamsPage?: boolean
 }
 
-const Hero = ({ data }: HeroProps) => {
+const Hero = ({ data, teamsPage = false }: HeroProps) => {
   return (
     <SectionWrapper pt={115} pts={60} pbs={0}>
       <ContainerWithLine>
@@ -21,20 +22,20 @@ const Hero = ({ data }: HeroProps) => {
           <div className="flex largeTablet:items-center h-full flex-col gap-x-6 gap-y-10 largeTablet:flex-row mx-6">
             <div className="flex-1 ">
               <Typography alignSmall="left" alignLarge="left" variant="preHeading">
-                YOU GOT THIS
+                {data?.title}
               </Typography>
 
               <div className="relative">
                 <img className="absolute -left-[49px] largeTablet:-left-[68px] -top-[50px]" src="/icons/journey_ball.svg" alt="Starting point"/>
 
                 <Heading component="h1" alignSmall="left" alignLarge="left">
-                  Your next open source journey $orange-to-yellowstarts here$orange-to-yellow
+                  {data?.heading}
                 </Heading>
               </div>
               
               <div className="py-10">
                 <Typography alignLarge="left" alignSmall="left" variant="body3">
-                  Start the path to your next contribution and join the global community of open source developers making an impact around the world.
+                  {data?.description}
                 </Typography>
               </div>
 
@@ -46,6 +47,7 @@ const Hero = ({ data }: HeroProps) => {
               ))}
               </div>
 
+              { !teamsPage && 
               <div className="pt-6 pb-10">
                 <Typography alignLarge="left" alignSmall="left" variant="body3">
                   Maintaining a team?
@@ -56,6 +58,7 @@ const Hero = ({ data }: HeroProps) => {
                   </span> 
                 </Typography>
               </div>
+              }
             </div>
             
             <div className="flex-1">
