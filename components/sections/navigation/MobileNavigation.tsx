@@ -10,6 +10,12 @@ interface MobileNavigationProps {
   logo: string
 }
 
+const useCases = [
+  { label: "Teams", url: "/teams" },
+  { label: "Maintainers", url: "/maintainers" },
+  { label: "Contributors", url: "/contributors" },
+]
+
 const MobileNavigation: FC<MobileNavigationProps> = ({
   navigationItems,
   logo,
@@ -23,7 +29,7 @@ const MobileNavigation: FC<MobileNavigationProps> = ({
       </div>
 
       <DropdownMenu
-        menuItems={navigationItems.map((navItem) => ({
+        menuItems={[...useCases, ...navigationItems].map((navItem) => ({
           label: navItem.label as string,
           href: navItem.url as string,
         }))}
