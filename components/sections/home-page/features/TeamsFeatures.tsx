@@ -66,7 +66,7 @@ function TopUseCase({ topUseCase } : { topUseCase: SanityTeamsPage['topUseCase']
                 animate={{ opacity: iconInView ? 1 : 0, y: posY, x: iconInView ? 0 : 10 }}
                 transition={{ duration: 0.7, delay: 0.2, ease: 'easeInOut' }}
               >
-                <div className="flex flex-row justify-between w-full">
+                <div className="flex flex-col tablet:flex-row justify-between w-full">
                 { subsections!.map((section) => (
                   <section className="items-start flex flex-col gap-4">
                     <span className="text-xl font-semibold">
