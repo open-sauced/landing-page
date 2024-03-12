@@ -11,21 +11,12 @@ const nextConfig = {
         headers: [
           {
             key: 'X-Frame-Options',
-            value: 'DENY'
-          }
+            value: 'DENY',
+          },
         ],
-      },      
+      },
     ]
   },
-  async redirects() {
-    return [
-      {
-        source: "/",
-        destination: "/teams",
-        permanent: true
-      }
-    ]
-  }
 }
 
 module.exports = nextConfig
