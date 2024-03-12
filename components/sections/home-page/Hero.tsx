@@ -64,9 +64,9 @@ const Hero = ({ data, teamsPage = false }: HeroProps) => {
             <div className="flex-1">
               <div>
                 { teamsPage  ? (
-                   <Image width={600} height={600} priority={true} loading="eager" className="relative scale-125 largeTablet:scale-125 scl -right-4" src="/hero.svg" alt="Insight Dashboard" />
+                   <Image width={600} height={600} priority={true} loading="eager" className="relative scale-125 largeTablet:scale-125 scl -right-4" src="/hero-image-teams.png" alt="Insight Dashboard" />
                   ) : (
-                    <Image width={600} height={600} priority={true} loading="eager" className="relative scale-125 largeTablet:scale-125 scl -right-4" src="/hero-image.png" alt="Insight Dashboard" />
+                    <Image width={600} height={600} priority={true} loading="eager" className="relative scale-125 largeTablet:scale-125 scl -right-4" src="/hero.svg" alt="Insight Dashboard" /> 
                   )
                 }
               </div>
