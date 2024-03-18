@@ -123,6 +123,32 @@ export const getTeamsPageData: () => Promise<SanityTeamsPage> = async () => {
   return teamsPageData;
 }
 
+export const getStudentsPageData: () => Promise<SanityTeamsPage> = async () => {
+  const teamsPageData = await client.fetch(
+    `
+    *[_type == "studentsPage"][0] {
+      ...,
+      hero {
+        ...,
+        "image": image.asset->url,
+        users[] {
+          ...,
+          "name": *[ _type == "user" && _id == ^._ref][0].name,
+          "website": *[ _type == "user" && _id == ^._ref][0].website,
+          "logo": *[ _type == "user" && _id == ^._ref][0].logo.asset->url,
+        }
+      },
+      features[] {
+        ...,
+        "image": image.asset->url,
+      },
+    }
+    `
+  );
+  console.log('fetch', { teamsPageData });
+  return teamsPageData;
+}
+
 export const getSEOData: () => Promise<SanitySeo> = async () => {
   const seoData = await client.fetch(
     `
