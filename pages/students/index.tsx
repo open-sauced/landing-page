@@ -7,6 +7,7 @@ import Blogs from '../../components/sections/home-page/blogs/Blogs'
 import Hero from '../../components/sections/home-page/Hero'
 import Logos from '../../components/sections/home-page/Logos'
 import CTA from '../../components/sections/teams/CTA'
+import StudentsFeatures from "../../components/sections/home-page/features/StudentsFeatures";
 
 interface Props {
   data: {
@@ -54,6 +55,7 @@ const Index: FC<Props> = ({
     >
       <Hero data={studentsPageData.hero as unknown as SanityStudentsPage['hero']} />
       <Logos data={studentsPageData.hero?.users as unknown as SanityUser[] || []} />
+      <StudentsFeatures features={studentsPageData.features} />
       <CTA data={studentsPageData.ctaSection} />
       <Blogs 
         data={{

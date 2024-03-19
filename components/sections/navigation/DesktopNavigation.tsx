@@ -28,6 +28,11 @@ const useCases = [
     link: "/contributors",
     title: "Contributors", 
     description: "Start the path to your next contribution." 
+  },
+  {
+    link: "/students",
+    title: "Students",
+    description: "Follow your passion and make your mark."
   }
 ]
 
