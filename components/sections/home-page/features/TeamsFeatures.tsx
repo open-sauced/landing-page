@@ -1,5 +1,5 @@
 import { SanityTeamsPage } from "../../../../types/schema";
-import { Heading, Typography } from '../../../common/text'
+import { Heading } from '../../../common/text'
 import ContainerWithLine from '../../../common/ContainerWithLine'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
@@ -8,7 +8,6 @@ import type { SanityImageAsset, SanityImageCrop, SanityImageHotspot, SanityRefer
 import EndingLine from "../../../common/EndingLine";
 import SectionWrapper from "../../../common/layout/SectionWrapper";
 import DecoratedText from "../../../common/text/utils/DecoratedText";
-import Feature from "./Feature";
 
 type TeamsFeaturesProps = {
   topUseCase: SanityTeamsPage['topUseCase'];
@@ -28,7 +27,6 @@ export default function TeamsFeatures({ topUseCase, features } : TeamsFeaturesPr
 function TopUseCase({ topUseCase } : { topUseCase: SanityTeamsPage['topUseCase']}) {
   const { heading, image, subsections } = topUseCase!;
   const [ refIcon, iconInView ] = useInView();
-  const [ refImage, imageInView ] = useInView();
 
   // text animation
   const initPosY = 5;
@@ -108,7 +106,6 @@ function TeamFeature({ feature } : { feature : {
 }}) {
   const { title, heading, description, image } = feature!;
   const [ refIcon, iconInView ] = useInView();
-  const [ refImage, imageInView ] = useInView();
 
   // text animation
   const initPosY = 5;

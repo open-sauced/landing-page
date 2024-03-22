@@ -14,6 +14,7 @@ const useCases = [
   { label: "Teams", url: "/teams" },
   { label: "Maintainers", url: "/maintainers" },
   { label: "Contributors", url: "/contributors" },
+  { label: "Students", url: "/students" },
 ]
 
 const MobileNavigation: FC<MobileNavigationProps> = ({
