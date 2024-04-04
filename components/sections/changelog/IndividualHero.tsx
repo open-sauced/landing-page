@@ -2,11 +2,14 @@ import React from 'react'
 import { Heading, Typography } from '../../common/text'
 import GradientBorderWrapper from '../../common/GradientBorderWrapper'
 import SocialShare from '../../common/SocialShare'
+import moment from 'moment';
 
 const Hero = ({ title, topics, date, url } : { title: string, topics: string[], date: string, url: string }) => {
   return (
     <section className="items-center z-50 py-16 max-w-3xl mx-auto tablet:py-24 border-slate-800 relative flex flex-col gap-y-8 from-transparent via-red-800 to-transparent">
-      <Typography alignSmall='center'>{ date }</Typography>
+      <Typography alignSmall='center' variant="subheading">
+        {moment(date).format("DD MMM YYYY")}
+      </Typography>
       <Heading alignSmall="center">
         { title }
       </Heading>
