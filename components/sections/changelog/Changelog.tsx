@@ -46,7 +46,7 @@ const Changelog: FC<ChangelogProps> = ({
   const lineCount = changelogContent.split("\n").length
 
   return (
-    <article className={`flex pb-28 gap-x-10 h-full relative border-textPrimary border-opacity-50 ${index+1 === count ? "" : "border-l-2"}`}>
+    <article className={`flex pb-24 gap-x-10 h-full relative border-textPrimary border-opacity-50 ${index+1 === count ? "" : "border-l-2"}`}>
       <div className="relative pb-28">
         <section className={`hidden self-start sticky top-8 tablet:flex flex-1 pl-10 max-w-md flex-col `}>
           <span>
