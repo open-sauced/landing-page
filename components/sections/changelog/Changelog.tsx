@@ -36,7 +36,7 @@ const Changelog: FC<ChangelogProps> = ({
   const containerHeightStyle = {
     overflow: "hidden",
     transition: "height 0.5s ease-in-out",
-    height: isExpanded ? `${contentRef.current?.clientHeight}px` : "120px",
+    height: isExpanded ? `${contentRef.current?.clientHeight}px` : "300px",
   }
 
   // check if the changelog content has an image
@@ -46,11 +46,11 @@ const Changelog: FC<ChangelogProps> = ({
   const lineCount = changelogContent.split("\n").length
 
   return (
-    <article className="flex gap-x-10 h-full relative">
+    <article className="flex gap-x-10 h-full relative pb-8">
       <div className={`relative pb-28 border-textPrimary border-opacity-50 ${index+1 === count ? "" : "border-l-2"}`}>
         <section className={`hidden self-start sticky top-8 tablet:flex flex-1 pl-10 max-w-md flex-col`}>
           <span>
-            <IoMdGitCommit className="absolute -left-5 bg-darkBG text-4xl" />
+            <IoMdGitCommit className="absolute -left-3 rounded-3xl text-2xl p-1  text-white bg-gradient-to-tr from-[#ED5432] to-[#EDA232] drop-shadow-[0_0_4px_#ED5432]" />
           </span>
           <Typography alignLarge="left" variant="title3">
             <a href={`/changelog/${slug?.current}`} className="hover:text-brandOrange hover:underline hover:decoration-brandOrange">
