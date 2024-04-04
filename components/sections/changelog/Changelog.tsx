@@ -99,7 +99,7 @@ const Changelog: FC<ChangelogProps> = ({
         <div style={containerHeightStyle}>
           <div className="relative" ref={contentRef}>
             <ReactMarkdown
-              className="prose prose-sm prose-headings:text-textPrimary prose-p:text-textPrimary prose-p:text-base">
+              className="prose prose-headings:text-textPrimary prose-li:text-textPrimary prose-p:text-textPrimary prose-ul:text-textPrimary prose-p:text-base prose-strong:text-textPrimary">
               {changelogContent}
             </ReactMarkdown>
           </div>
