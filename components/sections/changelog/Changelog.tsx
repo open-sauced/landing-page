@@ -36,7 +36,7 @@ const Changelog: FC<ChangelogProps> = ({
   const containerHeightStyle = {
     overflow: "hidden",
     transition: "height 0.5s ease-in-out",
-    height: isExpanded ? `${contentRef.current?.clientHeight}px` : "300px",
+    height: isExpanded ? `${contentRef.current?.clientHeight}px` : "360px",
   }
 
   // check if the changelog content has an image
@@ -46,9 +46,9 @@ const Changelog: FC<ChangelogProps> = ({
   const lineCount = changelogContent.split("\n").length
 
   return (
-    <article className="flex gap-x-10 h-full relative pb-8">
-      <div className={`relative pb-28 border-textPrimary border-opacity-50 ${index+1 === count ? "" : "border-l-2"}`}>
-        <section className={`hidden self-start sticky top-8 tablet:flex flex-1 pl-10 max-w-md flex-col`}>
+    <article className={`flex pb-28 gap-x-10 h-full relative border-textPrimary border-opacity-50 ${index+1 === count ? "" : "border-l-2"}`}>
+      <div className="relative pb-28">
+        <section className={`hidden self-start sticky top-8 tablet:flex flex-1 pl-10 max-w-md flex-col `}>
           <span>
             <IoMdGitCommit className="absolute -left-3 rounded-3xl text-2xl p-1  text-white bg-gradient-to-tr from-[#ED5432] to-[#EDA232] drop-shadow-[0_0_4px_#ED5432]" />
           </span>
@@ -99,7 +99,7 @@ const Changelog: FC<ChangelogProps> = ({
         <div style={containerHeightStyle}>
           <div className="relative" ref={contentRef}>
             <ReactMarkdown
-              className="prose prose-headings:text-textPrimary prose-li:text-textPrimary prose-p:text-textPrimary prose-ul:text-textPrimary prose-p:text-base prose-strong:text-textPrimary">
+              className="prose prose-headings:text-textPrimary prose-li:text-textPrimary prose-p:text-textPrimary prose-ul:text-textPrimary prose-p:text-base prose-strong:text-textPrimary prose-img:rounded-md">
               {changelogContent}
             </ReactMarkdown>
           </div>
