@@ -5,7 +5,7 @@ export const StarTheRepo = (): JSX.Element | null => {
     <div className={`hidden sm:flex items-center text-osGrey transition-opacity font-Inter`}>
       <a
         href="https://github.com/open-sauced/app"
-        rel="noreferrer"
+        
         target="_blank"
       >
         <AiOutlineStar className="inline-block mr-2.5" />

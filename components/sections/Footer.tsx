@@ -84,7 +84,7 @@ const Footer: FC<FooterProps> = ({ pressPage }) => {
               <LocalTypography variant="title">More Sauce</LocalTypography>
               <div className="w-full flex flex-col">
                 {apps.map(({ label, url }) => (
-                  <a key={url} href={url} target="_blank" rel="noreferrer">
+                  <a key={url} href={url} target="_blank" >
                     <LocalTypography variant="item1">{label}</LocalTypography>
                   </a>
                 ))}
@@ -111,7 +111,7 @@ const Footer: FC<FooterProps> = ({ pressPage }) => {
           <div className="flex mb-5 largeTablet:mb-0 ">
             {pages.map(({ url, label }, i) => (
               <div key={label} className="flex">
-                <a href={url} target="_blank" rel="noreferrer">
+                <a href={url} target="_blank" >
                   <LocalTypography variant="item2">{label}</LocalTypography>
                 </a>
                 {i < pages.length - 1 && (
