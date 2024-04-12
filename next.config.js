@@ -11,12 +11,12 @@ const nextConfig = {
         headers: [
           {
             key: 'X-Frame-Options',
-            value: 'DENY'
-          }
+            value: 'DENY',
+          },
         ],
-      },      
+      },
     ]
-  }
+  },
 }
 
 module.exports = nextConfig

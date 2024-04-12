@@ -1,14 +1,13 @@
 import React, { FC } from 'react'
 import PageLayout from '../../components/common/layout/PageLayout'
-import { getAllBlogs, getCommonData, getFeaturedBlogs, getHomePageData, getTeamsPageData } from '../../lib/sanity'
+import { getAllBlogs, getCommonData, getFeaturedBlogs, getStudentsPageData } from '../../lib/sanity'
 import Background from '../../components/sections/about/Background'
-import { SanityBlog, SanityFooter, SanityNavigation, SanitySeo, SanityTeamsPage, SanityUser } from '../../types/schema'
+import { SanityBlog, SanityFooter, SanityNavigation, SanitySeo, SanityStudentsPage, SanityUser } from '../../types/schema'
 import Blogs from '../../components/sections/home-page/blogs/Blogs'
 import Hero from '../../components/sections/home-page/Hero'
 import Logos from '../../components/sections/home-page/Logos'
-import Newsletter from '../../components/sections/home-page/Newsletter'
-import TeamsFeatures from '../../components/sections/home-page/features/TeamsFeatures'
 import CTA from '../../components/sections/teams/CTA'
+import StudentsFeatures from "../../components/sections/home-page/features/StudentsFeatures";
 
 interface Props {
   data: {
@@ -17,14 +16,32 @@ interface Props {
       seoData: SanitySeo
       footer: SanityFooter[]
     }
-    teamsPageData: SanityTeamsPage
+    studentsPageData: SanityStudentsPage
     blogs: SanityBlog[]
     featuredBlogs: SanityBlog[]
   }
 }
 
-const index:FC<Props> = ({
-  data: { commonData, teamsPageData, blogs, featuredBlogs },
+export async function getStaticProps() {
+  const [commonData, studentsPageData, featuredBlogs, blogs] = await Promise.all([
+    getCommonData(),
+    getStudentsPageData(),
+    getFeaturedBlogs(),
+    getAllBlogs(),
+  ])
+
+  const data = { commonData, studentsPageData, featuredBlogs, blogs }
+  
+  return {
+    props: {
+      data,
+    },
+    revalidate: 30,
+  }
+}
+
+const Index: FC<Props> = ({
+  data: { commonData, studentsPageData, blogs, featuredBlogs },
 }) => {
   const displayBlogs = [...blogs, ...featuredBlogs].sort(
     (a, b) => +new Date(b._createdAt) - +new Date(a._createdAt)
@@ -36,10 +53,10 @@ const index:FC<Props> = ({
       navigationURLs={commonData.navigationLinks}
       BackgroundWrapper={Background}
     >
-      <Hero teamsPage data={teamsPageData.hero as unknown as SanityTeamsPage['hero']} />
-      <Logos data={teamsPageData.hero?.users as unknown as SanityUser[] || []} />
-      <TeamsFeatures topUseCase={teamsPageData.topUseCase} features={teamsPageData.features} />
-      <CTA data={teamsPageData.ctaSection} />
+      <Hero data={studentsPageData.hero as unknown as SanityStudentsPage['hero']} />
+      <Logos data={studentsPageData.hero?.users as unknown as SanityUser[] || []} />
+      <StudentsFeatures features={studentsPageData.features} />
+      <CTA data={studentsPageData.ctaSection} />
       <Blogs 
         data={{
           _type: "blogSection",
@@ -48,27 +65,8 @@ const index:FC<Props> = ({
           description: "Musings on the open-source community, engineering, and the future of talent acquisition."
         }} 
         blogs={displayBlogs.slice(0, 4)}  />
-      <Newsletter />
     </PageLayout>
   )
 }
 
-export default index
-
-export async function getStaticProps() {
-  const [commonData, teamsPageData, featuredBlogs, blogs] = await Promise.all([
-    getCommonData(),
-    getTeamsPageData(),
-    getFeaturedBlogs(),
-    getAllBlogs(),
-  ])
-
-  const data = { commonData, teamsPageData, featuredBlogs, blogs }
-  
-  return {
-    props: {
-      data,
-    },
-    revalidate: 30,
-  }
-}
+export default Index;

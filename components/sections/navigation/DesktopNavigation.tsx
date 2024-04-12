@@ -5,12 +5,37 @@ import { useRouter } from 'next/router'
 
 // Components
 import { Button } from '../../common'
+import { Menu } from '@headlessui/react'
 import { SanityNavigation } from '../../../types/schema'
 
 interface DesktopNavigationProps {
   navigationItems: SanityNavigation[]
   logo: string
 }
+
+const useCases = [
+  {
+    link: '/teams',
+    title: 'Teams',
+    description:
+      'Insights to validate and share the impact of open source to your organization.',
+  },
+  {
+    link: '/maintainers',
+    title: 'Maintainers',
+    description: 'Grow and celebrate your open source community.',
+  },
+  { 
+    link: "/contributors",
+    title: "Contributors", 
+    description: "Start the path to your next contribution." 
+  },
+  {
+    link: "/students",
+    title: "Students",
+    description: "Follow your passion and make your mark."
+  }
+]
 
 const DesktopNavigation: FC<DesktopNavigationProps> = ({
   navigationItems,
@@ -35,7 +60,28 @@ const DesktopNavigation: FC<DesktopNavigationProps> = ({
         </Link>
       </div>
 
-      <nav className="flex gap-8">
+      <nav className="flex gap-8 items-center">
+        <Menu as="div" className="relative -top-0.5">
+          <Menu.Button className={`${defaultStyle}`}>Use Cases</Menu.Button>
+          <Menu.Items className="rounded-lg absolute left-0 w-96 flex flex-col gap-4 p-3 shadow-xl origin-top-left bg-darkBG z-50 my-4">
+            {useCases.map((useCase) => (
+              <Menu.Item key={`usecase_${useCase.title}`}>
+                {({ active }) => (
+                  <a
+                    href={useCase.link}
+                    className={`${
+                      active &&
+                      'bg-gradient-to-r from-darkOrange to-lightOrange'
+                    } flex flex-col gap-2 p-4 rounded-xl`}
+                  >
+                    <h3 className="font-semibold">{useCase.title}</h3>
+                    <p>{useCase.description}</p>
+                  </a>
+                )}
+              </Menu.Item>
+            ))}
+          </Menu.Items>
+        </Menu>
         {navigationItems.map((link) => (
           <div key={link.label} className="relative cursor-pointer top">
             <Link key={link.label} href={link.url as string} passHref>
@@ -46,7 +92,7 @@ const DesktopNavigation: FC<DesktopNavigationProps> = ({
       </nav>
 
       <Button href="https://insights.opensauced.pizza/start" gitHub>
-        Connect with GitHub
+        Connect your GitHub
       </Button>
     </div>
   )

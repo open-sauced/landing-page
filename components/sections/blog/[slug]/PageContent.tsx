@@ -96,7 +96,7 @@ const PageContent: FC<PageContentProps> = ({
             className="w-full max-w-[780px]"
             href={blogUrl}
             target="_blank"
-            rel="noreferrer"
+            
           >
             <p className="text-left font-bold text-2xl border-b-[1px] w-fit tracking-[0.14em] pt-6">
               <DecoratedText content="$yellow-to-orangeRead entire article" />
