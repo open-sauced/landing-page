@@ -58,12 +58,18 @@ export default {
         validation: Rule => Rule.required(),
       },
       {
+        type: 'string',
+        name: 'summary',
+        title: 'Changelog Summary',
+        description: 'Please enter a short summary of the changelog entry.',
+      },
+      {
         type: "markdown",
         title: 'Changelog Content', 
         name: 'changelogContent',
         description: "Markdown content for the changelog",
         validation: Rule => Rule.required(),
-      }
+      },
     ],
   }
   
