@@ -15,7 +15,7 @@ export default async function handler (
         title: 'OpenSauced Changelog',
         description: 'All the changes for OpenSauced!',
         site_url: site_url,
-        feed_url: `${site_url}/api/rss/blog`,
+        feed_url: `${site_url}/api/rss/changelog`,
         image_url: `${site_url}/rss/logo.png`,
         pubDate: new Date(),
         copyright: `All rights reserved ${new Date().getFullYear()}, OpenSauced`,
