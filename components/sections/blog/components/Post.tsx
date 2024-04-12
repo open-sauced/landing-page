@@ -59,7 +59,11 @@ const Post: FC<PostProps> = ({ data, featured }): ReactElement => {
         ))}
       </div>
       <div className=" min-h-[55px] largeTablet:min-h-[90px]">
-        <LocalTypography featured={featured} variant="title">{title}</LocalTypography>
+        <LocalTypography featured={featured} variant="title">
+          <a href={href} className="hover:text-brandOrange hover:decoration-brandOrange transition-all">
+            {title}
+          </a>
+        </LocalTypography>
       </div>
       <div className="flex items-center pb-6 largeTablet:pb-10 ">
         <div className="flex-shrink-0 mr-2">
