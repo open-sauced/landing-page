@@ -53,7 +53,7 @@ const Changelog: FC<ChangelogProps> = ({
             <IoMdGitCommit className="absolute -left-3 rounded-3xl text-2xl p-1  text-white bg-gradient-to-tr from-[#ED5432] to-[#EDA232] drop-shadow-[0_0_4px_#ED5432]" />
           </span>
           <Typography alignLarge="left" variant="title3">
-            <a href={`/changelog/${slug?.current}`} className="hover:text-brandOrange hover:underline hover:decoration-brandOrange">
+            <a href={`/changelog/${slug?.current}`} className="hover:text-brandOrange hover:decoration-brandOrange transition-all">
               {title}
             </a>
           </Typography>
