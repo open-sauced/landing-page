@@ -61,7 +61,11 @@ export default {
         type: 'string',
         name: 'summary',
         title: 'Changelog Summary',
-        description: 'Please enter a short summary of the changelog entry.',
+        description: 'Please enter a short (less than 50 characters) summary of the changelog entry.',
+        options: {
+          maxLength: 50,
+        },
+        validation: Rule => Rule.required(),
       },
       {
         type: "markdown",

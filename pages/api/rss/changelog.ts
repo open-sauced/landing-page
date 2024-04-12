@@ -24,9 +24,12 @@ export default async function handler (
       const feed = new RSS(feedOptions);
     
       changelogs.map((log) => {
+        const truncatedChanelogContent = `${log.changelogContent.replace(/^!\[.*?\)/, '').substr(0, 50)}...`;
+        const description = log.summary ?? (log.changelogContent.length > 50 ? truncatedChanelogContent : log.changelogContent);
+
         feed.item({
           title: log.title as string,
-          description: log.summary as string,
+          description,
           url: `${site_url}/blog/${log.slug?.current}`,
           date: log._createdAt,
         });
