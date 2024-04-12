@@ -814,6 +814,13 @@ export interface SanityChangelog extends SanityDocument {
   slug?: { _type: 'slug'; current: string }
 
   /**
+   * Changelog Summary — `string`
+   *
+   * Please enter a short (less than 30 characters) summary of the changelog entry.
+   */
+  summary?: string
+
+  /**
    * Changelog Content — `markdown`
    *
    * Markdown content for the changelog
