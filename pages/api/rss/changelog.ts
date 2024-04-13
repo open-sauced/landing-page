@@ -30,7 +30,7 @@ export default async function handler (
         feed.item({
           title: log.title as string,
           description,
-          url: `${site_url}/blog/${log.slug?.current}`,
+          url: `${site_url}/changelog/${log.slug?.current}`,
           date: log._createdAt,
         });
       });
