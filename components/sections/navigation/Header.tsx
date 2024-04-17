@@ -13,10 +13,9 @@ interface HeaderProps {
 }
 
 export const navigationLinks = [
-  { url: '/#features', label: 'Features' },
-  { url: '/pricing', label: 'Pricing' },
   { url: '/about', label: 'About' },
   { url: '/blog', label: 'Blog' },
+  { url: '/changelog', label: 'Changelog' },
 ] as SanityNavigation[]
 
 const Header: FC<HeaderProps> = ({ navigationItems }): ReactElement => {

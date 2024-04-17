@@ -14,12 +14,7 @@ html {
 }
 
 body {
-  overflow-x: hidden;
   color: '#FFF9ED' !important;
-}
-
-body > div {
-  overflow-x: hidden;
 }
 
 a {
