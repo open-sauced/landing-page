@@ -99,7 +99,7 @@ export default {
               title: 'Service url',
               name: 'serviceUrl',
               type: 'string',
-              description: 'The url of the service. Example: "https://insights.opensauced.pizza".'
+              description: 'The url of the service. Example: "https://app.opensauced.pizza".'
             },
             {
               title: 'Service description',

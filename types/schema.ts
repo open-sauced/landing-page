@@ -1078,7 +1078,7 @@ export type SanityAboutPage = {
       /**
        * Service url — `string`
        *
-       * The url of the service. Example: "https://insights.opensauced.pizza".
+       * The url of the service. Example: "https://app.opensauced.pizza".
        */
       serviceUrl?: string
 
