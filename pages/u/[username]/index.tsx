@@ -9,7 +9,7 @@ const RedirectUser = (): JSX.Element => {
   const username = router.query.username
 
   useEffect(() => {
-    router.replace(`https://insights.opensauced.pizza/user/${username}`)
+    router.replace(`https://app.opensauced.pizza/user/${username}`)
   })
 
   return <></>
