@@ -37,6 +37,13 @@ export default {
         required: true,
       },
       {
+        type: 'date',
+        title: 'Published Date',
+        name: 'published_date',
+        description: 'Please enter when this blog was written.',
+        required: true,
+      },
+      {
         type: 'number',
         title: 'Read Time',
         name: 'readTime',
