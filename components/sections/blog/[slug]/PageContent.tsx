@@ -78,7 +78,9 @@ const PageContent: FC<PageContentProps> = ({
               <div className="flex-shrink-0 mr-2 ml-4">
                 <BiCalendarAlt className='text-[#E33E24] w-5 h-5' /> 
               </div>
-              <LocalTypography>{published_date}</LocalTypography>
+              <LocalTypography>
+                <time>{published_date}</time>
+              </LocalTypography>
             </>
           )}
         </div>
