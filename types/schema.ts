@@ -565,6 +565,13 @@ export interface SanityBlog extends SanityDocument {
   author?: string
 
   /**
+   * Published Date — `date`
+   *
+   * Please enter when this blog was written.
+   */
+  published_date?: string
+
+  /**
    * Read Time — `number`
    *
    * Please enter the read time of the blog in minutes (this is depcrecated, read time is calculated automatically).

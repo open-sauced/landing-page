@@ -17,6 +17,7 @@ import DecoratedText from '../../../common/text/utils/DecoratedText'
 import OgData from '../../../common/layout/SEO/SEO'
 import SocialShare from '../../../common/SocialShare'
 import ReactPlayer from 'react-player'
+import { BiCalendarAlt } from 'react-icons/bi'
 
 interface PageContentProps {
   pageContent: SanityBlog
@@ -30,7 +31,7 @@ const PageContent: FC<PageContentProps> = ({
   featuredPost,
 }): ReactElement => {
   const { query } = useRouter()
-  const { topics, title, author, readTime, coverImage, blogContent, blogUrl, ogImage, summary, slug } =
+  const { topics, title, author, published_date, readTime, coverImage, blogContent, blogUrl, ogImage, summary, slug } =
     pageContent
   const src = coverImage || ''
   const displayBlogs =
@@ -71,6 +72,17 @@ const PageContent: FC<PageContentProps> = ({
             getReadTime(blogContent || "") === 1 ? 'min' : 'mins'
           } read`}
           </LocalTypography>
+          
+          { published_date && (
+            <>
+              <div className="flex-shrink-0 mr-2 ml-4">
+                <BiCalendarAlt className='text-[#E33E24] w-5 h-5' /> 
+              </div>
+              <LocalTypography>
+                <time>{published_date}</time>
+              </LocalTypography>
+            </>
+          )}
         </div>
         <div className="pb-11 largeTablet:pb-20">
           <SocialShare url={absoluteURL} size="lg" gap={6} hackerNews />

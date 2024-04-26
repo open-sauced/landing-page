@@ -10,6 +10,7 @@ import OrangeClock from '../../../../public/orange_clock.png'
 import OrangeAuthor from '../../../../public/orange_author.png'
 import { Button } from '../../../common'
 import LocalTypography from './LocalTypography'
+import { BiCalendarAlt } from "react-icons/bi";
 
 interface PostProps {
   data: SanityBlog
@@ -17,7 +18,7 @@ interface PostProps {
 }
 
 const Post: FC<PostProps> = ({ data, featured }): ReactElement => {
-  const { title, topics, coverImage, author, summary, slug, blogContent } = data
+  const { title, topics, published_date, coverImage, author, summary, slug, blogContent } = data
   const src = coverImage || ''
   const href = `/blog/${slug?.current}`
 
@@ -69,15 +70,25 @@ const Post: FC<PostProps> = ({ data, featured }): ReactElement => {
         <div className="flex-shrink-0 mr-2">
           <Image src={OrangeAuthor} alt="Author" />
         </div>
-
         <LocalTypography>{author}</LocalTypography>
+
         <div className="flex-shrink-0 mr-2 ml-4">
           <Image src={OrangeClock} alt="Time" />
         </div>
-
         <LocalTypography>{`${getReadTime(blogContent || "")} ${
           getReadTime(blogContent || "") === 1 ? 'min' : 'mins'
         } read`}</LocalTypography>
+
+        { published_date && (
+          <>
+            <div className="flex-shrink-0 mr-2 ml-4">
+              <BiCalendarAlt className='text-[#E33E24] w-5 h-5' /> 
+            </div>
+            <LocalTypography>
+              <time>{published_date}</time>
+            </LocalTypography>
+          </>
+        )}
       </div>
       <Typography variant="body1" alignLarge='left'>{getDisplaySummary()}</Typography>
       <div className="pt-10">
