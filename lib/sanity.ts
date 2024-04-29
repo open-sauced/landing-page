@@ -12,6 +12,7 @@ import {
   SanityHomePage,
   SanityChangelog,
   SanityTeamsPage,
+  SanityAuthor,
 } from '../types/schema'
 
 const client = sanityClient({
@@ -195,18 +196,20 @@ export const getBlogs: (limit: number) => Promise<SanityBlog[]> = async (
     `*[_type == 'blog' && !(_id in path('drafts.**'))] {
       ...,
       "coverImage": coverImage.asset->url,
+      author->
     }[0..${limit - 1}]`
   )
 
   return saucyBlog
 }
 
-export const getAllBlogs: () => Promise<SanityBlog[]> = async () => {
-  const allBlogs: SanityBlog[] = await client.fetch(
+export const getAllBlogs: () => Promise<(Omit<SanityBlog, "author"> & { author: SanityAuthor })[]> = async () => {
+  const allBlogs: (Omit<SanityBlog, "author"> & { author: SanityAuthor })[] = await client.fetch(
     `*[_type == 'blog' && !(_id in path('drafts.**'))] | order(_createdAt desc)  {
       ...,
       "coverImage": coverImage.asset->url,
       "ogImage": ogImage.asset->url,
+      author->
     }`
   )
 
@@ -220,6 +223,7 @@ export const getBlogBySlug: (slug: string) => Promise<SanityBlog> = async (
     await client.fetch(`*[_type == 'blog' && slug.current == '${slug}'][0] {
     ...,
     "coverImage": coverImage.asset->url,
+    author->
   }`)
   return getBlogData
 }
@@ -230,6 +234,9 @@ export const getFeaturedBlogBySlug: (
   const getBlogData: SanityFeaturedBlog =
     await client.fetch(`*[_type == 'featuredBlog' && slug.current == '${slug}'][0] {
     ...,
+    "author": *[_type == 'author' && references(^._id)] {
+      ...
+    },
     "coverImage": coverImage.asset->url,
   }`)
   return getBlogData

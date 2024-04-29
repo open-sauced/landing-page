@@ -1,5 +1,5 @@
 import React, { FC, ReactElement } from 'react'
-import { SanityBlog } from '../../../../types/schema'
+import { SanityAuthor, SanityBlog } from '../../../../types/schema'
 import getReadTime from '../../../../utils/getReadTime'
 
 // Components
@@ -20,8 +20,8 @@ import ReactPlayer from 'react-player'
 import { BiCalendarAlt } from 'react-icons/bi'
 
 interface PageContentProps {
-  pageContent: SanityBlog
-  blogs: SanityBlog[]
+  pageContent: Omit<SanityBlog, "author"> & { author: SanityAuthor }
+  blogs: (Omit<SanityBlog, "author"> & { author: SanityAuthor })[]
   featuredPost?: boolean
 }
 
@@ -31,7 +31,7 @@ const PageContent: FC<PageContentProps> = ({
   featuredPost,
 }): ReactElement => {
   const { query } = useRouter()
-  const { topics, title, author, published_date, readTime, coverImage, blogContent, blogUrl, ogImage, summary, slug } =
+  const { topics, title, author, published_date, coverImage, blogContent, blogUrl, ogImage, summary, slug } =
     pageContent
   const src = coverImage || ''
   const displayBlogs =
@@ -63,7 +63,7 @@ const PageContent: FC<PageContentProps> = ({
             <Image width={16} height={16} src={OrangeAuthor} alt="Author" />
           </div>
 
-          <LocalTypography>{author}</LocalTypography>
+          <LocalTypography>{author?.name}</LocalTypography>
           <div className="flex-shrink-0 mr-2 ml-4">
             <Image width={16} height={16} src={OrangeClock} alt="Clock" />
           </div>

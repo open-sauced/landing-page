@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import RSS from 'rss';
 import { getAllBlogs } from '../../../lib/sanity';
+import { SanityAuthor, SanityBlog } from '../../../types/schema';
 
 const site_url = 'https://opensauced.pizza';
 
@@ -23,13 +24,13 @@ export default async function handler (
       
       const feed = new RSS(feedOptions);
     
-      blogs.map((post) => {
+      blogs.map((post: Omit<SanityBlog, "author"> & { author: SanityAuthor }) => {
         feed.item({
           title: post.title as string,
           description: post.summary as string,
           url: `${site_url}/blog/${post.slug?.current}`,
           date: post._createdAt,
-          author: post.author
+          author: post.author.name
         });
       });
 

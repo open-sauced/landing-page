@@ -164,11 +164,11 @@ export interface SanityAuthor extends SanityDocument {
   name?: string
 
   /**
-   * Bio — `string`
+   * Bio — `markdown`
    *
    *
    */
-  bio?: string
+  bio?: SanityMarkdown
 
   /**
    * Portrait — `image`
@@ -593,11 +593,11 @@ export interface SanityBlog extends SanityDocument {
   summary?: string
 
   /**
-   * Author — `string`
+   * Author — `reference`
    *
-   * Please enter the author name.
+   * Reference an Author document that wrote this blog
    */
-  author?: string
+  author?: SanityReference<SanityAuthor>
 
   /**
    * Published Date — `date`
@@ -605,13 +605,6 @@ export interface SanityBlog extends SanityDocument {
    * Please enter when this blog was written.
    */
   published_date?: string
-
-  /**
-   * Read Time — `number`
-   *
-   * Please enter the read time of the blog in minutes (this is depcrecated, read time is calculated automatically).
-   */
-  readTime?: number
 
   /**
    * Topic — `array`
@@ -623,7 +616,7 @@ export interface SanityBlog extends SanityDocument {
   /**
    * Slug — `slug`
    *
-   * Click generate button to generate the slug automaticlly, or you can enter the slug manually making sure it is unique.
+   * Click generate button to generate the slug automatically, or you can enter the slug manually making sure it is unique.
    */
   slug?: { _type: 'slug'; current: string }
 
