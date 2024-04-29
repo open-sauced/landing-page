@@ -149,6 +149,41 @@ export interface SanityUser extends SanityDocument {
 }
 
 /**
+ * Author
+ *
+ *
+ */
+export interface SanityAuthor extends SanityDocument {
+  _type: 'author'
+
+  /**
+   * Name — `string`
+   *
+   *
+   */
+  name?: string
+
+  /**
+   * Bio — `string`
+   *
+   *
+   */
+  bio?: string
+
+  /**
+   * Portrait — `image`
+   *
+   *
+   */
+  portrait?: {
+    _type: 'image'
+    asset: SanityReference<SanityImageAsset>
+    crop?: SanityImageCrop
+    hotspot?: SanityImageHotspot
+  }
+}
+
+/**
  * Navigation
  *
  *
@@ -823,7 +858,7 @@ export interface SanityChangelog extends SanityDocument {
   /**
    * Changelog Summary — `string`
    *
-   * Please enter a short (less than 30 characters) summary of the changelog entry.
+   * Please enter a short (less than 50 characters) summary of the changelog entry.
    */
   summary?: string
 
@@ -1812,6 +1847,7 @@ export type SanityStudentsPage = {
 export type Documents =
   | SanityAbout
   | SanityUser
+  | SanityAuthor
   | SanityNavigation
   | SanitySeo
   | SanityGithubMock

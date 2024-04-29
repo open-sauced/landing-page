@@ -12,7 +12,7 @@ export default {
     {
       title: 'Bio',
       name: 'bio',
-      type: 'string',
+      type: 'markdown',
       required: true
     },
     {
