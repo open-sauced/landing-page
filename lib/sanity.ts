@@ -196,7 +196,10 @@ export const getBlogs: (limit: number) => Promise<SanityBlog[]> = async (
     `*[_type == 'blog' && !(_id in path('drafts.**'))] {
       ...,
       "coverImage": coverImage.asset->url,
-      author->
+      author->{
+        ...,
+        "portrait": portrait.asset->url
+      }
     }[0..${limit - 1}]`
   )
 
@@ -209,7 +212,10 @@ export const getAllBlogs: () => Promise<(Omit<SanityBlog, "author"> & { author: 
       ...,
       "coverImage": coverImage.asset->url,
       "ogImage": ogImage.asset->url,
-      author->
+      author->{
+        ...,
+        "portrait": portrait.asset->url
+      }
     }`
   )
 
@@ -223,7 +229,10 @@ export const getBlogBySlug: (slug: string) => Promise<SanityBlog> = async (
     await client.fetch(`*[_type == 'blog' && slug.current == '${slug}'][0] {
     ...,
     "coverImage": coverImage.asset->url,
-    author->
+    author->{
+      ...,
+      "portrait": portrait.asset->url
+    }
   }`)
   return getBlogData
 }
@@ -234,8 +243,9 @@ export const getFeaturedBlogBySlug: (
   const getBlogData: SanityFeaturedBlog =
     await client.fetch(`*[_type == 'featuredBlog' && slug.current == '${slug}'][0] {
     ...,
-    "author": *[_type == 'author' && references(^._id)] {
-      ...
+    author->{
+      ...,
+      "portrait": portrait.asset->url
     },
     "coverImage": coverImage.asset->url,
   }`)

@@ -18,6 +18,7 @@ import OgData from '../../../common/layout/SEO/SEO'
 import SocialShare from '../../../common/SocialShare'
 import ReactPlayer from 'react-player'
 import { BiCalendarAlt } from 'react-icons/bi'
+import AuthorBio from '../components/AuthorBio'
 
 interface PageContentProps {
   pageContent: Omit<SanityBlog, "author"> & { author: SanityAuthor }
@@ -98,6 +99,9 @@ const PageContent: FC<PageContentProps> = ({
           </div>
         </GradientBorderWrapper>
         <BlogTextContent data={blogContent} />
+
+        <AuthorBio author={author} />
+
         {featuredPost && (
           <div className="w-full mt-6 largeTablet:mt-10">
             <ReactPlayer url={blogUrl} width="100%" />
