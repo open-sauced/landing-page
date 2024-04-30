@@ -149,6 +149,41 @@ export interface SanityUser extends SanityDocument {
 }
 
 /**
+ * Author
+ *
+ *
+ */
+export interface SanityAuthor extends SanityDocument {
+  _type: 'author'
+
+  /**
+   * Name — `string`
+   *
+   *
+   */
+  name?: string
+
+  /**
+   * Bio — `markdown`
+   *
+   *
+   */
+  bio?: SanityMarkdown
+
+  /**
+   * Portrait — `image`
+   *
+   *
+   */
+  portrait?: {
+    _type: 'image'
+    asset: SanityReference<SanityImageAsset>
+    crop?: SanityImageCrop
+    hotspot?: SanityImageHotspot
+  }
+}
+
+/**
  * Navigation
  *
  *
@@ -558,11 +593,11 @@ export interface SanityBlog extends SanityDocument {
   summary?: string
 
   /**
-   * Author — `string`
+   * Author — `reference`
    *
-   * Please enter the author name.
+   * Reference an Author document that wrote this blog
    */
-  author?: string
+  author?: SanityReference<SanityAuthor>
 
   /**
    * Published Date — `date`
@@ -570,13 +605,6 @@ export interface SanityBlog extends SanityDocument {
    * Please enter when this blog was written.
    */
   published_date?: string
-
-  /**
-   * Read Time — `number`
-   *
-   * Please enter the read time of the blog in minutes (this is depcrecated, read time is calculated automatically).
-   */
-  readTime?: number
 
   /**
    * Topic — `array`
@@ -588,7 +616,7 @@ export interface SanityBlog extends SanityDocument {
   /**
    * Slug — `slug`
    *
-   * Click generate button to generate the slug automaticlly, or you can enter the slug manually making sure it is unique.
+   * Click generate button to generate the slug automatically, or you can enter the slug manually making sure it is unique.
    */
   slug?: { _type: 'slug'; current: string }
 
@@ -823,7 +851,7 @@ export interface SanityChangelog extends SanityDocument {
   /**
    * Changelog Summary — `string`
    *
-   * Please enter a short (less than 30 characters) summary of the changelog entry.
+   * Please enter a short (less than 50 characters) summary of the changelog entry.
    */
   summary?: string
 
@@ -1812,6 +1840,7 @@ export type SanityStudentsPage = {
 export type Documents =
   | SanityAbout
   | SanityUser
+  | SanityAuthor
   | SanityNavigation
   | SanitySeo
   | SanityGithubMock

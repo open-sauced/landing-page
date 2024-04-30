@@ -6,6 +6,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 import about from './about'
 import user from './user'
+import author from './author'
 import navigation from './navigation'
 import seo from './seo'
 import githubMock from './githubMock'
@@ -34,6 +35,7 @@ export default createSchema({
   types: schemaTypes.concat([
     about,
     user,
+    author,
     navigation,
     seo,
     githubMock,

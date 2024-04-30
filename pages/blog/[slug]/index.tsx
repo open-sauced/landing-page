@@ -10,6 +10,7 @@ import {
   getFeaturedBlogs,
 } from '../../../lib/sanity'
 import {
+    SanityAuthor,
   SanityBlog,
   SanityFooter,
   SanityNavigation,
@@ -23,8 +24,8 @@ interface BlogPageProps {
       seoData: SanitySeo
       footer: SanityFooter[]
     }
-    blogs: SanityBlog[]
-    featuredBlogs: SanityBlog[]
+    blogs: (Omit<SanityBlog, "author"> & { author: SanityAuthor })[]
+    featuredBlogs: (Omit<SanityBlog, "author"> & { author: SanityAuthor })[]
   }
 }
 

@@ -30,10 +30,11 @@ export default {
         validation: Rule => Rule.required(),
       },
       {
-        type: 'string',
+        type: 'reference',
         title: 'Author',
         name: 'author',
-        description: 'Please enter the author name.',
+        to: [{ type: 'author' }],
+        description: 'Reference an Author document that wrote this blog',
         required: true,
       },
       {
@@ -41,13 +42,6 @@ export default {
         title: 'Published Date',
         name: 'published_date',
         description: 'Please enter when this blog was written.',
-        required: true,
-      },
-      {
-        type: 'number',
-        title: 'Read Time',
-        name: 'readTime',
-        description: 'Please enter the read time of the blog in minutes (this is depcrecated, read time is calculated automatically).',
         required: true,
       },
       {
@@ -61,7 +55,7 @@ export default {
         type: 'slug',
         title: 'Slug',
         name: 'slug',
-        description: 'Click generate button to generate the slug automaticlly, or you can enter the slug manually making sure it is unique.',
+        description: 'Click generate button to generate the slug automatically, or you can enter the slug manually making sure it is unique.',
         validation: Rule => Rule.required(),
         options: {
           source: 'title',
