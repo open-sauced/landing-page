@@ -7,6 +7,8 @@ import { MdOutlineExpandMore } from 'react-icons/md'
 import { SanityChangelog } from '../../../types/schema'
 import moment from 'moment'
 
+import Link from 'next/link'
+
 interface ChangelogProps {
   changelog: SanityChangelog
   index: number
@@ -52,12 +54,12 @@ const Changelog: FC<ChangelogProps> = ({
             <IoMdGitCommit className="absolute -left-3 rounded-3xl text-2xl p-1  text-white bg-gradient-to-tr from-[#ED5432] to-[#EDA232] drop-shadow-[0_0_4px_#ED5432]" />
           </span>
           <Typography alignLarge="left" variant="title3">
-            <a
+            <Link
               href={`/changelog/${slug?.current}`}
               className="hover:text-brandOrange hover:decoration-brandOrange transition-all"
             >
               {title}
-            </a>
+            </Link>
           </Typography>
           <span className="py-4">
             <Typography alignLarge="left" variant="body4">
