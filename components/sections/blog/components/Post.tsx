@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React, { FC, ReactElement } from 'react'
-import { SanityBlog } from '../../../../types/schema'
+import { SanityBlog, SanityAuthor } from '../../../../types/schema'
 import getReadTime from '../../../../utils/getReadTime'
 
 // Components
@@ -13,7 +13,7 @@ import LocalTypography from './LocalTypography'
 import { BiCalendarAlt } from "react-icons/bi";
 
 interface PostProps {
-  data: SanityBlog
+  data: Omit<SanityBlog, "author"> & { author: SanityAuthor }
   featured?: boolean
 }
 
@@ -70,7 +70,7 @@ const Post: FC<PostProps> = ({ data, featured }): ReactElement => {
         <div className="flex-shrink-0 mr-2">
           <Image src={OrangeAuthor} alt="Author" />
         </div>
-        <LocalTypography>{author}</LocalTypography>
+        <LocalTypography>{author?.name}</LocalTypography>
 
         <div className="flex-shrink-0 mr-2 ml-4">
           <Image src={OrangeClock} alt="Time" />

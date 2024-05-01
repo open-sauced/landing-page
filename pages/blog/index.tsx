@@ -5,6 +5,7 @@ import Background from '../../components/sections/blog/Background'
 import Blogs from '../../components/sections/blog/Blogs'
 import { getAllBlogs, getCommonData } from '../../lib/sanity'
 import {
+    SanityAuthor,
   SanityBlog,
   SanityFooter,
   SanityNavigation,
@@ -18,8 +19,8 @@ interface BlogsPageProps {
       seoData: SanitySeo
       footer: SanityFooter[]
     }
-    blogs: SanityBlog[]
-    featuredBlogs: SanityBlog[]
+    blogs: (Omit<SanityBlog, "author"> & { author: SanityAuthor})[]
+    featuredBlogs: (Omit<SanityBlog, "author"> & { author: SanityAuthor})[]
   }
 }
 
