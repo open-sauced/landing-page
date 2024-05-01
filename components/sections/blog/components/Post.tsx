@@ -10,15 +10,24 @@ import OrangeClock from '../../../../public/orange_clock.png'
 import OrangeAuthor from '../../../../public/orange_author.png'
 import { Button } from '../../../common'
 import LocalTypography from './LocalTypography'
-import { BiCalendarAlt } from "react-icons/bi";
+import { BiCalendarAlt } from 'react-icons/bi'
 
 interface PostProps {
-  data: Omit<SanityBlog, "author"> & { author: SanityAuthor }
+  data: Omit<SanityBlog, 'author'> & { author: SanityAuthor }
   featured?: boolean
 }
 
 const Post: FC<PostProps> = ({ data, featured }): ReactElement => {
-  const { title, topics, published_date, coverImage, author, summary, slug, blogContent } = data
+  const {
+    title,
+    topics,
+    published_date,
+    coverImage,
+    author,
+    summary,
+    slug,
+    blogContent,
+  } = data
   const src = coverImage || ''
   const href = `/blog/${slug?.current}`
 
@@ -46,8 +55,8 @@ const Post: FC<PostProps> = ({ data, featured }): ReactElement => {
       )}
       <div className={`${featured && 'largeTablet:hidden'}`}>
         <GradientBorderWrapper style={{ width: '100%', borderRadius: '5px' }}>
-          <div className="w-full h-[304px] relative rounded-[5px] overflow-hidden ">
-            <Image width="580" height={304} src={src as string} alt="Cover"/>
+          <div className="w-full relative rounded-[5px] overflow-hidden ">
+            <Image width="580" height={304} src={src as string} alt="Cover" />
           </div>
         </GradientBorderWrapper>
       </div>
@@ -61,7 +70,10 @@ const Post: FC<PostProps> = ({ data, featured }): ReactElement => {
       </div>
       <div className=" min-h-[55px] largeTablet:min-h-[90px]">
         <LocalTypography featured={featured} variant="title">
-          <a href={href} className="hover:text-brandOrange hover:decoration-brandOrange transition-all">
+          <a
+            href={href}
+            className="hover:text-brandOrange hover:decoration-brandOrange transition-all"
+          >
             {title}
           </a>
         </LocalTypography>
@@ -75,14 +87,14 @@ const Post: FC<PostProps> = ({ data, featured }): ReactElement => {
         <div className="flex-shrink-0 mr-2 ml-4">
           <Image src={OrangeClock} alt="Time" />
         </div>
-        <LocalTypography>{`${getReadTime(blogContent || "")} ${
-          getReadTime(blogContent || "") === 1 ? 'min' : 'mins'
+        <LocalTypography>{`${getReadTime(blogContent || '')} ${
+          getReadTime(blogContent || '') === 1 ? 'min' : 'mins'
         } read`}</LocalTypography>
 
-        { published_date && (
+        {published_date && (
           <>
             <div className="flex-shrink-0 mr-2 ml-4">
-              <BiCalendarAlt className='text-[#E33E24] w-5 h-5' /> 
+              <BiCalendarAlt className="text-[#E33E24] w-5 h-5" />
             </div>
             <LocalTypography>
               <time>{published_date}</time>
@@ -90,7 +102,9 @@ const Post: FC<PostProps> = ({ data, featured }): ReactElement => {
           </>
         )}
       </div>
-      <Typography variant="body1" alignLarge='left'>{getDisplaySummary()}</Typography>
+      <Typography variant="body1" alignLarge="left">
+        {getDisplaySummary()}
+      </Typography>
       <div className="pt-10">
         <Button href={href}>Read More</Button>
       </div>
