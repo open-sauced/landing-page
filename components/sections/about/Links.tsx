@@ -35,7 +35,7 @@ const Links: FC<LinksProps> = ({ services }): ReactElement => {
                 <Link href={serviceUrl as unknown as string} legacyBehavior passHref>
                   <a
                     target={internalLink ? '_self' : '_blank'}
-                    rel="noreferrer"
+                    
                   >
                     <div className="flex justify-center items-center pl-6 cursor-pointer">
                       <GradientBorderWrapper

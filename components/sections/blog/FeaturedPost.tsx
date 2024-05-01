@@ -1,13 +1,13 @@
 import Image from 'next/image'
 import React, { FC, ReactElement } from 'react'
-import { SanityBlog } from '../../../types/schema'
+import { SanityAuthor, SanityBlog } from '../../../types/schema'
 
 // Components
 import GradientBorderWrapper from '../../common/GradientBorderWrapper'
 import Blog from './components/Post'
 
 interface FeaturedPostProps {
-  data: SanityBlog
+  data: Omit<SanityBlog, "author"> & { author: SanityAuthor }
 }
 
 const FeaturedPost: FC<FeaturedPostProps> = ({ data }): ReactElement => {

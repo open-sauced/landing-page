@@ -1,7 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import RSS from 'rss';
-import { getAllBlogs } from '../../../lib/sanity';
-import { SanityAuthor, SanityBlog } from '../../../types/schema';
+import { getAllChangelog } from "../../../lib/sanity";
 
 const site_url = 'https://opensauced.pizza';
 
@@ -10,13 +9,13 @@ export default async function handler (
   res: NextApiResponse
   ) {
     try {
-      const blogs = await getAllBlogs();
+      const changelogs = await getAllChangelog();
      
       const feedOptions = {
-        title: 'OpenSauced Blog',
-        description: 'Welcome to OpenSauced blog!',
+        title: 'OpenSauced Changelog',
+        description: 'All the changes for OpenSauced!',
         site_url: site_url,
-        feed_url: `${site_url}/api/rss/blog`,
+        feed_url: `${site_url}/api/rss/changelog`,
         image_url: `${site_url}/rss/logo.png`,
         pubDate: new Date(),
         copyright: `All rights reserved ${new Date().getFullYear()}, OpenSauced`,
@@ -24,13 +23,15 @@ export default async function handler (
       
       const feed = new RSS(feedOptions);
     
-      blogs.map((post: Omit<SanityBlog, "author"> & { author: SanityAuthor }) => {
+      changelogs.map((log) => {
+        const truncatedChanelogContent = `${log.changelogContent.replace(/^!\[.*?\)/, '').substr(0, 50)}...`;
+        const description = log.summary ?? (log.changelogContent.length > 50 ? truncatedChanelogContent : log.changelogContent);
+
         feed.item({
-          title: post.title as string,
-          description: post.summary as string,
-          url: `${site_url}/blog/${post.slug?.current}`,
-          date: post._createdAt,
-          author: post.author.name
+          title: log.title as string,
+          description,
+          url: `${site_url}/changelog/${log.slug?.current}`,
+          date: log._createdAt,
         });
       });
 
