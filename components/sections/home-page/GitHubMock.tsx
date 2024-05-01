@@ -80,8 +80,6 @@ const GitHubMock: FC<GitHubMockProps> = ({ moreHeading, topFeature }) => {
               <Image
                 src={topFeature?.image as unknown as string}
                 alt="True impact to the OSS community image"
-                role="img"
-                aria-label="True impact to the OSS community"
               />
             </div>
           </div>
