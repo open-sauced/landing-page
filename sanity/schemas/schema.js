@@ -6,6 +6,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 import about from './about'
 import user from './user'
+import author from './author'
 import navigation from './navigation'
 import seo from './seo'
 import githubMock from './githubMock'
@@ -20,6 +21,11 @@ import openSaucedLogo from './openSaucedLogo'
 import pricingPage from './pages/pricingPage'
 import aboutPage from './pages/aboutPage'
 import homePage from './pages/homePage'
+import teamsPage from './pages/teamsPage'
+import studentsPage from './pages/studentsPage'
+import changelog from './changelog'
+import changelogCategory from './changelogCategory'
+
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -29,6 +35,7 @@ export default createSchema({
   types: schemaTypes.concat([
     about,
     user,
+    author,
     navigation,
     seo,
     githubMock,
@@ -42,6 +49,10 @@ export default createSchema({
     openSaucedLogo,
     pricingPage,
     aboutPage,
-    homePage
+    homePage,
+    teamsPage,
+    studentsPage,
+    changelog,
+    changelogCategory
   ]),
 })

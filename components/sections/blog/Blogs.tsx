@@ -1,6 +1,6 @@
 
 import React, { FC, ReactElement } from 'react'
-import { SanityBlog } from '../../../types/schema'
+import { SanityAuthor, SanityBlog } from '../../../types/schema'
 
 // Components
 import SectionWrapper from '../../common/layout/SectionWrapper'
@@ -9,7 +9,7 @@ import Post from './components/Post'
 import FeaturedPost from './FeaturedPost'
 
 interface BlogsProps {
-  data: SanityBlog[]
+  data: (Omit<SanityBlog, "author"> & { author: SanityAuthor })[]
 }
 
 const Blogs: FC<BlogsProps> = ({ data }): ReactElement => {

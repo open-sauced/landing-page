@@ -10,6 +10,9 @@ import {
   SanityPricingPage,
   SanityAboutPage,
   SanityHomePage,
+  SanityChangelog,
+  SanityTeamsPage,
+  SanityAuthor,
 } from '../types/schema'
 
 const client = sanityClient({
@@ -91,6 +94,62 @@ export const getHomePageData: () => Promise<SanityHomePage> = async () => {
   return homePageData
 }
 
+export const getTeamsPageData: () => Promise<SanityTeamsPage> = async () => {
+  const teamsPageData = await client.fetch(
+    `
+    *[_type == "teamsPage"][0] {
+      ...,
+      hero {
+        ...,
+        "image": image.asset->url,
+        users[] {
+          ...,
+          "name": *[ _type == "user" && _id == ^._ref][0].name,
+          "website": *[ _type == "user" && _id == ^._ref][0].website,
+          "logo": *[ _type == "user" && _id == ^._ref][0].logo.asset->url,
+        }
+      },
+      topUseCase {
+        ...,
+        "image": image.asset->url,
+      },
+      features[] {
+        ...,
+        "image": image.asset->url,
+      },
+    }
+    `
+  );
+  console.log('fetch', { teamsPageData });
+  return teamsPageData;
+}
+
+export const getStudentsPageData: () => Promise<SanityTeamsPage> = async () => {
+  const teamsPageData = await client.fetch(
+    `
+    *[_type == "studentsPage"][0] {
+      ...,
+      hero {
+        ...,
+        "image": image.asset->url,
+        users[] {
+          ...,
+          "name": *[ _type == "user" && _id == ^._ref][0].name,
+          "website": *[ _type == "user" && _id == ^._ref][0].website,
+          "logo": *[ _type == "user" && _id == ^._ref][0].logo.asset->url,
+        }
+      },
+      features[] {
+        ...,
+        "image": image.asset->url,
+      },
+    }
+    `
+  );
+  console.log('fetch', { teamsPageData });
+  return teamsPageData;
+}
+
 export const getSEOData: () => Promise<SanitySeo> = async () => {
   const seoData = await client.fetch(
     `
@@ -137,18 +196,26 @@ export const getBlogs: (limit: number) => Promise<SanityBlog[]> = async (
     `*[_type == 'blog' && !(_id in path('drafts.**'))] {
       ...,
       "coverImage": coverImage.asset->url,
+      author->{
+        ...,
+        "portrait": portrait.asset->url
+      }
     }[0..${limit - 1}]`
   )
 
   return saucyBlog
 }
 
-export const getAllBlogs: () => Promise<SanityBlog[]> = async () => {
-  const allBlogs: SanityBlog[] = await client.fetch(
+export const getAllBlogs: () => Promise<(Omit<SanityBlog, "author"> & { author: SanityAuthor })[]> = async () => {
+  const allBlogs: (Omit<SanityBlog, "author"> & { author: SanityAuthor })[] = await client.fetch(
     `*[_type == 'blog' && !(_id in path('drafts.**'))] | order(_createdAt desc)  {
       ...,
       "coverImage": coverImage.asset->url,
       "ogImage": ogImage.asset->url,
+      author->{
+        ...,
+        "portrait": portrait.asset->url
+      }
     }`
   )
 
@@ -162,6 +229,10 @@ export const getBlogBySlug: (slug: string) => Promise<SanityBlog> = async (
     await client.fetch(`*[_type == 'blog' && slug.current == '${slug}'][0] {
     ...,
     "coverImage": coverImage.asset->url,
+    author->{
+      ...,
+      "portrait": portrait.asset->url
+    }
   }`)
   return getBlogData
 }
@@ -172,6 +243,10 @@ export const getFeaturedBlogBySlug: (
   const getBlogData: SanityFeaturedBlog =
     await client.fetch(`*[_type == 'featuredBlog' && slug.current == '${slug}'][0] {
     ...,
+    author->{
+      ...,
+      "portrait": portrait.asset->url
+    },
     "coverImage": coverImage.asset->url,
   }`)
   return getBlogData
@@ -211,4 +286,45 @@ export const getAboutPageData: () => Promise<SanityAboutPage> = async () => {
     }
   }`)
   return getAboutPageData
+}
+
+export const getAllChangelog: () => Promise<SanityChangelog[]> = async () => {
+  const allChangelog: SanityChangelog[] = await client.fetch(
+    `*[_type == 'changelog' && !(_id in path('drafts.**'))] | order(_createdAt desc)  {
+      ...,
+    }`
+  )
+  return allChangelog
+}
+
+export const getChangelog: (limit: number) => Promise<SanityChangelog[]> = async (
+  limit: number = 2
+) => {
+  const changelog: SanityChangelog[] = await client.fetch(
+    `*[_type == 'changelog' && !(_id in path('drafts.**'))] | order(date desc) {
+      ...,
+    }[0..${limit - 1}]`
+  )
+
+  return changelog
+}
+
+export const getChangelogBySlug: (slug: string) => Promise<SanityChangelog> = async (slug) => {
+  const changelog : SanityChangelog = await client.fetch(`
+    *[_type == 'changelog' && !(_id in path('drafts.**')) && slug.current == '${slug}'] {
+      ...,
+    }[0]
+  `);
+
+  return changelog;
+}
+
+export const getLatestChangelogsExceptSlug: (slug: string) => Promise<SanityChangelog[]> = async (slug) => {
+  const changelogs : SanityChangelog[] = await client.fetch(`
+    *[_type == 'changelog' && !(_id in path('drafts.**')) && !(slug.current == '${slug}')] {
+      ...,
+    } [0...3]
+  `)
+
+  return changelogs;
 }

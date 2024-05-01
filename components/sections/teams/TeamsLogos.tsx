@@ -19,7 +19,7 @@ const TeamLogos = ({ data }: LogosProps) => {
               key={item.name}
               href={href}
               target="_blank"
-              rel="noreferrer"
+              
               className="relative h-[18px] largeTablet:h-6 mx-auto"
             >
               <img

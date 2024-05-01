@@ -58,7 +58,7 @@ const SocialLinks: FC<SocialLinksProps> = ({ aboutPage, social }): ReactElement 
     ? <div className={wrapperStyle}>
         {social.map(({ socialUrl, socialIcon, socialLinkPlaceholder }) => (
           <div key={socialLinkPlaceholder} className="flex items-center cursor-pointer">
-            <a href={socialUrl} target="_blank" rel="noreferrer" className="opacity-70">
+            <a href={socialUrl} target="_blank"  className="opacity-70">
               <Image width={37} height={37} alt={socialLinkPlaceholder as string} src={socialIcon as unknown as string || ""} />
             </a>
           </div>
@@ -67,7 +67,7 @@ const SocialLinks: FC<SocialLinksProps> = ({ aboutPage, social }): ReactElement 
     : <div className={wrapperStyle}>
         {data.map(({ url, icon, label }) => (
           <div key={label} className="flex items-center cursor-pointer">
-            <a href={url} target="_blank" rel="noreferrer" className="opacity-70">
+            <a href={url} target="_blank"  className="opacity-70">
               <Image width={18} height={18} alt={label} src={icon} />
             </a>
           </div>
