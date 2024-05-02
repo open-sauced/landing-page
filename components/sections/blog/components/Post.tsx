@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React, { FC, ReactElement } from 'react'
 import { SanityBlog, SanityAuthor } from '../../../../types/schema'
 import getReadTime from '../../../../utils/getReadTime'
@@ -70,12 +71,12 @@ const Post: FC<PostProps> = ({ data, featured }): ReactElement => {
       </div>
       <div className=" min-h-[55px] largeTablet:min-h-[90px]">
         <LocalTypography featured={featured} variant="title">
-          <a
+          <Link
             href={href}
             className="hover:text-brandOrange hover:decoration-brandOrange transition-all"
           >
             {title}
-          </a>
+          </Link>
         </LocalTypography>
       </div>
       <div className="flex items-center pb-6 largeTablet:pb-10 ">
