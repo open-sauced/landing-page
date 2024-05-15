@@ -23,6 +23,7 @@ import aboutPage from './pages/aboutPage'
 import homePage from './pages/homePage'
 import teamsPage from './pages/teamsPage'
 import studentsPage from './pages/studentsPage'
+import contributorsPage from './pages/contributorsPage'
 import changelog from './changelog'
 import changelogCategory from './changelogCategory'
 
@@ -52,6 +53,7 @@ export default createSchema({
     homePage,
     teamsPage,
     studentsPage,
+    contributorsPage,
     changelog,
     changelogCategory
   ]),

@@ -13,6 +13,7 @@ import {
   SanityChangelog,
   SanityTeamsPage,
   SanityAuthor,
+  SanityContributorsPage,
 } from '../types/schema'
 
 const client = sanityClient({
@@ -122,6 +123,35 @@ export const getTeamsPageData: () => Promise<SanityTeamsPage> = async () => {
   );
   console.log('fetch', { teamsPageData });
   return teamsPageData;
+}
+
+export const getContributorsPageData: () => Promise<SanityContributorsPage> = async () => {
+  const contributorsPageData = await client.fetch(
+    `
+    *[_type == "contributorsPage"][0] {
+      ...,
+      hero {
+        ...,
+        "image": image.asset->url,
+        users[] {
+          ...,
+          "name": *[ _type == "user" && _id == ^._ref][0].name,
+          "website": *[ _type == "user" && _id == ^._ref][0].website,
+          "logo": *[ _type == "user" && _id == ^._ref][0].logo.asset->url,
+        }
+      },
+      topUseCase {
+        ...,
+        "image": image.asset->url,
+      },
+      features[] {
+        ...,
+        "image": image.asset->url,
+      },
+    }
+    `
+  );
+  return contributorsPageData;
 }
 
 export const getStudentsPageData: () => Promise<SanityTeamsPage> = async () => {

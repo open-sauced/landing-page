@@ -1,6 +1,6 @@
 // /deskStructure.js
 import S from '@sanity/desk-tool/structure-builder'
-import { FaMoneyCheckAlt, FaInfoCircle, FaHome, FaGraduationCap } from 'react-icons/fa'
+import { FaPeopleCarry, FaMoneyCheckAlt, FaInfoCircle, FaHome, FaGraduationCap } from 'react-icons/fa'
 import { VscOrganization } from "react-icons/vsc";
 
 export default () => 
@@ -29,6 +29,16 @@ export default () =>
         .schemaType("teamsPage")
         .documentId("teamsPage")
         .title("Teams Page")
+      ),
+
+      S.listItem()
+      .title("Contributors Page")
+      .icon(FaPeopleCarry)
+      .child(
+        S.document()
+        .schemaType("contributorsPage")
+        .documentId("contributorsPage")
+        .title("Contributors Page")
       ),
 
       S.listItem()
