@@ -14,6 +14,7 @@ import {
   SanityTeamsPage,
   SanityAuthor,
   SanityContributorsPage,
+  SanityMaintainersPage,
 } from '../types/schema'
 
 const client = sanityClient({
@@ -121,8 +122,36 @@ export const getTeamsPageData: () => Promise<SanityTeamsPage> = async () => {
     }
     `
   );
-  console.log('fetch', { teamsPageData });
   return teamsPageData;
+}
+
+export const getMaintainersPageData: () => Promise<SanityMaintainersPage> = async () => {
+  const maintainersPageData = await client.fetch(
+    `
+    *[_type == "maintainersPage"][0] {
+      ...,
+      hero {
+        ...,
+        "image": image.asset->url,
+        users[] {
+          ...,
+          "name": *[ _type == "user" && _id == ^._ref][0].name,
+          "website": *[ _type == "user" && _id == ^._ref][0].website,
+          "logo": *[ _type == "user" && _id == ^._ref][0].logo.asset->url,
+        }
+      },
+      topUseCase {
+        ...,
+        "image": image.asset->url,
+      },
+      features[] {
+        ...,
+        "image": image.asset->url,
+      },
+    }
+    `
+  );
+  return maintainersPageData;
 }
 
 export const getContributorsPageData: () => Promise<SanityContributorsPage> = async () => {

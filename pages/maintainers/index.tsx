@@ -1,42 +1,42 @@
 import type { NextPage } from 'next'
-import Hero from '../../components/sections/maintainers/Hero'
-import Logos from '../../components/sections/maintainers/Logos'
 import {
   getAllBlogs,
   getCommonData,
   getFeaturedBlogs,
-  getHomePageData,
+  getMaintainersPageData
 } from '../../lib/sanity'
 import {
   SanityBlog,
   SanityFooter,
-  SanityHomePage,
+  SanityMaintainersPage,
   SanityNavigation,
   SanitySeo,
   SanityUser,
 } from '../../types/schema'
+import Hero from '../../components/sections/home-page/Hero'
+import Logos from '../../components/sections/home-page/Logos'
 import Background from '../../components/sections/maintainers/Background'
-import Features from '../../components/sections/maintainers/features/Features'
-import Testimonials from '../../components/sections/maintainers/testimonials/Testimonials'
 import Blogs from '../../components/sections/maintainers/blogs/Blogs'
 import PageLayout from '../../components/common/layout/PageLayout'
 import Newsletter from '../../components/sections/maintainers/Newsletter'
+import TeamsFeatures from '../../components/sections/home-page/features/TeamsFeatures'
+import CTA from '../../components/sections/teams/CTA'
 
-interface HomePageProps {
+interface MaintainersPageProps {
   data: {
     commonData: {
       navigationLinks: SanityNavigation[]
       seoData: SanitySeo
       footer: SanityFooter[]
     }
-    homePageData: SanityHomePage
+    maintainersPageData: SanityMaintainersPage
     blogs: SanityBlog[]
     featuredBlogs: SanityBlog[]
   }
 }
 
-const Home: NextPage<HomePageProps> = ({
-  data: { commonData, homePageData, blogs, featuredBlogs },
+const MaintainersPage: NextPage<MaintainersPageProps> = ({
+  data: { commonData, maintainersPageData, blogs, featuredBlogs },
 }) => {
   const displayBlogs = [...blogs, ...featuredBlogs].sort(
     (a, b) => +new Date(b._createdAt) - +new Date(a._createdAt)
@@ -47,29 +47,35 @@ const Home: NextPage<HomePageProps> = ({
       seoData={commonData.seoData}
       navigationURLs={commonData.navigationLinks}
       BackgroundWrapper={Background}
-      homePage
     >
-      <Hero data={homePageData.hero as unknown as SanityHomePage['hero']} />
-      <Logos data={homePageData.hero?.users as unknown as SanityUser[] || []} />
-      <Features data={homePageData.features as unknown as SanityHomePage['features']} />
-      <Testimonials data={homePageData.testimonialsSection} />
-      <Newsletter/>
-      <Blogs data={homePageData.blogSection} blogs={displayBlogs.slice(0, 4)}  />
+      <Hero data={maintainersPageData.hero as unknown as SanityMaintainersPage['hero']} />
+      <Logos data={maintainersPageData.hero?.users as unknown as SanityUser[] || []} />
+      <TeamsFeatures topUseCase={maintainersPageData.topUseCase} features={maintainersPageData.features} />
+      <CTA data={maintainersPageData.ctaSection} />
+      <Blogs 
+        data={{
+          _type: "blogSection",
+          title: "Our secret sauce",
+          heading: "$yellow-to-orange OpenSauced$yellow-to-orange Blog",
+          description: "Musings on the open-source community, engineering, and the future of talent acquisition."
+        }} 
+        blogs={displayBlogs.slice(0, 4)}  />
+      <Newsletter />
     </PageLayout>
   )
 }
 
-export default Home
+export default MaintainersPage
 
 export async function getStaticProps() {
-  const [commonData, homePageData, featuredBlogs, blogs] = await Promise.all([
+  const [commonData, maintainersPageData, featuredBlogs, blogs] = await Promise.all([
     getCommonData(),
-    getHomePageData(),
+    getMaintainersPageData(),
     getFeaturedBlogs(),
     getAllBlogs(),
   ])
 
-  const data = { commonData, homePageData, featuredBlogs, blogs }
+  const data = { commonData, maintainersPageData, featuredBlogs, blogs }
 
   return {
     props: {
