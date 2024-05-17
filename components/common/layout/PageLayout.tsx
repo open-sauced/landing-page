@@ -46,7 +46,7 @@ const PageLayout: FC<PageLayoutProps> = ({
         <PHBadge/>
         {!pressPage && <Header navigationItems={navigationURLs} />}
         <div>{children}</div>
-        <a href="#top" className="fixed bottom-5 right-5 bg-darkOrange text-white p-3 rounded-full text-sm z-50">
+        <a href="#top" className="fixed top-5 right-5 bg-darkOrange text-white p-3 rounded-full text-sm z-50">
           ↑ Back to Top
         </a>
         <Footer pressPage={pressPage} />
