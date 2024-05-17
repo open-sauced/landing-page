@@ -15,7 +15,7 @@ interface ChangelogProps {
   count: number
 }
 
-const Changelog: FC<ChangelogProps> = ({
+const Launch: FC<ChangelogProps> = ({
   changelog: { title, date, changelogCategory, changelogContent, topics, slug },
   index,
   count,
@@ -138,4 +138,4 @@ const Changelog: FC<ChangelogProps> = ({
   )
 }
 
-export default Changelog
+export default Launch

@@ -1,11 +1,11 @@
 import React from 'react'
 import Hero from '../../components/sections/lunchweek/Hero'
-import Changelogs from '../../components/sections/lunchweek/Changelogs'
 import PageLayout from '../../components/common/layout/PageLayout'
 import { getAllChangelog, getCommonData } from '../../lib/sanity'
 import { NextPage } from 'next'
 import { SanityFooter, SanityNavigation, SanitySeo } from '../../types/schema'
 import Background from '../../components/sections/lunchweek/Background'
+import Launches from '../../components/sections/lunchweek/Launches'
 
 interface BlogsPageProps {
   data: {
@@ -31,7 +31,7 @@ const Index: NextPage<BlogsPageProps> = ({
       BackgroundWrapper={Background}
     >
       <Hero />
-      <Changelogs totalChangelogCount={totalChangelogCount} />
+      <Launches totalLaunchesCount={5} isLaunchesPage={true} />
     </PageLayout>
   )
 }
