@@ -32,7 +32,7 @@ const PageLayout: FC<PageLayoutProps> = ({
   homePage = false,
 }): ReactElement => {
   return (
-    <div>
+    <div id="page-container"> {/* Added id attribute for CSS scroll effect */}
       {!blogPage
         && <OgData
         ogTitle={seoData.title || 'Open Sauced'}
@@ -46,7 +46,8 @@ const PageLayout: FC<PageLayoutProps> = ({
         <PHBadge/>
         {!pressPage && <Header navigationItems={navigationURLs} />}
         <div>{children}</div>
-        <a href="#top" className="fixed top-5 right-5 bg-darkOrange text-white p-3 rounded-full text-sm z-50">
+        {/* Modified class to include CSS class for scroll visibility control */}
+        <a href="#top" className="back-to-top fixed top-5 right-5 bg-darkOrange text-white p-3 rounded-full text-sm z-50">
           ↑ Back to Top
         </a>
         <Footer pressPage={pressPage} />
