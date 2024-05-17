@@ -1837,6 +1837,486 @@ export type SanityStudentsPage = {
   }
 }
 
+export type SanityContributorsPage = {
+  _type: 'contributorsPage'
+  /**
+   * Hero — `object`
+   *
+   * All information here will be displayed in the hero section of the home page.
+   */
+  hero?: {
+    _type: 'hero'
+    /**
+     * Title — `string`
+     *
+     * Title will be displayed in smaller font size on top the heading.
+     */
+    title?: string
+
+    /**
+     * Heading — `string`
+     *
+     * Heading will be displayed in larger font size below the title.
+     */
+    heading?: string
+
+    /**
+     * Description — `text`
+     *
+     * The summary of the Open Sauced should be written here.
+     */
+    description?: string
+
+    /**
+     * CTA — `array`
+     *
+     *
+     */
+    cta?: Array<
+      SanityKeyed<{
+        /**
+         * CTA Label — `string`
+         *
+         *
+         */
+        ctaLabel?: string
+
+        /**
+         * CTA Link — `string`
+         *
+         *
+         */
+        ctaLink?: string
+      }>
+    >
+
+    /**
+     * Hero Image — `image`
+     *
+     * This image will be displayed on the right side of the hero section.
+     */
+    image?: {
+      _type: 'image'
+      asset: SanityReference<SanityImageAsset>
+      crop?: SanityImageCrop
+      hotspot?: SanityImageHotspot
+    }
+
+    /**
+     * Users — `array`
+     *
+     *
+     */
+    users?: Array<SanityKeyedReference<SanityUser>>
+  }
+
+  /**
+   * Top Use Case — `object`
+   *
+   * An overview how teams can use OpenSauced for their engineering needs.
+   */
+  topUseCase?: {
+    _type: 'topUseCase'
+    /**
+     * Heading — `string`
+     *
+     *
+     */
+    heading?: string
+
+    /**
+     * Description — `text`
+     *
+     *
+     */
+    description?: string
+
+    /**
+     * Image — `image`
+     *
+     *
+     */
+    image?: {
+      _type: 'image'
+      asset: SanityReference<SanityImageAsset>
+      crop?: SanityImageCrop
+      hotspot?: SanityImageHotspot
+    }
+
+    /**
+     * Subsections — `array`
+     *
+     *
+     */
+    subsections?: Array<
+      SanityKeyed<{
+        _type: 'subsection'
+        /**
+         * Heading — `string`
+         *
+         *
+         */
+        heading?: string
+
+        /**
+         * Description — `text`
+         *
+         *
+         */
+        description?: string
+      }>
+    >
+  }
+
+  /**
+   * Features — `array`
+   *
+   * All the features of Open Sauced should be displayed here.
+   */
+  features?: Array<
+    SanityKeyed<{
+      _type: 'feature'
+      /**
+       * Title — `string`
+       *
+       * Title will be displayed in smaller font size on top the heading.
+       */
+      title?: string
+
+      /**
+       * heading — `string`
+       *
+       * Heading will be displayed in larger font size bellow the title.
+       */
+      heading?: string
+
+      /**
+       * description — `text`
+       *
+       *
+       */
+      description?: string
+
+      /**
+       * Image — `image`
+       *
+       *
+       */
+      image?: {
+        _type: 'image'
+        asset: SanityReference<SanityImageAsset>
+        crop?: SanityImageCrop
+        hotspot?: SanityImageHotspot
+      }
+    }>
+  >
+
+  /**
+   * CTA Section — `object`
+   *
+   *
+   */
+  ctaSection?: {
+    _type: 'ctaSection'
+    /**
+     * Heading — `string`
+     *
+     *
+     */
+    heading?: string
+
+    /**
+     * Description — `text`
+     *
+     *
+     */
+    description?: string
+
+    /**
+     * CTA Label — `string`
+     *
+     *
+     */
+    ctaLabel?: string
+
+    /**
+     * CTA Link — `string`
+     *
+     *
+     */
+    ctaLink?: string
+  }
+
+  /**
+   * Testimonials Section — `object`
+   *
+   *
+   */
+  testimonialsSection?: {
+    _type: 'testimonialsSection'
+    /**
+     * Title — `string`
+     *
+     * Title for the testimonial section, it will be displayed in smaller font size on top the heading.
+     */
+    title?: string
+
+    /**
+     * Heading — `string`
+     *
+     * Heading for the testimonial section, it will be displayed in larger bellow the title font size.
+     */
+    heading?: string
+
+    /**
+     * Testimonials — `array`
+     *
+     *
+     */
+    testimonials?: Array<SanityKeyedReference<SanityTestimonial>>
+  }
+}
+
+export type SanityMaintainersPage = {
+  _type: 'maintainersPage'
+  /**
+   * Hero — `object`
+   *
+   * All information here will be displayed in the hero section of the home page.
+   */
+  hero?: {
+    _type: 'hero'
+    /**
+     * Title — `string`
+     *
+     * Title will be displayed in smaller font size on top the heading.
+     */
+    title?: string
+
+    /**
+     * Heading — `string`
+     *
+     * Heading will be displayed in larger font size below the title.
+     */
+    heading?: string
+
+    /**
+     * Description — `text`
+     *
+     * The summary of the Open Sauced should be written here.
+     */
+    description?: string
+
+    /**
+     * CTA — `array`
+     *
+     *
+     */
+    cta?: Array<
+      SanityKeyed<{
+        /**
+         * CTA Label — `string`
+         *
+         *
+         */
+        ctaLabel?: string
+
+        /**
+         * CTA Link — `string`
+         *
+         *
+         */
+        ctaLink?: string
+      }>
+    >
+
+    /**
+     * Hero Image — `image`
+     *
+     * This image will be displayed on the right side of the hero section.
+     */
+    image?: {
+      _type: 'image'
+      asset: SanityReference<SanityImageAsset>
+      crop?: SanityImageCrop
+      hotspot?: SanityImageHotspot
+    }
+
+    /**
+     * Users — `array`
+     *
+     *
+     */
+    users?: Array<SanityKeyedReference<SanityUser>>
+  }
+
+  /**
+   * Top Use Case — `object`
+   *
+   * An overview how teams can use OpenSauced for their engineering needs.
+   */
+  topUseCase?: {
+    _type: 'topUseCase'
+    /**
+     * Heading — `string`
+     *
+     *
+     */
+    heading?: string
+
+    /**
+     * Description — `text`
+     *
+     *
+     */
+    description?: string
+
+    /**
+     * Image — `image`
+     *
+     *
+     */
+    image?: {
+      _type: 'image'
+      asset: SanityReference<SanityImageAsset>
+      crop?: SanityImageCrop
+      hotspot?: SanityImageHotspot
+    }
+
+    /**
+     * Subsections — `array`
+     *
+     *
+     */
+    subsections?: Array<
+      SanityKeyed<{
+        _type: 'subsection'
+        /**
+         * Heading — `string`
+         *
+         *
+         */
+        heading?: string
+
+        /**
+         * Description — `text`
+         *
+         *
+         */
+        description?: string
+      }>
+    >
+  }
+
+  /**
+   * Features — `array`
+   *
+   * All the features of Open Sauced should be displayed here.
+   */
+  features?: Array<
+    SanityKeyed<{
+      _type: 'feature'
+      /**
+       * Title — `string`
+       *
+       * Title will be displayed in smaller font size on top the heading.
+       */
+      title?: string
+
+      /**
+       * heading — `string`
+       *
+       * Heading will be displayed in larger font size bellow the title.
+       */
+      heading?: string
+
+      /**
+       * description — `text`
+       *
+       *
+       */
+      description?: string
+
+      /**
+       * Image — `image`
+       *
+       *
+       */
+      image?: {
+        _type: 'image'
+        asset: SanityReference<SanityImageAsset>
+        crop?: SanityImageCrop
+        hotspot?: SanityImageHotspot
+      }
+    }>
+  >
+
+  /**
+   * CTA Section — `object`
+   *
+   *
+   */
+  ctaSection?: {
+    _type: 'ctaSection'
+    /**
+     * Heading — `string`
+     *
+     *
+     */
+    heading?: string
+
+    /**
+     * Description — `text`
+     *
+     *
+     */
+    description?: string
+
+    /**
+     * CTA Label — `string`
+     *
+     *
+     */
+    ctaLabel?: string
+
+    /**
+     * CTA Link — `string`
+     *
+     *
+     */
+    ctaLink?: string
+  }
+
+  /**
+   * Testimonials Section — `object`
+   *
+   *
+   */
+  testimonialsSection?: {
+    _type: 'testimonialsSection'
+    /**
+     * Title — `string`
+     *
+     * Title for the testimonial section, it will be displayed in smaller font size on top the heading.
+     */
+    title?: string
+
+    /**
+     * Heading — `string`
+     *
+     * Heading for the testimonial section, it will be displayed in larger bellow the title font size.
+     */
+    heading?: string
+
+    /**
+     * Testimonials — `array`
+     *
+     *
+     */
+    testimonials?: Array<SanityKeyedReference<SanityTestimonial>>
+  }
+}
+
 export type Documents =
   | SanityAbout
   | SanityUser

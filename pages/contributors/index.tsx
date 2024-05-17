@@ -1,80 +1,70 @@
-import type { NextPage } from 'next'
+import React, { FC } from 'react'
+import PageLayout from '../../components/common/layout/PageLayout'
+import { getAllBlogs, getCommonData, getFeaturedBlogs, getContributorsPageData } from '../../lib/sanity'
+import Background from '../../components/sections/about/Background'
+import { SanityBlog, SanityContributorsPage, SanityFooter, SanityNavigation, SanitySeo, SanityTeamsPage, SanityUser } from '../../types/schema'
+import Blogs from '../../components/sections/home-page/blogs/Blogs'
 import Hero from '../../components/sections/home-page/Hero'
 import Logos from '../../components/sections/home-page/Logos'
-import {
-  getAllBlogs,
-  getCommonData,
-  getFeaturedBlogs,
-  getHomePageData,
-} from '../../lib/sanity'
-import {
-  SanityBlog,
-  SanityFooter,
-  SanityHomePage,
-  SanityNavigation,
-  SanitySeo,
-  SanityUser,
-} from '../../types/schema'
-import Background from '../../components/sections/home-page/Background'
-import Features from '../../components/sections/home-page/features/Features'
-import Testimonials from '../../components/sections/home-page/testimonials/Testimonials'
-import Blogs from '../../components/sections/home-page/blogs/Blogs'
-import PageLayout from '../../components/common/layout/PageLayout'
 import Newsletter from '../../components/sections/home-page/Newsletter'
+import TeamsFeatures from '../../components/sections/home-page/features/TeamsFeatures'
+import CTA from '../../components/sections/teams/CTA'
 
-interface HomePageProps {
+interface Props {
   data: {
     commonData: {
       navigationLinks: SanityNavigation[]
       seoData: SanitySeo
       footer: SanityFooter[]
     }
-    homePageData: SanityHomePage
+    contributorsPageData: SanityContributorsPage
     blogs: SanityBlog[]
     featuredBlogs: SanityBlog[]
   }
 }
 
-const Home: NextPage<HomePageProps> = ({
-  data: { commonData, homePageData, blogs, featuredBlogs },
+const index:FC<Props> = ({
+  data: { commonData, contributorsPageData, blogs, featuredBlogs },
 }) => {
   const displayBlogs = [...blogs, ...featuredBlogs].sort(
     (a, b) => +new Date(b._createdAt) - +new Date(a._createdAt)
   )
-
+  
   return (
     <PageLayout
       seoData={commonData.seoData}
       navigationURLs={commonData.navigationLinks}
       BackgroundWrapper={Background}
-      homePage
     >
-      <Hero data={homePageData.hero as unknown as SanityHomePage['hero']} />
-      <Logos
-        data={(homePageData.hero?.users as unknown as SanityUser[]) || []}
-      />
-      <Features
-        data={homePageData.features as unknown as SanityHomePage['features']}
-      />
-      <Testimonials data={homePageData.testimonialsSection} />
+      <Hero data={contributorsPageData.hero as unknown as SanityTeamsPage['hero']} />
+      <Logos data={contributorsPageData.hero?.users as unknown as SanityUser[] || []} />
+      <TeamsFeatures topUseCase={contributorsPageData.topUseCase} features={contributorsPageData.features} />
+      <CTA data={contributorsPageData.ctaSection} />
+      <Blogs 
+        data={{
+          _type: "blogSection",
+          title: "Our secret sauce",
+          heading: "$yellow-to-orange OpenSauced$yellow-to-orange Blog",
+          description: "Musings on the open-source community, engineering, and the future of talent acquisition."
+        }} 
+        blogs={displayBlogs.slice(0, 4)}  />
       <Newsletter />
-      <Blogs data={homePageData.blogSection} blogs={displayBlogs.slice(0, 4)} />
     </PageLayout>
   )
 }
 
-export default Home
+export default index
 
 export async function getStaticProps() {
-  const [commonData, homePageData, featuredBlogs, blogs] = await Promise.all([
+  const [commonData, contributorsPageData, featuredBlogs, blogs] = await Promise.all([
     getCommonData(),
-    getHomePageData(),
+    getContributorsPageData(),
     getFeaturedBlogs(),
     getAllBlogs(),
   ])
 
-  const data = { commonData, homePageData, featuredBlogs, blogs }
-
+  const data = { commonData, contributorsPageData, featuredBlogs, blogs }
+  
   return {
     props: {
       data,

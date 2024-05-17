@@ -46,7 +46,7 @@ const PageLayout: FC<PageLayoutProps> = ({
         <PHBadge/>
         {!pressPage && <Header navigationItems={navigationURLs} />}
         <div>{children}</div>
-        {!pressPage && !homePage && <Subscribe />}
+       
         <Footer pressPage={pressPage} />
       </BackgroundWrapper>
     </div>
