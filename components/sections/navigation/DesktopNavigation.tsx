@@ -25,16 +25,16 @@ const useCases = [
     title: 'Maintainers',
     description: 'Grow and celebrate your open source community.',
   },
-  { 
-    link: "/contributors",
-    title: "Contributors", 
-    description: "Start the path to your next contribution." 
+  {
+    link: '/contributors',
+    title: 'Contributors',
+    description: 'Start the path to your next contribution.',
   },
   {
-    link: "/students",
-    title: "Students",
-    description: "Follow your passion and make your mark."
-  }
+    link: '/students',
+    title: 'Students',
+    description: 'Follow your passion and make your mark.',
+  },
 ]
 
 const DesktopNavigation: FC<DesktopNavigationProps> = ({
@@ -63,7 +63,7 @@ const DesktopNavigation: FC<DesktopNavigationProps> = ({
       <nav className="flex gap-8 items-center">
         <Menu as="div" className="relative -top-0.5">
           <Menu.Button className={`${defaultStyle}`}>Use Cases</Menu.Button>
-          <Menu.Items className="rounded-lg absolute left-0 w-96 flex flex-col gap-4 p-3 shadow-xl origin-top-left bg-darkBG z-60 my-4">
+          <Menu.Items className="rounded-lg absolute left-0 w-96 flex flex-col gap-4 p-3 shadow-xl origin-top-left bg-darkBG z-50 my-4">
             {useCases.map((useCase) => (
               <Menu.Item key={`usecase_${useCase.title}`}>
                 {({ active }) => (
