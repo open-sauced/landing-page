@@ -25,16 +25,16 @@ const useCases = [
     title: 'Maintainers',
     description: 'Grow and celebrate your open source community.',
   },
-  { 
-    link: "/contributors",
-    title: "Contributors", 
-    description: "Start the path to your next contribution." 
+  {
+    link: '/contributors',
+    title: 'Contributors',
+    description: 'Start the path to your next contribution.',
   },
   {
-    link: "/students",
-    title: "Students",
-    description: "Follow your passion and make your mark."
-  }
+    link: '/students',
+    title: 'Students',
+    description: 'Follow your passion and make your mark.',
+  },
 ]
 
 const DesktopNavigation: FC<DesktopNavigationProps> = ({

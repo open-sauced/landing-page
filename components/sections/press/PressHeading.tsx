@@ -79,7 +79,7 @@ const PressHeading: FC<Props> = ({ headingData }) => {
                 <Image src={UShape} alt="graphics" />
               </div>
               <img
-                className="w-full h-full z-50 "
+                className="w-full h-full"
                 src={featureImage}
                 alt="feature"
               />
