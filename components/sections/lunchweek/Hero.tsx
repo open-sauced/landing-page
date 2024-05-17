@@ -2,46 +2,40 @@ import React from 'react'
 import { Heading, Typography } from '../../common/text'
 import PHBadgeDark from '../../common/product-hunt/PHBadgeDark'
 import Image from 'next/image'
+import pizzaImage from '../../../public/lunchweekImages/pizza_slice.png'
 
 const Hero = () => {
   return (
-    <section className="z-40 py-24 tablet:py-36 border-slate-800 relative flex flex-col gap-y-5 from-transparent via-red-800 to-transparent">
-      <div className="flex w-full pl-[8%] pr-[10%] space-x-20">
+    <section className="z-40 py-24 tablet:py-36 border-slate-800 relative flex flex-col gap-y-5 from-transparent via-red-800 to-transparent w-full max-w-[1256px] mx-auto px-6 h-fit justify-center items-center">
+      <div className="flex w-full space-x-20">
         <div className="space-y-1 w-[80%]">
           <Typography tracking="widest" alignLarge="left" variant="preHeading">
             LUNCH WEEK
           </Typography>
-          <Heading alignSmall="left" alignLarge="left">
+          <h1 className="w-full font-bold text-textPrimary tracking-[-0.02em] largeTablet:text-5xl largeTablet:tracking-[-0.03em]">
             Serving up new features every day,
-          </Heading>
-          <Heading alignSmall="left" alignLarge="left">
-            $yellow-to-orangelunch time is launch time$yellow-to-orange
-          </Heading>
+          </h1>
+          <h1 className="w-full font-bold text-textPrimary tracking-[-0.02em] largeTablet:text-5xl largeTablet:tracking-[-0.03em] bg-gradient-to-r from-brandYellow via-brandRed to-brandRed text-transparent bg-clip-text">
+            lunch time is launch time
+          </h1>
           <div className="pt-4 pb-6">
-            <Typography alignLarge="left" variant="subheading">
+            <p className="text-xl font-normal opacity-80">
               Join us everyday this week to see what we've been cookin' up.
-            </Typography>
+            </p>
           </div>
           <PHBadgeDark />
         </div>
-        <div className="w-[20%] flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center">
           <Image
-            src="/lunchweekImages/pizza.svg"
+            src={pizzaImage}
             alt="Insight Dashboard"
-            width={280}
-            height={280}
+            style={{
+              width: '100%',
+              height: 'auto',
+            }}
             priority={true}
             loading="eager"
             className="scale-150 largeTablet:scale-125 scl"
-          />
-          <Image
-            src="/lunchweekImages/lunchWeek.svg"
-            alt="Insight Dashboard"
-            width={400}
-            height={50}
-            priority={true}
-            loading="eager"
-            className="scale-150 largeTablet:scale-150 scl pt-10"
           />
         </div>
       </div>
