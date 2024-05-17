@@ -26,7 +26,7 @@ export default function NotFound({ commonData } : {
       BackgroundWrapper={Background}
     >
       <SectionWrapper>
-        <section className="items-center gap-y-12 z-50 py-24 tablet:py-56 border-slate-800 relative flex flex-col from-transparent via-red-800 to-transparent">
+        <section className="items-center gap-y-12 py-24 tablet:py-56 border-slate-800 relative flex flex-col from-transparent via-red-800 to-transparent">
           <Heading component="h1" alignLarge="center">
             $yellow-to-orange404: Page Not Found - But Opportunities are Everywhere$yellow-to-orange
           </Heading>
