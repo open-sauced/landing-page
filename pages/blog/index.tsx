@@ -56,7 +56,7 @@ const BlogsPage: NextPage<BlogsPageProps> = ({
       <Blogs data={blogs} />
       <a
         href="#top"
-        className={`fixed bottom-28 lg:right-11 right-6 back-to-top bg-[#ed5432] text-white py-2 px-3 lg:px-4 rounded font-bold transition-opacity duration-300 ${
+        className={`fixed bottom-28 right-11  back-to-top bg-[#ed5432] text-white py-2 px-3 lg:px-4  rounded font-bold transition-opacity duration-300 ${
           showBackToTop ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
       >
