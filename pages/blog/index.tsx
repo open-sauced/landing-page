@@ -1,4 +1,4 @@
-import React, { useEffect, useState, ReactElement } from 'react'
+import React, { ReactElement } from 'react'
 import { NextPage } from 'next'
 import PageLayout from '../../components/common/layout/PageLayout'
 import Background from '../../components/sections/blog/Background'
@@ -30,23 +30,6 @@ const BlogsPage: NextPage<BlogsPageProps> = ({
     blogs,
   },
 }): ReactElement => {
-  const [showBackToTop, setShowBackToTop] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowBackToTop(window.scrollY > 800)
-    }
-
-    // Check scroll position on initial load
-    handleScroll()
-
-    window.addEventListener('scroll', handleScroll)
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
-
   return (
     <PageLayout
       seoData={seoData}
@@ -54,14 +37,6 @@ const BlogsPage: NextPage<BlogsPageProps> = ({
       BackgroundWrapper={Background}
     >
       <Blogs data={blogs} />
-      <a
-        href="#top"
-        className={`fixed bottom-28 right-11  back-to-top bg-[#ed5432] text-white py-2 px-3 lg:px-4  rounded font-bold transition-opacity duration-300 ${
-          showBackToTop ? 'opacity-100' : 'opacity-0 pointer-events-none'
-        }`}
-      >
-        ↑ Back to Top
-      </a>
     </PageLayout>
   )
 }
