@@ -53,32 +53,13 @@ const Launch: FC<ChangelogProps> = ({
           <span>
             <IoMdGitCommit className="absolute -left-3 rounded-3xl text-2xl p-1  text-white bg-gradient-to-tr from-[#ED5432] to-[#EDA232] drop-shadow-[0_0_4px_#ED5432]" />
           </span>
+
           <Typography alignLarge="left" variant="title3">
-            <Link
-              href={`/changelog/${slug?.current}`}
-              className="hover:text-brandOrange hover:decoration-brandOrange transition-all"
-            >
               {title}
-            </Link>
           </Typography>
-          <span className="py-4">
-            <Typography alignLarge="left" variant="body4">
-              {moment(date).format('DD MMM YYYY')}
-            </Typography>
-          </span>
-          <div className="flex gap-3">
-            {topics &&
-              topics.map((category, index) => (
-                <GradientBorderWrapper
-                  key={index}
-                  style={{ borderRadius: '16px' }}
-                >
-                  <div className="bg-darkBG rounded-2xl text-sm px-2 py-1">
-                    {category}
-                  </div>
-                </GradientBorderWrapper>
-              ))}
-          </div>
+          <Typography alignLarge="left" variant="body1">
+              {/* {subtitle} */}
+          </Typography>
         </section>
       </div>
 
@@ -87,15 +68,12 @@ const Launch: FC<ChangelogProps> = ({
           index + 1 === count ? '' : 'border-l-2'
         }`}
       >
-        <div className="tablet:hidden relative flex-col flex gap-y-2 pb-4">
+        {/* <div className="tablet:hidden relative flex-col flex gap-y-2 pb-4">
           <span className=" -left-6 -top-4 absolute">
             <IoMdGitCommit className="absolute -left-4 top-4 bg-darkBG text-3xl" />
           </span>
           <Typography alignLarge="left" variant="title3">
             {title}
-          </Typography>
-          <Typography alignLarge="left" variant="body4">
-            {moment(date).format('DD MMM YYYY')}
           </Typography>
           <div className="flex gap-2">
             {topics &&
@@ -110,7 +88,7 @@ const Launch: FC<ChangelogProps> = ({
                 </GradientBorderWrapper>
               ))}
           </div>
-        </div>
+        </div> */}
 
         <div style={containerHeightStyle}>
           <div className="relative" ref={contentRef}>
@@ -120,19 +98,6 @@ const Launch: FC<ChangelogProps> = ({
             </ReactMarkdown>
           </div>
         </div>
-        {/* (hasImageInContent || changelogContent.length > 260) && */ (
-          <button
-            onClick={expandChangelog}
-            className="text-textPrimary font-bold flex items-center mt-8 gap-x-2 transition-all hover:text-brandOrange"
-          >
-            {isExpanded ? 'Collapse' : 'See more'}
-            {isExpanded ? (
-              <MdOutlineExpandMore className="transform rotate-180" />
-            ) : (
-              <MdOutlineExpandMore />
-            )}
-          </button>
-        )}
       </section>
     </article>
   )
