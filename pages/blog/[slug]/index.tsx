@@ -79,14 +79,16 @@ const BlogPage: NextPage<BlogPageProps> = ({ data }): ReactElement => {
           featuredPost={featuredPost}
         />
       )}
-      <a
-        href="#top"
-        className={`fixed bottom-28 right-11 back-to-top bg-[#ed5432] text-white py-2 px-3 lg:px-4  rounded font-bold transition-opacity duration-300 ${
-          showBackToTop ? 'opacity-100' : 'opacity-0 pointer-events-none'
-        }`}
-      >
-        ↑ Back to Top
-      </a>
+      <div>
+        <a
+          href="#top"
+          className={`fixed bottom-28 right-6 tablet:right-11 largeTablet:right-11 laptop:right-11 desktop:right-11 _1054:right-11 _1106:right-11 _1255:right-11 _1594:right-11 _1764:right-11 _2k:right-11 back-to-top bg-[#ed5432] text-white py-2 px-3 lg:px-4 rounded font-bold transition-opacity duration-300 ${
+            showBackToTop ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          }`}
+        >
+          ↑ Back to Top
+        </a>
+      </div>
     </PageLayout>
   )
 }
