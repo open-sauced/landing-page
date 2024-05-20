@@ -1,4 +1,4 @@
-import React, { FC, useRef, useState } from 'react'
+import React, { FC, useRef } from 'react'
 import { Typography } from '../../common/text'
 import { IoMdGitCommit } from 'react-icons/io'
 import { HiOutlineBookOpen, HiOutlineDocumentText, HiOutlineVideoCamera } from 'react-icons/hi'
