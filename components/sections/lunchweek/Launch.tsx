@@ -2,54 +2,47 @@ import React, { FC, useRef, useState } from 'react'
 import { Typography } from '../../common/text'
 import GradientBorderWrapper from '../../common/GradientBorderWrapper'
 import { IoMdGitCommit } from 'react-icons/io'
-import ReactMarkdown from 'react-markdown'
-import { MdOutlineExpandMore } from 'react-icons/md'
-import { SanityChangelog } from '../../../types/schema'
-import moment from 'moment'
+import { HiOutlineBookOpen, HiOutlineDocumentText, HiOutlineVideoCamera } from 'react-icons/hi'
+import xLogoW from '../../../public/logos/xLogoW.svg'
 
+import ReactMarkdown from 'react-markdown'
+import Image from 'next/image'
 import Link from 'next/link'
 
-interface ChangelogProps {
-  changelog: SanityChangelog
+import moment from 'moment'
+
+interface LaunchItemsProps {
+  // changelog: SanityChangelog
+  launchItems:  { 
+    title: string, 
+    image: string
+  }
   index: number
   count: number
 }
 
-const Launch: FC<ChangelogProps> = ({
-  changelog: { title, date, changelogCategory, changelogContent, topics, slug },
+
+const Launch: FC<LaunchItemsProps> = ({
+  launchItems: { title, image },
   index,
   count,
 }) => {
-  const [isExpanded, setIsExpanded] = useState(false)
   const contentRef = useRef<HTMLDivElement>(null)
-
-  // function to expand the changelog
-  const expandChangelog = () => {
-    setIsExpanded(!isExpanded)
-  }
 
   const containerHeightStyle = {
     overflow: 'hidden',
     transition: 'height 0.5s ease-in-out',
-    height: isExpanded ? `${contentRef.current?.clientHeight}px` : '360px',
+    height: '360px',
   }
-
-  // check if the changelog content has an image
-/*   const hasImageInContent = changelogContent.includes('![image](') */
-
-  // check the line of the changelog content
-/*   const lineCount = changelogContent.split('\n').length */
 
   return (
     <article
-      className={`flex pb-24 gap-x-10 h-full relative border-textPrimary border-opacity-50 ${
+      className={`flex flex-col largeTablet:flex-row pb-24 gap-x-10 h-full relative border-textPrimary border-opacity-50 ${
         index + 1 === count ? '' : 'border-l-2'
       }`}
     >
       <div className="relative pb-28">
-        <section
-          className={`hidden self-start sticky top-8 tablet:flex flex-1 pl-10 max-w-md flex-col `}
-        >
+        <section className={`self-start sticky top-8 tablet:flex flex-1 pl-10 max-w-md flex-col `}>
           <span>
             <IoMdGitCommit className="absolute -left-3 rounded-3xl text-2xl p-1  text-white bg-gradient-to-tr from-[#ED5432] to-[#EDA232] drop-shadow-[0_0_4px_#ED5432]" />
           </span>
@@ -57,48 +50,40 @@ const Launch: FC<ChangelogProps> = ({
           <Typography alignLarge="left" variant="title3">
               {title}
           </Typography>
-          <Typography alignLarge="left" variant="body1">
+          <Typography alignLarge="left" variant="body3">
+            "Training Open Source Leaders and Maintainers."
               {/* {subtitle} */}
           </Typography>
+          <section className="flex flex-col gap-1 pt-2">
+            <Link href="" className="flex gap-1.5 items-center ">
+                <HiOutlineBookOpen className="text-brandRed" />
+                Docs
+            </Link>
+            <Link href="" className="flex gap-1.5 items-center ">
+              <HiOutlineDocumentText className="text-brandRed"/>  
+              Blogpost
+            </Link>
+            <Link href="" className="flex gap-1.5 items-center ">
+              <HiOutlineVideoCamera className="text-brandRed"/>  
+              Video
+            </Link>
+            <Link href="" className="flex gap-1.5 items-center ">
+              <Image alt="X logo" width={16} src={xLogoW} className="text-brandRed"/>
+              See thread
+            </Link>
+          </section>
         </section>
       </div>
-
-      <section
-        className={`flex-1 relative pb-10 tablet:border-0 tablet:pl-0 pl-6 ${
-          index + 1 === count ? '' : 'border-l-2'
-        }`}
-      >
-        {/* <div className="tablet:hidden relative flex-col flex gap-y-2 pb-4">
-          <span className=" -left-6 -top-4 absolute">
-            <IoMdGitCommit className="absolute -left-4 top-4 bg-darkBG text-3xl" />
-          </span>
-          <Typography alignLarge="left" variant="title3">
-            {title}
-          </Typography>
-          <div className="flex gap-2">
-            {topics &&
-              topics.map((category, index) => (
-                <GradientBorderWrapper
-                  key={index}
-                  style={{ borderRadius: '16px' }}
-                >
-                  <div className="bg-darkBG rounded-2xl text-sm px-2 py-1">
-                    {category}
-                  </div>
-                </GradientBorderWrapper>
-              ))}
-          </div>
-        </div> */}
-
-        <div style={containerHeightStyle}>
-          <div className="relative" ref={contentRef}>
-            <ReactMarkdown
-              className="prose prose-invert prose-img:rounded-md">
-              {changelogContent}
-            </ReactMarkdown>
-          </div>
+      <div style={containerHeightStyle}>
+        <div className="relative" ref={contentRef}>
+          <Image 
+            src={image}
+            width={500}
+            height={500}
+            alt={title}
+          />
         </div>
-      </section>
+      </div>
     </article>
   )
 }
