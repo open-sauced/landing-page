@@ -5,6 +5,7 @@ import { HiOutlineBookOpen, HiOutlineDocumentText, HiOutlineVideoCamera } from '
 import xLogoOrange from '../../../public/logos/xLogoOrange.svg'
 import Image from 'next/image'
 import Link from 'next/link'
+import { SanityChangelog } from '../../../types/schema'
 
 interface LaunchItemsProps {
   launchItems:  { 
@@ -17,6 +18,7 @@ interface LaunchItemsProps {
     videoLink: string,
     twitterLink: string,
     blurred: boolean,
+    changelog: SanityChangelog;
   }
   index: number
   count: number
