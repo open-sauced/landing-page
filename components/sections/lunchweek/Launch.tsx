@@ -5,6 +5,7 @@ import { IoMdGitCommit } from 'react-icons/io'
 import { HiOutlineBookOpen, HiOutlineDocumentText, HiOutlineVideoCamera } from 'react-icons/hi'
 import xLogoW from '../../../public/logos/xLogoW.svg'
 
+
 import ReactMarkdown from 'react-markdown'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -12,10 +13,16 @@ import Link from 'next/link'
 import moment from 'moment'
 
 interface LaunchItemsProps {
-  // changelog: SanityChangelog
   launchItems:  { 
-    title: string, 
-    image: string
+    title: string,
+    subtitle: string,
+    image: string,
+    launchDay: string,
+    docsLink: string,
+    logLink: string,
+    videoLink: string,
+    twitterLink: string,
+    blurred: boolean,
   }
   index: number
   count: number
@@ -23,7 +30,7 @@ interface LaunchItemsProps {
 
 
 const Launch: FC<LaunchItemsProps> = ({
-  launchItems: { title, image },
+  launchItems: { title, subtitle, image, launchDay, docsLink, logLink, videoLink, twitterLink, blurred},
   index,
   count,
 }) => {
@@ -37,44 +44,51 @@ const Launch: FC<LaunchItemsProps> = ({
 
   return (
     <article
-      className={`flex flex-col largeTablet:flex-row pb-24 gap-x-10 h-full relative border-textPrimary border-opacity-50 ${
+      className={`flex flex-col justify-between largeTablet:flex-row pb-24 gap-x-10 h-full relative border-brandOrange border-opacity-50 ${
         index + 1 === count ? '' : 'border-l-2'
       }`}
     >
-      <div className="relative pb-28">
+      <div className="relative pb-28 flex-1">
         <section className={`self-start sticky top-8 tablet:flex flex-1 pl-10 max-w-md flex-col `}>
           <span>
             <IoMdGitCommit className="absolute -left-3 rounded-3xl text-2xl p-1  text-white bg-gradient-to-tr from-[#ED5432] to-[#EDA232] drop-shadow-[0_0_4px_#ED5432]" />
           </span>
 
+          <p className="pb-2 text-brandRed">
+            {launchDay}
+          </p>
+
           <Typography alignLarge="left" variant="title3">
               {title}
           </Typography>
-          <Typography alignLarge="left" variant="body3">
-            "Training Open Source Leaders and Maintainers."
-              {/* {subtitle} */}
-          </Typography>
-          <section className="flex flex-col gap-1 pt-2">
-            <Link href="" className="flex gap-1.5 items-center ">
+          <span className="py-2">
+            <Typography alignLarge="left" variant="body3">
+                {subtitle}
+            </Typography>
+          </span>
+          
+          {/* Links */}
+          <section className="flex flex-col gap-1 text-gray-300">
+            <Link href="" className="flex gap-1.5 items-center hover:text-brandRed hover:font-medium transition-all">
                 <HiOutlineBookOpen className="text-brandRed" />
                 Docs
             </Link>
-            <Link href="" className="flex gap-1.5 items-center ">
+            <Link href="" className="flex gap-1.5 items-center hover:text-brandRed hover:font-medium transition-all">
               <HiOutlineDocumentText className="text-brandRed"/>  
               Blogpost
             </Link>
-            <Link href="" className="flex gap-1.5 items-center ">
+            <Link href="" className="flex gap-1.5 items-center hover:text-brandRed hover:font-medium transition-all">
               <HiOutlineVideoCamera className="text-brandRed"/>  
               Video
             </Link>
-            <Link href="" className="flex gap-1.5 items-center ">
+            <Link href="" className="flex gap-1.5 items-center hover:text-brandRed hover:font-medium transition-all">
               <Image alt="X logo" width={16} src={xLogoW} className="text-brandRed"/>
               See thread
             </Link>
           </section>
         </section>
       </div>
-      <div style={containerHeightStyle}>
+      <div className="flex-1" style={containerHeightStyle}>
         <div className="relative" ref={contentRef}>
           <Image 
             src={image}
