@@ -77,7 +77,7 @@ const Launch: FC<LaunchItemsProps> = ({
             </Link>
             <Link href="" className="flex gap-1.5 items-center hover:text-brandRed hover:font-medium transition-all">
               <Image alt="X logo" width={14} src={xLogoOrange} className="text-brandRed"/>
-              See thread
+              Watch Livestream!
             </Link>
           </section>
         </section>

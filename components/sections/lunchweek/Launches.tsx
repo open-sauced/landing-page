@@ -21,14 +21,14 @@ const Launches: FC<LaunchesProps> = ({
     const getLaunchItems = async () => {
       setLaunchItems([
         {
-          title: 'Introductory Course for Maintainers',
+          title: 'Becoming a Maintainer Course',
           subtitle: 'Training Open Source Leaders and Maintainers.',
           image: '/lunchweekImages/maintainer-course.png',
           launchDay: 'May 20th',
-          docsLink: '',
-          blogLink: '',
-          videoLink: '',
-          twitterLink: '',
+          docsLink: 'https://intro.opensauced.pizza/#/becoming-a-maintainer/README',
+          blogLink: 'https://opensauced.pizza/blog/maintainer-course',
+          videoLink: 'https://www.youtube.com/watch?v=NgczoKlIlfw',
+          twitterLink: 'https://x.com/saucedopen',
           blurred: false,
         },
         {
