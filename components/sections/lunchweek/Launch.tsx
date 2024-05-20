@@ -19,7 +19,7 @@ interface LaunchItemsProps {
     twitterLink: string,
     blurred: boolean,
   }
-  changelog: SanityChangelog;
+  changelog?: SanityChangelog;
   index: number
   count: number
 }

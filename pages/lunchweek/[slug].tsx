@@ -57,8 +57,9 @@ export default function ChangelogPage({ changelog, commonData, latestChanges } :
 
       <SectionWrapper>
         <section className="flex flex-col py-24 border-t-2 border-brandOrange">
-          {latestChanges.length > 0 && latestChanges.map((changelog, index) => (
-            <Launch count={latestChanges.length} index={index} key={changelog._id} changelog={changelog}/>
+          {latestChanges.length > 0 && latestChanges.map((changelog, index, launchItems) => (
+            <Launch count={latestChanges.length} index={index} key={changelog._id} changelog={changelog}
+            />
           ))}
           <span className="mx-auto">
             <Button href="/changelog">View More Changes</Button>

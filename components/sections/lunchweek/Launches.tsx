@@ -74,13 +74,13 @@ const Launches: FC<LaunchesProps> = ({
       <SectionWrapper>
         <main className="flex flex-col largeTablet:w-full">
           {launchItems.length > 0 &&
-            launchItems.map((launchItems, index, changelog) => (
+            launchItems.map((launchItems, index) => (
               <Launch
                 count={launchItems.length}
                 index={index}
                 key={launchItems._id}
                 launchItems={launchItems} 
-                changelog={changelog}              />
+                          />
             ))}
         </main>
       </SectionWrapper>
