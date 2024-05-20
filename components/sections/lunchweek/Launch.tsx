@@ -3,7 +3,7 @@ import { Typography } from '../../common/text'
 import GradientBorderWrapper from '../../common/GradientBorderWrapper'
 import { IoMdGitCommit } from 'react-icons/io'
 import { HiOutlineBookOpen, HiOutlineDocumentText, HiOutlineVideoCamera } from 'react-icons/hi'
-import xLogoW from '../../../public/logos/xLogoW.svg'
+import xLogoOrange from '../../../public/logos/xLogoOrange.svg'
 
 
 import ReactMarkdown from 'react-markdown'
@@ -44,11 +44,11 @@ const Launch: FC<LaunchItemsProps> = ({
 
   return (
     <article
-      className={`flex flex-col justify-between largeTablet:flex-row pb-24 gap-x-10 h-full relative border-brandOrange border-opacity-50 ${
-        index + 1 === count ? '' : 'border-l-2'
+      className={`flex flex-col justify-between largeTablet:flex-row pb-24 gap-x-10 h-full relative border-brandOrange border-opacity-50 border-l-2 ${
+        blurred ? 'blur-md' : ''
       }`}
     >
-      <div className="relative pb-28 flex-1">
+      <div className="relative largeTablet:pb-28 pb-8 flex-1">
         <section className={`self-start sticky top-8 tablet:flex flex-1 pl-10 max-w-md flex-col `}>
           <span>
             <IoMdGitCommit className="absolute -left-3 rounded-3xl text-2xl p-1  text-white bg-gradient-to-tr from-[#ED5432] to-[#EDA232] drop-shadow-[0_0_4px_#ED5432]" />
@@ -82,7 +82,7 @@ const Launch: FC<LaunchItemsProps> = ({
               Video
             </Link>
             <Link href="" className="flex gap-1.5 items-center hover:text-brandRed hover:font-medium transition-all">
-              <Image alt="X logo" width={16} src={xLogoW} className="text-brandRed"/>
+              <Image alt="X logo" width={14} src={xLogoOrange} className="text-brandRed"/>
               See thread
             </Link>
           </section>

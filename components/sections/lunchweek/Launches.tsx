@@ -1,9 +1,6 @@
 import React, { FC, useEffect, useState } from 'react'
 import SectionWrapper from '../../common/layout/SectionWrapper'
 import Launch from './Launch'
-import { getChangelog } from '../../../lib/sanity'
-import { SanityChangelog } from '../../../types/schema'
-import GradientBorderWrapper from '../../common/GradientBorderWrapper'
 
 interface LaunchesProps {
   totalLaunchesCount: number
