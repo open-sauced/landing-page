@@ -89,7 +89,7 @@ const Launch: FC<LaunchItemsProps> = ({
         </section>
       </div>
       <div className="flex-1" style={containerHeightStyle}>
-        <div className="relative" ref={contentRef}>
+        <div className="relative largeTablet:pl-0 pl-4" ref={contentRef}>
           <Image 
             src={image}
             width={500}
