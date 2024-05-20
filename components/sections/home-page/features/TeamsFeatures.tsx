@@ -17,7 +17,7 @@ type TeamsFeaturesProps = {
 export default function TeamsFeatures({ topUseCase, features } : TeamsFeaturesProps) {
   return (
     <SectionWrapper pbs={0}>
-      <TopUseCase topUseCase={topUseCase} />
+      { topUseCase && <TopUseCase topUseCase={topUseCase} /> }
       { features!.map((feature) => <TeamFeature feature={feature!} />) }
       <EndingLine />
     </SectionWrapper>

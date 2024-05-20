@@ -48,7 +48,7 @@ const PageLayout: FC<PageLayoutProps> = ({
         )}
         {!pressPage && <Header navigationItems={navigationURLs} />}
         <div>{children}</div>
-        {!pressPage && !homePage && <Subscribe />}
+       
         <Footer pressPage={pressPage} />
       </BackgroundWrapper>
     </div>
