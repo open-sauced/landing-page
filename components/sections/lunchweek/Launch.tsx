@@ -29,6 +29,7 @@ const Launch: FC<LaunchItemsProps> = ({
   launchItems: { title, subtitle, image, launchDay, docsLink, logLink, videoLink, twitterLink, blurred},
   index,
   count,
+  changelog
 }) => {
   const contentRef = useRef<HTMLDivElement>(null)
 
