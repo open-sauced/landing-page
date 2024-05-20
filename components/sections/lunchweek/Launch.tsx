@@ -13,7 +13,7 @@ interface LaunchItemsProps {
     image: string,
     launchDay: string,
     docsLink: string,
-    logLink: string,
+    blogLink: string,
     videoLink: string,
     twitterLink: string,
     blurred: boolean,
@@ -24,7 +24,7 @@ interface LaunchItemsProps {
 
 
 const Launch: FC<LaunchItemsProps> = ({
-  launchItems: { title, subtitle, image, launchDay, docsLink, logLink, videoLink, twitterLink, blurred},
+  launchItems: { title, subtitle, image, launchDay, docsLink, blogLink, videoLink, twitterLink, blurred},
   index,
   count,
 }) => {
@@ -63,19 +63,19 @@ const Launch: FC<LaunchItemsProps> = ({
           
           {/* Links */}
           <section className="flex flex-col gap-1 text-gray-300">
-            <Link href="" className="flex gap-1.5 items-center hover:text-brandRed hover:font-medium transition-all">
+            <Link href={docsLink} className="flex gap-1.5 items-center hover:text-brandRed hover:font-medium transition-all">
                 <HiOutlineBookOpen className="text-brandRed" />
                 Docs
             </Link>
-            <Link href="" className="flex gap-1.5 items-center hover:text-brandRed hover:font-medium transition-all">
+            <Link href={blogLink} className="flex gap-1.5 items-center hover:text-brandRed hover:font-medium transition-all">
               <HiOutlineDocumentText className="text-brandRed"/>  
               Blogpost
             </Link>
-            <Link href="" className="flex gap-1.5 items-center hover:text-brandRed hover:font-medium transition-all">
+            <Link href={videoLink} className="flex gap-1.5 items-center hover:text-brandRed hover:font-medium transition-all">
               <HiOutlineVideoCamera className="text-brandRed"/>  
               Video
             </Link>
-            <Link href="" className="flex gap-1.5 items-center hover:text-brandRed hover:font-medium transition-all">
+            <Link href={twitterLink} className="flex gap-1.5 items-center hover:text-brandRed hover:font-medium transition-all">
               <Image alt="X logo" width={14} src={xLogoOrange} className="text-brandRed"/>
               Watch Livestream!
             </Link>
