@@ -3,6 +3,8 @@ import { Heading, Typography } from '../../common/text'
 import PHBadgeDark from '../../common/product-hunt/PHBadgeDark'
 import Image from 'next/image'
 import pizzaImage from '../../../public/lunchweekImages/pizza_slice.png'
+import pizzaBackgroundImage from '../../../public/lunchweekImages/background.png'
+import { motion } from 'framer-motion'
 
 const Hero = () => {
   return (
@@ -24,18 +26,41 @@ const Hero = () => {
           </div>
           <PHBadgeDark />
         </div>
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center relative">
           <Image
-            src={pizzaImage}
-            alt="Insight Dashboard"
+            src={pizzaBackgroundImage}
+            alt="decorative background"
             style={{
               width: '100%',
               height: 'auto',
             }}
             priority={true}
             loading="eager"
-            className="scale-150 largeTablet:scale-125 scl"
+            className="largeTablet:scale-125 scl "
           />
+          {/* <motion.div>
+            <Image
+              src={pizzaImage}
+              alt="pizza slice"
+              style={{
+                width: '60%',
+                height: 'auto',
+              }}
+              priority={true}
+              loading="eager"
+              className="absolute w-max-[100px] "
+            />
+          <motion.div /> */}
+
+
+          <motion.img
+                initial={{ translateY: 0 }}
+                animate={{ translateY: [0, 12, 0] }}
+                transition={{ repeat: Infinity, duration: 4.5, ease: 'easeInOut' }}
+                className="absolute w-max-[100px]"
+                src='/lunchweekImages/pizza_slice.png'
+                alt="pizza slice"
+              />
         </div>
     </section>
   )
