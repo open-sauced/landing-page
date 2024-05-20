@@ -1,16 +1,10 @@
 import React, { FC, useRef, useState } from 'react'
 import { Typography } from '../../common/text'
-import GradientBorderWrapper from '../../common/GradientBorderWrapper'
 import { IoMdGitCommit } from 'react-icons/io'
 import { HiOutlineBookOpen, HiOutlineDocumentText, HiOutlineVideoCamera } from 'react-icons/hi'
 import xLogoOrange from '../../../public/logos/xLogoOrange.svg'
-
-
-import ReactMarkdown from 'react-markdown'
 import Image from 'next/image'
 import Link from 'next/link'
-
-import moment from 'moment'
 
 interface LaunchItemsProps {
   launchItems:  { 
