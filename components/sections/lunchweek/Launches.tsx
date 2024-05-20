@@ -40,7 +40,7 @@ const Launches: FC<LaunchesProps> = ({
           blogLink: '',
           videoLink: '',
           twitterLink: '',
-          blurred: false,
+          blurred: true,
         },
         {
           title: 'Repository Pages',
@@ -51,7 +51,7 @@ const Launches: FC<LaunchesProps> = ({
           blogLink: '',
           videoLink: '',
           twitterLink: '',
-          blurred: false,
+          blurred: true,
         },
         {
           title: 'StarSearch',
@@ -62,7 +62,7 @@ const Launches: FC<LaunchesProps> = ({
           blogLink: '',
           videoLink: '',
           twitterLink: '',
-          blurred: false,
+          blurred: true,
         }
       ])
     }
