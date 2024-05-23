@@ -27,7 +27,7 @@ const Launches: FC<LaunchesProps> = ({
           launchDay: 'May 20th',
           docsLink: 'https://intro.opensauced.pizza/#/becoming-a-maintainer/README',
           blogLink: 'https://opensauced.pizza/blog/maintainer-course',
-          videoLink: 'https://www.youtube.com/watch?v=NgczoKlIlfw',
+          videoLink: 'https://x.com/saucedopen/status/1792603786667860302',
           twitterLink: 'https://x.com/saucedopen',
           blurred: false,
         },
@@ -39,7 +39,7 @@ const Launches: FC<LaunchesProps> = ({
           docsLink: 'https://docs.opensauced.pizza/features/workspaces/',
           blogLink: 'https://opensauced.pizza/blog/understanding-create-react-app-decline-open-source-insights',
           videoLink: 'https://youtu.be/xpxIyR4-rRc?si=8TB7AmR83UxtxLGP',
-          twitterLink: 'https://x.com/saucedopen',
+          twitterLink: 'https://x.com/saucedopen/status/1792963815245787502',
           blurred: false,
         },
         {
@@ -50,7 +50,7 @@ const Launches: FC<LaunchesProps> = ({
           docsLink: 'https://docs.opensauced.pizza/features/repo-pages/',
           blogLink: 'https://opensauced.pizza/blog/Understanding-the-Lottery-Factor',
           videoLink: 'https://www.youtube.com/watch?v=C7rkaAlcvZE',
-          twitterLink: 'https://x.com/saucedopen',
+          twitterLink: 'https://x.com/saucedopen/status/1793341128210895288',
           blurred: false,
         },
         {
@@ -58,11 +58,11 @@ const Launches: FC<LaunchesProps> = ({
           subtitle: 'Copilot for git history.',
           image: '/lunchweekImages/star-search.png',
           launchDay: 'May 23rd',
-          docsLink: '',
-          blogLink: '',
-          videoLink: '',
-          twitterLink: '',
-          blurred: true,
+          docsLink: 'https://docs.opensauced.pizza/features/star-search/',
+          blogLink: 'https://opensauced.pizza/blog/open-source-insights-with-starsearch',
+          videoLink: 'https://youtu.be/I3cS-u_gmDE?si=zSC4g4WJ0Un4OXqC',
+          twitterLink: 'https://x.com/saucedopen',
+          blurred: false,
         }
       ])
     }
