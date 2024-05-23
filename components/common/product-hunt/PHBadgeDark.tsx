@@ -4,7 +4,7 @@ const PHBadgeDark = () => {
   return (
     <div className="w-fit -ml-2">
       <a
-        href="https://www.producthunt.com/posts/opensauced?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-opensauced"
+        href="https://www.producthunt.com/posts/starsearch?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-opensauced"
         target="_blank"
       >
         <img
