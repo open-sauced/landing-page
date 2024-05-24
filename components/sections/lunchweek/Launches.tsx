@@ -23,7 +23,7 @@ const Launches: FC<LaunchesProps> = ({
         {
           title: 'OpenSauced raises 3.5 million',
           subtitle: 'We raised to expand our efforts to validate and share the impact of open source in your organization.',
-          image: '/lunchweekImages/funding-announcement.png',
+          image: '/lunchweekImages/funding.png',
           launchDay: 'May 24rd',
           docsLink: '',
           blogLink: '',
