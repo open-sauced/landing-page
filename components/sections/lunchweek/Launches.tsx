@@ -26,7 +26,7 @@ const Launches: FC<LaunchesProps> = ({
           image: '/lunchweekImages/funding.png',
           launchDay: 'May 24rd',
           docsLink: 'https://docs.opensauced.pizza/',
-          blogLink: '',
+          blogLink:'https://opensauced.pizza/blog/opensauced-raises-3.5-million-from-boldstart,-github-and-more-',
           videoLink: 'https://www.youtube.com/watch?v=JCNjj19iDa4',
           twitterLink: 'https://x.com/saucedopen',
           blurred: false,
