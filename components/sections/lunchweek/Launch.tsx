@@ -63,22 +63,36 @@ const Launch: FC<LaunchItemsProps> = ({
           
           {/* Links */}
           <section className="flex flex-col gap-1 text-gray-300">
-            <Link href={docsLink} className="flex gap-1.5 items-center hover:text-brandRed hover:font-medium transition-all">
-                <HiOutlineBookOpen className="text-brandRed" />
-                Docs
-            </Link>
-            <Link href={blogLink} className="flex gap-1.5 items-center hover:text-brandRed hover:font-medium transition-all">
-              <HiOutlineDocumentText className="text-brandRed"/>  
-              Blogpost
-            </Link>
-            <Link href={videoLink} className="flex gap-1.5 items-center hover:text-brandRed hover:font-medium transition-all">
-              <HiOutlineVideoCamera className="text-brandRed"/>  
-              Video
-            </Link>
-            <Link href={twitterLink} className="flex gap-1.5 items-center hover:text-brandRed hover:font-medium transition-all">
-              <Image alt="X logo" width={14} src={xLogoOrange} className="text-brandRed"/>
-              Watch Livestream!
-            </Link>
+            {docsLink? 
+              <Link href={docsLink} className="flex gap-1.5 items-center hover:text-brandRed hover:font-medium transition-all">
+                  <HiOutlineBookOpen className="text-brandRed" />
+                  Docs
+              </Link>
+              : ""
+            }
+
+            {blogLink? 
+              <Link href={blogLink} className="flex gap-1.5 items-center hover:text-brandRed hover:font-medium transition-all">
+                <HiOutlineDocumentText className="text-brandRed"/>  
+                Blogpost
+              </Link>
+              : ""
+            }
+
+            {videoLink? 
+              <Link href={videoLink} className="flex gap-1.5 items-center hover:text-brandRed hover:font-medium transition-all">
+                <HiOutlineVideoCamera className="text-brandRed"/>  
+                Video
+              </Link>
+              : ""
+            }
+            {twitterLink? 
+              <Link href={twitterLink} className="flex gap-1.5 items-center hover:text-brandRed hover:font-medium transition-all">
+                <Image alt="X logo" width={14} src={xLogoOrange} className="text-brandRed"/>
+                Watch Livestream!
+              </Link>
+            : ""
+            }
           </section>
         </section>
       </div>
