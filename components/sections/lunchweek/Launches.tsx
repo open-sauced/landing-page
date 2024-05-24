@@ -25,10 +25,10 @@ const Launches: FC<LaunchesProps> = ({
           subtitle: 'We raised to expand our efforts to validate and share the impact of open source in your organization.',
           image: '/lunchweekImages/funding.png',
           launchDay: 'May 24rd',
-          docsLink: '',
+          docsLink: 'https://docs.opensauced.pizza/',
           blogLink: '',
-          videoLink: '',
-          twitterLink: '',
+          videoLink: 'https://www.youtube.com/watch?v=JCNjj19iDa4',
+          twitterLink: 'https://x.com/saucedopen',
           blurred: false,
         },
         {
@@ -39,7 +39,7 @@ const Launches: FC<LaunchesProps> = ({
           docsLink: 'https://docs.opensauced.pizza/features/star-search/',
           blogLink: 'https://opensauced.pizza/blog/open-source-insights-with-starsearch',
           videoLink: 'https://youtu.be/I3cS-u_gmDE?si=zSC4g4WJ0Un4OXqC',
-          twitterLink: 'https://x.com/saucedopen',
+          twitterLink: 'https://x.com/saucedopen/status/1793659223773233207',
           blurred: false,
         },
         {
