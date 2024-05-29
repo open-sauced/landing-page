@@ -1,0 +1,7 @@
+# creates a subdirectory for docs
+
+[[redirects]]
+from = "/docs/*"
+to = "https://docs-opensauced.netlify.app/:splat"
+status = 200
+force = false
