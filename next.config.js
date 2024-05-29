@@ -23,8 +23,18 @@ const nextConfig = {
         source: '/sitemap.xml',
         destination: '/sitemap.xml',
       },
+      {
+        source: '/docs/:path*',
+        destination: 'https://docs.opensauced.pizza/:path*',
+      },
+      {
+        source: '/docs/',
+        destination: 'https://docs.opensauced.pizza/',
+      }
     ];
   },
+  skipTrailingSlashRedirect: true, 
+
 }
 
 module.exports = nextConfig
