@@ -25,11 +25,11 @@ const nextConfig = {
       },
       {
         source: '/docs/:path*',
-        destination: 'https://docs.opensauced.pizza/:path*',
+        destination: 'https://main--saucedocs.netlify.app/:path*',
       },
       {
         source: '/docs/',
-        destination: 'https://docs.opensauced.pizza/',
+        destination: 'https://main--saucedocs.netlify.app/',
       }
     ];
   },
