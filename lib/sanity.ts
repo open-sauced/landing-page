@@ -17,7 +17,7 @@ import {
   SanityMaintainersPage,
 } from '../types/schema'
 
-const client = sanityClient({
+export const client = sanityClient({
   projectId: 'r7m53vrk',
   dataset: 'production',
   token: process.env.SANITY_TOKEN,
