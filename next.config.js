@@ -15,6 +15,15 @@ const nextConfig = {
           },
         ],
       },
+      {
+        source: "/news/:path*",
+        headers: [
+          {
+            key: "x-forwarded-host",
+            value: "opensauced.pizza"
+          }
+        ],
+      },
     ]
   },
   async rewrites() {
@@ -30,7 +39,15 @@ const nextConfig = {
       {
         source: '/docs/',
         destination: 'https://docs.opensauced.pizza/',
-      }
+      },
+      {
+        source: "/news/:path*/",
+        destination: "https://news.opensauced.pizza/blog/:path*/",
+      },
+      {
+        source: "/news/",
+        destination: "https://news.opensauced.pizza",
+      },
     ];
   },
   skipTrailingSlashRedirect: true, 
