@@ -25,16 +25,11 @@ const nextConfig = {
       },
       {
         source: '/docs/:path*',
-        destination: 'https://main--saucedocs.netlify.app/:path*',
+        destination: 'https://saucedocs.netlify.app/:path*/',
       },
-      {
-        source: '/docs/',
-        destination: 'https://main--saucedocs.netlify.app/',
-      }
-    ];
+    ]
   },
-  skipTrailingSlashRedirect: true, 
-
+  skipTrailingSlashRedirect: true,
 }
 
 module.exports = nextConfig
