@@ -17,6 +17,19 @@ const nextConfig = {
       },
     ]
   },
+  async rewrites() {
+    return [
+      {
+        source: '/sitemap.xml',
+        destination: '/sitemap.xml',
+      },
+      {
+        source: '/docs/:path*',
+        destination: 'https://saucedocs.netlify.app/:path*/',
+      },
+    ]
+  },
+  skipTrailingSlashRedirect: true,
 }
 
 module.exports = nextConfig

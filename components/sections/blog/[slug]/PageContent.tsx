@@ -1,5 +1,5 @@
 import React, { FC, ReactElement } from 'react'
-import { SanityBlog } from '../../../../types/schema'
+import { SanityAuthor, SanityBlog } from '../../../../types/schema'
 import getReadTime from '../../../../utils/getReadTime'
 
 // Components
@@ -17,10 +17,12 @@ import DecoratedText from '../../../common/text/utils/DecoratedText'
 import OgData from '../../../common/layout/SEO/SEO'
 import SocialShare from '../../../common/SocialShare'
 import ReactPlayer from 'react-player'
+import { BiCalendarAlt } from 'react-icons/bi'
+import AuthorBio from '../components/AuthorBio'
 
 interface PageContentProps {
-  pageContent: SanityBlog
-  blogs: SanityBlog[]
+  pageContent: Omit<SanityBlog, "author"> & { author: SanityAuthor }
+  blogs: (Omit<SanityBlog, "author"> & { author: SanityAuthor })[]
   featuredPost?: boolean
 }
 
@@ -30,7 +32,7 @@ const PageContent: FC<PageContentProps> = ({
   featuredPost,
 }): ReactElement => {
   const { query } = useRouter()
-  const { topics, title, author, readTime, coverImage, blogContent, blogUrl, ogImage, summary, slug } =
+  const { topics, title, author, published_date, coverImage, blogContent, blogUrl, ogImage, summary, slug } =
     pageContent
   const src = coverImage || ''
   const displayBlogs =
@@ -62,7 +64,7 @@ const PageContent: FC<PageContentProps> = ({
             <Image width={16} height={16} src={OrangeAuthor} alt="Author" />
           </div>
 
-          <LocalTypography>{author}</LocalTypography>
+          <LocalTypography>{author?.name}</LocalTypography>
           <div className="flex-shrink-0 mr-2 ml-4">
             <Image width={16} height={16} src={OrangeClock} alt="Clock" />
           </div>
@@ -71,12 +73,23 @@ const PageContent: FC<PageContentProps> = ({
             getReadTime(blogContent || "") === 1 ? 'min' : 'mins'
           } read`}
           </LocalTypography>
+          
+          { published_date && (
+            <>
+              <div className="flex-shrink-0 mr-2 ml-4">
+                <BiCalendarAlt className='text-[#E33E24] w-5 h-5' /> 
+              </div>
+              <LocalTypography>
+                <time>{published_date}</time>
+              </LocalTypography>
+            </>
+          )}
         </div>
         <div className="pb-11 largeTablet:pb-20">
           <SocialShare url={absoluteURL} size="lg" gap={6} hackerNews />
         </div>
         <GradientBorderWrapper style={{ width: '100%', borderRadius: '8px' }}>
-          <div className="w-full h-[304px] relative rounded-[5px] overflow-hidden largeTablet:h-[496px]  ">
+          <div className="w-full relative rounded-[5px] overflow-hidden largeTablet:h-[496px]  ">
             <Image
               width={1206}
               height={496}
@@ -86,6 +99,9 @@ const PageContent: FC<PageContentProps> = ({
           </div>
         </GradientBorderWrapper>
         <BlogTextContent data={blogContent} />
+
+        <AuthorBio author={author} />
+
         {featuredPost && (
           <div className="w-full mt-6 largeTablet:mt-10">
             <ReactPlayer url={blogUrl} width="100%" />

@@ -1,3 +1,6 @@
 # Allow all crawlers
 User-agent: *
 Allow: /
+
+# Sitemaps
+Sitemap: https://opensauced.pizza/sitemap.xml

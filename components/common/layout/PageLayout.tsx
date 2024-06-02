@@ -33,20 +33,22 @@ const PageLayout: FC<PageLayoutProps> = ({
 }): ReactElement => {
   return (
     <div>
-      {!blogPage
-        && <OgData
-        ogTitle={seoData.title || 'Open Sauced'}
-        ogDescription={seoData.description || ''}
-        ogImageUrl={seoData.image as unknown as string || ''}
-        ogUrl={seoData.url || 'https://opensauced.pizza'}
-        noindex={false} 
+      {!blogPage && (
+        <OgData
+          ogTitle={seoData.title || 'Open Sauced'}
+          ogDescription={seoData.description || ''}
+          ogImageUrl={(seoData.image as unknown as string) || ''}
+          ogUrl={seoData.url || 'https://opensauced.pizza'}
+          noindex={false}
         />
-      }
+      )}
       <BackgroundWrapper>
-        <PHBadge/>
+        {Array.isArray(children) && !children[1]?.props.totalLaunchesCount && (
+          <PHBadge />
+        )}
         {!pressPage && <Header navigationItems={navigationURLs} />}
         <div>{children}</div>
-        {!pressPage && !homePage && <Subscribe />}
+       
         <Footer pressPage={pressPage} />
       </BackgroundWrapper>
     </div>

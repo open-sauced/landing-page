@@ -12,9 +12,12 @@ import {
   SanityHomePage,
   SanityChangelog,
   SanityTeamsPage,
+  SanityAuthor,
+  SanityContributorsPage,
+  SanityMaintainersPage,
 } from '../types/schema'
 
-const client = sanityClient({
+export const client = sanityClient({
   projectId: 'r7m53vrk',
   dataset: 'production',
   token: process.env.SANITY_TOKEN,
@@ -119,8 +122,65 @@ export const getTeamsPageData: () => Promise<SanityTeamsPage> = async () => {
     }
     `
   );
-  console.log('fetch', { teamsPageData });
   return teamsPageData;
+}
+
+export const getMaintainersPageData: () => Promise<SanityMaintainersPage> = async () => {
+  const maintainersPageData = await client.fetch(
+    `
+    *[_type == "maintainersPage"][0] {
+      ...,
+      hero {
+        ...,
+        "image": image.asset->url,
+        users[] {
+          ...,
+          "name": *[ _type == "user" && _id == ^._ref][0].name,
+          "website": *[ _type == "user" && _id == ^._ref][0].website,
+          "logo": *[ _type == "user" && _id == ^._ref][0].logo.asset->url,
+        }
+      },
+      topUseCase {
+        ...,
+        "image": image.asset->url,
+      },
+      features[] {
+        ...,
+        "image": image.asset->url,
+      },
+    }
+    `
+  );
+  return maintainersPageData;
+}
+
+export const getContributorsPageData: () => Promise<SanityContributorsPage> = async () => {
+  const contributorsPageData = await client.fetch(
+    `
+    *[_type == "contributorsPage"][0] {
+      ...,
+      hero {
+        ...,
+        "image": image.asset->url,
+        users[] {
+          ...,
+          "name": *[ _type == "user" && _id == ^._ref][0].name,
+          "website": *[ _type == "user" && _id == ^._ref][0].website,
+          "logo": *[ _type == "user" && _id == ^._ref][0].logo.asset->url,
+        }
+      },
+      topUseCase {
+        ...,
+        "image": image.asset->url,
+      },
+      features[] {
+        ...,
+        "image": image.asset->url,
+      },
+    }
+    `
+  );
+  return contributorsPageData;
 }
 
 export const getStudentsPageData: () => Promise<SanityTeamsPage> = async () => {
@@ -195,18 +255,26 @@ export const getBlogs: (limit: number) => Promise<SanityBlog[]> = async (
     `*[_type == 'blog' && !(_id in path('drafts.**'))] {
       ...,
       "coverImage": coverImage.asset->url,
+      author->{
+        ...,
+        "portrait": portrait.asset->url
+      }
     }[0..${limit - 1}]`
   )
 
   return saucyBlog
 }
 
-export const getAllBlogs: () => Promise<SanityBlog[]> = async () => {
-  const allBlogs: SanityBlog[] = await client.fetch(
+export const getAllBlogs: () => Promise<(Omit<SanityBlog, "author"> & { author: SanityAuthor })[]> = async () => {
+  const allBlogs: (Omit<SanityBlog, "author"> & { author: SanityAuthor })[] = await client.fetch(
     `*[_type == 'blog' && !(_id in path('drafts.**'))] | order(_createdAt desc)  {
       ...,
       "coverImage": coverImage.asset->url,
       "ogImage": ogImage.asset->url,
+      author->{
+        ...,
+        "portrait": portrait.asset->url
+      }
     }`
   )
 
@@ -220,6 +288,10 @@ export const getBlogBySlug: (slug: string) => Promise<SanityBlog> = async (
     await client.fetch(`*[_type == 'blog' && slug.current == '${slug}'][0] {
     ...,
     "coverImage": coverImage.asset->url,
+    author->{
+      ...,
+      "portrait": portrait.asset->url
+    }
   }`)
   return getBlogData
 }
@@ -230,6 +302,10 @@ export const getFeaturedBlogBySlug: (
   const getBlogData: SanityFeaturedBlog =
     await client.fetch(`*[_type == 'featuredBlog' && slug.current == '${slug}'][0] {
     ...,
+    author->{
+      ...,
+      "portrait": portrait.asset->url
+    },
     "coverImage": coverImage.asset->url,
   }`)
   return getBlogData
