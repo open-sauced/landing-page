@@ -1,0 +1,5 @@
+[[redirects]]
+from = "/learn/*"
+to = "https://sauced-intro.netlify.app/:splat"
+status = 200
+force = false
