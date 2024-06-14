@@ -29,7 +29,7 @@ const nextConfig = {
       },
       {
         source: '/learn/:path*',
-        destination: 'https://sauced-intro.netlify.app/:path*/',
+        destination: 'https://learn-opensauced.netlify.app/:path*/',
       },
     ]
   },
