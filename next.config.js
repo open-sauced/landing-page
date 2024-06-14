@@ -27,6 +27,10 @@ const nextConfig = {
         source: '/docs/:path*',
         destination: 'https://saucedocs.netlify.app/:path*/',
       },
+      {
+        source: '/learn/:path*',
+        destination: 'https://sauced-intro.netlify.app/:path*/'
+      }
     ]
   },
   skipTrailingSlashRedirect: true,
