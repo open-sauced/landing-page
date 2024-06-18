@@ -31,6 +31,7 @@ const PageLayout: FC<PageLayoutProps> = ({
   blogPage = false,
   homePage = false,
 }): ReactElement => {
+
   return (
     <div>
       {!blogPage && (

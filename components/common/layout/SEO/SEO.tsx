@@ -7,6 +7,7 @@ interface HeadProps {
   ogImageUrl: string
   ogUrl: string
   noindex: boolean
+  blogUrl: string
 }
 
 const OgData:FC<HeadProps> = ({
@@ -14,14 +15,18 @@ const OgData:FC<HeadProps> = ({
   ogDescription,
   ogImageUrl,
   ogUrl,
-  noindex
+  noindex, 
+  blogUrl
 }) => {
+
   return (
       <Head>
         <title>{ogTitle || "Open Sauced"}</title>
         <meta name="title" content={ogTitle || "Open Sauced"}></meta>
         <meta name="description" content={ogDescription || "The open-source intelligence platform for contributors and maintainers."} />
         <link rel="icon" href="/favicon.svg" />
+        <link rel="canonical" href={blogUrl || "https://opensauced.pizza"} />
+
 
         {/* <!-- Open Graph / Facebook --> */}
         <meta property="og:type" content="website" />

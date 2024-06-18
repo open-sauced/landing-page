@@ -4,3 +4,5 @@ Allow: /
 
 # Sitemaps
 Sitemap: https://opensauced.pizza/sitemap.xml
+Sitemap: https://opensauced.pizza/docs/sitemap.xml
+Sitemap: https://opensauced.pizza/learn/sitemap.xml
