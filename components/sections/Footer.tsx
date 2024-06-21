@@ -35,8 +35,8 @@ const footerContext = {
       label: 'app.opensauced.pizza',
     },
     {
-      url: 'https://docs.opensauced.pizza',
-      label: 'docs.opensauced.pizza',
+      url: 'https://opensauced.pizza/docs',
+      label: 'opensauced.pizza/docs',
     },
     {
       url: 'https://news.opensauced.pizza',
