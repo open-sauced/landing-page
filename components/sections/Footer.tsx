@@ -27,20 +27,20 @@ const footerContext = {
   ],
   apps: [
     {
-      url: 'https://hot.opensauced.pizza',
-      label: 'hot.opensauced.pizza',
-    },
-    {
       url: 'https://app.opensauced.pizza',
       label: 'app.opensauced.pizza',
     },
     {
-      url: 'https://docs.opensauced.pizza',
-      label: 'docs.opensauced.pizza',
+      url: 'https://opensauced.pizza/docs',
+      label: 'opensauced.pizza/docs',
     },
     {
       url: 'https://news.opensauced.pizza',
       label: 'news.opensauced.pizza',
+    },
+    {
+      url: 'https://opensauced.pizza/learn',
+      label: 'opensauced.pizza/learn',
     },
   ],
 }

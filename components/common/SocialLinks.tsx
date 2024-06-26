@@ -6,7 +6,6 @@ import { SanityAboutPage } from '../../types/schema'
 import InstagramLogoW from '../../public/logos/instagramLogoW.svg'
 import xLogoW from '../../public/logos/xLogoW.svg'
 import GithubLogoW from '../../public/logos/githubLogoW.svg'
-import DiscordLogoW from '../../public/logos/discordLogoW.svg'
 import DevLogoW from '../../public/logos/devLogoW.svg'
 import YoutubeLogoW from '../../public/logos/youtubeLogoW.svg'
 
@@ -30,11 +29,6 @@ const data = [
     url: 'https://youtube.com/opensauced',
     icon: YoutubeLogoW,
     label: 'Youtube',
-  },
-  {
-    url: 'https://discord.com/invite/U2peSNf23P',
-    icon: DiscordLogoW,
-    label: 'Discord',
   },
   {
     url: 'https://dev.to/opensauced',
