@@ -20,10 +20,6 @@ export default defineConfig({
       visionTool(),
       markdownSchema(),
     "@sanity/base",
-    "@sanity/default-layout",
-    "@sanity/default-login",
-    "@sanity/desk-tool",
-    "markdown",
     "@sanity/dashboard",
     "dashboard-widget-document-list"
     ],
