@@ -4,6 +4,8 @@ import { structureTool } from 'sanity/structure'
 import schemas from './schemas/schema'
 import deskStructure from './deskStructure'
 import { visionTool } from '@sanity/vision'
+import { markdownSchema } from "sanity-plugin-markdown";
+
 
 
 
@@ -16,6 +18,7 @@ export default defineConfig({
         structure: deskStructure
       }),
       visionTool(),
+      markdownSchema(),
     "@sanity/base",
     "@sanity/default-layout",
     "@sanity/default-login",
