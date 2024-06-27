@@ -31,7 +31,7 @@ export default function NotFound({ commonData } : {
             $yellow-to-orange404: Page Not Found - But Opportunities are Everywhere$yellow-to-orange
           </Heading>
           <Typography alignSmall="center" variant="subheading">
-            It seems you've stumbled upon a path that doesn't exist... yet. If you believe this page should exist,  
+            It seems you&apos;ve stumbled upon a path that doesn&apos;t exist... yet. If you believe this page should exist,  
             <a 
               className="text-brandYellow"
               href="https://github.com/open-sauced/landing-page/issues/new?assignees=&labels=%F0%9F%91%80+needs+triage%2C%F0%9F%90%9B+bug&projects=&template=bug_report.yml&title=Bug%3A+">
