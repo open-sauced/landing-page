@@ -19,7 +19,6 @@ export default defineConfig({
       }),
       visionTool(),
       markdownSchema(),
-    "@sanity/base",
     "@sanity/dashboard",
     "dashboard-widget-document-list"
     ],
