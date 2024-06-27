@@ -18,7 +18,7 @@ export default function TeamsFeatures({ topUseCase, features } : TeamsFeaturesPr
   return (
     <SectionWrapper pbs={0}>
       { topUseCase && <TopUseCase topUseCase={topUseCase} /> }
-      { features!.map((feature) => <TeamFeature feature={feature!} />) }
+      { features!.map((feature, index) => <TeamFeature key={feature._key || index} feature={feature!} />) }
       <EndingLine />
     </SectionWrapper>
   );
