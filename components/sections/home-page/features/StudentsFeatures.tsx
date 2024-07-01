@@ -15,7 +15,7 @@ type TeamsFeaturesProps = {
 export default function StudentsFeatures({ features } : TeamsFeaturesProps) {
   return (
     <SectionWrapper pbs={0}>
-      { features!.map((feature) => <StudentFeature feature={feature!} />) }
+      { features!.map((feature, index) => <StudentFeature key={feature._key || index} feature={feature!} />) }
       <EndingLine />
     </SectionWrapper>
   );

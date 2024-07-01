@@ -18,7 +18,7 @@ export default function TeamsFeatures({ topUseCase, features } : TeamsFeaturesPr
   return (
     <SectionWrapper pbs={0}>
       { topUseCase && <TopUseCase topUseCase={topUseCase} /> }
-      { features!.map((feature) => <TeamFeature feature={feature!} />) }
+      { features!.map((feature, index) => <TeamFeature key={feature._key || index} feature={feature!} />) }
       <EndingLine />
     </SectionWrapper>
   );
@@ -65,8 +65,8 @@ function TopUseCase({ topUseCase } : { topUseCase: SanityTeamsPage['topUseCase']
                 transition={{ duration: 0.7, delay: 0.2, ease: 'easeInOut' }}
               >
                 <div className="flex flex-col gap-8 tablet:gap-0 tablet:flex-row justify-between w-full">
-                { subsections!.map((section) => (
-                  <section className="items-start flex flex-col gap-4">
+                { subsections!.map((section, index) => (
+                  <section key={section._key || index} className="items-start flex flex-col gap-4">
                     <span className="text-xl font-semibold">
                       <DecoratedText content={section.heading!} />
                     </span>

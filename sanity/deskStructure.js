@@ -1,9 +1,8 @@
 // /deskStructure.js
-import S from '@sanity/desk-tool/structure-builder'
 import { FaPeopleCarry, FaMoneyCheckAlt, FaInfoCircle, FaHome, FaGraduationCap, FaWrench } from 'react-icons/fa'
 import { VscOrganization } from "react-icons/vsc";
 
-export default () => 
+export default (S) => 
   S.list()
   .title("Base")
   .items(
