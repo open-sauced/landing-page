@@ -1,11 +1,11 @@
-import type { NextPage } from 'next'
-import { ReactElement } from 'react'
+import React, { ReactElement } from 'react'
+import { NextPage } from 'next'
 import PageLayout from '../../components/common/layout/PageLayout'
 import Background from '../../components/sections/blog/Background'
 import Blogs from '../../components/sections/blog/Blogs'
 import { getAllBlogs, getCommonData } from '../../lib/sanity'
 import {
-    SanityAuthor,
+  SanityAuthor,
   SanityBlog,
   SanityFooter,
   SanityNavigation,
@@ -19,8 +19,8 @@ interface BlogsPageProps {
       seoData: SanitySeo
       footer: SanityFooter[]
     }
-    blogs: (Omit<SanityBlog, "author"> & { author: SanityAuthor})[]
-    featuredBlogs: (Omit<SanityBlog, "author"> & { author: SanityAuthor})[]
+    blogs: (Omit<SanityBlog, 'author'> & { author: SanityAuthor })[]
+    featuredBlogs: (Omit<SanityBlog, 'author'> & { author: SanityAuthor })[]
   }
 }
 
@@ -30,8 +30,6 @@ const BlogsPage: NextPage<BlogsPageProps> = ({
     blogs,
   },
 }): ReactElement => {
-
-
   return (
     <PageLayout
       seoData={seoData}

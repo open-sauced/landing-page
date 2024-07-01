@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import { useRouter } from 'next/router'
-import { ReactElement } from 'react'
+import { ReactElement, useEffect, useState } from 'react'
 import PageLayout from '../../../components/common/layout/PageLayout'
 import Background from '../../../components/sections/blog/Background'
 import PageContent from '../../../components/sections/blog/[slug]/PageContent'
@@ -10,7 +10,7 @@ import {
   getFeaturedBlogs,
 } from '../../../lib/sanity'
 import {
-    SanityAuthor,
+  SanityAuthor,
   SanityBlog,
   SanityFooter,
   SanityNavigation,
@@ -24,8 +24,8 @@ interface BlogPageProps {
       seoData: SanitySeo
       footer: SanityFooter[]
     }
-    blogs: (Omit<SanityBlog, "author"> & { author: SanityAuthor })[]
-    featuredBlogs: (Omit<SanityBlog, "author"> & { author: SanityAuthor })[]
+    blogs: (Omit<SanityBlog, 'author'> & { author: SanityAuthor })[]
+    featuredBlogs: (Omit<SanityBlog, 'author'> & { author: SanityAuthor })[]
   }
 }
 
@@ -48,6 +48,22 @@ const BlogPage: NextPage<BlogPageProps> = ({ data }): ReactElement => {
   const displayBlogs = [...blogs, ...featuredBlogs].sort(
     (a, b) => +new Date(b._createdAt) - +new Date(a._createdAt)
   )
+  const [showBackToTop, setShowBackToTop] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 800)
+    }
+
+    // Check scroll position on initial load
+    handleScroll()
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   return (
     <PageLayout
@@ -63,6 +79,16 @@ const BlogPage: NextPage<BlogPageProps> = ({ data }): ReactElement => {
           featuredPost={featuredPost}
         />
       )}
+      <div>
+        <a
+          href="#top"
+          className={`fixed bottom-28 right-6 tablet:right-11  back-to-top bg-[#ed5432] text-white py-2 px-3 lg:px-4 rounded font-bold transition-opacity duration-300 ${
+            showBackToTop ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          }`}
+        >
+          ↑ Back to Top
+        </a>
+      </div>
     </PageLayout>
   )
 }
