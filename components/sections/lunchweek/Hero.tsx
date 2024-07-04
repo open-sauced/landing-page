@@ -23,7 +23,7 @@ const Hero = () => {
           </div>
           <div className="pt-4 pb-6">
             <p className="text-xl font-normal opacity-80">
-              Join us everyday this week to see what we've been cookin' up.
+              Join us everyday this week to see what we&apos;ve been cookin&apos; up.
             </p>
           </div>
           <PHBadgeDark />
