@@ -6,13 +6,13 @@ import {
   getMaintainersPageData
 } from '../../lib/sanity'
 import {
-  SanityBlog,
-  SanityFooter,
-  SanityMaintainersPage,
-  SanityNavigation,
-  SanitySeo,
-  SanityUser,
-} from '../../types/schema'
+  Blog as SanityBlog,
+  Footer as SanityFooter,
+  MaintainersPage as SanityMaintainersPage,
+  Navigation as SanityNavigation,
+  Seo as SanitySeo,
+  User as SanityUser,
+} from '../../sanity.types'
 import Hero from '../../components/sections/home-page/Hero'
 import Logos from '../../components/sections/home-page/Logos'
 import Background from '../../components/sections/maintainers/Background'
@@ -54,7 +54,7 @@ const MaintainersPage: NextPage<MaintainersPageProps> = ({
       <CTA data={maintainersPageData.ctaSection} />
       <Blogs 
         data={{
-          _type: "blogSection",
+          // _type: "blogSection",
           title: "Our secret sauce",
           heading: "$yellow-to-orange OpenSauced$yellow-to-orange Blog",
           description: "Musings on the open-source community, engineering, and the future of talent acquisition."

@@ -1,5 +1,5 @@
 import React, { FC, ReactElement } from 'react'
-import { SanityNavigation, SanitySeo } from '../../../types/schema'
+import { Navigation as SanityNavigation, Seo as SanitySeo } from '../../../sanity.types'
 
 // Components
 import Header from '../../sections/navigation/Header'

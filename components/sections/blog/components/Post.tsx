@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { FC, ReactElement } from 'react'
-import { SanityBlog, SanityAuthor } from '../../../../types/schema'
+import { Blog as SanityBlog, Author as SanityAuthor } from '../../../../sanity.types'
 import getReadTime from '../../../../utils/getReadTime'
 
 // Components

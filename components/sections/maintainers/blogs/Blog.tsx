@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { FC, ReactElement } from 'react'
-import { SanityBlog } from '../../../../types/schema'
+import { Blog as SanityBlog } from '../../../../sanity.types'
 
 // Components
 import GradientBorderWrapper from '../../../common/GradientBorderWrapper'

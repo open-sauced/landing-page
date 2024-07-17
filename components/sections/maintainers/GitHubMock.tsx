@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import Image from 'next/image'
-import { SanityHomePage } from '../../../types/schema'
+import { HomePage as SanityHomePage } from '../../../sanity.types'
 import useMediaQuery from '../../hooks/useMediaQuery'
 
 // Static assets

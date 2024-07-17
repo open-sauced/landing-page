@@ -1,5 +1,5 @@
 import React from 'react'
-import { SanityUser } from '../../../types/schema'
+import { User as SanityUser } from '../../../sanity.types'
 
 import SectionWrapper from '../../common/layout/SectionWrapper'
 

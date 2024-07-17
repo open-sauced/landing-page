@@ -1,6 +1,6 @@
 import React, { FC, ReactElement } from 'react'
 import SectionWrapper from '../../../common/layout/SectionWrapper'
-import { SanityPricingPage } from '../../../../types/schema'
+import { PricingPage as SanityPricingPage } from '../../../../sanity.types'
 import { getPartialString, getPartialStringFromEnd } from '../../../../utils/stringUtils'
 
 // Components

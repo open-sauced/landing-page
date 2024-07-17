@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import Image from 'next/image'
 import { Transition, motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { SanityTestimonial } from '../../../../types/schema'
+import { Testimonial as SanityTestimonial } from '../../../../sanity.types'
 
 // Components
 import GradientBorderWrapper from '../../../common/GradientBorderWrapper'

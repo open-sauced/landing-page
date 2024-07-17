@@ -10,12 +10,12 @@ import {
   getFeaturedBlogs,
 } from '../../../lib/sanity'
 import {
-    SanityAuthor,
-  SanityBlog,
-  SanityFooter,
-  SanityNavigation,
-  SanitySeo,
-} from '../../../types/schema'
+  Author as SanityAuthor,
+  Blog as SanityBlog,
+  Footer as SanityFooter,
+  Navigation as SanityNavigation,
+  Seo as SanitySeo,
+} from '../../../sanity.types'
 
 interface BlogPageProps {
   data: {
