@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import RSS from 'rss';
 import { getAllBlogs } from '../../../lib/sanity';
-import { SanityAuthor, SanityBlog } from '../../../types/schema';
+import { Author as SanityAuthor, Blog as SanityBlog } from '../../../sanity.types';
 
 const site_url = 'https://opensauced.pizza';
 

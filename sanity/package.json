@@ -1,5 +1,6 @@
 {
   "name": "landingpage",
+  "type": "module",
   "private": true,
   "version": "1.0.0",
   "description": "",
@@ -7,32 +8,38 @@
   "author": "Brian Douglas <bdougie@github.com>",
   "license": "UNLICENSED",
   "scripts": {
-    "start": "sanity start",
+    "start": "sanity dev",
     "build": "sanity build"
   },
   "keywords": [
     "sanity"
   ],
   "dependencies": {
-    "@sanity/base": "^2.29.1",
-    "@sanity/core": "^2.28.1",
-    "@sanity/dashboard": "^2.36.0",
-    "@sanity/default-layout": "^2.29.1",
-    "@sanity/default-login": "^2.29.1",
-    "@sanity/desk-tool": "^2.29.1",
+    "@catherineriver/sanity-plugin-generate-ogimage": "^1.0.6",
+    "@sanity/dashboard": "^4.0.0",
     "@sanity/eslint-config-studio": "^2.0.0",
-    "@sanity/vision": "^2.29.1",
+    "@sanity/ui": "^2",
+    "@sanity/vision": "3.51.0",
+    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.4",
+    "easymde": "^2.18.0",
     "eslint": "^8.6.0",
+    "postcss": "^8.4.12",
     "prop-types": "^15.7",
-    "react": "^17.0",
-    "react-dom": "^17.0",
-    "sanity-plugin-asset-source-ogimage": "^1.0.6",
-    "sanity-plugin-dashboard-widget-document-list": "^0.0.13",
-    "sanity-plugin-markdown": "^2.1.2",
-    "styled-components": "^5.2.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.4.0",
+    "sanity": "3.51.0",
+    "sanity-plugin-dashboard-widget-document-list": "1.0.1",
+    "sanity-plugin-markdown": "^4.1.2",
+    "styled-components": "^6.1",
+    "tailwindcss": "^3.1.1"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:open-sauced/landing-page.git"
+  },
+  "overrides": {
+    "@sanity/dashboard": "^4.0.0"
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { MediaEditor } from 'sanity-plugin-asset-source-ogimage';
+import { MediaEditor } from '@catherineriver/sanity-plugin-generate-ogimage';
 import DefaultOgLayout from '../layouts/DefaultOgLayout.tsx';
 
 export default {
@@ -65,7 +65,7 @@ export default {
                                .replace(/\s+/g, '-')
                                .slice(0, 200)
         },
-        validation: Rule => Rule.required(),
+        // validation: Rule => Rule.required(),
       },
       {
         type: 'image',

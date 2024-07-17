@@ -36,7 +36,6 @@ export default {
       {
         title: 'Last Updated',
         name: 'LastUpdated',
-        type: 'string',
         type: 'date',
         options: {
           dateFormat: 'YYYY-MM-DD',
