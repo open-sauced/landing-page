@@ -1,5 +1,5 @@
 import React, { FC, ReactElement } from 'react'
-import { SanityNavigation } from '../../../types/schema'
+import { Navigation as SanityNavigation } from '../../../sanity.types'
 
 // Components
 import SectionWrapper from '../../common/layout/SectionWrapper'

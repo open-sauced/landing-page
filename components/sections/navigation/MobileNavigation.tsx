@@ -1,7 +1,7 @@
 import React, { FC, ReactElement } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { SanityNavigation } from '../../../types/schema'
+import { Navigation as SanityNavigation } from '../../../sanity.types'
 
 import DropdownMenu from './DropdownMenu'
 

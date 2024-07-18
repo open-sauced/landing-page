@@ -4,7 +4,7 @@ import GradientBorderWrapper from '../../common/GradientBorderWrapper'
 import { IoMdGitCommit } from 'react-icons/io'
 import ReactMarkdown from 'react-markdown'
 import { MdOutlineExpandMore } from 'react-icons/md'
-import { SanityChangelog } from '../../../types/schema'
+import { Changelog as SanityChangelog } from '../../../sanity.types'
 import moment from 'moment'
 
 import Link from 'next/link'
@@ -35,10 +35,10 @@ const Changelog: FC<ChangelogProps> = ({
   }
 
   // check if the changelog content has an image
-  const hasImageInContent = changelogContent.includes('![image](')
+  const hasImageInContent = changelogContent?.includes('![image](')
 
   // check the line of the changelog content
-  const lineCount = changelogContent.split('\n').length
+  const lineCount = changelogContent?.split('\n').length
 
   return (
     <article
@@ -116,11 +116,11 @@ const Changelog: FC<ChangelogProps> = ({
           <div className="relative" ref={contentRef}>
             <ReactMarkdown
               className="prose prose-invert prose-img:rounded-md">
-              {changelogContent}
+              {changelogContent || ""}
             </ReactMarkdown>
           </div>
         </div>
-        {(hasImageInContent || changelogContent.length > 260) && (
+        {(hasImageInContent || changelogContent?.length || 0 > 260) && (
           <button
             onClick={expandChangelog}
             className="text-textPrimary font-bold flex items-center mt-8 gap-x-2 transition-all hover:text-brandOrange"

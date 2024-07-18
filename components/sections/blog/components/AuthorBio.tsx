@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { SanityAuthor } from "../../../../types/schema";
+import { Author as SanityAuthor } from "../../../../sanity.types";
 import GradientBorderWrapper from "../../../common/GradientBorderWrapper";
 
 export default function AuthorBio({ author }: { author: SanityAuthor }) {

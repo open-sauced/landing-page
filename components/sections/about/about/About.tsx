@@ -1,5 +1,5 @@
 import React, { FC, ReactElement } from 'react'
-import { SanityAboutPage } from '../../../../types/schema'
+import { AboutPage as SanityAboutPage } from '../../../../sanity.types'
 import { getPartialString, getPartialStringFromEnd } from '../../../../utils/stringUtils'
 
 // Components

@@ -7,7 +7,7 @@ import Background from "../../components/sections/changelog/Background";
 import SectionWrapper from "../../components/common/layout/SectionWrapper";
 import IndividualHero from "../../components/sections/changelog/IndividualHero";
 
-import { SanityChangelog, SanityFooter, SanityNavigation, SanitySeo } from "../../types/schema";
+import { Changelog as SanityChangelog, Footer as SanityFooter, Navigation as SanityNavigation, Seo as SanitySeo } from '../../sanity.types'
 import { getCommonData, getChangelogBySlug, getLatestChangelogsExceptSlug } from "../../lib/sanity";
 
 export async function getServerSideProps({ params } : { params: { slug: string }}) {
@@ -53,7 +53,7 @@ export default function ChangelogPage({ changelog, commonData, latestChanges } :
       <ReactMarkdown
         className="prose-invert mx-auto mb-24 leading-loose prose prose-md prose-img:mx-auto prose-img:rounded-md"
       >
-        {changelog.changelogContent}
+        {changelog.changelogContent || ""}
       </ReactMarkdown>
 
       <SectionWrapper>

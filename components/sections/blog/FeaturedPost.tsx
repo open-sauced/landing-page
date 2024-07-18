@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React, { FC, ReactElement } from 'react'
-import { SanityAuthor, SanityBlog } from '../../../types/schema'
+import { Author as SanityAuthor, Blog as SanityBlog } from '../../../sanity.types'
 
 // Components
 import GradientBorderWrapper from '../../common/GradientBorderWrapper'

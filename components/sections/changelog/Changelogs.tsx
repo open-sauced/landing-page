@@ -2,7 +2,7 @@ import React, { FC, useEffect, useState } from 'react'
 import SectionWrapper from '../../common/layout/SectionWrapper'
 import Changelog from './Changelog'
 import { getChangelog } from '../../../lib/sanity'
-import { SanityChangelog } from '../../../types/schema'
+import { Changelog as SanityChangelog } from '../../../sanity.types'
 import GradientBorderWrapper from '../../common/GradientBorderWrapper'
 
 interface ChangelogsProps {

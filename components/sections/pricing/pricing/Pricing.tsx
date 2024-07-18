@@ -1,5 +1,5 @@
 import React, { FC, ReactElement } from 'react'
-import { SanityPricingPage } from '../../../../types/schema'
+import { PricingPage as SanityPricingPage } from '../../../../sanity.types'
 import { getPartialString, getPartialStringFromEnd } from '../../../../utils/stringUtils'
 import GradientBorderWrapper from '../../../common/GradientBorderWrapper'
 import SectionWrapper from '../../../common/layout/SectionWrapper'

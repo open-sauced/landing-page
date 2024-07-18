@@ -1,9 +1,9 @@
-import { SanityTeamsPage } from "../../../../types/schema";
+import { SanityImageAsset, SanityImageCrop, SanityImageHotspot, TeamsPage as SanityTeamsPage } from "../../../../sanity.types";
 import { Heading } from '../../../common/text'
 import ContainerWithLine from '../../../common/ContainerWithLine'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import type { SanityImageAsset, SanityImageCrop, SanityImageHotspot, SanityReference } from "sanity-codegen";
+
 
 import EndingLine from "../../../common/EndingLine";
 import SectionWrapper from "../../../common/layout/SectionWrapper";
@@ -99,7 +99,7 @@ function TeamFeature({ feature } : { feature : {
   description?: string,
   image?: {
     _type: 'image'
-    asset: SanityReference<SanityImageAsset>
+    asset?: any
     crop?: SanityImageCrop 
     hotspot?: SanityImageHotspot
   } 

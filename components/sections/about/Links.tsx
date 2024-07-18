@@ -1,6 +1,6 @@
 import React, { FC, ReactElement } from 'react'
 import Image from 'next/image'
-import { SanityAboutPage } from '../../../types/schema'
+import { AboutPage as SanityAboutPage } from '../../../sanity.types'
 
 // Components
 import GradientBorderWrapper from '../../common/GradientBorderWrapper'

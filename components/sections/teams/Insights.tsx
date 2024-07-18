@@ -1,5 +1,5 @@
 import React, { FC, ReactElement } from 'react'
-import { SanityHomePage } from '../../../types/schema'
+import { HomePage as SanityHomePage } from '../../../sanity.types'
 
 // Components
 import { Button } from '../../common'

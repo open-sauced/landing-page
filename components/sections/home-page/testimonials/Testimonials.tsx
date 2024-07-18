@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react'
-import { SanityHomePage, SanityTestimonial } from '../../../../types/schema'
+import { HomePage as SanityHomePage, Testimonial as SanityTestimonial } from '../../../../sanity.types'
 
 // Components
 import SectionWrapper from '../../../common/layout/SectionWrapper'

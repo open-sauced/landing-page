@@ -24,7 +24,7 @@ import changelog from './changelog'
 import changelogCategory from './changelogCategory'
 
 // Then we give our schema to the builder and provide the result to Sanity
-export default [
+export const schemaTypes = [
     about,
     user,
     author,

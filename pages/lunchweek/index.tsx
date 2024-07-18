@@ -3,7 +3,7 @@ import Hero from '../../components/sections/lunchweek/Hero'
 import PageLayout from '../../components/common/layout/PageLayout'
 import { getAllChangelog, getCommonData } from '../../lib/sanity'
 import { NextPage } from 'next'
-import { SanityFooter, SanityNavigation, SanitySeo } from '../../types/schema'
+import { Blog as SanityBlog, ContributorsPage as SanityContributorsPage, Footer as SanityFooter, Navigation as SanityNavigation, Seo as SanitySeo, TeamsPage as SanityTeamsPage, User as SanityUser } from '../../sanity.types'
 import Background from '../../components/sections/lunchweek/Background'
 import Launches from '../../components/sections/lunchweek/Launches'
 

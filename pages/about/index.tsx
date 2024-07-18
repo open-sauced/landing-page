@@ -6,7 +6,7 @@ import Background from '../../components/sections/about/Background'
 import FollowUs from '../../components/sections/about/FollowUs'
 import Links from '../../components/sections/about/Links'
 import { getAboutPageData, getCommonData } from '../../lib/sanity'
-import { SanityAboutPage, SanityFooter, SanityNavigation, SanitySeo } from '../../types/schema'
+import { AboutPage as SanityAboutPage, Footer as SanityFooter, Navigation as SanityNavigation, Seo as SanitySeo } from '../../sanity.types'
 
 interface AboutPageProps {
   data: {

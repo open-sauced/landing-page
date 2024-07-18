@@ -1,11 +1,11 @@
 import React, { FC } from 'react'
 import { getPressData, getCommonData } from '../../lib/sanity'
 import {
-  SanityFooter,
-  SanityNavigation,
-  SanitySeo,
-  SanityPress,
-} from '../../types/schema'
+  Footer as SanityFooter,
+  Navigation as SanityNavigation,
+  Seo as SanitySeo,
+  Press as SanityPress,
+} from '../../sanity.types'
 import PageLayout from '../../components/common/layout/PageLayout'
 import PressBackground from '../../components/sections/press/PressBackground'
 import PressHeading from '../../components/sections/press/PressHeading'

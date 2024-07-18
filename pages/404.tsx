@@ -3,7 +3,7 @@ import SectionWrapper from "../components/common/layout/SectionWrapper";
 import Background from "../components/sections/blog/Background";
 import { Heading, Typography } from "../components/common/text";
 import { getCommonData } from "../lib/sanity";
-import { SanityFooter, SanityNavigation, SanitySeo } from "../types/schema";
+import { Blog as SanityBlog, ContributorsPage as SanityContributorsPage, Footer as SanityFooter, Navigation as SanityNavigation, Seo as SanitySeo, TeamsPage as SanityTeamsPage, User as SanityUser } from '../sanity.types'
 import { Button } from "../components/common";
 
 export async function getStaticProps() {

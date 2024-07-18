@@ -4,7 +4,7 @@ import Changelogs from '../../components/sections/changelog/Changelogs'
 import PageLayout from '../../components/common/layout/PageLayout'
 import { getAllChangelog, getCommonData } from '../../lib/sanity'
 import { NextPage } from 'next'
-import { SanityFooter, SanityNavigation, SanitySeo } from '../../types/schema'
+import { Footer as SanityFooter, Navigation as SanityNavigation, Seo as SanitySeo } from '../../sanity.types'
 import Background from '../../components/sections/changelog/Background'
 
 interface BlogsPageProps {

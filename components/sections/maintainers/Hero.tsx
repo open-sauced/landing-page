@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { SanityHomePage } from '../../../types/schema'
+import { HomePage as SanityHomePage } from '../../../sanity.types'
 
 // Components
 import SectionWrapper from '../../common/layout/SectionWrapper'

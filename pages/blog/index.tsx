@@ -5,13 +5,12 @@ import Background from '../../components/sections/blog/Background'
 import Blogs from '../../components/sections/blog/Blogs'
 import { getAllBlogs, getCommonData } from '../../lib/sanity'
 import {
-    SanityAuthor,
-  SanityBlog,
-  SanityFooter,
-  SanityNavigation,
-  SanitySeo,
-} from '../../types/schema'
-
+  Author as SanityAuthor,
+  Blog as SanityBlog,
+  Footer as SanityFooter,
+  Navigation as SanityNavigation,
+  Seo as SanitySeo,
+} from '../../sanity.types'
 interface BlogsPageProps {
   data: {
     commonData: {

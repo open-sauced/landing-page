@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 // Components
 import { Button } from '../../common'
 import { Menu } from '@headlessui/react'
-import { SanityNavigation } from '../../../types/schema'
+import { Navigation as SanityNavigation } from '../../../sanity.types'
 
 interface DesktopNavigationProps {
   navigationItems: SanityNavigation[]

@@ -1,21 +1,21 @@
 import sanityClient from '@sanity/client'
 import {
-  SanityFeature,
-  SanitySeo,
-  SanityFooter,
-  SanityFeaturedBlog,
-  SanityBlog,
-  SanityPress,
-  SanityNavigation,
-  SanityPricingPage,
-  SanityAboutPage,
-  SanityHomePage,
-  SanityChangelog,
-  SanityTeamsPage,
-  SanityAuthor,
-  SanityContributorsPage,
-  SanityMaintainersPage,
-} from '../types/schema'
+  Feature as SanityFeature,
+  Seo as SanitySeo,
+  Footer as SanityFooter,
+  FeaturedBlog as SanityFeaturedBlog,
+  Blog as SanityBlog,
+  Press as SanityPress,
+  Navigation as SanityNavigation,
+  PricingPage as SanityPricingPage,
+  AboutPage as SanityAboutPage,
+  HomePage as SanityHomePage,
+  Changelog as SanityChangelog,
+  TeamsPage as SanityTeamsPage,
+  Author as SanityAuthor,
+  ContributorsPage as SanityContributorsPage,
+  MaintainersPage as SanityMaintainersPage,
+} from '../sanity.types'
 
 export const client = sanityClient({
   projectId: 'r7m53vrk',

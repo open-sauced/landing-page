@@ -1,5 +1,5 @@
 import React, { FC, ReactElement } from 'react'
-import { SanityAuthor, SanityBlog } from '../../../../types/schema'
+import { Author as SanityAuthor, Blog as SanityBlog } from '../../../../sanity.types'
 import getReadTime from '../../../../utils/getReadTime'
 
 // Components

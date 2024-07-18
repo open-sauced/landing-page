@@ -1,5 +1,5 @@
 import React, { FC, ReactElement } from 'react'
-import { SanityBlog, SanityHomePage } from '../../../../types/schema'
+import { Blog as SanityBlog, HomePage as SanityHomePage } from '../../../../sanity.types'
 import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
 
