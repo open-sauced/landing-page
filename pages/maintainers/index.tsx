@@ -1,86 +1,86 @@
 import type { NextPage } from 'next'
 import {
-  getAllBlogs,
-  getCommonData,
-  getFeaturedBlogs,
-  getMaintainersPageData
+    getAllBlogs,
+    getCommonData,
+    getFeaturedBlogs,
+    getMaintainersPageData
 } from '../../lib/sanity'
 import {
-  Blog as SanityBlog,
-  Footer as SanityFooter,
-  MaintainersPage as SanityMaintainersPage,
-  Navigation as SanityNavigation,
-  Seo as SanitySeo,
-  User as SanityUser,
+    Blog as SanityBlog,
+    Footer as SanityFooter,
+    MaintainersPage as SanityMaintainersPage,
+    Navigation as SanityNavigation,
+    Seo as SanitySeo,
+    User as SanityUser,
 } from '../../sanity.types'
 import Hero from '../../components/sections/home-page/Hero'
 import Logos from '../../components/sections/home-page/Logos'
 import Background from '../../components/sections/maintainers/Background'
 import Blogs from '../../components/sections/maintainers/blogs/Blogs'
 import PageLayout from '../../components/common/layout/PageLayout'
-import Newsletter from '../../components/sections/maintainers/Newsletter'
+import Newsletter from '../../components/sections/home-page/Newsletter'
 import TeamsFeatures from '../../components/sections/home-page/features/TeamsFeatures'
 import CTA from '../../components/sections/teams/CTA'
 
 interface MaintainersPageProps {
-  data: {
-    commonData: {
-      navigationLinks: SanityNavigation[]
-      seoData: SanitySeo
-      footer: SanityFooter[]
+    data: {
+        commonData: {
+            navigationLinks: SanityNavigation[]
+            seoData: SanitySeo
+            footer: SanityFooter[]
+        }
+        maintainersPageData: SanityMaintainersPage
+        blogs: SanityBlog[]
+        featuredBlogs: SanityBlog[]
     }
-    maintainersPageData: SanityMaintainersPage
-    blogs: SanityBlog[]
-    featuredBlogs: SanityBlog[]
-  }
 }
 
 const MaintainersPage: NextPage<MaintainersPageProps> = ({
-  data: { commonData, maintainersPageData, blogs, featuredBlogs },
+    data: { commonData, maintainersPageData, blogs, featuredBlogs },
 }) => {
-  const displayBlogs = [...blogs, ...featuredBlogs].sort(
-    (a, b) => +new Date(b._createdAt) - +new Date(a._createdAt)
-  )
+    const displayBlogs = [...blogs, ...featuredBlogs].sort(
+        (a, b) => +new Date(b._createdAt) - +new Date(a._createdAt)
+    )
 
-  return (
-    <PageLayout
-      seoData={commonData.seoData}
-      navigationURLs={commonData.navigationLinks}
-      BackgroundWrapper={Background}
-    >
-      <Hero data={maintainersPageData.hero as unknown as SanityMaintainersPage['hero']} />
-      <Logos data={maintainersPageData.hero?.users as unknown as SanityUser[] || []} />
-      <TeamsFeatures topUseCase={maintainersPageData.topUseCase} features={maintainersPageData.features} />
-      <CTA data={maintainersPageData.ctaSection} />
-      <Blogs 
-        data={{
-          // _type: "blogSection",
-          title: "Our secret sauce",
-          heading: "$yellow-to-orange OpenSauced$yellow-to-orange Blog",
-          description: "Musings on the open-source community, engineering, and the future of talent acquisition."
-        }} 
-        blogs={displayBlogs.slice(0, 4)}  />
-      <Newsletter />
-    </PageLayout>
-  )
+    return (
+        <PageLayout
+            seoData={commonData.seoData}
+            navigationURLs={commonData.navigationLinks}
+            BackgroundWrapper={Background}
+        >
+            <Hero data={maintainersPageData.hero as unknown as SanityMaintainersPage['hero']} />
+            <Logos data={maintainersPageData.hero?.users as unknown as SanityUser[] || []} />
+            <TeamsFeatures topUseCase={maintainersPageData.topUseCase} features={maintainersPageData.features} />
+            <CTA data={maintainersPageData.ctaSection} />
+            <Blogs
+                data={{
+                    // _type: "blogSection",
+                    title: "Our secret sauce",
+                    heading: "$yellow-to-orange OpenSauced$yellow-to-orange Blog",
+                    description: "Musings on the open-source community, engineering, and the future of talent acquisition."
+                }}
+                blogs={displayBlogs.slice(0, 4)} />
+            <Newsletter />
+        </PageLayout>
+    )
 }
 
 export default MaintainersPage
 
 export async function getStaticProps() {
-  const [commonData, maintainersPageData, featuredBlogs, blogs] = await Promise.all([
-    getCommonData(),
-    getMaintainersPageData(),
-    getFeaturedBlogs(),
-    getAllBlogs(),
-  ])
+    const [commonData, maintainersPageData, featuredBlogs, blogs] = await Promise.all([
+        getCommonData(),
+        getMaintainersPageData(),
+        getFeaturedBlogs(),
+        getAllBlogs(),
+    ])
 
-  const data = { commonData, maintainersPageData, featuredBlogs, blogs }
+    const data = { commonData, maintainersPageData, featuredBlogs, blogs }
 
-  return {
-    props: {
-      data,
-    },
-    revalidate: 30,
-  }
+    return {
+        props: {
+            data,
+        },
+        revalidate: 30,
+    }
 }
