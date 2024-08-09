@@ -21,48 +21,25 @@ const Newsletter = () => {
           <Image alt="Doodles" src={StrokeR3} />
         </div>
       </div>
-
       <div className="flex flex-col items-center gap-y-8">
         <Heading alignSmall="center">
-          $orange-to-yellowThe fast track$orange-to-yellow to open source
+                    $orange-to-yellowThe fast track$orange-to-yellow to open source
         </Heading>
-
         <Typography alignSmall="center" variant="body1" >
-          Stay up to date with the latest OpenSauced news and trends.
+                    Stay up to date with the latest OpenSauced news and trends.
         </Typography>
-
         <GradientBorderWrapper>
-          <form
-            className="relative box-border px-4 flex items-center w-[280px] h-[38px] text-[#FEEADD] pr-4 py-3 text-sm font-medium bg-[#211E1C] rounded-md largeTablet:w-[394px]"
-            name="newsletter"
-            action="?success=true"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-            autoComplete="off"
+          <a
+            href="https://news.opensauced.pizza/#/portal/signup"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative box-border px-4 flex items-center justify-center w-[280px] h-[38px] text-[#FEEADD] pr-4 py-3 text-sm font-medium bg-[#211E1C] rounded-md largeTablet:w-[394px]"
           >
-            <div hidden aria-hidden="true">
-              <label>
-                Try your luck
-                <input type="hidden" value="bot-field" name="newsletter" />
-              </label>
-            </div>
-            <input
-              placeholder="Email"
-              name="Your email"
-              type="email"
-              className="pr-4 outline-none focus:outline-none bg-[#211E1C] w-[180px] largeTablet:w-[290px]"
-            ></input>
-            <button
-              className=" text-brandOrange text-sm cursor-pointer"
-              type="submit"
-            >
-              Subscribe
-            </button>
-          </form>
+            <span className="text-brandOrange">Subscribe</span>
+          </a>
         </GradientBorderWrapper>
       </div>
     </SectionWrapper>
   )
 }
-
 export default Newsletter
