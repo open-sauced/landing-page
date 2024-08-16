@@ -7,7 +7,16 @@ interface BlogTextContentProps {
 
 const BlogTextContent: FC<BlogTextContentProps> = ({ data }): ReactElement => {
   return (
-    <div className="prose prose-invert w-full max-w-[780px] mt-6 largeTablet:mt-24 text-textPrimary contentWrapper text-lg ">
+    <div 
+      className="
+        w-full max-w-[780px] mt-6 largeTablet:mt-24 text-textPrimary contentWrapper text-lg
+        prose prose-invert space-y-0 
+        prose-ol:flex prose-ol:flex-col prose-ol:gap-0
+        prose-ul:flex prose-ul:flex-col prose-ul:gap-0
+        prose-headings:font-bold prose-headings:py-4
+        prose-a:no-underline
+      "
+    >
       <ReactMarkdown>
         {data}
       </ReactMarkdown>
