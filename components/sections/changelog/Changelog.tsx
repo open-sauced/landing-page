@@ -92,7 +92,12 @@ const Changelog: FC<ChangelogProps> = ({
             <IoMdGitCommit className="absolute -left-4 top-4 bg-darkBG text-3xl" />
           </span>
           <Typography alignLarge="left" variant="title3">
-            {title}
+            <Link
+              href={`/changelog/${slug?.current}`}
+              className="hover:text-brandOrange hover:decoration-brandOrange transition-all"
+            >
+              {title}
+            </Link>
           </Typography>
           <Typography alignLarge="left" variant="body4">
             {moment(date).format('DD MMM YYYY')}
@@ -114,9 +119,8 @@ const Changelog: FC<ChangelogProps> = ({
 
         <div style={containerHeightStyle}>
           <div className="relative" ref={contentRef}>
-            <ReactMarkdown
-              className="prose prose-invert prose-img:rounded-md">
-              {changelogContent || ""}
+            <ReactMarkdown className="prose prose-invert prose-img:rounded-md">
+              {changelogContent || ''}
             </ReactMarkdown>
           </div>
         </div>
