@@ -51,7 +51,7 @@ export default function ChangelogPage({ changelog, commonData, latestChanges } :
         url={`https://opensauced.pizza/changelog/${changelog.slug?.current}`}
       /> 
       <ReactMarkdown
-        className="prose-invert mx-auto mb-24 leading-loose prose prose-md prose-img:mx-auto prose-img:rounded-md"
+        className="prose-invert prose-ul:text-textPrimary mx-auto mb-24 leading-loose prose prose-md prose-img:mx-auto prose-img:rounded-md"
       >
         {changelog.changelogContent || ""}
       </ReactMarkdown>
