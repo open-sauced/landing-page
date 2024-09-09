@@ -1,0 +1,97 @@
+# This file is generated automatically by OpenSauced pizza-cli. DO NOT EDIT. Stay saucy!
+#
+# Generated with command:
+# $ pizza generate codeowners landing-page/ --tty-disable true
+
+.github/CODEOWNERS @nickytonline
+.github/workflows/pizza.yml @nickytonline
+.gitignore @brandonroberts
+.sauced.yaml @nickytonline
+components/common/SocialLinks.tsx @nickytonline
+components/common/layout/PageLayout.tsx @brandonroberts
+components/sections/Footer.tsx @nickytonline
+components/sections/about/FollowUs.tsx @brandonroberts
+components/sections/about/Links.tsx @brandonroberts
+components/sections/about/about/About.tsx @brandonroberts
+components/sections/blog/Blogs.tsx @brandonroberts
+components/sections/blog/FeaturedPost.tsx @brandonroberts
+components/sections/blog/\[slug\]/BlogTextContent.tsx @zeucapua @zeucapua
+components/sections/blog/\[slug\]/PageContent.tsx @brandonroberts
+components/sections/blog/components/AuthorBio.tsx @brandonroberts
+components/sections/blog/components/Post.tsx @brandonroberts
+components/sections/changelog/Changelog.tsx @brandonroberts
+components/sections/changelog/Changelogs.tsx @brandonroberts
+components/sections/home-page/CTA.tsx @brandonroberts
+components/sections/home-page/GitHubMock.tsx @brandonroberts
+components/sections/home-page/Hero.tsx @brandonroberts
+components/sections/home-page/Insights.tsx @brandonroberts
+components/sections/home-page/Logos.tsx @brandonroberts
+components/sections/home-page/Newsletter.tsx
+components/sections/home-page/blogs/Blog.tsx @brandonroberts
+components/sections/home-page/blogs/Blogs.tsx @brandonroberts
+components/sections/home-page/features/Features.tsx @brandonroberts
+components/sections/home-page/features/StudentsFeatures.tsx @brandonroberts
+components/sections/home-page/features/TeamsFeatures.tsx @brandonroberts
+components/sections/home-page/testimonials/Testimonial.tsx @brandonroberts
+components/sections/home-page/testimonials/Testimonials.tsx @brandonroberts
+components/sections/lunchweek/Hero.tsx
+components/sections/lunchweek/Launches.tsx @nickytonline
+components/sections/maintainers/CTA.tsx @brandonroberts
+components/sections/maintainers/GitHubMock.tsx @brandonroberts
+components/sections/maintainers/Hero.tsx @brandonroberts
+components/sections/maintainers/Insights.tsx @brandonroberts
+components/sections/maintainers/Logos.tsx @brandonroberts
+components/sections/maintainers/Newsletter.tsx
+components/sections/maintainers/blogs/Blog.tsx @brandonroberts
+components/sections/maintainers/blogs/Blogs.tsx @brandonroberts
+components/sections/maintainers/features/Features.tsx @brandonroberts
+components/sections/maintainers/testimonials/Testimonial.tsx @brandonroberts
+components/sections/maintainers/testimonials/Testimonials.tsx @brandonroberts
+components/sections/navigation/DesktopNavigation.tsx @brandonroberts
+components/sections/navigation/Header.tsx @brandonroberts
+components/sections/navigation/MobileNavigation.tsx @brandonroberts
+components/sections/pricing/features/Features.tsx @brandonroberts
+components/sections/pricing/pricing/Pricing.tsx @brandonroberts
+components/sections/teams/CTA.tsx @brandonroberts
+components/sections/teams/GitHubMock.tsx @brandonroberts
+components/sections/teams/Insights.tsx @brandonroberts
+components/sections/teams/TeamsHero.tsx @brandonroberts
+components/sections/teams/TeamsLogos.tsx @brandonroberts
+components/sections/teams/features/TeamsFeatures.tsx @brandonroberts
+lib/sanity.ts @brandonroberts
+netlify.toml
+next.config.js
+package-lock.json @brandonroberts
+package.json @brandonroberts
+pages/404.tsx @brandonroberts
+pages/about/index.tsx @brandonroberts
+pages/api/rss/blog.ts @brandonroberts
+pages/api/rss/changelog.ts @brandonroberts
+pages/blog/\[slug\]/index.tsx @brandonroberts
+pages/blog/index.tsx @brandonroberts
+pages/changelog/\[slug\].tsx @brandonroberts
+pages/changelog/index.tsx @brandonroberts
+pages/contributors/index.tsx @brandonroberts
+pages/lunchweek/index.tsx @brandonroberts
+pages/maintainers/index.tsx @brandonroberts
+pages/press/index.tsx @brandonroberts
+pages/students/index.tsx @brandonroberts
+pages/teams/index.tsx @brandonroberts
+public/_redirects
+public/robots.txt
+sanity-codegen.config.ts @brandonroberts
+sanity.config.js @brandonroberts
+sanity.types.ts @brandonroberts
+sanity/deskStructure.js
+sanity/layouts/assets/Svg.js @brandonroberts
+sanity/package-lock.json @brandonroberts
+sanity/package.json @brandonroberts
+sanity/sanity.json
+sanity/schema.json @brandonroberts
+sanity/schemas/blog.js @brandonroberts
+sanity/schemas/changelog.js @brandonroberts
+sanity/schemas/press.js @brandonroberts
+sanity/schemas/schema.js @brandonroberts
+sanity/yarn.lock @brandonroberts
+schema.json @brandonroberts
+types/schema.ts @brandonroberts
