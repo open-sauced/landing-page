@@ -59,7 +59,7 @@ const PageContent: FC<PageContentProps> = ({
         <div className="w-full max-w-[750px] pt-3 pb-4 largeTablet:pt-4 largeTablet:pb-10 ">
           <Heading>{title}</Heading>
         </div>
-        <div className="w-full flex justify-start pb-4 largeTablet:pb-6 largeTablet:justify-center">
+        <div className="w-full flex justify-start pb-4 largeTablet:pb-6 items-center largeTablet:justify-center">
           <div className="flex-shrink-0 mr-2">
             <Image width={16} height={16} src={OrangeAuthor} alt="Author" />
           </div>
