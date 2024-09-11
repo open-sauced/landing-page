@@ -5,7 +5,7 @@ import { getCommonData } from '../../lib/sanity';
 import Footer from '../../components/sections/Footer';
 import { Heading, Typography } from '../../components/common/text';
 import { Button } from '../../components/common';
-import { TbCopy } from "react-icons/tb";
+import { TbArrowNarrowRight, TbCopy } from "react-icons/tb";
 import Image from 'next/image';
 
 export async function getStaticProps() {
@@ -37,20 +37,25 @@ export default function CliPage({ commonData }: CliPageProps) {
           </Heading>
 
           <Typography variant='subheading'>
-            Try the <code className='px-2'>pizza-cli</code> and access OpenSauced features right from your terminal. Autogenerate your CODEOWNERS and contributor insights in seconds.
+            Try the <code className='px-2'>pizza</code> CLI and access OpenSauced features right from your terminal. Autogenerate your CODEOWNERS and contributor insights in seconds.
           </Typography>
 
           <div className='flex gap-4 items-center'>
             <code className='p-4 bg-neutral-800 rounded-xl'>
-              brew install pizza
+              brew install open-sauced/tap/pizza 
             </code>
             <p>or</p>
-            <Button>Download for Mac</Button>
+            <Button href='https://github.com/open-sauced/pizza-cli/releases'>Download for Mac</Button>
           </div>
 
-          <Typography variant='body3'>
-            View installation instructions
-          </Typography>
+          <a href="https://github.com/open-sauced/pizza-cli#readme" className='hover:underline'>
+            <Typography variant='body3'>
+              <span className='flex gap-2 items-center'>
+                View installation instructions
+                <TbArrowNarrowRight />
+              </span>
+            </Typography>
+          </a>
         </header>
 
         <Image src="/cli-screenshot.png" alt="Pizza CLI help screenshot" width={1200} height={1200} />
