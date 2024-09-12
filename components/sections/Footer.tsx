@@ -42,10 +42,6 @@ const footerContext = {
       url: 'https://opensauced.pizza/learn',
       label: 'opensauced.pizza/learn',
     },
-    {
-      url: 'https://opensauced.pizza/cli',
-      label: 'opensauced.pizza/cli',
-    },
   ],
 }
 
