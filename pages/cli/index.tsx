@@ -48,7 +48,7 @@ export default function CliPage({ commonData }: CliPageProps) {
             <Button href='https://github.com/open-sauced/pizza-cli/releases'>Download for Mac</Button>
           </div>
 
-          <a href="https://github.com/open-sauced/pizza-cli#readme" className='hover:underline'>
+          <a href="https://github.com/open-sauced/pizza-cli?tab=readme-ov-file#-install" className='hover:underline'>
             <Typography variant='body3'>
               <span className='flex gap-2 items-center'>
                 View installation instructions
