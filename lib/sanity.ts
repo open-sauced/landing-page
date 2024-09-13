@@ -26,7 +26,7 @@ export const client = sanityClient({
   ignoreBrowserTokenWarning: true,
 })
 
-type CommonData = () => Promise<{
+export type CommonData = () => Promise<{
   navigationLinks: SanityNavigation[]
   seoData: SanitySeo
   footer: SanityFooter[]

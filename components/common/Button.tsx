@@ -11,6 +11,7 @@ interface ButtonProps {
   fullWidth?: boolean
   gitHub?: boolean
   children: React.ReactNode
+  className?: string
 }
 
 const Button: FC<ButtonProps> = ({
@@ -20,6 +21,7 @@ const Button: FC<ButtonProps> = ({
   backgroundVariant = 'dark',
   fullWidth,
   gitHub,
+  className
 }): ReactElement => {
   const commonStyle = `h-fit min-h-[38px] min-w-[180px] rounded-md p-[1px] cursor-pointer`
   const widthStyle = fullWidth ? `w-full largeTablet:w-fit` : `w-fit`
@@ -33,7 +35,7 @@ const Button: FC<ButtonProps> = ({
   return (
     <Link href={href} passHref>
       <div
-        className={`${commonStyle} ${widthStyle} ${borderVariantStyle} transition-all ease-in-out duration-400`}
+        className={`${className} ${commonStyle} ${widthStyle} ${borderVariantStyle} transition-all ease-in-out duration-400`}
       >
         <div
           className={`h-full w-full min-h-[38px] rounded-md flex justify-center items-center px-3 py-[6px] ${backgroundVariantStyle} transition-all ease-in-out duration-400`}
