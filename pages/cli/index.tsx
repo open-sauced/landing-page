@@ -5,7 +5,7 @@ import { getCommonData } from '../../lib/sanity';
 import Footer from '../../components/sections/Footer';
 import { Heading, Typography } from '../../components/common/text';
 import { Button } from '../../components/common';
-import { TbArrowNarrowRight, TbCopy } from "react-icons/tb";
+import { TbArrowNarrowRight } from "react-icons/tb";
 import Image from 'next/image';
 
 export async function getStaticProps() {
@@ -40,12 +40,11 @@ export default function CliPage({ commonData }: CliPageProps) {
             Try the <code className='px-2'>pizza</code> CLI and access OpenSauced features right from your terminal. Autogenerate your CODEOWNERS and contributor insights in seconds.
           </Typography>
 
-          <div className='flex gap-4 items-center'>
-            <code className='p-4 bg-neutral-800 rounded-xl'>
+          <div className='flex flex-col gap-4 items-center'>
+            <code className='p-4 bg-neutral-800 rounded-xl text-sm largeTablet:text-md'>
               brew install open-sauced/tap/pizza 
             </code>
-            <p>or</p>
-            <Button href='https://github.com/open-sauced/pizza-cli/releases'>Download for Mac</Button>
+            <Button href='https://github.com/open-sauced/pizza-cli/releases'>Download for Mac</Button> 
           </div>
 
           <a href="https://github.com/open-sauced/pizza-cli?tab=readme-ov-file#-install" className='hover:underline'>
