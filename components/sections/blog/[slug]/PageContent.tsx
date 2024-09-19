@@ -1,5 +1,8 @@
-import React, { FC, ReactElement } from 'react'
-import { Author as SanityAuthor, Blog as SanityBlog } from '../../../../sanity.types'
+import React, { FC, ReactElement, useEffect, useState } from 'react'
+import {
+  Author as SanityAuthor,
+  Blog as SanityBlog,
+} from '../../../../sanity.types'
 import getReadTime from '../../../../utils/getReadTime'
 
 // Components
@@ -21,8 +24,8 @@ import { BiCalendarAlt } from 'react-icons/bi'
 import AuthorBio from '../components/AuthorBio'
 
 interface PageContentProps {
-  pageContent: Omit<SanityBlog, "author"> & { author: SanityAuthor }
-  blogs: (Omit<SanityBlog, "author"> & { author: SanityAuthor })[]
+  pageContent: Omit<SanityBlog, 'author'> & { author: SanityAuthor }
+  blogs: (Omit<SanityBlog, 'author'> & { author: SanityAuthor })[]
   featuredPost?: boolean
 }
 
@@ -32,21 +35,53 @@ const PageContent: FC<PageContentProps> = ({
   featuredPost,
 }): ReactElement => {
   const { query } = useRouter()
-  const { topics, title, author, published_date, coverImage, blogContent, blogUrl, ogImage, summary, slug } =
-    pageContent
+  const {
+    topics,
+    title,
+    author,
+    published_date,
+    coverImage,
+    blogContent,
+    blogUrl,
+    ogImage,
+    summary,
+    slug,
+  } = pageContent
   const src = coverImage || ''
   const displayBlogs =
     blogs.filter((item) => item.slug?.current != query.slug) || []
-  const absoluteURL = "https://opensauced.pizza/blog/"+slug?.current
+  const absoluteURL = 'https://opensauced.pizza/blog/' + slug?.current
+  const [height, setHeight] = useState('30rem');
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) {
+        setHeight('14rem'); // Small screens
+      } else if (window.innerWidth < 1024) {
+        setHeight('25rem'); // Medium screens
+      } else {
+        setHeight('30rem'); // Large screens
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Call the function once to set the initial size
+    handleResize();
+
+    // Cleanup the event listener on unmount
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
 
   return (
     <>
       <OgData
-      ogTitle={title || ""}
-      ogDescription={summary || ""}
-      ogImageUrl={ogImage as unknown as string || ""}
-      ogUrl={absoluteURL}
-      noindex={false}
+        ogTitle={title || ''}
+        ogDescription={summary || ''}
+        ogImageUrl={(ogImage as unknown as string) || ''}
+        ogUrl={absoluteURL}
+        noindex={false}
       />
       <SectionWrapper pt={205} pts={60} pb={235}>
         <div className=" w-full flex justify-start largeTablet:justify-center">
@@ -69,15 +104,16 @@ const PageContent: FC<PageContentProps> = ({
             <Image width={16} height={16} src={OrangeClock} alt="Clock" />
           </div>
 
-          <LocalTypography>{`${getReadTime(blogContent || "")} ${
-            getReadTime(blogContent || "") === 1 ? 'min' : 'mins'
-          } read`}
+          <LocalTypography>
+            {`${getReadTime(blogContent || '')} ${
+              getReadTime(blogContent || '') === 1 ? 'min' : 'mins'
+            } read`}
           </LocalTypography>
-          
-          { published_date && (
+
+          {published_date && (
             <>
               <div className="flex-shrink-0 mr-2 ml-4">
-                <BiCalendarAlt className='text-[#E33E24] w-5 h-5' /> 
+                <BiCalendarAlt className="text-[#E33E24] w-5 h-5" />
               </div>
               <LocalTypography>
                 <time>{published_date}</time>
@@ -88,16 +124,20 @@ const PageContent: FC<PageContentProps> = ({
         <div className="pb-11 largeTablet:pb-20">
           <SocialShare url={absoluteURL} size="lg" gap={6} hackerNews />
         </div>
-        <GradientBorderWrapper style={{ width: '100%', borderRadius: '8px' }}>
-          <div className="w-full relative rounded-[5px] overflow-hidden largeTablet:h-[496px]  ">
+        <GradientBorderWrapper
+          style={{ width:'100%', height, borderRadius: '8px' }}
+        >
+          <div className="relative rounded-[5px] overflow-hidden h-full w-full  object-cover">
             <Image
-              width={1206}
+              width={1800}
               height={496}
+              className="object-fit h-full w-full"
               src={src as string}
               alt="Cover"
             />
           </div>
         </GradientBorderWrapper>
+
         <BlogTextContent data={blogContent} />
 
         <AuthorBio author={author} />
@@ -108,12 +148,7 @@ const PageContent: FC<PageContentProps> = ({
           </div>
         )}
         {!featuredPost && !!blogUrl && (
-          <a
-            className="w-full max-w-[780px]"
-            href={blogUrl}
-            target="_blank"
-            
-          >
+          <a className="w-full max-w-[780px]" href={blogUrl} target="_blank">
             <p className="text-left font-bold text-2xl border-b-[1px] w-fit tracking-[0.14em] pt-6">
               <DecoratedText content="$yellow-to-orangeRead entire article" />
             </p>

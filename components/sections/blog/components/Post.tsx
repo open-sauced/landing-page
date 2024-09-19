@@ -57,7 +57,7 @@ const Post: FC<PostProps> = ({ data, featured }): ReactElement => {
       <div className={`${featured && 'largeTablet:hidden'}`}>
         <GradientBorderWrapper style={{ width: '100%', borderRadius: '5px' }}>
           <div className="w-full relative rounded-[5px] overflow-hidden ">
-            <Image width="580" height={304} className='min-h-[22rem]' src={src as string} alt="Cover" />
+            <Image width={580} height={304} className='min-h-[22rem]' src={src as string} alt="Cover" />
           </div>
         </GradientBorderWrapper>
       </div>
