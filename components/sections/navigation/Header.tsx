@@ -16,6 +16,7 @@ export const navigationLinks = [
   { url: '/about', label: 'About' },
   { url: '/blog', label: 'Blog' },
   { url: '/changelog', label: 'Changelog' },
+  { url: '/cli', label: 'CLI' }
 ] as SanityNavigation[]
 
 const Header: FC<HeaderProps> = ({ navigationItems }): ReactElement => {
