@@ -7,9 +7,11 @@
 .github/workflows/pizza.yml @nickytonline
 .gitignore @brandonroberts
 .sauced.yaml @nickytonline
-components/common/SocialLinks.tsx @nickytonline
+CODEOWNERS
+components/common/Button.tsx @zeucapua @zeucapua
+components/common/SocialLinks.tsx @nickytonline @brandonroberts
 components/common/layout/PageLayout.tsx @brandonroberts
-components/sections/Footer.tsx @nickytonline
+components/sections/Footer.tsx @nickytonline @zeucapua @zeucapua
 components/sections/about/FollowUs.tsx @brandonroberts
 components/sections/about/Links.tsx @brandonroberts
 components/sections/about/about/About.tsx @brandonroberts
@@ -48,7 +50,7 @@ components/sections/maintainers/features/Features.tsx @brandonroberts
 components/sections/maintainers/testimonials/Testimonial.tsx @brandonroberts
 components/sections/maintainers/testimonials/Testimonials.tsx @brandonroberts
 components/sections/navigation/DesktopNavigation.tsx @brandonroberts
-components/sections/navigation/Header.tsx @brandonroberts
+components/sections/navigation/Header.tsx @brandonroberts @zeucapua @zeucapua
 components/sections/navigation/MobileNavigation.tsx @brandonroberts
 components/sections/pricing/features/Features.tsx @brandonroberts
 components/sections/pricing/pricing/Pricing.tsx @brandonroberts
@@ -58,9 +60,7 @@ components/sections/teams/Insights.tsx @brandonroberts
 components/sections/teams/TeamsHero.tsx @brandonroberts
 components/sections/teams/TeamsLogos.tsx @brandonroberts
 components/sections/teams/features/TeamsFeatures.tsx @brandonroberts
-lib/sanity.ts @brandonroberts
-netlify.toml
-next.config.js
+lib/sanity.ts @brandonroberts @zeucapua @zeucapua
 package-lock.json @brandonroberts
 package.json @brandonroberts
 pages/404.tsx @brandonroberts
@@ -71,14 +71,13 @@ pages/blog/\[slug\]/index.tsx @brandonroberts
 pages/blog/index.tsx @brandonroberts
 pages/changelog/\[slug\].tsx @brandonroberts
 pages/changelog/index.tsx @brandonroberts
+pages/cli/index.tsx @zeucapua @zeucapua
 pages/contributors/index.tsx @brandonroberts
 pages/lunchweek/index.tsx @brandonroberts
 pages/maintainers/index.tsx @brandonroberts
 pages/press/index.tsx @brandonroberts
 pages/students/index.tsx @brandonroberts
 pages/teams/index.tsx @brandonroberts
-public/_redirects
-public/robots.txt
 sanity-codegen.config.ts @brandonroberts
 sanity.config.js @brandonroberts
 sanity.types.ts @brandonroberts
