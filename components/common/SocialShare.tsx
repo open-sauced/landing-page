@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 
 // Icons
-import { BsTwitter, BsLinkedin, BsFacebook } from 'react-icons/bs'
+import { BsTwitter, BsLinkedin, BsFacebook ,BsReddit} from 'react-icons/bs'
 import { FaHackerNewsSquare } from 'react-icons/fa'
 
 interface SocialShareProps {
@@ -13,9 +13,11 @@ interface SocialShareProps {
   linkedin?: boolean
   facebook?: boolean
   hackerNews?: boolean
+  reddit?: boolean
 }
 
 const SocialShare:FC<SocialShareProps> = ({
+  reddit= true,
   twitter = true,
   linkedin = true,
   facebook = false,
@@ -35,6 +37,7 @@ const SocialShare:FC<SocialShareProps> = ({
       {linkedin && <LinkedinLink url={url}/>}
       {facebook && <FacebookLink url={url}/>}
       {hackerNews && <HackerNewsLink url={url}/>}
+      {reddit && <RedditLink url={url}/>}
     </div>
   )
 }
@@ -70,6 +73,14 @@ const HackerNewsLink:FC<SocialLinkProps> = ({url}) => {
   return (
     <a href={`https://news.ycombinator.com/submitlink?u=${url}`}>
       <FaHackerNewsSquare/>
+    </a>
+  )
+}
+
+const RedditLink: FC<SocialLinkProps> = ({url}) => {
+  return (
+    <a href={`https://www.reddit.com/submit?url=${url}`}>
+      <BsReddit/>
     </a>
   )
 }
