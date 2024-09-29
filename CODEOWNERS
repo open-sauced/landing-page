@@ -1,13 +1,13 @@
 # This file is generated automatically by OpenSauced pizza-cli. DO NOT EDIT. Stay saucy!
 #
 # Generated with command:
-# $ pizza generate codeowners landing-page/ --config ./.sauced.yaml
+# $ pizza generate codeowners landing-page/ --tty-disable true
 
 .github/CODEOWNERS @nickytonline
 .github/workflows/pizza.yml @nickytonline
 .gitignore @brandonroberts
-.sauced.yaml @nickytonline @bekahhw
-CODEOWNERS
+.sauced.yaml @nickytonline @bekahhw @bekahhw
+CODEOWNERS @bekahhw @bekahhw
 components/common/Button.tsx @zeucapua @zeucapua
 components/common/SocialLinks.tsx @brandonroberts
 components/common/layout/PageLayout.tsx @brandonroberts
@@ -32,11 +32,11 @@ components/sections/home-page/Newsletter.tsx
 components/sections/home-page/blogs/Blog.tsx @brandonroberts
 components/sections/home-page/blogs/Blogs.tsx @brandonroberts
 components/sections/home-page/features/Features.tsx @brandonroberts
-components/sections/home-page/features/StudentsFeatures.tsx @brandonroberts @bekahhw @bekahhw
-components/sections/home-page/features/TeamsFeatures.tsx @bekahhw @brandonroberts @bekahhw
+components/sections/home-page/features/StudentsFeatures.tsx @brandonroberts @bekahhw
+components/sections/home-page/features/TeamsFeatures.tsx @bekahhw @brandonroberts
 components/sections/home-page/testimonials/Testimonial.tsx @brandonroberts
 components/sections/home-page/testimonials/Testimonials.tsx @brandonroberts
-components/sections/lunchweek/Hero.tsx @bekahhw @bekahhw
+components/sections/lunchweek/Hero.tsx @bekahhw
 components/sections/maintainers/CTA.tsx @brandonroberts
 components/sections/maintainers/GitHubMock.tsx @brandonroberts
 components/sections/maintainers/Hero.tsx @brandonroberts
@@ -60,9 +60,9 @@ components/sections/teams/TeamsHero.tsx @brandonroberts
 components/sections/teams/TeamsLogos.tsx @brandonroberts
 components/sections/teams/features/TeamsFeatures.tsx @brandonroberts
 lib/sanity.ts @brandonroberts @zeucapua @zeucapua
-package-lock.json @bekahhw @bekahhw @brandonroberts
-package.json @bekahhw @brandonroberts @bekahhw
-pages/404.tsx @bekahhw @brandonroberts @bekahhw
+package-lock.json @bekahhw @brandonroberts
+package.json @bekahhw @brandonroberts
+pages/404.tsx @bekahhw @brandonroberts
 pages/about/index.tsx @brandonroberts
 pages/api/rss/blog.ts @brandonroberts
 pages/api/rss/changelog.ts @brandonroberts
@@ -78,18 +78,18 @@ pages/press/index.tsx @brandonroberts
 pages/students/index.tsx @brandonroberts
 pages/teams/index.tsx @brandonroberts
 sanity-codegen.config.ts @brandonroberts
-sanity.config.js @bekahhw @bekahhw @brandonroberts
+sanity.config.js @bekahhw @brandonroberts
 sanity.types.ts @brandonroberts
-sanity/deskStructure.js @bekahhw @bekahhw
+sanity/deskStructure.js @bekahhw
 sanity/layouts/assets/Svg.js @brandonroberts
 sanity/package-lock.json @brandonroberts @bekahhw
 sanity/package.json @brandonroberts
-sanity/sanity.json @bekahhw @bekahhw
+sanity/sanity.json @bekahhw
 sanity/schema.json @brandonroberts
 sanity/schemas/blog.js @brandonroberts
 sanity/schemas/changelog.js @brandonroberts
 sanity/schemas/press.js @brandonroberts
-sanity/schemas/schema.js @bekahhw @bekahhw @brandonroberts
+sanity/schemas/schema.js @bekahhw @brandonroberts
 sanity/yarn.lock @brandonroberts @bekahhw
 schema.json @brandonroberts
 types/schema.ts @brandonroberts
