@@ -25,6 +25,7 @@
     "react-intersection-observer": "^9.4.3",
     "react-markdown": "^8.0.5",
     "react-player": "^2.12.0",
+    "react-router-dom": "^6.26.2",
     "react-slideshow-image": "^4.0.5",
     "rss": "^1.2.2",
     "sanity": "^3.48.1",
