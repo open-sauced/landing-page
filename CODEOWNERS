@@ -12,13 +12,10 @@ components/sections/Footer.tsx @zeucapua @zeucapua
 components/sections/blog/\[slug\]/BlogTextContent.tsx @zeucapua @zeucapua
 components/sections/blog/\[slug\]/PageContent.tsx
 components/sections/changelog/Changelog.tsx
-components/sections/home-page/Newsletter.tsx
-components/sections/maintainers/Newsletter.tsx
 components/sections/navigation/Header.tsx @zeucapua @zeucapua
 lib/sanity.ts @zeucapua @zeucapua
 package-lock.json @zeucapua
 package.json
 pages/changelog/\[slug\].tsx
 pages/cli/index.tsx @zeucapua @zeucapua
-pages/maintainers/index.tsx
 sanity/package-lock.json @zeucapua
