@@ -3,19 +3,6 @@
 # Generated with command:
 # $ pizza generate codeowners landing-page/ --tty-disable true
 
-.github/CODEOWNERS @nickytonline
-.github/workflows/pizza.yml @nickytonline
-.sauced.yaml @nickytonline @bekahhw @bekahhw
 CODEOWNERS @bekahhw
-components/common/Button.tsx @zeucapua @zeucapua
-components/sections/Footer.tsx @zeucapua @zeucapua
-components/sections/blog/\[slug\]/BlogTextContent.tsx @zeucapua @zeucapua
-components/sections/blog/\[slug\]/PageContent.tsx
-components/sections/changelog/Changelog.tsx
-components/sections/navigation/Header.tsx @zeucapua @zeucapua
-lib/sanity.ts @zeucapua @zeucapua
-package-lock.json @zeucapua
-package.json
-pages/changelog/\[slug\].tsx
-pages/cli/index.tsx @zeucapua @zeucapua
+package-lock.json
 sanity/package-lock.json @zeucapua
