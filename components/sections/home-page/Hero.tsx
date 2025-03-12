@@ -6,7 +6,6 @@ import { HomePage as SanityHomePage, TeamsPage as SanityTeamsPage } from '../../
 import SectionWrapper from '../../common/layout/SectionWrapper'
 import ContainerWithLine from '../../common/ContainerWithLine'
 import { Heading, Typography } from '../../common/text'
-import { Button } from '../../common'
 import DecoratedText from '../../common/text/utils/DecoratedText'
 import Image from 'next/image'
 interface HeroProps {
@@ -37,14 +36,6 @@ const Hero = ({ data, teamsPage = false }: HeroProps) => {
                 <Typography alignLarge="left" alignSmall="left" variant="body3">
                   {data?.description}
                 </Typography>
-              </div>
-
-              <div className="flex gap-4 flex-col largeTablet:flex-row">
-              {data?.cta?.map((item, i) => (
-                <Button key={i} href={item.ctaLink} borderVariant={ i !== 0 ? "gray" : "neon" }>
-                  {item.ctaLabel}
-                </Button>
-              ))}
               </div>
 
               { !teamsPage && 
