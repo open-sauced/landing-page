@@ -4,7 +4,6 @@ import { HomePage as SanityHomePage } from '../../../sanity.types'
 // Components
 import SectionWrapper from '../../common/layout/SectionWrapper'
 import { Heading, Typography } from '../../common/text'
-import { Button } from '../../common'
 
 interface CTAProps {
   data: SanityHomePage['ctaSection']
@@ -21,7 +20,6 @@ const CTA: FC<CTAProps> = ({ data }) => {
           {data?.description}
         </Typography>
       </div>
-      <Button href={data?.ctaLink}>Get Started</Button>
     </SectionWrapper>
   )
 }

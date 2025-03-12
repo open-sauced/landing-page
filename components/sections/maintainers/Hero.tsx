@@ -6,7 +6,6 @@ import { HomePage as SanityHomePage } from '../../../sanity.types'
 import SectionWrapper from '../../common/layout/SectionWrapper'
 import ContainerWithLine from '../../common/ContainerWithLine'
 import { Heading, Typography } from '../../common/text'
-import { Button } from '../../common'
 import Image from 'next/image'
 import DecoratedText from '../../common/text/utils/DecoratedText'
 interface HeroProps {
@@ -36,14 +35,6 @@ const Hero = ({ data }: HeroProps) => {
                 <Typography leading='8' tracking='tight' alignLarge="left" alignSmall="left" variant="body1">
                   Optimize your open source project with deep insights: Join a platform crafted for maintainers seeking to drive innovation and community growth
                 </Typography>
-              </div>
-
-              <div className="flex gap-4 flex-col largeTablet:flex-row">
-              {data?.cta?.map((item, i) => (
-                <Button key={i} href={item.ctaLink} borderVariant={ i !== 0 ? "gray" : "neon" }>
-                  {item.ctaLabel}
-                </Button>
-              ))}
               </div>
 
               <div className="pt-6 pb-10">

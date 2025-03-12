@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 // Components
-import { Button } from '../../common'
 import { Menu } from '@headlessui/react'
 import { Navigation as SanityNavigation } from '../../../sanity.types'
 
@@ -90,10 +89,6 @@ const DesktopNavigation: FC<DesktopNavigationProps> = ({
           </div>
         ))}
       </nav>
-
-      <Button href="https://app.opensauced.pizza/start" gitHub>
-        Connect your GitHub
-      </Button>
     </div>
   )
 }
