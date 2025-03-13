@@ -134,11 +134,11 @@ const LocalTypography: FC<LocalTypographyProps> = ({
   children,
 }) => {
   const titleStyle =
-    'font-bold text-textPrimary opacity-[0.35] text-xs uppercase tracking-[0.2em] pb-8'
+    'font-bold text-textPrimary opacity-[0.6] text-xs uppercase tracking-[0.2em] pb-8'
   const item1Style =
     'font-normal text-textPrimary text-sm tracking-[-0.02em] opacity-[0.7] pb-3'
   const item2Style =
-    'font-normal text-textPrimary text-sm tracking-[-0.02em] opacity-[0.35]'
+    'font-normal text-textPrimary text-sm tracking-[-0.02em] opacity-[0.6]'
 
   const appliedStyle =
     variant === 'title'
