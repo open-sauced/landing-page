@@ -30,7 +30,7 @@ const Newsletter = () => {
         </Typography>
         <GradientBorderWrapper>
           <a
-            href="https://news.opensauced.pizza/#/portal/signup"
+            href="https://opensourceready.substack.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="relative box-border px-4 flex items-center justify-center w-[280px] h-[38px] text-[#FEEADD] pr-4 py-3 text-sm font-medium bg-[#211E1C] rounded-md largeTablet:w-[394px]"
