@@ -31,7 +31,7 @@ const footerContext = {
       label: 'opensauced.pizza/docs',
     },
     {
-      url: 'https://news.opensauced.pizza',
+      url: 'https://opensourceready.substack.com/',
       label: 'news.opensauced.pizza',
     },
     {
@@ -151,4 +151,3 @@ const LocalTypography: FC<LocalTypographyProps> = ({
 
 export default Footer
 
-    
