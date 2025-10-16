@@ -2,4 +2,13 @@
   command = "npm run build"
 
 [build.environment]
-  NODE_VERSION = "18.20.8"
+  NODE_VERSION = "18"
+
+[context.production.environment]
+  NODE_VERSION = "18"
+
+[context.deploy-preview.environment]
+  NODE_VERSION = "18"
+
+[context.branch-deploy.environment]
+  NODE_VERSION = "18"
