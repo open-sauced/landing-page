@@ -7,6 +7,7 @@ import Footer from '../../sections/Footer'
 import Subscribe from '../../sections/Subscribe'
 import OgData from './SEO/SEO'
 import PHBadge from '../product-hunt/PHBadge'
+import AnnouncementBanner from '../AnnouncementBanner'
 
 interface BackgroundWrapperProps {
   children: React.ReactNode
@@ -42,13 +43,18 @@ const PageLayout: FC<PageLayoutProps> = ({
           noindex={false}
         />
       )}
+      <AnnouncementBanner
+        message="OpenSauced has joined the Linux Foundation"
+        linkUrl="https://opensauced.pizza/blog/opensauced-is-joining-the-linux-foundation"
+        linkText="Read more"
+      />
       <BackgroundWrapper>
         {Array.isArray(children) && !children[1]?.props.totalLaunchesCount && (
           <PHBadge />
         )}
         {!pressPage && <Header navigationItems={navigationURLs} />}
         <div>{children}</div>
-       
+
         <Footer pressPage={pressPage} />
       </BackgroundWrapper>
     </div>
