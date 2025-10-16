@@ -1,0 +1,25 @@
+[build]
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[context.production.environment]
+  NODE_VERSION = "22"
+
+[context.deploy-preview.environment]
+  NODE_VERSION = "22"
+
+[context.branch-deploy.environment]
+  NODE_VERSION = "22"
+
+# Explicitly define plugins to override UI configuration
+# This prevents the @netlify/plugin-lighthouse from running
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[[plugins]]
+  package = "netlify-plugin-cloudinary"
+
+[[plugins]]
+  package = "@netlify/plugin-emails"
