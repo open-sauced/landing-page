@@ -12,3 +12,14 @@
 
 [context.branch-deploy.environment]
   NODE_VERSION = "18"
+
+# Explicitly define plugins to override UI configuration
+# This prevents the @netlify/plugin-lighthouse from running
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[[plugins]]
+  package = "netlify-plugin-cloudinary"
+
+[[plugins]]
+  package = "@netlify/plugin-emails"
