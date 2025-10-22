@@ -21,7 +21,7 @@ const nextConfig = {
     return [
       {
         source: '/',
-        destination: 'https://insights.linuxfoundation.org/',
+        destination: 'https://lfx.linuxfoundation.org/',
         permanent: true,
       },
     ]
