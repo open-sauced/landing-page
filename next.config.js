@@ -17,6 +17,15 @@ const nextConfig = {
       },
     ]
   },
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: 'https://insights.linuxfoundation.org/',
+        permanent: true,
+      },
+    ]
+  },
   async rewrites() {
     return [
       {
