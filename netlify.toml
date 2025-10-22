@@ -4,6 +4,12 @@
 [build.environment]
   NODE_VERSION = "22"
 
+[[redirects]]
+  from = "/"
+  to = "https://insights.linuxfoundation.org/"
+  status = 301
+  force = true
+
 [context.production.environment]
   NODE_VERSION = "22"
 
