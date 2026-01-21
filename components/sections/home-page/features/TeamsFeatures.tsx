@@ -84,7 +84,7 @@ function TopUseCase({ topUseCase } : { topUseCase: SanityTeamsPage['topUseCase']
               animate={{ opacity: iconInView ? 1 : 0, y: posY, x: iconInView ? 0 : 10 }}
               transition={{ duration: 0.7, delay: 0.2, ease: 'easeInOut' }}
             >
-              <img src={image as unknown as string} />
+              <img src={image as unknown as string}  alt="feature-image"/>
             </motion.div>
           </div>
         </div>
@@ -159,7 +159,7 @@ function TeamFeature({ feature } : { feature : {
               animate={{ opacity: iconInView ? 1 : 0, y: posY, x: iconInView ? 0 : 10 }}
               transition={{ duration: 0.7, delay: 0.2, ease: 'easeInOut' }}
             >
-              <img src={image as unknown as string} />
+              <img src={image as unknown as string}  alt="feature-image"/>
             </motion.div>
           </div>
         </div>
